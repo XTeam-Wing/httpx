@@ -124,7 +124,7 @@ func New(options *Options) (*Runner, error) {
 		if options.TechRule != "" {
 			err = runner.tech.Init(options.TechRule)
 			if err != nil {
-				gologger.Error().Msgf("init tech detector error: %s", err)
+				gologger.Warning().Msgf("init tech yaml rule error: %s", err)
 			}
 		}
 	}
@@ -1919,6 +1919,7 @@ retry:
 	}
 
 	var technologies []string
+	var technologyDetails = make(map[string]wappalyzer.AppInfo)
 	if scanopts.TechDetect {
 		techResp := http.Response{
 			Header: resp.Headers,
@@ -2168,13 +2169,13 @@ retry:
 		if err != nil {
 			gologger.Warning().Msgf("Could not take screenshot '%s': %s", fullURL, err)
 		} else if !r.options.NoSaveScreenshot {
-			screenshotPath = fileutilz.AbsPathOrDefault(filepath.Join(screenshotBaseDir, screenshotResponseFile))
-			screenshotPathRel = filepath.Join(hostFilename, screenshotResponseFile)
-			_ = fileutil.CreateFolder(screenshotBaseDir)
-			err := os.WriteFile(screenshotPath, screenshotBytes, 0644)
-			if err != nil {
-				gologger.Error().Msgf("Could not write screenshot at path '%s', to disk: %s", screenshotPath, err)
-			}
+			//screenshotPath := fileutilz.AbsPathOrDefault(filepath.Join(screenshotBaseDir, screenshotResponseFile))
+			//screenshotPathRel = filepath.Join(hostFilename, screenshotResponseFile)
+			//_ = fileutil.CreateFolder(screenshotBaseDir)
+			//err := os.WriteFile(screenshotPath, screenshotBytes, 0644)
+			//if err != nil {
+			//	gologger.Error().Msgf("Could not write screenshot at path '%s', to disk: %s", screenshotPath, err)
+			//}
 
 		} else {
 			pHash, err = calculatePerceptionHash(screenshotBytes)
