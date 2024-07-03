@@ -9,12 +9,22 @@ import (
 
 	stringsutil "github.com/projectdiscovery/utils/strings"
 	"golang.org/x/net/html"
+	"slices"
 )
 
 var (
-	cutset        = "\n\t\v\f\r"
-	reTitle       = regexp.MustCompile(`(?im)<\s*title.*>(.*?)<\s*/\s*title>`)
-	reContentType = regexp.MustCompile(`(?im)\s*charset="(.*?)"|charset=(.*?)"\s*`)
+	cutset                  = "\n\t\v\f\r"
+	reTitle                 = regexp.MustCompile(`(?im)<\s*title.*>(.*?)<\s*/\s*title>`)
+	reContentType           = regexp.MustCompile(`(?im)\s*charset="(.*?)"|charset=(.*?)"\s*`)
+	supportedTitleMimeTypes = []string{
+		"text/html",
+		"application/xhtml+xml",
+		"application/xml",
+		"application/rss+xml",
+		"application/atom+xml",
+		"application/xhtml+xml",
+		"application/vnd.wap.xhtml+xml",
+	}
 )
 
 // ExtractTitle from a response
@@ -35,9 +45,13 @@ func ExtractTitle(r *Response) (title string) {
 
 	// remove unwanted chars
 	title = strings.TrimSpace(strings.Trim(title, cutset))
-	title = stringsutil.ReplaceAll(title, "\n", "\r")
+	title = stringsutil.ReplaceAll(title, "", "\n", "\t", "\v", "\f", "\r")
 
 	return title
+}
+
+func CanHaveTitleTag(mimeType string) bool {
+	return slices.Contains(supportedTitleMimeTypes, mimeType)
 }
 
 func getTitleWithDom(r *Response) (*html.Node, error) {

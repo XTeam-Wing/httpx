@@ -22,17 +22,26 @@ import (
 	"github.com/projectdiscovery/httpx/common/customlist"
 	customport "github.com/projectdiscovery/httpx/common/customports"
 	fileutilz "github.com/projectdiscovery/httpx/common/fileutil"
-	"github.com/projectdiscovery/httpx/common/slice"
+	"github.com/projectdiscovery/httpx/common/httpx"
 	"github.com/projectdiscovery/httpx/common/stringz"
+	"github.com/projectdiscovery/networkpolicy"
+	"github.com/projectdiscovery/utils/auth/pdcp"
+	"github.com/projectdiscovery/utils/env"
 	fileutil "github.com/projectdiscovery/utils/file"
+	sliceutil "github.com/projectdiscovery/utils/slice"
+	stringsutil "github.com/projectdiscovery/utils/strings"
 	updateutils "github.com/projectdiscovery/utils/update"
+	wappalyzer "github.com/projectdiscovery/wappalyzergo"
 )
 
 const (
 	two                    = 2
+	defaultThreads         = 50
 	DefaultResumeFile      = "resume.cfg"
 	DefaultOutputDirectory = "output"
 )
+
+var PDCPApiKey = ""
 
 // OnResultCallback (hostResult)
 type OnResultCallback func(Result)
@@ -48,6 +57,7 @@ type ScanOptions struct {
 	OutputLocation            bool
 	OutputContentLength       bool
 	StoreResponse             bool
+	OmitBody                  bool
 	OutputServerHeader        bool
 	OutputWebSocket           bool
 	OutputWithNoColor         bool
@@ -65,7 +75,7 @@ type ScanOptions struct {
 	HTTP2Probe                bool
 	OutputIP                  bool
 	OutputCName               bool
-	OutputCDN                 bool
+	OutputCDN                 string
 	OutputResponseTime        bool
 	PreferHTTPS               bool
 	NoFallback                bool
@@ -91,6 +101,7 @@ type ScanOptions struct {
 	DisableStdin              bool
 	NoScreenshotBytes         bool
 	NoHeadlessBody            bool
+	ScreenshotTimeout         int
 }
 
 func (s *ScanOptions) Clone() *ScanOptions {
@@ -105,6 +116,7 @@ func (s *ScanOptions) Clone() *ScanOptions {
 		OutputLocation:            s.OutputLocation,
 		OutputContentLength:       s.OutputContentLength,
 		StoreResponse:             s.StoreResponse,
+		OmitBody:                  s.OmitBody,
 		OutputServerHeader:        s.OutputServerHeader,
 		OutputWebSocket:           s.OutputWebSocket,
 		OutputWithNoColor:         s.OutputWithNoColor,
@@ -142,6 +154,7 @@ func (s *ScanOptions) Clone() *ScanOptions {
 		UseInstalledChrome:        s.UseInstalledChrome,
 		NoScreenshotBytes:         s.NoScreenshotBytes,
 		NoHeadlessBody:            s.NoHeadlessBody,
+		ScreenshotTimeout:         s.ScreenshotTimeout,
 	}
 }
 
@@ -156,6 +169,7 @@ type Options struct {
 	Output                    string
 	OutputAll                 bool
 	StoreResponseDir          string
+	OmitBody                  bool
 	HTTPProxy                 string
 	SocksProxy                string
 	InputFile                 string
@@ -172,16 +186,16 @@ type Options struct {
 	InputRawRequest           string
 	rawRequest                string
 	RequestBody               string
-	OutputFilterString        string
-	OutputMatchString         string
-	OutputFilterRegex         string
-	OutputMatchRegex          string
+	OutputFilterString        goflags.StringSlice
+	OutputMatchString         goflags.StringSlice
+	OutputFilterRegex         goflags.StringSlice
+	OutputMatchRegex          goflags.StringSlice
 	Retries                   int
 	Threads                   int
 	Timeout                   int
 	Delay                     time.Duration
-	filterRegex               *regexp.Regexp
-	matchRegex                *regexp.Regexp
+	filterRegexes             []*regexp.Regexp
+	matchRegexes              []*regexp.Regexp
 	VHost                     bool
 	VHostInput                bool
 	Smuggling                 bool
@@ -195,6 +209,7 @@ type Options struct {
 	JSONOutput                bool
 	CSVOutput                 bool
 	CSVOutputEncoding         string
+	PdcpAuth                  string
 	Silent                    bool
 	Version                   bool
 	Verbose                   bool
@@ -213,13 +228,14 @@ type Options struct {
 	OutputContentType         bool
 	OutputIP                  bool
 	OutputCName               bool
+	ExtractFqdn               bool
 	Unsafe                    bool
 	Debug                     bool
 	DebugRequests             bool
 	DebugResponse             bool
 	Pipeline                  bool
 	HTTP2Probe                bool
-	OutputCDN                 bool
+	OutputCDN                 string
 	OutputResponseTime        bool
 	NoFallback                bool
 	NoFallbackScheme          bool
@@ -243,7 +259,7 @@ type Options struct {
 	Probe                     bool
 	Resume                    bool
 	resumeCfg                 *ResumeCfg
-	ExcludeCDN                bool
+	Exclude                   goflags.StringSlice
 	HostMaxErrors             int
 	Stream                    bool
 	SkipDedupe                bool
@@ -286,11 +302,21 @@ type Options struct {
 	UseInstalledChrome bool
 	TlsImpersonate     bool
 	DisableStdin       bool
+	HttpApiEndpoint    string
 	NoScreenshotBytes  bool
 	NoSaveScreenshot   bool
 	NoHeadlessBody     bool
-	TechRule           string
-	OutputExtractJS    bool
+	ScreenshotTimeout  int
+	// HeadlessOptionalArguments specifies optional arguments to pass to Chrome
+	HeadlessOptionalArguments goflags.StringSlice
+	Protocol                  string
+
+	// Optional pre-created objects to reduce allocations
+	Wappalyzer      *wappalyzer.Wappalyze
+	Networkpolicy   *networkpolicy.NetworkPolicy
+	CDNCheckClient  *cdncheck.Client
+	TechRule        string
+	OutputExtractJS bool
 }
 
 // ParseOptions parses the command line options for application
@@ -327,18 +353,21 @@ func ParseOptions() *Options {
 		flagSet.BoolVar(&options.OutputWebSocket, "websocket", false, "display server using websocket"),
 		flagSet.BoolVar(&options.OutputIP, "ip", false, "display host ip"),
 		flagSet.BoolVar(&options.OutputCName, "cname", false, "display host cname"),
+		flagSet.BoolVarP(&options.ExtractFqdn, "efqdn", "extract-fqdn", false, "get domain and subdomains from response body and header in jsonl/csv output"),
 		flagSet.BoolVar(&options.Asn, "asn", false, "display host asn information"),
-		flagSet.BoolVar(&options.OutputCDN, "cdn", false, "display cdn/waf in use"),
+		flagSet.DynamicVar(&options.OutputCDN, "cdn", "true", "display cdn/waf in use"),
 		flagSet.BoolVar(&options.Probe, "probe", false, "display probe status"),
 	)
 
 	flagSet.CreateGroup("headless", "Headless",
 		flagSet.BoolVarP(&options.Screenshot, "screenshot", "ss", false, "enable saving screenshot of the page using headless browser"),
 		flagSet.BoolVar(&options.UseInstalledChrome, "system-chrome", false, "enable using local installed chrome for screenshot"),
+		flagSet.StringSliceVarP(&options.HeadlessOptionalArguments, "headless-options", "ho", nil, "start headless chrome with additional options", goflags.FileCommaSeparatedStringSliceOptions),
 		flagSet.BoolVarP(&options.NoScreenshotBytes, "exclude-screenshot-bytes", "esb", false, "enable excluding screenshot bytes from json output"),
 		flagSet.BoolVarP(&options.NoSaveScreenshot, "exclude-save-screenshot", "ess", false, "enable excluding save screenshot to local file"),
 
 		flagSet.BoolVarP(&options.NoHeadlessBody, "exclude-headless-body", "ehb", false, "enable excluding headless header from json output"),
+		flagSet.IntVarP(&options.ScreenshotTimeout, "screenshot-timeout", "st", 10, "set timeout for screenshot in seconds"),
 	)
 
 	flagSet.CreateGroup("matchers", "Matchers",
@@ -347,8 +376,8 @@ func ParseOptions() *Options {
 		flagSet.StringVarP(&options.OutputMatchLinesCount, "match-line-count", "mlc", "", "match response body with specified line count (-mlc 423,532)"),
 		flagSet.StringVarP(&options.OutputMatchWordsCount, "match-word-count", "mwc", "", "match response body with specified word count (-mwc 43,55)"),
 		flagSet.StringSliceVarP(&options.OutputMatchFavicon, "match-favicon", "mfc", nil, "match response with specified favicon hash (-mfc 1494302000)", goflags.NormalizedStringSliceOptions),
-		flagSet.StringVarP(&options.OutputMatchString, "match-string", "ms", "", "match response with specified string (-ms admin)"),
-		flagSet.StringVarP(&options.OutputMatchRegex, "match-regex", "mr", "", "match response with specified regex (-mr admin)"),
+		flagSet.StringSliceVarP(&options.OutputMatchString, "match-string", "ms", nil, "match response with specified string (-ms admin)", goflags.NormalizedStringSliceOptions),
+		flagSet.StringSliceVarP(&options.OutputMatchRegex, "match-regex", "mr", nil, "match response with specified regex (-mr admin)", goflags.NormalizedStringSliceOptions),
 		flagSet.StringSliceVarP(&options.OutputMatchCdn, "match-cdn", "mcdn", nil, fmt.Sprintf("match host with specified cdn provider (%s)", cdncheck.DefaultCDNProviders), goflags.NormalizedStringSliceOptions),
 		flagSet.StringVarP(&options.OutputMatchResponseTime, "match-response-time", "mrt", "", "match response with specified response time in seconds (-mrt '< 1')"),
 		flagSet.StringVarP(&options.OutputMatchCondition, "match-condition", "mdc", "", "match response with dsl expression condition"),
@@ -367,8 +396,8 @@ func ParseOptions() *Options {
 		flagSet.StringVarP(&options.OutputFilterLinesCount, "filter-line-count", "flc", "", "filter response body with specified line count (-flc 423,532)"),
 		flagSet.StringVarP(&options.OutputFilterWordsCount, "filter-word-count", "fwc", "", "filter response body with specified word count (-fwc 423,532)"),
 		flagSet.StringSliceVarP(&options.OutputFilterFavicon, "filter-favicon", "ffc", nil, "filter response with specified favicon hash (-ffc 1494302000)", goflags.NormalizedStringSliceOptions),
-		flagSet.StringVarP(&options.OutputFilterString, "filter-string", "fs", "", "filter response with specified string (-fs admin)"),
-		flagSet.StringVarP(&options.OutputFilterRegex, "filter-regex", "fe", "", "filter response with specified regex (-fe admin)"),
+		flagSet.StringSliceVarP(&options.OutputFilterString, "filter-string", "fs", nil, "filter response with specified string (-fs admin)", goflags.NormalizedStringSliceOptions),
+		flagSet.StringSliceVarP(&options.OutputFilterRegex, "filter-regex", "fe", nil, "filter response with specified regex (-fe admin)", goflags.NormalizedStringSliceOptions),
 		flagSet.StringSliceVarP(&options.OutputFilterCdn, "filter-cdn", "fcdn", nil, fmt.Sprintf("filter host with specified cdn provider (%s)", cdncheck.DefaultCDNProviders), goflags.NormalizedStringSliceOptions),
 		flagSet.StringVarP(&options.OutputFilterResponseTime, "filter-response-time", "frt", "", "filter response with specified response time in seconds (-frt '> 1')"),
 		flagSet.StringVarP(&options.OutputFilterCondition, "filter-condition", "fdc", "", "filter response with dsl expression condition"),
@@ -376,7 +405,7 @@ func ParseOptions() *Options {
 	)
 
 	flagSet.CreateGroup("rate-limit", "Rate-Limit",
-		flagSet.IntVarP(&options.Threads, "threads", "t", 50, "number of threads to use"),
+		flagSet.IntVarP(&options.Threads, "threads", "t", defaultThreads, "number of threads to use"),
 		flagSet.IntVarP(&options.RateLimit, "rate-limit", "rl", 150, "maximum requests to send per second"),
 		flagSet.IntVarP(&options.RateLimitMinute, "rate-limit-minute", "rlm", 0, "maximum number of requests to send per minute"),
 	)
@@ -404,6 +433,7 @@ func ParseOptions() *Options {
 		flagSet.BoolVarP(&options.OutputAll, "output-all", "oa", false, "filename to write output results in all formats"),
 		flagSet.BoolVarP(&options.StoreResponse, "store-response", "sr", false, "store http response to output directory"),
 		flagSet.StringVarP(&options.StoreResponseDir, "store-response-dir", "srd", "", "store http response to custom directory"),
+		flagSet.BoolVarP(&options.OmitBody, "omit-body", "ob", false, "omit response body in output"),
 		flagSet.BoolVar(&options.CSVOutput, "csv", false, "store output in csv format"),
 		flagSet.StringVarP(&options.CSVOutputEncoding, "csv-output-encoding", "csvo", "", "define output encoding"),
 		flagSet.BoolVarP(&options.JSONOutput, "json", "j", false, "store output in JSONL(ines) format"),
@@ -413,10 +443,12 @@ func ParseOptions() *Options {
 		flagSet.BoolVar(&options.chainInStdout, "include-chain", false, "include redirect http chain in JSON output (-json only)"),
 		flagSet.BoolVar(&options.StoreChain, "store-chain", false, "include http redirect chain in responses (-sr only)"),
 		flagSet.BoolVarP(&options.StoreVisionReconClusters, "store-vision-recon-cluster", "svrc", false, "include visual recon clusters (-ss and -sr only)"),
+		flagSet.StringVarP(&options.Protocol, "protocol", "pr", "", "protocol to use (unknown, http11)"),
 	)
 
 	flagSet.CreateGroup("configs", "Configurations",
 		flagSet.StringVar(&cfgFile, "config", "", "path to the httpx configuration file (default $HOME/.config/httpx/config.yaml)"),
+		flagSet.DynamicVar(&options.PdcpAuth, "auth", "true", "configure projectdiscovery cloud (pdcp) api key"),
 		flagSet.StringSliceVarP(&options.Resolvers, "resolvers", "r", nil, "list of custom resolver (file or comma separated)", goflags.NormalizedStringSliceOptions),
 		flagSet.Var(&options.Allow, "allow", "allowed list of IP/CIDR's to process (file or comma separated)"),
 		flagSet.Var(&options.Deny, "deny", "denied list of IP/CIDR's to process (file or comma separated)"),
@@ -440,6 +472,7 @@ func ParseOptions() *Options {
 		flagSet.BoolVar(&options.NoDecode, "no-decode", false, "avoid decoding body"),
 		flagSet.BoolVarP(&options.TlsImpersonate, "tls-impersonate", "tlsi", false, "enable experimental client hello (ja3) tls randomization"),
 		flagSet.BoolVar(&options.DisableStdin, "no-stdin", false, "Disable Stdin processing"),
+		flagSet.StringVarP(&options.HttpApiEndpoint, "http-api-endpoint", "hae", "", "experimental http api endpoint"),
 	)
 
 	flagSet.CreateGroup("debug", "Debug",
@@ -460,7 +493,7 @@ func ParseOptions() *Options {
 		flagSet.BoolVarP(&options.NoFallback, "no-fallback", "nf", false, "display both probed protocol (HTTPS and HTTP)"),
 		flagSet.BoolVarP(&options.NoFallbackScheme, "no-fallback-scheme", "nfs", false, "probe with protocol scheme specified in input "),
 		flagSet.IntVarP(&options.HostMaxErrors, "max-host-error", "maxhr", 30, "max error count per host before skipping remaining path/s"),
-		flagSet.BoolVarP(&options.ExcludeCDN, "exclude-cdn", "ec", false, "skip full port scans for CDN/WAF (only checks for 80,443)"),
+		flagSet.StringSliceVarP(&options.Exclude, "exclude", "e", nil, "exclude host matching specified filter ('cdn', 'private-ips', cidr, ip, regex)", goflags.CommaSeparatedStringSliceOptions),
 		flagSet.IntVar(&options.Retries, "retries", 0, "number of retries"),
 		flagSet.IntVar(&options.Timeout, "timeout", 10, "timeout in seconds"),
 		flagSet.DurationVar(&options.Delay, "delay", -1, "duration between each http request (eg: 200ms, 1s)"),
@@ -486,6 +519,20 @@ func ParseOptions() *Options {
 		// merge config file with flags
 		if err := flagSet.MergeConfigFile(cfgFile); err != nil {
 			gologger.Fatal().Msgf("Could not read config: %s\n", err)
+		}
+	}
+
+	// api key hierarchy: cli flag > env var > .pdcp/credential file
+	if options.PdcpAuth == "true" {
+		AuthWithPDCP()
+	} else if len(options.PdcpAuth) == 36 {
+		PDCPApiKey = options.PdcpAuth
+		ph := pdcp.PDCPCredHandler{}
+		if _, err := ph.GetCreds(); err == pdcp.ErrNoCreds {
+			apiServer := env.GetEnvOrDefault("PDCP_API_SERVER", pdcp.DefaultApiServer)
+			if validatedCreds, err := ph.ValidateAPIKey(PDCPApiKey, apiServer, "httpx"); err == nil {
+				_ = ph.SaveCreds(validatedCreds)
+			}
 		}
 	}
 
@@ -582,16 +629,22 @@ func (options *Options) ValidateOptions() error {
 	if options.filterContentLength, err = stringz.StringToSliceInt(options.OutputFilterContentLength); err != nil {
 		return errors.Wrap(err, "Invalid value for filter content length option")
 	}
-	if options.OutputFilterRegex != "" {
-		if options.filterRegex, err = regexp.Compile(options.OutputFilterRegex); err != nil {
+	for _, filterRegexStr := range options.OutputFilterRegex {
+		filterRegex, err := regexp.Compile(filterRegexStr)
+		if err != nil {
 			return errors.Wrap(err, "Invalid value for regex filter option")
 		}
+		options.filterRegexes = append(options.filterRegexes, filterRegex)
 	}
-	if options.OutputMatchRegex != "" {
-		if options.matchRegex, err = regexp.Compile(options.OutputMatchRegex); err != nil {
+
+	for _, matchRegexStr := range options.OutputMatchRegex {
+		matchRegex, err := regexp.Compile(matchRegexStr)
+		if err != nil {
 			return errors.Wrap(err, "Invalid value for match regex option")
 		}
+		options.matchRegexes = append(options.matchRegexes, matchRegex)
 	}
+
 	if options.matchLinesCount, err = stringz.StringToSliceInt(options.OutputMatchLinesCount); err != nil {
 		return errors.Wrap(err, "Invalid value for match lines count option")
 	}
@@ -640,16 +693,51 @@ func (options *Options) ValidateOptions() error {
 
 	if options.Hashes != "" {
 		for _, hashType := range strings.Split(options.Hashes, ",") {
-			if !slice.StringSliceContains([]string{"md5", "sha1", "sha256", "sha512", "mmh3", "simhash"}, strings.ToLower(hashType)) {
+			if !sliceutil.Contains([]string{"md5", "sha1", "sha256", "sha512", "mmh3", "simhash"}, strings.ToLower(hashType)) {
 				gologger.Error().Msgf("Unsupported hash type: %s\n", hashType)
 			}
 		}
 	}
 	if len(options.OutputMatchCdn) > 0 || len(options.OutputFilterCdn) > 0 {
-		options.OutputCDN = true
+		options.OutputCDN = "true"
+	}
+
+	if !stringsutil.EqualFoldAny(options.Protocol, string(httpx.UNKNOWN), string(httpx.HTTP11)) {
+		return fmt.Errorf("invalid protocol: %s", options.Protocol)
+	}
+
+	if options.Threads == 0 {
+		gologger.Info().Msgf("Threads automatically set to %d", defaultThreads)
+		options.Threads = defaultThreads
 	}
 
 	return nil
+}
+
+// redundant with katana
+func (options *Options) ParseHeadlessOptionalArguments() map[string]string {
+	var (
+		lastKey           string
+		optionalArguments = make(map[string]string)
+	)
+	for _, v := range options.HeadlessOptionalArguments {
+		if v == "" {
+			continue
+		}
+		if argParts := strings.SplitN(v, "=", 2); len(argParts) >= 2 {
+			key := strings.TrimSpace(argParts[0])
+			value := strings.TrimSpace(argParts[1])
+			if key != "" && value != "" {
+				optionalArguments[key] = value
+				lastKey = key
+			}
+		} else if !strings.HasPrefix(v, "--") {
+			optionalArguments[lastKey] += "," + v
+		} else {
+			optionalArguments[v] = ""
+		}
+	}
+	return optionalArguments
 }
 
 // configureOutput configures the output on the screen

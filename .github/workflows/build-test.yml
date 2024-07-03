@@ -18,7 +18,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v4
         with:
-          go-version: 1.20.x
+          go-version: 1.21.x
 
       - name: Check out code
         uses: actions/checkout@v3
@@ -30,15 +30,22 @@ jobs:
       - name: Test
         run: go test ./...
         working-directory: .
+        env:
+          PDCP_API_KEY: "${{ secrets.PDCP_API_KEY }}"
+          
 
-      - name: Running example
+      - name: Testing Example - Simple
         run: go run .
-        working-directory: examples/
+        working-directory: examples/simple/
+      - name: Testing Example - Speed Control
+        run: go run .
+        working-directory: examples/speed_control/
 
       - name: Integration Tests Linux, macOS
         if: runner.os == 'Linux' || runner.os == 'macOS'
         env:
           GH_ACTION: true
+          PDCP_API_KEY: "${{ secrets.PDCP_API_KEY }}"
         run: bash run.sh
         working-directory: integration_tests/
       
@@ -47,6 +54,7 @@ jobs:
         env:
           GH_ACTION: true
           MSYS_NO_PATHCONV: true
+          PDCP_API_KEY: "${{ secrets.PDCP_API_KEY }}"
         run: bash run.sh
         working-directory: integration_tests/
         

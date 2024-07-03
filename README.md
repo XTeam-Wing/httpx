@@ -18,7 +18,7 @@
   <a href="#features">Features</a> •
   <a href="#installation-instructions">Installation</a> •
   <a href="#usage">Usage</a> •
-  <a href="#running-httpx">Running httpx</a> •
+  <a href="https://docs.projectdiscovery.io/tools/httpx/">Documentation</a> •
   <a href="#notes">Notes</a> •
   <a href="https://discord.gg/projectdiscovery">Join Discord</a>
 </p>
@@ -62,11 +62,13 @@
 
 # Installation Instructions
 
-`httpx` requires **go1.20** to install successfully. Run the following command to get the repo:
+`httpx` requires **go1.21** to install successfully. Run the following command to get the repo:
 
 ```sh
 go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
 ```
+
+To learn more about installing httpx, see https://docs.projectdiscovery.io/tools/httpx/install.
 
 | :exclamation:  **Disclaimer**  |
 |---------------------------------|
@@ -93,33 +95,36 @@ INPUT:
    -u, -target string[]  input target host(s) to probe
 
 PROBES:
-   -sc, -status-code     display response status-code
-   -cl, -content-length  display response content-length
-   -ct, -content-type    display response content-type
-   -location             display response redirect location
-   -favicon              display mmh3 hash for '/favicon.ico' file
-   -hash string          display response body hash (supported: md5,mmh3,simhash,sha1,sha256,sha512)
-   -jarm                 display jarm fingerprint hash
-   -rt, -response-time   display response time
-   -lc, -line-count      display response body line count
-   -wc, -word-count      display response body word count
-   -title                display page title
-   -bp, -body-preview    display first N characters of response body (default 100)
-   -server, -web-server  display server name
-   -td, -tech-detect     display technology in use based on wappalyzer dataset
-   -method               display http request method
-   -websocket            display server using websocket
-   -ip                   display host ip
-   -cname                display host cname
-   -asn                  display host asn information
-   -cdn                  display cdn/waf in use
-   -probe                display probe status
+   -sc, -status-code      display response status-code
+   -cl, -content-length   display response content-length
+   -ct, -content-type     display response content-type
+   -location              display response redirect location
+   -favicon               display mmh3 hash for '/favicon.ico' file
+   -hash string           display response body hash (supported: md5,mmh3,simhash,sha1,sha256,sha512)
+   -jarm                  display jarm fingerprint hash
+   -rt, -response-time    display response time
+   -lc, -line-count       display response body line count
+   -wc, -word-count       display response body word count
+   -title                 display page title
+   -bp, -body-preview     display first N characters of response body (default 100)
+   -server, -web-server   display server name
+   -td, -tech-detect      display technology in use based on wappalyzer dataset
+   -method                display http request method
+   -websocket             display server using websocket
+   -ip                    display host ip
+   -cname                 display host cname
+   -extract-fqdn, -efqdn  get domain and subdomains from response body and header in jsonl/csv output
+   -asn                   display host asn information
+   -cdn                   display cdn/waf in use (default true)
+   -probe                 display probe status
 
 HEADLESS:
    -ss, -screenshot                 enable saving screenshot of the page using headless browser
    -system-chrome                   enable using local installed chrome for screenshot
+   -ho, -headless-options string[]  start headless chrome with additional options
    -esb, -exclude-screenshot-bytes  enable excluding screenshot bytes from json output
    -ehb, -exclude-headless-body     enable excluding headless header from json output
+   -st, -screenshot-timeout int     set timeout for screenshot in seconds (default 10)
 
 MATCHERS:
    -mc, -match-code string            match response with specified status code (-mc 200,302)
@@ -127,15 +132,15 @@ MATCHERS:
    -mlc, -match-line-count string     match response body with specified line count (-mlc 423,532)
    -mwc, -match-word-count string     match response body with specified word count (-mwc 43,55)
    -mfc, -match-favicon string[]      match response with specified favicon hash (-mfc 1494302000)
-   -ms, -match-string string          match response with specified string (-ms admin)
-   -mr, -match-regex string           match response with specified regex (-mr admin)
-   -mcdn, -match-cdn string[]         match host with specified cdn provider (cloudfront, fastly, google, leaseweb, stackpath)
+   -ms, -match-string string[]        match response with specified string (-ms admin)
+   -mr, -match-regex string[]         match response with specified regex (-mr admin)
+   -mcdn, -match-cdn string[]         match host with specified cdn provider (leaseweb, stackpath, cloudfront, fastly, google)
    -mrt, -match-response-time string  match response with specified response time in seconds (-mrt '< 1')
    -mdc, -match-condition string      match response with dsl expression condition
 
 EXTRACTOR:
    -er, -extract-regex string[]   display response content with matched regex
-   -ep, -extract-preset string[]  display response content matched by a pre-defined regex (ipv4,mail,url)
+   -ep, -extract-preset string[]  display response content matched by a pre-defined regex (url,ipv4,mail)
 
 FILTERS:
    -fc, -filter-code string            filter response with specified status code (-fc 403,401)
@@ -144,9 +149,9 @@ FILTERS:
    -flc, -filter-line-count string     filter response body with specified line count (-flc 423,532)
    -fwc, -filter-word-count string     filter response body with specified word count (-fwc 423,532)
    -ffc, -filter-favicon string[]      filter response with specified favicon hash (-ffc 1494302000)
-   -fs, -filter-string string          filter response with specified string (-fs admin)
-   -fe, -filter-regex string           filter response with specified regex (-fe admin)
-   -fcdn, -filter-cdn string[]         filter host with specified cdn provider (cloudfront, fastly, google, leaseweb, stackpath)
+   -fs, -filter-string string[]        filter response with specified string (-fs admin)
+   -fe, -filter-regex string[]         filter response with specified regex (-fe admin)
+   -fcdn, -filter-cdn string[]         filter host with specified cdn provider (leaseweb, stackpath, cloudfront, fastly, google)
    -frt, -filter-response-time string  filter response with specified response time in seconds (-frt '> 1')
    -fdc, -filter-condition string      filter response with dsl expression condition
    -strip                              strips all tags in response. supported formats: html,xml (default html)
@@ -177,6 +182,7 @@ OUTPUT:
    -oa, -output-all                    filename to write output results in all formats
    -sr, -store-response                store http response to output directory
    -srd, -store-response-dir string    store http response to custom directory
+   -ob, -omit-body                     omit response body in output
    -csv                                store output in csv format
    -csvo, -csv-output-encoding string  define output encoding
    -j, -json                           store output in JSONL(ines) format
@@ -186,32 +192,35 @@ OUTPUT:
    -include-chain                      include redirect http chain in JSON output (-json only)
    -store-chain                        include http redirect chain in responses (-sr only)
    -svrc, -store-vision-recon-cluster  include visual recon clusters (-ss and -sr only)
+   -pr, -protocol string               protocol to use (unknown, http11)
 
 CONFIGURATIONS:
-   -config string                path to the httpx configuration file (default $HOME/.config/httpx/config.yaml)
-   -r, -resolvers string[]       list of custom resolver (file or comma separated)
-   -allow string[]               allowed list of IP/CIDR's to process (file or comma separated)
-   -deny string[]                denied list of IP/CIDR's to process (file or comma separated)
-   -sni, -sni-name string        custom TLS SNI name
-   -random-agent                 enable Random User-Agent to use (default true)
-   -H, -header string[]          custom http headers to send with request
-   -http-proxy, -proxy string    http proxy to use (eg http://127.0.0.1:8080)
-   -unsafe                       send raw requests skipping golang normalization
-   -resume                       resume scan using resume.cfg
-   -fr, -follow-redirects        follow http redirects
-   -maxr, -max-redirects int     max number of redirects to follow per host (default 10)
-   -fhr, -follow-host-redirects  follow redirects on the same host
-   -rhsts, -respect-hsts         respect HSTS response headers for redirect requests
-   -vhost-input                  get a list of vhosts as input
-   -x string                     request methods to probe, use 'all' to probe all HTTP methods
-   -body string                  post body to include in http request
-   -s, -stream                   stream mode - start elaborating input targets without sorting
-   -sd, -skip-dedupe             disable dedupe input items (only used with stream mode)
-   -ldp, -leave-default-ports    leave default http/https ports in host header (eg. http://host:80 - https://host:443
-   -ztls                         use ztls library with autofallback to standard one for tls13
-   -no-decode                    avoid decoding body
-   -tlsi, -tls-impersonate       enable experimental client hello (ja3) tls randomization
-   -no-stdin                     Disable Stdin processing
+   -config string                   path to the httpx configuration file (default $HOME/.config/httpx/config.yaml)
+   -auth                            configure projectdiscovery cloud (pdcp) api key (default true)
+   -r, -resolvers string[]          list of custom resolver (file or comma separated)
+   -allow string[]                  allowed list of IP/CIDR's to process (file or comma separated)
+   -deny string[]                   denied list of IP/CIDR's to process (file or comma separated)
+   -sni, -sni-name string           custom TLS SNI name
+   -random-agent                    enable Random User-Agent to use (default true)
+   -H, -header string[]             custom http headers to send with request
+   -http-proxy, -proxy string       http proxy to use (eg http://127.0.0.1:8080)
+   -unsafe                          send raw requests skipping golang normalization
+   -resume                          resume scan using resume.cfg
+   -fr, -follow-redirects           follow http redirects
+   -maxr, -max-redirects int        max number of redirects to follow per host (default 10)
+   -fhr, -follow-host-redirects     follow redirects on the same host
+   -rhsts, -respect-hsts            respect HSTS response headers for redirect requests
+   -vhost-input                     get a list of vhosts as input
+   -x string                        request methods to probe, use 'all' to probe all HTTP methods
+   -body string                     post body to include in http request
+   -s, -stream                      stream mode - start elaborating input targets without sorting
+   -sd, -skip-dedupe                disable dedupe input items (only used with stream mode)
+   -ldp, -leave-default-ports       leave default http/https ports in host header (eg. http://host:80 - https://host:443
+   -ztls                            use ztls library with autofallback to standard one for tls13
+   -no-decode                       avoid decoding body
+   -tlsi, -tls-impersonate          enable experimental client hello (ja3) tls randomization
+   -no-stdin                        Disable Stdin processing
+   -hae, -http-api-endpoint string  experimental http api endpoint
 
 DEBUG:
    -health-check, -hc        run diagnostic check up
@@ -228,9 +237,9 @@ DEBUG:
 
 OPTIMIZATIONS:
    -nf, -no-fallback                  display both probed protocol (HTTPS and HTTP)
-   -nfs, -no-fallback-scheme          probe with protocol scheme specified in input 
+   -nfs, -no-fallback-scheme          probe with protocol scheme specified in input
    -maxhr, -max-host-error int        max error count per host before skipping remaining path/s (default 30)
-   -ec, -exclude-cdn                  skip full port scans for CDN/WAF (only checks for 80,443)
+   -e, -exclude string[]              exclude host matching specified filter ('cdn', 'private-ips', cidr, ip, regex)
    -retries int                       number of retries
    -timeout int                       timeout in seconds (default 10)
    -delay value                       duration between each http request (eg: 200ms, 1s) (default -1ns)
@@ -238,348 +247,9 @@ OPTIMIZATIONS:
    -rstr, -response-size-to-read int  max response size to read in bytes (default 2147483647)
 ```
 
-# Running httpX
+# Running httpx
 
-### URL Probe
-
-This will run the tool against all the hosts and subdomains in `hosts.txt` and returns URLs running HTTP webserver. 
-
-```console
-cat hosts.txt | httpx 
-
-    __    __  __       _  __
-   / /_  / /_/ /_____ | |/ /
-  / __ \/ __/ __/ __ \|   / 
- / / / / /_/ /_/ /_/ /   |  
-/_/ /_/\__/\__/ .___/_/|_|   v1.1.1  
-             /_/            
-
-    projectdiscovery.io
-
-[WRN] Use with caution. You are responsible for your actions
-[WRN] Developers assume no liability and are not responsible for any misuse or damage.
-
-https://mta-sts.managed.hackerone.com
-https://mta-sts.hackerone.com
-https://mta-sts.forwarding.hackerone.com
-https://docs.hackerone.com
-https://www.hackerone.com
-https://resources.hackerone.com
-https://api.hackerone.com
-https://support.hackerone.com
-```
-
-### File Input
-
-This will run the tool with the `-probe` flag against all the hosts in **hosts.txt** and return URLs with probed status.
-
-```console
-httpx -list hosts.txt -silent -probe
-
-http://ns.hackerone.com [FAILED]
-https://docs.hackerone.com [SUCCESS]
-https://mta-sts.hackerone.com [SUCCESS]
-https://mta-sts.managed.hackerone.com [SUCCESS]
-http://email.hackerone.com [FAILED]
-https://mta-sts.forwarding.hackerone.com [SUCCESS]
-http://links.hackerone.com [FAILED]
-https://api.hackerone.com [SUCCESS]
-https://www.hackerone.com [SUCCESS]
-http://events.hackerone.com [FAILED]
-https://support.hackerone.com [SUCCESS]
-https://gslink.hackerone.com [SUCCESS]
-http://o1.email.hackerone.com [FAILED]
-http://info.hackerone.com [FAILED]
-https://resources.hackerone.com [SUCCESS]
-http://o2.email.hackerone.com [FAILED]
-http://o3.email.hackerone.com [FAILED]
-http://go.hackerone.com [FAILED]
-http://a.ns.hackerone.com [FAILED]
-http://b.ns.hackerone.com [FAILED]
-```
-
-### CIDR Input   
-
-```console
-echo 173.0.84.0/24 | httpx -silent
-
-https://173.0.84.29
-https://173.0.84.43
-https://173.0.84.31
-https://173.0.84.44
-https://173.0.84.12
-https://173.0.84.4
-https://173.0.84.36
-https://173.0.84.45
-https://173.0.84.14
-https://173.0.84.25
-https://173.0.84.46
-https://173.0.84.24
-https://173.0.84.32
-https://173.0.84.9
-https://173.0.84.13
-https://173.0.84.6
-https://173.0.84.16
-https://173.0.84.34
-```
-### AS Number Input
-```console
-echo AS14421 | httpx -silent
-
-https://216.101.17.248
-https://216.101.17.249
-https://216.101.17.250
-https://216.101.17.251
-https://216.101.17.252
-```
-
-### Tool Chain
-
-
-```console
-subfinder -d hackerone.com -silent| httpx -title -tech-detect -status-code
-
-    __    __  __       _  __
-   / /_  / /_/ /_____ | |/ /
-  / __ \/ __/ __/ __ \|   /
- / / / / /_/ /_/ /_/ /   |
-/_/ /_/\__/\__/ .___/_/|_|
-             /_/              v1.1.1
-
-    projectdiscovery.io
-
-Use with caution. You are responsible for your actions
-Developers assume no liability and are not responsible for any misuse or damage.
-https://mta-sts.managed.hackerone.com [404] [Page not found · GitHub Pages] [Varnish,GitHub Pages,Ruby on Rails]
-https://mta-sts.hackerone.com [404] [Page not found · GitHub Pages] [Varnish,GitHub Pages,Ruby on Rails]
-https://mta-sts.forwarding.hackerone.com [404] [Page not found · GitHub Pages] [GitHub Pages,Ruby on Rails,Varnish]
-https://docs.hackerone.com [200] [HackerOne Platform Documentation] [Ruby on Rails,jsDelivr,Gatsby,React,webpack,Varnish,GitHub Pages]
-https://support.hackerone.com [301,302,301,200] [HackerOne] [Cloudflare,Ruby on Rails,Ruby]
-https://resources.hackerone.com [301,301,404] [Sorry, no Folders found.]
-```
-
-### Error Page Classifier and Filtering
-
-The Error Page Classifier and Filtering feature aims to add intelligence to the tool by enabling it to classify and filter out common error pages returned by web applications. It is an enhancement to the existing httpx capabilities and is geared towards reducing the noise in the results and helping users focus on what matters most.
-
-```console
-httpx -l urls.txt -path /v1/api -fep
-
-    __    __  __       _  __
-   / /_  / /_/ /_____ | |/ /
-  / __ \/ __/ __/ __ \|   /
- / / / / /_/ /_/ /_/ /   |
-/_/ /_/\__/\__/ .___/_/|_|
-             /_/
-
-                projectdiscovery.io
-
-[INF] Current httpx version v1.3.3 (latest)
-https://scanme.sh/v1/api
-```
-
-Filtered error pages are stored to predefined file `filtered_error_page.json` in jsonline format when `-filter-error-page` option is used.
-
-### Favicon Hash
-
-
-```console
-subfinder -d hackerone.com -silent | httpx -favicon
-
-    __    __  __       _  __
-   / /_  / /_/ /_____ | |/ /
-  / __ \/ __/ __/ __ \|   /
- / / / / /_/ /_/ /_/ /   |
-/_/ /_/\__/\__/ .___/_/|_|
-             /_/              v1.1.5
-
-      projectdiscovery.io
-
-Use with caution. You are responsible for your actions.
-Developers assume no liability and are not responsible for any misuse or damage.
-https://docs.hackerone.com/favicon.ico [595148549]
-https://hackerone.com/favicon.ico [595148549]
-https://mta-sts.managed.hackerone.com/favicon.ico [-1700323260]
-https://mta-sts.forwarding.hackerone.com/favicon.ico [-1700323260]
-https://support.hackerone.com/favicon.ico [-1279294674]
-https://gslink.hackerone.com/favicon.ico [1506877856]
-https://resources.hackerone.com/favicon.ico [-1840324437]
-https://api.hackerone.com/favicon.ico [566218143]
-https://mta-sts.hackerone.com/favicon.ico [-1700323260]
-https://www.hackerone.com/favicon.ico [778073381]
-```
-
-### [JARM Fingerprint](https://github.com/salesforce/jarm)
-
-
-```console
-subfinder -d hackerone.com -silent | httpx -jarm
-    __    __  __       _  __
-   / /_  / /_/ /_____ | |/ /
-  / __ \/ __/ __/ __ \|   /
- / / / / /_/ /_/ /_/ /   |
-/_/ /_/\__/\__/ .___/_/|_|
-             /_/              v1.2.1
-
-      projectdiscovery.io
-
-Use with caution. You are responsible for your actions.
-Developers assume no liability and are not responsible for any misuse or damage.
-https://www.hackerone.com [29d3dd00029d29d00042d43d00041d5de67cc9954cc85372523050f20b5007]
-https://mta-sts.hackerone.com [29d29d00029d29d00042d43d00041d2aa5ce6a70de7ba95aef77a77b00a0af]
-https://mta-sts.managed.hackerone.com [29d29d00029d29d00042d43d00041d2aa5ce6a70de7ba95aef77a77b00a0af]
-https://docs.hackerone.com [29d29d00029d29d00042d43d00041d2aa5ce6a70de7ba95aef77a77b00a0af]
-https://support.hackerone.com [29d3dd00029d29d00029d3dd29d29d5a74e95248e58a6162e37847a24849f7]
-https://api.hackerone.com [29d3dd00029d29d00042d43d00041d5de67cc9954cc85372523050f20b5007]
-https://mta-sts.forwarding.hackerone.com [29d29d00029d29d00042d43d00041d2aa5ce6a70de7ba95aef77a77b00a0af]
-https://resources.hackerone.com [2ad2ad0002ad2ad0002ad2ad2ad2ad043bfbd87c13813505a1b60adf4f6ff5]
-```
-
-### ASN Fingerprint
-
-
-```console
-subfinder -d hackerone.com -silent | httpx -asn
-    __    __  __       _  __
-   / /_  / /_/ /_____ | |/ /
-  / __ \/ __/ __/ __ \|   /
- / / / / /_/ /_/ /_/ /   |
-/_/ /_/\__/\__/ .___/_/|_|
-             /_/              v1.2.1
-
-      projectdiscovery.io
-
-Use with caution. You are responsible for your actions.
-Developers assume no liability and are not responsible for any misuse or damage.
-https://mta-sts.managed.hackerone.com [AS54113, FASTLY, US]
-https://gslink.hackerone.com [AS16509, AMAZON-02, US]
-https://www.hackerone.com [AS13335, CLOUDFLARENET, US]
-https://mta-sts.forwarding.hackerone.com [AS54113, FASTLY, US]
-https://resources.hackerone.com [AS16509, AMAZON-02, US]
-https://support.hackerone.com [AS13335, CLOUDFLARENET, US]
-https://mta-sts.hackerone.com [AS54113, FASTLY, US]
-https://docs.hackerone.com [AS54113, FASTLY, US]
-https://api.hackerone.com [AS13335, CLOUDFLARENET, US]
-```
-
-
-### File/Path Bruteforce
-
-
-```console
-httpx -l urls.txt -path /v1/api -sc
-
-    __    __  __       _  __
-   / /_  / /_/ /_____ | |/ /
-  / __ \/ __/ __/ __ \|   /
- / / / / /_/ /_/ /_/ /   |
-/_/ /_/\__/\__/ .___/_/|_|
-             /_/              v1.1.5
-
-      projectdiscovery.io
-
-Use with caution. You are responsible for your actions.
-Developers assume no liability and are not responsible for any misuse or damage.
-https://mta-sts.managed.hackerone.com/v1/api [404]
-https://mta-sts.hackerone.com/v1/api [404]
-https://mta-sts.forwarding.hackerone.com/v1/api [404]
-https://docs.hackerone.com/v1/api [404]
-https://api.hackerone.com/v1/api [401]
-https://hackerone.com/v1/api [302]
-https://support.hackerone.com/v1/api [404]
-https://resources.hackerone.com/v1/api [301]
-https://gslink.hackerone.com/v1/api [404]
-http://www.hackerone.com/v1/api [301]
-```
-
-### Docker Run
-
-```console
-cat sub_domains.txt | docker run -i projectdiscovery/httpx
-
-    __    __  __       _  __
-   / /_  / /_/ /_____ | |/ /
-  / __ \/ __/ __/ __ \|   /
- / / / / /_/ /_/ /_/ /   |
-/_/ /_/\__/\__/ .___/_/|_|
-             /_/              v1.1.2
-
-      projectdiscovery.io
-
-Use with caution. You are responsible for your actions
-Developers assume no liability and are not responsible for any misuse or damage.
-https://mta-sts.forwarding.hackerone.com
-https://mta-sts.hackerone.com
-https://mta-sts.managed.hackerone.com
-https://www.hackerone.com
-https://api.hackerone.com
-https://gslink.hackerone.com
-https://resources.hackerone.com
-https://docs.hackerone.com
-https://support.hackerone.com
-```
-
-### Screenshot
-
-Latest addition to the project, the addition of the `-screenshot` option in httpx, a powerful new feature that allows users to take screenshots of target URLs, pages, or endpoints along with the rendered DOM. This functionality enables the **visual content discovery process**, providing a comprehensive view of the target's visual appearance.
-
-Rendered DOM body is also included in json line output when `-screenshot` option is used with `-json` option.
-
-#### 🚩 Usage
-
-To use the screenshot feature, simply add the `-screenshot` flag to your httpx command:
-
-```console
-httpx -screenshot -u https://example.com
-```
-
-🎯 Domain, Subdomain, and Path Support
-The `-screenshot` option is versatile and can be used to capture screenshots for domains, subdomains, and even specific paths when used in conjunction with the `-path` option:
-
-```console
-httpx -screenshot -u example.com
-httpx -screenshot -u https://example.com/login
-httpx -screenshot -path fuzz_path.txt -u https://example.com
-```
-
-Using with other tools:
-
-```console
-subfinder -d example.com | httpx -screenshot
-```
-
-#### 🌐 System Chrome
-
-By default, httpx will use the go-rod library to install and manage Chrome for taking screenshots. However, if you prefer to use your locally installed system Chrome, add the `-system-chrome` flag:
-
-```console
-httpx -screenshot -system-chrome -u https://example.com
-```
-
-#### 📁 Output Directory
-
-Screenshots are stored in the output/screenshot directory by default. To specify a custom output directory, use the `-srd` option:
-
-```console
-httpx -screenshot -srd /path/to/custom/directory -u https://example.com
-```
-
-### Body Preview
-Body preview shows first N characters of response. And strip html tags in response.
-
-```console
-httpx -u https://example.com -silent -body-preview
-https://example.com [Example Domain This domain is for use in illustrative examples in documents. You may use this domai]
-```
-
-```console
-httpx -u https://example.com -silent -body-preview=200 -strip=html
-https://example.com [Example Domain This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission. More information...]
-```
-
-#### ⏳ Performance Considerations
-
-Please note that since screenshots are captured using a headless browser, httpx runs will be slower when using the `-screenshot` option.
+For details about running httpx, see https://docs.projectdiscovery.io/tools/httpx/running.
 
 ### Using `httpx` as a library
 `httpx` can be used as a library by creating an instance of the `Option` struct and populating it with the same options that would be specified via CLI. Once validated, the struct should be passed to a runner instance (to be closed at the end of the program) and the `RunEnumeration` method should be called. A minimal example of how to do it is in the [examples](examples/) folder

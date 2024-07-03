@@ -2,6 +2,7 @@ package runner
 
 import (
 	"github.com/projectdiscovery/gologger"
+	"github.com/projectdiscovery/utils/auth/pdcp"
 	updateutils "github.com/projectdiscovery/utils/update"
 )
 
@@ -15,7 +16,7 @@ const banner = `
 `
 
 // Version is the current version of httpx
-const version = `v1.3.6`
+const version = `v1.6.5`
 
 // showBanner is used to show the banner to the user
 func showBanner() {
@@ -29,4 +30,10 @@ func GetUpdateCallback() func() {
 		showBanner()
 		updateutils.GetUpdateToolCallback("httpx", version)()
 	}
+}
+
+// AuthWithPDCP is used to authenticate with PDCP
+func AuthWithPDCP() {
+	showBanner()
+	pdcp.CheckNValidateCredentials("httpx")
 }

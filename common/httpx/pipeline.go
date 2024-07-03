@@ -6,6 +6,8 @@ import (
 	"net"
 	"strings"
 	"time"
+
+	stringsutil "github.com/projectdiscovery/utils/strings"
 )
 
 // SupportPipeline checks if the target host supports HTTP1.1 pipelining by sending x probes
@@ -18,7 +20,7 @@ func (h *HTTPX) SupportPipeline(protocol, method, host string, port int) bool {
 			port = 443
 		}
 	}
-	if port > 0 {
+	if _, _, err := net.SplitHostPort(host); err != nil && port > 0 {
 		addr = fmt.Sprintf("%s:%d", host, port)
 	}
 	// dummy method while awaiting for full rawhttp implementation
@@ -48,7 +50,7 @@ func (h *HTTPX) SupportPipeline(protocol, method, host string, port int) bool {
 
 		// The check is very naive, but it works most of the times
 		for _, s := range strings.Split(string(reply), "\n\n") {
-			if strings.Contains(s, "HTTP/1.1") || strings.Contains(s, "HTTP/1.0") {
+			if stringsutil.ContainsAnyI(s, "HTTP/1.1", "HTTP/1.0") {
 				gotReplies++
 			}
 		}

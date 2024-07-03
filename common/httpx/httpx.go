@@ -7,18 +7,20 @@ import (
 	"net"
 	"net/http"
 	"net/url"
+	"os"
 	"strconv"
 	"strings"
 	"time"
 
-	"github.com/corpix/uarand"
 	"github.com/microcosm-cc/bluemonday"
 	"github.com/projectdiscovery/cdncheck"
 	"github.com/projectdiscovery/fastdialer/fastdialer"
 	"github.com/projectdiscovery/fastdialer/fastdialer/ja3/impersonate"
 	"github.com/projectdiscovery/httpx/common/httputilz"
+	"github.com/projectdiscovery/networkpolicy"
 	"github.com/projectdiscovery/rawhttp"
 	retryablehttp "github.com/projectdiscovery/retryablehttp-go"
+	"github.com/projectdiscovery/useragent"
 	"github.com/projectdiscovery/utils/generic"
 	pdhttputil "github.com/projectdiscovery/utils/http"
 	stringsutil "github.com/projectdiscovery/utils/strings"
@@ -37,15 +39,24 @@ type HTTPX struct {
 	CustomHeaders map[string]string
 	cdn           *cdncheck.Client
 	Dialer        *fastdialer.Dialer
+	NetworkPolicy *networkpolicy.NetworkPolicy
 }
 
 // New httpx instance
 func New(options *Options) (*HTTPX, error) {
 	httpx := &HTTPX{}
 	fastdialerOpts := fastdialer.DefaultOptions
-	fastdialerOpts.EnableFallback = true
-	fastdialerOpts.Deny = options.Deny
-	fastdialerOpts.Allow = options.Allow
+
+	// if the user specified any custom resolver disables system resolvers and syscall lookup fallback
+	if len(options.Resolvers) > 0 {
+		fastdialerOpts.ResolversFile = false
+		fastdialerOpts.EnableFallback = false
+	}
+
+	if options.NetworkPolicy != nil {
+		httpx.NetworkPolicy = options.NetworkPolicy
+		fastdialerOpts.NetworkPolicy = options.NetworkPolicy
+	}
 	fastdialerOpts.WithDialerHistory = true
 	fastdialerOpts.WithZTLS = options.ZTLS
 	if len(options.Resolvers) > 0 {
@@ -105,8 +116,8 @@ func New(options *Options) (*HTTPX, error) {
 			httpx.setCustomCookies(redirectedRequest)
 
 			// Check if we get a redirect to a different host
-			var newHost = redirectedRequest.URL.Host
-			var oldHost = previousRequests[0].Host
+			var newHost = redirectedRequest.URL.Hostname()
+			var oldHost = previousRequests[0].URL.Hostname()
 			if oldHost == "" {
 				oldHost = previousRequests[0].URL.Host
 			}
@@ -140,6 +151,12 @@ func New(options *Options) (*HTTPX, error) {
 			MinVersion:         tls.VersionTLS10,
 		},
 		DisableKeepAlives: true,
+	}
+
+	if httpx.Options.Protocol == "http11" {
+		// disable http2
+		os.Setenv("GODEBUG", "http2client=0")
+		transport.TLSNextProto = map[string]func(string, *tls.Conn) http.RoundTripper{}
 	}
 
 	if httpx.Options.SniName != "" {
@@ -177,8 +194,13 @@ func New(options *Options) (*HTTPX, error) {
 
 	httpx.htmlPolicy = bluemonday.NewPolicy()
 	httpx.CustomHeaders = httpx.Options.CustomHeaders
-	if options.CdnCheck || options.ExcludeCdn {
-		httpx.cdn = cdncheck.New()
+
+	if options.CDNCheckClient != nil {
+		httpx.cdn = options.CDNCheckClient
+	} else {
+		if options.CdnCheck != "false" || options.ExcludeCdn {
+			httpx.cdn = cdncheck.New()
+		}
 	}
 
 	return httpx, nil
@@ -203,6 +225,7 @@ get_response:
 	}
 
 	var resp Response
+	resp.Input = req.Host
 
 	resp.Headers = httpresp.Header.Clone()
 
@@ -278,10 +301,12 @@ get_response:
 
 	// fill metrics
 	resp.StatusCode = httpresp.StatusCode
-	// number of words
-	resp.Words = len(strings.Split(respbodystr, " "))
-	// number of lines
-	resp.Lines = len(strings.Split(respbodystr, "\n"))
+	if respbodystr != "" {
+		// number of words
+		resp.Words = len(strings.Split(respbodystr, " "))
+		// number of lines
+		resp.Lines = len(strings.Split(strings.TrimSpace(respbodystr), "\n"))
+	}
 
 	if !h.Options.Unsafe && h.Options.TLSGrab {
 		if h.Options.ZTLS {
@@ -292,7 +317,10 @@ get_response:
 		}
 	}
 
-	resp.CSPData = h.CSPGrab(&resp)
+	if h.Options.ExtractFqdn {
+		resp.CSPData = h.CSPGrab(&resp)
+		resp.BodyDomains = h.BodyDomainGrab(&resp)
+	}
 
 	// build the redirect flow by reverse cycling the response<-request chain
 	if !h.Options.Unsafe {
@@ -398,7 +426,8 @@ func (h *HTTPX) SetCustomHeaders(r *retryablehttp.Request, headers map[string]st
 		}
 	}
 	if h.Options.RandomAgent {
-		r.Header.Set("User-Agent", uarand.GetRandom()) //nolint
+		userAgent := useragent.PickRandom()
+		r.Header.Set("User-Agent", userAgent.Raw) //nolint
 	}
 }
 
