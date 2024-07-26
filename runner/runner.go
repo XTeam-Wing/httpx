@@ -118,7 +118,7 @@ func New(options *Options) (*Runner, error) {
 	if options.Wappalyzer != nil {
 		runner.wappalyzer = options.Wappalyzer
 	} else if options.TechDetect || options.JSONOutput || options.CSVOutput {
-		runner.wappalyzer, err = wappalyzer.New()
+		//runner.wappalyzer, err = wappalyzer.New()
 		if err != nil {
 			gologger.Error().Msgf("could not create wappalyzer client: %s\n", err)
 		}
@@ -1920,17 +1920,17 @@ retry:
 	}
 
 	var technologies []string
-	var technologyDetails = make(map[string]wappalyzer.AppInfo)
+	//var technologyDetails = make(map[string]wappalyzer.AppInfo)
 	if scanopts.TechDetect {
 		techResp := http.Response{
 			Header: resp.Headers,
 			Body:   ioutil.NopCloser(bytes.NewReader(resp.Data)),
 			TLS:    nil,
 		}
-		matches := r.wappalyzer.Fingerprint(resp.Headers, resp.Data)
-		for match := range matches {
-			technologies = append(technologies, match)
-		}
+		//matches := r.wappalyzer.Fingerprint(resp.Headers, resp.Data)
+		//for match := range matches {
+		//	technologies = append(technologies, match)
+		//}
 		// Wing's Rule
 		if r.options.TechRule != "" {
 			techList, err := r.tech.Detect(&techResp)
@@ -2188,12 +2188,12 @@ retry:
 			// more technologies in the response. This is a quick trick to get
 			// more detected technologies.
 			if r.options.TechDetect || r.options.JSONOutput || r.options.CSVOutput {
-				moreMatches := r.wappalyzer.FingerprintWithInfo(resp.Headers, []byte(headlessBody))
-				for match, data := range moreMatches {
-					technologies = append(technologies, match)
-					technologyDetails[match] = data
-				}
-				technologies = sliceutil.Dedupe(technologies)
+				//moreMatches := r.wappalyzer.FingerprintWithInfo(resp.Headers, []byte(headlessBody))
+				//for match, data := range moreMatches {
+				//	technologies = append(technologies, match)
+				//	technologyDetails[match] = data
+				//}
+				//technologies = sliceutil.Dedupe(technologies)
 			}
 		}
 		if scanopts.NoScreenshotBytes {
@@ -2272,12 +2272,12 @@ retry:
 			"PageType": r.errorPageClassifier.Classify(respData),
 			"pHash":    pHash,
 		},
-		ExtractJSLink:     jsLink,
-		TechnologyDetails: technologyDetails,
-		Resolvers:         resolvers,
-		RequestRaw:        requestDump,
-		Response:          resp,
-		FaviconData:       faviconData,
+		ExtractJSLink: jsLink,
+		//TechnologyDetails: technologyDetails,
+		Resolvers:   resolvers,
+		RequestRaw:  requestDump,
+		Response:    resp,
+		FaviconData: faviconData,
 	}
 	if resp.BodyDomains != nil {
 		result.Fqdns = resp.BodyDomains.Fqdns
