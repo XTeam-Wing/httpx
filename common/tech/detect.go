@@ -91,7 +91,7 @@ func (t *TechDetecter) Detect(response *http.Response) (string, error) {
 		}
 
 		if out.(types.Bool) {
-			product = append(product, r.Infos)
+			product = append(product, strings.ToLower(r.Infos))
 		}
 	}
 	return SliceToSting(product), nil
