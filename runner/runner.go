@@ -119,9 +119,9 @@ func New(options *Options) (*Runner, error) {
 		runner.wappalyzer = options.Wappalyzer
 	} else if options.TechDetect || options.JSONOutput || options.CSVOutput {
 		//runner.wappalyzer, err = wappalyzer.New()
-		if err != nil {
-			gologger.Error().Msgf("could not create wappalyzer client: %s\n", err)
-		}
+		//if err != nil {
+		//	gologger.Error().Msgf("could not create wappalyzer client: %s\n", err)
+		//}
 		if options.TechRule != "" {
 			err = runner.tech.Init(options.TechRule)
 			if err != nil {
@@ -296,6 +296,7 @@ func New(options *Options) (*Runner, error) {
 	}
 	scanopts.Screenshot = options.Screenshot
 	scanopts.NoScreenshotBytes = options.NoScreenshotBytes
+	scanopts.NoSaveScreenshotBytes = options.NoSaveScreenshot
 	scanopts.NoHeadlessBody = options.NoHeadlessBody
 	scanopts.UseInstalledChrome = options.UseInstalledChrome
 	scanopts.ScreenshotTimeout = options.ScreenshotTimeout
@@ -992,7 +993,7 @@ func (r *Runner) RunEnumeration() {
 				resp.StoredResponsePath = responsePath
 			}
 
-			if r.scanopts.Screenshot {
+			if r.scanopts.Screenshot && !r.scanopts.NoSaveScreenshotBytes {
 				screenshotPath = fileutilz.AbsPathOrDefault(filepath.Join(screenshotBaseDir, screenshotResponseFile))
 				screenshotPathRel = filepath.Join(hostFilename, screenshotResponseFile)
 				_ = fileutil.CreateFolder(screenshotBaseDir)

@@ -100,6 +100,7 @@ type ScanOptions struct {
 	UseInstalledChrome        bool
 	DisableStdin              bool
 	NoScreenshotBytes         bool
+	NoSaveScreenshotBytes     bool
 	NoHeadlessBody            bool
 	NoScreenshotFullPage      bool
 	ScreenshotTimeout         int
