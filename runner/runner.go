@@ -2195,6 +2195,22 @@ retry:
 				//	technologyDetails[match] = data
 				//}
 				//technologies = sliceutil.Dedupe(technologies)
+				techResp := http.Response{
+					Header: resp.Headers,
+					Body:   ioutil.NopCloser(bytes.NewReader([]byte(headlessBody))),
+					TLS:    nil,
+				}
+				if r.options.TechRule != "" {
+					techList, err := r.tech.Detect(&techResp)
+					if err != nil {
+						gologger.Warning().Msgf("detect tech error: %s", err)
+					}
+
+					if techList != "" {
+						technologies = append(technologies, strings.Split(techList, ",")...)
+						technologies = sliceutil.Dedupe(technologies)
+					}
+				}
 			}
 		}
 		if scanopts.NoScreenshotBytes {
