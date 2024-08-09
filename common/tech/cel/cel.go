@@ -88,6 +88,10 @@ var matchFunc = &functions.Overload{
 		return types.Bool(ok)
 	},
 }
+var matchDec = decls.NewFunction("match",
+	decls.NewInstanceOverload("matches_string",
+		[]*exprpb.Type{decls.String, decls.String},
+		decls.Bool))
 
 // 使用正则表达式s1 来 匹配b1
 var bmatchDec = decls.NewFunction("bmatches",
@@ -353,6 +357,7 @@ func InitCelOptions() CustomLib {
 		cel.Declarations(
 			bcontainsDec, iContainsDec, bmatchDec, md5Dec,
 			//startsWithDec, endsWithDec,
+			matchDec,
 			inDec, randomIntDec,
 			base64StringDec, base64BytesDec, base64DecodeStringDec, base64DecodeBytesDec,
 			urlencodeStringDec, urlencodeBytesDec, urldecodeStringDec, urldecodeBytesDec,

@@ -88,7 +88,7 @@ func (t *TechDetecter) Detect(response *httpx.Response) (string, error) {
 			"body":        string(response.Data),
 			"title":       httpx.ExtractTitle(response),
 			"header":      headerInfo,
-			"server":      fmt.Sprintf("server: %v\n", response.Headers["Server"][0]),
+			"server":      fmt.Sprintf("server: %v\n", strings.Join(response.Headers["Server"], ",")),
 			"cert":        string(tlsInfo),
 			"banner":      headerInfo,
 			"protocol":    "",
