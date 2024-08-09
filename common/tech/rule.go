@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
-	"net/http"
 	"regexp"
 	"strings"
 
@@ -54,19 +53,19 @@ func LinesToSlice(str string) []string {
 	return toSlice
 }
 
-func GetCerts(resp *http.Response) []byte {
-	var certs []byte
-	if resp.TLS != nil {
-		cert := resp.TLS.PeerCertificates[0]
-		var str string
-		if js, err := json.Marshal(cert); err == nil {
-			certs = js
-		}
-		str = string(certs) + cert.Issuer.String() + cert.Subject.String()
-		certs = []byte(str)
-	}
-	return certs
-}
+//func GetCerts(resp *http.Response) []byte {
+//	var certs []byte
+//	if resp.TLS != nil {
+//		cert := resp.TLS.PeerCertificates[0]
+//		var str string
+//		if js, err := json.Marshal(cert); err == nil {
+//			certs = js
+//		}
+//		str = string(certs) + cert.Issuer.String() + cert.Subject.String()
+//		certs = []byte(str)
+//	}
+//	return certs
+//}
 
 func GetTitle(content string) string {
 	reTitle := regexp.MustCompile(`(?im)<\s*title.*>(.*?)<\s*/\s*title>`)

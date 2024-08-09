@@ -1,11 +1,12 @@
 package tech
 
 import (
+	"encoding/json"
 	"fmt"
-	"io/ioutil"
-	"net/http"
 	"os"
 	"strings"
+
+	"github.com/projectdiscovery/httpx/common/httpx"
 
 	"github.com/google/cel-go/common/types"
 	"github.com/projectdiscovery/gologger"
@@ -44,16 +45,17 @@ func (t *TechDetecter) Init(rulePath string) error {
 	return nil
 }
 
-func (t *TechDetecter) Detect(response *http.Response) (string, error) {
+func (t *TechDetecter) Detect(response *httpx.Response) (string, error) {
 	options := cel.InitCelOptions()
 	env, err := cel.InitCelEnv(&options)
 	if err != nil {
 		return "", err
 	}
-	body, _ := ioutil.ReadAll(response.Body)
 	headerInfo := ""
-	for k, v := range response.Header {
-		headerInfo += fmt.Sprintf("%v: %v\n", k, v[0])
+	for k, v := range response.Headers {
+		for _, vv := range v {
+			headerInfo = headerInfo + k + ":" + vv + "\n"
+		}
 	}
 	var product []string
 	for _, r := range t.FinerPrint {
@@ -68,18 +70,26 @@ func (t *TechDetecter) Detect(response *http.Response) (string, error) {
 		}
 		ast, iss := env.Compile(matches)
 		if iss.Err() != nil {
+			gologger.Error().Msgf(fmt.Sprintf("product: %s rule Compile error:%s", r.Infos, iss.Err().Error()))
 			continue
 		}
 		prg, err := env.Program(ast)
 		if err != nil {
+			gologger.Error().Msgf(fmt.Sprintf("product: %s rule Program error:%s", r.Infos, err.Error()))
 			continue
 		}
+		tlsInfo, err := json.Marshal(response.TLSData)
+		if err != nil {
+			gologger.Error().Msgf(fmt.Sprintf("product: %s tlsData Marshal error:%s", r.Infos, err.Error()))
+			tlsInfo = []byte("")
+		}
+
 		out, _, err := prg.Eval(map[string]interface{}{
-			"body":        string(body),
-			"title":       GetTitle(string(body)),
+			"body":        string(response.Data),
+			"title":       httpx.ExtractTitle(response),
 			"header":      headerInfo,
-			"server":      fmt.Sprintf("server: %v\n", response.Header["Server"]),
-			"cert":        string(GetCerts(response)),
+			"server":      fmt.Sprintf("server: %v\n", response.Headers["Server"][0]),
+			"cert":        string(tlsInfo),
 			"banner":      headerInfo,
 			"protocol":    "",
 			"port":        "",

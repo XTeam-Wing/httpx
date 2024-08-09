@@ -20,20 +20,20 @@ import (
 )
 
 // 判断s1是否包含s2
-var containsFunc = &functions.Overload{
-	Operator: "contains_string",
-	Binary: func(lhs ref.Val, rhs ref.Val) ref.Val {
-		v1, ok := lhs.(types.String)
-		if !ok {
-			return types.ValOrErr(lhs, "unexpected type '%v' passed to contains", lhs.Type())
-		}
-		v2, ok := rhs.(types.String)
-		if !ok {
-			return types.ValOrErr(rhs, "unexpected type '%v' passed to contains", rhs.Type())
-		}
-		return types.Bool(strings.Contains(string(v1), string(v2)))
-	},
-}
+//var containsFunc = &functions.Overload{
+//	Operator: "contains_string",
+//	Binary: func(lhs ref.Val, rhs ref.Val) ref.Val {
+//		v1, ok := lhs.(types.String)
+//		if !ok {
+//			return types.ValOrErr(lhs, "unexpected type '%v' passed to contains", lhs.Type())
+//		}
+//		v2, ok := rhs.(types.String)
+//		if !ok {
+//			return types.ValOrErr(rhs, "unexpected type '%v' passed to contains", rhs.Type())
+//		}
+//		return types.Bool(strings.Contains(string(v1), string(v2)))
+//	},
+//}
 
 // 判断s1是否包含s2, 忽略大小写
 var iContainsDec = decls.NewFunction("icontains", decls.NewInstanceOverload("string_icontains_string", []*exprpb.Type{decls.String, decls.String}, decls.Bool))
@@ -361,7 +361,7 @@ func InitCelOptions() CustomLib {
 	}
 	// 实现
 	custom.programOptions = []cel.ProgramOption{cel.Functions(
-		containsFunc, iContainsFunc, bcontainsFunc, matchFunc, bmatchFunc, md5Func,
+		iContainsFunc, bcontainsFunc, matchFunc, bmatchFunc, md5Func,
 		//startsWithFunc,  endsWithFunc,
 		inFunc, randomIntFunc,
 		base64StringFunc, base64BytesFunc, base64DecodeStringFunc, base64DecodeBytesFunc,

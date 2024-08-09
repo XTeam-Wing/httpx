@@ -10,7 +10,6 @@ import (
 	"html/template"
 	"image"
 	"io"
-	"io/ioutil"
 	"net"
 	"net/http"
 	"net/http/httputil"
@@ -122,11 +121,12 @@ func New(options *Options) (*Runner, error) {
 		//if err != nil {
 		//	gologger.Error().Msgf("could not create wappalyzer client: %s\n", err)
 		//}
-		if options.TechRule != "" {
-			err = runner.tech.Init(options.TechRule)
-			if err != nil {
-				gologger.Warning().Msgf("init tech yaml rule error: %s", err)
-			}
+	}
+
+	if options.TechRule != "" && options.TechDetect {
+		err = runner.tech.Init(options.TechRule)
+		if err != nil {
+			gologger.Warning().Msgf("init tech yaml rule error: %s", err)
 		}
 	}
 
@@ -1923,22 +1923,16 @@ retry:
 	var technologies []string
 	//var technologyDetails = make(map[string]wappalyzer.AppInfo)
 	if scanopts.TechDetect {
-		techResp := http.Response{
-			Header: resp.Headers,
-			Body:   ioutil.NopCloser(bytes.NewReader(resp.Data)),
-			TLS:    nil,
-		}
 		//matches := r.wappalyzer.Fingerprint(resp.Headers, resp.Data)
 		//for match := range matches {
 		//	technologies = append(technologies, match)
 		//}
 		// Wing's Rule
 		if r.options.TechRule != "" {
-			techList, err := r.tech.Detect(&techResp)
+			techList, err := r.tech.Detect(resp)
 			if err != nil {
 				gologger.Warning().Msgf("detect tech error: %s", err)
 			}
-
 			if techList != "" {
 				technologies = append(technologies, strings.Split(techList, ",")...)
 			}
@@ -2195,10 +2189,8 @@ retry:
 				//	technologyDetails[match] = data
 				//}
 				//technologies = sliceutil.Dedupe(technologies)
-				techResp := http.Response{
-					Header: resp.Headers,
-					Body:   ioutil.NopCloser(bytes.NewReader([]byte(headlessBody))),
-					TLS:    nil,
+				techResp := httpx.Response{
+					Data: []byte(headlessBody),
 				}
 				if r.options.TechRule != "" {
 					techList, err := r.tech.Detect(&techResp)
