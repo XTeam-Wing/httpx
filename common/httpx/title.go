@@ -19,6 +19,7 @@ var (
 	reContentType           = regexp.MustCompile(`(?im)\s*charset="(.*?)"|charset=(.*?)"\s*`)
 	supportedTitleMimeTypes = []string{
 		"text/html",
+		"text/plain",
 		"application/xhtml+xml",
 		"application/xml",
 		"application/rss+xml",

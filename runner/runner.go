@@ -1731,7 +1731,7 @@ retry:
 	}
 
 	var title string
-	if httpx.CanHaveTitleTag(resp.GetHeaderPart("Content-Type", ";")) {
+	if httpx.CanHaveTitleTag(resp.GetHeaderPart("Content-Type", ";")) || strings.Contains(string(resp.Data), "<!DOCTYPE html>") {
 		title = httpx.ExtractTitle(resp)
 	}
 
