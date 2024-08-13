@@ -51,12 +51,7 @@ func (t *TechDetecter) Detect(response *httpx.Response) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	headerInfo := ""
-	for k, v := range response.Headers {
-		for _, vv := range v {
-			headerInfo = headerInfo + k + ":" + vv + "\n"
-		}
-	}
+
 	var product []string
 	for _, r := range t.FinerPrint {
 		var matches string
@@ -70,27 +65,27 @@ func (t *TechDetecter) Detect(response *httpx.Response) (string, error) {
 		}
 		ast, iss := env.Compile(matches)
 		if iss.Err() != nil {
-			gologger.Error().Msgf(fmt.Sprintf("product: %s rule Compile error:%s", r.Infos, iss.Err().Error()))
+			gologger.Debug().Msgf(fmt.Sprintf("product: %s rule Compile error:%s", r.Infos, iss.Err().Error()))
 			continue
 		}
 		prg, err := env.Program(ast)
 		if err != nil {
-			gologger.Error().Msgf(fmt.Sprintf("product: %s rule Program error:%s", r.Infos, err.Error()))
+			gologger.Debug().Msgf(fmt.Sprintf("product: %s rule Program error:%s", r.Infos, err.Error()))
 			continue
 		}
 		tlsInfo, err := json.Marshal(response.TLSData)
 		if err != nil {
-			gologger.Error().Msgf(fmt.Sprintf("product: %s tlsData Marshal error:%s", r.Infos, err.Error()))
+			gologger.Debug().Msgf(fmt.Sprintf("product: %s tlsData Marshal error:%s", r.Infos, err.Error()))
 			tlsInfo = []byte("")
 		}
 
 		out, _, err := prg.Eval(map[string]interface{}{
 			"body":        string(response.Data),
 			"title":       httpx.ExtractTitle(response),
-			"header":      headerInfo,
+			"header":      response.RawHeaders,
 			"server":      fmt.Sprintf("%v", strings.Join(response.Headers["Server"], ",")),
 			"cert":        string(tlsInfo),
-			"banner":      headerInfo,
+			"banner":      response.RawHeaders,
 			"protocol":    "",
 			"port":        "",
 			"status_code": response.StatusCode,

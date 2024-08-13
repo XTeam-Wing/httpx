@@ -2189,11 +2189,10 @@ retry:
 				//	technologyDetails[match] = data
 				//}
 				//technologies = sliceutil.Dedupe(technologies)
-				techResp := httpx.Response{
-					Data: []byte(headlessBody),
-				}
+				newResp := resp
+				newResp.Data = []byte(headlessBody)
 				if r.options.TechRule != "" {
-					techList, err := r.tech.Detect(&techResp)
+					techList, err := r.tech.Detect(newResp)
 					if err != nil {
 						gologger.Warning().Msgf("detect tech error: %s", err)
 					}
