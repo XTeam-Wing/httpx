@@ -81,7 +81,10 @@ var matchFunc = &functions.Overload{
 		if !ok {
 			return types.ValOrErr(rhs, "unexpected type '%v' passed to match", rhs.Type())
 		}
-		ok, err := regexp.Match(string(v1), []byte(v2))
+		if v2 == "" {
+			return types.Bool(false)
+		}
+		ok, err := regexp.Match(string(v2), []byte(v1))
 		if err != nil {
 			return types.NewErr("%v", err)
 		}
@@ -110,7 +113,7 @@ var bmatchFunc = &functions.Overload{
 		if !ok {
 			return types.ValOrErr(rhs, "unexpected type '%v' passed to bmatch", rhs.Type())
 		}
-		ok, err := regexp.Match(string(v1), v2)
+		ok, err := regexp.Match(string(v2), []byte(v1))
 		if err != nil {
 			return types.NewErr("%v", err)
 		}
