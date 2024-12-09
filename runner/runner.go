@@ -7,8 +7,6 @@ import (
 	"encoding/csv"
 	"encoding/json"
 	"fmt"
-	"github.com/projectdiscovery/httpx/common/tech"
-	"github.com/projectdiscovery/rawhttp"
 	"html/template"
 	"image"
 	"io"
@@ -27,6 +25,9 @@ import (
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/projectdiscovery/httpx/common/tech"
+	"github.com/projectdiscovery/rawhttp"
 
 	"golang.org/x/exp/maps"
 

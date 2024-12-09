@@ -2,13 +2,14 @@ package tech
 
 import (
 	"fmt"
-	"github.com/google/cel-go/common/types"
-	"github.com/projectdiscovery/gologger"
-	"github.com/projectdiscovery/httpx/common/tech/cel"
 	"io/ioutil"
 	"net/http"
 	"os"
 	"strings"
+
+	"github.com/google/cel-go/common/types"
+	"github.com/projectdiscovery/gologger"
+	"github.com/projectdiscovery/httpx/common/tech/cel"
 )
 
 type TechDetecter struct {

@@ -1,10 +1,11 @@
 package httpx
 
 import (
-	"github.com/PuerkitoBio/goquery"
 	"net/url"
 	"strings"
 	"time"
+
+	"github.com/PuerkitoBio/goquery"
 
 	"github.com/projectdiscovery/tlsx/pkg/tlsx/clients"
 	httputil "github.com/projectdiscovery/utils/http"

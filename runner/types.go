@@ -3,11 +3,12 @@ package runner
 import (
 	"errors"
 	"fmt"
-	"github.com/go-faker/faker/v4"
-	"github.com/projectdiscovery/dsl"
 	"os"
 	"strings"
 	"time"
+
+	"github.com/go-faker/faker/v4"
+	"github.com/projectdiscovery/dsl"
 
 	"github.com/go-faker/faker/v4/pkg/options"
 	"github.com/mitchellh/mapstructure"

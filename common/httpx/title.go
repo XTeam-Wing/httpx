@@ -7,9 +7,10 @@ import (
 	"regexp"
 	"strings"
 
+	"slices"
+
 	stringsutil "github.com/projectdiscovery/utils/strings"
 	"golang.org/x/net/html"
-	"slices"
 )
 
 var (

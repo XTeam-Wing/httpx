@@ -5,17 +5,18 @@ import (
 	"crypto/md5"
 	"encoding/base64"
 	"fmt"
+	"math/rand"
+	"net/url"
+	"regexp"
+	"strings"
+	"time"
+
 	"github.com/google/cel-go/cel"
 	"github.com/google/cel-go/checker/decls"
 	"github.com/google/cel-go/common/types"
 	"github.com/google/cel-go/common/types/ref"
 	"github.com/google/cel-go/interpreter/functions"
 	exprpb "google.golang.org/genproto/googleapis/api/expr/v1alpha1"
-	"math/rand"
-	"net/url"
-	"regexp"
-	"strings"
-	"time"
 )
 
 // 判断s1是否包含s2
