@@ -101,6 +101,7 @@ type ScanOptions struct {
 	DisableStdin              bool
 	NoScreenshotBytes         bool
 	NoHeadlessBody            bool
+	NoScreenshotFullPage      bool
 	ScreenshotTimeout         int
 }
 
@@ -154,6 +155,7 @@ func (s *ScanOptions) Clone() *ScanOptions {
 		UseInstalledChrome:        s.UseInstalledChrome,
 		NoScreenshotBytes:         s.NoScreenshotBytes,
 		NoHeadlessBody:            s.NoHeadlessBody,
+		NoScreenshotFullPage:      s.NoScreenshotFullPage,
 		ScreenshotTimeout:         s.ScreenshotTimeout,
 	}
 }
