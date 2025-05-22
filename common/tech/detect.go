@@ -6,10 +6,9 @@ import (
 	"os"
 	"strings"
 
-	"github.com/projectdiscovery/httpx/common/httpx"
-
 	"github.com/google/cel-go/common/types"
 	"github.com/projectdiscovery/gologger"
+	"github.com/projectdiscovery/httpx/common/httpx"
 	"github.com/projectdiscovery/httpx/common/tech/cel"
 )
 

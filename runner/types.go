@@ -8,16 +8,14 @@ import (
 	"time"
 
 	"github.com/go-faker/faker/v4"
-	"github.com/projectdiscovery/dsl"
-
 	"github.com/go-faker/faker/v4/pkg/options"
 	"github.com/mitchellh/mapstructure"
+	"github.com/projectdiscovery/dsl"
 	"github.com/projectdiscovery/gologger"
+	"github.com/projectdiscovery/httpx/common/httpx"
 	"github.com/projectdiscovery/tlsx/pkg/tlsx/clients"
 	mapsutil "github.com/projectdiscovery/utils/maps"
 	wappalyzer "github.com/projectdiscovery/wappalyzergo"
-
-	"github.com/projectdiscovery/httpx/common/httpx"
 )
 
 type AsnResponse struct {

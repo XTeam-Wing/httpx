@@ -5,9 +5,8 @@ import (
 	"fmt"
 	"io"
 	"regexp"
-	"strings"
-
 	"slices"
+	"strings"
 
 	stringsutil "github.com/projectdiscovery/utils/strings"
 	"golang.org/x/net/html"

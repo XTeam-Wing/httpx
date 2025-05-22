@@ -6,9 +6,8 @@ import (
 	"strings"
 
 	"github.com/pkg/errors"
-	sliceutil "github.com/projectdiscovery/utils/slice"
-
 	"github.com/projectdiscovery/httpx/common/httpx"
+	sliceutil "github.com/projectdiscovery/utils/slice"
 )
 
 //nolint:gochecknoinits // this flag var needs a small refactor to avoid the use of the init function

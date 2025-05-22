@@ -9,8 +9,6 @@ import (
 	"time"
 
 	"github.com/pkg/errors"
-	"golang.org/x/exp/maps"
-
 	"github.com/projectdiscovery/cdncheck"
 	"github.com/projectdiscovery/goconfig"
 	"github.com/projectdiscovery/goflags"
@@ -32,6 +30,7 @@ import (
 	stringsutil "github.com/projectdiscovery/utils/strings"
 	updateutils "github.com/projectdiscovery/utils/update"
 	wappalyzer "github.com/projectdiscovery/wappalyzergo"
+	"golang.org/x/exp/maps"
 )
 
 const (

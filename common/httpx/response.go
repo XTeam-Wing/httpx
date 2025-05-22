@@ -6,7 +6,6 @@ import (
 	"time"
 
 	"github.com/PuerkitoBio/goquery"
-
 	"github.com/projectdiscovery/tlsx/pkg/tlsx/clients"
 	httputil "github.com/projectdiscovery/utils/http"
 )

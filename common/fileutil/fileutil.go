@@ -3,7 +3,6 @@ package fileutil
 import (
 	"bufio"
 	"errors"
-
 	"net"
 	"os"
 	"path/filepath"
