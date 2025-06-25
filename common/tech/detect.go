@@ -24,7 +24,7 @@ func (t *TechDetecter) Init(rulePath string) error {
 	if IsDir(rulePath) {
 		files := ReadDir(rulePath)
 		for _, file := range files {
-			if !strings.Contains(file, ".yaml") {
+			if !strings.Contains(file, ".yaml") || !strings.Contains(file, ".yml") {
 				continue
 			}
 			rule, err := ParseYaml(file)
