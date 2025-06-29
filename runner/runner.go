@@ -283,7 +283,7 @@ func New(options *Options) (*Runner, error) {
 	scanopts.MaxResponseBodySizeToRead = options.MaxResponseBodySizeToRead
 	scanopts.extractRegexps = make(map[string]*regexp.Regexp)
 	if options.Screenshot {
-		browser, err := NewBrowser(options.HTTPProxy, options.UseInstalledChrome, options.ParseHeadlessOptionalArguments())
+		browser, err := NewBrowser(options.HTTPProxy, options.UseInstalledChrome, options.ChromePath, options.ParseHeadlessOptionalArguments())
 		if err != nil {
 			return nil, err
 		}
@@ -294,6 +294,7 @@ func New(options *Options) (*Runner, error) {
 	scanopts.NoSaveScreenshotBytes = options.NoSaveScreenshot
 	scanopts.NoHeadlessBody = options.NoHeadlessBody
 	scanopts.UseInstalledChrome = options.UseInstalledChrome
+	scanopts.ChromePath = options.ChromePath
 	scanopts.ScreenshotTimeout = options.ScreenshotTimeout
 
 	if options.OutputExtractRegexs != nil {
