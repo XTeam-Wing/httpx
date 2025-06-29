@@ -30,7 +30,7 @@ type Browser struct {
 	// pids    map[int32]struct{}
 }
 
-func NewBrowser(proxy string, useLocal bool, optionalArgs map[string]string) (*Browser, error) {
+func NewBrowser(proxy string, useLocal bool, chromePath string, optionalArgs map[string]string) (*Browser, error) {
 	dataStore, err := os.MkdirTemp("", "nuclei-*")
 	if err != nil {
 		return nil, errors.Wrap(err, "could not create temporary directory")
@@ -57,18 +57,22 @@ func NewBrowser(proxy string, useLocal bool, optionalArgs map[string]string) (*B
 		chromeLauncher = chromeLauncher.NoSandbox(true)
 	}
 
-	executablePath, err := os.Executable()
-	if err != nil {
-		return nil, err
-	}
-
-	// if musl is used, most likely we are on alpine linux which is not supported by go-rod, so we fallback to default chrome
-	useMusl, _ := fileutil.UseMusl(executablePath)
-	if useLocal || useMusl {
-		if chromePath, hasChrome := launcher.LookPath(); hasChrome {
-			chromeLauncher.Bin(chromePath)
-		} else {
-			return nil, errors.New("the chrome browser is not installed")
+	if chromePath != "" {
+		// If a custom Chrome path is provided, use it directly
+		chromeLauncher = chromeLauncher.Bin(chromePath)
+	} else {
+		executablePath, err := os.Executable()
+		if err != nil {
+			return nil, err
+		}
+		// if musl is used, most likely we are on alpine linux which is not supported by go-rod, so we fallback to default chrome
+		useMusl, _ := fileutil.UseMusl(executablePath)
+		if useLocal || useMusl {
+			if chromePath, hasChrome := launcher.LookPath(); hasChrome {
+				chromeLauncher.Bin(chromePath)
+			} else {
+				return nil, errors.New("the chrome browser is not installed")
+			}
 		}
 	}
 

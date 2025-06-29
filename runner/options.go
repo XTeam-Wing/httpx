@@ -103,6 +103,7 @@ type ScanOptions struct {
 	NoHeadlessBody            bool
 	NoScreenshotFullPage      bool
 	ScreenshotTimeout         int
+	ChromePath                string
 }
 
 func (s *ScanOptions) Clone() *ScanOptions {
@@ -153,6 +154,7 @@ func (s *ScanOptions) Clone() *ScanOptions {
 		Hashes:                    s.Hashes,
 		Screenshot:                s.Screenshot,
 		UseInstalledChrome:        s.UseInstalledChrome,
+		ChromePath:                s.ChromePath,
 		NoScreenshotBytes:         s.NoScreenshotBytes,
 		NoHeadlessBody:            s.NoHeadlessBody,
 		NoScreenshotFullPage:      s.NoScreenshotFullPage,
@@ -319,6 +321,7 @@ type Options struct {
 	CDNCheckClient  *cdncheck.Client
 	TechRule        string
 	OutputExtractJS bool
+	ChromePath      string
 }
 
 // ParseOptions parses the command line options for application
@@ -370,6 +373,7 @@ func ParseOptions() *Options {
 
 		flagSet.BoolVarP(&options.NoHeadlessBody, "exclude-headless-body", "ehb", false, "enable excluding headless header from json output"),
 		flagSet.IntVarP(&options.ScreenshotTimeout, "screenshot-timeout", "st", 10, "set timeout for screenshot in seconds"),
+		flagSet.StringVar(&options.ChromePath, "chrome-path", "", "path to the chrome executable to use for screenshot (if not set, will use default installed chrome)"),
 	)
 
 	flagSet.CreateGroup("matchers", "Matchers",
