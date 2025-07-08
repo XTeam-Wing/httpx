@@ -65,15 +65,14 @@ import (
 	stringsutil "github.com/projectdiscovery/utils/strings"
 	syncutil "github.com/projectdiscovery/utils/sync"
 	urlutil "github.com/projectdiscovery/utils/url"
-	wappalyzer "github.com/projectdiscovery/wappalyzergo"
 	"golang.org/x/exp/maps"
 )
 
 // Runner is a client for running the enumeration process.
 type Runner struct {
-	options             *Options
-	hp                  *httpx.HTTPX
-	wappalyzer          *wappalyzer.Wappalyze
+	options *Options
+	hp      *httpx.HTTPX
+	// wappalyzer          *wappalyzer.Wappalyze
 	scanopts            ScanOptions
 	tech                tech.TechDetecter
 	hm                  *hybrid.HybridMap
@@ -109,19 +108,22 @@ func New(options *Options) (*Runner, error) {
 		options: options,
 	}
 	var err error
-	if options.Wappalyzer != nil {
-		runner.wappalyzer = options.Wappalyzer
-	} else if options.TechDetect || options.JSONOutput || options.CSVOutput {
-		//runner.wappalyzer, err = wappalyzer.New()
-		//if err != nil {
-		//	gologger.Error().Msgf("could not create wappalyzer client: %s\n", err)
-		//}
-	}
+	// if options.Wappalyzer != nil {
+	// 	runner.wappalyzer = options.Wappalyzer
+	// } else if options.TechDetect || options.JSONOutput || options.CSVOutput {
+	// 	//runner.wappalyzer, err = wappalyzer.New()
+	// 	//if err != nil {
+	// 	//	gologger.Error().Msgf("could not create wappalyzer client: %s\n", err)
+	// 	//}
+	// }
 
 	if options.TechRule != "" && options.TechDetect {
-		err = runner.tech.Init(options.TechRule)
+		err := runner.tech.Init(options.TechRule)
 		if err != nil {
-			gologger.Warning().Msgf("init tech yaml rule error: %s", err)
+			return nil, errors.Wrap(err, "could not initialize tech detection")
+		}
+		if runner.tech.URIs != nil {
+			runner.options.techRuleURIs = runner.tech.URIs
 		}
 	}
 
@@ -1919,22 +1921,46 @@ retry:
 	var technologies []string
 	//var technologyDetails = make(map[string]wappalyzer.AppInfo)
 	if scanopts.TechDetect {
-		//matches := r.wappalyzer.Fingerprint(resp.Headers, resp.Data)
-		//for match := range matches {
-		//	technologies = append(technologies, match)
-		//}
-		// Wing's Rule
-		if r.options.TechRule != "" {
-			techList, err := r.tech.Detect(resp)
-			if err != nil {
-				gologger.Warning().Msgf("detect tech error: %s", err)
-			}
-			if techList != "" {
-				technologies = append(technologies, strings.Split(techList, ",")...)
+		product, err := r.tech.Detect(resp)
+		if err != nil {
+			gologger.Warning().Msgf("detect tech error: %s", err)
+		}
+		if len(product) > 0 {
+			technologies = append(technologies, product...)
+		}
+		for method, paths := range r.options.techRuleURIs {
+			for _, path := range paths {
+				u := URL.Clone()
+				// retry with unsafe
+				if err := u.MergePath(path, scanopts.Unsafe); err != nil {
+					gologger.Debug().Msgf("failed to merge paths of url %v and %v", u.String(), path)
+				}
+				techReq, err := hp.NewRequest(method, u.String())
+				if err != nil {
+					gologger.Warning().Msgf("failed to create request for %s: %s", u.String(), err)
+					continue
+				}
+				techResp, err := hp.Do(techReq, httpx.UnsafeOptions{URIPath: reqURI})
+				if r.options.ShowStatistics {
+					r.stats.IncrementCounter("requests", 1)
+				}
+				if err != nil {
+					gologger.Warning().Msgf("tech detect error: %s", err)
+					continue
+				}
+				product, err := r.tech.Detect(techResp)
+				if err != nil {
+					gologger.Warning().Msgf("detect tech error: %s", err)
+					continue
+				}
+				if len(product) > 0 {
+					technologies = append(technologies, product...)
+				}
 			}
 		}
+
 		if len(technologies) > 0 {
-			sort.Strings(technologies)
+			sort.Strings(sliceutil.Dedupe(technologies))
 			technologies := strings.Join(technologies, ",")
 
 			builder.WriteString(" [")
@@ -1962,7 +1988,6 @@ retry:
 	}
 
 	var jsLink []string
-	// extract js link
 	if r.options.OutputExtractJS {
 		jsLink, err = resp.ExtractJSLink(fullURL)
 		if err != nil {
@@ -2155,8 +2180,7 @@ retry:
 		headlessBody    string
 	)
 	var pHash uint64
-	if scanopts.Screenshot {
-		var err error
+	if scanopts.Screenshot && len(r.options.techRuleURIs) == 0 {
 		screenshotBytes, headlessBody, err = r.browser.ScreenshotWithBody(fullURL, time.Duration(scanopts.ScreenshotTimeout)*time.Second)
 		if err != nil {
 			gologger.Warning().Msgf("Could not take screenshot '%s': %s", fullURL, err)
@@ -2178,24 +2202,17 @@ retry:
 			// As we now have headless body, we can also use it for detecting
 			// more technologies in the response. This is a quick trick to get
 			// more detected technologies.
-			if r.options.TechDetect || r.options.JSONOutput || r.options.CSVOutput {
-				//moreMatches := r.wappalyzer.FingerprintWithInfo(resp.Headers, []byte(headlessBody))
-				//for match, data := range moreMatches {
-				//	technologies = append(technologies, match)
-				//	technologyDetails[match] = data
-				//}
-				//technologies = sliceutil.Dedupe(technologies)
+			if r.options.TechDetect && headlessBody != "" {
 				newResp := resp
 				newResp.Data = []byte(headlessBody)
 				if r.options.TechRule != "" {
-					techList, err := r.tech.Detect(newResp)
+					products, err := r.tech.Detect(newResp)
 					if err != nil {
 						gologger.Warning().Msgf("detect tech error: %s", err)
 					}
 
-					if techList != "" {
-						technologies = append(technologies, strings.Split(techList, ",")...)
-						technologies = sliceutil.Dedupe(technologies)
+					if len(products) > 0 {
+						technologies = append(technologies, products...)
 					}
 				}
 			}
@@ -2206,19 +2223,6 @@ retry:
 		if scanopts.NoHeadlessBody {
 			headlessBody = ""
 		}
-	}
-
-	if scanopts.TechDetect && len(technologies) > 0 {
-		sort.Strings(technologies)
-		technologies := strings.Join(technologies, ",")
-
-		builder.WriteString(" [")
-		if !scanopts.OutputWithNoColor {
-			builder.WriteString(aurora.Magenta(technologies).String())
-		} else {
-			builder.WriteString(technologies)
-		}
-		builder.WriteRune(']')
 	}
 
 	result := Result{
@@ -2258,7 +2262,7 @@ retry:
 		CDNName:          cdnName,
 		CDNType:          cdnType,
 		ResponseTime:     resp.Duration.String(),
-		Technologies:     technologies,
+		Technologies:     sliceutil.Dedupe(technologies),
 		FinalURL:         finalURL,
 		FavIconMMH3:      faviconMMH3,
 		FaviconPath:      faviconPath,

@@ -320,6 +320,7 @@ type Options struct {
 	Networkpolicy   *networkpolicy.NetworkPolicy
 	CDNCheckClient  *cdncheck.Client
 	TechRule        string
+	techRuleURIs    map[string][]string
 	OutputExtractJS bool
 	ChromePath      string
 }

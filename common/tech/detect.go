@@ -4,100 +4,147 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"path/filepath"
 	"strings"
 
 	"github.com/google/cel-go/common/types"
 	"github.com/projectdiscovery/gologger"
 	"github.com/projectdiscovery/httpx/common/httpx"
 	"github.com/projectdiscovery/httpx/common/tech/cel"
+	sliceutil "github.com/projectdiscovery/utils/slice"
+	"golang.org/x/sync/errgroup"
+	"gopkg.in/yaml.v3"
 )
 
 type TechDetecter struct {
-	// Apps is organized as <name, fingerprint>
-	FinerPrint []FingerPrint
+	FinerPrints []FingerPrint
+	URIs        map[string][]string
 }
 
-func (t *TechDetecter) Init(rulePath string) error {
+func (t *TechDetecter) Init(rulePath string) (err error) {
+	t.URIs = make(map[string][]string)
 	if !Exists(rulePath) {
 		return os.ErrNotExist
 	}
 	if IsDir(rulePath) {
 		files := ReadDir(rulePath)
 		for _, file := range files {
-			if !strings.Contains(file, ".yaml") || !strings.Contains(file, ".yml") {
+			if filepath.Ext(file) != ".yml" && filepath.Ext(file) != ".yaml" {
 				continue
 			}
-			rule, err := ParseYaml(file)
+			err := t.ParseRule(file)
 			if err != nil {
-				gologger.Error().Msgf(fmt.Sprintf("file %s error:%s", file, err))
+				gologger.Error().Msgf("file %s error:%s", file, err)
 				continue
 			}
-			t.FinerPrint = append(t.FinerPrint, rule)
 		}
 	} else {
-		rule, err := ParseYaml(rulePath)
+		err := t.ParseRule(rulePath)
 		if err != nil {
-			gologger.Error().Msgf(fmt.Sprintf("file %s error:%s", rulePath, err))
+			gologger.Error().Msgf("file %s error:%s", rulePath, err)
 		}
-		t.FinerPrint = append(t.FinerPrint, rule)
+	}
+	for method, fp := range t.FinerPrints {
+		t.FinerPrints[method].Conditions = sliceutil.Dedupe(fp.Conditions)
 	}
 	return nil
 }
-
-func (t *TechDetecter) Detect(response *httpx.Response) (string, error) {
+func (t *TechDetecter) ParseRule(filename string) error {
+	var fingerPrint = FingerPrint{}
+	content, err := os.ReadFile(filename)
+	if err != nil {
+		return err
+	}
+	var matchers Matchers
+	err = yaml.Unmarshal(content, &matchers)
+	if err != nil {
+		return err
+	}
+	for _, line := range matchers.Rules {
+		if line.Path != "/" && line.Path != "" {
+			if line.Method == "" {
+				line.Method = "GET"
+			}
+			t.URIs[line.Method] = append(t.URIs[line.Method], line.Path)
+		}
+		if line.DSL != "" {
+			fingerPrint.Conditions = append(fingerPrint.Conditions, line.DSL)
+		}
+	}
+	data, err := json.Marshal(matchers.Info)
+	if err != nil {
+		return err
+	}
+	var info Info
+	err = json.Unmarshal(data, &info)
+	if err != nil {
+		return err
+	}
+	fingerPrint.Name = info.Product
+	t.FinerPrints = append(t.FinerPrints, fingerPrint)
+	return nil
+}
+func (t *TechDetecter) Detect(response *httpx.Response) ([]string, error) {
 	options := cel.InitCelOptions()
 	env, err := cel.InitCelEnv(&options)
 	if err != nil {
-		return "", err
+		return nil, err
 	}
-
+	var eg errgroup.Group
+	eg.SetLimit(100)
 	var product []string
-	for _, r := range t.FinerPrint {
-		var matches string
-
-		for i, match := range r.Matches {
-			if i < len(r.Matches)-1 {
-				matches = matches + "(" + match + ") || "
-			} else {
-				matches = matches + "(" + match + ")"
+	for _, r := range t.FinerPrints {
+		r := r // avoid closure capture
+		eg.Go(func() error {
+			var matches string
+			for i, match := range r.Conditions {
+				if i < len(r.Conditions)-1 {
+					matches = matches + "(" + match + ") || "
+				} else {
+					matches = matches + "(" + match + ")"
+				}
 			}
-		}
-		ast, iss := env.Compile(matches)
-		if iss.Err() != nil {
-			gologger.Debug().Msgf(fmt.Sprintf("product: %s rule Compile error:%s", r.Infos, iss.Err().Error()))
-			continue
-		}
-		prg, err := env.Program(ast)
-		if err != nil {
-			gologger.Debug().Msgf(fmt.Sprintf("product: %s rule Program error:%s", r.Infos, err.Error()))
-			continue
-		}
-		tlsInfo, err := json.Marshal(response.TLSData)
-		if err != nil {
-			gologger.Debug().Msgf(fmt.Sprintf("product: %s tlsData Marshal error:%s", r.Infos, err.Error()))
-			tlsInfo = []byte("")
-		}
+			ast, iss := env.Compile(matches)
+			if iss.Err() != nil {
+				gologger.Debug().Msgf(fmt.Sprintf("product: %s rule Compile error:%s", r.Name, iss.Err().Error()))
+				return err
+			}
+			prg, err := env.Program(ast)
+			if err != nil {
+				gologger.Debug().Msgf(fmt.Sprintf("product: %s rule Program error:%s", r.Name, err.Error()))
+				return err
+			}
+			tlsInfo, err := json.Marshal(response.TLSData)
+			if err != nil {
+				gologger.Debug().Msgf(fmt.Sprintf("product: %s tlsData Marshal error:%s", r.Name, err.Error()))
+				tlsInfo = []byte("")
+			}
 
-		out, _, err := prg.Eval(map[string]interface{}{
-			"body":        string(response.Data),
-			"title":       httpx.ExtractTitle(response),
-			"header":      response.RawHeaders,
-			"server":      fmt.Sprintf("%v", strings.Join(response.Headers["Server"], ",")),
-			"cert":        string(tlsInfo),
-			"banner":      response.RawHeaders,
-			"protocol":    "",
-			"port":        "",
-			"status_code": response.StatusCode,
+			out, _, err := prg.Eval(map[string]interface{}{
+				"body":        string(response.Data),
+				"title":       httpx.ExtractTitle(response),
+				"header":      response.RawHeaders,
+				"server":      fmt.Sprintf("%v", strings.Join(response.Headers["Server"], ",")),
+				"cert":        string(tlsInfo),
+				"banner":      response.RawHeaders,
+				"protocol":    "",
+				"port":        "",
+				"status_code": response.StatusCode,
+			})
+			if err != nil {
+				return err
+			}
+
+			if out.(types.Bool) {
+				product = append(product, strings.ToLower(r.Name))
+			}
+			return nil
 		})
-		if err != nil {
-			gologger.Error().Msgf(fmt.Sprintf("product: %s rule Eval error:%s", r.Infos, err.Error()))
-			continue
-		}
-
-		if out.(types.Bool) {
-			product = append(product, strings.ToLower(r.Infos))
-		}
 	}
-	return SliceToSting(product), nil
+	if err := eg.Wait(); err != nil {
+		gologger.Error().Msgf(fmt.Sprintf("tech detect error:%s", err.Error()))
+		return product, err
+	}
+	return sliceutil.Dedupe(product), nil
 
 }

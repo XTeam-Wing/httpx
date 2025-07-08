@@ -1,52 +1,12 @@
 package tech
 
 import (
-	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"regexp"
 	"strings"
-
-	"gopkg.in/yaml.v3"
 )
 
-type Rule struct {
-	Match string   `yaml:"matches"`
-	Info  TechInfo `yaml:"info"`
-}
 
-func ParseYaml(filename string) (FingerPrint, error) {
-	var fingerPrint = FingerPrint{}
-
-	content, err := ioutil.ReadFile(filename)
-	if err != nil {
-		return fingerPrint, err
-	}
-	var rule Rule
-	err = yaml.Unmarshal(content, &rule)
-	if err != nil {
-		return fingerPrint, err
-	}
-
-	slice := LinesToSlice(rule.Match)
-	for _, line := range slice {
-		if line != "" {
-			fingerPrint.Matches = append(fingerPrint.Matches, line)
-		}
-	}
-	data, err := json.Marshal(rule.Info)
-	if err != nil {
-		return fingerPrint, err
-	}
-	var info TechInfo
-	err = json.Unmarshal(data, &info)
-	if err != nil {
-		return fingerPrint, err
-	}
-	fingerPrint.Infos = info.Product
-	return fingerPrint, nil
-
-}
 
 func LinesToSlice(str string) []string {
 	toSlice := strings.Split(str, "\n")
