@@ -278,7 +278,7 @@ func New(options *Options) (*Runner, error) {
 	scanopts.OutputResponseTime = options.OutputResponseTime
 	scanopts.NoFallback = options.NoFallback
 	scanopts.NoFallbackScheme = options.NoFallbackScheme
-	scanopts.TechDetect = options.TechDetect || options.JSONOutput || options.CSVOutput
+	scanopts.TechDetect = options.TechDetect
 	scanopts.StoreChain = options.StoreChain
 	scanopts.StoreVisionReconClusters = options.StoreVisionReconClusters
 	scanopts.MaxResponseBodySizeToSave = options.MaxResponseBodySizeToSave
@@ -1111,9 +1111,9 @@ func (r *Runner) RunEnumeration() {
 			if r.options.JSONOutput {
 				row := resp.JSON(&r.scanopts)
 
-				if !r.options.OutputAll && !jsonAndCsv {
-					gologger.Info().Msgf("%s\n", row)
-				}
+				// if !r.options.OutputAll && !jsonAndCsv {
+				// 	gologger.Info().Msgf("%s\n", row)
+				// }
 
 				//nolint:errcheck // this method needs a small refactor to reduce complexity
 				if jsonFile != nil {
@@ -1917,11 +1917,28 @@ retry:
 	if scanopts.OutputResponseTime {
 		builder.WriteString(fmt.Sprintf(" [%s]", resp.Duration))
 	}
+	var faviconMMH3, faviconPath, faviconURL string
+	var faviconData []byte
+	if scanopts.Favicon {
+		var err error
+		faviconMMH3, faviconPath, faviconData, faviconURL, err = r.HandleFaviconHash(hp, req, resp.Data, true)
+		if err == nil {
+			builder.WriteString(" [")
+			if !scanopts.OutputWithNoColor {
+				builder.WriteString(aurora.Magenta(faviconMMH3).String())
+			} else {
+				builder.WriteString(faviconMMH3)
+			}
+			builder.WriteRune(']')
+		} else {
+			gologger.Warning().Msgf("could not calculate favicon hash for path %v : %s", faviconPath, err)
+		}
+	}
 
 	var technologies []string
 	//var technologyDetails = make(map[string]wappalyzer.AppInfo)
 	if scanopts.TechDetect {
-		product, err := r.tech.Detect(resp)
+		product, err := r.tech.Detect(faviconMMH3, resp)
 		if err != nil {
 			gologger.Warning().Msgf("detect tech error: %s", err)
 		}
@@ -1948,7 +1965,7 @@ retry:
 					gologger.Warning().Msgf("tech detect error: %s", err)
 					continue
 				}
-				product, err := r.tech.Detect(techResp)
+				product, err := r.tech.Detect("",techResp)
 				if err != nil {
 					gologger.Warning().Msgf("detect tech error: %s", err)
 					continue
@@ -2011,24 +2028,6 @@ retry:
 			builder.WriteString(finalURL)
 		}
 		builder.WriteRune(']')
-	}
-
-	var faviconMMH3, faviconPath, faviconURL string
-	var faviconData []byte
-	if scanopts.Favicon {
-		var err error
-		faviconMMH3, faviconPath, faviconData, faviconURL, err = r.HandleFaviconHash(hp, req, resp.Data, true)
-		if err == nil {
-			builder.WriteString(" [")
-			if !scanopts.OutputWithNoColor {
-				builder.WriteString(aurora.Magenta(faviconMMH3).String())
-			} else {
-				builder.WriteString(faviconMMH3)
-			}
-			builder.WriteRune(']')
-		} else {
-			gologger.Warning().Msgf("could not calculate favicon hash for path %v : %s", faviconPath, err)
-		}
 	}
 
 	hashesMap := make(map[string]interface{})
@@ -2206,7 +2205,7 @@ retry:
 				newResp := resp
 				newResp.Data = []byte(headlessBody)
 				if r.options.TechRule != "" {
-					products, err := r.tech.Detect(newResp)
+					products, err := r.tech.Detect("", newResp)
 					if err != nil {
 						gologger.Warning().Msgf("detect tech error: %s", err)
 					}

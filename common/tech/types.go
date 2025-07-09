@@ -1,18 +1,21 @@
 package tech
 
 type Info struct {
-	Company  string `yaml:"company"`
-	Product  string `yaml:"product"`
-	Server   string `yaml:"server"`
-	Category string `yaml:"category"`
-	Tags     string `yaml:"tags"`
-	CPE      string `yaml:"cpe"`
+	Company     string   `yaml:"company"`
+	Author      string   `yaml:"author"`
+	Product     string   `yaml:"product"`
+	Description string   `yaml:"description"`
+	Version     string   `yaml:"version"`
+	Category    string   `yaml:"category"`
+	Tags        []string `yaml:"tags"`
+	CPE         string   `yaml:"cpe"`
+	FoFaQuery   string   `yaml:"fofa_query"`
 }
 
 type Rule struct {
 	Method string `yaml:"method"`
 	Path   string `yaml:"path"`
-	DSL    string `yaml:"dsl"`
+	CEL    string `yaml:"cel"`
 }
 
 type Matchers struct {

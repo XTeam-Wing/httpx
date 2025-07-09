@@ -67,8 +67,8 @@ func (t *TechDetecter) ParseRule(filename string) error {
 			}
 			t.URIs[line.Method] = append(t.URIs[line.Method], line.Path)
 		}
-		if line.DSL != "" {
-			fingerPrint.Conditions = append(fingerPrint.Conditions, line.DSL)
+		if line.CEL != "" {
+			fingerPrint.Conditions = append(fingerPrint.Conditions, line.CEL)
 		}
 	}
 	data, err := json.Marshal(matchers.Info)
@@ -84,7 +84,7 @@ func (t *TechDetecter) ParseRule(filename string) error {
 	t.FinerPrints = append(t.FinerPrints, fingerPrint)
 	return nil
 }
-func (t *TechDetecter) Detect(response *httpx.Response) ([]string, error) {
+func (t *TechDetecter) Detect(faviconMMH3 string, response *httpx.Response) ([]string, error) {
 	options := cel.InitCelOptions()
 	env, err := cel.InitCelEnv(&options)
 	if err != nil {
@@ -106,17 +106,15 @@ func (t *TechDetecter) Detect(response *httpx.Response) ([]string, error) {
 			}
 			ast, iss := env.Compile(matches)
 			if iss.Err() != nil {
-				gologger.Debug().Msgf(fmt.Sprintf("product: %s rule Compile error:%s", r.Name, iss.Err().Error()))
+				gologger.Debug().Msgf(fmt.Sprintf("product: %s error:%s", r.Name, iss.Err().Error()))
 				return err
 			}
 			prg, err := env.Program(ast)
 			if err != nil {
-				gologger.Debug().Msgf(fmt.Sprintf("product: %s rule Program error:%s", r.Name, err.Error()))
 				return err
 			}
 			tlsInfo, err := json.Marshal(response.TLSData)
 			if err != nil {
-				gologger.Debug().Msgf(fmt.Sprintf("product: %s tlsData Marshal error:%s", r.Name, err.Error()))
 				tlsInfo = []byte("")
 			}
 
@@ -130,6 +128,7 @@ func (t *TechDetecter) Detect(response *httpx.Response) ([]string, error) {
 				"protocol":    "",
 				"port":        "",
 				"status_code": response.StatusCode,
+				"favicon":     faviconMMH3,
 			})
 			if err != nil {
 				return err

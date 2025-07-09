@@ -355,6 +355,8 @@ func InitCelOptions() CustomLib {
 			decls.NewVar("banner", decls.String),
 			decls.NewVar("protocol", decls.String),
 			decls.NewVar("status_code", decls.Int),
+			decls.NewVar("port", decls.Int),
+			decls.NewVar("favicon", decls.String), // 新增 favicon 变量
 		),
 		// 定义
 		cel.Declarations(
