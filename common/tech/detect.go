@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
-	"path/filepath"
 	"strconv"
 	"strings"
 
@@ -31,9 +30,6 @@ func (t *TechDetecter) Init(rulePath string) (err error) {
 	if IsDir(rulePath) {
 		files := ReadDir(rulePath)
 		for _, file := range files {
-			if filepath.Ext(file) != ".yml" && filepath.Ext(file) != ".yaml" {
-				continue
-			}
 			err := t.ParseRule(file)
 			if err != nil {
 				gologger.Error().Msgf("file %s error:%s", file, err)

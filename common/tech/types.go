@@ -15,7 +15,6 @@ type Info struct {
 type Rule struct {
 	Method string `yaml:"method"`
 	Path   []string `yaml:"path"`
-	CEL    string `yaml:"cel"`
 	DSL    string `yaml:"dsl"`
 }
 
