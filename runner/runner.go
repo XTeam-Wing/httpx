@@ -66,6 +66,7 @@ import (
 	syncutil "github.com/projectdiscovery/utils/sync"
 	urlutil "github.com/projectdiscovery/utils/url"
 	"golang.org/x/exp/maps"
+	"golang.org/x/sync/errgroup"
 )
 
 // Runner is a client for running the enumeration process.
@@ -1551,6 +1552,7 @@ retry:
 	if scanopts.Unsafe {
 		req.Header.Add("Connection", "close")
 	}
+	gologger.Debug().Msgf("Sending request to %s with method %s", URL.String(), req.Method)
 	resp, err := hp.Do(req, httpx.UnsafeOptions{URIPath: reqURI})
 	if r.options.ShowStatistics {
 		r.stats.IncrementCounter("requests", 1)
@@ -1945,35 +1947,53 @@ retry:
 		if len(product) > 0 {
 			technologies = append(technologies, product...)
 		}
+		var eg = errgroup.Group{}
+		var mu sync.Mutex
+		eg.SetLimit(10)
 		for method, paths := range r.options.techRuleURIs {
 			for _, path := range paths {
+				if path == "/favicon.ico" {
+					continue // favicon is already handled
+				}
+				path := path
 				u := URL.Clone()
-				// retry with unsafe
-				if err := u.MergePath(path, scanopts.Unsafe); err != nil {
-					gologger.Debug().Msgf("failed to merge paths of url %v and %v", u.String(), path)
-				}
-				techReq, err := hp.NewRequest(method, u.String())
-				if err != nil {
-					gologger.Warning().Msgf("failed to create request for %s: %s", u.String(), err)
-					continue
-				}
-				techResp, err := hp.Do(techReq, httpx.UnsafeOptions{URIPath: reqURI})
-				if r.options.ShowStatistics {
-					r.stats.IncrementCounter("requests", 1)
-				}
-				if err != nil {
-					gologger.Warning().Msgf("tech detect error: %s", err)
-					continue
-				}
-				product, err := r.tech.Detect("",techResp)
-				if err != nil {
-					gologger.Warning().Msgf("detect tech error: %s", err)
-					continue
-				}
-				if len(product) > 0 {
-					technologies = append(technologies, product...)
-				}
+				eg.Go(func() error {
+					if err := u.MergePath(path, scanopts.Unsafe); err != nil {
+						gologger.Debug().Msgf("failed to merge paths of url %v and %v", u.String(), path)
+						return err
+					}
+					techReq, err := hp.NewRequest(method, u.String())
+					if err != nil {
+						gologger.Warning().Msgf("failed to create request for %s: %s", u.String(), err)
+						return err
+					}
+					techResp, err := hp.Do(techReq, httpx.UnsafeOptions{URIPath: reqURI})
+					if r.options.ShowStatistics {
+						r.stats.IncrementCounter("requests", 1)
+					}
+					if err != nil {
+						gologger.Warning().Msgf("tech detect error: %s", err)
+						return err
+					}
+					product, err := r.tech.Detect("", techResp)
+					if err != nil {
+						gologger.Warning().Msgf("detect tech error: %s", err)
+						return err
+					}
+					if len(product) > 0 {
+						mu.Lock()
+						technologies = append(technologies, product...)
+						mu.Unlock()
+						// 路径扫描发现一个就返回
+						return nil
+					}
+					return nil
+				})
+
 			}
+		}
+		if err := eg.Wait(); err != nil {
+			gologger.Warning().Msgf("error while detecting technologies: %s", err)
 		}
 
 		if len(technologies) > 0 {

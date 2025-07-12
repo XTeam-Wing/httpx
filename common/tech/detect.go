@@ -5,24 +5,26 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strconv"
 	"strings"
 
-	"github.com/google/cel-go/common/types"
+	"github.com/Knetic/govaluate"
+	"github.com/projectdiscovery/dsl"
 	"github.com/projectdiscovery/gologger"
 	"github.com/projectdiscovery/httpx/common/httpx"
-	"github.com/projectdiscovery/httpx/common/tech/cel"
 	sliceutil "github.com/projectdiscovery/utils/slice"
 	"golang.org/x/sync/errgroup"
 	"gopkg.in/yaml.v3"
 )
 
 type TechDetecter struct {
-	FinerPrints []FingerPrint
+	FinerPrints map[string][]string // fp rules
 	URIs        map[string][]string
 }
 
 func (t *TechDetecter) Init(rulePath string) (err error) {
 	t.URIs = make(map[string][]string)
+	t.FinerPrints = make(map[string][]string)
 	if !Exists(rulePath) {
 		return os.ErrNotExist
 	}
@@ -44,13 +46,18 @@ func (t *TechDetecter) Init(rulePath string) (err error) {
 			gologger.Error().Msgf("file %s error:%s", rulePath, err)
 		}
 	}
-	for method, fp := range t.FinerPrints {
-		t.FinerPrints[method].Conditions = sliceutil.Dedupe(fp.Conditions)
+	// 去重uris
+	for method, paths := range t.URIs {
+		t.URIs[method] = sliceutil.Dedupe(paths)
 	}
+	// 注册一些函数
+	var icontains = func(args ...interface{}) (interface{}, error) {
+		return strings.Contains(strings.ToLower(toString(args[0])), strings.ToLower(toString(args[1]))), nil
+	}
+	dsl.DefaultHelperFunctions["icontains"] = icontains
 	return nil
 }
 func (t *TechDetecter) ParseRule(filename string) error {
-	var fingerPrint = FingerPrint{}
 	content, err := os.ReadFile(filename)
 	if err != nil {
 		return err
@@ -61,89 +68,111 @@ func (t *TechDetecter) ParseRule(filename string) error {
 		return err
 	}
 	for _, line := range matchers.Rules {
-		if line.Path != "/" && line.Path != "" {
-			if line.Method == "" {
-				line.Method = "GET"
+		for _, path := range line.Path {
+			if path != "/" && path != "" {
+				if line.Method == "" {
+					line.Method = "GET"
+				}
+				t.URIs[line.Method] = append(t.URIs[line.Method], path)
 			}
-			t.URIs[line.Method] = append(t.URIs[line.Method], line.Path)
 		}
-		if line.CEL != "" {
-			fingerPrint.Conditions = append(fingerPrint.Conditions, line.CEL)
+		if line.DSL != "" {
+			t.FinerPrints[matchers.Info.Product] = append(t.FinerPrints[matchers.Info.Product], line.DSL)
 		}
 	}
-	data, err := json.Marshal(matchers.Info)
-	if err != nil {
-		return err
-	}
-	var info Info
-	err = json.Unmarshal(data, &info)
-	if err != nil {
-		return err
-	}
-	fingerPrint.Name = info.Product
-	t.FinerPrints = append(t.FinerPrints, fingerPrint)
 	return nil
 }
 func (t *TechDetecter) Detect(faviconMMH3 string, response *httpx.Response) ([]string, error) {
-	options := cel.InitCelOptions()
-	env, err := cel.InitCelEnv(&options)
+	products := make([]string, 0)
+	tlsInfo, err := json.Marshal(response.TLSData)
 	if err != nil {
-		return nil, err
+		tlsInfo = []byte("")
 	}
+	data := map[string]interface{}{
+		"body":        string(response.Data),
+		"title":       httpx.ExtractTitle(response),
+		"header":      response.RawHeaders,
+		"server":      fmt.Sprintf("%v", strings.Join(response.Headers["Server"], ",")),
+		"cert":        string(tlsInfo),
+		"banner":      response.RawHeaders,
+		"protocol":    "",
+		"port":        "",
+		"status_code": response.StatusCode,
+		"favicon":     faviconMMH3,
+	}
+
 	var eg errgroup.Group
 	eg.SetLimit(100)
-	var product []string
-	for _, r := range t.FinerPrints {
-		r := r // avoid closure capture
-		eg.Go(func() error {
-			var matches string
-			for i, match := range r.Conditions {
-				if i < len(r.Conditions)-1 {
-					matches = matches + "(" + match + ") || "
-				} else {
-					matches = matches + "(" + match + ")"
+	for product, rules := range t.FinerPrints {
+		for _, rule := range rules {
+			rule := rule // avoid closure capture
+			eg.Go(func() error {
+				compiledExpression, err := govaluate.NewEvaluableExpressionWithFunctions(rule, dsl.DefaultHelperFunctions)
+				if err != nil {
+					gologger.Error().Msgf("failed to compile expression: %s product:%s", err, product)
+					return nil
 				}
-			}
-			ast, iss := env.Compile(matches)
-			if iss.Err() != nil {
-				gologger.Debug().Msgf(fmt.Sprintf("product: %s error:%s", r.Name, iss.Err().Error()))
-				return err
-			}
-			prg, err := env.Program(ast)
-			if err != nil {
-				return err
-			}
-			tlsInfo, err := json.Marshal(response.TLSData)
-			if err != nil {
-				tlsInfo = []byte("")
-			}
 
-			out, _, err := prg.Eval(map[string]interface{}{
-				"body":        string(response.Data),
-				"title":       httpx.ExtractTitle(response),
-				"header":      response.RawHeaders,
-				"server":      fmt.Sprintf("%v", strings.Join(response.Headers["Server"], ",")),
-				"cert":        string(tlsInfo),
-				"banner":      response.RawHeaders,
-				"protocol":    "",
-				"port":        "",
-				"status_code": response.StatusCode,
-				"favicon":     faviconMMH3,
+				result, err := compiledExpression.Evaluate(data)
+				if err != nil {
+					gologger.Error().Msgf("failed to evaluate expression: %s product:%s", err, product)
+					return nil
+				}
+				if result == true {
+					products = append(products, product)
+				}
+				return nil
 			})
-			if err != nil {
-				return err
-			}
-
-			if out.(types.Bool) {
-				product = append(product, strings.ToLower(r.Name))
-			}
-			return nil
-		})
+		}
 	}
 	if err := eg.Wait(); err != nil {
 		gologger.Error().Msgf(fmt.Sprintf("tech detect error:%s", err.Error()))
-		return product, err
+		return products, err
 	}
-	return sliceutil.Dedupe(product), nil
+	return sliceutil.Dedupe(products), nil
 
+}
+
+// toString converts an interface to string in a quick way
+func toString(data interface{}) string {
+	switch s := data.(type) {
+	case nil:
+		return ""
+	case string:
+		return s
+	case bool:
+		return strconv.FormatBool(s)
+	case float64:
+		return strconv.FormatFloat(s, 'f', -1, 64)
+	case float32:
+		return strconv.FormatFloat(float64(s), 'f', -1, 32)
+	case int:
+		return strconv.Itoa(s)
+	case int64:
+		return strconv.FormatInt(s, 10)
+	case int32:
+		return strconv.Itoa(int(s))
+	case int16:
+		return strconv.FormatInt(int64(s), 10)
+	case int8:
+		return strconv.FormatInt(int64(s), 10)
+	case uint:
+		return strconv.FormatUint(uint64(s), 10)
+	case uint64:
+		return strconv.FormatUint(s, 10)
+	case uint32:
+		return strconv.FormatUint(uint64(s), 10)
+	case uint16:
+		return strconv.FormatUint(uint64(s), 10)
+	case uint8:
+		return strconv.FormatUint(uint64(s), 10)
+	case []byte:
+		return string(s)
+	case fmt.Stringer:
+		return s.String()
+	case error:
+		return s.Error()
+	default:
+		return fmt.Sprintf("%v", data)
+	}
 }
