@@ -1940,22 +1940,27 @@ retry:
 	var technologies []string
 	//var technologyDetails = make(map[string]wappalyzer.AppInfo)
 	if scanopts.TechDetect {
-		product, err := r.tech.Detect(faviconMMH3, resp)
+		product, err := r.tech.Detect(fullURL, faviconMMH3, resp)
 		if err != nil {
 			gologger.Warning().Msgf("detect tech error: %s", err)
 		}
 		if len(product) > 0 {
 			technologies = append(technologies, product...)
+			r.tech.AddMatchedProduct(fullURL, product)
 		}
-		var eg = errgroup.Group{}
 		var mu sync.Mutex
+		var ctx, cancel = context.WithCancel(context.Background())
+		defer cancel()
+
+		eg, _ := errgroup.WithContext(ctx)
 		eg.SetLimit(10)
 		for method, paths := range r.options.techRuleURIs {
 			for _, path := range paths {
-				if path == "/favicon.ico" {
-					continue // favicon is already handled
+				if path == "/favicon.ico" || path == "" || path == "/" {
+					continue // skip favicon.ico and empty paths
 				}
 				path := path
+				method := method
 				u := URL.Clone()
 				eg.Go(func() error {
 					if err := u.MergePath(path, scanopts.Unsafe); err != nil {
@@ -1975,7 +1980,7 @@ retry:
 						gologger.Warning().Msgf("tech detect error: %s", err)
 						return err
 					}
-					product, err := r.tech.Detect("", techResp)
+					product, err := r.tech.Detect(fullURL, "", techResp)
 					if err != nil {
 						gologger.Warning().Msgf("detect tech error: %s", err)
 						return err
@@ -1983,9 +1988,9 @@ retry:
 					if len(product) > 0 {
 						mu.Lock()
 						technologies = append(technologies, product...)
+						// Cancel other goroutines once technology is found
+						cancel()
 						mu.Unlock()
-						// 路径扫描发现一个就返回
-						return nil
 					}
 					return nil
 				})
@@ -2217,15 +2222,11 @@ retry:
 			if err != nil {
 				gologger.Warning().Msgf("%v: %s", err, fullURL)
 			}
-
-			// As we now have headless body, we can also use it for detecting
-			// more technologies in the response. This is a quick trick to get
-			// more detected technologies.
 			if r.options.TechDetect && headlessBody != "" {
 				newResp := resp
 				newResp.Data = []byte(headlessBody)
 				if r.options.TechRule != "" {
-					products, err := r.tech.Detect("", newResp)
+					products, err := r.tech.Detect(fullURL, "", newResp)
 					if err != nil {
 						gologger.Warning().Msgf("detect tech error: %s", err)
 					}
