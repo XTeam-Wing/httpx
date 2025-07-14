@@ -13,7 +13,6 @@ import (
 	"github.com/projectdiscovery/gologger"
 	"github.com/projectdiscovery/httpx/common/httpx"
 	sliceutil "github.com/projectdiscovery/utils/slice"
-	"golang.org/x/sync/errgroup"
 	"gopkg.in/yaml.v3"
 )
 
@@ -32,6 +31,7 @@ type TechDetecter struct {
 	compiledExpressions map[string][]*CompiledRule
 	compiledMutex       sync.RWMutex
 	matchedProduct      map[string][]string // 已经匹配的产品
+	matchedMutex        sync.RWMutex        // 保护 matchedProduct 的读写锁
 }
 
 // CompiledRule 编译后的规则
@@ -44,10 +44,18 @@ type CompiledRule struct {
 
 // Add MatchedProduct 添加已匹配的产品
 func (t *TechDetecter) AddMatchedProduct(target string, product []string) {
-	t.compiledMutex.Lock()
-	defer t.compiledMutex.Unlock()
+	t.matchedMutex.Lock()
+	defer t.matchedMutex.Unlock()
 	t.matchedProduct[target] = append(t.matchedProduct[target], product...)
 }
+
+// isProductMatched 线程安全地检查产品是否已匹配
+func (t *TechDetecter) isProductMatched(target, product string) bool {
+	t.matchedMutex.RLock()
+	defer t.matchedMutex.RUnlock()
+	return sliceutil.Contains(t.matchedProduct[target], product)
+}
+
 func (t *TechDetecter) Init(rulePath string) (err error) {
 	t.URIs = make(map[string][]string)
 	t.ProductRules = make(map[string][]TechRule)
@@ -199,56 +207,68 @@ func (t *TechDetecter) Detect(inputURL, requestPath, requestMethod, faviconMMH3 
 
 	var detectedProducts sync.Map
 
-	var eg errgroup.Group
-	eg.SetLimit(100)
+	// var eg errgroup.Group
+	// eg.SetLimit(100)
+
+	// 获取所有产品名称（线程安全）
+	t.compiledMutex.RLock()
+	productNames := make([]string, 0, len(t.ProductRules))
+	for product := range t.ProductRules {
+		productNames = append(productNames, product)
+	}
+	t.compiledMutex.RUnlock()
 
 	// 遍历所有产品规则
-	for product := range t.ProductRules {
-		if sliceutil.Contains(t.matchedProduct[inputURL], product) {
+	for _, product := range productNames {
+		if t.isProductMatched(inputURL, product) {
 			continue
 		}
-		product := product
-		compiledRules := t.getCompiledExpressions(product)
+		product := product // capture product variable
 
+		// eg.Go(func() error {
+		// 在 goroutine 内部检查是否已经检测到该产品
+		if _, exists := detectedProducts.Load(product); exists {
+			continue
+		}
+
+		// 在 goroutine 内部获取编译后的规则，避免变量捕获问题
+		compiledRules := t.getCompiledExpressions(product)
 		if len(compiledRules) == 0 {
 			continue
 		}
 
-		eg.Go(func() error {
-			// 对于每个产品，检查其编译后的规则
-			for _, compiledRule := range compiledRules {
-				// 添加 nil 检查
-				if _, exists := detectedProducts.Load(product); exists {
-					return nil
-				}
-				if compiledRule == nil || compiledRule.Expression == nil {
-					continue
-				}
-
-				// 检查当前请求的方法和路径是否匹配规则
-				if !t.pathMatches(requestPath, requestMethod, compiledRule) {
-					continue // 路径或方法不匹配，跳过此规则
-				}
-
-				result, err := compiledRule.Expression.Evaluate(data)
-				if err != nil {
-					gologger.Error().Msgf("failed to evaluate expression for product:%s, error:%s", product, err)
-					continue
-				}
-				if result == true {
-					gologger.Debug().Msgf("tech detect success, product:%s, inputURL:%s, requestPath:%s, method:%s, expr:%v",
-						product, inputURL, requestPath, requestMethod, compiledRule.Expression)
-					detectedProducts.Store(product, true)
-					break
-				}
+		// 对于每个产品，检查其编译后的规则
+		for _, compiledRule := range compiledRules {
+			if compiledRule == nil || compiledRule.Expression == nil {
+				continue
 			}
-			return nil
-		})
+
+			// 检查当前请求的方法和路径是否匹配规则
+			if !t.pathMatches(requestPath, requestMethod, compiledRule) {
+				continue // 路径或方法不匹配，跳过此规则
+			}
+
+			result, err := compiledRule.Expression.Evaluate(data)
+			if err != nil {
+				gologger.Error().Msgf("failed to evaluate expression for product:%s", product)
+				continue
+			}
+			if result == true {
+				// 使用 LoadOrStore 确保只有第一个成功的 goroutine 存储结果
+				if _, loaded := detectedProducts.LoadOrStore(product, true); !loaded {
+					gologger.Debug().Msgf("tech detect success, product:%s, url:%s, path:%s, method:%s",
+						product, inputURL, requestPath, requestMethod)
+				}
+				break
+			}
+		}
+
+		// })
 	}
 
-	if err := eg.Wait(); err != nil {
-		gologger.Error().Msgf("tech detect error:%s", err.Error())
-	}
+	// if err := eg.Wait(); err != nil {
+	// 	gologger.Error().Msgf("tech detect error:%s", err.Error())
+	// }
 
 	// 收集结果
 	var products []string
