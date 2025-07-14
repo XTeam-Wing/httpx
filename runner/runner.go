@@ -1940,7 +1940,8 @@ retry:
 	var technologies []string
 	//var technologyDetails = make(map[string]wappalyzer.AppInfo)
 	if scanopts.TechDetect {
-		product, err := r.tech.Detect(fullURL, faviconMMH3, resp)
+		// 对于主请求，使用方法和请求URI
+		product, err := r.tech.Detect(fullURL, "/", method, faviconMMH3, resp)
 		if err != nil {
 			gologger.Warning().Msgf("detect tech error: %s", err)
 		}
@@ -1980,7 +1981,7 @@ retry:
 						gologger.Warning().Msgf("tech detect error: %s", err)
 						return err
 					}
-					product, err := r.tech.Detect(fullURL, "", techResp)
+					product, err := r.tech.Detect(fullURL, path, method, "", techResp)
 					if err != nil {
 						gologger.Warning().Msgf("detect tech error: %s", err)
 						return err
@@ -2226,7 +2227,7 @@ retry:
 				newResp := resp
 				newResp.Data = []byte(headlessBody)
 				if r.options.TechRule != "" {
-					products, err := r.tech.Detect(fullURL, "", newResp)
+					products, err := r.tech.Detect(fullURL, "/", "GET", "", newResp)
 					if err != nil {
 						gologger.Warning().Msgf("detect tech error: %s", err)
 					}

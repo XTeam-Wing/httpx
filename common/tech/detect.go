@@ -17,13 +17,29 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
+// TechRule 技术检测规则
+type TechRule struct {
+	Method string   `yaml:"method"`
+	Path   []string `yaml:"path"`
+	DSL    string   `yaml:"dsl"`
+}
+
 type TechDetecter struct {
-	FinerPrints map[string][]string // fp rules
-	URIs        map[string][]string
-	// 预编译的表达式缓存
-	compiledExpressions map[string][]*govaluate.EvaluableExpression
+	// 重新设计的规则存储结构
+	ProductRules map[string][]TechRule // 产品名 -> 规则列表
+	URIs         map[string][]string   // 方法 -> 路径列表（保持兼容性）
+	// 预编译的表达式缓存：产品名 -> 规则索引 -> 编译后的表达式
+	compiledExpressions map[string][]*CompiledRule
 	compiledMutex       sync.RWMutex
 	matchedProduct      map[string][]string // 已经匹配的产品
+}
+
+// CompiledRule 编译后的规则
+type CompiledRule struct {
+	Method     string                         `json:"method"`
+	Paths      []string                       `json:"paths"`
+	Expression *govaluate.EvaluableExpression `json:"-"`
+	RawDSL     string                         `json:"raw_dsl"`
 }
 
 // Add MatchedProduct 添加已匹配的产品
@@ -34,9 +50,9 @@ func (t *TechDetecter) AddMatchedProduct(target string, product []string) {
 }
 func (t *TechDetecter) Init(rulePath string) (err error) {
 	t.URIs = make(map[string][]string)
-	t.FinerPrints = make(map[string][]string)
+	t.ProductRules = make(map[string][]TechRule)
 	t.matchedProduct = make(map[string][]string) // 初始化已匹配的产品
-	t.compiledExpressions = make(map[string][]*govaluate.EvaluableExpression)
+	t.compiledExpressions = make(map[string][]*CompiledRule)
 
 	if !Exists(rulePath) {
 		return os.ErrNotExist
@@ -77,17 +93,30 @@ func (t *TechDetecter) ParseRule(filename string) error {
 	if err != nil {
 		return err
 	}
+
+	productName := matchers.Info.Product
 	for _, line := range matchers.Rules {
+		// 跳过没有DSL的规则
+		if line.DSL == "" {
+			continue
+		}
+
+		// 转换Rule为TechRule
+		techRule := TechRule(line)
+
+		// 如果方法为空，默认为GET
+		if techRule.Method == "" {
+			techRule.Method = "GET"
+		}
+
+		// 添加到产品规则中 - 每个Rule对应一个独立的TechRule
+		t.ProductRules[productName] = append(t.ProductRules[productName], techRule)
+
+		// 保持URI兼容性（用于获取所有需要请求的路径）
 		for _, path := range line.Path {
 			if path != "/" && path != "" {
-				if line.Method == "" {
-					line.Method = "GET"
-				}
-				t.URIs[line.Method] = append(t.URIs[line.Method], path)
+				t.URIs[techRule.Method] = append(t.URIs[techRule.Method], path)
 			}
-		}
-		if line.DSL != "" {
-			t.FinerPrints[matchers.Info.Product] = append(t.FinerPrints[matchers.Info.Product], line.DSL)
 		}
 	}
 	return nil
@@ -112,28 +141,40 @@ func (t *TechDetecter) precompileExpressions() {
 	}
 	localHelperFunctions["icontains"] = icontains
 
-	for product, rules := range t.FinerPrints {
-		compiledRules := make([]*govaluate.EvaluableExpression, 0, len(rules))
-		for _, rule := range rules {
-			expr, err := govaluate.NewEvaluableExpressionWithFunctions(rule, localHelperFunctions)
+	// 遍历新的产品规则结构
+	for product, techRules := range t.ProductRules {
+		compiledRules := make([]*CompiledRule, 0, len(techRules))
+		for _, rule := range techRules {
+			if rule.DSL == "" {
+				continue // 跳过空的DSL规则
+			}
+
+			expr, err := govaluate.NewEvaluableExpressionWithFunctions(rule.DSL, localHelperFunctions)
 			if err != nil {
 				gologger.Error().Msgf("failed to precompile expression for product %s: %s", product, err)
 				continue
 			}
-			compiledRules = append(compiledRules, expr)
+
+			compiledRule := &CompiledRule{
+				Method:     rule.Method,
+				Paths:      rule.Path,
+				Expression: expr,
+				RawDSL:     rule.DSL,
+			}
+			compiledRules = append(compiledRules, compiledRule)
 		}
 		t.compiledExpressions[product] = compiledRules
 	}
 }
 
 // getCompiledExpressions 线程安全地获取编译后的表达式
-func (t *TechDetecter) getCompiledExpressions(product string) []*govaluate.EvaluableExpression {
+func (t *TechDetecter) getCompiledExpressions(product string) []*CompiledRule {
 	t.compiledMutex.RLock()
 	defer t.compiledMutex.RUnlock()
 	return t.compiledExpressions[product]
 }
 
-func (t *TechDetecter) Detect(inputURL, faviconMMH3 string, response *httpx.Response) ([]string, error) {
+func (t *TechDetecter) Detect(inputURL, requestPath, requestMethod, faviconMMH3 string, response *httpx.Response) ([]string, error) {
 	tlsInfo, err := json.Marshal(response.TLSData)
 	if err != nil {
 		tlsInfo = []byte("")
@@ -151,41 +192,52 @@ func (t *TechDetecter) Detect(inputURL, faviconMMH3 string, response *httpx.Resp
 		"favicon":     faviconMMH3,
 	}
 
+	// 如果请求方法为空，默认为GET
+	if requestMethod == "" {
+		requestMethod = "GET"
+	}
+
 	var detectedProducts sync.Map
 
 	var eg errgroup.Group
 	eg.SetLimit(100)
 
-	for product := range t.FinerPrints {
+	// 遍历所有产品规则
+	for product := range t.ProductRules {
 		if sliceutil.Contains(t.matchedProduct[inputURL], product) {
 			continue
 		}
 		product := product
-		compiledExprs := t.getCompiledExpressions(product)
+		compiledRules := t.getCompiledExpressions(product)
 
-		if len(compiledExprs) == 0 {
+		if len(compiledRules) == 0 {
 			continue
 		}
 
 		eg.Go(func() error {
-			if _, exists := detectedProducts.Load(product); exists {
-				return nil
-			}
-
-			// 对于每个产品，顺序检查其表达式
-			for _, expr := range compiledExprs {
+			// 对于每个产品，检查其编译后的规则
+			for _, compiledRule := range compiledRules {
 				// 添加 nil 检查
-				if expr == nil {
+				if _, exists := detectedProducts.Load(product); exists {
+					return nil
+				}
+				if compiledRule == nil || compiledRule.Expression == nil {
 					continue
 				}
 
-				result, err := expr.Evaluate(data)
+				// 检查当前请求的方法和路径是否匹配规则
+				if !t.pathMatches(requestPath, requestMethod, compiledRule) {
+					continue // 路径或方法不匹配，跳过此规则
+				}
+
+				result, err := compiledRule.Expression.Evaluate(data)
 				if err != nil {
 					gologger.Error().Msgf("failed to evaluate expression for product:%s, error:%s", product, err)
 					continue
 				}
 				if result == true {
-					// gologger.Debug().Msgf("tech detect success, product:%s, url:%s data:%v expr:%s", product, inputURL, data, expr.String())
+					gologger.Debug().Msgf("tech detect success, product:%s, inputURL:%s, requestPath:%s, method:%s, expr:%v",
+						product, inputURL, requestPath, requestMethod, compiledRule.Expression)
 					detectedProducts.Store(product, true)
 					break
 				}
@@ -208,6 +260,37 @@ func (t *TechDetecter) Detect(inputURL, faviconMMH3 string, response *httpx.Resp
 	})
 
 	return sliceutil.Dedupe(products), nil
+}
+
+// pathMatches 检查当前请求的路径和方法是否匹配规则
+func (t *TechDetecter) pathMatches(requestPath, requestMethod string, rule *CompiledRule) bool {
+	// 检查方法是否匹配
+	if rule.Method != "" && !strings.EqualFold(rule.Method, requestMethod) {
+		return false
+	}
+	if len(rule.Paths) == 0 {
+		if requestPath == "" || requestPath == "/" {
+			// 如果规则没有指定路径且请求路径是根路径或空路径，则匹配
+			return true
+		}
+		if requestPath != "" && requestPath != "/" {
+			// 如果规则没有指定路径且请求路径不是根路径或空路径，则不匹配
+			return false
+		}
+	}
+	// 检查路径是否严格匹配
+	for _, rulePath := range rule.Paths {
+		// 严格匹配路径，不允许模糊匹配
+		if requestPath == rulePath {
+			return true
+		}
+		// 特殊情况：如果规则路径是 "/" 或空，匹配根路径请求
+		if (rulePath == "/" || rulePath == "") && (requestPath == "/" || requestPath == "") {
+			return true
+		}
+	}
+
+	return false
 }
 
 // toString converts an interface to string in a quick way
