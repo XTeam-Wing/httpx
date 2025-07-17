@@ -71,21 +71,18 @@ func (t *TechDetecter) Init(rulePath string) (err error) {
 	if err != nil {
 		return errors.New("user defined rules is missed: " + err.Error())
 	}
-	fmt.Println("user defined rules:", userDefinedPath, len(files))
 	for _, fileName := range files {
 		absFileName := path.Join(userDefinedPath, fileName)
 		content, err := embed.Asset(absFileName)
 		if err != nil {
 			continue
 		}
+
 		err = t.ParseRule(content)
 		if err != nil {
 			gologger.Error().Msgf("file %s error:%s", absFileName, err)
 			continue
 		}
-	}
-	if !Exists(rulePath) {
-		return nil
 	}
 	if IsDir(rulePath) {
 		files := ReadDir(rulePath)
@@ -100,7 +97,7 @@ func (t *TechDetecter) Init(rulePath string) (err error) {
 				continue
 			}
 		}
-	} else {
+	} else if Exists(rulePath) {
 		content, err := os.ReadFile(rulePath)
 		if err != nil {
 			return err
