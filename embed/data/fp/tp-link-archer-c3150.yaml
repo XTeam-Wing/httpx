@@ -1,0 +1,13 @@
+info:
+  category: router
+  company: Pullian Technology Co., Ltd.
+  cpe: ''
+  product: tp-link-archer-c3150
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"var modelname=\"archer c3150\"") || (icontains(body,"tp-link
+    archer c3150") && icontains(body,"var mmc = {"))) || icontains(banner,"0.9.1 0.1
+    v005f.0 build 160603 rel.61835n"))
+  method: GET
+  

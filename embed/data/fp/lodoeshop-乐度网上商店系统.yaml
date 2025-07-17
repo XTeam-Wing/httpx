@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: lodoeshop-乐度网上商店系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"lodoeshop_乐度网上商店系统")
+  method: GET
+  

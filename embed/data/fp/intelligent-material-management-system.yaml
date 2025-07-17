@@ -1,0 +1,11 @@
+info:
+  category: project management system
+  company: other
+  cpe: ''
+  product: intelligent-material-management-system
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"var token = result.data.PRIVATETOKEN")
+  method: GET
+  

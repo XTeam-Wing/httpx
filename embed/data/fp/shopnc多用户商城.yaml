@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: shopnc多用户商城
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"shopnc多用户商城")
+  method: GET
+  

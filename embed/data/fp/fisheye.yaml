@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Atlassian
+  cpe: ''
+  product: fisheye
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(body,"fisheye-16.ico") || (icontains(body,"fisheye ") && icontains(banner,"set-cookie:
+    fesessionid")))'
+  method: GET
+  

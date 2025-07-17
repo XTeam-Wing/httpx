@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-rbt-gateway-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"rbt gateway management system")
+  method: GET
+  

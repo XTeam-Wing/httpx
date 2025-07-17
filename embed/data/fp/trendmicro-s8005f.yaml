@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Trend Micro Incorporated.
+  cpe: ''
+  product: trendmicro-s8005f
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(cert,"s8005f")
+  method: GET
+  

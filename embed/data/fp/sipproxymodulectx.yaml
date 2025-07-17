@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: sipproxymodulectx
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"this is from sipproxymodulectx") || icontains(banner,"this
+    is from sipproxymodulectx")) || icontains(title,"sipproxymodulectx"))
+  method: GET
+  

@@ -1,0 +1,13 @@
+info:
+  category: other enterprise application
+  company: Automattic Inc.
+  cpe: ''
+  product: wordpress
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"wordpress_test_cookie") || icontains(banner,"wordpress_test_cookie"))
+    || (((icontains(body,"/wp-includes/") && icontains(banner,"/xmlrpc.php")) && icontains(banner,"x-pingback"))
+    || icontains(body,"name=\"generator\" content=\"wordpress ")))||icontains(body,"wp-content/plugins/")
+  method: GET
+  

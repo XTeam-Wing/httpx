@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Ping Communication AS
+  cpe: ''
+  product: ping-com-npa201e
+  server: nginx
+  tags: []
+rules:
+- dsl: 'icontains(title,"ping communication npa201e : login")'
+  method: GET
+  

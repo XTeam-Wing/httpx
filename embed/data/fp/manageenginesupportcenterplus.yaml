@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: manageenginesupportcenterplus
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"manageengine supportcenter plus")
+  method: GET
+  

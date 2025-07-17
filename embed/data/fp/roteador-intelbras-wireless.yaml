@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: intelbras lnc.
+  cpe: ''
+  product: roteador-intelbras-wireless
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"roteador intelbras wireless") || icontains(banner,"realm=\"roteador
+    intelbras wireless"))
+  method: GET
+  

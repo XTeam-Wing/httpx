@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: CastleNet Technology Inc
+  cpe: ''
+  product: castlenet-cbw383g4j
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"castlenet") && icontains(banner,"cbw383g4j"))
+  method: GET
+  

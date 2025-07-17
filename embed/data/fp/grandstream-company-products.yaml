@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Grandstream Networks, Inc.
+  cpe: ''
+  product: grandstream-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"server: grandstream") || icontains(title,"grandstream
+    device configuration")) || icontains(banner,"grandstream"))'
+  method: GET
+  

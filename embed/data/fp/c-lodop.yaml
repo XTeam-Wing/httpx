@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: c-lodop
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<h1>关于c-lodop免费和注册授权</h1>")||(icontains(body,"document.getelementbyid\"reqid\".value==document.getelementbyid\"licid\".value"))||(icontains(body,"document.getelementbyid(\"reqid\").value==document.getelementbyid(\"licid\").value"))||(icontains(body,"document.getelementbyid(\"reqid\".value==document.getelementbyid(\"licid\").value"))||(icontains(title,"welcome
+    to c-lodop"))
+  method: GET
+  

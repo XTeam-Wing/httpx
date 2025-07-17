@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: webray-situation-awareness
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(body,"class=\"disclaimer\" style=\"color: #ffffff\">《盛邦安全网站监控预警平台服务协议》</a>")'
+  method: GET
+  

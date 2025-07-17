@@ -1,0 +1,12 @@
+info:
+  category: other iot device
+  company: Amino Communications
+  cpe: ''
+  product: amino-streamer
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"amino streamer") || (icontains(banner,"server: amino streamer
+    ") && icontains(protocol,"rtsp")))'
+  method: GET
+  

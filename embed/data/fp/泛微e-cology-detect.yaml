@@ -1,0 +1,24 @@
+info:
+  product: 泛微协同办公oa
+  category: oa
+  author: 哆啦A梦
+  company: 上海泛微网络科技有限公司
+  description: 泛微协同管理应用平台(e-cology)是一套兼具企业信息门户、知识文档管理、工作流程管理、人力资源管理、客户关系管理、项目管理、财务管理、资产管理、供应链管理、数据中心功能的企业大型协同管理平台，并可形成一系列的通用解决方案和行业解决方案
+  tags:
+  - tech
+  - e-cology
+rules:
+- method: GET
+  dsl: contains(body, "/spa/hrm/staticLoginNew/loginNew.js") || contains(body, "/wui/common/jquery/plugin/jquery.overlabel_wev8.js")|| contains(body, "/wui/common/css/w7OVFont.css")
+- method: GET
+  path: 
+  - /wui/index.html
+  dsl: contains(body, "/spa/hrm/staticLoginNew/loginNew.js") || contains(body, "/wui/common/jquery/plugin/jquery.overlabel_wev8.js")|| contains(body, "/wui/common/css/w7OVFont.css")
+- method: GET
+  path: 
+  - /login/Login.jsp
+  dsl: contains(body, "/spa/hrm/staticLoginNew/loginNew.js") || contains(body, "/wui/common/jquery/plugin/jquery.overlabel_wev8.js")|| contains(body, "/wui/common/css/w7OVFont.css")
+- method: GET
+  path: 
+  - /wui/theme/ecology7/page/login.jsp
+  dsl: contains(body, "/spa/hrm/staticLoginNew/loginNew.js") || contains(body, "/wui/common/jquery/plugin/jquery.overlabel_wev8.js")|| contains(body, "/wui/common/css/w7OVFont.css")

@@ -1,0 +1,12 @@
+info:
+  category: wireless network
+  company: Shenzhen Jixiang Tengda Technology Co., Ltd.
+  cpe: ''
+  product: tenda-radio-repeater
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"repeater") && icontains(body,"src=\"img/logo-inverse.png\"
+    alt=\"tenda logo\""))
+  method: GET
+  

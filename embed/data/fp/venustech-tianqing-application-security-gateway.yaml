@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: venustech-tianqing-application-security-gateway
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"天清web应用安全网关") && icontains(body,"v2/global/vendor/modernizr/modernizr.js")||(icontains(body,"v2/global/vendor/modernizr/modernizr.js"))||(icontains(body,"天清web应用安全网关"))
+  method: GET
+  

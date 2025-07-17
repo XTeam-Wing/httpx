@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: dzzoffice
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"dzzoffice")
+  method: GET
+  

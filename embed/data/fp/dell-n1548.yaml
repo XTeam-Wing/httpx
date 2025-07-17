@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Dell Inc.
+  cpe: ''
+  product: dell-n1548
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"dell networking n1548") || icontains(body,"class=\"login_server_default\">n1548"))
+  method: GET
+  

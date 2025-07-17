@@ -1,0 +1,11 @@
+info:
+  category: antivirus gateway
+  company: other
+  cpe: ''
+  product: kaspersky-secure-mail-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"kaspersky secure mail gateway") || icontains(banner,"ksmg"))
+  method: GET
+  

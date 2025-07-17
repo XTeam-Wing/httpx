@@ -1,0 +1,14 @@
+info:
+  category: router
+  company: Multiplex Ltd.
+  cpe: ''
+  product: watson-router
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(body,"watson") && icontains(body,"<!--- page(page_login)=[login]
+    ---><html>")) || (icontains(banner,"watson shdsl router") && icontains(banner,"schmid-telecom
+    ag"))) || (icontains(body," case 32: if (is_button_in_focus)") && icontains(title,"watson
+    management console")))'
+  method: GET
+  

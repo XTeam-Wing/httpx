@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-es-2024a
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"es-2024a") || icontains(banner,"realm=\"es-2024a"))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: TRENDnet, Inc.
+  cpe: ''
+  product: trendnet-tv-ip851wic
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"realm=\"tv-ip851wic") || icontains(banner,"tv-ip851wic"))
+    || icontains(body,"src=\"descript.gif?cidx=tv-ip851wic1.022014-03-31\""))
+  method: GET
+  

@@ -1,0 +1,13 @@
+info:
+  category: router
+  company: ASUS Computer Co., Ltd.
+  cpe: ''
+  product: asus-rt-ac5300
+  server: nginx
+  tags: []
+rules:
+- dsl: (((((icontains(banner,"asus rt-ac5300") || icontains(title,"rt-ac5300")) ||
+    (icontains(body,"asus rt-ac5300") && icontains(body,"var mmc = {"))) || icontains(body,"<div
+    class=\"prod_madelname\">rt-ac5300")) || icontains(banner,"rt-ac5300")) || icontains(banner,"rt-ac5300"))
+  method: GET
+  

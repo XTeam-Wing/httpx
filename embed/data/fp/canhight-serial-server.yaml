@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Beijing Kanghai Electronic Technology Co., Ltd.
+  cpe: ''
+  product: canhight-serial-server
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"io server") && icontains(title,"canhigher"))
+  method: GET
+  

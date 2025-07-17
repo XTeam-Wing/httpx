@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Hewlett Packard Enterprise Development LP
+  cpe: ''
+  product: hp-dl380-g5
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(cert,"dl380-g5") || icontains(banner,"dl380-g5"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Blue Coat Systems, Inc.
+  cpe: ''
+  product: bluecoat-sg300
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(cert,"blue coat sg300") || icontains(banner,"blue coat sg300"))
+  method: GET
+  

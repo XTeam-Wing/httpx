@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-b5
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"b5&nbsp设备登录") || icontains(body,"var product_type = \"b5\""))
+  method: GET
+  

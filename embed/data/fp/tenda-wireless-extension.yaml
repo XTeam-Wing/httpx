@@ -1,0 +1,11 @@
+info:
+  category: wireless network
+  company: Shenzhen Jixiang Tengda Technology Co., Ltd.
+  cpe: ''
+  product: tenda-wireless-extension
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"extender") && icontains(body,"alt=\"tenda logo\""))
+  method: GET
+  

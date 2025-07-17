@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: typo3
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(body,"<!--typo3search_end-->")||(icontains(header,"(set-cookie: ^fe_typo_user)"))'
+  method: GET
+  

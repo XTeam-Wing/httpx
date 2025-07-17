@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: VMware, Inc.
+  cpe: ''
+  product: vmware-carbon-black-edr
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"versionnumber") && title == "vmware carbon black edr")
+  method: GET
+  

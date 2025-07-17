@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Broadcom Inc.
+  cpe: ''
+  product: broadcom-symantec-edr
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"Symantec EDR")
+  method: GET
+  

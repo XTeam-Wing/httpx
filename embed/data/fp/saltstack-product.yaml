@@ -1,0 +1,11 @@
+info:
+  category: audit
+  company: SaltStack, Inc.
+  cpe: ''
+  product: saltstack-product
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(cert,"organization: saltstack") || title == "saltstack")'
+  method: GET
+  

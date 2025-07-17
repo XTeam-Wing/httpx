@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Team fEMR
+  cpe: ''
+  product: femr-smart-outpatient-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"/res/images/login-bg-1.png") || icontains(body,"/res/vendor/bootstrap-3.3.5/css/bootstrap.min.css"))
+  method: GET
+  

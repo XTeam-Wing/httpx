@@ -1,0 +1,14 @@
+info:
+  category: multifunctional
+  company: Canon Inc.
+  cpe: ''
+  product: canon-print-||-copier
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"canon") && icontains(protocol,"snmp")) || icontains(banner,"server:
+    catwalk")) || (!icontains(body,"server: couchdb") && (((icontains(banner,"server:
+    catwalk") || icontains(body,"<span id=\"devicename\">ir-adv")) || icontains(title,"ir-adv"))
+    || icontains(banner,"canon http server"))))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-ex3700
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"netgear ex3700")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Cisco
+  cpe: ''
+  product: cisco-ise
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"identity services engine")
+  method: GET
+  

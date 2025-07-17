@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Qianxin Technology Group Co., Ltd.
+  cpe: ''
+  product: qianxin-tianshang-management-center
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"src=\"/resource/img/login/logo_403.png\" alt=\"360天机\"/></a>")
+    || icontains(title,"360天机管理中心"))
+  method: GET
+  

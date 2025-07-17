@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: pantek-router
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"alt=\"歡迎使用智慧路由器\"")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Shanghai Jiake Computer Software Co., Ltd.
+  cpe: ''
+  product: cancosoft-asset-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"var path = \"/cassets\";") || icontains(title,"佳克实物资产全生命周期的数据分析管理软件"))
+  method: GET
+  

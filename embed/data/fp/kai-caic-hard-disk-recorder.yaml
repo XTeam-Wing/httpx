@@ -1,0 +1,12 @@
+info:
+  category: other iot device
+  company: Shanghai Kaicong Electronic Technology Co., Ltd.
+  cpe: ''
+  product: kai-caic-hard-disk-recorder
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(title,"硬盘") || icontains(title,"{\"length\": 0, \"chained_to\":
+    1600482420, \"identifier\": \"_691730\", \"str\": null}")) && icontains(body,"window.open(\"http://www.kaicong.net\")"))'
+  method: GET
+  

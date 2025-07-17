@@ -1,0 +1,13 @@
+info:
+  category: router
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-r8500
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(banner,"netgear r8500") || (icontains(body,"netgear r8500") &&
+    icontains(body,"var mmc = {"))) || icontains(banner,"realm=\"r8500")) || icontains(banner,"matts_r8500"))
+    || icontains(banner,"netgear r8500"))
+  method: GET
+  

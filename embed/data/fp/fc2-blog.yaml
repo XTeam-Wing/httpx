@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: FC2, Inc.
+  cpe: ''
+  product: fc2-blog
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"cookietest=test") && icontains(banner,"bloguid")) || (icontains(banner,"cookietest=test")
+    && icontains(banner,"bloguid")))
+  method: GET
+  

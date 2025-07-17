@@ -1,0 +1,12 @@
+info:
+  category: virtualization
+  company: VMware, Inc.
+  cpe: ''
+  product: vmware-vcenter
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"/vmw_nsx_logo-black-triangle-500w.png") || icontains(body,"content=\"vmware
+    vcenter")) || icontains(body,"/converter/vmware-converter-client.exe")) || icontains(title,"id_converter_welcome"))
+  method: GET
+  

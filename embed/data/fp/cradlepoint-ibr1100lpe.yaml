@@ -1,0 +1,12 @@
+info:
+  category: adsl
+  company: Cradlepoint, Inc.
+  cpe: ''
+  product: cradlepoint-ibr1100lpe
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"cradlepoint ibr1100lpe") || icontains(title,"login ::
+    ibr1100lpe")) || icontains(body,"cplogin.model = \"ibr1100lpe\""))'
+  method: GET
+  

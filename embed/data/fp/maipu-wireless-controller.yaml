@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Maipu Communication Technology Co., Ltd.
+  cpe: ''
+  product: maipu-wireless-controller
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"js/localil8n.js")
+  method: GET
+  

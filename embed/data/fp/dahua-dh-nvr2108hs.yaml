@@ -1,0 +1,13 @@
+info:
+  category: other iot device
+  company: Zhejiang Dahua Technology Co., Ltd.
+  cpe: ''
+  product: dahua-dh-nvr2108hs
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(banner,"id=dh-nvr2108hs") || icontains(banner,"id=dh-nvr2108hs"))
+    || icontains(banner,"id=dhi-nvr2108hs")) || icontains(banner,"id=dhi-nvr2108hs"))
+    || icontains(banner,"x00id=dh-nvr2108hs"))
+  method: GET
+  

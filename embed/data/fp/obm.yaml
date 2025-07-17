@@ -1,0 +1,12 @@
+info:
+  category: project management system
+  company: other
+  cpe: ''
+  product: obm
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"obm_session=") || icontains(body,"home_obm.png\" alt=\"obm"))
+    || icontains(banner,"obm_session=")) || icontains(title,"login - obm"))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: anti-spam system
+  company: Softnext Technologies Corp.
+  cpe: ''
+  product: softnext-spam-sqr-anti-spam-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"spam_request/spam_requestact.asp") || icontains(body,"snspam/start_page.asp"))
+    || icontains(title,"spam sqr")) || icontains(body,"snspam/spam_request/"))
+  method: GET
+  

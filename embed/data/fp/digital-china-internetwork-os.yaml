@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: digital-china-internetwork-os
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"digitalchina internetwork operating system")||(icontains(header,"digital
+    china networks limited internetwork operating system"))||(icontains(header,"digital
+    china internetwork operating system"))
+  method: GET
+  

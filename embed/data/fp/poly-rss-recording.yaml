@@ -1,0 +1,12 @@
+info:
+  category: voice video
+  company: Polycom, Inc.
+  cpe: ''
+  product: poly-rss-recording
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"window.location.replace(\"/rss/\")") || icontains(title,"polycom
+    rss "))
+  method: GET
+  

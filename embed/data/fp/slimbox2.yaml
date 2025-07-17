@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: slimbox2
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"slimbox 2")
+  method: GET
+  

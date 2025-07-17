@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: kedacom-phoenix
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"kedacom") && icontains(body,"id=\"cuocx\" classid=\"clsid:a7ff7a36-3eef-4139-bfc0-faeb4c8eba08")||(icontains(body,"id=\"cuocx\"
+    classid=\"clsid:a7ff7a36-3eef-4139-bfc0-faeb4c8eba08"))
+  method: GET
+  

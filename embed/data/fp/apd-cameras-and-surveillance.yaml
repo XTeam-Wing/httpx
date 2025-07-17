@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: apd-cameras-and-surveillance
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"lg_body_iptpsw") && icontains(body,"var listenport = 6002;")||(icontains(body,"var
+    listenport = 6002;"))||(icontains(body,"lg_body_iptpsw"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: loopcomm-router
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"loopcomm")
+  method: GET
+  

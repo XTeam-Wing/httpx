@@ -1,0 +1,11 @@
+info:
+  category: threat analysis && management
+  company: Beijing Oriental Huadun Information Technology Co., Ltd.
+  cpe: ''
+  product: oriental-huadun-autm
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"content=\"huadun network security technology co.,ltd\"")
+  method: GET
+  

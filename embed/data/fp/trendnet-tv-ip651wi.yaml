@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: TRENDnet, Inc.
+  cpe: ''
+  product: trendnet-tv-ip651wi
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"<modelname>tv-ip651wi</modelname>") || icontains(body,"(tv-ip651wi)</title>"))
+    || icontains(banner,"realm=\"tv-ip651wi")) || icontains(banner,"tv-ip651wi"))
+  method: GET
+  

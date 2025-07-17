@@ -1,0 +1,11 @@
+info:
+  category: smart home
+  company: LG Electronics.
+  cpe: ''
+  product: lg-oled65b7k-n
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<modelnumber>oled65b7k-n</modelnumber>")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: MERCUSYS Technologies Co., Ltd.
+  cpe: ''
+  product: mercusys-ac12
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"ac12 login")
+  method: GET
+  

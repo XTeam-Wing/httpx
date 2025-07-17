@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 筱瞳影视cms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"筱瞳影视cms")
+  method: GET
+  

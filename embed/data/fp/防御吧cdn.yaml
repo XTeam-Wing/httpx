@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 防御吧cdn
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"防御吧cdn")
+  method: GET
+  

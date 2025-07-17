@@ -1,0 +1,12 @@
+info:
+  category: burglar alarm
+  company: Schneider Electric
+  cpe: ''
+  product: schneider-powerlogic-pm800
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"pm800") && icontains(banner,"powerlogic")) || (icontains(banner,"pm800")
+    && icontains(banner,"powerlogic")))
+  method: GET
+  

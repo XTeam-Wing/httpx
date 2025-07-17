@@ -1,0 +1,12 @@
+info:
+  category: audit
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-secpath-operation-&&-maintenance-audit-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<span>h3c secpath 运维审计系统</span></div>") || icontains(title,"h3c
+    secpath 运维审计"))
+  method: GET
+  

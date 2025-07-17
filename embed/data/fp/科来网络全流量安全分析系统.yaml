@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 科来网络全流量安全分析系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"科来 网络全流量安全分析系统")
+  method: GET
+  

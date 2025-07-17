@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: bbpress
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"is proudly powered by <a href=\"http://bbpress.org") || icontains(body,"<!--
+    if you like showing off the fact that your server rocks -->"))
+  method: GET
+  

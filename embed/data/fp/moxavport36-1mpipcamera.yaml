@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: moxavport36-1mpipcamera
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"moxa vport 36-1mp ip camera")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Zhejiang Yushi Technology Co., Ltd.
+  cpe: ''
+  product: uniview-ipc242e-wh
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"ipc242e-wh")
+  method: GET
+  

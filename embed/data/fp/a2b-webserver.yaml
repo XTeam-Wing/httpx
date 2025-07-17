@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: a2b technologies inc.
+  cpe: ''
+  product: a2b-webserver
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: a2b webserver") || icontains(banner,"server: a2b
+    webserver"))'
+  method: GET
+  

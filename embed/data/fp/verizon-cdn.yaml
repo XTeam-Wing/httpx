@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: Verizon Communications Inc.
+  cpe: ''
+  product: verizon-cdn
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"server: ecs (") || icontains(banner,"server: ecs ("))
+    || icontains(banner,"server: ecd (")) || icontains(banner,"server: ecd ("))'
+  method: GET
+  

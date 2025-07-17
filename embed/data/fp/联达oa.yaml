@@ -1,0 +1,11 @@
+info:
+  category: oa
+  company: Beijing Lianda Power Information Technology Co., Ltd.
+  cpe: ''
+  product: 联达oa
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/LKSys_WindowControlScript.js") || icontains(body,"onload=\"LKSYS_PubMaxWin")|| icontains(body,"id=\"lkbLogin\" href=\"javascript:__doPostBack")|| (icontains(body,"IdentityValidator") && icontains(body,"HHCtrlMax"))
+  method: GET
+  

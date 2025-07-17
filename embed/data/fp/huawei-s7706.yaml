@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-s7706
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(server,"s7706") || icontains(banner,"quidway s7706"))
+  method: GET
+  

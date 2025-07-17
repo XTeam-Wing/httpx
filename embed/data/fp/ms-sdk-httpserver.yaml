@@ -1,0 +1,13 @@
+info:
+  category: service
+  company: Microsoft Corporation
+  cpe: ''
+  product: ms-sdk-httpserver
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && icontains(banner,"server:
+    ms-sdk-httpserver")) || ((!icontains(banner,"drupal") && !icontains(banner,"couchdb"))
+    && icontains(banner,"server: ms-sdk-httpserver")))'
+  method: GET
+  

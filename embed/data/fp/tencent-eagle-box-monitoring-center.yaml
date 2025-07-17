@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Tencent Holdings Limited
+  cpe: ''
+  product: tencent-eagle-box-monitoring-center
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"content=\"鹰眼盒子监控中心") || icontains(title,"鹰眼盒子监控中心"))
+  method: GET
+  

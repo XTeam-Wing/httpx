@@ -1,0 +1,12 @@
+info:
+  category: other support system
+  company: TIBCO Software Inc.
+  cpe: ''
+  product: mashery-proxy
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"x-mashery-") || icontains(banner,"server: mashery proxy"))
+    || icontains(banner,"x-mashery-")) || icontains(banner,"server: mashery proxy"))'
+  method: GET
+  

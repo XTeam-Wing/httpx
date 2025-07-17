@@ -1,0 +1,11 @@
+info:
+  category: cloud computing
+  company: Hangzhou Yunji Technology Co., Ltd.
+  cpe: ''
+  product: idcos-cloudboot-cloud-boot-loader-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"/clipboard/zeroclipboard.min") || icontains(title,"cloudboot"))
+  method: GET
+  

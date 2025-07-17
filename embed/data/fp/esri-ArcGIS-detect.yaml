@@ -1,0 +1,12 @@
+info:
+  author: ev1l0o4g
+  description: ""
+  tags: []
+  product: esri-arcgis
+  category: cms
+rules:
+- method: GET
+  path: 
+   - "/arcgis"
+   - "/favicon.ico"
+  dsl: contains_all(body,"ArcGIS","esri.arcgismanager") ||contains(body,"esri/discovery/admin.js")||('4083271d68aefe9f0e606720d0fe8b32' == md5(body))

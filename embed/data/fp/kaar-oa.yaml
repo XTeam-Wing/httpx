@@ -1,0 +1,11 @@
+info:
+  category: oa
+  company: Xi'an Qilai Software Technology Co., Ltd.
+  cpe: ''
+  product: kaar-oa
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"class=\"style1") && icontains(body,"css/css.css")) && icontains(body,"js/jqselect.js"))
+  method: GET
+  

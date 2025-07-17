@@ -1,0 +1,11 @@
+info:
+  category: network storage
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-neocean-storage
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"h3c neocean series storage")
+  method: GET
+  

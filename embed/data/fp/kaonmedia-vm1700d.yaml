@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Kaonmedia Co., Ltd.
+  cpe: ''
+  product: kaonmedia-vm1700d
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"vm1700d")
+  method: GET
+  

@@ -1,0 +1,24 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: microsoft-iis
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(body,"<html><head><title>site not found</title></head>.<body>no web
+    site is configured at this address.</body></html>")||(icontains(body,"<id id=\"comment1\"><!--problem--></id><id
+    id=\"errortext\">under construction</id></h1>"))||(icontains(body,"<p id=comment1><!--problem--><p
+    id=\"errortext\">under construction</h1>"))||(icontains(body,"if you are the web site
+    administrator and feel you have received this message in error, please see &quot;enabling
+    and disabling dynamic content&quot; in iis help."))||(icontains(body,"<a href=\"http://go.microsoft.com/fwlink/?linkid=66138&amp;clcid=0x409\"><img
+    src=\"welcome.png\" alt=\"iis7\" width=\"571\" height=\"411\" /></a>"))||(icontains(body,"<a
+    href=\"http://go.microsoft.com/fwlink/?linkid=66138&amp;clcid=0x409\"><img src=\"iis-85.png\"
+    alt=\"iis\" width=\"960\" height=\"600\" /></a>"))||(icontains(body,"<h1 style=\"color:000000;
+    font: 13pt/15pt verdana\"><!--problem-->the page cannot be found</h1>"))||(icontains(body,"<li>go
+    to <a href=\"http://go.microsoft.com/fwlink/?linkid=8180\">microsoft product support
+    services</a> and perform a title search for the words <b>http</b> and <b>404</b>.</li>"))||(icontains(body,"<li>go
+    to <a href=\"http://go.microsoft.com/fwlink/?linkid=8180\">microsoft product support
+    services</a> and perform a title search for the words <b>http</b> and <b>403</b>.</li>"))'
+  method: GET
+  

@@ -1,0 +1,29 @@
+info:
+  category: electronic mail system
+  company: other
+  cpe: ''
+  product: exim-mail-server
+  server: nginx
+  tags: []
+rules:
+- dsl: (((((((((((((((((((((((((((((((((((((((icontains(banner,"214 auth helo ehlo
+    mail rcpt data noop quit rset help") && icontains(banner,"214-commands supported:"))
+    && icontains(banner,"220-")) || icontains(banner,"exim v4.94")) || icontains(banner,"exim
+    4.80")) || icontains(banner,"exim 4.84")) || icontains(banner,"exim 4.81")) ||
+    icontains(banner,"exim 4.92.2")) || icontains(banner,"exim 4.87")) || icontains(banner,"exim
+    4.76")) || icontains(banner,"exim 4.74")) || icontains(banner,"exim 4.80.1"))
+    || icontains(banner,"exim 4.90_1")) || icontains(banner,"exim 4.70")) || icontains(banner,"exim
+    4.69")) || icontains(banner,"exim 3.36")) || icontains(banner,"exim 4.82")) ||
+    icontains(banner,"exim 4.72")) || icontains(banner," exim 4.89")) || icontains(banner,"
+    exim 4.93.0.4  ")) || icontains(banner,"exim 4.94.2")) || icontains(banner,"exim
+    4.93")) || icontains(banner,"exim 4.92")) || icontains(banner,"exim imap4")) ||
+    icontains(banner,"exim && linux")) || icontains(banner,"exim 4")) || icontains(banner,"esmtp
+    by exim")) || icontains(banner,"this is exim")) || icontains(banner,"esmtp (based
+    on exim)")) || icontains(banner,"mail smtp server ( exim )")) || icontains(banner,"exim
+    server")) || icontains(banner,"smtp exim")) || icontains(banner,"exim mail server"))
+    || icontains(banner,"exim - mail system")) || icontains(banner,"exim mail services"))
+    || icontains(banner,"exim mta")) || icontains(banner,"exim esmtp")) || icontains(banner,"esmtp
+    service exim")) || icontains(banner,"esmtp server ready (this is exim)")) || icontains(banner,"esmtp
+    exim"))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: power-powerpms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/scripts/boot.js") && icontains(body,"/app_themes/default/assets/css/style.min.css")
+    && icontains(body,"apphub.server.registertohub(qrcodeid)")||(icontains(body,"apphub.server.registertohubqrcodeid"))||(icontains(body,"/app_themes/default/assets/css/style.min.css"))||(icontains(body,"/scripts/boot.js"))||(icontains(body,"apphub.server.registertohub(qrcodeid)"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: crm
+  company: Adobe Inc.
+  cpe: ''
+  product: adobe-cq5
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"_jcr_content")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: BackBee
+  cpe: ''
+  product: backbee
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<div id=\"bb5-site-wrapper\">")
+  method: GET
+  

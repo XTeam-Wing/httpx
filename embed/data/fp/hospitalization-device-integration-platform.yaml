@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: hospitalization-device-integration-platform
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"住院设备集成平台")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: vertiv-mpu108e
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"mpu108e explorer")||(icontains(title,"mpu108e 资源管理器"))
+  method: GET
+  

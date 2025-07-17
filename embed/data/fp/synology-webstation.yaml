@@ -1,0 +1,13 @@
+info:
+  category: other enterprise application
+  company: Synology Inc.
+  cpe: ''
+  product: synology-webstation
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"web service") && icontains(title," synology ")) || icontains(body,"id=\"paragraph\">web
+    station has been enabled. to finish setting up your website, please see the \"web
+    service")) || icontains(title,"welcome to synology web station"))
+  method: GET
+  

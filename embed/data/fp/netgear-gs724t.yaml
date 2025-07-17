@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-gs724t
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"netgear gs724t") || icontains(body,"http://kbserver.netgear.com/products/gs724t.asp"))
+  method: GET
+  

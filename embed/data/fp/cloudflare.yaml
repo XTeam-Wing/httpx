@@ -1,0 +1,15 @@
+info:
+  category: website security monitoring system
+  company: Cloudflare, Inc.
+  cpe: ''
+  product: cloudflare
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && (icontains(banner,"server:
+    cloudflare") || icontains(banner,"server: cloudflare-nginx"))) || (((!icontains(body,"server:
+    couchdb") && !icontains(banner,"drupal")) && !icontains(banner,"couchdb")) &&
+    ((((icontains(server,"cloudflare") || icontains(body,"var cloudflare=")) || icontains(body,"cloudflare
+    ray id:")) || icontains(banner,"__cfduid=")) || icontains(banner,"server: cloudflare-nginx"))))'
+  method: GET
+  

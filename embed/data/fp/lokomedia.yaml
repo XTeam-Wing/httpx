@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: lokomedia
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"lokomedia")
+  method: GET
+  

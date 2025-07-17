@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Petrochemical Yingke Information Technology Co., Ltd.
+  cpe: ''
+  product: petrified-yingke-logistics-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body," href=\"/newimages/login/logo_icon.ico")
+  method: GET
+  

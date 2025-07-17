@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ivsweb
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"ivsweb")
+  method: GET
+  

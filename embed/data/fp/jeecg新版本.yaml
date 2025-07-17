@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: other
+  cpe: ''
+  product: jeecg新版本
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"window._CONFIG[\'\'] = \'http://localhost:8080/jeecg-boot/")|| icontains(title,"Jeecg-Boot 企业级快速开发平台") || icontains(title,"Jeecg 快速开发平台")|| icontains(body,"\'http://fileview.jeecg.com/onlinePreview\'")
+  method: GET
+  

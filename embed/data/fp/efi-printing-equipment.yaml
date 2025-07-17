@@ -1,0 +1,12 @@
+info:
+  category: printer
+  company: Electronics For Imaging, Inc
+  cpe: ''
+  product: efi-printing-equipment
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(body,"{\"length\": 0, \"chained_to\": 3616817, \"identifier\":
+    \"etwork Security\", \"str\": null}") && title == "webtools")'
+  method: GET
+  

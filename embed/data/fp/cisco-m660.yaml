@@ -1,0 +1,12 @@
+info:
+  category: other network security
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-m660
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"cisco content security management appliance m660") || icontains(title,"cisco
+    ironport m660")) || icontains(body,"alt=\"cisco m660\""))
+  method: GET
+  

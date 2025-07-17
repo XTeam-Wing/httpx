@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: tencentwaterproofwall
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"tencent waterproof wall")
+  method: GET
+  

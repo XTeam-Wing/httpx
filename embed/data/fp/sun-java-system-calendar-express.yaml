@@ -1,0 +1,13 @@
+info:
+  category: component
+  company: Oracle Corporation
+  cpe: ''
+  product: sun-java-system-calendar-express
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<img src=\"imx/login-logo.gif\" width=\"186\" height=\"79\"
+    alt=\"sun microsystems, inc.\">") || icontains(title,"sun java[tm] system calendar
+    express"))
+  method: GET
+  

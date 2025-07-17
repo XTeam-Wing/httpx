@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: yapi
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(body,"<div id=\"yapi\" style=\"height: 100%;") || icontains(body,"content=\"yapi"))'
+  method: GET
+  

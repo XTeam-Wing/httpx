@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Cradlepoint, Inc.
+  cpe: ''
+  product: cradlepoint-ibr600le2
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(title,"login :: ibr600le2") || icontains(body,"cplogin.model =
+    \"ibr600le2\";"))'
+  method: GET
+  

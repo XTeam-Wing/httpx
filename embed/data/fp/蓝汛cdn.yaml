@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 蓝汛cdn
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"蓝汛cdn")
+  method: GET
+  

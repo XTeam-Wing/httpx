@@ -1,0 +1,12 @@
+info:
+  category: traffic analysis
+  company: Genie Networks Ltd,
+  cpe: ''
+  product: genieatm
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"defect 3531") || icontains(body,"copyright© genie networks
+    ltd.")) || icontains(title,"genieatm"))
+  method: GET
+  

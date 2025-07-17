@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 芝麻听书网2014版
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"芝麻听书网2014版")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: ANYGATE E&C CO., LTD.
+  cpe: ''
+  product: anygate-rg5500n
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"td class=\"right\">rg5500n")
+  method: GET
+  

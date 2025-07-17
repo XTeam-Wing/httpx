@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: remote-potato
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: remote-potato") || icontains(banner,"server: remote-potato"))'
+  method: GET
+  

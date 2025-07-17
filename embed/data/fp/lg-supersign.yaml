@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: LG Electronics.
+  cpe: ''
+  product: lg-supersign
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"src=\"/ssw/js/user/index.js")
+  method: GET
+  

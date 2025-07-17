@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: netentsec-ns-asg-security-gateway
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"应用安全网关") && icontains(body,"id=\"slotserialnumber\"")||((icontains(body,"/commonplugin/softkeyboard.js")
+    || icontains(body,"client/thickbox.css")) || icontains(body,"400-678-3600") && icontains(title,"ns-asg"))||(icontains(body,"400-678-3600"))||(icontains(body,"client/thickbox.css"))||(icontains(body,"/commonplugin/softkeyboard.js"))||(icontains(body,"id=\"slotserialnumber\""))
+  method: GET
+  

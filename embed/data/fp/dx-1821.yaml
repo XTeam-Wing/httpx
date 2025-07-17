@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Dax Networks Limited.
+  cpe: ''
+  product: dx-1821
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"dx-1821") && icontains(banner,"dax networks")) && icontains(protocol,"snmp"))
+  method: GET
+  

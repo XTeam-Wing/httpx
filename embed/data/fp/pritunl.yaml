@@ -1,0 +1,11 @@
+info:
+  category: vpn
+  company: pritunl
+  cpe: ''
+  product: pritunl
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"pritunl")
+  method: GET
+  

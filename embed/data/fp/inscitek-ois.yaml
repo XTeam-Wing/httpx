@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Inscitek Microsystems, Inc
+  cpe: ''
+  product: inscitek-ois
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"inscitek ois")
+  method: GET
+  

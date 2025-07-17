@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: silverlight
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"silverlightcontrolhost")||(icontains(body,"silverlightservice"))
+  method: GET
+  

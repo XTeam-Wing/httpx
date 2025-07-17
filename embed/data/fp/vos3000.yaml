@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Kunshi Network Technology Co., Ltd.
+  cpe: ''
+  product: vos3000
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"images/vos3000.ico") || icontains(body,"content=\"vos3000"))
+    || title == "vos3000")
+  method: GET
+  

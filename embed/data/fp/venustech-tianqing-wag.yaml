@@ -1,0 +1,12 @@
+info:
+  category: antivirus gateway
+  company: Venus Star Information Technology Group Co., Ltd.
+  cpe: ''
+  product: venustech-tianqing-wag
+  server: nginx
+  tags: []
+rules:
+- dsl: (((!icontains(title,"网御waf") && icontains(banner,"vwphpsessid=")) || icontains(title,"venusense
+    waf")) || icontains(title,"天清wag"))
+  method: GET
+  

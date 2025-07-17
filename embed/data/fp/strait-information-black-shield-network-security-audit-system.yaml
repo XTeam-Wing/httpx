@@ -1,0 +1,11 @@
+info:
+  category: audit
+  company: Fujian Strait Information Technology Co., Ltd.
+  cpe: ''
+  product: strait-information-black-shield-network-security-audit-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"technology, inc.") && icontains(body,"福建省海峡信息技术有限公司"))
+  method: GET
+  

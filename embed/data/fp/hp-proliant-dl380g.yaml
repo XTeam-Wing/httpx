@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Hewlett Packard Enterprise Development LP
+  cpe: ''
+  product: hp-proliant-dl380g
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"proliant-dl380g")
+  method: GET
+  

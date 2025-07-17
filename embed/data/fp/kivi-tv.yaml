@@ -1,0 +1,11 @@
+info:
+  category: smart home
+  company: other
+  cpe: ''
+  product: kivi-tv
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"kivi tv")
+  method: GET
+  

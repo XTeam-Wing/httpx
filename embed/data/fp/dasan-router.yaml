@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: DASAN Networks, Inc.
+  cpe: ''
+  product: dasan-router
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(body,"server: couchdb") && icontains(body,"cgi-bin/menu.cgi"))
+    && icontains(body,"cgi-bin/top.cgi"))'
+  method: GET
+  

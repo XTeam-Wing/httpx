@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: huaweiwirelessadsl2+router
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"huawei wireless adsl2+ router")
+  method: GET
+  

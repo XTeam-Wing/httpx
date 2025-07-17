@@ -1,0 +1,20 @@
+info:
+  category: service
+  company: SMA Solar Technology AG
+  cpe: ''
+  product: sma-sunny-webbox
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((((((!icontains(body,"server: couchdb") && !icontains(banner,"reecam ip
+    camera")) && !icontains(banner,"couchdb")) && icontains(title,"sunny webbox"))
+    || (((!icontains(body,"server: couchdb") && !icontains(banner,"reecam ip camera"))
+    && !icontains(banner,"couchdb")) && icontains(body,"<meta http-equiv=\"refresh\"
+    content=\"0; url=/culture/index.dml\">"))) || icontains(banner,"server: sunny
+    webbox")) || (!icontains(banner,"couchdb") && icontains(banner,"server: sunny
+    webbox"))) || (!icontains(banner,"couchdb") && icontains(banner,"server: webbox-20")))
+    || (!icontains(banner,"couchdb") && icontains(banner,"server: webbox-20"))) ||
+    (((!icontains(body,"server: couchdb") && !icontains(banner,"reecam ip camera"))
+    && !icontains(banner,"couchdb")) && icontains(title,"sma sunny webbox")))'
+  method: GET
+  

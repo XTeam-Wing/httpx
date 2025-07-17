@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Shanghai Phicomm Data Communication Technology Co., Ltd.
+  cpe: ''
+  product: phicomm-fir302b
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"fir302b")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-ar2240
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"huawei ar2240")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: firewall
+  company: Alert Logic, Inc.
+  cpe: ''
+  product: profense-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"server: profense") || icontains(banner,"plbsid=")) ||
+    icontains(banner,"server: profense")) || icontains(banner,"plbsid="))'
+  method: GET
+  

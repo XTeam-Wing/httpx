@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-meeting-app
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<div id=\"cisco_meeting_application\">")
+  method: GET
+  

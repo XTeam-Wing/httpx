@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Shenzhen Liuhe Future Technology Co., Ltd.
+  cpe: ''
+  product: liuhe-future-campus-network-intelligent-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"src=\"sdkjs/uftttsdk2.js\"")
+  method: GET
+  

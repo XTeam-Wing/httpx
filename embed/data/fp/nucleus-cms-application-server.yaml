@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: Nucleus Group.
+  cpe: ''
+  product: nucleus-cms-application-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(banner,"couchdb") && icontains(banner,"server: nucleus")) ||
+    (!icontains(banner,"couchdb") && icontains(banner,"server: nucleus")))'
+  method: GET
+  

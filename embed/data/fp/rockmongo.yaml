@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: rockmongo
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"rockmongo")
+  method: GET
+  

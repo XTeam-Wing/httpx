@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 青果教务系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"青果教务系统")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-cable-modem
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"cisco cable modem")
+  method: GET
+  

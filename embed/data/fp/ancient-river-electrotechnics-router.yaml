@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: FURUKAWA ELECTRIC CO., LTD.
+  cpe: ''
+  product: ancient-river-electrotechnics-router
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"fitelnet") || icontains(title,"fitelnet-")) || icontains(banner,"server:
+    gr-httpd server")) || icontains(banner,"server: gr-httpd server"))'
+  method: GET
+  

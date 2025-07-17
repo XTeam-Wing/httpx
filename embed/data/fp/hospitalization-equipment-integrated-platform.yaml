@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: hospitalization-equipment-integrated-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"住院设备集成平台")
+  method: GET
+  

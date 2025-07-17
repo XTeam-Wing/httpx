@@ -1,0 +1,13 @@
+info:
+  category: router
+  company: eWON SA
+  cpe: ''
+  product: ewon-sa-vpn-router
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && icontains(banner,"server:
+    ewon")) || ((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && icontains(banner,"server:
+    ewon")))'
+  method: GET
+  

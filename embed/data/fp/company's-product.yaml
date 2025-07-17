@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: company's-product
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"realm=\"technicolor")||(icontains(header,"realm=\"technicolor"))||(icontains(body,"辽宁瑞思科技有限公司&nbsp;&nbsp;&nbsp;&nbsp;版权所有"))
+  method: GET
+  

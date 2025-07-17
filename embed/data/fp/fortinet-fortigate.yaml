@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: fortinet-fortigate
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"top.location=window.location;top.location=\"/remote/login\";")
+  method: GET
+  

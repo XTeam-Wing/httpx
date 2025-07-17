@@ -1,0 +1,12 @@
+info:
+  category: firewall
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-secoway-usg2230
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"secoway usg2230") || (icontains(banner,"set-cookie") &&
+    icontains(banner,"secoway usg2230")))
+  method: GET
+  

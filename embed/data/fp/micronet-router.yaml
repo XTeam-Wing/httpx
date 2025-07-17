@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Micronet Communication Inc.
+  cpe: ''
+  product: micronet-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"securesoho web configuration") || icontains(banner,"realm=\"securesoho
+    web configuration"))
+  method: GET
+  

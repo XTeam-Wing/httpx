@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: websitex5
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"website x5")
+  method: GET
+  

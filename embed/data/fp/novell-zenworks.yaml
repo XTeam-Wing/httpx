@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: Micro Focus International plc
+  cpe: ''
+  product: novell-zenworks
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"managementzonename") || icontains(title,"novell zenworks"))
+    || icontains(body,"/zenworks/js/dojo"))
+  method: GET
+  

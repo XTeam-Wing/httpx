@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: telecom-risk-governance-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"风险治理平台</div>") || icontains(title,"基于资产的网络安全风险管控平台"))
+  method: GET
+  

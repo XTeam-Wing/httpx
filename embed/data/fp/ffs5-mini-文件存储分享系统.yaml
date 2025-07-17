@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ffs5-mini-文件存储分享系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"ffs5-mini_文件存储分享系统")
+  method: GET
+  

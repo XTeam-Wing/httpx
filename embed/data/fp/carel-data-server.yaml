@@ -1,0 +1,12 @@
+info:
+  category: network storage
+  company: CAREL INDUSTRIES S.p.A.
+  cpe: ''
+  product: carel-data-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"server: careldataserver") || icontains(banner,"server:
+    careldataserver")) || icontains(body,"src=\"/mpwebcorefn.js"))'
+  method: GET
+  

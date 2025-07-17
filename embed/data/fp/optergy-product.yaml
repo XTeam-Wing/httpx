@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Optergy Pty Ltd
+  cpe: ''
+  product: optergy-product
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"211 wellington road building c") || icontains(body,"/css/optergy.css"))
+  method: GET
+  

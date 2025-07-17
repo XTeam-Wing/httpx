@@ -1,0 +1,13 @@
+info:
+  category: threat analysis && management
+  company: other
+  cpe: ''
+  product: douran-secure-gate
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(body,"form_section") && icontains(body,"douran secure gate ii"))
+    || icontains(banner,"server: dsgweb ok")) || icontains(banner,"server: dsgweb
+    ok"))'
+  method: GET
+  

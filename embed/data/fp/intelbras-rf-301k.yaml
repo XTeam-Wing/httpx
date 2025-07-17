@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: intelbras lnc.
+  cpe: ''
+  product: intelbras-rf-301k
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"rf 301k")
+  method: GET
+  

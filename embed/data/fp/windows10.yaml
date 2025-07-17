@@ -1,0 +1,13 @@
+info:
+  category: operating system
+  company: Microsoft Corporation
+  cpe: ''
+  product: windows10
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"os: windows 10") || (icontains(banner,"windows 10") &&
+    icontains(protocol,"{\"length\": 0, \"chained_to\": 1919250030, \"identifier\":
+    \"arget=\", \"str\": null}")))'
+  method: GET
+  

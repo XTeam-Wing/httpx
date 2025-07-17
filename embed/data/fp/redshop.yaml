@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: redshop
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"powered by:<a href=\"http://www.rednetcms.com/redshop\" target=\"_blank\">redshop</a>")||(icontains(body,"<link
+    href=\"images/redcms.css\" rel=\"stylesheet\" type=\"text/css\" />"))
+  method: GET
+  

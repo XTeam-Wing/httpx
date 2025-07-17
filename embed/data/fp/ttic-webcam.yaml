@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Dunli Industrial Co., Ltd.
+  cpe: ''
+  product: ttic-webcam
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"ttic webserver client")
+  method: GET
+  

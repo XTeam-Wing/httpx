@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Gadspot
+  cpe: ''
+  product: gadspot-dvr
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"name=\"configptz\"") && icontains(body,"content=\"chenxiaohui\""))
+  method: GET
+  

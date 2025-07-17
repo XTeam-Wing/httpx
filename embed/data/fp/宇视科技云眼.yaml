@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 宇视科技云眼
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"宇视科技 云眼")
+  method: GET
+  

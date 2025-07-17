@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Guangzhou Zhouligong Microcontroller Technology Co., Ltd.
+  cpe: ''
+  product: zlg-single-chip-microcomputer
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"zlgmcu corporation") || icontains(banner,"zlgmcu corporation"))
+  method: GET
+  

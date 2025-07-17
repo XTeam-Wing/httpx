@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Harbin Xinzhongxin Electronics Co., Ltd.
+  cpe: ''
+  product: synjones-jinlong-card-finance-card-website-query-subsystem
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"location.href=\"homelogin.action") || icontains(title,"金龙卡金融化一卡通网站查询子系统"))
+  method: GET
+  

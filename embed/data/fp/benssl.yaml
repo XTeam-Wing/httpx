@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: benssl
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"ben-ssl") || icontains(banner,"ben-ssl"))
+  method: GET
+  

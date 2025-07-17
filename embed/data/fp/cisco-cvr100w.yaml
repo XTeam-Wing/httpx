@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-cvr100w
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(cert,"cvr100w") || icontains(body,"href=\"http://www.cisco.com/go/cn/cvr100w\""))
+  method: GET
+  

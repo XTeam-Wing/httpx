@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Changsha Turing Technology Co., Ltd.
+  cpe: ''
+  product: changsha-tutal-purchasing-strategy-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"src=\"/login/main_body_bg.jpg\"") && icontains(body,"长沙图灵科技有限公司"))
+  method: GET
+  

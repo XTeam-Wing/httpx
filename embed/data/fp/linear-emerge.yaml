@@ -1,0 +1,11 @@
+info:
+  category: entrance guard system
+  company: other
+  cpe: ''
+  product: linear-emerge
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"Linear eMerge")
+  method: GET
+  

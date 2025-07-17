@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Digicom S.p.A.
+  cpe: ''
+  product: michelangelo-pro-v
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"michelangelo pro-v")
+  method: GET
+  

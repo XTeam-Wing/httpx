@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Shenzhen Wanwang Botong Technology Co., Ltd.
+  cpe: ''
+  product: tg-thr120gw-series-router
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"tg-net thr120gw series router")
+  method: GET
+  

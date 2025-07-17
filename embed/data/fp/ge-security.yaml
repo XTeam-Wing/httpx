@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: General Electric Company
+  cpe: ''
+  product: ge-security
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<frame src=\"/servlets/top\" name=\"upper\" marginheight=\"2\"")
+    || title == "ge-security")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 一网云cms人才招聘网站系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"一网云cms人才招聘网站系统")||(icontains(title,"一网云cms人才招聘网站系统"))
+  method: GET
+  

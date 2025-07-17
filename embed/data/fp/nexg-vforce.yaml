@@ -1,0 +1,11 @@
+info:
+  category: threat analysis && management
+  company: NexG Co., Ltd.
+  cpe: ''
+  product: nexg-vforce
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"var lurl = \"vos.shtml\"")
+  method: GET
+  

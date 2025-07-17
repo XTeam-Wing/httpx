@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Panasonic Corporation
+  cpe: ''
+  product: avizio-network-camera
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"avizio network camera")
+  method: GET
+  

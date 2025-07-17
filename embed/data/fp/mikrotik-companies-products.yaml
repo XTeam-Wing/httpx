@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: MikroTik
+  cpe: ''
+  product: mikrotik-companies-products
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"mikrotik")
+  method: GET
+  

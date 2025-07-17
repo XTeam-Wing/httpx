@@ -1,0 +1,13 @@
+info:
+  category: service
+  company: Kinemetrics All Rights Reserved.
+  cpe: ''
+  product: quanterra-q330
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((!icontains(body,"server: couchdb") && icontains(body,"name=\"pwr\" value=\"turn
+    on baler power")) || icontains(banner,"server: q330")) || icontains(banner,"server:
+    q330"))'
+  method: GET
+  

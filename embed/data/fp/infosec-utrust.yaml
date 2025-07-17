@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: infosec-utrust
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"china utrust infortech co,.ltd") && icontains(title,"utrust统一身份认证和身份管理平台")||(icontains(body,"china
+    utrust infortech co,.ltd"))
+  method: GET
+  

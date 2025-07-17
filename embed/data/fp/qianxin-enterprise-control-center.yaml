@@ -1,0 +1,11 @@
+info:
+  category: anti-virus product
+  company: Qianxin Technology Group Co., Ltd.
+  cpe: ''
+  product: qianxin-enterprise-control-center
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"360企业版控制中心")
+  method: GET
+  

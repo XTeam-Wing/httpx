@@ -1,0 +1,14 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ezboo-webstats
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<title>ezboo webstats</title>")||(icontains(body,"<div align=\"center\"
+    class=\"titre\"><font color=\"#ffffff\">&gt;&gt; administrator panel        &lt;&lt;
+    </font></div>"))||(icontains(body,"<td height=\"60\" valign=\"top\" align=\"center\"><img
+    src=\"image/logo_ez1.gif\" border=\"0\"></td>"))
+  method: GET
+  

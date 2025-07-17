@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ultracart
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"ultracart")
+  method: GET
+  

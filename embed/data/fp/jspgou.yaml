@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: jspgou
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"jspgou")
+  method: GET
+  

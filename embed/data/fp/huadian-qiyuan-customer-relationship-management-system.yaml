@@ -1,0 +1,11 @@
+info:
+  category: crm
+  company: Urumqi Huatian Qiyuan Software Technology Co., Ltd.
+  cpe: ''
+  product: huadian-qiyuan-customer-relationship-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"class=\"hidden-xs ewheaderrow\"><img src=\"aspximages/htqy.png\"")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: anti-virus product
+  company: Qianxin Technology Group Co., Ltd.
+  cpe: ''
+  product: qianxin-enterprise-safety-deployment
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && icontains(banner,"server:
+    iocpserver")) || icontains(title,"360企业安全部署")) || icontains(banner,"server: iocpserver"))'
+  method: GET
+  

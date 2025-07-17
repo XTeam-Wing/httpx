@@ -1,0 +1,11 @@
+info:
+  category: wireless network
+  company: Cox Communications, Inc.
+  cpe: ''
+  product: cox-wireless-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"href=\"image/cox-logo.png\"")
+  method: GET
+  

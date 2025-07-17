@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Riello Elettronica Group
+  cpe: ''
+  product: riello-companies-products
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"netman")
+  method: GET
+  

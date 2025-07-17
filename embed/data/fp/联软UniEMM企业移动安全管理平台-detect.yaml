@@ -1,0 +1,11 @@
+info:
+  author: Loong716
+  description: '联软UniEMM企业移动安全管理平台 was detected.'
+  tags: []
+  product: 联软uniemm企业移动安全管理平台
+  category: cms
+rules:
+- method: GET
+  path:
+     - "/emm-api/"
+  dsl: contains_all(body,"herf=\"/emm-api/view/")||contains_all(body,"url(\"/emm-api/view/")||contains(header, "emm-tunnel")||contains(header, "emm-resources")

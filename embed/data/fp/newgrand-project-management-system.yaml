@@ -1,0 +1,11 @@
+info:
+  category: project management system
+  company: Hangzhou New Zhongda Technology Co., Ltd.
+  cpe: ''
+  product: newgrand-project-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"src=\"../images/right.jpg\" alt=\"版权信息\"") && icontains(title,"uia登录"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: abilityserver
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"ability server")
+  method: GET
+  

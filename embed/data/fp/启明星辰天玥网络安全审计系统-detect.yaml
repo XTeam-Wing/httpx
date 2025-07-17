@@ -1,0 +1,9 @@
+info:
+  author: 哆啦A梦
+  description: 天玥网络安全审计系统是针对业务环境下用户对网络内的核心IT资产和服务器进行的操作行为进行细粒度审计的合规性管理系统。它通过对内外部用户的网络行为进行解析、记录、汇报，以帮助用户实现事前规划预防、事中实时监视、违规行为响应、事后合规报告、事故追踪溯源，从而，加强内外部网络行为监管，保障核心资产（数据库、服务器、网络设备等）的正常运营。
+  tags: []
+  product: 天玥网络安全审计系统
+  category: security
+rules:
+- method: GET
+  dsl: contains(body, "<a href=\"../client/site-downloadruntimedetector") || contains(title, "天玥网络安全审计") || contains(header, "天玥网络安全审计系统")

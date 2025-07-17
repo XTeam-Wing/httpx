@@ -1,0 +1,16 @@
+info:
+  category: development framework
+  company: other
+  cpe: ''
+  product: webobjects
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((((((((icontains(banner,"x-apple-application-instance") || icontains(banner,"x-webobjects-loadaverage"))
+    || icontains(banner,"x-webobjects-adaptor-version")) || icontains(banner,"x-webobjects-server-name"))
+    || icontains(banner,"x-webobjects-customenv")) || icontains(banner,"x-apple-application-instance"))
+    || icontains(banner,"x-webobjects-loadaverage")) || icontains(banner,"x-webobjects-adaptor-version"))
+    || icontains(banner,"x-webobjects-server-name")) || icontains(banner,"x-webobjects-customenv"))
+    || (icontains(banner,"wosid") && icontains(banner,"webobjects")))
+  method: GET
+  

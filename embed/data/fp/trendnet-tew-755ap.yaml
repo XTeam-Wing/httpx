@@ -1,0 +1,11 @@
+info:
+  category: wireless network
+  company: TRENDnet, Inc.
+  cpe: ''
+  product: trendnet-tew-755ap
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"var model = \"tew-755ap\"")
+  method: GET
+  

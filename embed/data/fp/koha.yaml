@@ -1,0 +1,12 @@
+info:
+  category: development framework
+  company: other
+  cpe: ''
+  product: koha
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"name=\"koha_login_context") || icontains(body,"content=\"koha
+    "))
+  method: GET
+  

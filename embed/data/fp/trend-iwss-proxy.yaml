@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Trend Micro Incorporated.
+  cpe: ''
+  product: trend-iwss-proxy
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"proxy-agent: iwss") || icontains(banner,"proxy-agent: iwss"))'
+  method: GET
+  

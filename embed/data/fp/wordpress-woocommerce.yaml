@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: other
+  cpe: ''
+  product: wordpress-woocommerce
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver")
+  method: GET
+  

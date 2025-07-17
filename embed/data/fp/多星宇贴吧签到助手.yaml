@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 多星宇贴吧签到助手
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"多星宇贴吧签到助手")
+  method: GET
+  

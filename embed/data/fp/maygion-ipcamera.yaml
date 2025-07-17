@@ -1,0 +1,13 @@
+info:
+  category: cameras && surveillance
+  company: other
+  cpe: ''
+  product: maygion-ipcamera
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"pcamera ftpserver(www.maygion.com)") || (icontains(body,"author:xwpcom@gmail.com")
+    && icontains(body,"product:ipcamera"))) || ((icontains(banner,"ipcamera") || icontains(banner,"ipcamera"))
+    && (icontains(banner,"maygion") || icontains(banner,"maygion"))))
+  method: GET
+  

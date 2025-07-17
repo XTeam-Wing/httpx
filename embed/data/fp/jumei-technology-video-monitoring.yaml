@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Hangzhou Jufeng Technology Co., Ltd.
+  cpe: ''
+  product: jumei-technology-video-monitoring
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"jftech")
+  method: GET
+  

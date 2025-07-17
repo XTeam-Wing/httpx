@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 启明星辰天清汉马usg防火墙
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/cgi-bin/webui?op=get_product_model")||(icontains(body,"天清汉马usg"))||(icontains(body,"<title>天清汉马usg防火墙</title>"))||(icontains(body,"venusense")
+    && icontains(body,"天清汉马usg防火墙"))
+  method: GET
+  

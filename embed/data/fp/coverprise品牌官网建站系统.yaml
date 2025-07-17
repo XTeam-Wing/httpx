@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: coverprise品牌官网建站系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"coverprise品牌官网建站系统")
+  method: GET
+  

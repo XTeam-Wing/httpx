@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: acmetool-redirector
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: acmetool-redirector") || icontains(banner,"server:
+    acmetool-redirector"))'
+  method: GET
+  

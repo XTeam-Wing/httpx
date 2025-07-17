@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: ALSTOM Strongwish Inc.
+  cpe: ''
+  product: alstom-alspa?care-fan-online-status-monitoring-and-diagnostic-system
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"asp/images/s8000plus.gif")
+  method: GET
+  

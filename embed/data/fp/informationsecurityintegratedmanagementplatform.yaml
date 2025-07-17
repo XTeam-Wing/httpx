@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: informationsecurityintegratedmanagementplatform
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"ccaq_kf@unisk.cn") && icontains(title,"信息安全综合管理平台")||(icontains(body,"ccaq_kf@unisk.cn"))
+  method: GET
+  

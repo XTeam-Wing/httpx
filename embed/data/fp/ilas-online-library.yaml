@@ -1,0 +1,13 @@
+info:
+  category: other enterprise application
+  company: Shenzhen Ketu Automation New Technology Application Company
+  cpe: ''
+  product: ilas-online-library
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(title,"欢迎使用ilas网上图书馆") && icontains(body,"<select id=\"selprovince\"   onchange=\"getcity(this.options[this.selectedindex].value)\">"))
+    || icontains(title,"欢迎使用ilas小型版")) || icontains(body,"<iframe name=\"content\"  src=\"index_middle.html\"
+    frameborder=\"auto")) || icontains(title,"欢迎您使用ilas网上图书馆"))
+  method: GET
+  

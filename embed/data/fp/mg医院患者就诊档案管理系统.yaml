@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: mg医院患者就诊档案管理系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"mg医院患者就诊档案管理系统")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Shanghai Guoyun Information Technology Co., Ltd.
+  cpe: ''
+  product: gocloud-network-sr7010-series-router
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"gocloud sr7010 series router")
+  method: GET
+  

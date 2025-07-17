@@ -1,0 +1,14 @@
+info:
+  category: other network equipment
+  company: Intel Corporation
+  cpe: ''
+  product: intel-amt
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"server: intel(r) active management technology") || icontains(banner,"server:
+    intel(r) active management technology")) || icontains(banner,"server: intel(r)
+    standard manageability ")) || icontains(banner,"server: intel(r) standard manageability
+    "))'
+  method: GET
+  

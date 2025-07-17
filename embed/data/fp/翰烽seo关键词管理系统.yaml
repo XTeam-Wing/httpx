@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 翰烽seo关键词管理系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"翰烽seo关键词管理系统")
+  method: GET
+  

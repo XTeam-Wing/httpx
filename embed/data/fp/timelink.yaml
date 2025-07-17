@@ -1,0 +1,12 @@
+info:
+  category: other support system
+  company: Link International Corp.
+  cpe: ''
+  product: timelink
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"<link rel=\"shortcut icon\" type=\"image/png\" href=\"/timelink/images/favicon.ico\"/>")
+    || icontains(body,"link international corp. all rights reserved")) || icontains(title,"timelink"))
+  method: GET
+  

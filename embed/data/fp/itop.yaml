@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: itop
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"href=\"http://www.combodo.com/itop") || icontains(title,"itop
+    login"))
+  method: GET
+  

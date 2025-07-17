@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ecology泛微-协同商务系统-ecology
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"index_wev8.js") && icontains(body,"jquery_wev8.js")
+  method: GET
+  

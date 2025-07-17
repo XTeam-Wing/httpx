@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: A10 Networks, Inc.
+  cpe: ''
+  product: ax-traffic-manager
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"ax series advanced traffic manager")
+  method: GET
+  

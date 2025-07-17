@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Ciena Corporation.
+  cpe: ''
+  product: ciena-6500-rearelec
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"ciena (r) corporation") && icontains(banner,"6500 rearelec"))
+  method: GET
+  

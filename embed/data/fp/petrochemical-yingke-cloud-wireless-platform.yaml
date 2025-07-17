@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Petrochemical Yingke Information Technology Co., Ltd.
+  cpe: ''
+  product: petrochemical-yingke-cloud-wireless-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"石化盈科云无线平台")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Ruifeng Cloud (Beijing) Technology Co., Ltd.
+  cpe: ''
+  product: ruifeng-net-cloud-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"睿峰网云防火墙")
+  method: GET
+  

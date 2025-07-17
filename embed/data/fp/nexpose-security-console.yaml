@@ -1,0 +1,12 @@
+info:
+  category: hacking tool
+  company: Rapid7
+  cpe: ''
+  product: nexpose-security-console
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<label for=\"nexposeccpassword\">password</label>") || ((icontains(body,"setstatusmessagetimer")
+    || icontains(body,"siloselect")) && icontains(body,"/nexpose-dark.min.css")))
+  method: GET
+  

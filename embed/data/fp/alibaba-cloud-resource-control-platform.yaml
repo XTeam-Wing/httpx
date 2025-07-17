@@ -1,0 +1,11 @@
+info:
+  category: cloud computing
+  company: Alibaba Group
+  cpe: ''
+  product: alibaba-cloud-resource-control-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<h1 class=\"white\">云资源管控平台</h1>")
+  method: GET
+  

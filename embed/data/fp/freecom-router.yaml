@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Freecomm Corporation
+  cpe: ''
+  product: freecom-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"series software") && icontains(banner,"freecomm data communication"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: topsecsslvpn
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"topsec sslvpn")
+  method: GET
+  

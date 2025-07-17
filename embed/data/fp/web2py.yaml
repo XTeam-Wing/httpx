@@ -1,0 +1,12 @@
+info:
+  category: development framework
+  company: other
+  cpe: ''
+  product: web2py
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"x-powered-by: web2py") || icontains(body,"<meta name=\"generator\"
+    content=\"web2py ")) || icontains(banner,"x-powered-by: web2py"))'
+  method: GET
+  

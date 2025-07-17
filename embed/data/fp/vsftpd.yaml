@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: vsftpd
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"500 oops: cannot locate user entry") && icontains(banner,"500
+    oops: child died")) || (icontains(banner,"vsftpd") && icontains(protocol,"ftp")))'
+  method: GET
+  

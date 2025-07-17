@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: kloxo-single-server
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"hypervm") || icontains(body,"/htmllib/js/preop.js")) ||
+    icontains(body,"src=\"/img/hypervm-logo.gif"))
+  method: GET
+  

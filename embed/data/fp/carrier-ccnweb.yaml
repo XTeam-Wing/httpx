@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Carrier Corporation
+  cpe: ''
+  product: carrier-ccnweb
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<applet code=\"jlogin.class\" archive=\"jlogin.jar") || icontains(body,"/images/ccnweb.gif"))
+  method: GET
+  

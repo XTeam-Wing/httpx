@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-s3700
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"s3700")
+  method: GET
+  

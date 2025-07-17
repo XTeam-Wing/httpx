@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Jichenzhidao Information Technology (Beijing) Co., Ltd.
+  cpe: ''
+  product: earth-classics-maintenance-reconstruction-information-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"action=\"/gqjx/loginmgr.do?method=dologin")
+  method: GET
+  

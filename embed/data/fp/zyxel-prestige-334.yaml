@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-prestige-334
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"zyxel prestige 334") || icontains(banner,"prestige 334"))
+  method: GET
+  

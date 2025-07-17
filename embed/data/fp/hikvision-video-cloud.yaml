@@ -1,0 +1,11 @@
+info:
+  category: cloud computing
+  company: Hangzhou Hikvision Digital Technology Co., Ltd.
+  cpe: ''
+  product: hikvision-video-cloud
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: face-webs") || icontains(banner,"server: face-webs"))'
+  method: GET
+  

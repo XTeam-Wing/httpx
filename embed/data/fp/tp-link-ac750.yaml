@@ -1,0 +1,14 @@
+info:
+  category: router
+  company: Pullian Technology Co., Ltd.
+  cpe: ''
+  product: tp-link-ac750
+  server: nginx
+  tags: []
+rules:
+- dsl: (((((icontains(body,"ac750") && icontains(body,"var modelname=\"archer c20\""))
+    || icontains(body,"var modeldesc=\"ac750 wireless dual band router\"")) || icontains(banner,"realm=\"tp-link
+    ac750")) || icontains(banner,"realm=\"tp-link ac750")) || (icontains(body,"ac750")
+    && icontains(body,"if (url.indexof(\"tplinklogin.net\")")))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: American Megatrends
+  cpe: ''
+  product: ami-megarac-sp
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<modelname>ami megarac sp</modelname>")
+  method: GET
+  

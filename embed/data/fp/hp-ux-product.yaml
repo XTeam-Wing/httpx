@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: hp-ux-product
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"hp-ux")
+  method: GET
+  

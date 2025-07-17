@@ -1,0 +1,13 @@
+info:
+  category: component
+  company: Microsoft Corporation
+  cpe: ''
+  product: web-data-administrator
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<form name=\"webform1\" method=\"post\" action=\"default.aspx\"
+    onsubmit=\"javascript:return webform_onsubmit();\" id=\"webform1") || icontains(title,"web
+    data administrator - login"))
+  method: GET
+  

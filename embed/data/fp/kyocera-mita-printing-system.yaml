@@ -1,0 +1,11 @@
+info:
+  category: printer
+  company: KYOCERA Corporation
+  cpe: ''
+  product: kyocera-mita-printing-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"kyocera mita printing system")
+  method: GET
+  

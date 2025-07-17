@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-prestige-650r
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"prestige 650r-") || icontains(banner,"prestige 650r-"))
+  method: GET
+  

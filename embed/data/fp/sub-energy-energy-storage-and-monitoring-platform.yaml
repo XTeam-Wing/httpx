@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Jiangsu Shanshan Energy Management Co., Ltd.
+  cpe: ''
+  product: sub-energy-energy-storage-and-monitoring-platform
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<title>杉杉储能监控平台</title>") && icontains(body,"AMap.MouseTool,AMap.DistrictSearch")
+    && icontains(body,"/dist/libs/layui/css/layui.css")
+  method: GET
+  

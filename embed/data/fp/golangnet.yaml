@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: golangnet
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"golang net")
+  method: GET
+  

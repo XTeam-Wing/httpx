@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: inspur-storage-
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<td align=\"left\">浪潮存储 您身边的存储专家</td>")||(icontains(title,"浪潮海量存储系统"))
+  method: GET
+  

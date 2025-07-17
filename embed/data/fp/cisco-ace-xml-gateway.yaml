@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: cisco-ace-xml-gateway
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"(server: ^ace xml gateway$)")'
+  method: GET
+  

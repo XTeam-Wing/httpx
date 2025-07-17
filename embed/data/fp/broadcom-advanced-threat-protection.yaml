@@ -1,0 +1,11 @@
+info:
+  category: threat analysis and management
+  company: Broadcom Inc.
+  cpe: ''
+  product: broadcom-advanced-threat-protection
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"Symantec Advanced Threat Protection")
+  method: GET
+  

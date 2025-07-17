@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: horde-email
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"horde_email")
+  method: GET
+  

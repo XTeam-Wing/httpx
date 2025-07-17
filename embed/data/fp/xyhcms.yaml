@@ -1,0 +1,12 @@
+info:
+  category: other software system
+  company: Kunming Yuntao Technology Co., Ltd.
+  cpe: ''
+  product: xyhcms
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(body,"power by xyhcms") || icontains(banner,"x-powered-by: xyhcms"))
+    || icontains(banner,"x-powered-by: xyhcms"))'
+  method: GET
+  

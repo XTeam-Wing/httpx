@@ -1,0 +1,12 @@
+info:
+  category: web application firewall
+  company: Nanjing Yixun Information Technology Co., Ltd.
+  cpe: ''
+  product: yxlink-waf
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(title,"铱迅web应用防护系统") || icontains(banner,"server: yxlinkwaf"))
+    || icontains(banner,"server: yxlinkwaf"))'
+  method: GET
+  

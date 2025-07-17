@@ -1,0 +1,12 @@
+info:
+  category: firewall
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-eudemon1000e
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"huawei eudemon1000e-n6") || icontains(banner,"eudemon1000e"))
+    || icontains(banner,"eudemon 1000e"))
+  method: GET
+  

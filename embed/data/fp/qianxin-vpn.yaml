@@ -1,0 +1,12 @@
+info:
+  category: vpn products
+  company: Qianxin Technology Group Co., Ltd.
+  cpe: ''
+  product: qianxin-vpn
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"href=\"/download/gwsetup.exe\" target=\"_blank\" style=\"\">点此链接下载奇安信vpn客户端</a>")
+    && icontains(title,"奇安信vpn"))
+  method: GET
+  

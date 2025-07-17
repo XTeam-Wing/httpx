@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Bosch Sicherheitssysteme GmbH
+  cpe: ''
+  product: bosch-flexidome-video-surveillance
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"flexidome ") && icontains(protocol,"snmp"))
+  method: GET
+  

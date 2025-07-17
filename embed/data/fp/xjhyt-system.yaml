@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: xjhyt-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<input class=\"an1\" name=\"btnrst\" id=\"btnrst\" type=\"reset\"
+    value=\" \" />")||(icontains(body,"class=\"wrap login_wrap\""))||(icontains(body,"urlimages/yh.jpg"))||(icontains(body,"url(images/yh.jpg)"))
+  method: GET
+  

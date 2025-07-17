@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: h3cer3200
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"er3200") && icontains(body,"h3c.com") && icontains(body,"home.asp")
+  method: GET
+  

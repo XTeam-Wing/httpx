@@ -1,0 +1,12 @@
+info:
+  category: firewall
+  company: Neusoft Group Co., Ltd.
+  cpe: ''
+  product: neusoft-neteye-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"name=\"login_form\" action=\"/fwm4/fwm.cgi/usrlgin\" ") ||
+    icontains(title,"neteye防火墙系统"))
+  method: GET
+  

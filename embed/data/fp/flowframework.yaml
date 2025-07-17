@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: flowframework
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"flow framework")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: data leakage prevention
+  company: Shenzhen Hongan Information Technology Co., Ltd.
+  cpe: ''
+  product: hongan-heimdall-dlp-data-leakage-protection-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"heimdall dlp数据泄漏防护系统") || icontains(body,"<iframe frameborder=\"0\"
+    id=\"operatearea\" name=\"operatearea\""))
+  method: GET
+  

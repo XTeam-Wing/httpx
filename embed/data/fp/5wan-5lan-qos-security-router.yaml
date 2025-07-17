@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: QNO Technology Co., Ltd.
+  cpe: ''
+  product: 5wan-5lan-qos-security-router
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"5wan_5lan_qos_security_router")
+  method: GET
+  

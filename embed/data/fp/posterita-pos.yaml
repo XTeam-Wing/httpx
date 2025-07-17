@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: posterita-pos
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<img src=\"images/newui/logo.gif\" alt=\"powered by posterita pos\"
+    width=\"133px\" height=\"41px\" border=\"0px\"/>")||(icontains(body,"<!-- chooseapplication.jsp
+    -->"))
+  method: GET
+  

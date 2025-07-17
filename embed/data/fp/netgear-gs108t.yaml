@@ -1,0 +1,12 @@
+info:
+  category: switch
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-gs108t
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"class=\"gs108timage spacer50percent topalign righthalign\"")
+    || icontains(title,"netgear gs108t"))
+  method: GET
+  

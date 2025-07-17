@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: wishcms(维新内容管理系统)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"wishcms")||(icontains(title,"wishcms"))||(icontains(body,"维新内容管理系统"))||(icontains(title,"维新内容管理系统"))
+  method: GET
+  

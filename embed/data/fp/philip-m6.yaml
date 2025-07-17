@@ -1,0 +1,11 @@
+info:
+  category: oa
+  company: Xiamen Kuaipu Information Technology Co., Ltd.
+  cpe: ''
+  product: philip-m6
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"src=\"resource/javascript/jkpm6.datetime.js")
+  method: GET
+  

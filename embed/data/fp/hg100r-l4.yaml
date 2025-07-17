@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: HUMAX Co., Ltd.
+  cpe: ''
+  product: hg100r-l4
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"quick setup") && icontains(body,"copyright &copy; 2014 humax
+    co., ltd. all rights reserved")) || icontains(body,"nav.rg_str_incorrect_id_password"))
+  method: GET
+  

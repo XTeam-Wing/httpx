@@ -1,0 +1,14 @@
+info:
+  category: component
+  company: RemObjects Software, LLC
+  cpe: ''
+  product: remobjects-dxsock
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && icontains(banner,"remobjects"))
+    || icontains(body,"remobjects software, llc.")) || icontains(body,"content=\"remobjects
+    sdk")) || icontains(title,"erlib - remobjects")) || ((!icontains(banner,"drupal")
+    && !icontains(banner,"couchdb")) && icontains(banner,"remobjects")))
+  method: GET
+  

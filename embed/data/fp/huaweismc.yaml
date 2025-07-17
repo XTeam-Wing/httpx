@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: huaweismc
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"script/smcscript.js?version=")
+  method: GET
+  

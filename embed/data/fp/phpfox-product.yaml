@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: phpFox LLC
+  cpe: ''
+  product: phpfox-product
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"powered by <a href=\"http://www.phpfox.com") || icontains(body,"powered
+    by phpfox"))
+  method: GET
+  

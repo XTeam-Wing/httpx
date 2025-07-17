@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: disqus
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"disqus_thread")
+  method: GET
+  

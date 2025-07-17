@@ -1,0 +1,12 @@
+info:
+  category: oa
+  company: Shanghai Xieda Software Technology Co., Ltd.
+  cpe: ''
+  product: ctop-collaborative-office-oa
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"src=\"images/ctop_logo.gif") || icontains(body,"src=\"images/logo-ctop.gif"))
+    || icontains(body,"/software/jinstall.exe")) || icontains(body,"/ctop/index.jsp"))
+  method: GET
+  

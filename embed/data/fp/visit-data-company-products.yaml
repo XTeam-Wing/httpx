@@ -1,0 +1,11 @@
+info:
+  category: network storage
+  company: Beijing Vision Data System Co., Ltd.
+  cpe: ''
+  product: visit-data-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: 'icontains(cert,"subject: c=cn, st=some-state, l=beijing, o=wisdata, cn=wisdata.com.cn")'
+  method: GET
+  

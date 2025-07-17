@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Phoenix Contact GmbH & Co. KG
+  cpe: ''
+  product: phoenix-contact-tc-router
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"tc router ")
+  method: GET
+  

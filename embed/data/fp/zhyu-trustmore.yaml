@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: zhyu-trustmore
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"server: trustmore proxy")||(icontains(body,"alt=\"trustmore 安全可信的应用授权平台\""))'
+  method: GET
+  

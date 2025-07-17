@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-ivs
+  server: nginx
+  tags: []
+rules:
+- dsl: '(!icontains(body,"server: couchdb") && icontains(body,"var iever = scriptenginemajorversion()"))'
+  method: GET
+  

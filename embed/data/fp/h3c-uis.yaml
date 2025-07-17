@@ -1,0 +1,11 @@
+info:
+  category: cloud computing
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-uis
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"uisalert") || icontains(title,"h3c uis 统一管理矩阵"))
+  method: GET
+  

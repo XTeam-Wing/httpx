@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: other
+  cpe: ''
+  product: cerebro
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"lang=\"en\" ng-app=\"cerebro")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Pioneer Audio (Beijing) Communication Technology Co., Ltd.
+  cpe: ''
+  product: vaa-embedded-telephone-recording-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"先锋嵌入式电话录音系统") || icontains(body,"content=\"先锋易讯"))
+  method: GET
+  

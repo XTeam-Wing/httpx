@@ -1,0 +1,13 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: ipeer
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(body,"/css/ipeer.css") || icontains(body,"/js/ipeer.js")) ||
+    icontains(banner,"ipeer=")) || icontains(banner,"ipeer=")) || icontains(body,"powered
+    by ipeer"))
+  method: GET
+  

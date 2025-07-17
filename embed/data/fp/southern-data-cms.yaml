@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Jiangxi Kechuang Network Technology Co., Ltd.
+  cpe: ''
+  product: southern-data-cms
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"/southidcj2f.js") || icontains(body,"content=\"copyright
+    2003-2015 - southidc.net")) || icontains(body,"/southidckefu.js"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Inseego Corp.
+  cpe: ''
+  product: inseego-skyus-x
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"class=\"skyuscaption\"")
+  method: GET
+  

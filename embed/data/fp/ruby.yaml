@@ -1,0 +1,17 @@
+info:
+  category: scripting language
+  company: other
+  cpe: ''
+  product: ruby
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((((((((((((icontains(banner,"rubyversion") || icontains(banner,"rails_env"))
+    || icontains(banner,"x-rack-cache")) || icontains(banner,"mongrel")) || icontains(banner,"phusion"))
+    || icontains(banner,"webrick")) || icontains(banner,"ruby")) || icontains(banner,"rubyversion"))
+    || icontains(banner,"rails_env")) || ((icontains(body,"content=\"authenticity_token")
+    && icontains(body,"name=\"csrf-param")) && icontains(body,"src=\"/assets/")))
+    || icontains(banner,"x-rack-cache")) || icontains(banner,"mongrel")) || icontains(banner,"phusion"))
+    || icontains(banner,"webrick")) || icontains(banner,"ruby"))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: firewall
+  company: Venus Star Information Technology Group Co., Ltd.
+  cpe: ''
+  product: venustech-tianqing-hanma-usg
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"span id=\"changeyzm\"") && icontains(body,"var hasloading
+    = $changeyzm.is(\".item_code_loading\")")) || icontains(title,"天清汉马usg"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Alcatel-Lucent S.A.
+  cpe: ''
+  product: alcatel-lucent-ascend-dslpipe
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"ascend dslpipe") && icontains(protocol,"snmp"))
+  method: GET
+  

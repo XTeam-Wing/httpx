@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Dawn Information Industry Co., Ltd.
+  cpe: ''
+  product: zhongke-dawn-next-generation-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"/login.html") && title == "曙光下一代防火墙")
+  method: GET
+  

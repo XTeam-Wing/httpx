@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: spamsqr反垃圾邮件系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"spam sqr反垃圾邮件系统")
+  method: GET
+  

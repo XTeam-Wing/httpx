@@ -1,0 +1,11 @@
+info:
+  category: entrance guard system
+  company: Zhongkong Wisdom Technology Co., Ltd.
+  cpe: ''
+  product: zkteco-zem800
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"zem800 login:")
+  method: GET
+  

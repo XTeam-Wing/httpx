@@ -1,0 +1,11 @@
+info:
+  category: smart home
+  company: LG Electronics.
+  cpe: ''
+  product: lg-43uk6400plf
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<modelname>43uk6400plf</modelname>")
+  method: GET
+  

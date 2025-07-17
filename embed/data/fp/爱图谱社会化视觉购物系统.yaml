@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 爱图谱社会化视觉购物系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"爱图谱社会化视觉购物系统")
+  method: GET
+  

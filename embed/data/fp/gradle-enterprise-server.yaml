@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: Gradle Inc.
+  cpe: ''
+  product: gradle-enterprise-server
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<div id=\"kc-header-wrapper\" class=\"\">gradle enterprise</div>")
+    || icontains(body,"<label for=\"controlleraddress\">gradle enterprise server</label>"))
+  method: GET
+  

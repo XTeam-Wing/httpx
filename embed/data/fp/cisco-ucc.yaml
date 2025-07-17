@@ -1,0 +1,11 @@
+info:
+  category: voice video
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-ucc
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"cisco") && icontains(body,"cisco unified contact center"))
+  method: GET
+  

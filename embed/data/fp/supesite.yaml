@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Beijing Kangsheng Xinchuang Technology Co., Ltd.
+  cpe: ''
+  product: supesite
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"supe_sid") || icontains(banner,"supe_sid"))
+  method: GET
+  

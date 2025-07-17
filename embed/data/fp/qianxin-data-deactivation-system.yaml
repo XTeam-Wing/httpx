@@ -1,0 +1,11 @@
+info:
+  category: data desensitization system
+  company: Qianxin Technology Group Co., Ltd.
+  cpe: ''
+  product: qianxin-data-deactivation-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<a href=\"#!/home\" class=\"sysname\">360网神数据脱敏系统 ")
+  method: GET
+  

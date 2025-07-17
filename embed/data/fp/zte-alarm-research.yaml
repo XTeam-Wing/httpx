@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: ZTE Corporation
+  cpe: ''
+  product: zte-alarm-research
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"src=\"img/gonanlogo.jpg") || icontains(body,"深圳市中兴信息技术有限公司版权所有"))
+  method: GET
+  

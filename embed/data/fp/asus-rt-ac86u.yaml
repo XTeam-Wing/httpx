@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: ASUS Computer Co., Ltd.
+  cpe: ''
+  product: asus-rt-ac86u
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(cert,"rt-ac86u") || icontains(title,"asus wireless router rt-ac86u"))
+    || icontains(body,"<div class=\"prod_madelname\">rt-ac86u")) || icontains(banner,"rt-ac86u"))
+  method: GET
+  

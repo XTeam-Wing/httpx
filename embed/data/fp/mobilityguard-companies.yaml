@@ -1,0 +1,13 @@
+info:
+  category: other network security
+  company: Corporate MobilityGuard AB
+  cpe: ''
+  product: mobilityguard-companies
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: mobilityguard") || (!icontains(body,"server: couchdb")
+    && (icontains(body,"click here for more information about mobilityguard") || icontains(banner,"server:
+    mobilityguard"))))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: smart home
+  company: Orange Business Germany GmbH
+  cpe: ''
+  product: orange-liveboxprov3
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"liveboxprov3") || icontains(banner,"realm=\"liveboxprov3"))
+  method: GET
+  

@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: wsn-gallery
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<title>wsn gallery admin login</title>")||(icontains(body,"<title>wsn
+    gallery administration panel</title>"))||(icontains(body,"<textarea readonly rows=\"20\"
+    cols=\"75\">wsn gallery license agreement"))
+  method: GET
+  

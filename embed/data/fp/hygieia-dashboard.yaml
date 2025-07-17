@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: hygieia-dashboard
+  server: nginx
+  tags: []
+rules:
+- dsl: title == "hygieia dashboard"
+  method: GET
+  

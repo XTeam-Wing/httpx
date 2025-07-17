@@ -1,0 +1,12 @@
+info:
+  category: firewall
+  company: Ziguang Co., Ltd.
+  cpe: ''
+  product: ziku-group-violet-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"<b><nobr>紫光防火墙") || icontains(title,"紫光防火墙")) || icontains(body,"name=\"adminlogin\"
+    action=\"/cgi-bin/manageaccount\">"))
+  method: GET
+  

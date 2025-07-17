@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: Pullian Technology Co., Ltd.
+  cpe: ''
+  product: tp-link-camera
+  server: nginx
+  tags: []
+rules:
+- dsl: '(!icontains(body,"server: couchdb") && (icontains(body,"<frame src=\"controlmenu.htm")
+    || title == "ip camera viewer"))'
+  method: GET
+  

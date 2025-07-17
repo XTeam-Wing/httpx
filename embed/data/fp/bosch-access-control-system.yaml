@@ -1,0 +1,13 @@
+info:
+  category: nac
+  company: Bosch Sicherheitssysteme GmbH
+  cpe: ''
+  product: bosch-access-control-system
+  server: nginx
+  tags: []
+rules:
+- dsl: '(!icontains(body,"server: couchdb") && ((icontains(body,"color=\"#1b528c\"
+    >robert bosch gmbh reserves all rights") || icontains(body,"valign=\"top\" align=\"right\">aec
+    ")) || icontains(title,"aec - login")))'
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: electronic mail system
+  company: Beijing Anning Innovation Network Technology Co., Ltd.
+  cpe: ''
+  product: anymacro-mail-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"esmtp anymacro") || icontains(body,"anywebapp")) || icontains(body,"document.aa.f_email"))
+    || icontains(banner,"login_key"))
+  method: GET
+  

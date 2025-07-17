@@ -1,0 +1,13 @@
+info:
+  category: other network equipment
+  company: Shenzhen Weimeng Technology Co., Ltd.
+  cpe: ''
+  product: wayos-switch-centralized-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"<span>深圳维盟科技股份有限公司</span>") && icontains(body,"<form action=\"cgi/login\"
+    method=\"get\" onsubmit=\"login(this)\">")) && icontains(body,"jxtd_test_user"))
+    || (icontains(body,"深圳维盟科技") && icontains(title,"交换机集中管理系统")))
+  method: GET
+  

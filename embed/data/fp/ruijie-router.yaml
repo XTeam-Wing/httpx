@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Ruijie Networks Co., Ltd.
+  cpe: ''
+  product: ruijie-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"ruijie net bar router") || icontains(banner,"ruijie router"))
+  method: GET
+  

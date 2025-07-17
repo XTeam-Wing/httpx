@@ -1,0 +1,11 @@
+info:
+  category: electronic mail system
+  company: Seeds Co.,Ltd.
+  cpe: ''
+  product: acmailer-mail-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<a href=\"http://www.acmailer.jp\"><img src=\"img/logo.jpg")
+  method: GET
+  

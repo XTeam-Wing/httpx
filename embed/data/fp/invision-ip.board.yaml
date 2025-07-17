@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: Invision Power Services, Inc.
+  cpe: ''
+  product: invision-ip.board
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"ipb.vars")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: sweet博客系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"sweet博客系统")
+  method: GET
+  

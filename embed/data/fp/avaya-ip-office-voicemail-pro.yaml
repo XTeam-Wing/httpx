@@ -1,0 +1,12 @@
+info:
+  category: electronic mail system
+  company: Avaya Inc.
+  cpe: ''
+  product: avaya-ip-office-voicemail-pro
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(cert,"ip office voicemail pro") || icontains(banner,"ip office voicemail
+    pro"))
+  method: GET
+  

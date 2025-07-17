@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: public-business-integrated-linkage-fee-system
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"var hasbeensubmited = false")
+  method: GET
+  

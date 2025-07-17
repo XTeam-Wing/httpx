@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: SMC Networks Asia Pacific Pte Ltd
+  cpe: ''
+  product: smc-network-module
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"model: ") && icontains(banner,"smc networks; sw_rev: "))'
+  method: GET
+  

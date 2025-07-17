@@ -1,0 +1,11 @@
+info:
+  category: printer
+  company: other
+  cpe: ''
+  product: octoprint
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"octoprint") || icontains(body,"/octoprint/wiki/plugin:-discovery"))
+  method: GET
+  

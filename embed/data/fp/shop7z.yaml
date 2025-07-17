@@ -1,0 +1,12 @@
+info:
+  category: other software system
+  company: other
+  cpe: ''
+  product: shop7z
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"sitekeyword") || (icontains(body,"function www_zzjs_net_change")
+    && icontains(body,"id=\"www_zzjs_net_loding\""))) || icontains(banner,"sitekeyword"))
+  method: GET
+  

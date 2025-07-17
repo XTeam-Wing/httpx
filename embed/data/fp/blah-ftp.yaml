@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: blah-ftp
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"blah ftp") && icontains(protocol,"ftp"))
+  method: GET
+  

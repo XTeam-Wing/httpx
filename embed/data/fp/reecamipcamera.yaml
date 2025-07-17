@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: reecamipcamera
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"reecam ip camera")
+  method: GET
+  

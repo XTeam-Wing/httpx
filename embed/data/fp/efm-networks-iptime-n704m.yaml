@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: EFM Networks Co.,Ltd.
+  cpe: ''
+  product: efm-networks-iptime-n704m
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"\"/images2/login_title.n704mlg.gif\"") || icontains(body,"\"/images2/login_title.n704m.gif\""))
+  method: GET
+  

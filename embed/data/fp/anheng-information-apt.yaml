@@ -1,0 +1,11 @@
+info:
+  category: apt attack detection
+  company: Hangzhou Anheng Information Technology Co., Ltd.
+  cpe: ''
+  product: anheng-information-apt
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"明御apt攻击")
+  method: GET
+  

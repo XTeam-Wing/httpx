@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Hewlett Packard Enterprise Development LP
+  cpe: ''
+  product: hp-aruba-device
+  server: unknown
+  tags: []
+rules:
+- dsl: '(icontains(body,"/images/arubalogo.gif") || (icontains(body,"Copyright") &&
+    icontains(body,"Aruba Networks"))) && body!="Server: couchdb"'
+  method: GET
+  

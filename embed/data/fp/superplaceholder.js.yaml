@@ -1,0 +1,11 @@
+info:
+  category: development framework
+  company: other
+  cpe: ''
+  product: superplaceholder.js
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"superplaceholder.min.js") || icontains(body,"superplaceholder.js"))
+  method: GET
+  

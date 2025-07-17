@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: trendmicro-product
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"deep security</h4>")||(icontains(title,"trend micro deep security"))
+  method: GET
+  

@@ -1,0 +1,14 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: news
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"ng-disabled=\"!loginform.$valid\"") && icontains(body,"<img id=\"createcheckcode\"
+    src=\"login/picturecheckcode\" name=\"check_code\" ng-click=\"reloadcheckcode()")||(icontains(body,"<img
+    id=\"createcheckcode\" src=\"login/picturecheckcode\" name=\"check_code\" ng-click=\"reloadcheckcode"))||(icontains(body,"ng-disabled=\"!loginform.$valid\""))||(icontains(body,"<img
+    id=\"createcheckcode\" src=\"login/picturecheckcode\" name=\"check_code\" ng-click=\"reloadcheckcode()"))
+  method: GET
+  

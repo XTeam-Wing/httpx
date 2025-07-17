@@ -1,0 +1,12 @@
+info:
+  category: hacking tool
+  company: other
+  cpe: ''
+  product: frp
+  server: nginx
+  tags: []
+rules:
+- dsl: 'icontains(protocol,"{\"length\": 0, \"chained_to\": 808990520, \"identifier\":
+    \"ody_contains\", \"str\": null}")'
+  method: GET
+  

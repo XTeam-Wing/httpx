@@ -1,0 +1,14 @@
+info:
+  category: development framework
+  company: Shenzhen Jisu Chuangxiang Technology Co., Ltd.
+  cpe: ''
+  product: fastadmin-frame
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((((icontains(body,"fastadmin.net") || icontains(body,"<h1>fastadmin</h1>"))
+    && icontains(title,"fastadmin")) || icontains(body,"<a href=\"/\" class=\"navbar-brand\">fastadmin</a>"))
+    || icontains(body,"class=\"navbar-brand\">fastadmin</a>")) || title == "fastadmin")
+    || icontains(body,"copyright © fastadmin.net"))
+  method: GET
+  

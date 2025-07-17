@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: r1soft-server-backup-manager-se
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"server backup manager se")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: entrance guard system
+  company: Zhongkong Wisdom Technology Co., Ltd.
+  cpe: ''
+  product: zkteco-zem560
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"(zem560) for mips ") && icontains(banner,"zem560 login:"))
+  method: GET
+  

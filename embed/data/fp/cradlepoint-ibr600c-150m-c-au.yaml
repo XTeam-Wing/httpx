@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Cradlepoint, Inc.
+  cpe: ''
+  product: cradlepoint-ibr600c-150m-c-au
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"ibr600c-150m-c-au") || icontains(banner,"cradlepoint ibr600c-150m-c-au"))
+  method: GET
+  

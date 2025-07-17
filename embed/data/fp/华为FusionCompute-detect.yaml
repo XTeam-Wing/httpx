@@ -1,0 +1,11 @@
+info:
+  author: 哆啦A梦
+  description: ''
+  tags: []
+  product: fusioncompute
+  category: virtualization
+rules:
+- method: GET
+  path:
+  - '/OmsPortal/index.html#!/login'
+  dsl: contains(body, "fc-height-percent100") || contains(title, "FusionCompute")

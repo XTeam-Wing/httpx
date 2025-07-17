@@ -1,0 +1,13 @@
+info:
+  category: other enterprise application
+  company: Nucleus Group.
+  cpe: ''
+  product: nucleus-cms
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((icontains(body,"title=\"nucleus\" href=\"http://nucleuscms.org/") || icontains(body,"nucleus_lf_name"))
+    || icontains(body,"target=\"_blank\">nucleus cms")) || icontains(banner,"generator:
+    nucleus cms")) || icontains(banner,"generator: nucleus cms"))'
+  method: GET
+  

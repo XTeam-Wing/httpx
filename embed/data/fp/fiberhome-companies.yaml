@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Fenghuo Communication Technology Co., Ltd.
+  cpe: ''
+  product: fiberhome-companies
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"scos_fx@fiberhome.com ") || (icontains(body,"fiberhome systems,
+    inc.") && icontains(title,"fiberhome")))
+  method: GET
+  

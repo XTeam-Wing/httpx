@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Pumpkin Networks Inc.
+  cpe: ''
+  product: pumpkin-networks-l7-switch
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"pumpkin networks l7 switch")
+  method: GET
+  

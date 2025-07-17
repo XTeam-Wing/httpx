@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Delsa
+  cpe: ''
+  product: delsa-companies-products
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"delsa telecommunication technology") || icontains(banner,"realm=\"delsa
+    telecommunication technology"))
+  method: GET
+  

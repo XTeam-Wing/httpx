@@ -1,0 +1,11 @@
+info:
+  category: operating system
+  company: Oracle Corporation
+  cpe: ''
+  product: opensolaris
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"opensolaris")
+  method: GET
+  

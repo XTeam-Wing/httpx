@@ -1,0 +1,11 @@
+info:
+  category: oa
+  company: Shanghai Fanwei Network Technology Co., Ltd.
+  cpe: ''
+  product: panmine-emobile
+  server: nginx
+  tags: []
+rules:
+- dsl: (((((icontains(title,"移动管理平台") && icontains(body,"window.apiprifix = \"/emp\";")) || icontains(body,"/images/login_logo@2x.png")) || (icontains(body,"action=\"/verifylogin.do") && icontains(body,"e-mobile&nbsp;"))) || icontains(body,"content=\"weaver e-mobile\""))) && status_code == 200
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: mkportal
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"target=\"_blank\">mkportal</a>") || icontains(body,"content=\"mkportal"))
+  method: GET
+  

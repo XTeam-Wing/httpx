@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: three.js
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"three.js")
+  method: GET
+  

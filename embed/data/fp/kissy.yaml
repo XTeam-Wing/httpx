@@ -1,0 +1,11 @@
+info:
+  category: development framework
+  company: other
+  cpe: ''
+  product: kissy
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"kissy.js") || icontains(body,"kissy-min.js")) || icontains(body,"kissy.ready"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: voice video
+  company: Zoom Telephonics, Inc.
+  cpe: ''
+  product: zoom-video-conference
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"class=\"alert alert-success hideme zoom-newmessage\"")
+  method: GET
+  

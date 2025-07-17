@@ -1,0 +1,11 @@
+info:
+  category: operation && maintenance audit fortres machine
+  company: Hangzhou Paradi Network Technology Co., Ltd.
+  cpe: ''
+  product: palladium-core4a-utm
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"帕拉迪 icore-4a") || icontains(title,"帕拉迪core4a-utm"))
+  method: GET
+  

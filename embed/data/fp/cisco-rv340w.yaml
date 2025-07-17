@@ -1,0 +1,11 @@
+info:
+  category: vpn products
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-rv340w
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"cisco rv340w")
+  method: GET
+  

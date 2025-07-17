@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: smartoa
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"href=\"http://www.smartoa.com.cn/download/smartoa.apk\">安卓客户端</a>")||(icontains(body,"iframeheight()")
+    && icontains(body,"content/images/login_background.jpg"))||(icontains(header,"smartoa"))||(icontains(body,"/smartoa.plist"))||(icontains(body,"content/images/login_background.jpg"))||(icontains(body,"iframeheight()"))
+  method: GET
+  

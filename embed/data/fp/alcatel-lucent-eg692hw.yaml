@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Alcatel-Lucent S.A.
+  cpe: ''
+  product: alcatel-lucent-eg692hw
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"alcatel-eg692hw")
+  method: GET
+  

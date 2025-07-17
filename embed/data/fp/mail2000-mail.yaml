@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: mail2000-mail
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"mail2000 message system")||(icontains(title,"mail2000郵件系統"))
+  method: GET
+  

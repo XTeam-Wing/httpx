@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: silver-peak-company's-product
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"silver peak systems, inc. ")
+  method: GET
+  

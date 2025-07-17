@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: China Data Communication Information Co., Ltd.
+  cpe: ''
+  product: china-communication-service-central-smsp-sms-business-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"/smrc/resources/default/")
+  method: GET
+  

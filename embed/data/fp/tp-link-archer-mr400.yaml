@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Pullian Technology Co., Ltd.
+  cpe: ''
+  product: tp-link-archer-mr400
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"var modelname=\"archer mr400\"")
+  method: GET
+  

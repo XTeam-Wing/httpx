@@ -1,0 +1,12 @@
+info:
+  category: other iot device
+  company: other
+  cpe: ''
+  product: koditv
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"<title>kodi</title>") || icontains(body,"title=\"kodi library"))
+    || title == "kodi")
+  method: GET
+  

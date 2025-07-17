@@ -1,0 +1,12 @@
+info:
+  category: crm
+  company: ANNECA s.r.o.
+  cpe: ''
+  product: anneca-intouch-crm
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"href=\"http://www.anneca.cz\"") && (icontains(title,"app.name")
+    || icontains(title,"intouch crm")))
+  method: GET
+  

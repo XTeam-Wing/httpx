@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Shanghai Youhua System Integration Technology Co., Ltd.
+  cpe: ''
+  product: yushen-iemos-cw
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"var id = document.getelementbyid(\"txtyhmm\").value")
+  method: GET
+  

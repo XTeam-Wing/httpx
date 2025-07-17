@@ -1,0 +1,14 @@
+info:
+  category: router
+  company: Pullian Technology Co., Ltd.
+  cpe: ''
+  product: tp-link-td-w9980
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(banner,"0.6.0 1.8 v0021.0 build 140925 rel.32089n") || icontains(banner,"0.6.0
+    1.13 v0021.0 build 160125 rel.52064n")) || icontains(banner,"0.6.0 1.12 v0021.0
+    build 150507 rel.40130n")) || icontains(banner,"0.6.0 1.10 v0021.0 build 141215
+    rel.41342n")) || icontains(banner,"0.6.0 1.12 v0021.0 build 150507 rel.40130n"))
+  method: GET
+  

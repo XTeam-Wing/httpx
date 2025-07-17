@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: ZTE Corporation
+  cpe: ''
+  product: zte-zxr10-3228a
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"zxr10_3228a") || icontains(banner,"zxr10 3228a"))
+  method: GET
+  

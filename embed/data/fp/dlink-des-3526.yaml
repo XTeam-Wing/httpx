@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: dlink-des-3526
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"des-3526")
+  method: GET
+  

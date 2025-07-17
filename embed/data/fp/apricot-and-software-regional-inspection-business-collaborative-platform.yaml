@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Shanghai Xinghe Software Co., Ltd.
+  cpe: ''
+  product: apricot-and-software-regional-inspection-business-collaborative-platform
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<title>杏和区域检验业务协同平台登录界面</title>")
+  method: GET
+  

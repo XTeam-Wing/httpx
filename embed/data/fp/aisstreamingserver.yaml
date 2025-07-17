@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: aisstreamingserver
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"ais streaming server")
+  method: GET
+  

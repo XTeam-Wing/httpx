@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Schneider Electric
+  cpe: ''
+  product: schneider-tsx
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"schneider tsx ")
+  method: GET
+  

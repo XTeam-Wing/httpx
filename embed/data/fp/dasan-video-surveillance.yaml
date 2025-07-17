@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: DASAN Networks, Inc.
+  cpe: ''
+  product: dasan-video-surveillance
+  server: nginx
+  tags: []
+rules:
+- dsl: '(!icontains(body,"server: couchdb") && icontains(body,"clear_cookie(\"login\");"))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Zhengfang Software Co., Ltd.
+  cpe: ''
+  product: sub-software-academic-administration-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"正方教务管理系统") || (icontains(body,"content=\"站点介绍\"") && icontains(body,"style/base/jw.css")))
+  method: GET
+  

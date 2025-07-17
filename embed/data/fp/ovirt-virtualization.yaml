@@ -1,0 +1,12 @@
+info:
+  category: virtualization
+  company: other
+  cpe: ''
+  product: ovirt-virtualization
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(body,"<a href=\"https://www.ovirt.org\" class=\"obrand_loginpagelogolink\">")
+    || icontains(banner,"/ovirt-engine/")) || (icontains(banner,"location: ") && icontains(banner,"/ovirt-engine/")))'
+  method: GET
+  

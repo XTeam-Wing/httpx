@@ -1,0 +1,12 @@
+info:
+  category: other software system
+  company: other
+  cpe: ''
+  product: pbootcms
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(title,"pbootcms") || icontains(banner,"set-cookie: pbootsystem="))
+    || icontains(banner,"set-cookie: pbootsystem="))'
+  method: GET
+  

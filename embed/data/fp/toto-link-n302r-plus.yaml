@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: TOTOLINK
+  cpe: ''
+  product: toto-link-n302r-plus
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"totolink n302r plus")
+  method: GET
+  

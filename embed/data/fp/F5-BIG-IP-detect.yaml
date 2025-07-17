@@ -1,0 +1,13 @@
+info:
+  company: F5
+  product: f5 big-ip tmui
+  category: server
+  description: 在F5 BIG-IP 是美国 F5 公司的一款集成了网络流量管理、应用程序安全管理、负载均衡等功能的应用交付平台。
+  author: 哆啦A梦
+  tags:
+  - tech
+  - f5-big-ip
+rules:
+- method: GET
+  
+  dsl: contains(body, "<title>BIG-IP&reg;- Redirect</title>")

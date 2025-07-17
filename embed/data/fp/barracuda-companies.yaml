@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Barracuda Networks, Inc.
+  cpe: ''
+  product: barracuda-companies
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"server: barracudahttp") || icontains(cert,"o=barracuda
+    networks")) || icontains(banner,"barracudahttp"))'
+  method: GET
+  

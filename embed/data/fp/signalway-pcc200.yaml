@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Beijing Xinluwei Technology Co., Ltd.
+  cpe: ''
+  product: signalway-pcc200
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"pcc200b管理") || icontains(body,"<span class=\"bannertextcompany\">pcc200</span>"))
+  method: GET
+  

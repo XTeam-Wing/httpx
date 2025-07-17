@@ -1,0 +1,13 @@
+info:
+  category: cameras && surveillance
+  company: Infinova Corporation
+  cpe: ''
+  product: infinova-video-monitoring
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((icontains(body,"vms.html") && title == "video management system") ||
+    icontains(banner,"basic realm=\"infinova")) || icontains(banner,"server: infinova-webs"))
+    || icontains(banner,"server: infinova-webs")) || icontains(banner,"infinova login:"))'
+  method: GET
+  

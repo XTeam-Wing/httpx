@@ -1,0 +1,12 @@
+info:
+  category: firewall
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: eudemon8000e-x8
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"eudemon8000e-x8") || (icontains(banner,"set-cookie:") &&
+    icontains(banner,"huawei eudemon8000e-x8")))
+  method: GET
+  

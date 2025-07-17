@@ -1,0 +1,12 @@
+info:
+  category: other software system
+  company: osCommerce
+  cpe: ''
+  product: oscommerce
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"set-cookie: oscsid=") || icontains(banner,"set-cookie:
+    oscsid=")) || icontains(body,"src=\"images/oscommerce.png"))'
+  method: GET
+  

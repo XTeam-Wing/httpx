@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: hp-network-automation
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"hp network automation")
+  method: GET
+  

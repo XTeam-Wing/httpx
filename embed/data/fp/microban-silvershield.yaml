@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Microban
+  cpe: ''
+  product: microban-silvershield
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"silvershield")
+  method: GET
+  

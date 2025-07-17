@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Yamaha Corporation
+  cpe: ''
+  product: yamaha-rtx1500
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"rtx1500")
+  method: GET
+  

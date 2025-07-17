@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: oexam
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"}else if(type===\"examcard\"{")||(icontains(title,"oexam"))||(icontains(body,"}else
+    iftype===\"examcard\"{"))
+  method: GET
+  

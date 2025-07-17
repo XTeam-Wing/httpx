@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: dms-control-firmware
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"daktronics, inc. vfc")||(icontains(header,"daktronics, inc. vfc-3000"))
+  method: GET
+  

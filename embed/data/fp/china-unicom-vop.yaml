@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: China United Network Communications Group Co., Ltd.
+  cpe: ''
+  product: china-unicom-vop
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(body,"id=\"lgform\" action=\"/sso/login") && icontains(body,"{\"length\":
+    0, \"chained_to\": 1667201380, \"identifier\": \"0\", \"str\": null}")) || icontains(body,"lgdynacodebtn"))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Arrowhead Alarm Products
+  cpe: ''
+  product: aap-ip-module
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: pstn-eth") || icontains(banner,"server: pstn-eth"))'
+  method: GET
+  

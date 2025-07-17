@@ -1,0 +1,22 @@
+info:
+  category: printer
+  company: HP Development Company, L.P.
+  cpe: ''
+  product: hp-printer
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((((((icontains(banner,"hostname: hp laserjet") || ((!icontains(banner,"couchdb")
+    && (icontains(banner,"@pjl info status") || icontains(banner,"serial number")))
+    && ((((((((icontains(banner,"server: hp http server; hp photosmart") || icontains(banner,"server:
+    hp http server; hp deskjet")) || icontains(banner,"hp pagewide")) || icontains(banner,"hp
+    color laserjet")) || icontains(banner,"hp pagewide pro")) || icontains(banner,"hp
+    laserjet")) || icontains(banner,"hp designjet")) || icontains(banner,"server:
+    hp http server; hp officejet")) || icontains(banner,"hp officejet pro")))) ||
+    icontains(banner,"hp ethernet multi-environment")) || icontains(banner,"server:
+    hp-chaisoe")) || icontains(banner,"printer network card")) || (icontains(banner,"gzip")
+    && (!icontains(banner,"samsung") && icontains(banner,"hp http server")))) || ((icontains(banner,"jd153")
+    || icontains(banner,"jd149")) && icontains(banner,"hp ethernet"))) || (icontains(body,"/hp/jetdirect")
+    && icontains(title,"hp laserjet"))) || (!icontains(banner,"couchdb") && icontains(banner,"hp-chaiserver")))'
+  method: GET
+  

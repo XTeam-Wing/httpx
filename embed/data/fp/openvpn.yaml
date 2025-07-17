@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: openvpn
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"server:") && icontains(header,"openvpn")||(icontains(header,"server:
+    openvpn"))||(icontains(header,"realm=\"openvpn"))'
+  method: GET
+  

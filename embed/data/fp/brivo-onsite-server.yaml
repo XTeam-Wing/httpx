@@ -1,0 +1,12 @@
+info:
+  category: server
+  company: Brivo Inc.
+  cpe: ''
+  product: brivo-onsite-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: brivo onsite server") || icontains(banner,"server:
+    brivo onsite server"))'
+  method: GET
+  

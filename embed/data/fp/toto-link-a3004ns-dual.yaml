@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: TOTOLINK Corp.
+  cpe: ''
+  product: toto-link-a3004ns-dual
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"src =\"/images2/login_back_za3nd.ch.gif\"")
+  method: GET
+  

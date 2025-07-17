@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: nginx
+  server: unknown
+  tags: []
+rules:
+- dsl: '(icontains(server,"nginx") && header!="couchdb" && header!="drupal" && header!="Apache,Tomcat,Jboss")
+    || (icontains(banner,"server: nginx") && banner!="couchdb" && banner!="drupal")'
+  method: GET
+  

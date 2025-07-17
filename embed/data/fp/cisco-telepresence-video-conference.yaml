@@ -1,0 +1,11 @@
+info:
+  category: voice video
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-telepresence-video-conference
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"cisco telepresence ")
+  method: GET
+  

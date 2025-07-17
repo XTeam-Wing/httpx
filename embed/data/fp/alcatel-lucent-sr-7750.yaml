@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Alcatel-Lucent S.A.
+  cpe: ''
+  product: alcatel-lucent-sr-7750
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"alcatel sr 7750")
+  method: GET
+  

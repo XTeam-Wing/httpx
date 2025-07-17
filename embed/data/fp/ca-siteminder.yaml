@@ -1,0 +1,11 @@
+info:
+  category: data certificate
+  company: Broadcom Inc.
+  cpe: ''
+  product: ca-siteminder
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<!-- siteminder encoding")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-hms
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: hms download service") || icontains(banner,"hms
+    download service"))'
+  method: GET
+  

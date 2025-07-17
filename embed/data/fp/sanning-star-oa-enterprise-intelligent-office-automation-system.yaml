@@ -1,0 +1,12 @@
+info:
+  category: oa
+  company: Guangdong Drystar Information Technology Co., Ltd.
+  cpe: ''
+  product: sanning-star-oa-enterprise-intelligent-office-automation-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"count/mystat.asp") && (icontains(body,"input name=\"s1\" type=image")
+    || icontains(body,"input name=\"s1\" type=\"image\"")))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: acollab
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(body,"<title>acollab : accessible collaboration environment:")'
+  method: GET
+  

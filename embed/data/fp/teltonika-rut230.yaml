@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: TELTONIKA lnc.
+  cpe: ''
+  product: teltonika-rut230
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"teltonika-rut230")
+  method: GET
+  

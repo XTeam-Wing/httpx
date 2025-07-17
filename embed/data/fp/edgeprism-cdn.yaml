@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: Limelight Networks
+  cpe: ''
+  product: edgeprism-cdn
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"server: edgeprismssl") || icontains(banner,"server: edgeprism"))
+    || icontains(banner,"edgeprismssl")) || icontains(banner,"edgeprism"))'
+  method: GET
+  

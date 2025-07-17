@@ -1,0 +1,11 @@
+info:
+  category: big data pocessing
+  company: 北京神州绿盟信息安全科技股份有限公司
+  cpe: ''
+  product: nsfocus-大数据安全平台
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<base href=\"/WebApi/login/static/dist/\">") && icontains(body,"<title></title>")
+  method: GET
+  

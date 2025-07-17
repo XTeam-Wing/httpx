@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ffcs-security-operation-management-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"align=\"center\">福富软件")
+  method: GET
+  

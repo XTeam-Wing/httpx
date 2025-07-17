@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: BMC Software, Inc.
+  cpe: ''
+  product: bmc-control-m
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(cert,"BMC Control-M Root CA") || icontains(title,"Control-M Welcome
+    Page")
+  method: GET
+  

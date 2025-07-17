@@ -1,0 +1,16 @@
+info:
+  category: router
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-r7000
+  server: nginx
+  tags: []
+rules:
+- dsl: (((((((((icontains(banner,"netgearr7000") || icontains(banner,"netgear r7000"))
+    || icontains(body,"content=\"r7000\"")) || icontains(body,"id=\"modulename\">nighthawk
+    r7000")) || (icontains(body,"netgear r7000") && icontains(body,"var mmc = {")))
+    || icontains(banner,"netgearr7000")) || icontains(banner,"realm=\"r7000")) ||
+    icontains(banner,"esi_netgear_r7000")) || icontains(banner,"netgear r7000")) ||
+    icontains(banner,"netgear-r7000"))
+  method: GET
+  

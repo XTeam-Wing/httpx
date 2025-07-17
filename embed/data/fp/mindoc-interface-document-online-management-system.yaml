@@ -1,0 +1,12 @@
+info:
+  category: file management && encryption
+  company: other
+  cpe: ''
+  product: mindoc-interface-document-online-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"mindoc 接口文档在线管理系统") ||  icontains(body,"powered by
+    mindoc") || icontains(banner,"mindoc-version")
+  method: GET
+  

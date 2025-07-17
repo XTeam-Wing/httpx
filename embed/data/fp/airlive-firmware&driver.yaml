@@ -1,0 +1,13 @@
+info:
+  category: other network equipment
+  company: OvisLink Corp.
+  cpe: ''
+  product: airlive-firmware&driver
+  server: nginx
+  tags: []
+rules:
+- dsl: (((((icontains(banner,"airlive airmax2") || icontains(banner,"realm=\"airlive
+    wha-")) || icontains(banner,"airlive airmax5")) || icontains(banner,"airlive airmax2"))
+    || icontains(banner,"realm=\"airlive wha-")) || icontains(banner,"airlive airmax5"))
+  method: GET
+  

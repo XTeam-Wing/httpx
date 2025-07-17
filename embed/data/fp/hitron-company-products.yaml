@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Hitron Technologies Inc.
+  cpe: ''
+  product: hitron-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"href=\"/css/webono.css\"")
+  method: GET
+  

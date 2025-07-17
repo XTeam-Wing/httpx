@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: adslr-router
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/img/r1/favicon.ico") && icontains(title,"飞鱼星家用智能路由")||(icontains(body,"href=\"css/r1login.css\""))||(icontains(body,"src=\"chinesehl.js\""))||(icontains(body,"/img/r1/favicon.ico"))
+  method: GET
+  

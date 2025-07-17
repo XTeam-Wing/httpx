@@ -1,0 +1,16 @@
+info:
+  category: router
+  company: ASUS Computer Co., Ltd.
+  cpe: ''
+  product: asus-rt-n66u
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((((((icontains(banner,"asus rt-n66u") || icontains(title,"rt-n66u")) ||
+    icontains(body,"class=\"prod_madelname\" style=\"margin-left:78px;\">rt-n66u"))
+    || icontains(body,"capture(status_router.sys_model)</script></div>asus rt-n66u"))
+    || icontains(body,"capture(status_router.sys_model)</script></div> asus rt-n66u&nbsp;"))
+    || icontains(body,"<div class=\"prod_madelname\">rt-n66u")) || icontains(banner,"asus
+    rt-n66u ")) || icontains(banner,"rt-n66u")) || icontains(banner,"rt-n66u"))
+  method: GET
+  

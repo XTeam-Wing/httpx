@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: Microsoft Corporation
+  cpe: ''
+  product: ms-mfc-httpsvr
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"server: ms-mfc-httpsvr") || icontains(banner,"server:
+    ms-mfc-httpsvr")) || (!icontains(body,"server: couchdb") && icontains(body,"action=\"i.cgi")))'
+  method: GET
+  

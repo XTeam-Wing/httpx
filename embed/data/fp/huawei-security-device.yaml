@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: huawei-security-device
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"sweb-lib/plat/login/login_new.js")||(icontains(body,"sweb-lib/resource/"))||(icontains(body,"sweb-internal/resource/"))||(icontains(body,"sweb-internal/plat/login/login_new.js"))
+  method: GET
+  

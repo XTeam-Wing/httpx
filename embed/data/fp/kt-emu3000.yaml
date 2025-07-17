@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: KT CORP
+  cpe: ''
+  product: kt-emu3000
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"emu3000")
+  method: GET
+  

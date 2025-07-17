@@ -1,0 +1,11 @@
+info:
+  category: development framework
+  company: New Atlanta Communications, LLC
+  cpe: ''
+  product: bluedragon
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"x-powered-by: bluedragon") || icontains(banner,"bluedragon"))'
+  method: GET
+  

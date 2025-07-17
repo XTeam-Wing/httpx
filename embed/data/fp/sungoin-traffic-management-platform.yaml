@@ -1,0 +1,11 @@
+info:
+  category: traffic analysis
+  company: Shangketong Shangjing Technology (Shanghai) Co., Ltd.
+  cpe: ''
+  product: sungoin-traffic-management-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"尚景流量管理平台")
+  method: GET
+  

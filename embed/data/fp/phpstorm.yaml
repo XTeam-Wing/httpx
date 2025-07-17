@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: phpstorm
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"phpstorm")
+  method: GET
+  

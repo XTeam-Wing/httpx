@@ -1,0 +1,12 @@
+info:
+  category: other support system
+  company: Apache Software Foundation.
+  cpe: ''
+  product: apache-tika
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<h2>Tika Test Transformations</h2>") || (icontains(title,"Apache
+    Tika") && (icontains(title,"server") || icontains(title,"Corpora")))
+  method: GET
+  

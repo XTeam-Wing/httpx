@@ -1,0 +1,13 @@
+info:
+  category: other enterprise application
+  company: ATEN INTERNATIONAL Co., Ltd.
+  cpe: ''
+  product: aten-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"document.writeln(lang.lang_login_prompt)") && icontains(body,"name=\"aten
+    international co ltd.")) || (icontains(body,"action=\"/cgi/login.cgi") && icontains(body,"<meta
+    name=\"aten international co ltd.")))
+  method: GET
+  

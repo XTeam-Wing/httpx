@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Digital Data Communications GmbH
+  cpe: ''
+  product: levelone-nvr-0208
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"nvr-0208") || icontains(banner,"nvr-0208"))
+  method: GET
+  

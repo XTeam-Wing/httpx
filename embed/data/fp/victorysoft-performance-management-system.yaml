@@ -1,0 +1,12 @@
+info:
+  category: hrm
+  company: Shandong Shengruan Technology Co., Ltd.
+  cpe: ''
+  product: victorysoft-performance-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"casui/themes/siam/login.css") && icontains(body,"class=\"row
+    fl-controls-left"))
+  method: GET
+  

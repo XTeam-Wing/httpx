@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Campbell Scientific, Inc.
+  cpe: ''
+  product: campbell-scientific-companies-products
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"campbell scientific, inc.")
+  method: GET
+  

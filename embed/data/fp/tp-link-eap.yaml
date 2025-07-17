@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Pullian Technology Co., Ltd.
+  cpe: ''
+  product: tp-link-eap
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"/login/forbidden") && icontains(body,"eap220"))
+  method: GET
+  

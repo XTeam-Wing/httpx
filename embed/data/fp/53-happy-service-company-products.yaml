@@ -1,0 +1,13 @@
+info:
+  category: other enterprise application
+  company: Quick Service Technology Co., Ltd.
+  cpe: ''
+  product: 53-happy-service-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(body,"tb.53kf.com/code/") || icontains(body,"powered by 53kf"))
+    || icontains(banner,"customer_service_language")) || icontains(body,"chat.53kf.com/company.php"))
+    || icontains(body,"chat.53kf.com/kf.php"))
+  method: GET
+  

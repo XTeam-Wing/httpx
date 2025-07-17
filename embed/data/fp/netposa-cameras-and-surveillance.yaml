@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: netposa-cameras-and-surveillance
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"by 重庆网力视界科技有限公司") && icontains(title,"移动视频监控 配置平台")||(icontains(body,"by
+    重庆网力视界科技有限公司"))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: virtualization
+  company: Shenxinfu Technology Co., Ltd.
+  cpe: ''
+  product: sangfor-virtualization-management-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(cert,"commonname: sangfor vtp") || icontains(cert,"cn=sangfor
+    vtp")) || (icontains(body,"id=\"privacytipwin\"") && icontains(body,"content=\"webkit|ie-stand\"")))'
+  method: GET
+  

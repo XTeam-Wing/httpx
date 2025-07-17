@@ -1,0 +1,14 @@
+info:
+  category: other enterprise application
+  company: TVersity Inc.
+  cpe: ''
+  product: tversity-companies
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((!icontains(banner,"reecam ip camera") && !icontains(banner,"drupal")) &&
+    !icontains(banner,"couchdb")) && icontains(banner,"tversity media server")) ||
+    (((!icontains(banner,"reecam ip camera") && !icontains(banner,"drupal")) && !icontains(banner,"couchdb"))
+    && icontains(banner,"tversity media server")))
+  method: GET
+  

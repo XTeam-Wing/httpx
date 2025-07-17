@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Polycom, Inc.
+  cpe: ''
+  product: polycom-ippbx
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"src=\"cgi-bin/httptohttps.cgi\"") || icontains(body,"src=\"cgi-bin/ippbx.cgi?module=showlogin\""))
+  method: GET
+  

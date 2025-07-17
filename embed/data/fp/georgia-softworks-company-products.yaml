@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Georgia SoftWorks.
+  cpe: ''
+  product: georgia-softworks-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"server") && icontains(banner,"georgia softworks"))
+  method: GET
+  

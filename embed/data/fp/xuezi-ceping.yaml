@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: xuezi-ceping
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"xuezi_ceping")
+  method: GET
+  

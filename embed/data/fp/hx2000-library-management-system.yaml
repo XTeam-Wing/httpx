@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Changzhou Huajiao Software Technology Development Co., Ltd.
+  cpe: ''
+  product: hx2000-library-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"hx2000图书馆管理系统")
+  method: GET
+  

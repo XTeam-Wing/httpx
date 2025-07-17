@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Xi'an Jiake Information Technology Co., Ltd.
+  cpe: ''
+  product: destoon
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"destoon_moduleid") || icontains(body,"content=\"destoon"))
+  method: GET
+  

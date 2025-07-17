@@ -1,0 +1,17 @@
+info:
+  category: adsl
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: d-link-dir-600
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((((icontains(body,"dlink-dir600") && icontains(body,"var mmc = {")) ||
+    (icontains(body,"temp_checknetworkaddr") && icontains(body,"<div class=\"modelname\">dir-600")))
+    || (icontains(body,"dir-600") && icontains(title,"d-link systems, inc. | wireless
+    router | home"))) || (!icontains(banner,"x-powered-by: thinkphp") && icontains(server,"dir-600
+    ver"))) || icontains(banner,"realm=\"dir 600")) || (((!icontains(banner,"x-powered-by:
+    thinkphp") && !icontains(banner,"couchdb")) && icontains(banner,"dir-600 ver "))
+    && icontains(banner,"dir-600")))'
+  method: GET
+  

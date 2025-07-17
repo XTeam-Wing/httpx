@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Hangzhou Ying Hi-Tech Co., Ltd.
+  cpe: ''
+  product: infogo-asm6000
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"asm6000")
+  method: GET
+  

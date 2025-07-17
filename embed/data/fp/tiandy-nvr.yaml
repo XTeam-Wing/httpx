@@ -1,0 +1,12 @@
+info:
+  category: other iot device
+  company: Tianjin Tiandi Weiye Digital Technology Co., Ltd.
+  cpe: ''
+  product: tiandy-nvr
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"if(getdiscription(\"application/x-rs-sclient-v3") || (icontains(body,"playback</a>")
+    && icontains(body,"id=\"maintaince_dialog_ok\"")))
+  method: GET
+  

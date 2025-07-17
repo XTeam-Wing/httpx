@@ -1,0 +1,12 @@
+info:
+  category: vpn products
+  company: Sophos Technologies Pvt. Ltd.
+  cpe: ''
+  product: sophos-cyberoam-sslvpn
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"sslvpnuserportalloginform") && icontains(title,"cyberoam ssl
+    vpn portal"))
+  method: GET
+  

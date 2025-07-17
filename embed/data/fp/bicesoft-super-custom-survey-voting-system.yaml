@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: bicesoft-super-custom-survey-voting-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"佰思超强自定义问卷调查系统(bicesoft.com)")||(icontains(body,"href=\"images/bicesoft.css\""))||(icontains(body,"佰思超强自定义问卷调查系统bicesoft.com"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: anti-virus product
+  company: Beijing Falcon Security Technology Co., Ltd.
+  cpe: ''
+  product: falcon-safety-jinshan-terminal-safety-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (!icontains(title,"金山终端安全系统") && icontains(body,"数据库连接异常，您可"))
+  method: GET
+  

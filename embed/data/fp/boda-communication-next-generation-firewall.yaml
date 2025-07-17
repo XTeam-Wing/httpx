@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Shanghai Boda Data Communication Co., Ltd.
+  cpe: ''
+  product: boda-communication-next-generation-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: title == "博达下一代防火墙"
+  method: GET
+  

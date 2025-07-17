@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: epic-web-honeypot
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<center><font size=\"3\" face=\"monospace\">********************************
+    epic web honeypot ********************************</font></center>")||(icontains(body,"<!--
+    added os fingerprints - creds - nmap and honeyd nmap.prints file!-->"))
+  method: GET
+  

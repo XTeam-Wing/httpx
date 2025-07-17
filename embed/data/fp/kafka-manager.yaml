@@ -1,0 +1,15 @@
+info:
+  category: big data pocessing
+  company: Apache Software Foundation.
+  cpe: ''
+  product: kafka-manager
+  server: nginx
+  tags: []
+rules:
+- dsl: (((((((icontains(banner,"realm=\"kafka manager") || icontains(banner,"realm=\"kafka-manager"))
+    || icontains(body,"vassets/images/2af62f58ee2baf495c9b3a9a1c30ce03-favicon.png"))
+    || icontains(body,"/vassets/datatables/stylesheets")) || icontains(title,"kafka
+    manager")) || icontains(banner,"realm=\"kafka manager")) || icontains(banner,"realm=\"kafka-manager"))
+    || icontains(banner,"kafka admin"))
+  method: GET
+  

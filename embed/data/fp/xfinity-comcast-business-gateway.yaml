@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Comcast Cable Communications, LLC
+  cpe: ''
+  product: xfinity-comcast-business-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"comcast business gateway") || icontains(body,"comcast business
+    gateway"))
+  method: GET
+  

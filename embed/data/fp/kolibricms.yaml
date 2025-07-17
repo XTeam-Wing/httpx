@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: kolibricms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"kolibri cms")
+  method: GET
+  

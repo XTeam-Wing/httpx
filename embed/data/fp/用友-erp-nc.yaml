@@ -1,0 +1,12 @@
+info:
+  category: erp
+  company: Yongyou Network Technology Co., Ltd.
+  cpe: ''
+  product: 用友-erp-nc
+  server: unknown
+  tags: []
+rules:
+- dsl: (icontains(body,"/nc/servlet/nc.ui.iufo.login.Index") || icontains(title,"用友新世纪"))
+    && body!="couchdb"
+  method: GET
+  

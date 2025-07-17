@@ -1,0 +1,12 @@
+info:
+  category: network storage
+  company: Inspur Group Co., Ltd.
+  cpe: ''
+  product: inspur-as5500g2
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(body,"\"productname\": \"inspur as5500g2\",") || icontains(title,"inspur
+    as5500g2"))'
+  method: GET
+  

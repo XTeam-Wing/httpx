@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Hewlett Packard Enterprise Development LP
+  cpe: ''
+  product: hp-3com-access-point-7760
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"3com access point 7760")
+  method: GET
+  

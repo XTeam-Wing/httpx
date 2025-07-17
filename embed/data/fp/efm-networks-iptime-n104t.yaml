@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: EFM Networks Co.,Ltd.
+  cpe: ''
+  product: efm-networks-iptime-n104t
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"\"/images/login_title_n104t.gif\"")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: zen-load-balancer
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"basic realm=\"zen load balancer\"")
+  method: GET
+  

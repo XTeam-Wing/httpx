@@ -1,0 +1,11 @@
+info:
+  category: industrial control
+  company: Rockwell Automation, Inc.
+  cpe: ''
+  product: rockwell-series-c-revision
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"series c revision")
+  method: GET
+  

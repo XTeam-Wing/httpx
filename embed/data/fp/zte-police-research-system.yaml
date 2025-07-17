@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: zte-police-research-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"src=\"img/gonanlogo.jpg")||(icontains(body,"深圳市中兴信息技术有限公司版权所有"))
+  method: GET
+  

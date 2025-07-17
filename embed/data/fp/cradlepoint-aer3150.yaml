@@ -1,0 +1,11 @@
+info:
+  category: wireless network
+  company: Cradlepoint, Inc.
+  cpe: ''
+  product: cradlepoint-aer3150
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"cplogin.model = \"aer3150\";")
+  method: GET
+  

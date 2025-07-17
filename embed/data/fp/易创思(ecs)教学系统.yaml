@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 易创思(ecs)教学系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"易创思(ecs)教学系统")
+  method: GET
+  

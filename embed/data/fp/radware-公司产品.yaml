@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Radware
+  cpe: ''
+  product: radware-公司产品
+  server: unknown
+  tags: []
+rules:
+- dsl: 'icontains(banner,"Server: Alteon (D.S.) Server") || icontains(banner,"server:
+    Alteon (D.S.) Server") || icontains(banner,"SSH-2.0-Alteon")'
+  method: GET
+  

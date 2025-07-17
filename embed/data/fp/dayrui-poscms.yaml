@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Chengdu Tianrui Information Technology Co., Ltd.
+  cpe: ''
+  product: dayrui-poscms
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"/statics/admin/global/plugins/font-awesome/css/font-awesome.min.css")
+  method: GET
+  

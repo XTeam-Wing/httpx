@@ -1,0 +1,12 @@
+info:
+  author: pen4uin
+  description: 致远 A6
+  tags: []
+  product: seeyon-a6
+  category: oa
+rules:
+- method: GET
+  path: 
+   - "/index.jsp"
+   - "/seeyon/index.jsp"
+  dsl: contains(body, "common/images/A6/") || contains(body, "/autoinstall/A6")

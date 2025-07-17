@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-inner-web
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"hidden_frame.html") || icontains(title,"huawei inner web"))
+  method: GET
+  

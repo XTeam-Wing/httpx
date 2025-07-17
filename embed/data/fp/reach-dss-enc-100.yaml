@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: reach-dss-enc-100
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,":::sd encoder(enc110):::")||(icontains(body,"深圳市锐取软件技术有限公司") && icontains(title,"视音频编码器dss-enc-100"))||(icontains(body,"深圳市锐取软件技术有限公司"))
+  method: GET
+  

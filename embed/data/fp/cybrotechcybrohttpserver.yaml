@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: cybrotechcybrohttpserver
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"cybrotech cybrohttpserver")
+  method: GET
+  

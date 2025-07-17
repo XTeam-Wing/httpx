@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: ASUS Computer Co., Ltd.
+  cpe: ''
+  product: asus-dsl-n14u-b1
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"dsl-n14u_b1") || icontains(banner,"realm=\"dsl-n14u_b1"))
+  method: GET
+  

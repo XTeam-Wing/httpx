@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: intensedebate
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"intensedebate")
+  method: GET
+  

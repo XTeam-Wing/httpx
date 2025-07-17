@@ -1,0 +1,11 @@
+info:
+  category: operating system
+  company: Gentoo Foundation, Inc.
+  cpe: ''
+  product: gentoo-linux-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"gentoo")
+  method: GET
+  

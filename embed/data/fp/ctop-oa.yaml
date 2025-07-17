@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ctop-oa
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"src=\"images/ctop_logo.gif")||(icontains(body,"src=\"images/logo-ctop.gif"))||(icontains(body,"/software/jinstall.exe"))||(icontains(body,"/ctop/index.jsp"))
+  method: GET
+  

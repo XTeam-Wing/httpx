@@ -1,0 +1,11 @@
+info:
+  category: printer
+  company: Samsung Group
+  cpe: ''
+  product: samsung-scx-2000fw
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"scx-2000fw") || icontains(banner,"scx-2000fw"))
+  method: GET
+  

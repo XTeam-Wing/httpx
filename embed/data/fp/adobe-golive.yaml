@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: Adobe Inc.
+  cpe: ''
+  product: adobe-golive
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"generator\" content=\"adobe golive")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: FLIR® Systems, Inc.
+  cpe: ''
+  product: flir-dvtel-video-monitoring
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"class=\"footer\">dvtel inc") && icontains(body,"class=\"loginleft
+    displaynone\""))
+  method: GET
+  

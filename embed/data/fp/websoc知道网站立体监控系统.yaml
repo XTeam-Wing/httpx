@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: websoc知道网站立体监控系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"websoc知道网站立体监控系统")
+  method: GET
+  

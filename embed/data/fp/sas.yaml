@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: SAS Institute Inc.
+  cpe: ''
+  product: sas
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"sas university edition") || icontains(banner,"realm=\"sas
+    university edition"))
+  method: GET
+  

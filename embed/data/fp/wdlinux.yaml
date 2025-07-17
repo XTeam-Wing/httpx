@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Zhuhai Wonder Network Technology Co., Ltd.
+  cpe: ''
+  product: wdlinux
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"wdos")
+  method: GET
+  

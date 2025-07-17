@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: help-desk-software-product
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"target=\"_blank\">freehelpdesk.org")
+  method: GET
+  

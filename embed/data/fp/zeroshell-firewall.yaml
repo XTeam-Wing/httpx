@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Fulvio Ricciardi - Lecce (Italy)
+  cpe: ''
+  product: zeroshell-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(cert,"zeroshell") || icontains(title,"zeroshell"))
+  method: GET
+  

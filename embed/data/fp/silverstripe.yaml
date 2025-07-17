@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Silverstripe
+  cpe: ''
+  product: silverstripe
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"set-cookie: pastvisitor") || icontains(banner,"set-cookie:
+    pastvisitor")) || icontains(body,"content=\"silverstripe")) || icontains(body,"framework/javascript/htmleditorfield.js"))'
+  method: GET
+  

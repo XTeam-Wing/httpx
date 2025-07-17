@@ -1,0 +1,13 @@
+info:
+  category: other network security
+  company: other
+  cpe: ''
+  product: simple-phishing-toolkit
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"content=\"welcome to spt - simple phishing toolkit.  spt is
+    a super simple but powerful phishing toolkit.\" />") || icontains(body,"<span
+    id=\"spt\"><a href=\"http://www.sptoolkit.com/download/\" target=\"_blank\">"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: evercookie
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"var ec = new evercookie();") || icontains(body,"evercookie.js"))
+  method: GET
+  

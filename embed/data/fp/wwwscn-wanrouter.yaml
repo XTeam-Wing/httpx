@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: wwwscn-wanrouter
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"abcdefghjkmnpqrstwxyzabcdefhijkmnprstwxyz2345678") && icontains(title,"文网卫士全千兆多wan智能路由器")||(icontains(body,"abcdefghjkmnpqrstwxyzabcdefhijkmnprstwxyz2345678"))
+  method: GET
+  

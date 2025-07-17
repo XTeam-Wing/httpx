@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: The Master Switch, LLC.
+  cpe: ''
+  product: the-master-switch-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"masterswitch") || icontains(banner,"realm=\"masterswitch"))
+  method: GET
+  

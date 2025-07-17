@@ -1,0 +1,18 @@
+info:
+  category: other support system
+  company: other
+  cpe: ''
+  product: busybox
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((((((((((!icontains(banner,"date") && !icontains(banner,"server")) && icontains(banner,"transfer-encoding:
+    chunked")) && icontains(banner,"content-type: text/plain")) && icontains(banner,"connection:
+    close")) && icontains(banner,"http/1.1 400 bad request")) || ((((!icontains(banner,"server")
+    && icontains(banner,"transfer-encoding: chunked")) && icontains(banner,"content-type:
+    text/plain")) && icontains(banner,"connection: close")) && icontains(banner,"http/1.1
+    400 bad request"))) || icontains(banner,"220 operation successful")) || icontains(banner,"/bin/busybox"))
+    || icontains(banner,"busybox v0.61.pre")) || icontains(banner,"busybox login"))
+    || icontains(banner,"busybox on ")) || (icontains(banner,"built in") && icontains(banner,"busybox")))'
+  method: GET
+  

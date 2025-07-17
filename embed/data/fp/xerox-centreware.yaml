@@ -1,0 +1,12 @@
+info:
+  category: other support system
+  company: Xerox Corporation.
+  cpe: ''
+  product: xerox-centreware
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"realm=\"centreware internet services") || icontains(banner,"realm=\"centreware_is_admin"))
+    || icontains(banner,"realm=\"centreware internet services")) || icontains(banner,"realm=\"centreware_is_admin"))
+  method: GET
+  

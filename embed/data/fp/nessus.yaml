@@ -1,0 +1,11 @@
+info:
+  category: hacking tool
+  company: Tenable Network Security
+  cpe: ''
+  product: nessus
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: nessuswww") || icontains(banner,"server: nessuswww"))'
+  method: GET
+  

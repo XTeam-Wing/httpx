@@ -1,0 +1,11 @@
+info:
+  category: online behavior management system
+  company: Ren Zixing Network Technology Co., Ltd.
+  cpe: ''
+  product: yisheng-network-security-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: title == "任天行网络安全管理系统"
+  method: GET
+  

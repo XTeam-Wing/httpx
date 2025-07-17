@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: foobar-ftp
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"welcome to foobar ftp service")
+  method: GET
+  

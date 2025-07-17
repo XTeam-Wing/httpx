@@ -1,0 +1,12 @@
+info:
+  category: switch
+  company: Belden Inc.
+  cpe: ''
+  product: hirschmann-railswitch
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"hirschmann rail switch power") || icontains(banner,"hirschmann
+    railswitch"))
+  method: GET
+  

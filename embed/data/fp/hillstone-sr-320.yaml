@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Mountain Stone Net Division
+  cpe: ''
+  product: hillstone-sr-320
+  server: nginx
+  tags: []
+rules:
+- dsl: 'icontains(cert,"commonname: sr-320")'
+  method: GET
+  

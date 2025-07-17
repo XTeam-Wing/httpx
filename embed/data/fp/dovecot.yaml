@@ -1,0 +1,11 @@
+info:
+  category: electronic mail system
+  company: other
+  cpe: ''
+  product: dovecot
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"dovecot")
+  method: GET
+  

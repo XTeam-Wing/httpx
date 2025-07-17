@@ -1,0 +1,11 @@
+info:
+  category: crm
+  company: Chengdu Renwu Bank Information Technology Co., Ltd.
+  cpe: ''
+  product: let-me-crm
+  server: nginx
+  tags: []
+rules:
+- dsl: (title == "欢迎使用任我行crm" || icontains(body,"/resources/imgs/defaultannex/loginpictures/"))
+  method: GET
+  

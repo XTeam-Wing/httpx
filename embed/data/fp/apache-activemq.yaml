@@ -1,0 +1,15 @@
+info:
+  category: other enterprise application
+  company: Apache Software Foundation.
+  cpe: ''
+  product: apache-activemq
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"apache activemq") || ((icontains(banner,"realm=\"activemqrealm")
+    || icontains(banner,"magic:activemq")) || icontains(banner,"server:activemq")))
+    || (((!icontains(body,"server: couchdb") && !icontains(banner,"drupal")) && !icontains(banner,"couchdb"))
+    && ((icontains(banner,"realm=\"activemqrealm") || (icontains(banner,"server: jetty")))
+    || icontains(title,"apache activemq"))))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: voice video
+  company: Alphalink Corporation
+  cpe: ''
+  product: alphalink-card
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"alphalink card")
+  method: GET
+  

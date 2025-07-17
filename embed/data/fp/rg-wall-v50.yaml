@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Ruijie Networks Co., Ltd.
+  cpe: ''
+  product: rg-wall-v50
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"rg-wall-v50")
+  method: GET
+  

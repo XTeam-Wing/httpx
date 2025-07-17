@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Beijing Sunbox Technology Co., Ltd.
+  cpe: ''
+  product: shang-bo-xin-internet-marketing-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"/sunbox/assets/js/ace.min.js")
+  method: GET
+  

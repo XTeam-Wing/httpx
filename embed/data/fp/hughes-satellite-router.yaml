@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Hughes Network Systems, LLC,
+  cpe: ''
+  product: hughes-satellite-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"system control center") && (icontains(banner,"hughes terminal")
+    || icontains(body,"<frame src=/fs/dynaform/dw_logo.html")))
+  method: GET
+  

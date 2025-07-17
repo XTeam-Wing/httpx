@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-ibmc
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(banner,"ibmc") && icontains(protocol,"upnp")) || icontains(body,"/bmc/resources/css/cmn.css"))
+    || icontains(body,"/bmc/php/getmultiproperty.php")) || title == "ibmc login")
+  method: GET
+  

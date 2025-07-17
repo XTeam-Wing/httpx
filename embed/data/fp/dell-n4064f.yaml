@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Dell Inc.
+  cpe: ''
+  product: dell-n4064f
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"dell networking n4064f") || icontains(body,"class=\"login_server_default\">n4064f"))
+  method: GET
+  

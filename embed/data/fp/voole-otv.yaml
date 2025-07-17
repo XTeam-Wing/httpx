@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: voole-otv
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"server: voole_cdn1.0")||(icontains(header,"server: voole_cdn1.0"))'
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: switch
+  company: Alcatel-Lucent S.A.
+  cpe: ''
+  product: alcatel-lucent-7250
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"alcatel-lucent 7250") || icontains(banner,"realm=\"alcatel-lucent
+    7250"))
+  method: GET
+  

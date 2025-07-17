@@ -1,0 +1,11 @@
+info:
+  category: host monitoring and auditing
+  company: Hangzhou Anheng Information Technology Co., Ltd.
+  cpe: ''
+  product: anheng-information-tongyu-host-security-and-management-system
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"href=./static/css/app.edb681c84a53277f9336fc297ebca96e.css")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: chinatelecomcustomerbroadbandaddressquerysystem
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<strong>客户宽带地址查询")
+  method: GET
+  

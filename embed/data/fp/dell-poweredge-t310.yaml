@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Dell Inc.
+  cpe: ''
+  product: dell-poweredge-t310
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(cert,"poweredge-t310") || icontains(banner,"poweredge-t310"))
+  method: GET
+  

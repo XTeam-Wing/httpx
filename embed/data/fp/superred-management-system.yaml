@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Beijing Wanlihong Technology Co., Ltd.
+  cpe: ''
+  product: superred-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"server: onceas-webcontainer") || icontains(body,"class=\"style8\">北京万里红科技股份有限公司</span>"))
+    || icontains(banner,"server: onceas-webcontainer"))'
+  method: GET
+  

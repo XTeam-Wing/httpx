@@ -1,0 +1,14 @@
+info:
+  category: service
+  company: Red Hat, Inc.
+  cpe: ''
+  product: wildfly-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(banner,"couchdb") && !icontains(server,"360 web server")) &&
+    (((icontains(title,"welcome to wildfly") || (icontains(body,"wildfly project")
+    && icontains(body,"href=\"wildfly.css"))) || icontains(banner,"server: wildfly"))
+    || icontains(banner,"server: wildfly")))'
+  method: GET
+  

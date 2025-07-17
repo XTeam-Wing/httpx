@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ztebavo多媒体业务中心
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"zte bavo多媒体业务中心")
+  method: GET
+  

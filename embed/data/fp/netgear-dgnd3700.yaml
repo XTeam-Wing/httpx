@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-dgnd3700
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"content=\"dgnd3700") || icontains(body,"var host_name=\"dgnd3700\""))
+    || icontains(banner,"netgear dgnd3700")) || icontains(banner,"netgear dgnd3700"))
+  method: GET
+  

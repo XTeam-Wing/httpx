@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: COMMSCOPE
+  cpe: ''
+  product: arris-docsis
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"docsis ") && icontains(banner,"arris ")) && icontains(protocol,"snmp"))
+  method: GET
+  

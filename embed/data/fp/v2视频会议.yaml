@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: v2视频会议
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"v2视频会议")
+  method: GET
+  

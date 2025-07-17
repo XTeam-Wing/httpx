@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Shenzhen Double Dream Technology Co., Ltd.
+  cpe: ''
+  product: lf-凌风认证计费系统
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/lfradius/")
+  method: GET
+  

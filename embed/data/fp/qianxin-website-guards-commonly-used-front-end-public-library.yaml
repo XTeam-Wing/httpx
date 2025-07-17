@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Qianxin Technology Group Co., Ltd.
+  cpe: ''
+  product: qianxin-website-guards-commonly-used-front-end-public-library
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"libs.useso.com") || icontains(banner,"libs.useso.com"))
+  method: GET
+  

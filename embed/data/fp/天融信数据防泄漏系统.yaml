@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 天融信数据防泄漏系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"topdlp_show") && icontains(body,"天融信数据防泄漏系统")
+  method: GET
+  

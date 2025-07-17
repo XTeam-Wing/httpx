@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Teknotel Telekomünikasyon
+  cpe: ''
+  product: teknotel-cbw700n
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"cbw700n ")
+  method: GET
+  

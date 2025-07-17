@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: c2000-turbo
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"name=\"version") && icontains(body,"name=\"sublog")||(icontains(title,"c2000
+    turbo"))
+  method: GET
+  

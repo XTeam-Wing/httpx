@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: magtech-journalx
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"journalx/authorlogon.action?mag_id")
+  method: GET
+  

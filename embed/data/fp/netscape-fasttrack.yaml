@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: Oracle Corporation
+  cpe: ''
+  product: netscape-fasttrack
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: netscape-fasttrack") || icontains(banner,"server:
+    netscape-fasttrack"))'
+  method: GET
+  

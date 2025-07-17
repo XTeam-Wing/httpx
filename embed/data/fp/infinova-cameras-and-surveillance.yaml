@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: infinova-cameras-and-surveillance
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(body,"vms.html") && icontains(title,"video management system")||(icontains(header,"server:
+    infinova-webs"))||(icontains(header,"basic realm=\"infinova"))||(icontains(header,"server:
+    infinova-webs"))||(icontains(header,"infinova login:"))||(icontains(body,"vms.html"))'
+  method: GET
+  

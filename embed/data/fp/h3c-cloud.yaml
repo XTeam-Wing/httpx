@@ -1,0 +1,11 @@
+info:
+  category: virtualization
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-cloud
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"vstor") && icontains(body,"分布式存储管理系统 </p>"))
+  method: GET
+  

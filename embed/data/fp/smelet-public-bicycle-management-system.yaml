@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Guangzhou Smart Intelligent Technology Co., Ltd.
+  cpe: ''
+  product: smelet-public-bicycle-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"href=\"/skins/bicycle/css/login.css\"")
+  method: GET
+  

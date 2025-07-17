@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: DreamHost Inc.
+  cpe: ''
+  product: dreamhost-ftp
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"dreamhost ftp") && icontains(protocol,"ftp"))
+  method: GET
+  

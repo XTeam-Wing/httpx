@@ -1,0 +1,11 @@
+info:
+  category: hrm
+  company: other
+  cpe: ''
+  product: aakuan-attendance-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"aakuan.cn") && icontains(body,"href=\"scripts/popmodal.css\""))
+  method: GET
+  

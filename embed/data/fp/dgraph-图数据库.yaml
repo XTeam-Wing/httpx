@@ -1,0 +1,13 @@
+info:
+  category: database system
+  company: Dgraph Labs, Inc.
+  cpe: ''
+  product: dgraph-图数据库
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"Dgraph Ratel Dashboard") || icontains(body,"Dgraph browser
+    is available for running separately using the dgraph-ratel binary") || icontains(banner,"<title>Dgraph
+    Ratel Dashboard</title>")
+  method: GET
+  

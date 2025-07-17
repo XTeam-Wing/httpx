@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: thinkox
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"thinkox") || icontains(body,"powered by thinkox"))
+  method: GET
+  

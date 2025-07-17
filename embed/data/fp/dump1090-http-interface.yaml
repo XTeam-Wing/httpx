@@ -1,0 +1,12 @@
+info:
+  category: middleware
+  company: other
+  cpe: ''
+  product: dump1090-http-interface
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(banner,"couchdb") && icontains(banner,"server: dump1090")) ||
+    (!icontains(banner,"couchdb") && icontains(banner,"server: dump1090")))'
+  method: GET
+  

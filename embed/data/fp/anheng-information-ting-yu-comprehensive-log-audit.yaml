@@ -1,0 +1,11 @@
+info:
+  category: audit
+  company: Hangzhou Anheng Information Technology Co., Ltd.
+  cpe: ''
+  product: anheng-information-ting-yu-comprehensive-log-audit
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"明御综合日志审计")
+  method: GET
+  

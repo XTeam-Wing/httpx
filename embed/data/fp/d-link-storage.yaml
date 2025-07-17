@@ -1,0 +1,12 @@
+info:
+  category: network storage
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: d-link-storage
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(body,"server: couchdb") && icontains(body,"<img src=\"/web/images/storage.jpg"))
+    && icontains(body,"document.cookie = \"m_language=\"+v+\"; path=/\";"))'
+  method: GET
+  

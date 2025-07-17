@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: ICP DAS CO., LTD.
+  cpe: ''
+  product: icp-das-ethernet-controller
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(title,"7188e3") || icontains(banner,"server: 7188e")) || icontains(banner,"server:
+    7188e"))'
+  method: GET
+  

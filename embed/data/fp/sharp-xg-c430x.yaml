@@ -1,0 +1,12 @@
+info:
+  category: other office equipment
+  company: SHARP Corporation
+  cpe: ''
+  product: sharp-xg-c430x
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"sharp xg-c430x") || icontains(banner,"realm=\"xg-c430x"))
+    || icontains(banner,"xg-c430x"))
+  method: GET
+  

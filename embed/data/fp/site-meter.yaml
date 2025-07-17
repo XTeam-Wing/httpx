@@ -1,0 +1,13 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: site-meter
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(body,"sitemeter.com/js/counter.js?site=") && icontains(body,"site
+    meter -->")) && icontains(body,"<!-- site meter -->")) && icontains(body,"sitemeter"))
+    || icontains(body,"sitemeter.com/meter.asp?site="))
+  method: GET
+  

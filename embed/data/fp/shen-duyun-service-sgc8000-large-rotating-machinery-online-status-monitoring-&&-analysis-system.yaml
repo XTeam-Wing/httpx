@@ -1,0 +1,11 @@
+info:
+  category: project management system
+  company: Shenyang Blower Group Measurement && Control Technology Co., Ltd.
+  cpe: ''
+  product: shen-duyun-service-sgc8000-large-rotating-machinery-online-status-monitoring-&&-analysis-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"var granttype=\"authorization_code")
+  method: GET
+  

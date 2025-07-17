@@ -1,0 +1,15 @@
+info:
+  category: vpn products
+  company: SonicWall Inc.
+  cpe: ''
+  product: sonicwall-ssl-vpn
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((icontains(title,"sonicwall - ssl vpn") || icontains(title,"sonicwall ssl
+    vpn")) || icontains(body,"javascript/aventail.js")) || (((!icontains(banner,"reecam
+    ip camera") && !icontains(banner,"drupal")) && !icontains(banner,"couchdb")) &&
+    icontains(banner,"sonicwall ssl-vpn "))) || ((!icontains(banner,"drupal") && !icontains(banner,"couchdb"))
+    && icontains(banner,"server: sonicwall ssl-vpn")))'
+  method: GET
+  

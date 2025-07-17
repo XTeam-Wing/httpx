@@ -1,0 +1,11 @@
+info:
+  category: development framework
+  company: PHP Group
+  cpe: ''
+  product: php-cgi
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"php-cgi") || icontains(banner,"php-cgi"))
+  method: GET
+  

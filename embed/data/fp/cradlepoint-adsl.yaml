@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Cradlepoint, Inc.
+  cpe: ''
+  product: cradlepoint-adsl
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"cradlepoint ")
+  method: GET
+  

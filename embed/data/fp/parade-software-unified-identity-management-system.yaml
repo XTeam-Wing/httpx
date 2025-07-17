@@ -1,0 +1,12 @@
+info:
+  category: identity authentication && authority management
+  company: Shanghai Parasoft Co., Ltd.
+  cpe: ''
+  product: parade-software-unified-identity-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"派拉统一身份管理系统") || icontains(body,"<!-- <title>派拉统一身份管理系统</title>
+    -->"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: crm
+  company: Beijing Zhongheng Zhixin Technology Development Co., Ltd.
+  cpe: ''
+  product: ambuf-在线考试系统
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"北京众恒志信科技") && icontains(title,"在线考试系统")
+  method: GET
+  

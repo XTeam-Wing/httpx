@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: theol网络教学综合平台
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"theol网络教学综合平台")
+  method: GET
+  

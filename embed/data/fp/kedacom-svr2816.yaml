@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Suzhou Keda Technology Co., Ltd.
+  cpe: ''
+  product: kedacom-svr2816
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<a href=\"download/svr2816 quick start guide.pdf") || icontains(title,"svr2816客户端下载"))
+  method: GET
+  

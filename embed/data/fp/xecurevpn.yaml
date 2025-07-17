@@ -1,0 +1,11 @@
+info:
+  category: vpn products
+  company: Xecure Lab Co., Ltd.
+  cpe: ''
+  product: xecurevpn
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"xnstyle.css") && icontains(title,"xecure vpn manager"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: innbox-module
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"innbox ")
+  method: GET
+  

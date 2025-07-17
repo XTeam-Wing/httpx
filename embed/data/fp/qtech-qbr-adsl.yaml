@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: QTECH
+  cpe: ''
+  product: qtech-qbr-adsl
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"qbr") || icontains(banner,"realm=\"qbr"))
+  method: GET
+  

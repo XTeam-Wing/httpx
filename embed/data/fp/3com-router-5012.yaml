@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: 3com-router-5012
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"3com router 5012")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: easynetworks-firewall
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"action=\"/logincheck\"") && icontains(body,"class=\"login-head clearfix\"")||(icontains(body,"apw_form_token"))
+  method: GET
+  

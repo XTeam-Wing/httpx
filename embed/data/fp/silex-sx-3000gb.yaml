@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Silex Technology, Inc.
+  cpe: ''
+  product: silex-sx-3000gb
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"sx-3000gb") || icontains(banner,"silex sx-3000gb"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Shanghai Guoyun Information Technology Co., Ltd.
+  cpe: ''
+  product: gaoke-network-s2c-series-router
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"gocloud s2c series router")
+  method: GET
+  

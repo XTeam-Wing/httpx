@@ -1,0 +1,12 @@
+info:
+  category: other software system
+  company: Hangzhou Liangshan Technology Co., Ltd.
+  cpe: ''
+  product: nitc-cms
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"/images/nitc1.png") || icontains(body,"nitc web marketing
+    service"))
+  method: GET
+  

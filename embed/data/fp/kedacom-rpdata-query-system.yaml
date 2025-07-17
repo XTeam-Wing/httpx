@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: Suzhou Keda Technology Co., Ltd.
+  cpe: ''
+  product: kedacom-rpdata-query-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"rpdata 查询系统")
+  method: GET
+  

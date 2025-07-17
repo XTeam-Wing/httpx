@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Avaya Inc.
+  cpe: ''
+  product: avaya-system-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"content=\"0;url=vsplogin.action")
+  method: GET
+  

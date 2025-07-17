@@ -1,0 +1,11 @@
+info:
+  category: online behavior management system
+  company: Shenzhen Longxin Information Technology Co., Ltd.
+  cpe: ''
+  product: loongxin-internet-behavioral-management
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"loongxin co.,ltd.") && icontains(body,"window.location.href= \'language_set.php?"))
+  method: GET
+  

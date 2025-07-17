@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 北京格尔国信签名验证管理系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"北京格尔国信 签名验证管理系统")
+  method: GET
+  

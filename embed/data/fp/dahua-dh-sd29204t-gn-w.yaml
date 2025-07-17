@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Zhejiang Dahua Technology Co., Ltd.
+  cpe: ''
+  product: dahua-dh-sd29204t-gn-w
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"dh-sd29204t-gn-w")
+  method: GET
+  

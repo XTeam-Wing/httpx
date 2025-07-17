@@ -1,0 +1,15 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: yelala
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"access-control-allow-methods") && icontains(body,"<form action=\"/index.php/home/login/login.html\"
+    method=\"post\" id=\"login\" class=\"form\" data-bind=\"submit: submitform\">")
+    && icontains(body,"/public/js/knockout-3.4.1.debug.js")||(icontains(body,"/public/js/knockout-3.4.1.debug.js"))||(icontains(body,"<form
+    action=\"/index.php/home/login/login.html\" method=\"post\" id=\"login\" class=\"form\"
+    data-bind=\"submit: submitform\">"))'
+  method: GET
+  

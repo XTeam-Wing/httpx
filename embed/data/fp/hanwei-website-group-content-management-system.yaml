@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Henan Syracuse Software Co., Ltd.
+  cpe: ''
+  product: hanwei-website-group-content-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"showsubpage.jsp")
+  method: GET
+  

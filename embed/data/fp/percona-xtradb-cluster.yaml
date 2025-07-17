@@ -1,0 +1,11 @@
+info:
+  category: database system
+  company: Percona LLC.
+  cpe: ''
+  product: percona-xtradb-cluster
+  server: nginx
+  tags: []
+rules:
+- dsl: (!icontains(body,"<a") && icontains(body,"percona xtradb cluster node"))
+  method: GET
+  

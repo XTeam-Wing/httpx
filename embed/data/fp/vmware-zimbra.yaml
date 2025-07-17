@@ -1,0 +1,20 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: vmware-zimbra
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(body,"<meta name=\"description\" content=\"zimbra provides open source
+    server and client software for messaging and collaboration. to find out more visit
+    http://www.zimbra.com.\">")||(icontains(body,"<!--div id=\"zloginappname\">web client</div-->"))||(icontains(body,"<title>zimbra
+    web client log in</title>"))||(icontains(body,"<h1><a href=\"http://www.zimbra.com/\"
+    id=\"bannerlink\" target=\"_new\">"))||(icontains(body,"<td><input id=\"password\"
+    class=\"zloginfield\" name=\"password\" type=\"password\" value=\"\" size=\"40\"/></td>"))||(icontains(body,"<div
+    id=\"zloginwhatsthis\" class=\"zlogininfomessage\" style=\"display:none;\"><center
+    style=\"margin-bottom:3px;\"><b>client types:</b></center>"))||(icontains(body,"<div
+    id=\"zloginnotice\" class=\"legalnotice-small\"><a target=\"_new\" href=\"http://www.zimbra.com\">zimbra</a>
+    :: the leader in open source messaging and collaboration ::"))'
+  method: GET
+  

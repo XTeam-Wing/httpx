@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 逍遥发布系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"逍遥发布系统")
+  method: GET
+  

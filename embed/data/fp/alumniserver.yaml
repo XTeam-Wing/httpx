@@ -1,0 +1,15 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: alumniserver
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(body,"<div style=\"float:right;\"><a href=\"alumniserverproject.php\"
+    style=\"color:#c6cccd;margin:2px;margin-right:10px;\">alumniserver project</a></div>")||(icontains(body,"<div
+    style=\"margin:25px 15px 20px 15px;\"><noscript><div style=\"color:red;margin-bottom:
+    15px;\">your browser does not support javascript!</div></noscript><h2>the alumniserver
+    project</h2>"))||(icontains(body,"<meta name=\"keywords\" content=\"alumni,student,network,community,university\">"))'
+  method: GET
+  

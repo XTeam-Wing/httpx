@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Shenzhen Hisilicon Semiconductor Co., Ltd.
+  cpe: ''
+  product: hisilicon-hi3798mv100
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"hi3798mv100")
+  method: GET
+  

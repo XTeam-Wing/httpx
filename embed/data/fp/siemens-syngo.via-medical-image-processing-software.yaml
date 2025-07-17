@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Siemens AG.
+  cpe: ''
+  product: siemens-syngo.via-medical-image-processing-software
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"class=\"backgr\" src=\"syngo-installation_1024x768.png") ||
+    icontains(title,"syngo.via start page"))
+  method: GET
+  

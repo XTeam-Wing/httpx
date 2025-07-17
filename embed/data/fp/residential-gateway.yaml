@@ -1,0 +1,14 @@
+info:
+  category: other network equipment
+  company: Sagemcom Group
+  cpe: ''
+  product: residential-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((!icontains(banner,"couchdb") && icontains(banner,"server: micro_httpd"))
+    && icontains(banner,"residential gateway")) || (icontains(body," sagemcom corporation.")
+    && icontains(title,"residential gateway login"))) || (icontains(banner,"server:
+    micro_httpd") && icontains(banner,"residential gateway")))'
+  method: GET
+  

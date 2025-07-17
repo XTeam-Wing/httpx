@@ -1,0 +1,15 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: squid
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && icontains(banner,"x-squid-error"))
+    || (((!icontains(banner,"couchdb") && !icontains(banner,"drupal")) && !icontains(banner,"router"))
+    && icontains(banner,"server: squid"))) || ((!icontains(banner,"drupal") && !icontains(banner,"couchdb"))
+    && icontains(banner,"x-squid-error"))) || ((!icontains(banner,"couchdb") && !icontains(banner,"drupal"))
+    && icontains(banner,"server: squid")))'
+  method: GET
+  

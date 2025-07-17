@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: hoge厚建
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"hoge厚建")
+  method: GET
+  

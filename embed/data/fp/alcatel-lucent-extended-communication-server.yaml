@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Alcatel-Lucent S.A.
+  cpe: ''
+  product: alcatel-lucent-extended-communication-server
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"alcatel-lucent extended communication server")
+  method: GET
+  

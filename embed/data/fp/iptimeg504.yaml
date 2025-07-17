@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: iptimeg504
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"src =\"/images2/login_title.g504.gif\"")||(icontains(body,"src =\"/images/login_back_g504.gif\""))
+  method: GET
+  

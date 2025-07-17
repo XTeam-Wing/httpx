@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: KEO
+  cpe: ''
+  product: keo-roteador-klr-300n
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"roteador wireless klr 300n")
+  method: GET
+  

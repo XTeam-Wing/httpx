@@ -1,0 +1,12 @@
+info:
+  category: other network security
+  company: K2 Software, Inc.
+  cpe: ''
+  product: sourcecode-k2
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"document.getelementbyid(\"redirectform\").action = \"../workspace/default.aspx")
+    || icontains(body,"document.getelementbyid(\"redirectform\").action = \"../mxworkspace/login.aspx"))
+  method: GET
+  

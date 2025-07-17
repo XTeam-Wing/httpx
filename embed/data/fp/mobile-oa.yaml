@@ -1,0 +1,11 @@
+info:
+  category: oa
+  company: other
+  cpe: ''
+  product: mobile-oa
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"fmLogin.UsrCertHash.value = UsrCertHash")
+  method: GET
+  

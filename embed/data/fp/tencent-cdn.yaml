@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: Tencent Holdings Limited
+  cpe: ''
+  product: tencent-cdn
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"server: tencent-cdn") || icontains(banner,"server: nwss"))
+    || icontains(banner,"server: tencent-cdn")) || icontains(banner,"server: nwss"))'
+  method: GET
+  

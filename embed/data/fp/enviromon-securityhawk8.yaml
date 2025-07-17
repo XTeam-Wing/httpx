@@ -1,0 +1,11 @@
+info:
+  category: burglar alarm
+  company: Enviromon
+  cpe: ''
+  product: enviromon-securityhawk8
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"securityhawk8")
+  method: GET
+  

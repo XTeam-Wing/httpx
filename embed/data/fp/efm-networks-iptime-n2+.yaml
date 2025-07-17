@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: EFM Networks Co.,Ltd.
+  cpe: ''
+  product: efm-networks-iptime-n2+
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"iptime n2+") || icontains(body,"\"/images2/login_title.n2.gif\""))
+    || icontains(body,"\"/images2/login_title.n2p.gif\""))
+  method: GET
+  

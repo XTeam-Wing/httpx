@@ -1,0 +1,11 @@
+info:
+  category: vpn products
+  company: Shanghai Andatone Information Security Technology Co., Ltd.
+  cpe: ''
+  product: adt-sjw74-vpn-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"sjw74") && icontains(body,"src=\"./system/usbkey.js\""))
+  method: GET
+  

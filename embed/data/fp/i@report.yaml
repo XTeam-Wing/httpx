@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: i@report
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"css/ireport.css") || icontains(body,"ireportclient")) ||
+    icontains(body,"com.sanlink.server.login")) || icontains(body,"esensoft_ireport_server"))
+  method: GET
+  

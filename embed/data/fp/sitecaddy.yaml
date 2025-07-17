@@ -1,0 +1,15 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: sitecaddy
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(body,"<!-- section: bottom branding -->")||(icontains(body,"<!-- write title
+    and meta tags -->"))||(icontains(body,"<ul class=\"sitecaddymenu menulevel0 bottomnav\"
+    id=\"primarynav\">"))||(icontains(body,"<a href=\"http://www.sitecaddy.com\" title=\"powered
+    by sitecaddy.com\">"))||(icontains(body,"<img src=\"/mysitecaddy/assets3/common/images/poweredbysitecaddy.gif\"
+    alt=\"powered by sitecaddy.com\">"))'
+  method: GET
+  

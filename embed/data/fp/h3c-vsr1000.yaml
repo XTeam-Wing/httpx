@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-vsr1000
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"h3c vsr1000")
+  method: GET
+  

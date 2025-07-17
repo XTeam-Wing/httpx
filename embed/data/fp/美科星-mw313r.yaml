@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Shenzhen Meikexing Communication Technology Co., Ltd.
+  cpe: ''
+  product: 美科星-mw313r
+  server: unknown
+  tags: []
+rules:
+- dsl: 'icontains(banner,"Server: MW313R") || icontains(banner,"Server: MW313R") ||
+    icontains(title,"MW313R")'
+  method: GET
+  

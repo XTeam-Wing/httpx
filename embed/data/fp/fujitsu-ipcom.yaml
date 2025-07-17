@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Fujitsu Ltd
+  cpe: ''
+  product: fujitsu-ipcom
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: fujitsu-ipcom") || icontains(banner,"server: fujitsu-ipcom"))'
+  method: GET
+  

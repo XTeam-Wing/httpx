@@ -1,0 +1,13 @@
+info:
+  category: erp
+  company: Kingdee International Software Group
+  cpe: ''
+  product: kingdee-eas
+  server: nginx
+  tags: []
+rules:
+- dsl: (((((((icontains(body,"金蝶") && icontains(title,"eas系统登录")) || icontains(body,"/eassso/common"))
+    || icontains(banner,"eassso/login")) || icontains(banner,"eassso/login")) || icontains(banner,"easportal"))
+    || icontains(body,"eassessionid"))) && status_code == 200
+  method: GET
+  

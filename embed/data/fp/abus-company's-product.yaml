@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: abus-company's-product
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"abus company products")
+  method: GET
+  

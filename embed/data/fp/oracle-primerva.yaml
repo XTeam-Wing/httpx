@@ -1,0 +1,13 @@
+info:
+  category: project management system
+  company: Oracle Corporation
+  cpe: ''
+  product: oracle-primerva
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"com.primavera.detectplugin.detectpluginapplet.class") ||
+    icontains(body,"class=\"introareabuildid")) || icontains(body,"primavera systems,
+    inc"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: ALAXALA Networks Corporation
+  cpe: ''
+  product: alaxala-switch
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"alaxala ")
+  method: GET
+  

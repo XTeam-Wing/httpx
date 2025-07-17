@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ethernut
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"ethernut")
+  method: GET
+  

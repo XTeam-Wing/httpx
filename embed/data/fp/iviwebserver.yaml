@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: iviwebserver
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"ivi web server")
+  method: GET
+  

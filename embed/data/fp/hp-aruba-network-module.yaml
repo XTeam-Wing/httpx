@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Hewlett Packard Enterprise Development LP
+  cpe: ''
+  product: hp-aruba-network-module
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"model: ") && icontains(banner,"arubaos")) && icontains(protocol,"snmp"))'
+  method: GET
+  

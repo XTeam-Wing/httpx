@@ -1,0 +1,13 @@
+info:
+  category: other enterprise application
+  company: Beijing Situo Hezhong Technology Co., Ltd.
+  cpe: ''
+  product: cmstop
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"<a class=\"poweredby\" href=\"http://www.cmstop.com\"")
+    || icontains(body,"cmstop-list-text.css")) || icontains(body,"/js/cmstop-common.js"))
+    || icontains(body,"/css/cmstop-common.css"))
+  method: GET
+  

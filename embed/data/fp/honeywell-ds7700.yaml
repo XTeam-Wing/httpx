@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Honeywell International Inc.
+  cpe: ''
+  product: honeywell-ds7700
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"server: ds67x0") || icontains(banner,"server: ds67x0"))
+    || icontains(title,"ds7700"))'
+  method: GET
+  

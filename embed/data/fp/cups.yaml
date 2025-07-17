@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: Apple Inc.
+  cpe: ''
+  product: cups
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: cups") || icontains(banner,"server: cups"))'
+  method: GET
+  

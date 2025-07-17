@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Shusheng Group
+  cpe: ''
+  product: sursen-corporate-cloud-disk
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"<p>copyright@2016 pan.surdoc.net all rights</p>") || icontains(body,"<h1>欢迎使用360书生云盘！</h1>"))
+    || icontains(title,"360书生企业云盘"))
+  method: GET
+  

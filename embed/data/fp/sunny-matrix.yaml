@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: SMA Solar Technology AG
+  cpe: ''
+  product: sunny-matrix
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"- - - sunny matrix - - -")
+  method: GET
+  

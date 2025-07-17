@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 慧网智能建站
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"慧网智能建站")
+  method: GET
+  

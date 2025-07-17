@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: tomatousb-linksys-e3000
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"linksys e3000")||(icontains(header,"realm=\"linksys e3000"))
+  method: GET
+  

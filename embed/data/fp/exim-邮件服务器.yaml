@@ -1,0 +1,28 @@
+info:
+  category: electronic mail system
+  company: other
+  cpe: ''
+  product: exim-邮件服务器
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(banner,"ESMTP Exim") || icontains(banner,"ESMTP Server Ready (this
+    is exim)") || icontains(banner,"ESMTP Service Exim") || icontains(banner,"Exim
+    ESMTP") || icontains(banner,"Exim MTA") || icontains(banner,"EXIM mail services")
+    || icontains(banner,"Exim - Mail System") || icontains(banner,"Exim Mail Server")
+    || icontains(banner,"SMTP Exim") || icontains(banner,"Exim Server") || icontains(banner,"Mail
+    SMTP Server ( Exim )") || icontains(banner,"ESMTP (based on exim)") || icontains(banner,"This
+    is EXIM") || icontains(banner,"ESMTP by Exim") || icontains(banner,"Exim 4") ||
+    icontains(banner,"Exim and Linux") || icontains(banner,"Exim IMAP4") || icontains(banner,"Exim
+    4.92") || icontains(banner,"Exim 4.93") || icontains(banner,"Exim 4.94.2") ||
+    icontains(banner," Exim 4.93.0.4  ") || icontains(banner," Exim 4.89") || icontains(banner,"Exim
+    4.72") || icontains(banner,"EXIM 4.82") || icontains(banner,"Exim 3.36") || icontains(banner,"Exim
+    4.69") || icontains(banner,"Exim 4.70") || icontains(banner,"EXIM 4.90_1") ||
+    icontains(banner,"Exim 4.80.1") || icontains(banner,"EXIM 4.74") || icontains(banner,"Exim
+    4.76") || icontains(banner,"exim 4.87") || icontains(banner,"Exim 4.92.2") ||
+    icontains(banner,"Exim 4.81") || icontains(banner,"EXIM 4.84") || icontains(banner,"EXIM
+    4.80") || icontains(banner,"Exim v4.94") || (icontains(banner,"220-") && icontains(banner,"214-Commands
+    supported:") && icontains(banner,"214 AUTH HELO EHLO MAIL RCPT DATA NOOP QUIT
+    RSET HELP"))
+  method: GET
+  

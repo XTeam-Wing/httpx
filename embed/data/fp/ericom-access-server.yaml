@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: Ericom Software.
+  cpe: ''
+  product: ericom-access-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: ericom access server") || icontains(banner,"server:
+    ericom access server"))'
+  method: GET
+  

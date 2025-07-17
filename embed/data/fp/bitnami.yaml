@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: bitnami
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<td><img src=\"img/bitnami.png\" alt=\"bitnami\"></td>")||(icontains(body,"<p>thanks
+    for using bitnami!</p>"))
+  method: GET
+  

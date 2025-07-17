@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: 'Ubiquiti Inc. '
+  cpe: ''
+  product: unifi-swich
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"window.unificonfig.version") && icontains(title,"unifi network"))
+  method: GET
+  

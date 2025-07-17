@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Beijing Anxinhua Technology Co., Ltd.
+  cpe: ''
+  product: anchiva-next-generation-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"安信华下一代防火墙")
+  method: GET
+  

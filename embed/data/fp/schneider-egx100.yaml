@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Schneider Electric
+  cpe: ''
+  product: schneider-egx100
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"egx100") || icontains(banner,"realm=\"egx100"))
+  method: GET
+  

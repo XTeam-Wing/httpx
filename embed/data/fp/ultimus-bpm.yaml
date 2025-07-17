@@ -1,0 +1,12 @@
+info:
+  category: erp
+  company: Ultimus Inc.
+  cpe: ''
+  product: ultimus-bpm
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"class=\"toptitle\">bpm") && icontains(body,"content=\"ultimus
+    bpm"))
+  method: GET
+  

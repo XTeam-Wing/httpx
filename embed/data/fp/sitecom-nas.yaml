@@ -1,0 +1,12 @@
+info:
+  category: network storage
+  company: Sitecom B.V.
+  cpe: ''
+  product: sitecom-nas
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"sitecom login enter password (default is sitecom)")
+    || icontains(banner,"realm=\"sitecom login enter password (default is sitecom)"))
+  method: GET
+  

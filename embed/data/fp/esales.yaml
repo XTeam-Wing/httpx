@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: esales
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"ess电子化销售服务ipass认证管理系统")
+  method: GET
+  

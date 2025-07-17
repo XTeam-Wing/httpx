@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: 华为-s7700交换机
+  server: unknown
+  tags: []
+rules:
+- dsl: (icontains(banner,"S7700") && icontains(banner,"server")) || icontains(banner,"S7700")
+  method: GET
+  

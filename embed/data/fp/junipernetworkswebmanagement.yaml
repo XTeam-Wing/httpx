@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: junipernetworkswebmanagement
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"juniper networks web management")
+  method: GET
+  

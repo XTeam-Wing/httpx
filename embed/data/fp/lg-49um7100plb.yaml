@@ -1,0 +1,11 @@
+info:
+  category: smart home
+  company: LG Electronics.
+  cpe: ''
+  product: lg-49um7100plb
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<modelname>49um7100plb</modelname>")
+  method: GET
+  

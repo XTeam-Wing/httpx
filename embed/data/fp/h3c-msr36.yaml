@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-msr36
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"h3c msr36")
+  method: GET
+  

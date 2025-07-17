@@ -1,0 +1,13 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: jaws
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && icontains(banner,"server:
+    jaws")) || (((!icontains(body,"couchdb") && !icontains(banner,"drupal")) && !icontains(banner,"couchdb"))
+    && icontains(banner,"server: jaws")))'
+  method: GET
+  

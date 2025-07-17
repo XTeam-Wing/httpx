@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: adremnetcrunchhttpserver
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"adrem netcrunch http server")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: lotwan-web-accelerator
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"北京华夏创新科技有限公司") && icontains(title,"lotwan 广域网加速系统")||(icontains(body,"北京华夏创新科技有限公司"))
+  method: GET
+  

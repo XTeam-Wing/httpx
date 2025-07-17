@@ -1,0 +1,11 @@
+info:
+  category: voice video
+  company: Grandstream Networks, Inc.
+  cpe: ''
+  product: grandstream-gxv3140
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"document.title = \"gxv3140\"")
+  method: GET
+  

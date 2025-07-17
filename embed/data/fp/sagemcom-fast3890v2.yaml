@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Sagemcom Group
+  cpe: ''
+  product: sagemcom-fast3890v2
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"sagemcom") && icontains(banner,"fast3890v2 wireless voice
+    gateway"))
+  method: GET
+  

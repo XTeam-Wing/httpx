@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Nanjing Aolan Technology Co., Ltd.
+  cpe: ''
+  product: olympics-student-management-information-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"vcode.aspx") && icontains(title,"奥蓝学生管理信息系统"))
+  method: GET
+  

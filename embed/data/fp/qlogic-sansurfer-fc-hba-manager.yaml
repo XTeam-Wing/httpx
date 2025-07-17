@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: qlogic-sansurfer-fc-hba-manager
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<!-- developers should be aware that for gecko-based browsers (ns
+    6.x)")||(icontains(body,"<!---- this initializes the navigator.family object ---->"))
+  method: GET
+  

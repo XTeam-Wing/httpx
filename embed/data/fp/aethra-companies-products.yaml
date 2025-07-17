@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: A TLC S.r.l.
+  cpe: ''
+  product: aethra-companies-products
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"aethra ") && icontains(protocol,"snmp"))
+  method: GET
+  

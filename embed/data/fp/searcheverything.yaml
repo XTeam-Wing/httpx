@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: searcheverything
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"search everything")
+  method: GET
+  

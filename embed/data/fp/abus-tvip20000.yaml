@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: August Bremicker und Söhne KG
+  cpe: ''
+  product: abus-tvip20000
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"tvip20000") || icontains(banner,"realm=\"tvip20000"))
+  method: GET
+  

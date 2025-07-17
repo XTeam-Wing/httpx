@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: hd-license-plate-recognition-camera
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"action=\"sysupgrade.php") && icontains(body,"<h3 >系统升级</h3>")||(icontains(title,"高清车牌识别摄像机"))||(icontains(body,"<h3
+    >系统升级</h3>"))||(icontains(body,"action=\"sysupgrade.php"))
+  method: GET
+  

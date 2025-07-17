@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: checkpointfirewall
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"check point firewall")
+  method: GET
+  

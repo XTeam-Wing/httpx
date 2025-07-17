@@ -1,0 +1,12 @@
+info:
+  category: crm
+  company: CDC Software LLC
+  cpe: ''
+  product: pivotal-crm
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"title=\"hidden\" src=\"xmlloader.asp?type=portal") || icontains(body,"<frame
+    name=\"hidden\" src=\"xmlloader.asp?type=portal"))
+  method: GET
+  

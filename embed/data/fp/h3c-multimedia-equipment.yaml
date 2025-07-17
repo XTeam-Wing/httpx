@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-multimedia-equipment
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"h3c multimediaware software") && icontains(protocol,"snmp"))
+  method: GET
+  

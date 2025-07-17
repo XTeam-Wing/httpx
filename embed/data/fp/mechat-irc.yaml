@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: mechat-irc
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"obj.reserve = strreserve")
+  method: GET
+  

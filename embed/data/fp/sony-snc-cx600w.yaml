@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Sony Corporation
+  cpe: ''
+  product: sony-snc-cx600w
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"snc-cx600w") || icontains(banner,"snc-cx600w"))
+  method: GET
+  

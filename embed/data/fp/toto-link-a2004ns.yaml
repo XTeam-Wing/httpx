@@ -1,0 +1,13 @@
+info:
+  category: router
+  company: TOTOLINK
+  cpe: ''
+  product: toto-link-a2004ns
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"realm=\"totolink a2004ns") || icontains(banner,"realm=\"totolink
+    a2004ns")) || icontains(body,"src =\"/images2/login_back_za2ns.en.gif")) || icontains(title,"totolink
+    a2004ns"))
+  method: GET
+  

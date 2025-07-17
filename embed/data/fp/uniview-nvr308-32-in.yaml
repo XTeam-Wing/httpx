@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Zhejiang Yushi Technology Co., Ltd.
+  cpe: ''
+  product: uniview-nvr308-32-in
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"nvr308-32-in")
+  method: GET
+  

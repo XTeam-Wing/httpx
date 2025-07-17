@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: uplusftp
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"uplusftp") || icontains(banner,"uplusftp"))
+  method: GET
+  

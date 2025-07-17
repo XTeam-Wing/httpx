@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: other
+  cpe: ''
+  product: onssi-video-clients
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"x-value=\"on-net surveillance systems inc.\"") || icontains(title,"onssi
+    video clients"))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: adsl
+  company: Digi International Inc.
+  cpe: ''
+  product: digi-connect-wan-3g
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"(rs232 serial)") || icontains(banner,"watchport sensor"))
+    && icontains(banner,"connect wan 3g")) && icontains(protocol,"snmp"))
+  method: GET
+  

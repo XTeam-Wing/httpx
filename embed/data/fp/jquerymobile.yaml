@@ -1,0 +1,11 @@
+info:
+  category: development framework
+  company: other
+  cpe: ''
+  product: jquerymobile
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"jquery.mobile.js") || icontains(body,"jquery.mobile.custom.js"))
+  method: GET
+  

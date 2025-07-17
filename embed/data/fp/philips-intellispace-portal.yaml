@@ -1,0 +1,12 @@
+info:
+  category: other iot device
+  company: Koninklijke Philips N.V.
+  cpe: ''
+  product: philips-intellispace-portal
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"philips intellispace portal</span><br>") || icontains(title,"philips
+    intellispace portal"))
+  method: GET
+  

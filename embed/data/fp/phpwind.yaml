@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: Alibaba Group
+  cpe: ''
+  product: phpwind
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"content=\"phpwind") || icontains(title,"powered by phpwind"))
+  method: GET
+  

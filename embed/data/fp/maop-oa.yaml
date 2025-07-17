@@ -1,0 +1,12 @@
+info:
+  category: oa
+  company: Chongqing Maopu Network Technology Co., Ltd.
+  cpe: ''
+  product: maop-oa
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"href=\"http://www.oooa.cn\">重庆猫扑网络科技有限公司</a>") || icontains(title,"for
+    猫扑oa")) || (icontains(body,"www.oooa.cn") && icontains(body,"pwd yahei16")))
+  method: GET
+  

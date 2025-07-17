@@ -1,0 +1,12 @@
+info:
+  category: firewall
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: 华为-eudemon-1000e
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(banner,"Eudemon 1000E") || icontains(banner,"Eudemon1000E") || icontains(banner,"Huawei
+    Eudemon1000E-N6")
+  method: GET
+  

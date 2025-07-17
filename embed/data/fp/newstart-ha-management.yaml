@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: Guangdong Zhongxing New Fulcrum Technology Co., Ltd.
+  cpe: ''
+  product: newstart-ha-management
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"newstart ha management interface")
+  method: GET
+  

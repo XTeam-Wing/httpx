@@ -1,0 +1,13 @@
+info:
+  category: vpn products
+  company: Shanghai Bingfeng Computer Network Technology Co., Ltd.
+  cpe: ''
+  product: iceflow-vpn
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((icontains(title,"iceflow index server") && icontains(body,"冰峰网络")) ||
+    icontains(title,"iceflow vpn router")) || icontains(banner,"server: iceflow"))
+    || icontains(banner,"server: iceflow"))'
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: MOBOTIX AG
+  cpe: ''
+  product: mobotix-camera
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"mobotix camera") || icontains(banner,"mobotix camera"))
+    || icontains(body,"content=\"mobotix ag"))
+  method: GET
+  

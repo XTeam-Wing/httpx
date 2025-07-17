@@ -1,0 +1,12 @@
+info:
+  category: electronic mail system
+  company: other
+  cpe: ''
+  product: vpop3-mail-http-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(banner,"couchdb") && icontains(banner,"server: vpop3 mail http
+    server")) || icontains(banner,"server: vpop3 mail http server"))'
+  method: GET
+  

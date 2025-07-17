@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: iqhttpd
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: iqhttpd") || icontains(banner,"server: iqhttpd"))'
+  method: GET
+  

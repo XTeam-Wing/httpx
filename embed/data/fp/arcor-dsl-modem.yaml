@@ -1,0 +1,12 @@
+info:
+  category: adsl
+  company: Vodafone Group plc
+  cpe: ''
+  product: arcor-dsl-modem
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"arcor-dsl wlan-modem") || icontains(banner,"realm=\"arcor-dsl
+    wlan-modem"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Zhangzhou Douhusk Network Technology Co., Ltd.
+  cpe: ''
+  product: douphp
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"content=\"douphp ")
+  method: GET
+  

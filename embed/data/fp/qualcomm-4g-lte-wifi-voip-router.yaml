@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: 'Qualcomm Technologies, Inc. '
+  cpe: ''
+  product: qualcomm-4g-lte-wifi-voip-router
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"4g lte wifi voip router")
+  method: GET
+  

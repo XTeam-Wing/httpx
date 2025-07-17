@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Eaton.
+  cpe: ''
+  product: eaton-monitored-epdu
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"eaton monitored epdu")
+  method: GET
+  

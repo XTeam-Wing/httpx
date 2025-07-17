@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: iCode Systems Ltd.
+  cpe: ''
+  product: i-catcher-console
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(body,"by i-catcher console") || icontains(banner,"server: i-catcher"))
+    || icontains(banner,"server: i-catcher"))'
+  method: GET
+  

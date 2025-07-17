@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: intelbras lnc.
+  cpe: ''
+  product: intelbras-roteador-wireless-n-wrn342-slim
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"roteador wireless n wrn342 slim")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: openphpnuke
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"openphpnuke")
+  method: GET
+  

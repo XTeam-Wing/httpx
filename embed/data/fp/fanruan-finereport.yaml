@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Fan Ruan Software Co., Ltd.
+  cpe: ''
+  product: fanruan-finereport
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"content=\"finereport--web reporting tool\"")
+  method: GET
+  

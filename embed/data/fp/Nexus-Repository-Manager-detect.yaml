@@ -1,0 +1,16 @@
+info:
+  author: 哆啦A梦
+  remediation:
+  - Nexus Repository Manager 是一个流行的仓库管理工具，用于存储和分发软件组件。
+  tags:
+  - tech
+  - nexus
+  - repository-manager
+  - sonatype
+  product: nexus-repository-manager
+  category: cms
+rules:
+- method: GET
+  path:
+  - /service/rest/swagger.json
+  dsl: contains(body, "<meta name=\"description\" content=\"Nexus Repository Manager\"/>") || contains(title, "Nexus Repository Manager")

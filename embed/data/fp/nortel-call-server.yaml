@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Avaya Inc.
+  cpe: ''
+  product: nortel-call-server
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"nortel, succession 1000/m call server")
+  method: GET
+  

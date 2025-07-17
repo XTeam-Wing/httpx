@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: pos机企业网站系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"pos机企业网站系统")
+  method: GET
+  

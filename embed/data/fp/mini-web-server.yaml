@@ -1,0 +1,15 @@
+info:
+  category: service
+  company: ZTE Corporation
+  cpe: ''
+  product: mini-web-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((!icontains(banner,"x-powered-by: thinkphp") && !icontains(banner,"drupal"))
+    && !icontains(banner,"couchdb")) && icontains(banner,"zte corp")) && icontains(banner,"mini
+    web server")) || ((((!icontains(body,"server: couchdb") && !icontains(banner,"drupal"))
+    && !icontains(banner,"couchdb")) && icontains(banner,"zte corp")) && icontains(banner,"server:
+    mini web server")))'
+  method: GET
+  

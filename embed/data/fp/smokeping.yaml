@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: other
+  cpe: ''
+  product: smokeping
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<tr><td class=\"menuitem\" colspan=\"2\">&nbsp;-&nbsp;<a class=\"menulink\"
+    href=\"?target=") || icontains(body,"<a href=\"http://oss.oetiker.ch/smokeping/counter.cgi/"))
+  method: GET
+  

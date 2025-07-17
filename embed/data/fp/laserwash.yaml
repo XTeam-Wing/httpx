@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: laserwash
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"(www-authenticate: ^basic realm=\"pdq laserwash\"$)")'
+  method: GET
+  

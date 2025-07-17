@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: mcclatchy-interactive
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"miappcontroler contains master settings that can be used to quickly
+    disable")
+  method: GET
+  

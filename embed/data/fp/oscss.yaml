@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: oscss
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"oscss")
+  method: GET
+  

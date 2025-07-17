@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: intelligent-platform-management-interface
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(protocol,"ipmi")
+  method: GET
+  

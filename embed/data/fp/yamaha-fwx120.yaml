@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Yamaha Corporation
+  cpe: ''
+  product: yamaha-fwx120
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"fwx120")
+  method: GET
+  

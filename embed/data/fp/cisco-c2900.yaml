@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-c2900
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"cisco ios software, c2900") || icontains(banner,"c2900 software
+    (c2900"))
+  method: GET
+  

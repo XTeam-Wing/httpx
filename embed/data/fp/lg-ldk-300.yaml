@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: LG Electronics.
+  cpe: ''
+  product: lg-ldk-300
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"ldk-300 system")
+  method: GET
+  

@@ -1,0 +1,14 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: business-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"function updatapipeline(pipelinename)") || (icontains(body,"images/login_d.png")
+    && icontains(body,"function omiga_window(url)"))) || icontains(body,"window.location=contextpath+\"/work/index.jsp\""))
+    || (icontains(body,"function hiddenpass(e)") && icontains(body,"onsubmit=\"return
+    checksubmit()")))
+  method: GET
+  

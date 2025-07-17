@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: RealNetworks, Inc.
+  cpe: ''
+  product: realserver
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: realserver version") && icontains(protocol,"rtsp"))'
+  method: GET
+  

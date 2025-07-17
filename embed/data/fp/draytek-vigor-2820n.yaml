@@ -1,0 +1,12 @@
+info:
+  category: adsl
+  company: DrayTek Corp.
+  cpe: ''
+  product: draytek-vigor-2820n
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"permission denied.(please check access control list)") &&
+    icontains(banner,"550 permission denied.(too many user login!!!)"))
+  method: GET
+  

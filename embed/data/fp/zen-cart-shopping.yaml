@@ -1,0 +1,13 @@
+info:
+  category: other software system
+  company: Zen Ventures, LLC
+  cpe: ''
+  product: zen-cart-shopping
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((icontains(banner,"shoppingcartsession=") || icontains(banner,"set-cookie:
+    zenid=")) || icontains(banner,"shoppingcartsession=")) || icontains(banner,"set-cookie:
+    zenid=")) || icontains(body,"shopping cart program by zen cart"))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: EnGenius Technologies, Inc.
+  cpe: ''
+  product: engenius-switch
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"egs-logo.png") && icontains(body,"conner_basic conner_gdl"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 金山终端安全系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"金山 终端安全系统")
+  method: GET
+  

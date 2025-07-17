@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: tamronosiptv系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"tamronos") && icontains(body,"loginbox") && icontains(body,"tamronos.com")
+  method: GET
+  

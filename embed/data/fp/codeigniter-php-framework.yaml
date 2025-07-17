@@ -1,0 +1,11 @@
+info:
+  category: development framework
+  company: British Columbia Institute of Technology
+  cpe: ''
+  product: codeigniter-php-framework
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"ci_session=") || icontains(banner,"ci_session="))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: switch
+  company: Belkin International, Inc.
+  cpe: ''
+  product: linksys-switch
+  server: nginx
+  tags: []
+rules:
+- dsl: (((!icontains(banner,"couchdb") && icontains(banner,"switch")) && icontains(banner,"linksys"))
+    || (icontains(title,"switch") && icontains(title,"linksys")))
+  method: GET
+  

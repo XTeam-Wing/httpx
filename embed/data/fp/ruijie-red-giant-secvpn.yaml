@@ -1,0 +1,11 @@
+info:
+  category: vpn products
+  company: Ruijie Networks Co., Ltd.
+  cpe: ''
+  product: ruijie-red-giant-secvpn
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"red-giant secvpn series")
+  method: GET
+  

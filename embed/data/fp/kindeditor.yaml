@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: kindeditor
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"kindeditor-min.js") || icontains(body,"kindeditor.ready") ||
+    icontains(body,"kindeditor.js")
+  method: GET
+  

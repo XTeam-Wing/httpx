@@ -1,0 +1,15 @@
+info:
+  product: 北大方正全媒体采编系统
+  category: 媒体采编系统
+  author: ev1l0o4g
+  company: 北京北大方正电子有限公司
+  description: 北大方正全媒体采编系统
+  fofa_query: app="FOUNDER-全媒体采编系统"
+  tags:
+  - founder
+  - newsedit
+rules:
+- method: GET
+  path: 
+    - "/newsedit/"
+  dsl: status_code == 200 && (contains(body, "/newsedit/newsedit/img/logo-1.png") || contains(body, "/newsedit/newsedit/css/login_1.css"))

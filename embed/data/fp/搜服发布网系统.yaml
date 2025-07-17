@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 搜服发布网系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"搜服发布网系统")
+  method: GET
+  

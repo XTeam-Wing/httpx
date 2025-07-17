@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Jiangsu New Vision Technology Co., Ltd.
+  cpe: ''
+  product: new-cloud-coding-machine-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"新视云编码机管理系统")
+  method: GET
+  

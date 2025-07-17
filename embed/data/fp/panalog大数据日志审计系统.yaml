@@ -1,0 +1,11 @@
+info:
+  category: cms
+  company: none
+  cpe: ''
+  product: panalog大数据日志审计系统
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"Maintain/cloud_index.php")
+  method: GET
+  

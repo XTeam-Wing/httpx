@@ -1,0 +1,11 @@
+info:
+  category: online behavior management system
+  company: Beijing Wangyu Xingyun Information Technology Co., Ltd.
+  cpe: ''
+  product: 网御星云-上网行为管理系统
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"Leadsec ACM") || (icontains(body,"asdf</div>-->") && icontains(body,"txtmac"))
+  method: GET
+  

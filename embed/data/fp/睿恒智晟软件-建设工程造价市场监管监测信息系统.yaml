@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Nanjing Ruiheng Zhisheng Software Technology Co., Ltd.
+  cpe: ''
+  product: 睿恒智晟软件-建设工程造价市场监管监测信息系统
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"建设工程造价市场监管监测信息系统")
+  method: GET
+  

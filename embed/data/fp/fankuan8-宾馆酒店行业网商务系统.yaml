@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: fankuan8-宾馆酒店行业网商务系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"fankuan8-宾馆酒店行业网商务系统")
+  method: GET
+  

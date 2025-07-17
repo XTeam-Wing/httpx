@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: openedx
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"openedx")
+  method: GET
+  

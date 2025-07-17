@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: slideshowpro-director
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"</div> <!--close login-container--></body>") || icontains(body,"<div
+    id=\"simple-footer\"><span>slideshowpro director"))
+  method: GET
+  

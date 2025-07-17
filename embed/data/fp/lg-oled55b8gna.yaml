@@ -1,0 +1,11 @@
+info:
+  category: smart home
+  company: LG Electronics.
+  cpe: ''
+  product: lg-oled55b8gna
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<modelname>oled55b8gna</modelname>")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: antivirus gateway
+  company: Hangzhou DP Technology Co., Ltd.
+  cpe: ''
+  product: dptech-srg1000
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"dptech srg1000")
+  method: GET
+  

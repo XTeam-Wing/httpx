@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: paw-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: paw server") || icontains(banner,"server: paw server"))'
+  method: GET
+  

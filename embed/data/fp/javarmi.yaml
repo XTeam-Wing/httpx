@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: javarmi
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"java rmi")
+  method: GET
+  

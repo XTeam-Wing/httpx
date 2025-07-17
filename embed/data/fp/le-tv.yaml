@@ -1,0 +1,11 @@
+info:
+  category: smart home
+  company: LeTV Information Technology Co., Ltd.
+  cpe: ''
+  product: le-tv
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: letv live") || icontains(banner,"server: letv live"))'
+  method: GET
+  

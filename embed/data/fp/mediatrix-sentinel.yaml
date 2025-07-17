@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: MEDIA5 CORPORATION
+  cpe: ''
+  product: mediatrix-sentinel
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"mediatrix sentinel")
+  method: GET
+  

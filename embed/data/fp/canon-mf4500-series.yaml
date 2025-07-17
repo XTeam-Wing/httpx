@@ -1,0 +1,12 @@
+info:
+  category: printer
+  company: Canon Inc.
+  cpe: ''
+  product: canon-mf4500-series
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<td>mf4500 series</td>") || icontains(banner,"canon mf4500
+    series"))
+  method: GET
+  

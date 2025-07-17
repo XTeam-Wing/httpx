@@ -1,0 +1,13 @@
+info:
+  category: vpn products
+  company: Wangshen Information Technology (Beijing) Co., Ltd.
+  cpe: ''
+  product: legendsec-vpn
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(body,"secworld") && icontains(body,"证书认证")) && icontains(banner,"host_for_cookie"))
+    || (icontains(body,"/images/sslvpnportallogo.jpg") && icontains(title,"网关")))
+    || (icontains(body,"src=\"images/login_logo.gif\"") && icontains(body,"admin/js/virtual_keyboard.js")))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: couchbase
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"realm=\"couchbase")||(icontains(header,"realm=\"couchbase"))||(icontains(title,"couchbase
+    console"))||(icontains(header,"server: couchbase"))||(icontains(header,"server: couchbase"))'
+  method: GET
+  

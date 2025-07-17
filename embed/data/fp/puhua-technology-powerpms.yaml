@@ -1,0 +1,12 @@
+info:
+  category: other software system
+  company: Shanghai Puhua Technology Development Co., Ltd.
+  cpe: ''
+  product: puhua-technology-powerpms
+  server: nginx
+  tags: []
+rules:
+- dsl: ((!icontains(body,"/scripts/boot.js") && icontains(body,"/app_themes/default/assets/css/style.min.css"))
+    && icontains(body,"apphub.server.registertohub(qrcodeid)"))
+  method: GET
+  

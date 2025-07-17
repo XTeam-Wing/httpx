@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Lenovo Group Co., Ltd.
+  cpe: ''
+  product: lenovo-thinkserver-remote-management-module
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"远程管理") && icontains(body,"thinkserver"))
+  method: GET
+  

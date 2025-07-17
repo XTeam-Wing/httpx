@@ -1,0 +1,18 @@
+info:
+  category: electronic mail system
+  company: Axigen Messaging SRL
+  cpe: ''
+  product: axigen-mail-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((((((((((icontains(banner,"axigen mail-server") || icontains(banner,"axigen
+    mailserver")) || icontains(banner,"pop3 server on axigen")) || (((icontains(banner,"imap4
+    ") || icontains(banner,"imap4rev1 ")) && icontains(banner,"service ")) && icontains(banner,"axigen")))
+    || icontains(banner,"axigen pop3 server")) || icontains(banner,"axigen imap4rev1"))
+    || icontains(banner,"axigen esmtp")) || icontains(banner,"esmtp axigen mail-server"))
+    || icontains(banner,"axigen imap4rev1")) || icontains(banner,"axigen mail-server"))
+    || icontains(banner,"server: axigen-webmail")) || icontains(banner,"axigen-webmail"))
+    || icontains(title,"axigen webmail - "))'
+  method: GET
+  

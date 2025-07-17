@@ -1,0 +1,11 @@
+info:
+  category: multifunctional
+  company: other
+  cpe: ''
+  product: gestetner-printer
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"gestetner ")
+  method: GET
+  

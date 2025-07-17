@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: binarysec-cloud-defense
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"x-binarysec-nocache")||(icontains(header,"x-binarysec-nocache"))||(icontains(header,"x-binarysec")
+    && icontains(header,"server: binarysec"))'
+  method: GET
+  

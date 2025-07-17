@@ -1,0 +1,12 @@
+info:
+  author: 哆啦A梦
+  description: ''
+  tags: []
+  product: 金蝶eas-cloud
+  category: cms
+rules:
+- method: GET
+  path: 
+   - "/eassso/login"
+   - "/eassso/login.html"
+  dsl: contains(body,'<title>EAS系统登录') || contains(body,'/eassso/portalClientHelper.jsp') || contains(header,'/eassso/unreg/unvalibaleParam.jsp') || contains(header,'EASSESSIONID')

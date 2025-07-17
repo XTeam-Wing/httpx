@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: T&D Corporation.
+  cpe: ''
+  product: tr-701nw
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"tr-701nw")
+  method: GET
+  

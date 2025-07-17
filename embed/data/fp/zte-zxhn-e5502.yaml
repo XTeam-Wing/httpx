@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: ZTE Corporation
+  cpe: ''
+  product: zte-zxhn-e5502
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"zxhn e5502")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: php-link-directory
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"content=\"php link directory") || icontains(body,"powered
+    by phplinkdirectory"))
+  method: GET
+  

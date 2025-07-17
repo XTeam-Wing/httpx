@@ -1,0 +1,13 @@
+info:
+  category: other iot device
+  company: Sony Corporation
+  cpe: ''
+  product: sony-projector
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((!icontains(body,"server: couchdb") && (icontains(body,"<script type=\"text/javascript\"
+    src=\"sonylogojs.js\"></script>") || icontains(body,"<body onload=\"setwindowtitle();showindex();\">")))
+    || icontains(banner,"realm=\"projector")) || icontains(banner,"realm=\"projector"))'
+  method: GET
+  

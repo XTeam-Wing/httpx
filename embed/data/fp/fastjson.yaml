@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: fastjson
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"var json = json.parse") || icontains(body,"js/base/fastjson"))
+  method: GET
+  

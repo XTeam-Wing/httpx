@@ -1,0 +1,15 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: cituscms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<title>administration &#149; webseitenname</title>")||(icontains(body,"<!--
+    powered by cituscms - http://www.citus-cms.org -->"))||(icontains(body,"powered by
+    <a href=\"http://www.citus-cms.org\" target=\"_blank\" title=\"powered by cituscms\"><strong>cituscms</strong></a>"))||(icontains(body,"<meta
+    name=\"generator\" content=\"cituscms - http://www.citus-cms.org\" />"))||(icontains(body,"<meta
+    name=\"generator\" content=\"cituscms [http://www.citus-cms.org]\" />"))
+  method: GET
+  

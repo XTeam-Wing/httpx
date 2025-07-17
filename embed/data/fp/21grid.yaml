@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 21grid
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"技术支持：网格（福建）智能科技有限公司")
+  method: GET
+  

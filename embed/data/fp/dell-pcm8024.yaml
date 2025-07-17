@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Dell Inc.
+  cpe: ''
+  product: dell-pcm8024
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"class=\"login_server_default\">pcm8024")
+  method: GET
+  

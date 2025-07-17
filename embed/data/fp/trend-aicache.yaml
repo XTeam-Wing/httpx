@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Trend Micro Incorporated.
+  cpe: ''
+  product: trend-aicache
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"x-aicache") || icontains(banner,"x-aicache"))
+  method: GET
+  

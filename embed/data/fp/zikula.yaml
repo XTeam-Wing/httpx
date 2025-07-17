@@ -1,0 +1,15 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: zikula
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<meta name=\"generator\" content=\"zikula - www.zikula.org\" />")||(icontains(body,"<meta
+    name=\"generator\" content=\"zikula - http://zikula.de\" />"))||(icontains(body,"<meta
+    name=\"generator\" content=\"zikula application framework - http://zikula.de\"
+    />"))||(icontains(body,"<a href=\"http://community.zikula.org/\" title=\"powered by
+    zikula\">zikula</a>"))||(icontains(body,"powered by <a href=\"http://www.zikula.org\">zikula</a>"))
+  method: GET
+  

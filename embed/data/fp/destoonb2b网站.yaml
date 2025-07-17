@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: destoonb2b网站
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"powered by destoon")||(icontains(body,"destoon b2b system"))
+  method: GET
+  

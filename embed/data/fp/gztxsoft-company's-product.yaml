@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: gztxsoft-company's-product
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"src=\"/aaa/ipweb/scripts/showoperationresult.js\"") && icontains(body,"src=\"/aaa/ipweb/scripts/zngc-login-style.js\"")||(icontains(body,"src=\"/aaa/ipweb/scripts/zngc-login-style.js\""))||(icontains(body,"src=\"/aaa/ipweb/scripts/showoperationresult.js\""))
+  method: GET
+  

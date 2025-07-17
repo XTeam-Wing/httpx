@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Beijing Xinchuang Zhongjian Bohai Technology Co., Ltd.
+  cpe: ''
+  product: bbsea-portserver
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"bbsea portserver")
+  method: GET
+  

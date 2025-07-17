@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: document-security-management-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"src=\"/drm/encjs/barrett.js\"")||(icontains(body,"action=\"/drm/login.do\"")
+    && icontains(body,"href=\"/drm/template/css/login.css\""))||(icontains(title,"前沿文档安全管理软件"))||(icontains(title,"前沿风雷电子文档安全管理系统"))||(icontains(body,"href=\"/drm/template/css/login.css\""))||(icontains(body,"action=\"/drm/login.do\""))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: traffic analysis
+  company: Neusoft Group Co., Ltd.
+  cpe: ''
+  product: neusoft-neteye-network-traffic-analysis
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"href=\"/ntars/css/") || icontains(body,"action=\"/ntars/loginaction.do"))
+    || icontains(title,"neteye网络流量分析与响应系统"))
+  method: GET
+  

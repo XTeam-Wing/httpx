@@ -1,0 +1,12 @@
+info:
+  category: switch
+  company: Hewlett Packard Enterprise Development LP
+  cpe: ''
+  product: 3com-nj2000
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"3com-nj2000") || (icontains(body,"content=\"3com intellijack
+    nj2000\"") && icontains(title,"3com corporation web interface")))
+  method: GET
+  

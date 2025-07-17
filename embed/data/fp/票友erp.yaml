@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 票友erp
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"票友erp")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: project management system
+  company: Active Collab
+  cpe: ''
+  product: activecollab
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<p id=\"powered_by\"><a href=\"http://www.activecollab.com/\"")
+    || icontains(body,"powered by activecollab"))
+  method: GET
+  

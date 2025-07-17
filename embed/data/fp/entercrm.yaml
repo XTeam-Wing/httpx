@@ -1,0 +1,11 @@
+info:
+  category: crm
+  company: Hangzhou Zhejiang University Ente Network Technology Co., Ltd.
+  cpe: ''
+  product: entercrm
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"entercrm")
+  method: GET
+  

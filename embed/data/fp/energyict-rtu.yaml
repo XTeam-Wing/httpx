@@ -1,0 +1,13 @@
+info:
+  category: industrial control
+  company: Elster Solutions
+  cpe: ''
+  product: energyict-rtu
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: energyict rtu") || (!icontains(body,"server: couchdb")
+    && ((title == "webrtu z1" || icontains(body,"<frame name=\"webrtumenu\" target=\"main\"
+    src=\"webrtumenu.shtml")) || icontains(banner,"server: energyict rtu"))))'
+  method: GET
+  

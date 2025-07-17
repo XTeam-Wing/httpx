@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-c3560
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"cisco") && icontains(banner,"c3560")) || icontains(banner,"cisco
+    ios software, c3560 software"))
+  method: GET
+  

@@ -1,0 +1,21 @@
+info:
+  category: nac
+  company: Dell Inc.
+  cpe: ''
+  product: dell-remote-access-controller
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((((icontains(banner,"/dellui/login.htm") && icontains(banner,"idrac"))
+    || (icontains(banner,"/dellui/login.htm") && icontains(banner,"idrac"))) || icontains(banner,"/applications/dellui/login.htm"))
+    || icontains(banner,"server: rac_one_http")) || (icontains(banner,"linux idrac-")
+    && icontains(protocol,"snmp"))) || (icontains(banner,"remote access controller")
+    && icontains(banner,"dell out-of-band"))) || ((!icontains(body,"<h2>login form</h2>")
+    && !icontains(body,"server: couchdb")) && ((((((((icontains(banner,"embedthis")
+    && icontains(banner,"/start.html")) || (icontains(body,"/index.html?console")
+    && icontains(body,"/session?aimgetintprop"))) || icontains(body,"top.document.location.href
+    = \"/index.html?console\";")) || icontains(body,"javascript:getaimintprop")) ||
+    icontains(title,"dell remote management controller")) || icontains(title,"dell
+    remote access controller")) || icontains(banner,"server: rac_one_http")) || icontains(body,"/cgi-bin/webcgi/ssologin"))))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: kleeja
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"powered by kleeja")
+  method: GET
+  

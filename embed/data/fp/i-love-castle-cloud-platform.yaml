@@ -1,0 +1,13 @@
+info:
+  category: hrm
+  company: Hangzhou Fuge Information Technology Co., Ltd.
+  cpe: ''
+  product: i-love-castle-cloud-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"<input type=\"text\" class=\"form-control\" name=\"mobilenumber\"
+    value=\"\" placeholder=\"手机号码\" />") || icontains(title,"我爱考勤云平台")) || icontains(body,"我爱考勤云平台</span>"))
+    || icontains(body,"content=\"我爱考勤云平台"))
+  method: GET
+  

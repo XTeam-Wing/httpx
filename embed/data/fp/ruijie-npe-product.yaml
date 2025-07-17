@@ -1,0 +1,11 @@
+info:
+  category: wireless network
+  company: Ruijie Networks Co., Ltd.
+  cpe: ''
+  product: ruijie-npe-product
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"alt=\"npe 网络出口控制设备\"")
+  method: GET
+  

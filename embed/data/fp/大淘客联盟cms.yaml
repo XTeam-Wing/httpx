@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 大淘客联盟cms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"大淘客联盟cms")
+  method: GET
+  

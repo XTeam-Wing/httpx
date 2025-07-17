@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Shenyang Zhongkeweier Corrosion Control Technology Co., Ltd.
+  cpe: ''
+  product: zkwell-corrosion-supervision-&&-corrosion-protection-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"background-image:url(images/devicebg.jpg)")
+  method: GET
+  

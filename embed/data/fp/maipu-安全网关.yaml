@@ -1,0 +1,11 @@
+info:
+  category: antivirus gateway
+  company: Maipu Communication Technology Co., Ltd.
+  cpe: ''
+  product: maipu-安全网关
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/webui/images/maipu/login/login_adminbg_a.gif")
+  method: GET
+  

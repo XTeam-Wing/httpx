@@ -1,0 +1,13 @@
+info:
+  category: oa
+  company: Beijing Wanhu Network Technology Co., Ltd.
+  cpe: ''
+  product: 万户网络-ezoffice
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"ezOFFICE") || icontains(body,"EZOFFICEUSERNAME") || icontains(title,"万户OA")
+    || icontains(body,"whirRootPath") || icontains(body,"/defaultroot/js/cookie.js")
+    || icontains(banner,"LocLan")
+  method: GET
+  

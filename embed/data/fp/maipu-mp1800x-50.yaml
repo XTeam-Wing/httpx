@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Maipu Communication Technology Co., Ltd.
+  cpe: ''
+  product: maipu-mp1800x-50
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"mp1800x-50") || ((!icontains(body,"hardware model") && icontains(body,"/form/formuserlogin"))
+    && icontains(body,"/assets/css/ui-dialog.css")))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: TOTOLINK
+  cpe: ''
+  product: toto-link-a1004
+  server: nginx
+  tags: []
+rules:
+- dsl: (title == "a1004" || icontains(title,"totolink a1004"))
+  method: GET
+  

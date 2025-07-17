@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: pcitc-cloud-wireless-platform
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"石化盈科云无线平台")
+  method: GET
+  

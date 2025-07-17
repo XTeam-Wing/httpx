@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: qibocms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"qibocms")
+  method: GET
+  

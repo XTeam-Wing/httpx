@@ -1,0 +1,13 @@
+info:
+  category: other network equipment
+  company: ZTE Corporation
+  cpe: ''
+  product: zte-c300
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner," zxan product c300 of zte corporation") || (icontains(banner,"{\"length\":
+    0, \"chained_to\": 1919250030, \"identifier\": \"s\", \"str\": null}") && icontains(banner,"c300
+    version")))'
+  method: GET
+  

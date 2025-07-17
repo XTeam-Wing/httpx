@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Dalian Haida Yinghai Technology Co., Ltd.
+  cpe: ''
+  product: 赢海科技-船舶管理服务
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,".winseaview-home__footer") && icontains(title,"专注船舶管理服务"))
+  method: GET
+  

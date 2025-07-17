@@ -1,0 +1,11 @@
+info:
+  category: host monitoring && auditing
+  company: Xiamen China Resources Network Service Co., Ltd.
+  cpe: ''
+  product: boss-post-office-virtual-host-control-panel
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"/public/js/util/xg_oyang.js")
+  method: GET
+  

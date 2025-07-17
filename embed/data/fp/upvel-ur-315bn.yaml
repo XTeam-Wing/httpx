@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: UPVEL
+  cpe: ''
+  product: upvel-ur-315bn
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"ur-315bn")
+  method: GET
+  

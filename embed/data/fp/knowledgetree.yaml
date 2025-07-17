@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: knowledgetree
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<title>dashboard | knowledgetree</title>")||(icontains(body,"<title>login
+    | knowledgetree</title>"))||(icontains(body,"/resources/powered-by-kt.png\" border=\"0\"
+    alt=\"powered by knowledgetree\" title=\"powered by knowledgetree\"/></a>"))
+  method: GET
+  

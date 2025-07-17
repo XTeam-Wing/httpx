@@ -1,0 +1,14 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: axis-cameras-and-surveillance
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"axis") && icontains(header,"armv4tl")||(icontains(title,"axis") && icontains(body,"content=\"axis
+    communications ab"))||(icontains(body,"<meta http-equiv=\"refresh\" content=\"0; url=/view/viewer_index.shtml?id=0\"
+    />"))||(icontains(header,"axis") && icontains(header,"network camera"))||(icontains(body,"content=\"axis
+    communications ab"))
+  method: GET
+  

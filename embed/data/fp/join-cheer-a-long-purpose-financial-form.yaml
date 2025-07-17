@@ -1,0 +1,13 @@
+info:
+  category: fms
+  company: Beijing Jiuqi Software Co., Ltd.
+  cpe: ''
+  product: join-cheer-a-long-purpose-financial-form
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(body,"<meta http-equiv=\"refresh\" content=\"0\";url=\"../netrep\">")
+    || icontains(body,"/netrep/message2/")) || icontains(body,"/netrep/intf")) ||
+    icontains(body,"北京久其软件股份有限公司 版权所有")) || icontains(title,"久其报表大厅"))
+  method: GET
+  

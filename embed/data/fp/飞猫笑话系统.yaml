@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 飞猫笑话系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"飞猫笑话系统")
+  method: GET
+  

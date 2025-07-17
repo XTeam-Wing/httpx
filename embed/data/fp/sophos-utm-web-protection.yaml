@@ -1,0 +1,11 @@
+info:
+  category: web application firewall
+  company: Sophos Technologies Pvt. Ltd.
+  cpe: ''
+  product: sophos-utm-web-protection
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"powered by utm web protection")
+  method: GET
+  

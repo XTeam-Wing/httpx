@@ -1,0 +1,11 @@
+info:
+  category: electronic mail system
+  company: Hornbill.
+  cpe: ''
+  product: hornbill-supportworks-mail
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"smtp") && icontains(banner,"supportworks"))
+  method: GET
+  

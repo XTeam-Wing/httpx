@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ideasoft
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"ideasoft")
+  method: GET
+  

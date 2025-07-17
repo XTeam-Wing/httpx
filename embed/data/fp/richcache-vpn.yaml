@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: richcache-vpn
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"class=\"no-js\">请先启用javascript") && icontains(body,"class=\"col-md-12
+    col-xs-12 col-lg-12 external_signin_links\"")||(icontains(body,"class=\"col-md-12
+    col-xs-12 col-lg-12 external_signin_links\""))||(icontains(body,"class=\"no-js\">请先启用javascript"))
+  method: GET
+  

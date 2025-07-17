@@ -1,0 +1,13 @@
+info:
+  category: cameras && surveillance
+  company: WEBGATE Inc.
+  cpe: ''
+  product: webeye-network-camera
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(title,"webeye java applet page") || icontains(title,"webeye index
+    page")) || icontains(title,"webeye user login")) || icontains(body,"<meta name=\"generator\"
+    content=\"webgateinc\">")) || icontains(body,"<p>click <a href=\"./login.ml?form_method=get"))
+  method: GET
+  

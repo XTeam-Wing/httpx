@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Bite Thinking Software Co., Ltd.
+  cpe: ''
+  product: bit-service-cms
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"bit-xxzs") || icontains(body,"xmlpzs/webissue.asp")
+  method: GET
+  

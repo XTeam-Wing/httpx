@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Henan Lingbao Jianhao Network Technology Co., Ltd.
+  cpe: ''
+  product: phpshe
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"content=\"phpshe") || icontains(body,"powered by phpshe"))
+  method: GET
+  

@@ -1,0 +1,14 @@
+info:
+  category: switch
+  company: Alcatel-Lucent S.A.
+  cpe: ''
+  product: alcatel-lucent-omniswitch
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(banner,"agranat-emweb") && icontains(banner,"/web/content/login.html"))
+    || (icontains(banner,"agranat-emweb") && icontains(banner,"/web/content/login.html")))
+    || icontains(body,"document.write(errmsg==\"\"?\"&nbsp;\"")) || icontains(title,"webview
+    logon page"))
+  method: GET
+  

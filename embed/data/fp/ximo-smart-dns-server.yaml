@@ -1,0 +1,11 @@
+info:
+  category: dns device
+  company: Shanghai Simer Communication Technology Co., Ltd.
+  cpe: ''
+  product: ximo-smart-dns-server
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"西默智能dns")
+  method: GET
+  

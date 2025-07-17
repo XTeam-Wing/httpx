@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Pullian Technology Co., Ltd.
+  cpe: ''
+  product: tp-link-td-w9977
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"var modelname=\"td-w9977\"") || icontains(banner,"0.1.0 0.9.1
+    v006f.0 build 161202 rel.49901n"))
+  method: GET
+  

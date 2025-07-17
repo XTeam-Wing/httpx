@@ -1,0 +1,12 @@
+info:
+  category: operating system
+  company: Microsoft Corporation
+  cpe: ''
+  product: windows-nt-server
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"for windows nt/2000/xp") || icontains(banner,"windows nt
+    server"))
+  method: GET
+  

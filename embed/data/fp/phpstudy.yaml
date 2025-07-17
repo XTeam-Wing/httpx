@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: phpstudy
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<a href=\"https://www.xp.cn\" target=\"_blank\">www.xp.cn</a>")||(icontains(body,"1：新建站点、数据库、ftp可在phpstudy面板操作，数据库可在环境中下载数据库管理软件等；"))
+  method: GET
+  

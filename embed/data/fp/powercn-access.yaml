@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: powercn-access
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"ac-powercn-access")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: ineoquest
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: ineoquest") || icontains(banner,"server: ineoquest"))'
+  method: GET
+  

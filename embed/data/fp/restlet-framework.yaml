@@ -1,0 +1,11 @@
+info:
+  category: development framework
+  company: other
+  cpe: ''
+  product: restlet-framework
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"restlet-framework") || icontains(banner,"restlet-framework"))
+  method: GET
+  

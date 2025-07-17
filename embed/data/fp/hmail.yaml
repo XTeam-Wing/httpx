@@ -1,0 +1,13 @@
+info:
+  category: electronic mail system
+  company: hMailServer
+  cpe: ''
+  product: hmail
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"-err invalid command in current state.") && icontains(banner,"+ok
+    pop3")) || (icontains(banner,"211 data helo ehlo mail noop quit rcpt rset saml
+    turn vrfy") && icontains(banner,"220"))) || icontains(banner,"hmail"))
+  method: GET
+  

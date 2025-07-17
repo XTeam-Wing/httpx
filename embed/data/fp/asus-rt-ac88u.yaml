@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: ASUS Computer Co., Ltd.
+  cpe: ''
+  product: asus-rt-ac88u
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"asus rt-ac88u") || icontains(banner,"realm=\"asusrt-ac88u"))
+    || icontains(body,"<div class=\"prod_madelname\">rt-ac88u")) || icontains(banner,"rt-ac88u"))
+  method: GET
+  

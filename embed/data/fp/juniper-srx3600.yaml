@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Juniper Networks, Inc.
+  cpe: ''
+  product: juniper-srx3600
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"class=\"jweb-title uppercase\"> - srx3600") || icontains(banner,"juniper
+    networks, inc. srx3600"))
+  method: GET
+  

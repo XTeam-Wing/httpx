@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 365xxy-examing
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<title>云时政在线考试系统</title>") && icontains(body,"href=https://unpkg.com/element-ui/lib/theme-chalk/index.css")||(icontains(body,"href=https://unpkg.com/element-ui/internal/theme-chalk/index.css"))||(icontains(body,"<title>云时政在线考试系统</title>"))||(icontains(body,"href=https://unpkg.com/element-ui/lib/theme-chalk/index.css"))
+  method: GET
+  

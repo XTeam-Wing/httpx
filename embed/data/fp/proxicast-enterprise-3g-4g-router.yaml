@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Proxicast, LLC.
+  cpe: ''
+  product: proxicast-enterprise-3g-4g-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"wan-proxicast lan-cell") || icontains(banner,"proxicast lan-cell"))
+  method: GET
+  

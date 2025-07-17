@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: welive智能在线客服系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"welive智能在线客服系统")
+  method: GET
+  

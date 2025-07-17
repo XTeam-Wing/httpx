@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: talkswitch-phone
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"(server: ^talkswitch)")||(icontains(header,"(www-authenticate: ^digest
+    realm=\"your talkswitch system\"$)"))'
+  method: GET
+  

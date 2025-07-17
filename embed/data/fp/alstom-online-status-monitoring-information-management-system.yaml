@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: ALSTOM Strongwish Inc.
+  cpe: ''
+  product: alstom-online-status-monitoring-information-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"href=\"technology_communion.asp")
+  method: GET
+  

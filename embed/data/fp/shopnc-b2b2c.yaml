@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: shopnc-b2b2c
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"shopnc_b2b2c")
+  method: GET
+  

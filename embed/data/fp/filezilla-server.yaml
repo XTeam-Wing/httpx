@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: filezilla-server
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"filezilla server") && icontains(protocol,"ftp"))
+  method: GET
+  

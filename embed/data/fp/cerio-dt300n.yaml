@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: CERIO Corp.
+  cpe: ''
+  product: cerio-dt300n
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"dt-300n") || icontains(body,"copyright &copy; 2012 cerio.
+    all rights reserved"))
+  method: GET
+  

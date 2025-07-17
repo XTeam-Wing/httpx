@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: easymeeting会讯通
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"easymeeting 会讯通")
+  method: GET
+  

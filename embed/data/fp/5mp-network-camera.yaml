@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Finetree Communications Co.,Ltd
+  cpe: ''
+  product: 5mp-network-camera
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"5mp network camera")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: erp
+  company: Ningbo Zhongyuan Information Technology Co., Ltd.
+  cpe: ''
+  product: futong-world-erp
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<h1>富通天下erp</h1>")
+  method: GET
+  

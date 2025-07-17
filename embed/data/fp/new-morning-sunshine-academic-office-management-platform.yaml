@@ -1,0 +1,11 @@
+info:
+  category: oa
+  company: Xinchen Sunshine (Beijing) Technology Co., Ltd.
+  cpe: ''
+  product: new-morning-sunshine-academic-office-management-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,">digital anywhere platform</h2>")
+  method: GET
+  

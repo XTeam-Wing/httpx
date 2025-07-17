@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Shandong Dachuang Network Technology Co., Ltd.
+  cpe: ''
+  product: danchuang-technology-bpm-management-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"url=iportal/login.aspx")
+  method: GET
+  

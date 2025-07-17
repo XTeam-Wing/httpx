@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: zhfreeview-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"全视通集成平台")
+  method: GET
+  

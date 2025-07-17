@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Beijing Guangtongda Software Co., Ltd.
+  cpe: ''
+  product: yun-broadview-apm
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"broadview apm")
+  method: GET
+  

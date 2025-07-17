@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: inout-article-base
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<title>inout article base - admin area</title>")||(icontains(body,"<title>inout
+    articlebase - login</title>"))||(icontains(body,"href=\"http://www.inoutscripts.com/?r=0\">powered
+    by inoutscripts</a>"))
+  method: GET
+  

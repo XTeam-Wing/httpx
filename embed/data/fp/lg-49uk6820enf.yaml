@@ -1,0 +1,11 @@
+info:
+  category: smart home
+  company: LG Electronics.
+  cpe: ''
+  product: lg-49uk6820enf
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<modelnumber>49uk6820enf</modelnumber>")
+  method: GET
+  

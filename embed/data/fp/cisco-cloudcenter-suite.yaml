@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-cloudcenter-suite
+  server: unknown
+  tags: []
+rules:
+- dsl: 'icontains(title,"CloudCenter Suite") || (icontains(cert,"CommonName: ccs.cisco.com")
+    && icontains(cert,"Organization: Cisco Systems, Inc."))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Anta
+  cpe: ''
+  product: anta-asg
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"登录") && icontains(body,"setcookie(\"asglanguage\",document.form1.planguage.value)"))
+  method: GET
+  

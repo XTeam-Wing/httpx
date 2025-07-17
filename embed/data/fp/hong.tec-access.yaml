@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Hong Hao Ming Chuan Technology (Beijing) Co., Ltd.
+  cpe: ''
+  product: hong.tec-access
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"ac-hong.tec-access ")
+  method: GET
+  

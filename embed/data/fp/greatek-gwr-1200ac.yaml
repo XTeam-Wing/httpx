@@ -1,0 +1,13 @@
+info:
+  category: router
+  company: Greatek Inc.
+  cpe: ''
+  product: greatek-gwr-1200ac
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"cols=\"180,844\"") && icontains(title,"gwr-1200ac")) ||
+    icontains(banner,"realm=\"greatek gwr-1200ac\"")) || icontains(banner,"realm=\"greatek
+    gwr-1200ac\""))
+  method: GET
+  

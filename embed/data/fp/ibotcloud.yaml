@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ibotcloud
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"小i智能机器人统一管理平台")||(icontains(body,"author:lvzhaohua"))
+  method: GET
+  

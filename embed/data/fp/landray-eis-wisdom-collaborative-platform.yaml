@@ -1,0 +1,11 @@
+info:
+  category: oa
+  company: Shenzhen Lanling Software Co., Ltd.
+  cpe: ''
+  product: landray-eis-wisdom-collaborative-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"v11_qrcodebar clr") || icontains(body,"/scripts/jquery.landray.common.js"))
+  method: GET
+  

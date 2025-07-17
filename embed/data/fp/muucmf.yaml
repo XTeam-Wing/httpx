@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: muucmf
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"muucmf")||(icontains(title,"muucmf"))
+  method: GET
+  

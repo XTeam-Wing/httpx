@@ -1,0 +1,11 @@
+info:
+  category: cloud computing
+  company: other
+  cpe: ''
+  product: oriental-guoxin-industrial-internet-platform
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"东方国信工业互联网平台")
+  method: GET
+  

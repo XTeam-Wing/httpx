@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Document Security Systems, Inc.
+  cpe: ''
+  product: dss-stream-media-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: dss") || icontains(banner,"server: dss"))'
+  method: GET
+  

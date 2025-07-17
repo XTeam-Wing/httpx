@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: kinja
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"(x-kinja: ^$)")'
+  method: GET
+  

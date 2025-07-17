@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: glfusion
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"(<div (class|id)=\"gl_moomenu1\">)")||(icontains(body,"<ul class=\"gl_moomenu1\">"))
+  method: GET
+  

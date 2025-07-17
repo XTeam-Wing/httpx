@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: tp-link-company's-product
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"server: tp-link")||(icontains(header,"realm=\"tp-link"))||(icontains(header,"server:
+    tp-link"))||(icontains(header,"realm=\"tp-link"))||(icontains(body,"http-equiv=\"refresh\"
+    content=\"0; url=/webpages/login.html\""))||(icontains(body,"tp-link"))'
+  method: GET
+  

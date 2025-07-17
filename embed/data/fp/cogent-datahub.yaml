@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Cogent Real-Time Systems Inc
+  cpe: ''
+  product: cogent-datahub
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"cogent datahub webview") || icontains(body,"<img src=\"images/cogent.gif\""))
+  method: GET
+  

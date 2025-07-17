@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Zhongke Bohua Information Technology Co., Ltd.
+  cpe: ''
+  product: zhongke-bohua-table-dragon-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"博华网龙防火墙")
+  method: GET
+  

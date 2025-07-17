@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: EnGenius Technologies, Inc.
+  cpe: ''
+  product: engenius-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"login") && icontains(body,"<div class=\"rndcrnr1_top\">"))
+  method: GET
+  

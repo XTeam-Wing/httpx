@@ -1,0 +1,12 @@
+info:
+  category: voice video
+  company: Xiamen Yealink Network Technology Co., Ltd.
+  cpe: ''
+  product: yealink-video-conference
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && icontains(banner,"server:
+    yealink embed httpd")) || icontains(banner,"server: yealink embed httpd"))'
+  method: GET
+  

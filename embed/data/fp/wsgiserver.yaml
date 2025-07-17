@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: wsgiserver
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"wsgiserver")
+  method: GET
+  

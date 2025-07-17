@@ -1,0 +1,15 @@
+info:
+  author: pen4uin
+  description: 致远G6
+  tags: []
+  product: seeyon-g6
+  category: cms
+rules:
+- method: GET
+  path: 
+    - "/seeyon/index.jsp"
+  dsl: contains(body, "common/images/G6/") || contains(body, "/autoinstall/G6")
+- method: GET
+  path: 
+    - "/index.jsp"
+  dsl: contains(body, "common/images/G6/") || contains(body, "/autoinstall/G6")

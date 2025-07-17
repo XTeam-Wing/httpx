@@ -1,0 +1,11 @@
+info:
+  category: log analysis && audit
+  company: Fortinet, Inc.
+  cpe: ''
+  product: fortianalyzer
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"fortianalyzer")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: swiftp
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"swiftp ")
+  method: GET
+  

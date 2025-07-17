@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: wqcms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"wqcms")
+  method: GET
+  

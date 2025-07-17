@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: intelbras lnc.
+  cpe: ''
+  product: intelbras-roteador-action-r1200
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"roteador action r1200</p>")
+  method: GET
+  

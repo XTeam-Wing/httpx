@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Alien Technology
+  cpe: ''
+  product: alien-rfid-reader
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"alien technology : rfid reader") || icontains(banner,"alien
+    technology rfid reader"))'
+  method: GET
+  

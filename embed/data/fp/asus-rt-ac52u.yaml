@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: ASUS Computer Co., Ltd.
+  cpe: ''
+  product: asus-rt-ac52u
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"<div class=\"prod_madelname\">rt-ac52u") || icontains(banner,"rt-ac52u"))
+    || icontains(banner,"rt-ac52u"))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: electronic mail system
+  company: Enstar LLC, Hebron
+  cpe: ''
+  product: mailtraq-mail-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((!icontains(body,"<h2>blog comments</h2>") && icontains(title,"mailtraq"))
+    || icontains(banner,"server: mailtraq")) || (!icontains(banner,"couchdb") && icontains(banner,"mailtraq")))'
+  method: GET
+  

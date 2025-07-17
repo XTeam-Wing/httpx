@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 房哨百分百开源房产系统网站
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"房哨百分百开源房产系统网站")
+  method: GET
+  

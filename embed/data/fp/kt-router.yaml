@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: KT CORP
+  cpe: ''
+  product: kt-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"test@kt.com") || icontains(banner,"realm=\"test@kt.com"))
+  method: GET
+  

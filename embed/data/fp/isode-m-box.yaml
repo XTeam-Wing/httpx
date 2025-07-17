@@ -1,0 +1,11 @@
+info:
+  category: electronic mail system
+  company: Isode Ltd.
+  cpe: ''
+  product: isode-m-box
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"isode m-box imap4rev1")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Digital Data Communications GmbH
+  cpe: ''
+  product: level-one-router
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"wireless broadband nat router web-console")
+  method: GET
+  

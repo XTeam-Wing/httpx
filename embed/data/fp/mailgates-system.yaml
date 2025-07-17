@@ -1,0 +1,11 @@
+info:
+  category: electronic mail system
+  company: Mailgate Ltd.
+  cpe: ''
+  product: mailgates-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"mailgates esmtp")
+  method: GET
+  

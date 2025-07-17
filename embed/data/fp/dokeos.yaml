@@ -1,0 +1,16 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: dokeos
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(body,"<ul id=\"dokeostabs\">")||(icontains(body,"<!-- start of #main wrapper
+    for #content and #menu divs -->"))||(icontains(body,"<link href=\"http://www.dokeos.com/documentation.php\"
+    rel=\"help\" />"))||(icontains(body,"<link href=\"http://www.dokeos.com/team.php\"
+    rel=\"author\" />"))||(icontains(body,"<link href=\"http://www.dokeos.com\" rel=\"copyright\"
+    />"))||(icontains(body,"<meta name=\"generator\" content=\"dokeos\">"))||(icontains(body,"<title>dokeos
+    has not been installed</title>"))'
+  method: GET
+  

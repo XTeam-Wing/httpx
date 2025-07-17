@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: kubernetesdashboard
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"kubernetes dashboard")
+  method: GET
+  

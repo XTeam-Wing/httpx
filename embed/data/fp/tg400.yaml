@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: tg400
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"server: tg400")||(icontains(title,"tg400"))'
+  method: GET
+  

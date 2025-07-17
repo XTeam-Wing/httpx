@@ -1,0 +1,22 @@
+info:
+  company: Automattic Inc.
+  product: blacklist-product
+  server: nginx
+  tags: []
+  category: none
+  cpe: ""
+rules:
+- method: GET
+  
+  dsl: icontains(title,"法轮大法明慧网") || icontains(title,"明慧广播电台") || icontains(server,"tsa_a")||icontains(server,"tsa_b") || (icontains(server,"cloudflare")&&status_code==403)||icontains(title,"Facebook| Error") || icontains(title,"Site not found.*DreamHost") || icontains(title,"法轮大法明慧网|法轮功真相大全")||icontains(title,"Unknown
+    Domain") || icontains(title,"Fastly error") || icontains(body,"<title>403 Forbidden</title>") || icontains(title,"Just a moment...") || icontains(title,"Security check") ||
+    icontains(title,"Attention Required! | Cloudflare") || icontains(title,"Video
+    Conferencing, Web Conferencing, Online Meetings, Screen Sharing - Zoom") || icontains(title,"页面访问人数过多") || icontains(title,"Sign up | Directly") || icontains(title,"Identity Enterprise
+    Workspace") || icontains(title,"Access Denied") || icontains(title,"429 Too Many
+    Requests") || icontains(title,"421 Misdirected Request") || icontains(title,"The
+    request could not be satisfied") || icontains(title,"Access Denied") || icontains(title,"Hilton
+    Page Reference Code") || icontains(title,"Mercado Shops") || icontains(title,"网易DNS检测工具") || icontains(title,"The Leading Open Cloud Storage Platform - Backblaze") || icontains(title,"LastPass
+    - Homepage") || icontains(title,"Restaurants, Dentists, Bars, Beauty Salons, Doctors
+    - Yelp") || icontains(title,"Page not found - Cisco Meraki") || icontains(title,"Identity
+    Enterprise Workspace") || icontains(title,"Attention Required! | Cloudflare")|| icontains(title,"302 Found") || icontains(title,"Unauthorized location") ||
+    icontains(title,"Freshworks") || icontains(title,"HTTP Status 404 – Not Found") || icontains(title,"Just a moment...")

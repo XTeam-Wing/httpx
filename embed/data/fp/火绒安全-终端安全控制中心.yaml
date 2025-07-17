@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: 北京火绒网络科技有限公司
+  cpe: ''
+  product: 火绒安全-终端安全控制中心
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"火绒终端安全控制中心") || icontains(banner,"HuorongESS")
+  method: GET
+  

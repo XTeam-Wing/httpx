@@ -1,0 +1,11 @@
+info:
+  category: electronic mail system
+  company: other
+  cpe: ''
+  product: zmailer
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"zmailer server")
+  method: GET
+  

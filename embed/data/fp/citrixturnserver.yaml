@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: citrixturnserver
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"citrix turn server")
+  method: GET
+  

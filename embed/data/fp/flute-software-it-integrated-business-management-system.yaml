@@ -1,0 +1,11 @@
+info:
+  category: erp
+  company: Hangzhou Difo Software Co., Ltd.
+  cpe: ''
+  product: flute-software-it-integrated-business-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"name=\"tbzcode\"")
+  method: GET
+  

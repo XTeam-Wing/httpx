@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: freeswitch-company's-product
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"server: freeswitch")'
+  method: GET
+  

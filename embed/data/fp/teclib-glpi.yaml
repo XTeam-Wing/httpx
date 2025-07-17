@@ -1,0 +1,12 @@
+info:
+  category: erp
+  company: TECLIB GROUP
+  cpe: ''
+  product: teclib-glpi
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"_glpi_csrf_token") || ((icontains(title,"glpi - 登陆入口") &&
+    icontains(body,"autofocus=\"autofocus\"")) && icontains(body,"href=\"/pics/favicon.ico\"")))
+  method: GET
+  

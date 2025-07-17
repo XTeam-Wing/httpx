@@ -1,0 +1,8 @@
+info:
+  author: 哆啦A梦
+  description: 帕拉迪统一安全管理与运维审计系统（简称：SMS）结合ITIL、ITSM、IT内控、SOX法案\COBIT法规、信息安全等级保护及IT运维管理要求，融合运维管理和运维安全的特性，切断终端对服务器、数据库系统及网络资源的直接访问，采用代理转发的方式接管终端对网络资源的直接访问，集中实现用户的身份认证、授权管理、访问控制和操作审计。
+  tags: []
+  product: 帕拉迪堡垒机sms
+  category: cms
+rules:
+- dsl: 'contains(title, "帕拉迪统一安全管理与综合审计系统") || contains(header,"Set-Cookie: PLDSSID")'

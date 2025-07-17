@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Hangzhou DP Technology Co., Ltd.
+  cpe: ''
+  product: dptech-fw1000
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"dptech fw1000") || (icontains(banner,"fw1000") && icontains(banner,"dptech")))
+  method: GET
+  

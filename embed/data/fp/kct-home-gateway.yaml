@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: other
+  cpe: ''
+  product: kct-home-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"kct home gateway")
+  method: GET
+  

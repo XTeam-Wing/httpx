@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: pc4uploader
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"pc4uploader <font color") || icontains(body,"powered by pc4uploader"))
+  method: GET
+  

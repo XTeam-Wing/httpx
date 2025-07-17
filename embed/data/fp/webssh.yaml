@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: other
+  cpe: ''
+  product: webssh
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"webssh")
+  method: GET
+  

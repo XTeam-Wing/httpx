@@ -1,0 +1,12 @@
+info:
+  category: operating system
+  company: Microsoft Corporation
+  cpe: ''
+  product: windows-server-2012
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(server,"windows server 2012") || icontains(banner,"windows server
+    2012"))
+  method: GET
+  

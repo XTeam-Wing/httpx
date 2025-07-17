@@ -1,0 +1,12 @@
+info:
+  category: smart home
+  company: other
+  cpe: ''
+  product: lk-ihc-controller
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"/images/bg_image_lk.jpg") || icontains(title,"lk ihc controller
+    forside"))
+  method: GET
+  

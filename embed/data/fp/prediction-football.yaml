@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: prediction-football
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<!-- show the different leagues -->")||(icontains(body,"<!-- show the
+    league id if there is more than one. -->"))
+  method: GET
+  

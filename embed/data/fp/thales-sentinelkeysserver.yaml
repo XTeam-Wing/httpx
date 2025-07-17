@@ -1,0 +1,12 @@
+info:
+  category: other software system
+  company: Thales Group
+  cpe: ''
+  product: thales-sentinelkeysserver
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: sentinelkeysserver") || icontains(banner,"server:
+    sentinelkeysserver"))'
+  method: GET
+  

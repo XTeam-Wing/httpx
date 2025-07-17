@@ -1,0 +1,13 @@
+info:
+  category: other network equipment
+  company: other
+  cpe: ''
+  product: davmail-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"server: davmail gateway") || icontains(banner,"server:
+    davmail gateway")) || icontains(banner,"realm=\"davmail gateway")) || icontains(banner,"realm=\"davmail
+    gateway"))'
+  method: GET
+  

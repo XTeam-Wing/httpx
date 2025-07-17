@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: other
+  cpe: ''
+  product: tiki-wiki-cms
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"jquerytiki = new object")
+  method: GET
+  

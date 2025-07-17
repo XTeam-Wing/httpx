@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: motorola-company's-product
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"realm=\"motorola")||(icontains(header,"realm=\"motorola"))
+  method: GET
+  

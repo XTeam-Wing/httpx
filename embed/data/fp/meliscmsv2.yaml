@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: meliscmsv2
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"melis cms v2")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: server
+  company: Google LLC
+  cpe: ''
+  product: google-search-appliance
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: google search appliance") || icontains(banner,"server:
+    google search appliance"))'
+  method: GET
+  

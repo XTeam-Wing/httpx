@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Alkacon Software GmbH
+  cpe: ''
+  product: opencms
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"powered by opencms") || icontains(body,"content=\"opencms"))
+  method: GET
+  

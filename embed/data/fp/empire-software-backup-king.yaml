@@ -1,0 +1,13 @@
+info:
+  category: other software system
+  company: Zhangzhou Xiangcheng Dixing Software Development Co., Ltd.
+  cpe: ''
+  product: empire-software-backup-king
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"帝国备份王后台登录") || icontains(body,"<div align=\"center\">(<a
+    href=\"doc.html\" target=\"_blank\">查看帝国备份王说明文档</a>)</div>")) || icontains(body,"powered
+    by <a href=\"http://www.phome.net\" target=\"_blank\"><strong>empirebak</strong>"))
+  method: GET
+  

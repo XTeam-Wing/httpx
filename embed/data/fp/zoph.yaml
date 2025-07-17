@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: zoph
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<li class=\"selected\"><a href=\"zoph.php\">home</a></li><li ><a
+    href=\"albums.php\">albums</a></li><li ><a href=\"categories.php\">categories</a></li><li
+    >")||(icontains(body,"<title>zoph - home</title>"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: AudioCodes Limited.
+  cpe: ''
+  product: audiocodes-companies
+  server: nginx
+  tags: []
+rules:
+- dsl: 'icontains(banner,"vendor: audiocodes; ")'
+  method: GET
+  

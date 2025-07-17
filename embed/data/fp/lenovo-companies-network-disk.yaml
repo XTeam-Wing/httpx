@@ -1,0 +1,12 @@
+info:
+  category: network storage
+  company: Lenovo Group Co., Ltd.
+  cpe: ''
+  product: lenovo-companies-network-disk
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"alt=\"联想企业网盘android客户端下载\"") && icontains(title,"云存储系统"))
+    || icontains(body,"client/android/bin/lenovobox.apk"))
+  method: GET
+  

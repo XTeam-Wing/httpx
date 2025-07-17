@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: volusion(v2)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"volusion (v2)")
+  method: GET
+  

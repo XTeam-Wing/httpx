@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: multimedia-scheduling-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(body,"<a ") && icontains(header,"content-length: 73") && icontains(body,"document.location=\"main.php\"")'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: fat-freeframework
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"fat-free framework")||(icontains(header,"fat-free framework"))
+  method: GET
+  

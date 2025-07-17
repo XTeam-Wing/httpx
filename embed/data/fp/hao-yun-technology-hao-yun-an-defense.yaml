@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Haoyun Technology Co., Ltd.
+  cpe: ''
+  product: hao-yun-technology-hao-yun-an-defense
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<span>浩云安防</span></div>")
+  method: GET
+  

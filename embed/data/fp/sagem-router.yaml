@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: sagem-router
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"(www-authenticate: ^basic realm=\"?sagem\"?$)")'
+  method: GET
+  

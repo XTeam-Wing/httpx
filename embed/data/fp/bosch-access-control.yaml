@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: bosch-access-control
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"color=\"#1b528c\" >robert bosch gmbh reserves all rights")||(icontains(body,"valign=\"top\"
+    align=\"right\">aec "))||(icontains(title,"aec - login"))||(icontains(body,"valign=\"top\"
+    align=\"right\">aec"))
+  method: GET
+  

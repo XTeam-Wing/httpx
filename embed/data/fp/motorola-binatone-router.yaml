@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Binatone Global
+  cpe: ''
+  product: motorola-binatone-router
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"router") && icontains(banner,"binatone")) || (icontains(banner,"router")
+    && icontains(banner,"binatone")))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: pixelpost
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"title=\"pixelpost - ") || icontains(body,"powered by <a href=\"http://www.pixelpost.org"))
+    || icontains(body,"title=\"powered by pixelpost"))
+  method: GET
+  

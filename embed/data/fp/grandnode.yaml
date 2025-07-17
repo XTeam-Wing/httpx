@@ -1,0 +1,14 @@
+info:
+  category: other software system
+  company: other
+  cpe: ''
+  product: grandnode
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((((icontains(banner,"x-powered-by: grandnode") || icontains(body,"name=\"generator\"
+    content=\"grandnode")) || icontains(banner," .grand.antiforgery")) || icontains(banner,".grand.customer="))
+    || icontains(banner," .grand.antiforgery")) || icontains(banner,".grand.customer="))
+    || icontains(banner,"x-powered-by: grandnode"))'
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: log analysis && audit
+  company: Beijing Lingzhou Network Technology Co., Ltd.
+  cpe: ''
+  product: network-pioneer-log-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"netmizer 日志管理系统") || (icontains(body,"window.location.href=\"main.html\";")
+    && icontains(body,"var mywindows = ext.create")))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: lucene
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"lucene")
+  method: GET
+  

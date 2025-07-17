@@ -1,0 +1,13 @@
+info:
+  category: cameras && surveillance
+  company: Jianteng Chuangda Technology Co., Ltd.
+  cpe: ''
+  product: acti-video-monitoring
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"url=/cgi-bin/videoconfiguration.cgi") || (icontains(title,"web
+    configurator") && icontains(server,"httpd v1.0 05may2008"))) || (icontains(body,"acti
+    corporation all rights reserved") && icontains(title,"web configurator")))
+  method: GET
+  

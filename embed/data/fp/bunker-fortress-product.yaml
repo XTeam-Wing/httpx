@@ -1,0 +1,11 @@
+info:
+  category: operation && maintenance audit fortres machine
+  company: Beijing Sansanyunsoft Information Technology Co., Ltd.
+  cpe: ''
+  product: bunker-fortress-product
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"碉堡堡垒机")
+  method: GET
+  

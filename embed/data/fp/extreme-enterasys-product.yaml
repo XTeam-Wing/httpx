@@ -1,0 +1,12 @@
+info:
+  category: switch
+  company: Extreme Networks, Inc.
+  cpe: ''
+  product: extreme-enterasys-product
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"enterasys login") || icontains(banner,"enterasys networks,
+    inc. "))
+  method: GET
+  

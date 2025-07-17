@@ -1,0 +1,21 @@
+info:
+  category: switch
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-switch
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((((((((((icontains(body,"<h2>web网管中") && icontains(title,"web user login"))
+    && icontains(body,"window.location = \"/web/device/login?lang=\"+slang;")) ||
+    (icontains(server,"switch") && icontains(body,"window.location = \"en/login.html\";")))
+    || ((title == "web user login" || icontains(server,"switch")) && icontains(body,"window.location
+    = slang + \"/login.html\";"))) || (icontains(body,"style=\"background-color: #e1e9f5;\"
+    onload=\"onbodyload()") && icontains(body,"window.location = \"/wcn/banner?lang=")))
+    || icontains(banner,"h3c httpd")) || icontains(banner,"h3c s5560-")) || ((!icontains(server,"lanswitch")
+    && icontains(body,"nlanguagesupported")) && icontains(title,"web user login")))
+    || icontains(banner,"h3c s5800")) || icontains(banner,"h3c s9508e")) || icontains(banner,"h3c
+    s5500ei")) || icontains(banner,"h3c s5500")) || (icontains(banner,"h3c s3600v2")
+    && icontains(protocol,"snnp")))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-ucs-director
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(body,"cisco ucs director") && icontains(body,"font-family: \"ciscosansthin\""))'
+  method: GET
+  

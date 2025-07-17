@@ -1,0 +1,13 @@
+info:
+  category: server
+  company: Digi International Inc.
+  cpe: ''
+  product: digi-connect-sp
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"digi connect sp python&nbsp;configuration && management")
+    && icontains(body,"href=\"http://www.digi.com\"")) || (icontains(banner,"digi
+    connect sp ") && icontains(protocol,"snmp")))
+  method: GET
+  

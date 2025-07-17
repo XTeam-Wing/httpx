@@ -1,0 +1,14 @@
+info:
+  category: scripting language
+  company: PHP Group
+  cpe: ''
+  product: php
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((((((icontains(banner,"php_errors") || icontains(banner,"php_session"))
+    || icontains(banner,"x-powered-by: php")) || icontains(banner,"php/")) || icontains(banner,"php_errors"))
+    || icontains(banner,"php_session")) || icontains(body,".php?")) || icontains(banner,"php/"))
+    || icontains(banner,"x-powered-by: php"))'
+  method: GET
+  

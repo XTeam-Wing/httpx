@@ -1,0 +1,11 @@
+info:
+  category: development framework
+  company: other
+  cpe: ''
+  product: saber-enterprise-development-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<strong>很抱歉，如果没有 javascript 支持，saber 将不能正常工作") || icontains(title,"saber企业级开发平台"))
+  method: GET
+  

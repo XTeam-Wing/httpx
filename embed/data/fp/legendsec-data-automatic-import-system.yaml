@@ -1,0 +1,11 @@
+info:
+  category: network isolation && one-way import
+  company: Wangshen Information Technology (Beijing) Co., Ltd.
+  cpe: ''
+  product: legendsec-data-automatic-import-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"document.myform.btn_login.disabled = true;")
+  method: GET
+  

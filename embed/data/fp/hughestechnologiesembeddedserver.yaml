@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: hughestechnologiesembeddedserver
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"hughes technologies embedded server")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: virtualization
+  company: Citrix Systems, Inc.
+  cpe: ''
+  product: citrix-xcp
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<p/>citrix systems, inc. xcp 1.6.10")
+  method: GET
+  

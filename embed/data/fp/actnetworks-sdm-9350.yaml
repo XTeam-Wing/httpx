@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: ACT Networks.
+  cpe: ''
+  product: actnetworks-sdm-9350
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"act networks - sdm-9350")
+  method: GET
+  

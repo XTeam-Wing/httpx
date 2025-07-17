@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: tenda-wifi
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"repeater") && icontains(body,"src=\"img/logo-inverse.png\" alt=\"tenda
+    logo\"")||(icontains(body,"src=\"img/logo-inverse.png\" alt=\"tenda logo\""))
+  method: GET
+  

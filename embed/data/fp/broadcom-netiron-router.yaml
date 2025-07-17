@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Brocade Communications Systems, Inc.
+  cpe: ''
+  product: broadcom-netiron-router
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"brocade netiron ")
+  method: GET
+  

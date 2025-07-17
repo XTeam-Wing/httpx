@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: rtsp-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: rtsp server") || icontains(banner,"server: rtsp
+    server"))'
+  method: GET
+  

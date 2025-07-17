@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Trend Micro Incorporated.
+  cpe: ''
+  product: trendmicro-iwsva
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"iwsva")
+  method: GET
+  

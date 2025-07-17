@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Digi International Inc.
+  cpe: ''
+  product: digi-transport-wr41v2
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"class=\"page_body_header\">transport wr41v2") || icontains(body,"class=\"heading\">transport
+    wr41v2"))
+  method: GET
+  

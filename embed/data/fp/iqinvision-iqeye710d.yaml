@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: IQinVision, Inc.
+  cpe: ''
+  product: iqinvision-iqeye710d
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"iqeye710d")
+  method: GET
+  

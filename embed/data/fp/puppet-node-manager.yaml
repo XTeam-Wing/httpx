@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: puppet-node-manager
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"puppet node manager")
+  method: GET
+  

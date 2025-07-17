@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Beijing Tianxing Net Security Information Technology Co., Ltd.
+  cpe: ''
+  product: tianxing-netan-data-integration-service-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"window.location.href=\"top_dti-debug/top_dtisingle.html")
+  method: GET
+  

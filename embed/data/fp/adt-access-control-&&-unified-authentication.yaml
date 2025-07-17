@@ -1,0 +1,11 @@
+info:
+  category: identity authentication && authority management
+  company: Shanghai Andatone Information Security Technology Co., Ltd.
+  cpe: ''
+  product: adt-access-control-&&-unified-authentication
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"content=\"tpn,vpn,内网安全,内网控制,主机防护\"")
+  method: GET
+  

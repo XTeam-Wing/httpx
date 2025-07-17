@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: lnmp一键安装包
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"lnmp")
+  method: GET
+  

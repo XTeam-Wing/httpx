@@ -1,0 +1,17 @@
+info:
+  category: vpn products
+  company: Citrix Systems, Inc.
+  cpe: ''
+  product: citrix-access-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: (((((((icontains(body,"receiver/images/common/icon_vpn.ico") && icontains(body,"class=\"_ctxstxt_netscalergateway\""))
+    || ((((icontains(body,"vpn/js/lsgateway_login_view.js") || (icontains(body,"cloud.ottoworkfroce.eu/vpn/index.html")
+    && icontains(body,"/vpn/js/gateway_login_view.js?"))) || icontains(body,"class=\"citrixreceiverlogoaboutbox\""))
+    || icontains(body,"href=\"/vpn/images/accessgateway.ico")) && icontains(title,"citrix
+    gateway"))) || (icontains(body,"/vpn/images/accessgateway.ico") && icontains(banner,"pwcount")))
+    || icontains(banner,"cyms-secs")) || icontains(banner,"ezisneercsresu=")) || icontains(body,"href=\"/vpn/images/accessgateway.ico"))
+    || icontains(title,"citrix access gateway"))
+  method: GET
+  

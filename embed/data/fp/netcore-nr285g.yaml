@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Shenzhen Leike Electronic Commerce Co., Ltd.
+  cpe: ''
+  product: netcore-nr285g
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"netcore nr285g") || icontains(banner,"realm=\"netcore
+    nr285g"))
+  method: GET
+  

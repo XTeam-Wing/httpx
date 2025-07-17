@@ -2,8 +2,10 @@ package tech
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"os"
+	"path"
 	"strconv"
 	"strings"
 	"sync"
@@ -12,6 +14,7 @@ import (
 	"github.com/projectdiscovery/dsl"
 	"github.com/projectdiscovery/gologger"
 	"github.com/projectdiscovery/httpx/common/httpx"
+	"github.com/projectdiscovery/httpx/embed"
 	sliceutil "github.com/projectdiscovery/utils/slice"
 	"gopkg.in/yaml.v3"
 )
@@ -62,20 +65,47 @@ func (t *TechDetecter) Init(rulePath string) (err error) {
 	t.matchedProduct = make(map[string][]string) // 初始化已匹配的产品
 	t.compiledExpressions = make(map[string][]*CompiledRule)
 
+	// 使用内置规则初始化
+	userDefinedPath := "data/fp"
+	files, err := embed.AssetDir(userDefinedPath)
+	if err != nil {
+		return errors.New("user defined rules is missed: " + err.Error())
+	}
+	fmt.Println("user defined rules:", userDefinedPath, len(files))
+	for _, fileName := range files {
+		absFileName := path.Join(userDefinedPath, fileName)
+		content, err := embed.Asset(absFileName)
+		if err != nil {
+			continue
+		}
+		err = t.ParseRule(content)
+		if err != nil {
+			gologger.Error().Msgf("file %s error:%s", absFileName, err)
+			continue
+		}
+	}
 	if !Exists(rulePath) {
-		return os.ErrNotExist
+		return nil
 	}
 	if IsDir(rulePath) {
 		files := ReadDir(rulePath)
 		for _, file := range files {
-			err := t.ParseRule(file)
+			content, err := os.ReadFile(file)
+			if err != nil {
+				continue
+			}
+			err = t.ParseRule(content)
 			if err != nil {
 				gologger.Error().Msgf("file %s error:%s", file, err)
 				continue
 			}
 		}
 	} else {
-		err := t.ParseRule(rulePath)
+		content, err := os.ReadFile(rulePath)
+		if err != nil {
+			return err
+		}
+		err = t.ParseRule(content)
 		if err != nil {
 			gologger.Error().Msgf("file %s error:%s", rulePath, err)
 		}
@@ -91,19 +121,16 @@ func (t *TechDetecter) Init(rulePath string) (err error) {
 	return nil
 }
 
-func (t *TechDetecter) ParseRule(filename string) error {
-	content, err := os.ReadFile(filename)
-	if err != nil {
-		return err
-	}
-	var matchers Matchers
-	err = yaml.Unmarshal(content, &matchers)
+func (t *TechDetecter) ParseRule(content []byte) error {
+	var matcher Matchers
+
+	err := yaml.Unmarshal(content, &matcher)
 	if err != nil {
 		return err
 	}
 
-	productName := matchers.Info.Product
-	for _, line := range matchers.Rules {
+	productName := matcher.Info.Product
+	for _, line := range matcher.Rules {
 		// 跳过没有DSL的规则
 		if line.DSL == "" {
 			continue

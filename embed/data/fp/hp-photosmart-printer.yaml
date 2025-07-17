@@ -1,0 +1,11 @@
+info:
+  category: printer
+  company: Hewlett Packard Enterprise Development LP
+  cpe: ''
+  product: hp-photosmart-printer
+  server: nginx
+  tags: []
+rules:
+- dsl: (!icontains(banner,"couchdb") && icontains(banner,"hp photosmart "))
+  method: GET
+  

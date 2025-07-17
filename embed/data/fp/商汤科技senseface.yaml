@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 商汤科技senseface
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"商汤科技 senseface")
+  method: GET
+  

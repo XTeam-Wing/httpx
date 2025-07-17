@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Nabble, LLC
+  cpe: ''
+  product: nabble-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,">nabble</a>") || icontains(body,"class=\"nabble\" id=\"nabble"))
+  method: GET
+  

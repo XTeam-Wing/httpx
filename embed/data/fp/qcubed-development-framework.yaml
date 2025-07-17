@@ -1,0 +1,12 @@
+info:
+  category: development framework
+  company: other
+  cpe: ''
+  product: qcubed-development-framework
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<b>qcubed version:</b>") || icontains(body,"<div id=\"codeversion\">qcubed
+    development framework"))
+  method: GET
+  

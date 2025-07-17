@@ -1,0 +1,11 @@
+info:
+  category: cloud computing
+  company: Beijing Yixuntong Information Technology Co., Ltd.
+  cpe: ''
+  product: easted-cloud-computing-virtualization-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<span>easted vserver虚拟数据中心系统</span></a></div>") || icontains(title,"easted云计算虚拟化平台"))
+  method: GET
+  

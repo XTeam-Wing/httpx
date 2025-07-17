@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Jiangsu Huiwen Software Co., Ltd.
+  cpe: ''
+  product: hfd-software-bibliographic-search-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<div class=\"header_opac_logo\">")
+  method: GET
+  

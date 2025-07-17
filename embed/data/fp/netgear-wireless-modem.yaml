@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-wireless-modem
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"netgear wireless cable modem")
+  method: GET
+  

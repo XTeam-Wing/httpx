@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Lianfa Technology Co., Ltd.
+  cpe: ''
+  product: mediatek-rt3883
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"rt3883")
+  method: GET
+  

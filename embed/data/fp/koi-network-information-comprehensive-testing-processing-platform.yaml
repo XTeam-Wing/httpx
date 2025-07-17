@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Kolai
+  cpe: ''
+  product: koi-network-information-comprehensive-testing-processing-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"科来网络信息综合检测处理平台") || icontains(body,"<meta name=\"colasoft\""))
+    || icontains(title,"科来网络信息综合检测处理平台"))
+  method: GET
+  

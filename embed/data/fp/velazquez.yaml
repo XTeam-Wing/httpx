@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: velazquez
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(banner,"couchdb") && icontains(banner,"server: velazquez")) ||
+    icontains(banner,"server: velazquez"))'
+  method: GET
+  

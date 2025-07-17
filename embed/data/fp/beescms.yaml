@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: beescms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"beescms")
+  method: GET
+  

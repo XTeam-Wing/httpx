@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Pullian Technology Co., Ltd.
+  cpe: ''
+  product: tp-link-enterprise-wireless-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"class=\"link-detail-table detail\"") || icontains(body,"var
+    is_tplogin = cur_url.indexof(\"tplogin.cn\")"))
+  method: GET
+  

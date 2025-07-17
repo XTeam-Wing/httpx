@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Ben Software Ltd.
+  cpe: ''
+  product: ben-software-securityspy-webcam
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"securityspy web server")
+  method: GET
+  

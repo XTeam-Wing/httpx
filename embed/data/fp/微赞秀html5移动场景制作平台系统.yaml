@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 微赞秀html5移动场景制作平台系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"微赞秀html5移动场景制作平台系统")
+  method: GET
+  

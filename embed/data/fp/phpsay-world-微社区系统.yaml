@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: phpsay-world-微社区系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"phpsay_world_微社区系统")
+  method: GET
+  

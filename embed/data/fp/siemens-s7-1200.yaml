@@ -1,0 +1,13 @@
+info:
+  category: industrial control
+  company: Siemens AG.
+  cpe: ''
+  product: siemens-s7-1200
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((((icontains(banner,"6es7 215") || icontains(banner,"6es7 214")) || icontains(banner,"6es7
+    212")) || icontains(banner,"6es7 211")) || icontains(banner,"6es7 215")) || icontains(banner,"6es7
+    212")) || icontains(banner,"6es7 214"))
+  method: GET
+  

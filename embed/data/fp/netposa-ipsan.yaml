@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: netposa-ipsan
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"netposa ipsanmanager")
+  method: GET
+  

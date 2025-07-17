@@ -1,0 +1,13 @@
+info:
+  category: development framework
+  company: other
+  cpe: ''
+  product: kohana-framework
+  server: nginx
+  tags: []
+rules:
+- dsl: (((((icontains(banner,"kohanasession_data") || icontains(banner,"kohanasession"))
+    || icontains(banner,"kohana framework")) || icontains(banner,"kohanasession_data"))
+    || icontains(banner,"kohanasession")) || icontains(banner,"kohana framework"))
+  method: GET
+  

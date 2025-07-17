@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: leanote-notepad
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"name=\"author\" content=\"leanote,蚂蚁笔记\"")
+  method: GET
+  

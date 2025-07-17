@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: vertiv-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"var port = \"9528")
+  method: GET
+  

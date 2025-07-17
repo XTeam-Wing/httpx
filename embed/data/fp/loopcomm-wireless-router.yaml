@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: 'Loopcomm Technology. '
+  cpe: ''
+  product: loopcomm-wireless-router
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"loopcomm")
+  method: GET
+  

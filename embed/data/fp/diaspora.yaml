@@ -1,0 +1,13 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: diaspora
+  server: nginx
+  tags: []
+rules:
+- dsl: (((((icontains(banner,"x-git-revision") || icontains(banner,"x-git-update"))
+    || icontains(banner,"_diaspora_session")) || icontains(banner,"x-git-revision"))
+    || icontains(banner,"x-git-update")) || icontains(banner,"_diaspora_session"))
+  method: GET
+  

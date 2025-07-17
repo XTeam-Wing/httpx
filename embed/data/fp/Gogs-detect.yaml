@@ -1,0 +1,9 @@
+info:
+  author: 哆啦A梦
+  description: 一款极易搭建的自助 Git 服务。
+  tags: []
+  product: gogs
+  category: cms
+rules:
+- method: GET
+  dsl: 'contains(body, "<meta name=\"keywords\" content=\"go, git, self-hosted, gogs\">") || contains(title, "Gogs") || contains(body, "Gogs is a painless self-hosted Git service") || contains(header, "Set-Cookie: i_like_gogs") || contains(header, "Set-Cookie: i_like_gogits")'

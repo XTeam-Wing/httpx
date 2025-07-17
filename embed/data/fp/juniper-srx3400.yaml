@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Juniper Networks, Inc.
+  cpe: ''
+  product: juniper-srx3400
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"juniper networks, inc. srx3400")
+  method: GET
+  

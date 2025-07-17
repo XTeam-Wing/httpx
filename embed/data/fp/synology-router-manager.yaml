@@ -1,0 +1,12 @@
+info:
+  category: operating system
+  company: Synology Inc.
+  cpe: ''
+  product: synology-router-manager
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(body,"content=\"synologyrouter") || icontains(body,"hostname\"
+    : \"synologyrouter\""))'
+  method: GET
+  

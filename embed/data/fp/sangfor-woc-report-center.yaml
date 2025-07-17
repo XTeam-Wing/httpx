@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Shenzhen Shenxinfu Technology Co., Ltd.
+  cpe: ''
+  product: sangfor-woc-report-center
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"set-cookie: sf_session=a%3a5%") || icontains(banner,"set-cookie:
+    sf_session=a%3a5%")) || icontains(title,"sangfor woc report center"))'
+  method: GET
+  

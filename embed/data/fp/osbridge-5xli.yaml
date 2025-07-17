@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: OSBRiDGE
+  cpe: ''
+  product: osbridge-5xli
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"osbridge 5xli")
+  method: GET
+  

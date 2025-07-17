@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: BMC Software, Inc.
+  cpe: ''
+  product: bmc-remedy
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"remedy mid tier")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: other support system
+  company: MICROSYS, spol. s r.o.
+  cpe: ''
+  product: promotic-companies-products
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(title,"promotic redirection") || icontains(banner,"server: promotic"))
+    || icontains(banner,"server: promotic"))'
+  method: GET
+  

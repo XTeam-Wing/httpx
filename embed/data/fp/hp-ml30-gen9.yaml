@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Hewlett Packard Enterprise Development LP
+  cpe: ''
+  product: hp-ml30-gen9
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(cert,"ml30-gen9") || icontains(banner,"ml30-gen9"))
+  method: GET
+  

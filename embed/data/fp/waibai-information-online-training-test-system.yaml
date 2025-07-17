@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Shanghai Tianbai Information Technology Co., Ltd.
+  cpe: ''
+  product: waibai-information-online-training-test-system
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"app_image/system") || icontains(body,"app_image/pxsystem"))
+    || (icontains(banner,"index.html") && icontains(title,"连接中，请稍候")))
+  method: GET
+  

@@ -1,0 +1,16 @@
+info:
+  category: router
+  company: other
+  cpe: ''
+  product: gargoyle-router
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && icontains(banner,"serverhttpd_gargoyle"))
+    || icontains(cert,"gargoyle router management utility")) || (((!icontains(body,"couchdb")
+    && !icontains(banner,"drupal")) && !icontains(banner,"couchdb")) && (((icontains(body,"gargoyle
+    firmware webgui for router management") || title == "gargoyle router management
+    utility") || icontains(banner,"server: httpd_gargoyle")) || (icontains(body,"href=\"/themes/gargoyle/images/favicon.png\"")
+    && (icontains(body,"src=\"/themes/gargoyle/images/wait_icon.gif\"") || icontains(title,"石像鬼（gargoyle）路由器管理程序"))))))'
+  method: GET
+  

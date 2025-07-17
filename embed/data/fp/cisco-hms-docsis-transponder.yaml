@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-hms-docsis-transponder
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"hms docsis transponder")
+  method: GET
+  

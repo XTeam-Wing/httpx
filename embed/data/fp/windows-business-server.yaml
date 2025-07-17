@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: Microsoft Corporation
+  cpe: ''
+  product: windows-business-server
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"href=\"/remote\">remote web workplace") || icontains(body,"src=\"images/sbslogo.gif"))
+    || icontains(title,"welcome to windows small business server"))
+  method: GET
+  

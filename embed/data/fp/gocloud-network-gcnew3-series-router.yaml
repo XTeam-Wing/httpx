@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Shanghai Guoyun Information Technology Co., Ltd.
+  cpe: ''
+  product: gocloud-network-gcnew3-series-router
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"gocloud gcnew3 series router")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: other
+  cpe: ''
+  product: network-smartdome-camera
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"network smartdome camera") && icontains(banner,"ipnc"))
+  method: GET
+  

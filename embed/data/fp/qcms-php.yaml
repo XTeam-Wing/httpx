@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: qcms-php
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"qcms_php")||(icontains(title,"qcms_php"))
+  method: GET
+  

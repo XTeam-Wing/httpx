@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Sagemcom Group
+  cpe: ''
+  product: sagemcom-emta62-3
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"emta62-3 wireless voice gateway")
+  method: GET
+  

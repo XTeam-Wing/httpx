@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-d6220
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"netgear d6220") || icontains(banner,"realm=\"netgear
+    d6220"))
+  method: GET
+  

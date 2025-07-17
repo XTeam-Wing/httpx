@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 友邻b2b系统(phpb2b)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"友邻b2b系统")||(icontains(title,"友邻b2b系统"))
+  method: GET
+  

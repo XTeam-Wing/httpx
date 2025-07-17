@@ -1,0 +1,12 @@
+info:
+  category: antivirus gateway
+  company: Reblaze
+  cpe: ''
+  product: reblaze-secure-web-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: reblaze secure web gateway") || icontains(banner,"server:
+    reblaze secure web gateway"))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: telescope
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"telescope")
+  method: GET
+  

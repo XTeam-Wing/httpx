@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-hg531
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"#d1d1d1") && icontains(body,"300mbps wireless adsl2+ router"))
+  method: GET
+  

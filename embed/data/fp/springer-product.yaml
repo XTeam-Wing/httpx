@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Springer Nature Switzerland AG.
+  cpe: ''
+  product: springer-product
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"src=\"//static.springer.com/") || icontains(banner,"springercomcountry="))
+    || icontains(banner,"springercomcountry="))
+  method: GET
+  

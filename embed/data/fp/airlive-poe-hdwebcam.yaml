@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: OvisLink Corp.
+  cpe: ''
+  product: airlive-poe-hdwebcam
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"js/variable_6.js")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: topsec-employee-internet-management
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"repeat-x left top") && icontains(body,"name=\"dkey_login\" ") && icontains(body,"activexobject")
+  method: GET
+  

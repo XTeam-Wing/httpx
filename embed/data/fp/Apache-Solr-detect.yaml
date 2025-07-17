@@ -1,0 +1,18 @@
+info:
+  company: Apache
+  product: apache solr
+  category: component
+  description: Solr is the popular, blazing-fast, open source enterprise search platform built on Apache Lucene™.
+  author: 哆啦A梦
+  tags:
+  - tech
+  - apache-solr
+rules:
+- method: GET
+  path: 
+  - /favicon.ico
+  dsl: md5(body) == "ed7d5c39c69262f4ba95418d4f909b10" || md5(body) == "ce83d230195be7e6d3f1513cc5057da5"|| md5(body) == "b17bfbe45ff585c1b40cc3403b691b6f"
+- method: GET
+  path: 
+  - /solr/img/favicon.ico
+  dsl: md5(body) == "ed7d5c39c69262f4ba95418d4f909b10" || md5(body) == "ce83d230195be7e6d3f1513cc5057da5" || md5(body) == "b17bfbe45ff585c1b40cc3403b691b6f"

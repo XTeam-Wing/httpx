@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: zhone-company's-product
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"vendor: zhone technologies inc.;")'
+  method: GET
+  

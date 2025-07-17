@@ -1,0 +1,11 @@
+info:
+  category: antivirus gateway
+  company: Fujian Strait Information Technology Co., Ltd.
+  cpe: ''
+  product: strait-information-black-shield-operation-&&-safety-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"黑盾运维安全网关(hd-sgs/v4.0)")
+  method: GET
+  

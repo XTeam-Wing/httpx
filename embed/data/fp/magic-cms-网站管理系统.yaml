@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: magic-cms-网站管理系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"magic_cms_网站管理系统")
+  method: GET
+  

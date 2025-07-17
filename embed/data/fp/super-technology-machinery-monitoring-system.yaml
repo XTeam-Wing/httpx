@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Shenzhen Chaote Technology Co., Ltd.
+  cpe: ''
+  product: super-technology-machinery-monitoring-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"监控系统") && icontains(body,"src=\"images/logo/logo40.png\""))
+  method: GET
+  

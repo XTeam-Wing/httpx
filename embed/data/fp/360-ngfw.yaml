@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 360-ngfw
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"ngfw_encode") && icontains(body,"<span class=\"fwtitle_big\">360 ")||(icontains(title,"360网神新一代智慧防火墙"))||(icontains(body,"var
+    __permission = \"360防火墙\""))||(icontains(body,"<span class=\"fwtitle_big\">360"))
+  method: GET
+  

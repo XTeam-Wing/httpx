@@ -1,0 +1,11 @@
+info:
+  category: electronic mail system
+  company: Beijing Chundi Network Information Technology Service Co., Ltd.
+  cpe: ''
+  product: fortune-mail-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"jdmail smtp") || icontains(body,"/jdwm/cgi/login.cgi?login"))
+  method: GET
+  

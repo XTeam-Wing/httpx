@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: piwigo
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"set-cookie: pwg_id") || icontains(banner,"pwg_id")) ||
+    icontains(body,"generator\" content=\"piwigo"))'
+  method: GET
+  

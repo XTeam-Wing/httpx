@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-wnr1000v3
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"realm=\"netgear wnr1000v3") || icontains(title,"netgear
+    router wnr1000v3")) || icontains(banner,"realm=\"netgear wnr1000v3"))
+  method: GET
+  

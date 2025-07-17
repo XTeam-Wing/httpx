@@ -1,0 +1,11 @@
+info:
+  category: electronic mail system
+  company: İlay Bilişim Hizmetleri İth. İhr. San. ve Tic. Ltd.
+  cpe: ''
+  product: ilay-bilisim-mail-server
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"ilay bilisim mail server")
+  method: GET
+  

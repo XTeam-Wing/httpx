@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: tp-link-tl-wdr7661
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"(<title>tl-wdr7661.*</title>)")||(icontains(body,"var proname=\"tl-wdr7661"))
+  method: GET
+  

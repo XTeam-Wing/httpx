@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: web进销存管理系统wbjxc
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"web进销存管理系统wbjxc")
+  method: GET
+  

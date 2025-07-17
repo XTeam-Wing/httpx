@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 将博cms(jumbotcms)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"将博cms")||(icontains(title,"将博cms"))||(icontains(body,"jumbotcms"))||(icontains(title,"jumbotcms"))
+  method: GET
+  

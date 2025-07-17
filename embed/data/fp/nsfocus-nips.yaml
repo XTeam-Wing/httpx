@@ -1,0 +1,11 @@
+info:
+  category: network intrusion detection && defense
+  company: Beijing Shenzhou NSFOCUS Information Security Technology Co., Ltd.
+  cpe: ''
+  product: nsfocus-nips
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"/login_logo_nips_zh_cn.png")
+  method: GET
+  

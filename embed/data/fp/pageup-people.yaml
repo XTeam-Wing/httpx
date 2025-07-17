@@ -1,0 +1,12 @@
+info:
+  category: hrm
+  company: PageUp
+  cpe: ''
+  product: pageup-people
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"class=\"pageuplink\" href=\"http://www.pageuppeople.com")
+    || icontains(body,"powered by pageup people"))
+  method: GET
+  

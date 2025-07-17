@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ruijie-eweb网管系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<title>锐捷网络-eweb网管系统</title>")
+  method: GET
+  

@@ -1,0 +1,13 @@
+info:
+  category: cameras && surveillance
+  company: Beijing Hanbang Hi-Tech Digital Technology Co., Ltd.
+  cpe: ''
+  product: hanbang-gaoke-camera
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"hb-dvr") && icontains(protocol,"rtsp")) || (((!icontains(banner,"drupal")
+    && !icontains(banner,"couchdb")) && !icontains(body,"server: couchdb")) && ((icontains(body,"id=\"id_download_coomet\"")
+    || title == "hanbang web service") || icontains(banner,"server: nvr webserver"))))'
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: aidex-webserver
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<br><small>powered by <a href=\"http://www.aidex.de/software/webserver/\"
+    target=\"_blank\">aidex webserver</a></small></div></div><br><br><br>")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: MikroTik
+  cpe: ''
+  product: mikrotik-fiberbox
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"fiberbox")
+  method: GET
+  

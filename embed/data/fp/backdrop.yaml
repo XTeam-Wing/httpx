@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: backdrop
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"backdrop")
+  method: GET
+  

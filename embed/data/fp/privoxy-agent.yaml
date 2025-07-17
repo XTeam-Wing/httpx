@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: privoxy-agent
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"proxy-agent: privoxy") || icontains(banner,"proxy-agent:
+    privoxy")) || icontains(banner,"privoxy"))'
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: industrial control
+  company: Vodafone Limited.
+  cpe: ''
+  product: thus-plc
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"<img src=\"thuslogo.gif\" width=") || icontains(body,"copyright
+    (c) 2003 thus plc")) || icontains(banner,"thus plc"))
+  method: GET
+  

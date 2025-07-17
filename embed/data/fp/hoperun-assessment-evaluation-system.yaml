@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Jiangsu Runhe Software Co., Ltd.
+  cpe: ''
+  product: hoperun-assessment-evaluation-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<title>考核评测系统</title>") && icontains(body,"src=./static/js/manifest"))
+  method: GET
+  

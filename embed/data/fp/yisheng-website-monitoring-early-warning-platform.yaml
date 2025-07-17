@@ -1,0 +1,11 @@
+info:
+  category: vulnerability scanning
+  company: Ren Zixing Network Technology Co., Ltd.
+  cpe: ''
+  product: yisheng-website-monitoring-early-warning-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"任子行网站监控预警平台")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: 'Cradlepoint, Inc. '
+  cpe: ''
+  product: cradlepoint-aer1600
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"cradlepoint aer1600") || icontains(body,"cplogin.model =
+    \"aer1600\""))
+  method: GET
+  

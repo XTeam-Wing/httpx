@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: Rocksalt International Pty Ltd.
+  cpe: ''
+  product: vp-asp
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(title,"vp-asp shopping cart") || icontains(body,"shopdisplayproducts.asp?id="))
+    || icontains(body,"src=\"vs350.js")) || icontains(body,"<a href=\"http://www.vpasp.com\">"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Sichuan Yiji Tiancheng Technology Group Co., Ltd.
+  cpe: ''
+  product: soeasy-website-cluster-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"soeasy网站集群") || icontains(body,"egss_user"))
+  method: GET
+  

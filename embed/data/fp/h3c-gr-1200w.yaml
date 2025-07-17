@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-gr-1200w
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"var over_time") && icontains(title,"gr-1200w系统管理"))
+  method: GET
+  

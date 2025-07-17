@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: gocloud-ah-r30-series-router
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"gocloud ah-r30 series router")
+  method: GET
+  

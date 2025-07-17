@@ -1,0 +1,11 @@
+info:
+  category: cms
+  company: none
+  cpe: ''
+  product: 3c环境自动监测监控系统
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"javascript:G3_Login.fn.resetPwd") || favicon=="-338936081"
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Avaya Inc.
+  cpe: ''
+  product: avaya-common-photonic-layer
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"common photonic layer")
+  method: GET
+  

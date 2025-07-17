@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Beijing Kelianxuntong Technology Co., Ltd.
+  cpe: ''
+  product: coffinkary-news
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"hw_type=\"imx100ag")
+  method: GET
+  

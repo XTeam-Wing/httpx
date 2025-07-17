@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Palo Alto Networks, Inc.
+  cpe: ''
+  product: paloalto-globalprotect
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"globalprotect portal") || icontains(body,"global-protect/login.esp")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: 合勤科技股份有限公司
+  cpe: ''
+  product: zyxel-atp700
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"ATP700")
+  method: GET
+  

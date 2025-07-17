@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Shenzhen Zhongke Wangwei Technology Co., Ltd.
+  cpe: ''
+  product: sino-science-internet-warm-report-center
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"href=\"/images/reporter.ico") && icontains(body,"中科网威"))
+  method: GET
+  

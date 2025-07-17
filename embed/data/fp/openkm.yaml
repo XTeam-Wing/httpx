@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: openkm
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"openkm login")||(icontains(body,"<form name=\"login\" method=\"post\"
+    action=\"j_security_check\" onsubmit=\"setcookie()\">"))
+  method: GET
+  

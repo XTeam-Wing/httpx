@@ -1,0 +1,11 @@
+info:
+  category: oa
+  company: Beijing Hejia Software Technology Co., Ltd.
+  cpe: ''
+  product: and-jia-software-oa-collaborative-office-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"href=\"/templates/everythingisok/index.css\"")
+  method: GET
+  

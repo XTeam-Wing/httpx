@@ -1,0 +1,15 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: honeypot
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(body,"<h2>blog comments</h2>") && icontains(body,"<h2>my resource</h2>")||(icontains(header,"server:
+    jboss") && icontains(header,"server: tomcat") && icontains(header,"server: apache"))||(icontains(header,"server:
+    apache,tomcat,jboss,weblogic,phpstudy,struts"))||(icontains(header,"server: jboss-5.0")
+    && icontains(header,"uc-httpd 1.0.0"))||(icontains(body,"<h2>my resource</h2>"))||(icontains(body,"<h2>blog
+    comments</h2>"))||(icontains(header,"uc-httpd 1.0.0"))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Yongyou Network Technology Co., Ltd.
+  cpe: ''
+  product: yongyou-u8-cloud
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"开启u8 cloud云端之旅")
+  method: GET
+  

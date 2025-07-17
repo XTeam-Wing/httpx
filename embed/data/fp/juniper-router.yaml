@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Juniper Networks, Inc.
+  cpe: ''
+  product: juniper-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"router") && icontains(banner,"juniper networks, inc"))
+  method: GET
+  

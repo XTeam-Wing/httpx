@@ -1,0 +1,11 @@
+info:
+  category: voice video
+  company: A TLC S.r.l.
+  cpe: ''
+  product: aethra-dsl-device
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"aethra dsl device")
+  method: GET
+  

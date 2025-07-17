@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 佳朋智慧缴费平台
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"佳朋智慧缴费平台")
+  method: GET
+  

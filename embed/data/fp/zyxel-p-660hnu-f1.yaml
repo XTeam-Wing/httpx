@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-p-660hnu-f1
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"p-660hnu-f1")
+  method: GET
+  

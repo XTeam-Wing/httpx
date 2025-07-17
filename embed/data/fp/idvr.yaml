@@ -1,0 +1,12 @@
+info:
+  category: other iot device
+  company: other
+  cpe: ''
+  product: idvr
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(body,"name=\"idvrform") || icontains(banner,"server: idvrhttpsvr"))
+    || icontains(banner,"server: idvrhttpsvr")) || icontains(title,"idvr"))'
+  method: GET
+  

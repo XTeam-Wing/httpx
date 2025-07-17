@@ -1,0 +1,14 @@
+info:
+  category: other network equipment
+  company: Visualware Inc.
+  cpe: ''
+  product: visualware-myconnection-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(banner,"couchdb") && icontains(banner,"server: visualware myconnection
+    server")) || (!icontains(body,"server: couchdb") && (icontains(banner,"server:
+    visualware myconnection server") || icontains(body,"<!-- begin myconnection server
+    applet -->"))))'
+  method: GET
+  

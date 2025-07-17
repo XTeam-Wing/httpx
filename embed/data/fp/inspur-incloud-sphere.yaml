@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: inspur-incloud-sphere
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"incloudsphere")||(icontains(body,"class=\"easyui-layout") && icontains(title,"license
+    tool"))||(icontains(body,"class=\"easyui-layout"))
+  method: GET
+  

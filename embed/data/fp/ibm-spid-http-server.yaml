@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: International Business Machines Corporation
+  cpe: ''
+  product: ibm-spid-http-server
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"spid http server") || icontains(banner,"spid http server"))
+  method: GET
+  

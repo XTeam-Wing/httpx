@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Risecomda Technology Development Co., Ltd.
+  cpe: ''
+  product: raisecom-iscom2648g
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"color=\"#000000\">iscom2648g")
+  method: GET
+  

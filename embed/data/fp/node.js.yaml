@@ -1,0 +1,13 @@
+info:
+  category: scripting language
+  company: OpenJS Foundation
+  cpe: ''
+  product: node.js
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((icontains(banner,"node.js") || icontains(banner,"pump.io")) || icontains(banner,"x-powered-by:
+    express")) || icontains(banner,"node.js")) || icontains(banner,"pump.io")) ||
+    icontains(banner,"x-powered-by: express"))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Observium Limited
+  cpe: ''
+  product: observium
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"href=\"images/observium-icon.png\"")
+  method: GET
+  

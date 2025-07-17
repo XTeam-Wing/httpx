@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Citrix Systems, Inc.
+  cpe: ''
+  product: xenapp
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"window.location=\"/citrix/xenapp\"")
+  method: GET
+  

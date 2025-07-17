@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: bt-linux-control-pane
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"set-cookie: bt_panel=")||(icontains(header,"set-cookie: bt_panel="))||(icontains(body,"src=\"/static/js/validform_v5.3.2_min.js"))||(icontains(body,"宝塔linux面板"))||(icontains(body,"href=\"http://www.bt.cn/bbs/thread-1172-1-1.html"))||(icontains(body,"<img
+    src=\"https://app.bt.cn/static/app.png\">"))'
+  method: GET
+  

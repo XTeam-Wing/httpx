@@ -1,0 +1,11 @@
+info:
+  category: database system
+  company: Apache Software Foundation.
+  cpe: ''
+  product: cassandra
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(protocol,"cassandra")
+  method: GET
+  

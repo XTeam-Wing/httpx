@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: areinfotech
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"are infotech")
+  method: GET
+  

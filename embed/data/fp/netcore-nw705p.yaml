@@ -1,0 +1,13 @@
+info:
+  category: router
+  company: Shenzhen Leike Electronic Commerce Co., Ltd.
+  cpe: ''
+  product: netcore-nw705p
+  server: nginx
+  tags: []
+rules:
+- dsl: (((((icontains(banner,"realm=\"netcorenw705p") || icontains(banner,"realm=\"netcore
+    nw705p")) || icontains(banner,"realm=\"nw705p")) || icontains(banner,"realm=\"netcorenw705p"))
+    || icontains(banner,"realm=\"netcore nw705p")) || icontains(banner,"realm=\"nw705p"))
+  method: GET
+  

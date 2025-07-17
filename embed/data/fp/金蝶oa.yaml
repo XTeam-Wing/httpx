@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 金蝶oa
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"eas系统登录") && icontains(body,"金蝶国际软件集团有限公司")||(icontains(title,"金蝶oa"))
+  method: GET
+  

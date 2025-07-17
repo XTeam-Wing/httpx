@@ -1,0 +1,11 @@
+info:
+  category: cloud computing
+  company: Hangzhou Fluorite Network Co., Ltd.
+  cpe: ''
+  product: ezviz-cloud
+  server: nginx
+  tags: []
+rules:
+- dsl: 'icontains(cert,"commonname: *.ys7.com")'
+  method: GET
+  

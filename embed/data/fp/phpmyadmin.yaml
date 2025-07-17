@@ -1,0 +1,13 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: phpmyadmin
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((icontains(banner,"realm=\"phpmyadmin") || icontains(banner,"set-cookie:
+    phpmyadmin=")) || icontains(banner,"realm=\"phpmyadmin")) || icontains(body,"pma_password"))
+    || icontains(title,"phpmyadmin ")) || icontains(banner,"set-cookie: phpmyadmin="))'
+  method: GET
+  

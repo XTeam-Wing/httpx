@@ -1,0 +1,13 @@
+info:
+  category: router
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-wnr2020
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"netgear wnr2020") || icontains(title,"netgear wireless
+    router wnr2020")) || icontains(body,"var model=\"wnr2020\"")) || icontains(banner,"netgear
+    wnr2020"))
+  method: GET
+  

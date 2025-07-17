@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Hong Kong Broadband Enterprise Solutions Co., Ltd.
+  cpe: ''
+  product: hong-kong-broadband-sudu-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: suduserver") || icontains(banner,"server: suduserver"))'
+  method: GET
+  

@@ -1,0 +1,13 @@
+info:
+  category: other enterprise application
+  company: Rapid Voice && Data Solutions
+  cpe: ''
+  product: rapid-browser
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(body,"images/login_button.gif\" alt=\"login to rapid browser")
+    || icontains(body,"<!-- ### bullet table ### -->")) || icontains(title,"welcome
+    to rapid browser"))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Apache Software Foundation.
+  cpe: ''
+  product: apache-oozie-web-console
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"href=\"/oozie\">oozie console") || icontains(body,"oozie-console"))
+  method: GET
+  

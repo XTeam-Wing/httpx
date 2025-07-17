@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 红帆ioffice
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<title>ioffice.net</title>")
+  method: GET
+  

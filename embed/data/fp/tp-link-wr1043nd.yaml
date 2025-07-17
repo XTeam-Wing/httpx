@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Pullian Technology Co., Ltd.
+  cpe: ''
+  product: tp-link-wr1043nd
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"tplink wr1043nd") && icontains(body,"var mmc = {")) || (icontains(body,"tp-link
+    wr1043nd") && icontains(body,"var mmc = {")))
+  method: GET
+  

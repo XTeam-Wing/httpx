@@ -1,0 +1,11 @@
+info:
+  category: fax machine
+  company: Shenzhen Aiwangtong Electronic Technology Development Co., Ltd.
+  cpe: ''
+  product: ufax2-product
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"php/front_php/user_login.php") || icontains(title,"ufax2传真机用户登陆"))
+  method: GET
+  

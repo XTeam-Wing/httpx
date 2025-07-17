@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: China United Network Communications Group Co., Ltd.
+  cpe: ''
+  product: china-unicom-cbss-automation-test
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<p>copyright&copy cbss 项目组 自动化测试小组</p>")
+  method: GET
+  

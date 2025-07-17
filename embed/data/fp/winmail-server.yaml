@@ -1,0 +1,16 @@
+info:
+  category: electronic mail system
+  company: Huami Technology (Suzhou) Co., Ltd.
+  cpe: ''
+  product: winmail-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((((((icontains(body,"src=\"customer/index_winmail_new.gif") || icontains(body,"background=\"customer/winmail_bg11.jpg"))
+    || (icontains(body,"(build ") && icontains(body,"winmail mail server"))) || icontains(banner,"winmail
+    mail server")) || (((icontains(body,"pwdplaceholder") && icontains(body,"f_theme"))
+    && icontains(body,"encryptpwd")) && icontains(body,"sessid"))) || icontains(body,"src=\"themes/default/images/mail_pic.jpg"))
+    || icontains(body,"pop3,smtp server: <font color=red>")) || icontains(body,"amax
+    information technologies inc.")) || icontains(banner,"magicwinmail_default_language"))'
+  method: GET
+  

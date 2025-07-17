@@ -1,0 +1,13 @@
+info:
+  category: other network equipment
+  company: Zoho Corporation Pvt. Ltd.
+  cpe: ''
+  product: manageengine-opmanager
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(title,"opmanager") || icontains(body,"<a href=\"http://www.manageengine.com/products/opmanager/index.html\"
+    target=")) || icontains(body,"the complete network monitoring software from manageengine"))
+    || icontains(title,"manageengine opmanager"))
+  method: GET
+  

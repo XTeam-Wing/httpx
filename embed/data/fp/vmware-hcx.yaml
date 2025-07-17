@@ -1,0 +1,13 @@
+info:
+  category: other enterprise application
+  company: VMware, Inc.
+  cpe: ''
+  product: vmware-hcx
+  server: unknown
+  tags: []
+rules:
+- dsl: 'icontains(title,"VMware HCX") || (icontains(cert,"CommonName: hcx.local")
+    && icontains(cert,"Organization: VMware")) || (icontains(banner,"/hybridity/ui/hcx-client/index.html")
+    && icontains(banner,"Location"))'
+  method: GET
+  

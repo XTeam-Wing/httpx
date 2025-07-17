@@ -1,0 +1,12 @@
+info:
+  category: adsl
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: d-link-dsl-2750b
+  server: nginx
+  tags: []
+rules:
+- dsl: ((!icontains(banner,"couchdb") && icontains(banner,"dsl-2750b")) || icontains(title,"d-link
+    dsl-2750b"))
+  method: GET
+  

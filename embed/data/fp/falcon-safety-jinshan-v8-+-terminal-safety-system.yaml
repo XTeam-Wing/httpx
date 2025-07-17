@@ -1,0 +1,13 @@
+info:
+  category: anti-virus product
+  company: Beijing Falcon Security Technology Co., Ltd.
+  cpe: ''
+  product: falcon-safety-jinshan-v8-+-terminal-safety-system
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"href=\"mobiletools/android/net.ejinshan.avclient.apk") ||
+    icontains(body,"class=\"anouncetext\">为了更好的保障企业内网的安全，公司决定从即日起全面部署金山企业安全终端防护优化系统"))
+    || icontains(title,"在线安装-v8+终端安全系统web控制台"))
+  method: GET
+  

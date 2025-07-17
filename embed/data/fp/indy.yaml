@@ -1,0 +1,13 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: indy
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && icontains(banner,"server:
+    indy")) || ((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && icontains(banner,"server:
+    indy")))'
+  method: GET
+  

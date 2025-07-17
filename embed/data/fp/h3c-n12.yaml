@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-n12
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"n12&nbsp设备登录")
+  method: GET
+  

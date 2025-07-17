@@ -1,0 +1,13 @@
+info:
+  category: other network equipment
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-dslam
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((((icontains(banner,"realm=ies-1000") || icontains(banner,"realm=\"ies-1000"))
+    || icontains(banner,"realm=\"ies-612")) || icontains(banner,"aam1212-")) || icontains(banner,"realm=\"ies-1000"))
+    || icontains(banner,"realm=\"ies-612")) || icontains(banner,"realm=\"aam1212-"))
+  method: GET
+  

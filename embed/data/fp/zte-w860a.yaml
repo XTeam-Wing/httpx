@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: ZTE Corporation
+  cpe: ''
+  product: zte-w860a
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"w860a")
+  method: GET
+  

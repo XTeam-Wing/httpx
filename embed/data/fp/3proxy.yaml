@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: 3APA3A
+  cpe: ''
+  product: 3proxy
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"3proxy")
+  method: GET
+  

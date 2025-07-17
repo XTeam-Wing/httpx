@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: snowplow
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"snowplow")
+  method: GET
+  

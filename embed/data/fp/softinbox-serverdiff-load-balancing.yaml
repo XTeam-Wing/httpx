@@ -1,0 +1,11 @@
+info:
+  category: load balance
+  company: Box Software Co., Ltd.
+  cpe: ''
+  product: softinbox-serverdiff-load-balancing
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"serverdiff ")
+  method: GET
+  

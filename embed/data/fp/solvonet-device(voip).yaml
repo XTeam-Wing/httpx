@@ -1,0 +1,11 @@
+info:
+  category: voice video
+  company: Synopsys, Inc.
+  cpe: ''
+  product: solvonet-device(voip)
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"basic realm=\"solvonet\"") || icontains(banner,"basic realm=\"solvonet\""))
+  method: GET
+  

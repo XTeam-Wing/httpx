@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Shanghai Bell Co., Ltd.
+  cpe: ''
+  product: shanghai-bell-eg766hw
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"eg766hw-gc")
+  method: GET
+  

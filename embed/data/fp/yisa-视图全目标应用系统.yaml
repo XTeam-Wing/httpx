@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: 北京以萨技术股份有限公司
+  cpe: ''
+  product: yisa-视图全目标应用系统
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"以萨视图全目标应用系统")
+  method: GET
+  

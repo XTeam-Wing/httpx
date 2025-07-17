@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: authine-h3-bpm
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"h3 bpm suite信息化的最佳实践")
+  method: GET
+  

@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ikuai-flow-control-router
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"src=/static/js/manifest.6513b08df486af67396b.js>")||(icontains(body,"<li><a
+    href=\"http://www.ikuai8.com\" target=\"_blank\">官网</a></li>"))||(icontains(title,"登录爱快流控路由"))||(icontains(body,"/resources/images/land_prompt_ico01.gif")
+    && icontains(title,"爱快"))||(icontains(body,"/resources/images/land_prompt_ico01.gif"))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Harbin Xinzhongxin Electronics Co., Ltd.
+  cpe: ''
+  product: synjones-campus-card-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"/shouyeziti.css") || icontains(body,"document.formpostds.action=\"xxsearch.action"))
+    || icontains(body,"harbin synjones electronic"))
+  method: GET
+  

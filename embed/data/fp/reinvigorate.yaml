@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: reinvigorate
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"reinvigorate")||(icontains(body,"<!-- reinvigorate -->"))||(icontains(body,"<script
+    type=\"text/javascript\" src=\"http://include.reinvigorate.net/re_.js\"></script>"))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: online behavior management system
+  company: Shenzhen Heweishun Network Technology Co., Ltd.
+  cpe: ''
+  product: ip-com-deep-internet-behavior-management
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"parent.location.href=\"/login\"") && icontains(banner,"ugwsessionid="))
+    || icontains(body,"assets/img/ip-com-logo.png")) || icontains(title,"深度上网行为管理"))
+  method: GET
+  

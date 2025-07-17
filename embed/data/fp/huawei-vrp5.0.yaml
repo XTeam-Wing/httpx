@@ -1,0 +1,11 @@
+info:
+  category: operating system
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-vrp5.0
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"huawei-vrp5.0")
+  method: GET
+  

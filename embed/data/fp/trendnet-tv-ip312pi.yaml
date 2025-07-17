@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: TRENDnet, Inc.
+  cpe: ''
+  product: trendnet-tv-ip312pi
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"tv-ip312pi") || icontains(banner,"tv-ip312pi"))
+  method: GET
+  

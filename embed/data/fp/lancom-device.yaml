@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: LANCOM Systems GmbH
+  cpe: ''
+  product: lancom-device
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: lancom") || icontains(banner,"server: lancom"))'
+  method: GET
+  

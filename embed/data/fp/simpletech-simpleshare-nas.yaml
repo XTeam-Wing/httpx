@@ -1,0 +1,13 @@
+info:
+  category: network storage
+  company: other
+  cpe: ''
+  product: simpletech-simpleshare-nas
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"simpleshare (default user name is admin && password
+    is simple") || icontains(banner,"realm=\"simpleshare (default user name is admin
+    && password is simple"))
+  method: GET
+  

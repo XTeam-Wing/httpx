@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Guangzhou Qibo Network Technology Co., Ltd.
+  cpe: ''
+  product: qi-bo-software-v7
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"/images/v7/cms.css\">")
+  method: GET
+  

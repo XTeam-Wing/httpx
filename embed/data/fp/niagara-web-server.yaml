@@ -1,0 +1,15 @@
+info:
+  category: service
+  company: Tridium Inc.
+  cpe: ''
+  product: niagara-web-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((((((icontains(banner,"niagara_audit") || icontains(banner,"niagara_audit"))
+    || icontains(banner,"niagara-release")) || icontains(banner,"niagara-release"))
+    || icontains(banner,"niagara_session=")) || icontains(banner,"niagara_session="))
+    || icontains(banner,"niagara-release")) || icontains(banner,"niagara-release"))
+    || icontains(banner,"server: niagara")) || icontains(banner,"server: niagara"))'
+  method: GET
+  

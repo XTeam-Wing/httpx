@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: other
+  cpe: ''
+  product: fit2cloud-metersphere
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"MeterSphere")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Wuhan Win-Win Century Network Technology Co., Ltd.
+  cpe: ''
+  product: urlos-lum-server-management
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"lum_session") || icontains(banner,"lum_session"))
+  method: GET
+  

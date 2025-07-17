@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: tplink-camera
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<frame src=\"controlmenu.htm")||(icontains(title,"ip camera viewer"))
+  method: GET
+  

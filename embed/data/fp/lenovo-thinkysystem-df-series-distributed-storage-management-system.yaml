@@ -1,0 +1,11 @@
+info:
+  category: network storage
+  company: Lenovo Group Co., Ltd.
+  cpe: ''
+  product: lenovo-thinkysystem-df-series-distributed-storage-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"lenovo thinksystem df系列分布式存储管理系统")
+  method: GET
+  

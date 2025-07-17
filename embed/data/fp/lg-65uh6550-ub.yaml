@@ -1,0 +1,11 @@
+info:
+  category: smart home
+  company: LG Electronics.
+  cpe: ''
+  product: lg-65uh6550-ub
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<modelnumber>65uh6550-ub</modelnumber>")
+  method: GET
+  

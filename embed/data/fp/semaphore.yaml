@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: Smartlogic Semaphore Ltd
+  cpe: ''
+  product: semaphore
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"alt=\"powered by semaphore\"") || icontains(body,"www.smartlogic.com"))
+  method: GET
+  

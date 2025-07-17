@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 蝉知cms
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"set-cookie: frontsid")||(icontains(title,"蝉知cms"))'
+  method: GET
+  

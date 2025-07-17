@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Beijing Paidao Network Technology Co., Ltd.
+  cpe: ''
+  product: cms4j
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"method=\"post\" name=\"cms4jsearchform\" id=\"cms4jsearchform")
+    || icontains(body,"href=\"/cms4jadmin/login.jsp"))
+  method: GET
+  

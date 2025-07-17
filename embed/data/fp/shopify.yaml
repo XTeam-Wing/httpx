@@ -1,0 +1,15 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: shopify
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(body,"<a target=\"_blank\" class=\"ico ico-shopify-bag\" href=\"//www.shopify.com\">        <span
+    class=\"helper--visually-hidden\">shopify.com</span></a>")||(icontains(header,"(set-cookie:
+    _secure_session_id)"))||(icontains(header,"(set-cookie: _session_id)"))||(icontains(header,"(set-cookie:
+    cart_sig)"))||(icontains(header,"(set-cookie: customer_sig)"))||(icontains(header,"(set-cookie:
+    secure_customer_sig)"))'
+  method: GET
+  

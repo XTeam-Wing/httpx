@@ -1,0 +1,11 @@
+info:
+  category: blockchain
+  company: Neo Team
+  cpe: ''
+  product: neo-ptcp
+  server: nginx
+  tags: []
+rules:
+- dsl: protocol == "neop2ptcp"
+  method: GET
+  

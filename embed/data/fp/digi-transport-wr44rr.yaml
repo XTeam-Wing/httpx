@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Digi International Inc.
+  cpe: ''
+  product: digi-transport-wr44rr
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"transport wr44rr")
+  method: GET
+  

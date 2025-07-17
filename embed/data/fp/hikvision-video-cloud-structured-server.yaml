@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Hangzhou Hikvision Digital Technology Co., Ltd.
+  cpe: ''
+  product: hikvision-video-cloud-structured-server
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"/common/hikui/") && icontains(title,"视频云结构化服务器"))
+  method: GET
+  

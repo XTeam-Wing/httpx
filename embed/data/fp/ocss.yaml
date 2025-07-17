@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ocss
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"爱施德 aisidi.com") && icontains(body,"<option value=\"age_sys\">代理商内部员工</option>")||(icontains(body,"content=\"爱施德移动渠道管理系统"))||(icontains(body,"<option
+    value=\"age_sys\">代理商内部员工</option>"))||(icontains(body,"爱施德 aisidi.com"))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Cradlepoint, Inc.
+  cpe: ''
+  product: cradlepoint-aer2200-600m
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(body,"cplogin.model = \"aer2200-fips-600m\";") || icontains(title,"login
+    :: aer2200-600m"))'
+  method: GET
+  

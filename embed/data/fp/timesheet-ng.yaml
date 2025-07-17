@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: timesheet-ng
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<!-- include the timesheet face up until the heading start section
+    -->")||(icontains(body,"<td><img class=\"login_image\" src=\"images/spacer.gif\"></td>"))||(icontains(body,"<meta
+    name=\"description\" content=\"timesheet next gen\">"))
+  method: GET
+  

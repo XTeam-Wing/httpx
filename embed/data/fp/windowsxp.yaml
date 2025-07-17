@@ -1,0 +1,12 @@
+info:
+  category: operating system
+  company: Microsoft Corporation
+  cpe: ''
+  product: windowsxp
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"native os : windows 5.1") || icontains(banner,"windows
+    xp"))'
+  method: GET
+  

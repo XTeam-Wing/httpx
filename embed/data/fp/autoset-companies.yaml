@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Autoset
+  cpe: ''
+  product: autoset-companies
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"autoset") && icontains(body,".logo-autoset"))
+  method: GET
+  

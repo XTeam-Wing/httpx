@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Hanwha Techwin Co., Ltd.
+  cpe: ''
+  product: hanwha-snp-6230rh
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"var defaultfilename = \"snp-6230rh\"")
+  method: GET
+  

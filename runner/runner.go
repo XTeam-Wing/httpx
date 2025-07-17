@@ -118,7 +118,7 @@ func New(options *Options) (*Runner, error) {
 	// 	//}
 	// }
 
-	if options.TechRule != "" && options.TechDetect {
+	if options.TechDetect {
 		err := runner.tech.Init(options.TechRule)
 		if err != nil {
 			return nil, errors.Wrap(err, "could not initialize tech detection")
@@ -1957,7 +1957,7 @@ retry:
 		eg.SetLimit(10)
 		for method, paths := range r.options.techRuleURIs {
 			for _, path := range paths {
-				if path == "/favicon.ico" || path == "" || path == "/" {
+				if path == "" || path == "/" {
 					continue // skip favicon.ico and empty paths
 				}
 				path := path

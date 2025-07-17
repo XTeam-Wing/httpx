@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 玫莎missracms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"玫莎missracms")||(icontains(title,"玫莎missracms"))
+  method: GET
+  

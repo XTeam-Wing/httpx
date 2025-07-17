@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Together Teamsolutions Co., Ltd.
+  cpe: ''
+  product: enhydra-application-server
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"enhydra") || icontains(banner,"enhydra"))
+  method: GET
+  

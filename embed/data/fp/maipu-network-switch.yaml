@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Maipu Communication Technology Co., Ltd.
+  cpe: ''
+  product: maipu-network-switch
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"网络交换机") && icontains(body,"maipu communication"))
+  method: GET
+  

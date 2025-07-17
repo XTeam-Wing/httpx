@@ -1,0 +1,14 @@
+info:
+  category: dns device
+  company: Stichting NLnet Labs
+  cpe: ''
+  product: nlnetlabs-nlnet-nsd
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((icontains(banner,"{\"length\": 0, \"chained_to\": 909587251, \"identifier\":
+    \"company\", \"str\": null}") && icontains(protocol,"dns")) || icontains(banner,"nsd
+    demo server")) || icontains(banner,"basic realm=\"nsd\"")) || icontains(banner,"basic
+    realm=\"nsd\""))'
+  method: GET
+  

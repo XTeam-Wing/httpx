@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: php-multishop
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"php-multishop")
+  method: GET
+  

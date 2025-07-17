@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Shenzhen Meikexing Communication Technology Co., Ltd.
+  cpe: ''
+  product: mercury-router
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(banner,"mac1200r") || icontains(banner,"mw4530r")) || icontains(title,"mercury
+    无线路由器")) || icontains(banner,"mac1200r")) || icontains(banner,"mw4530r"))
+  method: GET
+  

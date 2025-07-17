@@ -1,0 +1,14 @@
+info:
+  category: router
+  company: Pullian Technology Co., Ltd.
+  cpe: ''
+  product: tp-link-td-vg3631
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(banner,"0.6.0 1.0 v0001.0 build 140925 rel.50379n") || icontains(banner,"0.6.0
+    1.0 v0001.0 build 140415 rel.39003n")) || icontains(banner,"0.6.0 1.0 v0001.0
+    build 130413 rel.52459n")) || icontains(banner,"tp-link td-vg3631")) || icontains(banner,"tp-link
+    td-vg3631"))
+  method: GET
+  

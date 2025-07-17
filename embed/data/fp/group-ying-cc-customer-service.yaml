@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Guangdong Qunying Network Co., Ltd.
+  cpe: ''
+  product: group-ying-cc-customer-service
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<script src=\"http://kefu.qycn.com/")
+  method: GET
+  

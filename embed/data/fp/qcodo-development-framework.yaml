@@ -1,0 +1,11 @@
+info:
+  category: development framework
+  company: other
+  cpe: ''
+  product: qcodo-development-framework
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<b>qcodo version:") && icontains(body,"zend engine version:</b>"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: vulnerability scanning
+  company: 中新网络信息安全股份有限公司
+  cpe: ''
+  product: 中新网安-中新金盾漏洞扫描系统zx-scanner
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"中新金盾漏洞扫描系统ZX-Scanner")
+  method: GET
+  

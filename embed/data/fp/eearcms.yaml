@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: eearcms
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"/images/propeller.svg") || icontains(body,"/static/index/plane.svg"))
+    || icontains(body,"/static/index/propeller.svg")) || icontains(body,"earcms"))
+  method: GET
+  

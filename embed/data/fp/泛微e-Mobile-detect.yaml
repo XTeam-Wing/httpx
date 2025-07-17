@@ -1,0 +1,28 @@
+info:
+  product: 泛微移动管理平台
+  category: oa
+  author: 哆啦A梦
+  company: 上海泛微网络科技有限公司
+  description: 泛微移动管理平台E-Mobile
+  tags:
+  - tech
+  - e-mobile
+rules:
+- method: GET
+  dsl: (contains(body, "<title>移动管理平台-企业管理") && contains(body, "window.apiPrifix = \"/emp")) || (contains(body, "E-Mobile") && contains(body, "emobileprivacypolicy"))
+- method: GET
+  path: 
+  - /login.jsp
+  dsl: (contains(body, "<title>移动管理平台-企业管理") && contains(body, "window.apiPrifix = \"/emp")) || (contains(body, "E-Mobile") && contains(body, "emobileprivacypolicy"))
+- method: GET
+  path: 
+  - /emp/passport/getsetting
+  dsl: contains(body, "server_version") || contains(body, "E-Mobile")
+- method: GET
+  path: 
+  - /images/login_logo@2x.png
+  dsl: status_code == 200 && md5(body) == "8815d089efd2064951039bf4cb4af679"
+- method: GET
+  path: 
+  - /login.do
+  dsl: contains(body, "Weaver E-mobile") || contains(body, "/images/login_logo@2x.png")|| contains(body, "weaver,e-mobile") || contains(body, "E-Mobile&nbsp;6.6")

@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: TRENDnet, Inc.
+  cpe: ''
+  product: trendnet-tpl-410ap
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"login to the tpl-410ap</td>")
+  method: GET
+  

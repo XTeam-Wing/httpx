@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: rips
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<td nowrap><input type=\"checkbox\" id=\"subdirs\" value=\"1\"
+    title=\"check to scan subdirectories\" />subdirs</td>")
+  method: GET
+  

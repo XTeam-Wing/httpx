@@ -1,0 +1,12 @@
+info:
+  category: antivirus gateway
+  company: Check Point Software Technologies Ltd.
+  cpe: ''
+  product: checkpoint-connectra-portal
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"if (document.loginform.launchsws.checked)") && icontains(title,"connectra
+    portal"))
+  method: GET
+  

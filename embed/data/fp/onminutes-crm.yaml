@@ -1,0 +1,13 @@
+info:
+  category: crm
+  company: OnMinutes Online CRM.
+  cpe: ''
+  product: onminutes-crm
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(body,"{\"length\": 0, \"chained_to\": 3749432, \"identifier\":
+    \"tem IPMS\", \"str\": null}") && icontains(body,"<div class=\"extras\" id=\"password_extras\">"))
+    || icontains(title,"- onminutes online crm"))'
+  method: GET
+  

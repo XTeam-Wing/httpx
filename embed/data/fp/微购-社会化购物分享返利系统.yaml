@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 微购-社会化购物分享返利系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"微购_社会化购物分享返利系统")
+  method: GET
+  

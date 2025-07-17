@@ -1,0 +1,15 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: aten-company's-product
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"document.writeln(lang.lang_login_prompt)") && icontains(body,"name=\"aten
+    international co ltd.")||(icontains(body,"action=\"/cgi/login.cgi") && icontains(body,"<meta
+    name=\"aten international co ltd."))||(icontains(body,"<meta name=\"aten international
+    co ltd."))||(icontains(body,"action=\"/cgi/login.cgi"))||(icontains(body,"name=\"aten
+    international co ltd."))||(icontains(body,"document.writelnlang.lang_login_prompt"))
+  method: GET
+  

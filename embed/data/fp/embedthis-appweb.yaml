@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: Embedthis Software LLC.
+  cpe: ''
+  product: embedthis-appweb
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"server: embedthis-appweb") || icontains(title,"embedthis
+    appweb")) || icontains(banner,"server: embedthis-appweb"))'
+  method: GET
+  

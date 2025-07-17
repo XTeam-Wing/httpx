@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: SCO Group, Inc
+  cpe: ''
+  product: sco-openserver
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"gif/rlogo1.gif") && icontains(body,"sco corporate web site"))
+  method: GET
+  

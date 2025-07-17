@@ -1,0 +1,13 @@
+info:
+  category: other enterprise application
+  company: Mesosphere
+  cpe: ''
+  product: mesosphere-dc-os
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(banner,"realm=\"mesosphere") || icontains(banner,"realm=\"mesosphere"))
+    || icontains(title,"dc/os")) || icontains(title,"mesosphere dc/os")) || icontains(title,"mesosphere
+    dcos"))
+  method: GET
+  

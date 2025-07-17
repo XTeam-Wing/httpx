@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 云cms(xercms)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"xercms")||(icontains(title,"xercms"))
+  method: GET
+  

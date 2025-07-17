@@ -1,0 +1,14 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: openfire
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(title,"openfire http binding service") || icontains(title,"openfire
+    admin console")) || (icontains(body,"<title>openfire 管理界面</title>") && icontains(body,"class=\"row
+    justify-content-center\""))) || icontains(body,"background: transparent url(images/login_logo.gif)
+    no-repeat"))'
+  method: GET
+  

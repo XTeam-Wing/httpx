@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: utt-device
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"class=\"utt-inline-block\" src=\"./images/login_btmlogo.png\"")
+  method: GET
+  

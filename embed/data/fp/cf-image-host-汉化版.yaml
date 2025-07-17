@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: cf-image-host-汉化版
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"cf_image_host_汉化版")
+  method: GET
+  

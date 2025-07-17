@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: August Bremicker und Söhne KG
+  cpe: ''
+  product: abus-dvr
+  server: nginx
+  tags: []
+rules:
+- dsl: '(title == "abus dvr" || (icontains(banner,"content-length: 1292") && icontains(body,"document.activex.url.value=\"172.7.76.84\"")))'
+  method: GET
+  

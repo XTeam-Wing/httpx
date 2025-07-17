@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: xgroup-cc城市校友圈
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"xgroup_cc城市校友圈")
+  method: GET
+  

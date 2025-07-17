@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 图创图书馆集群管理系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"interlib/common/") && icontains(body,"self.location.href")
+  method: GET
+  

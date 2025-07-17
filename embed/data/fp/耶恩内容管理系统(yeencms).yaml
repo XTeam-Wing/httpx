@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 耶恩内容管理系统(yeencms)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"耶恩内容管理系统")||(icontains(title,"耶恩内容管理系统"))||(icontains(body,"yeencms"))||(icontains(title,"yeencms"))
+  method: GET
+  

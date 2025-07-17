@@ -1,0 +1,11 @@
+info:
+  category: cms
+  company: Chongqing Baiding Technology Co., Ltd.
+  cpe: ''
+  product: babelstar通天星cmsv
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"808gps/login.html")
+  method: GET
+  

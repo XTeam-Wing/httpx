@@ -1,0 +1,11 @@
+info:
+  category: entrance guard system
+  company: New Cape Electronics Co., Ltd.
+  cpe: ''
+  product: new-cape-zhenggong-accessible-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"正普门禁系统") || icontains(banner,"realm=\"正普门禁系统"))
+  method: GET
+  

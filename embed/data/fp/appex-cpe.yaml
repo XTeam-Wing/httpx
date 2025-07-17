@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: AppEx Networks
+  cpe: ''
+  product: appex-cpe
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"appex cpe")
+  method: GET
+  

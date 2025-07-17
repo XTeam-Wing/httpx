@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: kyan-监控设备
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"login_files") && icontains(body,"platform") && icontains(body,"欢迎")
+  method: GET
+  

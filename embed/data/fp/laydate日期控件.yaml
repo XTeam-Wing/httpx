@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: laydate日期控件
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"laydate日期控件")
+  method: GET
+  

@@ -1,0 +1,13 @@
+info:
+  category: project management system
+  company: other
+  cpe: ''
+  product: chiliproject
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"_chiliproject_session=") || icontains(banner,"_chiliproject_session="))
+    || icontains(body,"content=\"chiliproject")) || icontains(body,"powered by <a
+    href=\"https://www.chiliproject.org/"))
+  method: GET
+  

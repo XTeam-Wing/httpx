@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Sangoma Technologies.
+  cpe: ''
+  product: asterisk-pbx
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"asterisk pbx")
+  method: GET
+  

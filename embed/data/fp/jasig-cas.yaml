@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: Apereo foundation
+  cpe: ''
+  product: jasig-cas
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"powered by <a href=\"http://www.jasig.org/cas")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Open Document Management System S.L.
+  cpe: ''
+  product: openkm-product
+  server: nginx
+  tags: []
+rules:
+- dsl: title == "openkm login"
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Sophos Technologies Pvt. Ltd.
+  cpe: ''
+  product: sophos-cyberoam-products
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"href=\"http://www.cyberoam.com\" target=\"_blank\">www.cyberoam.com")
+    || icontains(banner,"/webpages/login.jsp"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: antivirus gateway
+  company: Shanghai Andatone Information Security Technology Co., Ltd.
+  cpe: ''
+  product: adt-tpn-2g-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"tpn-2g") && icontains(body,"src=\"./system/usbkey.js\""))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: burglar alarm
+  company: other
+  cpe: ''
+  product: pharos-lpc
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"realm=\"pharoslpc") || icontains(banner,"realm=\"pharoslpc"))
+    || icontains(title,"pharos lpc"))
+  method: GET
+  

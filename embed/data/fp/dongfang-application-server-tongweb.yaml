@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Beijing Dongfangtong Technology Co., Ltd.
+  cpe: ''
+  product: dongfang-application-server-tongweb
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: tongweb server") || icontains(banner,"tongweb server"))'
+  method: GET
+  

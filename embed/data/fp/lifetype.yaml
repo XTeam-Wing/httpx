@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: lifetype
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"title=\"install lifetype") || icontains(body,"content=\"lifetype"))
+  method: GET
+  

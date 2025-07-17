@@ -1,0 +1,12 @@
+info:
+  category: machine learning
+  company: other
+  cpe: ''
+  product: indico
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"href=\"http://cern.ch/indico") || icontains(banner,"makacsession"))
+    || icontains(banner,"makacsession"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: big data pocessing
+  company: other
+  cpe: ''
+  product: codis
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"ng-app=codiscontrollers") || title == "codis")
+  method: GET
+  

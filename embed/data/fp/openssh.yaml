@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: other
+  cpe: ''
+  product: openssh
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"openssh")
+  method: GET
+  

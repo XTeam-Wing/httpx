@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: Guangzhou Jiu'an Intelligent Technology Co., Ltd.
+  cpe: ''
+  product: juancloud-camera
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"jaws/") && !icontains(title,"partizan web surveillance"))
+    && icontains(body,"style=\"font-size:24px;float:left;\">network video client"))
+  method: GET
+  

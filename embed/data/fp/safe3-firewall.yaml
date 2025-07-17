@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: safe3-firewall
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"safe3-firewall")
+  method: GET
+  

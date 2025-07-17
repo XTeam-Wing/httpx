@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Beijing Guobao Jintai Information Security Technology Co., Ltd.
+  cpe: ''
+  product: national-bao-jintai-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"jtsec-os") || icontains(body,"\"程序\"->\"jtsec\"->"))
+  method: GET
+  

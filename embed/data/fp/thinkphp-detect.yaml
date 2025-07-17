@@ -1,0 +1,11 @@
+info:
+  author: pwnhxl
+  description: ThinkPHP was detected.
+  tags: []
+  product: thinkphp
+  category: development
+rules:
+- method: GET
+  path:
+  - /?s=sssss&c=aaaa&a=a&m=a'
+  dsl: 'contains_all(body, "ThinkPHP","/Library/Think/","{ Fast & Simple OOP PHP Framework } -- [ WE CAN DO IT JUST THINK ]","/thinkphp/library/think/") || contains(header, "X-Powered-By: ThinkPHP")'

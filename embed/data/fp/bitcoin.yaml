@@ -1,0 +1,11 @@
+info:
+  category: blockchain
+  company: Bitcoin Project
+  cpe: ''
+  product: bitcoin
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(protocol,"bitcoin")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Digital China Group Co., Ltd.
+  cpe: ''
+  product: digitalchina-camera
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(body,"神州数码") && icontains(banner,"server: ipcamera-webs"))'
+  method: GET
+  

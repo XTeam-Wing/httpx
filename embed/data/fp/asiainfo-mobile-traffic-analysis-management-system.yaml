@@ -1,0 +1,12 @@
+info:
+  category: traffic analysis
+  company: AsiaInfo Technology Holdings Limited
+  cpe: ''
+  product: asiainfo-mobile-traffic-analysis-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"var url = getcontextname() + \"?service=ajaxdirect/1/") ||
+    icontains(title,"中国联通移动流量分析管理系统"))
+  method: GET
+  

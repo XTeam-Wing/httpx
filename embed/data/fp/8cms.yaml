@@ -1,0 +1,14 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 8cms
+  server: Unknown
+  tags: []
+rules:
+- dsl: ((icontains(body,"ljcms") || icontains(body,"/tpl/templets")) || icontains(body,"liangjing.org"))
+    || icontains(body,"http://www.itf4.cn") && icontains(body,"/data/attachment")||(icontains(title,"powered
+    by ljcms"))||(icontains(body,"http://www.itf4.cn"))||(icontains(body,"liangjing.org"))||(icontains(body,"/tpl/templets"))||(icontains(body,"/data/attachment"))||(icontains(body,"http://www.itf4.cn")
+    && icontains(body,"liangjing.org"))
+  method: GET
+  

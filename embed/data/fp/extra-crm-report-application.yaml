@@ -1,0 +1,11 @@
+info:
+  category: crm
+  company: Jinan Yichao Information Technology Co., Ltd.
+  cpe: ''
+  product: extra-crm-report-application
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"href=\"/css/vendors~index.acfeb.css\"")
+  method: GET
+  

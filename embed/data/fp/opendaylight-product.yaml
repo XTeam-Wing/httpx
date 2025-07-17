@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: OpenDaylight Project
+  cpe: ''
+  product: opendaylight-product
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"j_security_check") && icontains(title,"opendaylight"))
+  method: GET
+  

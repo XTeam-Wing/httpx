@@ -1,0 +1,15 @@
+info:
+  category: other iot device
+  company: Siemens AG.
+  cpe: ''
+  product: siemens-simatic-pcs7
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((icontains(banner,"siemens, simatic s7") || icontains(banner,"location:
+    /portal0000.htm")) || icontains(body,"<td class=\"login_area\" colspan=\"2\"><img
+    src=\"/simatic_controller.png\" alt=\"simatic s7 cp\"></td>")) || icontains(body,"siemens_firmenmarke_header.gif"))
+    || (icontains(body,"s7web.css") && icontains(body,"portal.mwsl"))) || icontains(body,"<td
+    class=\"static_field\">station name:</td>"))'
+  method: GET
+  

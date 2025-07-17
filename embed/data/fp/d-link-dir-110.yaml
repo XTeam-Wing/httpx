@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: d-link-dir-110
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<a href=\"http://support.dlink.com\" target=\"_blank\">dir-110")
+  method: GET
+  

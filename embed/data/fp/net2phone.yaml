@@ -1,0 +1,12 @@
+info:
+  category: voice video
+  company: Net2phone, Inc.
+  cpe: ''
+  product: net2phone
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"net2phone, inc. all rights") || icontains(title,"net2phone
+    init page"))
+  method: GET
+  

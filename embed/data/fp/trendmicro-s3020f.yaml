@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Trend Micro Incorporated.
+  cpe: ''
+  product: trendmicro-s3020f
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(cert,"s3020f")
+  method: GET
+  

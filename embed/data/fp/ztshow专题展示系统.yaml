@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ztshow专题展示系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"ztshow专题展示系统")
+  method: GET
+  

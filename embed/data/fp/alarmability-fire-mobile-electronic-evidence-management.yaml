@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Shenzhen Jingyi Intelligent Technology Co., Ltd.
+  cpe: ''
+  product: alarmability-fire-mobile-electronic-evidence-management
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"深圳市警翼数码科技有限公司") && icontains(title,"消防移动电子证据管理系统"))
+  method: GET
+  

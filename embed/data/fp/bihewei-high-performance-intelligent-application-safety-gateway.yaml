@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: other
+  cpe: ''
+  product: bihewei-high-performance-intelligent-application-safety-gateway
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"碧海威高性能智能应用安全网关")
+  method: GET
+  

@@ -1,0 +1,13 @@
+info:
+  category: other enterprise application
+  company: 'JetBrains s.r.o. '
+  cpe: ''
+  product: jet-brains-teamcity
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"teamcity-node-id: main_server") || icontains(banner,"teamcity-node-id:
+    main_server")) || icontains(body,"content=\"teamcity (log in to teamcity")) ||
+    icontains(title,"log in to teamcity"))'
+  method: GET
+  

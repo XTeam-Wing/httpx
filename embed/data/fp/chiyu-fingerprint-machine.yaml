@@ -1,0 +1,11 @@
+info:
+  category: entrance guard system
+  company: Chiyu Technology Co., Ltd.
+  cpe: ''
+  product: chiyu-fingerprint-machine
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"cmdbar.htm")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: Dreamsoft Web Studio
+  cpe: ''
+  product: vicworl
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"vindex_right_d") || icontains(body,"content=\"vicworl"))
+    || icontains(body,"powered by vicworl"))
+  method: GET
+  

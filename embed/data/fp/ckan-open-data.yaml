@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: ckan-open-data
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"content=\"ckan") && icontains(title,"opendata"))
+  method: GET
+  

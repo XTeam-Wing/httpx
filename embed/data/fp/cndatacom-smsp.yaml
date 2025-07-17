@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: cndatacom-smsp
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/smrc/resources/default/")
+  method: GET
+  

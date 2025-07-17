@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: VMware, Inc.
+  cpe: ''
+  product: vmware-authentication-service
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(protocol,"vmware_authentication_daemon")
+  method: GET
+  

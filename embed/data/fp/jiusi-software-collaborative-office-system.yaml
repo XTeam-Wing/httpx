@@ -1,0 +1,11 @@
+info:
+  category: oa
+  company: Beijing Jiusi Synergy Software Co., Ltd.
+  cpe: ''
+  product: jiusi-software-collaborative-office-system
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"办公系统") || icontains(body,"oa")) && icontains(body,"九思软件"))
+  method: GET
+  

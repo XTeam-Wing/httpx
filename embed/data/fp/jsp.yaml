@@ -1,0 +1,15 @@
+info:
+  category: scripting language
+  company: Oracle Corporation
+  cpe: ''
+  product: jsp
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((((icontains(banner,"jsessionid") || icontains(banner,"jboss")) || icontains(banner,"servlet"))
+    || icontains(banner,"{\"length\": 0, \"chained_to\": 1919250030, \"identifier\":
+    \"es</td>\", \"str\": null}")) || icontains(banner,"jsessionid")) || icontains(banner,"jboss"))
+    || icontains(banner,"servlet")) || icontains(banner,"{\"length\": 0, \"chained_to\":
+    1919247457, \"identifier\": \"es</td>\", \"str\": null}"))'
+  method: GET
+  

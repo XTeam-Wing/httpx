@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: suremail
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<span> 客服邮箱：support@suremail.cn</span>")||(icontains(body,"content=\"北京国信安邮科技有限公司"))
+  method: GET
+  

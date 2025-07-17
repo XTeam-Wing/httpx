@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-icg1000
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(title,"icg 1000系统管理") || icontains(banner,"h3c icg 1000")) ||
+    icontains(banner,"h3c icg 1000")) || icontains(title,"icg1000系统管理"))
+  method: GET
+  

@@ -1,0 +1,13 @@
+info:
+  category: log analysis && audit
+  company: Informatics Inc.
+  cpe: ''
+  product: informatica-powercenter
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((icontains(banner,"server: informatica") || icontains(banner,"server: informatica"))
+    || icontains(title,"informatica administrator")) || icontains(body,"action=\"/adminconsole/loginsubmit.do"))
+    || icontains(title,"informatica powercenter "))'
+  method: GET
+  

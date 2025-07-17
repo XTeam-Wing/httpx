@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: articlepublisherpro
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"content=\"article publisher pro") || (icontains(body,"www.articlepublisherpro.com")
+    && icontains(body,"powered by")))
+  method: GET
+  

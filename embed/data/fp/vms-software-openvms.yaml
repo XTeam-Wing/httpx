@@ -1,0 +1,14 @@
+info:
+  category: operating system
+  company: VMS Software, Inc.
+  cpe: ''
+  product: vms-software-openvms
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"openvms alpha os") || icontains(banner,"openvms (tm) vax
+    operating system")) || ((icontains(banner," operating system") || icontains(banner,"{\"length\":
+    0, \"chained_to\": 1919250030, \"identifier\": \"\u7f51\u7edc\u3001\u6587\u4ef6\u548c\u6253\u5370\u670d\u52a1\u3002</h3>\",
+    \"str\": null}")) && icontains(banner,"openvms")))'
+  method: GET
+  

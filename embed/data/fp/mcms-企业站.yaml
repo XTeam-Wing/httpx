@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: mcms-企业站
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"mcms_企业站")
+  method: GET
+  

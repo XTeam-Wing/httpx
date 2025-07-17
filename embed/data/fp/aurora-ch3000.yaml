@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: aurora-ch3000
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"aurora networks ch3000")
+  method: GET
+  

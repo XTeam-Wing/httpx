@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Ceragon Networks Ltd.
+  cpe: ''
+  product: ceragon-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<frame src=\"./responder.fcgi1?") && title == "web management")
+  method: GET
+  

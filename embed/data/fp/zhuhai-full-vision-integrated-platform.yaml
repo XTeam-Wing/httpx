@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Zhuhai Quanshitong Information Technology Co., Ltd.
+  cpe: ''
+  product: zhuhai-full-vision-integrated-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"全视通集成平台")
+  method: GET
+  

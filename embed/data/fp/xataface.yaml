@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: xataface
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<!-- custom javascripts can go in slot \"custom_javascripts\" -->")||(icontains(body,"<!--
+    place any other items in the head of the document by filling the \"head_slot\"
+    slot -->"))
+  method: GET
+  

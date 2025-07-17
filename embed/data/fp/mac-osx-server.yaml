@@ -1,0 +1,13 @@
+info:
+  category: operating system
+  company: Apple Inc.
+  cpe: ''
+  product: mac-osx-server
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"realm=\"mac os x server") || icontains(banner,"realm=\"mac
+    os x server")) || icontains(body,"page_footer_appversion\">mac os x server"))
+    || title == "mac os x server")
+  method: GET
+  

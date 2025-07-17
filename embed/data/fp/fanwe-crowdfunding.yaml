@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Fujian Fangwei Information Technology Co., Ltd.
+  cpe: ''
+  product: fanwe-crowdfunding
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"index.php?ctl=article_cate") && icontains(body,"app/tpl/fanwe_1/images/lazy_loading.gif"))
+  method: GET
+  

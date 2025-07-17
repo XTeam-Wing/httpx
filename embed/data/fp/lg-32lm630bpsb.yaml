@@ -1,0 +1,11 @@
+info:
+  category: smart home
+  company: LG Electronics.
+  cpe: ''
+  product: lg-32lm630bpsb
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<modelname>32lm630bpsb</modelname>")
+  method: GET
+  

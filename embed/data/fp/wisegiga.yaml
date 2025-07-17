@@ -1,0 +1,12 @@
+info:
+  category: network storage
+  company: HINHAN INC Co., Ltd.
+  cpe: ''
+  product: wisegiga
+  server: nginx
+  tags: []
+rules:
+- dsl: '(!icontains(body,"server: couchdb") && ((icontains(body,"images/i_logo01.gif")
+    || icontains(title,"wisegiga")) || icontains(body,"/admin/css/style_wisegiga.css")))'
+  method: GET
+  

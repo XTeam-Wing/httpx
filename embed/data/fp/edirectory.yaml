@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: edirectory
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<span class=\"basepowered\">powered by <a href=\"http://www.edirectory.com\"
+    target=\"_blank\">edirectory&trade;</a>.</span>")
+  method: GET
+  

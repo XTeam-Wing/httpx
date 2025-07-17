@@ -1,0 +1,12 @@
+info:
+  category: cloud computing
+  company: Oracle Corporation
+  cpe: ''
+  product: oracle-commerce-cloud
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"realm=\"oraclecommercecloud") || icontains(body,"id=\"oracle-cc"))
+    || icontains(banner,"realm=\"oraclecommercecloud"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Dell Inc.
+  cpe: ''
+  product: dell-poweredge-t410
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"poweredge-t410")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 网旗路由器管理系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"网旗路由器管理系统")
+  method: GET
+  

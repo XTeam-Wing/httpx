@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: COMMSCOPE
+  cpe: ''
+  product: arris-dsr-4440
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"dsr-4440 ")
+  method: GET
+  

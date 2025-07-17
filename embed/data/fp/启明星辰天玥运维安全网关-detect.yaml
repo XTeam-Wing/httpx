@@ -1,0 +1,10 @@
+info:
+  author: 哆啦A梦
+  tags: []
+  product: 天玥运维安全网关
+  category: security
+rules:
+- method: GET
+  path:
+  - /client/login/index
+  dsl: contains(title, "天玥运维安全网关")

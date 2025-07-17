@@ -1,0 +1,12 @@
+info:
+  category: multifunctional
+  company: Brother Industries, Ltd.
+  cpe: ''
+  product: brother-8510dn-printer
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"id=\"modelname\"><h1>mfc-8510dn") || icontains(title,"brother
+    mfc-8510dn"))
+  method: GET
+  

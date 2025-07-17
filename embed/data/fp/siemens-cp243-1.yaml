@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Siemens AG.
+  cpe: ''
+  product: siemens-cp243-1
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"cp243-1 it") || icontains(banner,"cp243-1 it"))
+  method: GET
+  

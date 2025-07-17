@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-rax40
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"netgear rax40") || icontains(banner,"realm=\"netgear
+    rax40"))
+  method: GET
+  

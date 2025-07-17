@@ -1,0 +1,15 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: jumpserver-fortres-machine
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<input type=\"password\" class=\"form-control\" name=\"password\"
+    placeholder=\"密码\" required=\"\">") && icontains(body,"csrfmiddlewaretoken") && icontains(body,"<a
+    href=\"/users/password/forgot/\">")||(icontains(title,"jumpserver"))||(icontains(body,"<input
+    type=\"password\" class=\"form-control\" name=\"password\" placeholder=\"密码\"
+    required=\"\">") && icontains(body,"csrfmiddlewaretoken"))
+  method: GET
+  

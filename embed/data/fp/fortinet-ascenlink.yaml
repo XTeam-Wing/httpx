@@ -1,0 +1,12 @@
+info:
+  category: load balance
+  company: Fortinet, Inc.
+  cpe: ''
+  product: fortinet-ascenlink
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"ascenvision ascenlink") || icontains(banner,"ascenvision
+    (ascenlink)"))
+  method: GET
+  

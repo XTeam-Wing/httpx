@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: founder-operation-management-and-decision-support-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"src=\"/desktop/ui/custom/getimage?img=iphoneview.png\"") && icontains(body,"src=\"/portal/img/logo.png\"")||(icontains(body,"src=\"/portal/img/logo.png\""))||(icontains(body,"src=\"/desktop/ui/custom/getimage?img=iphoneview.png\""))
+  method: GET
+  

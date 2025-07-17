@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: 北京天行网安信息技术有限责任公司
+  cpe: ''
+  product: 天行网安-集中监控与管理系统
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"集中监控与管理系统") && icontains(body,"loginAction.action")
+  method: GET
+  

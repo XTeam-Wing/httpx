@@ -1,0 +1,12 @@
+info:
+  category: firewall
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-zywall-usg-1000
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"usg 1000") || icontains(title,"zywall usg 1000")) || icontains(banner,"zywall
+    usg 1000"))
+  method: GET
+  

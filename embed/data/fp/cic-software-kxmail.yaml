@@ -1,0 +1,12 @@
+info:
+  category: electronic mail system
+  company: Chengdu Kexin Technology Co., Ltd.
+  cpe: ''
+  product: cic-software-kxmail
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"lo_computername") || icontains(body,"/systemfunction.pack.js"))
+    || icontains(title,"科信邮件系统")) || icontains(body,"powered by <a href=\"http://www.kxmail.net"))
+  method: GET
+  

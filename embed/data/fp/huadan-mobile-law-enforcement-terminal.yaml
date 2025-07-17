@@ -1,0 +1,12 @@
+info:
+  category: other iot device
+  company: Shenzhen Huadean Technology Co., Ltd.
+  cpe: ''
+  product: huadan-mobile-law-enforcement-terminal
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"huadean. all rights ") || icontains(body,"src=\"images/login/badgezh_cn.png"))
+    || icontains(title,"pmedia platform"))
+  method: GET
+  

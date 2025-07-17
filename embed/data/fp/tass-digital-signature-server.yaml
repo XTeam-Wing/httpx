@@ -1,0 +1,11 @@
+info:
+  category: data certificate
+  company: Beijing Jiangnan Tianan Technology Co., Ltd.
+  cpe: ''
+  product: tass-digital-signature-server
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"resources/js/utilfunction.js")
+  method: GET
+  

@@ -1,0 +1,13 @@
+info:
+  category: server
+  company: other
+  cpe: ''
+  product: common-serial-server
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"welcome to serial server") && icontains(protocol,"telnet"))
+    || icontains(banner,"realm=\"serial server")) || icontains(banner,"realm=\"serial
+    server"))
+  method: GET
+  

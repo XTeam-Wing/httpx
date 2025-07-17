@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: DrayTek Corp.
+  cpe: ''
+  product: draytek-router-model
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"router model") && icontains(banner,"draytek corporation"))
+  method: GET
+  

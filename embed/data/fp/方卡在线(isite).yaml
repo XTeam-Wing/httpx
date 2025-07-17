@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 方卡在线(isite)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"方卡在线")
+  method: GET
+  

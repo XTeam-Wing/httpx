@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Siping Jiuzhou Yitong Technology Co., Ltd.
+  cpe: ''
+  product: cmseasy
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"content=\"cmseasy") || icontains(banner,"http://www.cmseasy.cn/service_1.html"))
+    || icontains(title,"powered by cmseasy"))
+  method: GET
+  

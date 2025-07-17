@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: crow-force-portal-cms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"中企动力提供技术支持")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: WIBU-SYSTEMS AG
+  cpe: ''
+  product: wibu-systems-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: wibu-systems http server") || icontains(banner,"server:
+    wibu-systems http server"))'
+  method: GET
+  

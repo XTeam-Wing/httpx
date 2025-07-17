@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Symantec Corporation
+  cpe: ''
+  product: symantec-messaging-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"symantec messaging gateway") || icontains(title,"symantec
+    messaging gateway"))
+  method: GET
+  

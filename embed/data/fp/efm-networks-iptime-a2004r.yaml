@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: EFM Networks Co.,Ltd.
+  cpe: ''
+  product: efm-networks-iptime-a2004r
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"iptime a2004r") || icontains(body,"\"/images2/login_title.a2004r.gif\""))
+  method: GET
+  

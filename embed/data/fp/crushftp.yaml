@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: CrushFTP, LLC
+  cpe: ''
+  product: crushftp
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(title,"crushftp webinterface") || icontains(banner,"server: crushftp
+    http server")) || icontains(banner,"server: crushftp http server"))'
+  method: GET
+  

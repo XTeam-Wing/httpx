@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 泛微e-cology
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"泛微e-cology")
+  method: GET
+  

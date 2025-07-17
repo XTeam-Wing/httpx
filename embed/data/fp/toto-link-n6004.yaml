@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: TOTOLINK
+  cpe: ''
+  product: toto-link-n6004
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"src =\"/images/login_back_zn6004.gif\"")
+  method: GET
+  

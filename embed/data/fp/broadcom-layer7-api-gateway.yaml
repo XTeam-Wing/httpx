@@ -1,0 +1,12 @@
+info:
+  category: other support system
+  company: Broadcom Inc.
+  cpe: ''
+  product: broadcom-layer7-api-gateway
+  server: unknown
+  tags: []
+rules:
+- dsl: 'icontains(banner,"Server: Layer7-API-Gateway") || icontains(banner,"Server:
+    Layer7-API-Gateway") || icontains(banner,"Layer7 API Gateway")'
+  method: GET
+  

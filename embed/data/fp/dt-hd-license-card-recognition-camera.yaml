@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: Kunming Daotai Technology Co., Ltd.
+  cpe: ''
+  product: dt-hd-license-card-recognition-camera
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"action=\"sysupgrade.php") && icontains(body,"<h3 >系统升级</h3>"))
+    || icontains(title,"高清车牌识别摄像机"))
+  method: GET
+  

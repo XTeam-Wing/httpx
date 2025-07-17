@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: blox
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"(set-cookie: ^tnnomobile)")'
+  method: GET
+  

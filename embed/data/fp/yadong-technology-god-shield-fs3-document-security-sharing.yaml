@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Yadong Software Technology Co., Ltd.
+  cpe: ''
+  product: yadong-technology-god-shield-fs3-document-security-sharing
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"神盾fs<sup>3</sup>文档安全共享系统v2.0</div>") || icontains(title,"神盾fs3文档安全共享系统v2.0"))
+  method: GET
+  

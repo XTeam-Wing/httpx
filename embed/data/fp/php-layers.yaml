@@ -1,0 +1,13 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: php-layers
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"<!-- beginning of menu header - php layers menu") || icontains(body,"<!--
+    end of menu header - php layers menu")) || icontains(body,"alt=\"powered by php
+    layers menu"))
+  method: GET
+  

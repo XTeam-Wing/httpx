@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: javashop
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"易族智汇javashop")
+  method: GET
+  

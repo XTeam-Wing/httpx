@@ -1,0 +1,11 @@
+info:
+  category: burglar alarm
+  company: Schneider Electric
+  cpe: ''
+  product: schneider-data-center-expert
+  server: nginx
+  tags: []
+rules:
+- dsl: title == "data center expert"
+  method: GET
+  

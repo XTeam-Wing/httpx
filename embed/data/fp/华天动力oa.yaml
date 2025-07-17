@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 华天动力oa
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"oaapp/webobjects/oaapp.woa") && icontains(body,"window.location")
+  method: GET
+  

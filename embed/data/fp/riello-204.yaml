@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Riello Elettronica Group
+  cpe: ''
+  product: riello-204
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"netman 204") || icontains(banner,"netman 204"))
+  method: GET
+  

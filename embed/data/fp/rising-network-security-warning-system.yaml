@@ -1,0 +1,11 @@
+info:
+  category: threat analysis && management
+  company: Beijing Rising Information Technology Co., Ltd.
+  cpe: ''
+  product: rising-network-security-warning-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"瑞星网络安全预警系统") || icontains(cert,"virus early warning system"))
+  method: GET
+  

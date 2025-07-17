@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: Open Source Matters, Inc.
+  cpe: ''
+  product: freejoomlas
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<a title=\"free joomla hosting\" href=\"http://freejoomlas.com")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: www-file-share-pro
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<td height=\"27\"><a href=\"http://www.lionmax.com\" target=\"_blank\">powered
+    by lionmax software</a></td>")
+  method: GET
+  

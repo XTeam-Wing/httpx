@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: majexpress
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"majexpress")
+  method: GET
+  

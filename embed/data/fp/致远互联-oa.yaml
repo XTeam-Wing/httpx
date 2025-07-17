@@ -1,0 +1,10 @@
+info:
+  category: oa
+  company: Beijing Zhiyuan Internet Software Co., Ltd.
+  cpe: ''
+  product: 致远互联-oa
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/seeyon/USER-DATA/IMAGES/LOGIN/login.gif") || icontains(title,"用友致远") || icontains(body,"/yyoa/") || icontains(banner,"path=/yyoa") || icontains(server,"SY8044") || icontains(body,"A6-V5企业版") 
+  

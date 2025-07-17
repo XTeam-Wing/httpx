@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: iis-export-product
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"iisexport") || icontains(banner,"iisexport"))
+  method: GET
+  

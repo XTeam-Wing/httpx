@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: Microsoft Corporation
+  cpe: ''
+  product: microsoft-ajax-cdn
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"ajax.aspnetcdn.com/ajax") || icontains(banner,"ajax.aspnetcdn.com/ajax"))
+    || icontains(banner,"ajax.aspnetcdn.com/ajax"))
+  method: GET
+  

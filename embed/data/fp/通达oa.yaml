@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 通达oa
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/images/tongda.ico")||(icontains(body,"office anywhere"))||(icontains(body,"通达oa")
+    && icontains(body,"login"))
+  method: GET
+  

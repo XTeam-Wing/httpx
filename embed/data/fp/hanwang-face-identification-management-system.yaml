@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Hanwang Technology Co., Ltd.
+  cpe: ''
+  product: hanwang-face-identification-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"汉王人脸识别管理系统")
+  method: GET
+  

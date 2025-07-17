@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: d-link-wireless-electric-cat
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"server") && icontains(banner,"dhp-")) || (icontains(banner,"server")
+    && icontains(banner,"dhp-")))
+  method: GET
+  

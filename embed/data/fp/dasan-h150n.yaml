@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: DASAN Networks, Inc.
+  cpe: ''
+  product: dasan-h150n
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"h150n tr-069 admin") || icontains(banner,"realm=\"h150n
+    tr-069 admin"))
+  method: GET
+  

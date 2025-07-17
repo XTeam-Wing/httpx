@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: tr069-client
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"server: tr069") || icontains(banner,"realm=\"tr069 client"))
+    || icontains(banner,"server: tr069")) || icontains(banner,"realm=\"tr069 client"))'
+  method: GET
+  

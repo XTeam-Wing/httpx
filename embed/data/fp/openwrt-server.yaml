@@ -1,0 +1,16 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: openwrt-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((icontains(banner,"transfer-encoding: chunked") && icontains(banner,"content-type:
+    text/plain")) && icontains(banner,"connection: close")) && icontains(banner,"http/1.1
+    403 forbidden")) || ((((icontains(body,"rejected request from rfc1918 ip to public
+    server address") && icontains(banner,"transfer-encoding: chunked")) && icontains(banner,"content-type:
+    text/plain")) && icontains(banner,"connection: close")) && icontains(banner,"http/1.1
+    403 forbidden")))'
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: cPanel, Inc.
+  cpe: ''
+  product: cpanel-whm
+  server: nginx
+  tags: []
+rules:
+- dsl: (((title == "whm 登录" && icontains(body,"cpanel, inc.")) || icontains(banner,"whostmgrsession"))
+    || icontains(banner,"whostmgrsession"))
+  method: GET
+  

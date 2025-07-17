@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: fudforum
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(body,"/adm/admloginuser.php") || icontains(banner,"fud_session_"))
+    || icontains(banner,"fud_session_")) || icontains(body,"powered by: fudforum"))'
+  method: GET
+  

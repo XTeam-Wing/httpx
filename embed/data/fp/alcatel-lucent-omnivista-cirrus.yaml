@@ -1,0 +1,11 @@
+info:
+  category: cloud computing
+  company: Alcatel-Lucent S.A.
+  cpe: ''
+  product: alcatel-lucent-omnivista-cirrus
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"/help/en-us/others/ov-cirrus_cookiepolicy.html")
+  method: GET
+  

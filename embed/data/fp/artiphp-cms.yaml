@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: artiphp-cms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<!--  fin artimenu horizontal -->")||(icontains(body,"<!-- copyright
+    artiphp, merci de respecter notre travail en laissant notre signature -->"))
+  method: GET
+  

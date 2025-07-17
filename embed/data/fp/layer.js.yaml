@@ -1,0 +1,11 @@
+info:
+  category: development framework
+  company: other
+  cpe: ''
+  product: layer.js
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"layer.open(") || icontains(body,"layer.js"))
+  method: GET
+  

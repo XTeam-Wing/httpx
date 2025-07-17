@@ -1,0 +1,11 @@
+info:
+  category: web application firewall
+  company: other
+  cpe: ''
+  product: anzuwaf
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"anzuwaf") || icontains(banner,"anzuwaf"))
+  method: GET
+  

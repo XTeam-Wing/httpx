@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: Oracle Corporation
+  cpe: ''
+  product: servlet
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"servlet") || icontains(banner,"servlet"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Vision Power Information Technology Co., Ltd.
+  cpe: ''
+  product: visionvera-监控接入服务系统
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"jquery.officesipapi.js?v=") && icontains(title,"监控接入服务系统"))
+  method: GET
+  

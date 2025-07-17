@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: powereasy(动易)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"powereasy(动易)")
+  method: GET
+  

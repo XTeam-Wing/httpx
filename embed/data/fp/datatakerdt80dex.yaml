@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: datatakerdt80dex
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"datataker dt80 dex")
+  method: GET
+  

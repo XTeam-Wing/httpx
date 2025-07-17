@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: planetadn路由器
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"planet adn路由器")
+  method: GET
+  

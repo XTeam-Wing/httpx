@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Beijing Sina Internet Information Service Co., Ltd.
+  cpe: ''
+  product: sina-sae
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"lib.sinaapp.com") || icontains(banner,"lib.sinaapp.com"))
+  method: GET
+  

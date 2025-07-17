@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: huawei-video-conferencing
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"window.location.replacepathname + \"login.html\";")||(icontains(body,"window.location.replace(pathname
+    + \"login.html\";") && icontains(title,"mcu v100r005"))
+  method: GET
+  

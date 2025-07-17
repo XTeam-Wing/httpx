@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: microsoftexcel
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"microsoft excel")
+  method: GET
+  

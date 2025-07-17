@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: VMS Software, Inc
+  cpe: ''
+  product: purveyor-encrypt-webserver
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: purveyor encrypt") || icontains(banner,"server:
+    purveyor encrypt"))'
+  method: GET
+  

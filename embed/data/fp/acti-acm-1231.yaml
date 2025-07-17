@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Jianteng Chuangda Technology Co., Ltd.
+  cpe: ''
+  product: acti-acm-1231
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"url=/cgi-bin/videoconfiguration.cgi")
+  method: GET
+  

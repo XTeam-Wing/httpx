@@ -1,0 +1,11 @@
+info:
+  category: network isolation and one-way import
+  company: 上海金电网安科技有限公司
+  cpe: ''
+  product: 金电网安-安全隔离与信息交换系统
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"金电网安安全隔离与信息交换系统") && icontains(body,"jdwa/sysconf/oem")
+  method: GET
+  

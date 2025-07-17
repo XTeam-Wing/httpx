@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Shenzhen Zhirui Software Co., Ltd.
+  cpe: ''
+  product: zhirui
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"zhirui.js") || icontains(body,"content=\"智睿软件"))
+  method: GET
+  

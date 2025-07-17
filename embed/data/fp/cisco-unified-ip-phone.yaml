@@ -1,0 +1,14 @@
+info:
+  category: voice video
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-unified-ip-phone
+  server: nginx
+  tags: []
+rules:
+- dsl: '(!icontains(body,"server: couchdb") && ((icontains(body,"cisco unified ip
+    phone") && icontains(body,"/cgi/java/serviceability?adapter=device.statistics.device"))
+    || (icontains(body,"device.statistics.configuration") && icontains(body,"cisco
+    unified ip phone"))))'
+  method: GET
+  

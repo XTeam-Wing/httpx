@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: integrating-century-epbp-management-platform
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"match = rmsie.exec(window.navigator.useragent")
+  method: GET
+  

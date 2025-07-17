@@ -1,0 +1,11 @@
+info:
+  category: electronic mail system
+  company: Beijing Xinwang Interconnection Co., Ltd.
+  cpe: ''
+  product: new-network-interconnection-news-mail-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"/webmail//cssv2/tamail.css") || icontains(body,"src=\"cgijson/getloginimg.php?img=logo"))
+  method: GET
+  

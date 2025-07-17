@@ -1,0 +1,11 @@
+info:
+  category: vpn products
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-fvs318
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"top.html") && icontains(banner,"netgear")) || icontains(banner,"fvs318"))
+  method: GET
+  

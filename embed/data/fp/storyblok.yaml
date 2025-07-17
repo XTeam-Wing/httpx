@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: storyblok
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"storyblok")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: comanche
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: comanche") || icontains(banner,"server: comanche"))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: daydao-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"$(document).attr(\"title\",\"我被修改啦.哈哈\"")||(icontains(body,"我被修改啦.哈哈"))
+  method: GET
+  

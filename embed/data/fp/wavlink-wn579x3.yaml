@@ -1,0 +1,11 @@
+info:
+  category: wireless network
+  company: Rising Technology (Shenzhen) Co., Ltd.
+  cpe: ''
+  product: wavlink-wn579x3
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"var model=\"wn579x3\"")
+  method: GET
+  

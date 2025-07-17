@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: EFM Networks Co.,Ltd.
+  cpe: ''
+  product: efm-networks-iptime-t24000
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"iptime t24000") || icontains(body,"\"/images2/login_title.t24000.gif\""))
+  method: GET
+  

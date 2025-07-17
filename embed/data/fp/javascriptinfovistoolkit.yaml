@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: javascriptinfovistoolkit
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"javascript infovis toolkit")
+  method: GET
+  

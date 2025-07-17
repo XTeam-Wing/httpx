@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Zhide Kechuang Software (Beijing) Co., Ltd.
+  cpe: ''
+  product: zidesoft-e8-archive-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"e8") && icontains(body,"http://www.zhidesoft.com/"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: database system
+  company: other
+  cpe: ''
+  product: memcache
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(protocol,"memcache")
+  method: GET
+  

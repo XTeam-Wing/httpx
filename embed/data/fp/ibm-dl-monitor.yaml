@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: IBM
+  cpe: ''
+  product: ibm-dl-monitor
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"dl_monitor") || icontains(banner,"dl_monitor"))
+  method: GET
+  

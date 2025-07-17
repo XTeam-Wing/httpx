@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: jinher-oa
+  server: Unknown
+  tags: []
+rules:
+- dsl: (icontains(body,"closewindownoask") && icontains(body,"c6/jhsoft.web.login")||(icontains(body,"jinher
+    network"))||(icontains(body,"js/passwordnew.js"))||(icontains(body,"js/passwordcommon.js"))||(icontains(title,"金和协同管理平台"))||(icontains(body,"jinher
+    software"))||(icontains(body,"(<title>金和.*</title>)"))||(icontains(body,"c6/jhsoft.web.login"))||(icontains(body,"closewindownoask"))) && status_code == 200
+  method: GET
+  

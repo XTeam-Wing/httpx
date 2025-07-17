@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: ZTE Corporation
+  cpe: ''
+  product: zte-zxhn-h367n
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"zxhn h367n")
+  method: GET
+  

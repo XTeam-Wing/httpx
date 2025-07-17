@@ -1,0 +1,12 @@
+info:
+  category: other support system
+  company: other
+  cpe: ''
+  product: wackopicko
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<h1 id=\"title\"><a href=\"/\">wackopicko.com</a></h1>") ||
+    icontains(body,"<h2>welcome to wackopicko</h2>"))
+  method: GET
+  

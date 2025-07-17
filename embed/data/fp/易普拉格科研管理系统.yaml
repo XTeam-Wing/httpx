@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 易普拉格科研管理系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"lan12-jingbian-hong")||(icontains(title,"易普拉格 科研管理系统"))
+  method: GET
+  

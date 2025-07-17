@@ -1,0 +1,17 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: rumba-cms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<center><small><a href=http://rumba.net.ru>powered by rumba cms</a></small></center></body>")||(icontains(body,"<center><small><a
+    href=http://rumbacms.com>powered by rumba cms</a></small></center></body>"))||(icontains(body,"powered
+    by <a rel=\"nofollow\" target=\"_blank\" href=\"http://rumba.net.ru/\">rumba cms</a></p>"))||(icontains(body,"<meta
+    name=\"generator\" content=\"rumba easy http://rumba.net.ru\" />"))||(icontains(body,"<meta
+    name=\"generator\" content=\"rumba easy http://rumbacms.com\" />"))||(icontains(body,"<meta
+    name=\"generator\" content=\"http://rumba.net.ru\" />"))||(icontains(body,"<meta name=\"generator\"
+    content=\"rumba wiki http://rumba.net.ru/\" />"))
+  method: GET
+  

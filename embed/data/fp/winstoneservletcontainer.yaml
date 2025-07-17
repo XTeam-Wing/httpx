@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: winstoneservletcontainer
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"winstone servlet container")
+  method: GET
+  

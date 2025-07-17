@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: ASUS Computer Co., Ltd.
+  cpe: ''
+  product: asus-zenwifi-ax
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"class=\"prod_madelname\">zenwifi ax")
+  method: GET
+  

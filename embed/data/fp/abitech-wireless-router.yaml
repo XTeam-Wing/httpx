@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Abi-Tech Solution PTE LTD.
+  cpe: ''
+  product: abitech-wireless-router
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"abi  wireless router")
+  method: GET
+  

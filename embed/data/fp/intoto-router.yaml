@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Intoto, Inc.
+  cpe: ''
+  product: intoto-router
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: intoto http server ") || icontains(banner,"server:
+    intoto http server "))'
+  method: GET
+  

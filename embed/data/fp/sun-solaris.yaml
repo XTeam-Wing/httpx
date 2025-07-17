@@ -1,0 +1,13 @@
+info:
+  category: operating system
+  company: Oracle Corporation
+  cpe: ''
+  product: sun-solaris
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((icontains(banner,"sunos") || icontains(banner,"sunos")) || icontains(banner,"sun_ssh"))
+    || icontains(banner,"sun solaris")) || icontains(banner,"sun solaris")) || icontains(banner,"login:
+    solaris 5.9 (sun)"))'
+  method: GET
+  

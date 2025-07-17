@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: EFM Networks
+  cpe: ''
+  product: iptime-a6004ns
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"iptime a6004ns") || icontains(body,"\"/images2/login_title.a6004ns.gif\""))
+  method: GET
+  

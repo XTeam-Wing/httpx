@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: apache-ofbiz
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"/images/ofbiz_powered.gif") && icontains(body,"www.ofbiz.org"))
+    || icontains(cert,"ou=apache ofbiz"))
+  method: GET
+  

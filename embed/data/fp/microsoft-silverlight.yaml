@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Microsoft Corporation
+  cpe: ''
+  product: microsoft-silverlight
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"get microsoft silverlight") && icontains(title,"app controller"))
+  method: GET
+  

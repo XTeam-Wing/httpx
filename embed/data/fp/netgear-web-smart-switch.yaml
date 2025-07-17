@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-web-smart-switch
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"netgear web smart switch")
+  method: GET
+  

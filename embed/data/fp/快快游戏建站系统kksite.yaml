@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 快快游戏建站系统kksite
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"快快游戏建站系统kksite")
+  method: GET
+  

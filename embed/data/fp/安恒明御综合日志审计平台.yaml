@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 安恒明御综合日志审计平台
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"安恒明御综合日志审计平台")
+  method: GET
+  

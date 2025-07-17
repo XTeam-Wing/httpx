@@ -1,0 +1,13 @@
+info:
+  category: voice video
+  company: Polycom, Inc.
+  cpe: ''
+  product: polycom-soundpoint
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(title,"soundpoint ip configuration utility") || icontains(banner,"server:
+    polycom soundpoint ip telephone httpd")) || icontains(banner,"server: polycom
+    soundpoint ip telephone httpd"))'
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: fnord
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"server: fnord") || icontains(banner,"realm=\"fnord"))
+    || icontains(banner,"server: fnord")) || icontains(banner,"realm=\"fnord"))'
+  method: GET
+  

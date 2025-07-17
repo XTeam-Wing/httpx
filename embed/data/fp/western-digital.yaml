@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: western-digital
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"wt263cdn")||(icontains(header,"wt263cdn"))
+  method: GET
+  

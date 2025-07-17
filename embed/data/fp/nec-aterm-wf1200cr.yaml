@@ -1,0 +1,12 @@
+info:
+  category: adsl
+  company: NEC Platforms, Ltd.
+  cpe: ''
+  product: nec-aterm-wf1200cr
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"btnguide") && icontains(body,"<br />aterm wf1200cr<br />"))
+    && icontains(body,"<div id=\"thisproduct\">"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Hanwha Techwin Co., Ltd.
+  cpe: ''
+  product: hanwha-xrn-1610s
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"$.nvr.model_name=\"xrn-1610s\"")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: includable
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"includable")
+  method: GET
+  

@@ -1,0 +1,13 @@
+info:
+  category: other enterprise application
+  company: Kentico Software, LLC
+  cpe: ''
+  product: kentico-cms
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(body,"kentico") && icontains(body,"/cmspages/getresource.ashx"))
+    || icontains(body,"content=\"kentico cms")) || icontains(banner,"cmspreferredculture"))
+    || icontains(banner,"cmspreferredculture"))
+  method: GET
+  

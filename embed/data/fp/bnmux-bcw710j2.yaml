@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Broad Net Mux.
+  cpe: ''
+  product: bnmux-bcw710j2
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"vendor: bnmux;") && icontains(banner,"bcw710j2"))'
+  method: GET
+  

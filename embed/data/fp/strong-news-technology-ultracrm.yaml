@@ -1,0 +1,12 @@
+info:
+  category: crm
+  company: Beijing Qiangxun Technology Co., Ltd.
+  cpe: ''
+  product: strong-news-technology-ultracrm
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"&nbsp;tonethink.soft&nbsp;&nbsp;all rights reserved") || icontains(title,"ultracrm
+    by tonethink.soft"))
+  method: GET
+  

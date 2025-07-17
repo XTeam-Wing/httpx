@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-wac360
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"h3c wac360")
+  method: GET
+  

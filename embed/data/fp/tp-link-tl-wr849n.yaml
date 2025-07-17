@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Pullian Technology Co., Ltd.
+  cpe: ''
+  product: tp-link-tl-wr849n
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"tl-wr849n") && icontains(body,"(url.indexof(\"tplinklogin.net\")"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Hanwha Techwin Co., Ltd.
+  cpe: ''
+  product: hanwha-spe-400
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"var defaultfilename = \"spe-400\"")
+  method: GET
+  

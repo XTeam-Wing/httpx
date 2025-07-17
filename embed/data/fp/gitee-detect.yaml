@@ -1,0 +1,9 @@
+info:
+  author: sayhi
+  description: 'gitee was detected.'
+  tags: []
+  product: gitee
+  category: cms
+rules:
+- method: GET
+  dsl: contains(body, "window.GITEE_ENT_API") || contains(body, "window.GITEE_PREMIUM_URL") || contains(body, "window.GITEE_GO_REMOTE_URL")

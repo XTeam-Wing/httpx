@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: windriver
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"server: windriver-webserver")||(icontains(header,"server: windriver-webserver"))'
+  method: GET
+  

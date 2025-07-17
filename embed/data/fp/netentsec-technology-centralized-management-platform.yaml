@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Beijing Wangkang Technology Co., Ltd.
+  cpe: ''
+  product: netentsec-technology-centralized-management-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"网康集中管理平台")
+  method: GET
+  

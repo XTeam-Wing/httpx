@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: DefensePro
+  cpe: ''
+  product: defensepro-product
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"defensepro with ") && icontains(protocol,"snmp"))
+  method: GET
+  

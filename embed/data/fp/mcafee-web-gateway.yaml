@@ -1,0 +1,12 @@
+info:
+  category: antivirus gateway
+  company: McAfee, Inc.
+  cpe: ''
+  product: mcafee-web-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(cert,"mcafee web gateway") || icontains(title,"mcafee web gateway"))
+    || icontains(banner,"mcafee web gateway")) || icontains(banner,"mcafee web gateway"))
+  method: GET
+  

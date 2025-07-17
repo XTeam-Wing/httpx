@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 光阴科技社区矫正综合监管平台
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"光阴科技 社区矫正综合监管平台")
+  method: GET
+  

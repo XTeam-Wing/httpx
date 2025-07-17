@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 润尼尔虚拟仿真实验教学
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"润尼尔 虚拟仿真实验教学")
+  method: GET
+  

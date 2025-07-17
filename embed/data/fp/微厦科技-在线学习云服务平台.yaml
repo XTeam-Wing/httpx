@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Zhengzhou Weisha Computer Technology Co., Ltd.
+  cpe: ''
+  product: 微厦科技-在线学习云服务平台
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/Utility/CoreScripts/Widget.js")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 锐捷rg-wall1600系列下一代防火墙
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"锐捷 rg-wall 1600系列下一代防火墙")
+  method: GET
+  

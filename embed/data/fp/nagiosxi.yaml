@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: nagiosxi
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"nagios xi") && icontains(body,"nagiosxi") && icontains(body,"nagios")||(icontains(title,"nagios
+    xi"))
+  method: GET
+  

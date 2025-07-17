@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: shop7z网上购物系统至尊版
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"shop7z网上购物系统至尊版")
+  method: GET
+  

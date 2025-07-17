@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Chengdu Yiwei Cloud Service Information Technology Co., Ltd.
+  cpe: ''
+  product: yi-wei-help-station-yiwei-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"易维平台</h1>")
+  method: GET
+  

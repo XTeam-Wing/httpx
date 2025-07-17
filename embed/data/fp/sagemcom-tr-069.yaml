@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Sagemcom Group
+  cpe: ''
+  product: sagemcom-tr-069
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"sagemcom tr-069\"") || icontains(banner,"realm=\"sagemcom
+    tr-069\""))
+  method: GET
+  

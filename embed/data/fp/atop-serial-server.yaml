@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Atop Technologies, Inc.
+  cpe: ''
+  product: atop-serial-server
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"atop ") && icontains(protocol,"snmp"))
+  method: GET
+  

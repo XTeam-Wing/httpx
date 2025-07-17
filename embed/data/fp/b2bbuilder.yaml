@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Shanghai Yuanfeng Information Technology Co., Ltd.
+  cpe: ''
+  product: b2bbuilder
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"translatebuttonid = \"b2bbuilder") || icontains(body,"content=\"b2bbuilder"))
+  method: GET
+  

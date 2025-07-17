@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Shenzhen Jixiang Tengda Technology Co., Ltd.
+  cpe: ''
+  product: tenda-ac15
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"tenda ac15")
+  method: GET
+  

@@ -1,0 +1,13 @@
+info:
+  category: industrial control
+  company: Phoenix Contact GmbH & Co. KG
+  cpe: ''
+  product: phoenix-contact-device
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"server: powered by spidercontrol") || icontains(banner,"server:
+    powered by spidercontrol")) || (!icontains(banner,"couchdb") && icontains(banner,"server:
+    phoenix-contact"))) || icontains(banner,"server: phoenix-contact"))'
+  method: GET
+  

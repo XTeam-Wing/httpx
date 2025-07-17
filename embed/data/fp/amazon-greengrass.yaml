@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Amazon.com, Inc.
+  cpe: ''
+  product: amazon-greengrass
+  server: unknown
+  tags: []
+rules:
+- dsl: 'icontains(cert,"greengrass") && icontains(cert,"Organization: Amazon")'
+  method: GET
+  

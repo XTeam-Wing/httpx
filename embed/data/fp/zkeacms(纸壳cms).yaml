@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: zkeacms(纸壳cms)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"zkeacms")||(icontains(title,"zkeacms"))||(icontains(body,"纸壳cms"))||(icontains(title,"纸壳cms"))
+  method: GET
+  

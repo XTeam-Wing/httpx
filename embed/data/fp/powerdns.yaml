@@ -1,0 +1,12 @@
+info:
+  category: dns device
+  company: PowerDNS
+  cpe: ''
+  product: powerdns
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"powerdns") && icontains(protocol,"dns")) || icontains(banner,"basic
+    realm=\"powerdns"))
+  method: GET
+  

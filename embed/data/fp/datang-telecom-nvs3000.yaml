@@ -1,0 +1,11 @@
+info:
+  category: cloud computing
+  company: Datang Telecom Technology Co., Ltd.
+  cpe: ''
+  product: datang-telecom-nvs3000
+  server: nginx
+  tags: []
+rules:
+- dsl: (title == "综合视频监控平台" && icontains(body,"nvs3000综合视频监控平台"))
+  method: GET
+  

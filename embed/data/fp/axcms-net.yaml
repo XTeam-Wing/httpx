@@ -1,0 +1,15 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: axcms-net
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<div style=\"text-align:center;width:100%;\"><a href=\"http://axcms.net\"
+    target=\"_blank\"><img src=\"http://axcms.net/upload/poweredby_150x25_13871.png\"
+    height=\"25\" width=\"150\" alt=\"powered by axcms.net\" style=\"height:25px;width:150px;border-width:0px;\"
+    /></a></div></form>")||(icontains(body,"<!-- build and published by axcms.net | powered
+    by axinom-->"))
+  method: GET
+  

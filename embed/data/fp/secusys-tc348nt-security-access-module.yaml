@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: SECUSYS GROUP.
+  cpe: ''
+  product: secusys-tc348nt-security-access-module
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"tc348nt pannel")
+  method: GET
+  

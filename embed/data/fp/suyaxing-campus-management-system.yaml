@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: suyaxing-campus-management-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/ws2004/public/")
+  method: GET
+  

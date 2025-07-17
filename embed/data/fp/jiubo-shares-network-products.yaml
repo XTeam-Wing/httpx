@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Guangdong Jiubo Technology Co., Ltd.
+  cpe: ''
+  product: jiubo-shares-network-products
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"/cgibin?pageid=92")
+  method: GET
+  

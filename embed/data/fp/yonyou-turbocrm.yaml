@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: yonyou-turbocrm
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"用友turbocrm")||(icontains(body,"turboui.js"))
+  method: GET
+  

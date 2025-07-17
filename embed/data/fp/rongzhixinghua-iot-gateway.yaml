@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Beijing Rongzhixinghua Technology Co., Ltd.
+  cpe: ''
+  product: rongzhixinghua-iot-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"物联网网关-北京融智兴华科技有限公司")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Shenzhen Jixiang Tengda Technology Co., Ltd.
+  cpe: ''
+  product: tenda-ch22
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"var sys_target = \"ch22\"")
+  method: GET
+  

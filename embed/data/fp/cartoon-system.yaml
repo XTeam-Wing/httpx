@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: other
+  cpe: ''
+  product: cartoon-system
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"document.all.txtPassword.value = passCookie")
+  method: GET
+  

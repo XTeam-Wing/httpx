@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: xitami-ftp
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"xitami ftp server")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: EFM Networks Co.,Ltd.
+  cpe: ''
+  product: iptime-nx505
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"\"/images2/login_title.nx505.gif\"")
+  method: GET
+  

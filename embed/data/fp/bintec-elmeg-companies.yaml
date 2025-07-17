@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: bintec elmeg GmbH
+  cpe: ''
+  product: bintec-elmeg-companies
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"bintec ")
+  method: GET
+  

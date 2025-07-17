@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: Honeywell International Inc.
+  cpe: ''
+  product: heitel-digital-video-device
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: heitel gmbh web server") || icontains(banner,"server:
+    heitel gmbh web server"))'
+  method: GET
+  

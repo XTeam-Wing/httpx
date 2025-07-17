@@ -1,0 +1,12 @@
+info:
+  category: adsl
+  company: Hitron Technologies Inc.
+  cpe: ''
+  product: hitron-cable-modem
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"hitron technologies") && icontains(banner,"cable modem"))
+    && icontains(banner,"docsis "))
+  method: GET
+  

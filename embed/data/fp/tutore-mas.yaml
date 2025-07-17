@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Beijing Tops Information Technology Co., Ltd.
+  cpe: ''
+  product: tutore-mas
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"x-mas-server") || icontains(banner,"x-mas-server"))
+  method: GET
+  

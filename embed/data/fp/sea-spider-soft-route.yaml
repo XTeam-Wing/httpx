@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Wuhan Sea Spider Network Technology Co., Ltd.
+  cpe: ''
+  product: sea-spider-soft-route
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"action=\"login.pl\" method=\"post\"  onsubmit=\"encryptpasswd()")
+  method: GET
+  

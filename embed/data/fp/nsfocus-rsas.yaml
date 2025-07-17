@@ -1,0 +1,14 @@
+info:
+  category: vulnerability scanning
+  company: Beijing Shenzhou NSFOCUS Information Security Technology Co., Ltd.
+  cpe: ''
+  product: nsfocus-rsas
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((((icontains(cert,"nsfocus rsas") || icontains(banner,"server: nsfoucs"))
+    || icontains(banner,"server: nsfoucs")) || (icontains(banner,"aurorasessid=")
+    && icontains(banner,"nsfocus"))) || (icontains(banner,"aurorasessid=") && icontains(banner,"nsfocus")))
+    || icontains(title,"aurora登录")) || title == "nsfocus rsas") || icontains(body,"/login_logo_rsas_zh_cn.png"))'
+  method: GET
+  

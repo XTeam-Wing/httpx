@@ -1,0 +1,14 @@
+info:
+  category: other enterprise application
+  company: cisco
+  cpe: ''
+  product: cisco-prime-infrastructure
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((((icontains(title,"cisco  prime infrastructure") || icontains(banner,"server:
+    prime")) || icontains(banner,"server: prime")) || icontains(cert,"prime infra"))
+    || icontains(body,"webacs/welcomeaction.do")) || icontains(body,"/webacs/lib/xwt/themes/prime/prime-xwt.css"))
+    || icontains(body,"<div class=\"xwtproductname\" >cisco prime infrastructure"))'
+  method: GET
+  

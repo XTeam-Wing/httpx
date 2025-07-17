@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: Hitachi
+  cpe: ''
+  product: hitachi-maintenance-utility
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"__gwt_historyframe") && icontains(title,"maintenance utility"))
+  method: GET
+  

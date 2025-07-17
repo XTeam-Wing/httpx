@@ -1,0 +1,21 @@
+info:
+  category: cameras && surveillance
+  company: VIVOTEK Inc.
+  cpe: ''
+  product: vivotek-network-camera
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && ((((icontains(banner,"network
+    camera ftp server") || icontains(banner,"server: wireless network camera")) ||
+    icontains(banner,"server: network camera with pan tilt")) || icontains(banner,"server:
+    network dome camera")) || icontains(banner,"server: vivotek network camera")))
+    || ((((!icontains(body,"server: couchdb") && !icontains(banner,"drupal")) && !icontains(banner,"couchdb"))
+    && !icontains(banner,"microsoft-iis")) && (((((icontains(title,"vivotek - network
+    camera") || icontains(body,"<div id=\"logo_icon\"><a href=\"http://www.vivotek.com/\"
+    target=\"_blank\"><img alt=\"logo\" src=\"pic/logo.gif\"></a></div>")) || icontains(banner,"server:
+    wireless network camera")) || icontains(banner,"server: network camera with pan
+    tilt")) || icontains(banner,"server: network dome camera")) || icontains(banner,"server:
+    vivotek network camera"))))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 齐博cms(qibosoft)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"qibosoft")||(icontains(title,"qibosoft"))
+  method: GET
+  

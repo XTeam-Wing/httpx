@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: NetComm Limited
+  cpe: ''
+  product: netcomm-gurnv5
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"gurnv5")
+  method: GET
+  

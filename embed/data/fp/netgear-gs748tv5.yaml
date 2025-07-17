@@ -1,0 +1,12 @@
+info:
+  category: switch
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-gs748tv5
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"netgear gs748tv5") || icontains(banner,"gs748tv5")) || icontains(body,"gs748tv5image
+    spacer50percent topalign righthalign"))
+  method: GET
+  

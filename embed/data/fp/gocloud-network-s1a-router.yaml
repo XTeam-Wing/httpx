@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Shanghai Guoyun Information Technology Co., Ltd.
+  cpe: ''
+  product: gocloud-network-s1a-router
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"gocloud s1a series router")
+  method: GET
+  

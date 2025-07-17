@@ -1,0 +1,17 @@
+info:
+  category: service
+  company: Red Hat, Inc.
+  cpe: ''
+  product: jboss
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((!icontains(banner,"couchdb") && !icontains(banner,"server: jboss-eap"))
+    && icontains(banner,"server: jboss")) || (((((!icontains(banner,"reecam ip camera")
+    && !icontains(body,"28ze")) && !icontains(banner,"x-generator: drupal")) && !icontains(banner,"routers"))
+    && !icontains(banner,"couchdb")) && icontains(server,"jboss"))) || ((((!icontains(banner,"reecam
+    ip camera") && !icontains(banner,"drupal")) && !icontains(banner,"couchdb")) &&
+    !icontains(banner,"jboss-eap")) && (!icontains(title,"welcome to jboss as") &&
+    icontains(title,"welcome to jboss"))))'
+  method: GET
+  

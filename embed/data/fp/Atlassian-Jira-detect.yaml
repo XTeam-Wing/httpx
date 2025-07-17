@@ -1,0 +1,14 @@
+info:
+  company: Atlassian
+  product: atlassian jira
+  category: 内容管理系统cms
+  description: ''
+  author: 哆啦A梦
+  tags:
+  - tech
+  - jira
+  - atlassian-jira
+rules:
+- method: GET
+  
+  dsl: contains(body, "<a href=\"http://www.atlassian.com/software/jira\">Atlassian JIRA</a>") || contains(body, "<input type=\"hidden\" title=\"JiraVersion\"")

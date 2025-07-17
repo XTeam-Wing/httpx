@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: basic-php-events-lister
+  server: nginx
+  tags: []
+rules:
+- dsl: 'icontains(body,"powered by: <a href=\"http://www.mevin.com/\">")'
+  method: GET
+  

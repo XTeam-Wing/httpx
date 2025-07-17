@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: totalsoft-lib
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"totalsoft_lib")
+  method: GET
+  

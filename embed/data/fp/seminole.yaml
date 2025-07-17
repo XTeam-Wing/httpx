@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: GladeSoft, Inc.
+  cpe: ''
+  product: seminole
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: seminole") || icontains(banner,"server: seminole"))'
+  method: GET
+  

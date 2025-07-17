@@ -1,0 +1,11 @@
+info:
+  category: electronic mail system
+  company: other
+  cpe: ''
+  product: thundermail
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"thundermail ") || icontains(banner,"thundermail"))
+  method: GET
+  

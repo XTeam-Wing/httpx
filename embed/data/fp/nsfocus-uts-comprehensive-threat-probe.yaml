@@ -1,0 +1,11 @@
+info:
+  category: threat analysis && management
+  company: Beijing Shenzhou NSFOCUS Information Security Technology Co., Ltd.
+  cpe: ''
+  product: nsfocus-uts-comprehensive-threat-probe
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"uts ") && icontains(body,"/uts_v2/webstatic/"))
+  method: GET
+  

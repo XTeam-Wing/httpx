@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: hexo博客
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"hexo博客")
+  method: GET
+  

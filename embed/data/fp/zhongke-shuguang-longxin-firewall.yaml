@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Dawn Information Industry Co., Ltd.
+  cpe: ''
+  product: zhongke-shuguang-longxin-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"class=\"login_main_text\">曙光龙芯防火墙</div>")
+  method: GET
+  
