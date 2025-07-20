@@ -279,10 +279,7 @@ func (t *TechDetecter) Detect(inputURL, requestPath, requestMethod, faviconMMH3 
 			}
 			if result == true {
 				// 使用 LoadOrStore 确保只有第一个成功的 goroutine 存储结果
-				if _, loaded := detectedProducts.LoadOrStore(product, true); !loaded {
-					gologger.Debug().Msgf("tech detect success, product:%s, url:%s, path:%s, method:%s",
-						product, inputURL, requestPath, requestMethod)
-				}
+				detectedProducts.LoadOrStore(product, true)
 				break
 			}
 		}
