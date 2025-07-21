@@ -231,9 +231,6 @@ func (t *TechDetecter) Detect(inputURL, requestPath, requestMethod, faviconMMH3 
 
 	var detectedProducts sync.Map
 
-	// var eg errgroup.Group
-	// eg.SetLimit(100)
-
 	// 获取所有产品名称（线程安全）
 	t.compiledMutex.RLock()
 	productNames := make([]string, 0, len(t.ProductRules))
@@ -249,27 +246,22 @@ func (t *TechDetecter) Detect(inputURL, requestPath, requestMethod, faviconMMH3 
 		}
 		product := product // capture product variable
 
-		// eg.Go(func() error {
-		// 在 goroutine 内部检查是否已经检测到该产品
 		if _, exists := detectedProducts.Load(product); exists {
 			continue
 		}
 
-		// 在 goroutine 内部获取编译后的规则，避免变量捕获问题
 		compiledRules := t.getCompiledExpressions(product)
 		if len(compiledRules) == 0 {
 			continue
 		}
 
-		// 对于每个产品，检查其编译后的规则
 		for _, compiledRule := range compiledRules {
 			if compiledRule == nil || compiledRule.Expression == nil {
 				continue
 			}
 
-			// 检查当前请求的方法和路径是否匹配规则
 			if !t.pathMatches(requestPath, requestMethod, compiledRule) {
-				continue // 路径或方法不匹配，跳过此规则
+				continue
 			}
 
 			result, err := compiledRule.Expression.Evaluate(data)
@@ -283,13 +275,7 @@ func (t *TechDetecter) Detect(inputURL, requestPath, requestMethod, faviconMMH3 
 				break
 			}
 		}
-
-		// })
 	}
-
-	// if err := eg.Wait(); err != nil {
-	// 	gologger.Error().Msgf("tech detect error:%s", err.Error())
-	// }
 
 	// 收集结果
 	var products []string

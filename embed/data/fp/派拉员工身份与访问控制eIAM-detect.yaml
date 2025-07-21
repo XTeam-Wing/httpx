@@ -7,5 +7,5 @@ info:
 rules:
 - method: GET
   path:
-  - '{{BaseURL}}'
+  - '/'
   dsl: contains(body, "/esc-sso/oauth2.0/authorize") && contains(body, "ParaView version") || contains(header, "para-node")

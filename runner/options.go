@@ -316,13 +316,14 @@ type Options struct {
 	Protocol                  string
 
 	// Optional pre-created objects to reduce allocations
-	Wappalyzer      *wappalyzer.Wappalyze
-	Networkpolicy   *networkpolicy.NetworkPolicy
-	CDNCheckClient  *cdncheck.Client
-	TechRule        string
-	techRuleURIs    map[string][]string
-	OutputExtractJS bool
-	ChromePath      string
+	Wappalyzer       *wappalyzer.Wappalyze
+	Networkpolicy    *networkpolicy.NetworkPolicy
+	CDNCheckClient   *cdncheck.Client
+	TechRule         string
+	DetectTechByPath bool
+	techRuleURIs     map[string][]string
+	OutputExtractJS  bool
+	ChromePath       string
 }
 
 // ParseOptions parses the command line options for application
@@ -354,6 +355,7 @@ func ParseOptions() *Options {
 		flagSet.DynamicVarP(&options.ResponseBodyPreviewSize, "body-preview", "bp", 100, "display first N characters of response body"),
 		flagSet.BoolVarP(&options.OutputServerHeader, "web-server", "server", false, "display server name"),
 		flagSet.BoolVarP(&options.TechDetect, "tech-detect", "td", false, "display technology in use based on wappalyzer dataset"),
+		flagSet.BoolVarP(&options.DetectTechByPath, "detect-tech-by-path", "dtp", false, "detect technology by path"),
 		flagSet.StringVarP(&options.TechRule, "tech-rule", "tr", "", "yaml rule file to use for technology detection"),
 		flagSet.BoolVar(&options.OutputMethod, "method", false, "display http request method"),
 		flagSet.BoolVar(&options.OutputWebSocket, "websocket", false, "display server using websocket"),

@@ -1554,6 +1554,9 @@ retry:
 	}
 	gologger.Debug().Msgf("Sending request to %s with method %s", URL.String(), req.Method)
 	resp, err := hp.Do(req, httpx.UnsafeOptions{URIPath: reqURI})
+	if err != nil {
+		return Result{URL: URL.String(), Input: origInput, Err: err}
+	}
 	if r.options.ShowStatistics {
 		r.stats.IncrementCounter("requests", 1)
 	}
@@ -1938,9 +1941,7 @@ retry:
 	}
 
 	var technologies []string
-	//var technologyDetails = make(map[string]wappalyzer.AppInfo)
 	if scanopts.TechDetect {
-		// 对于主请求，使用方法和请求URI
 		product, err := r.tech.Detect(fullURL, "/", method, faviconMMH3, resp)
 		if err != nil {
 			gologger.Warning().Msgf("detect tech error: %s", err)
@@ -1949,73 +1950,72 @@ retry:
 			technologies = append(technologies, product...)
 			r.tech.AddMatchedProduct(fullURL, product)
 		}
-		var mu sync.Mutex
-		var ctx, cancel = context.WithCancel(context.Background())
-		defer cancel()
+		if r.options.DetectTechByPath {
+			var mu sync.Mutex
+			var ctx, cancel = context.WithCancel(context.Background())
+			defer cancel()
 
-		eg, _ := errgroup.WithContext(ctx)
-		eg.SetLimit(10)
-		for method, paths := range r.options.techRuleURIs {
-			for _, path := range paths {
-				if path == "" || path == "/" {
-					continue // skip favicon.ico and empty paths
+			eg, _ := errgroup.WithContext(ctx)
+			eg.SetLimit(10)
+			for method, paths := range r.options.techRuleURIs {
+				for _, path := range paths {
+					if path == "" || path == "/" {
+						continue // skip favicon.ico and empty paths
+					}
+					path := path
+					method := method
+					u := URL.Clone()
+					eg.Go(func() error {
+						if err := u.MergePath(path, scanopts.Unsafe); err != nil {
+							gologger.Debug().Msgf("failed to merge paths of url %v and %v", u.String(), path)
+							return err
+						}
+						techReq, err := hp.NewRequest(method, u.String())
+						if err != nil {
+							gologger.Warning().Msgf("failed to create request for %s: %s", u.String(), err)
+							return err
+						}
+						gologger.Debug().Msgf("Sending technology detection request to %s with method %s", u.String(), techReq.Method)
+						techResp, err := hp.Do(techReq, httpx.UnsafeOptions{URIPath: reqURI})
+						if r.options.ShowStatistics {
+							r.stats.IncrementCounter("requests", 1)
+						}
+						if err != nil {
+							gologger.Warning().Msgf("tech detect error: %s", err)
+							return err
+						}
+						product, err := r.tech.Detect(fullURL, path, method, "", techResp)
+						if err != nil {
+							gologger.Warning().Msgf("detect tech error: %s", err)
+							return err
+						}
+						if len(product) > 0 {
+							mu.Lock()
+							technologies = append(technologies, product...)
+							cancel()
+							mu.Unlock()
+						}
+						return nil
+					})
 				}
-				path := path
-				method := method
-				u := URL.Clone()
-				eg.Go(func() error {
-					if err := u.MergePath(path, scanopts.Unsafe); err != nil {
-						gologger.Debug().Msgf("failed to merge paths of url %v and %v", u.String(), path)
-						return err
-					}
-					techReq, err := hp.NewRequest(method, u.String())
-					if err != nil {
-						gologger.Warning().Msgf("failed to create request for %s: %s", u.String(), err)
-						return err
-					}
-					techResp, err := hp.Do(techReq, httpx.UnsafeOptions{URIPath: reqURI})
-					if r.options.ShowStatistics {
-						r.stats.IncrementCounter("requests", 1)
-					}
-					if err != nil {
-						gologger.Warning().Msgf("tech detect error: %s", err)
-						return err
-					}
-					product, err := r.tech.Detect(fullURL, path, method, "", techResp)
-					if err != nil {
-						gologger.Warning().Msgf("detect tech error: %s", err)
-						return err
-					}
-					if len(product) > 0 {
-						mu.Lock()
-						technologies = append(technologies, product...)
-						// Cancel other goroutines once technology is found
-						cancel()
-						mu.Unlock()
-					}
-					return nil
-				})
-
 			}
-		}
-		if err := eg.Wait(); err != nil {
-			gologger.Warning().Msgf("error while detecting technologies: %s", err)
-		}
-
-		if len(technologies) > 0 {
-			sort.Strings(sliceutil.Dedupe(technologies))
-			technologies := strings.Join(technologies, ",")
-
-			builder.WriteString(" [")
-			if !scanopts.OutputWithNoColor {
-				builder.WriteString(aurora.Magenta(technologies).String())
-			} else {
-				builder.WriteString(technologies)
+			if err := eg.Wait(); err != nil {
+				gologger.Warning().Msgf("error while detecting technologies: %s", err)
 			}
-			builder.WriteRune(']')
 		}
 	}
+	if len(technologies) > 0 {
+		sort.Strings(sliceutil.Dedupe(technologies))
+		technologies := strings.Join(technologies, ",")
 
+		builder.WriteString(" [")
+		if !scanopts.OutputWithNoColor {
+			builder.WriteString(aurora.Magenta(technologies).String())
+		} else {
+			builder.WriteString(technologies)
+		}
+		builder.WriteRune(']')
+	}
 	var extractRegex []string
 	// extract regex
 	var extractResult = map[string][]string{}
