@@ -2,7 +2,7 @@ info:
   category: service
   company: Apache Software Foundation.
   cpe: ''
-  product: apache http server
+  product: apache
   server: nginx
   tags: []
 rules:

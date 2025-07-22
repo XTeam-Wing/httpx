@@ -8,4 +8,5 @@ rules:
 - method: GET
   path:
   - /?s=sssss&c=aaaa&a=a&m=a'
-  dsl: 'contains_all(body, "ThinkPHP","/Library/Think/","{ Fast & Simple OOP PHP Framework } -- [ WE CAN DO IT JUST THINK ]","/thinkphp/library/think/") || contains(header, "X-Powered-By: ThinkPHP")'
+  dsl: 'contains_all(body, "ThinkPHP","/Library/Think/","{ Fast & Simple OOP PHP Framework } -- [ WE CAN DO IT JUST THINK ]","/thinkphp/library/think/") || contains(header, "X-Powered-By: ThinkPHP") || contains(body,"十年磨一剑-为API开发设计的高性能框架")'
+- dsl: contains_all(body,"十年磨一剑 - 为API开发设计的高性能框架","https://e.topthink.com/Public/static/client.js")
