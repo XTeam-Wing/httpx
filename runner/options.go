@@ -356,6 +356,7 @@ func ParseOptions() *Options {
 		flagSet.BoolVarP(&options.OutputServerHeader, "web-server", "server", false, "display server name"),
 		flagSet.BoolVarP(&options.TechDetect, "tech-detect", "td", false, "display technology in use based on wappalyzer dataset"),
 		flagSet.BoolVarP(&options.TechDetectByPath, "detect-tech-by-path", "dtp", false, "detect technology by path"),
+		flagSet.BoolVarP(&options.UseInternalTech, "use-internal-tech", "uit", false, "use internal technology detection"),
 		flagSet.StringVarP(&options.TechRulePath, "tech-rule", "tr", "", "yaml rule file to use for technology detection"),
 		flagSet.BoolVar(&options.OutputMethod, "method", false, "display http request method"),
 		flagSet.BoolVar(&options.OutputWebSocket, "websocket", false, "display server using websocket"),
