@@ -28,7 +28,6 @@ import (
 	fileutil "github.com/projectdiscovery/utils/file"
 	sliceutil "github.com/projectdiscovery/utils/slice"
 	stringsutil "github.com/projectdiscovery/utils/strings"
-	updateutils "github.com/projectdiscovery/utils/update"
 	wappalyzer "github.com/projectdiscovery/wappalyzergo"
 	"golang.org/x/exp/maps"
 )
@@ -583,16 +582,16 @@ func ParseOptions() *Options {
 		os.Exit(0)
 	}
 
-	if !options.DisableUpdateCheck {
-		latestVersion, err := updateutils.GetToolVersionCallback("httpx", version)()
-		if err != nil {
-			if options.Verbose {
-				gologger.Error().Msgf("httpx version check failed: %v", err.Error())
-			}
-		} else {
-			gologger.Info().Msgf("Current httpx version %v %v", version, updateutils.GetVersionDescription(version, latestVersion))
-		}
-	}
+	// if !options.DisableUpdateCheck {
+	// 	latestVersion, err := updateutils.GetToolVersionCallback("httpx", version)()
+	// 	if err != nil {
+	// 		if options.Verbose {
+	// 			gologger.Error().Msgf("httpx version check failed: %v", err.Error())
+	// 		}
+	// 	} else {
+	// 		gologger.Info().Msgf("Current httpx version %v %v", version, updateutils.GetVersionDescription(version, latestVersion))
+	// 	}
+	// }
 
 	if err := options.ValidateOptions(); err != nil {
 		gologger.Fatal().Msgf("%s\n", err)
