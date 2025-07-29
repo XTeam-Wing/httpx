@@ -119,12 +119,12 @@ func New(options *Options) (*Runner, error) {
 	// }
 
 	if options.TechDetect {
-		err := runner.tech.Init(options.TechRule)
+		err := runner.tech.Init(options.TechRulePath)
 		if err != nil {
 			return nil, errors.Wrap(err, "could not initialize tech detection")
 		}
 		if runner.tech.URIs != nil {
-			runner.options.techRuleURIs = runner.tech.URIs
+			runner.options.techDetectURIs = runner.tech.URIs
 		}
 	}
 
@@ -1950,14 +1950,24 @@ retry:
 			technologies = append(technologies, product...)
 			r.tech.AddMatchedProduct(fullURL, product)
 		}
-		if r.options.DetectTechByPath {
+		product, err = r.tech.DetectNuclei(fullURL, "/", method, faviconMMH3, resp)
+		if err != nil {
+			gologger.Warning().Msgf("nuclei detect tech error: %s", err)
+		}
+		if len(product) > 0 {
+			technologies = append(technologies, product...)
+			r.tech.AddMatchedProduct(fullURL, product)
+		}
+
+		if r.options.TechDetectByPath {
 			var mu sync.Mutex
 			var ctx, cancel = context.WithCancel(context.Background())
 			defer cancel()
 
 			eg, _ := errgroup.WithContext(ctx)
 			eg.SetLimit(10)
-			for method, paths := range r.options.techRuleURIs {
+			for method, paths := range r.options.techDetectURIs {
+				gologger.Debug().Msgf("Running technology detection for method %s with path %d", method, len(paths))
 				for _, path := range paths {
 					if path == "" || path == "/" {
 						continue // skip favicon.ico and empty paths
@@ -1975,7 +1985,7 @@ retry:
 							gologger.Warning().Msgf("failed to create request for %s: %s", u.String(), err)
 							return err
 						}
-						gologger.Debug().Msgf("Sending technology detection request to %s with method %s", u.String(), techReq.Method)
+						// gologger.Debug().Msgf("Sending technology detection request to %s with method %s", u.String(), techReq.Method)
 						techResp, err := hp.Do(techReq, httpx.UnsafeOptions{URIPath: reqURI})
 						if r.options.ShowStatistics {
 							r.stats.IncrementCounter("requests", 1)
@@ -1988,6 +1998,16 @@ retry:
 						if err != nil {
 							gologger.Warning().Msgf("detect tech error: %s", err)
 							return err
+						}
+						if len(product) > 0 {
+							mu.Lock()
+							technologies = append(technologies, product...)
+							cancel()
+							mu.Unlock()
+						}
+						product, err = r.tech.DetectNuclei(fullURL, path, method, faviconMMH3, techResp)
+						if err != nil {
+							gologger.Warning().Msgf("nuclei detect tech error: %s", err)
 						}
 						if len(product) > 0 {
 							mu.Lock()
@@ -2205,7 +2225,7 @@ retry:
 		headlessBody    string
 	)
 	var pHash uint64
-	if scanopts.Screenshot && len(r.options.techRuleURIs) == 0 {
+	if scanopts.Screenshot && len(r.options.techDetectURIs) == 0 {
 		screenshotBytes, headlessBody, err = r.browser.ScreenshotWithBody(fullURL, time.Duration(scanopts.ScreenshotTimeout)*time.Second)
 		if err != nil {
 			gologger.Warning().Msgf("Could not take screenshot '%s': %s", fullURL, err)
@@ -2226,12 +2246,19 @@ retry:
 			if r.options.TechDetect && headlessBody != "" {
 				newResp := resp
 				newResp.Data = []byte(headlessBody)
-				if r.options.TechRule != "" {
+				if r.options.TechRulePath != "" {
 					products, err := r.tech.Detect(fullURL, "/", "GET", "", newResp)
 					if err != nil {
 						gologger.Warning().Msgf("detect tech error: %s", err)
 					}
+					if len(products) > 0 {
+						technologies = append(technologies, products...)
+					}
 
+					products, err = r.tech.DetectNuclei(fullURL, "/", "GET", "", newResp)
+					if err != nil {
+						gologger.Warning().Msgf("detect tech error: %s", err)
+					}
 					if len(products) > 0 {
 						technologies = append(technologies, products...)
 					}

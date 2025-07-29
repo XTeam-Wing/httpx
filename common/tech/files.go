@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 )
 
-func Exists(path string) bool {
+func exists(path string) bool {
 	_, err := os.Stat(path)
 	if err != nil {
 		return os.IsExist(err)
@@ -13,7 +13,7 @@ func Exists(path string) bool {
 	return true
 }
 
-func IsDir(path string) bool {
+func isDir(path string) bool {
 	s, err := os.Stat(path)
 	if err != nil {
 		return false
@@ -21,20 +21,20 @@ func IsDir(path string) bool {
 	return s.IsDir()
 }
 
-func IsFile(path string) bool {
-	return !IsDir(path)
+func isFile(path string) bool {
+	return !isDir(path)
 }
 
-func ReadDir(path string) []string {
+func readDir(path string) []string {
 	var files []string
 	err := filepath.Walk(path, func(path string, info os.FileInfo, err error) error {
-		if IsFile(path) {
+		if isFile(path) {
 			files = append(files, path)
 		}
 		return nil
 	})
 	if err != nil {
-		panic(err)
+		return nil
 	}
 	return files
 }

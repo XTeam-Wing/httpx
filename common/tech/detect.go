@@ -15,6 +15,10 @@ import (
 	"github.com/projectdiscovery/gologger"
 	"github.com/projectdiscovery/httpx/common/httpx"
 	"github.com/projectdiscovery/httpx/embed"
+	"github.com/projectdiscovery/nuclei/v2/pkg/operators"
+	"github.com/projectdiscovery/nuclei/v2/pkg/operators/matchers"
+	"github.com/projectdiscovery/nuclei/v2/pkg/protocols/common/helpers/responsehighlighter"
+	"github.com/projectdiscovery/nuclei/v2/pkg/types"
 	sliceutil "github.com/projectdiscovery/utils/slice"
 	"gopkg.in/yaml.v3"
 )
@@ -27,14 +31,17 @@ type TechRule struct {
 }
 
 type TechDetecter struct {
+	UseInternal bool // 是否使用内置规则
 	// 重新设计的规则存储结构
 	ProductRules map[string][]TechRule // 产品名 -> 规则列表
 	URIs         map[string][]string   // 方法 -> 路径列表（保持兼容性）
 	// 预编译的表达式缓存：产品名 -> 规则索引 -> 编译后的表达式
 	compiledExpressions map[string][]*CompiledRule
-	compiledMutex       sync.RWMutex
-	matchedProduct      map[string][]string // 已经匹配的产品
-	matchedMutex        sync.RWMutex        // 保护 matchedProduct 的读写锁
+
+	compiledNucleiExpressions map[string][]*CompiledNucleiRule // 兼容旧版本的编译规则
+	compiledMutex             sync.RWMutex
+	matchedProduct            map[string][]string // 已经匹配的产品
+	matchedMutex              sync.RWMutex        // 保护 matchedProduct 的读写锁
 }
 
 // CompiledRule 编译后的规则
@@ -42,7 +49,74 @@ type CompiledRule struct {
 	Method     string                         `json:"method"`
 	Paths      []string                       `json:"paths"`
 	Expression *govaluate.EvaluableExpression `json:"-"`
-	RawDSL     string                         `json:"raw_dsl"`
+}
+
+type CompiledNucleiRule struct {
+	Method     string               `json:"method"`
+	Paths      []string             `json:"paths"`
+	Expression *operators.Operators `json:"-"`
+}
+
+func (t *TechDetecter) Init(rulePath string) (err error) {
+	t.URIs = make(map[string][]string)
+	t.ProductRules = make(map[string][]TechRule)
+	t.matchedProduct = make(map[string][]string) // 初始化已匹配的产品
+	t.compiledExpressions = make(map[string][]*CompiledRule)
+	t.compiledNucleiExpressions = make(map[string][]*CompiledNucleiRule)
+	// 使用内置规则初始化
+	if t.UseInternal {
+		userDefinedPath := "data/fp"
+		files, err := embed.AssetDir(userDefinedPath)
+		if err != nil {
+			return errors.New("user defined rules is missed: " + err.Error())
+		}
+		for _, fileName := range files {
+			absFileName := path.Join(userDefinedPath, fileName)
+			content, err := embed.Asset(absFileName)
+			if err != nil {
+				continue
+			}
+			err = t.ParseRule(content)
+			if err != nil {
+				gologger.Error().Msgf("file %s parse error:%s", absFileName, err)
+				continue
+			}
+		}
+	}
+
+	if isDir(rulePath) {
+		files := readDir(rulePath)
+		for _, file := range files {
+			content, err := os.ReadFile(file)
+			if err != nil {
+				continue
+			}
+			if err = t.ParseRule(content); err != nil {
+				if err = t.ParseNucleiRule(content); err != nil {
+					gologger.Error().Msgf("nuclei file %s parse error:%s", file, err)
+				}
+			}
+		}
+	} else if exists(rulePath) {
+		content, err := os.ReadFile(rulePath)
+		if err != nil {
+			return err
+		}
+		if err = t.ParseRule(content); err != nil {
+			if err = t.ParseNucleiRule(content); err != nil {
+				gologger.Error().Msgf("file %s error:%s", rulePath, err)
+			}
+		}
+	}
+
+	// 去重uris
+	for method, paths := range t.URIs {
+		t.URIs[method] = sliceutil.Dedupe(paths)
+	}
+
+	// 预编译所有表达式（在这里注册自定义函数，而不是修改全局map）
+	t.precompileExpressions()
+	return nil
 }
 
 // Add MatchedProduct 添加已匹配的产品
@@ -57,65 +131,6 @@ func (t *TechDetecter) isProductMatched(target, product string) bool {
 	t.matchedMutex.RLock()
 	defer t.matchedMutex.RUnlock()
 	return sliceutil.Contains(t.matchedProduct[target], product)
-}
-
-func (t *TechDetecter) Init(rulePath string) (err error) {
-	t.URIs = make(map[string][]string)
-	t.ProductRules = make(map[string][]TechRule)
-	t.matchedProduct = make(map[string][]string) // 初始化已匹配的产品
-	t.compiledExpressions = make(map[string][]*CompiledRule)
-
-	// 使用内置规则初始化
-	userDefinedPath := "data/fp"
-	files, err := embed.AssetDir(userDefinedPath)
-	if err != nil {
-		return errors.New("user defined rules is missed: " + err.Error())
-	}
-	for _, fileName := range files {
-		absFileName := path.Join(userDefinedPath, fileName)
-		content, err := embed.Asset(absFileName)
-		if err != nil {
-			continue
-		}
-
-		err = t.ParseRule(content)
-		if err != nil {
-			gologger.Error().Msgf("file %s error:%s", absFileName, err)
-			continue
-		}
-	}
-	if IsDir(rulePath) {
-		files := ReadDir(rulePath)
-		for _, file := range files {
-			content, err := os.ReadFile(file)
-			if err != nil {
-				continue
-			}
-			err = t.ParseRule(content)
-			if err != nil {
-				gologger.Error().Msgf("file %s error:%s", file, err)
-				continue
-			}
-		}
-	} else if Exists(rulePath) {
-		content, err := os.ReadFile(rulePath)
-		if err != nil {
-			return err
-		}
-		err = t.ParseRule(content)
-		if err != nil {
-			gologger.Error().Msgf("file %s error:%s", rulePath, err)
-		}
-	}
-
-	// 去重uris
-	for method, paths := range t.URIs {
-		t.URIs[method] = sliceutil.Dedupe(paths)
-	}
-
-	// 预编译所有表达式（在这里注册自定义函数，而不是修改全局map）
-	t.precompileExpressions()
-	return nil
 }
 
 func (t *TechDetecter) ParseRule(content []byte) error {
@@ -148,6 +163,41 @@ func (t *TechDetecter) ParseRule(content []byte) error {
 		for _, path := range line.Path {
 			if path != "/" && path != "" {
 				t.URIs[techRule.Method] = append(t.URIs[techRule.Method], path)
+			}
+		}
+	}
+	return nil
+}
+
+func (t *TechDetecter) ParseNucleiRule(content []byte) error {
+	var matcher Template
+
+	err := yaml.Unmarshal(content, &matcher)
+	if err != nil {
+		return err
+	}
+
+	productName := matcher.Info.Name
+	for _, line := range matcher.RequestsWithHTTP {
+		if line.Method == "" {
+			line.Method = "GET"
+		}
+		paths := make([]string, 0, len(line.Path))
+		for _, p := range line.Path {
+			p = strings.ReplaceAll(p, "{{BaseURL}}", "")
+			paths = append(paths, p)
+		}
+
+		t.compiledNucleiExpressions[productName] = append(t.compiledNucleiExpressions[productName], &CompiledNucleiRule{
+			Method:     line.Method,
+			Paths:      paths,
+			Expression: line.Compile(),
+		})
+
+		// 保持URI兼容性（用于获取所有需要请求的路径）
+		for _, path := range paths {
+			if path != "/" && path != "" {
+				t.URIs[line.Method] = append(t.URIs[line.Method], path)
 			}
 		}
 	}
@@ -191,19 +241,11 @@ func (t *TechDetecter) precompileExpressions() {
 				Method:     rule.Method,
 				Paths:      rule.Path,
 				Expression: expr,
-				RawDSL:     rule.DSL,
 			}
 			compiledRules = append(compiledRules, compiledRule)
 		}
 		t.compiledExpressions[product] = compiledRules
 	}
-}
-
-// getCompiledExpressions 线程安全地获取编译后的表达式
-func (t *TechDetecter) getCompiledExpressions(product string) []*CompiledRule {
-	t.compiledMutex.RLock()
-	defer t.compiledMutex.RUnlock()
-	return t.compiledExpressions[product]
 }
 
 func (t *TechDetecter) Detect(inputURL, requestPath, requestMethod, faviconMMH3 string, response *httpx.Response) ([]string, error) {
@@ -231,30 +273,13 @@ func (t *TechDetecter) Detect(inputURL, requestPath, requestMethod, faviconMMH3 
 
 	var detectedProducts sync.Map
 
-	// 获取所有产品名称（线程安全）
-	t.compiledMutex.RLock()
-	productNames := make([]string, 0, len(t.ProductRules))
-	for product := range t.ProductRules {
-		productNames = append(productNames, product)
-	}
-	t.compiledMutex.RUnlock()
-
-	// 遍历所有产品规则
-	for _, product := range productNames {
+	for product, compiledRules := range t.compiledExpressions {
 		if t.isProductMatched(inputURL, product) {
 			continue
 		}
-		product := product // capture product variable
-
 		if _, exists := detectedProducts.Load(product); exists {
 			continue
 		}
-
-		compiledRules := t.getCompiledExpressions(product)
-		if len(compiledRules) == 0 {
-			continue
-		}
-
 		for _, compiledRule := range compiledRules {
 			if compiledRule == nil || compiledRule.Expression == nil {
 				continue
@@ -266,15 +291,15 @@ func (t *TechDetecter) Detect(inputURL, requestPath, requestMethod, faviconMMH3 
 
 			result, err := compiledRule.Expression.Evaluate(data)
 			if err != nil {
-				gologger.Error().Msgf("failed to evaluate expression for product:%s", product)
+				gologger.Error().Msgf("failed to evaluate expression for product:%s error:%s", product, err.Error())
 				continue
 			}
 			if result == true {
-				// 使用 LoadOrStore 确保只有第一个成功的 goroutine 存储结果
 				detectedProducts.LoadOrStore(product, true)
 				break
 			}
 		}
+
 	}
 
 	// 收集结果
@@ -287,6 +312,127 @@ func (t *TechDetecter) Detect(inputURL, requestPath, requestMethod, faviconMMH3 
 	})
 
 	return sliceutil.Dedupe(products), nil
+}
+
+func (t *TechDetecter) DetectNuclei(inputURL, requestPath, requestMethod, faviconMMH3 string, response *httpx.Response) ([]string, error) {
+	dslMap := responseToDSLMap(response, "", inputURL, "", "", string(response.Data), response.RawHeaders, 0, nil)
+	// 如果请求方法为空，默认为GET
+	if requestMethod == "" {
+		requestMethod = "GET"
+	}
+
+	var detectedProducts sync.Map
+
+	for product, compiledRules := range t.compiledNucleiExpressions {
+		if t.isProductMatched(inputURL, product) {
+			continue
+		}
+		if _, exists := detectedProducts.Load(product); exists {
+			continue
+		}
+		if compiledRules == nil {
+			continue
+		}
+		for _, compiledRule := range compiledRules {
+			if !t.pathNucleiMatches(requestPath, requestMethod, compiledRule) {
+				continue
+			}
+			if compiledRule == nil {
+				gologger.Error().Msgf("compiledRule is nil for product: %s", product)
+				continue
+			}
+			for _, matcher := range compiledRule.Expression.Matchers {
+				if matcher == nil {
+					gologger.Error().Msgf("matcher is nil for product: %s", product)
+					continue
+				}
+				result, _ := t.Match(dslMap, matcher)
+				if result {
+					// 使用 LoadOrStore 确保只有第一个成功的 goroutine 存储结果
+					detectedProducts.LoadOrStore(product, true)
+					break
+				}
+			}
+
+		}
+
+	}
+
+	// 收集结果
+	var products []string
+	detectedProducts.Range(func(key, value interface{}) bool {
+		if product, ok := key.(string); ok {
+			products = append(products, product)
+		}
+		return true
+	})
+
+	return sliceutil.Dedupe(products), nil
+}
+
+func (t *TechDetecter) Match(data map[string]interface{}, matcher *matchers.Matcher) (bool, []string) {
+	item, ok := t.getMatchPart(matcher.Part, data)
+	if !ok && matcher.Type.MatcherType != matchers.DSLMatcher {
+		return false, []string{}
+	}
+	switch matcher.GetType() {
+	case matchers.StatusMatcher:
+		statusCode, ok := getStatusCode(data)
+		if !ok {
+			return false, []string{}
+		}
+		return matcher.Result(matcher.MatchStatusCode(statusCode)), []string{responsehighlighter.CreateStatusCodeSnippet(data["response"].(string), statusCode)}
+	case matchers.SizeMatcher:
+		return matcher.Result(matcher.MatchSize(len(item))), []string{}
+	case matchers.WordsMatcher:
+		return matcher.ResultWithMatchedSnippet(matcher.MatchWords(item, data))
+	case matchers.RegexMatcher:
+		return matcher.ResultWithMatchedSnippet(matcher.MatchRegex(item))
+	case matchers.BinaryMatcher:
+		return matcher.ResultWithMatchedSnippet(matcher.MatchBinary(item))
+	case matchers.DSLMatcher:
+		return matcher.Result(matcher.MatchDSL(data)), []string{}
+	case matchers.XPathMatcher:
+		return matcher.Result(matcher.MatchXPath(item)), []string{}
+	}
+	return false, []string{}
+}
+
+// getMatchPart returns the match part honoring "all" matchers + others.
+func (t *TechDetecter) getMatchPart(part string, data map[string]interface{}) (string, bool) {
+	if part == "" {
+		part = "body"
+	}
+	if part == "header" {
+		part = "all_headers"
+	}
+	var itemStr string
+
+	if part == "all" {
+		builder := &strings.Builder{}
+		builder.WriteString(types.ToString(data["body"]))
+		builder.WriteString(types.ToString(data["all_headers"]))
+		itemStr = builder.String()
+	} else {
+		item, ok := data[part]
+		if !ok {
+			return "", false
+		}
+		itemStr = types.ToString(item)
+	}
+	return itemStr, true
+}
+
+func getStatusCode(data map[string]interface{}) (int, bool) {
+	statusCodeValue, ok := data["status_code"]
+	if !ok {
+		return 0, false
+	}
+	statusCode, ok := statusCodeValue.(int)
+	if !ok {
+		return 0, false
+	}
+	return statusCode, true
 }
 
 // pathMatches 检查当前请求的路径和方法是否匹配规则
@@ -316,7 +462,36 @@ func (t *TechDetecter) pathMatches(requestPath, requestMethod string, rule *Comp
 			return true
 		}
 	}
+	return false
+}
 
+// pathMatches 检查当前请求的路径和方法是否匹配规则
+func (t *TechDetecter) pathNucleiMatches(requestPath, requestMethod string, rule *CompiledNucleiRule) bool {
+	// 检查方法是否匹配
+	if rule.Method != "" && !strings.EqualFold(rule.Method, requestMethod) {
+		return false
+	}
+	if len(rule.Paths) == 0 {
+		if requestPath == "" || requestPath == "/" {
+			// 如果规则没有指定路径且请求路径是根路径或空路径，则匹配
+			return true
+		}
+		if requestPath != "" && requestPath != "/" {
+			// 如果规则没有指定路径且请求路径不是根路径或空路径，则不匹配
+			return false
+		}
+	}
+	// 检查路径是否严格匹配
+	for _, rulePath := range rule.Paths {
+		// 严格匹配路径，不允许模糊匹配
+		if requestPath == rulePath {
+			return true
+		}
+		// 特殊情况：如果规则路径是 "/" 或空，匹配根路径请求
+		if (rulePath == "/" || rulePath == "") && (requestPath == "/" || requestPath == "") {
+			return true
+		}
+	}
 	return false
 }
 
