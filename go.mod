@@ -56,6 +56,7 @@ require (
 require (
 	github.com/Knetic/govaluate v3.0.1-0.20171022003610-9aa49832a739+incompatible
 	github.com/projectdiscovery/nuclei/v2 v2.9.15
+	github.com/samber/lo v1.51.0
 	github.com/weppos/publicsuffix-go v0.30.2-0.20230730094716-a20f9abcc222
 	golang.org/x/sync v0.12.0
 	gopkg.in/yaml.v3 v3.0.1

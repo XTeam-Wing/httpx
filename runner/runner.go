@@ -33,6 +33,7 @@ import (
 	asnmap "github.com/projectdiscovery/asnmap/libs"
 	"github.com/projectdiscovery/clistats"
 	"github.com/projectdiscovery/fastdialer/fastdialer"
+	"github.com/samber/lo"
 
 	// automatic fd max increase if running as root
 	_ "github.com/projectdiscovery/fdmax/autofdmax"
@@ -2023,8 +2024,7 @@ retry:
 		}
 	}
 	if len(technologies) > 0 {
-		sort.Strings(sliceutil.Dedupe(technologies))
-		technologies := strings.Join(technologies, ",")
+		technologies := strings.Join(lo.Uniq(technologies), ",")
 
 		builder.WriteString(" [")
 		if !scanopts.OutputWithNoColor {
@@ -2308,7 +2308,7 @@ retry:
 		CDNName:          cdnName,
 		CDNType:          cdnType,
 		ResponseTime:     resp.Duration.String(),
-		Technologies:     sliceutil.Dedupe(technologies),
+		Technologies:     lo.Uniq(technologies),
 		FinalURL:         finalURL,
 		FavIconMMH3:      faviconMMH3,
 		FaviconPath:      faviconPath,
