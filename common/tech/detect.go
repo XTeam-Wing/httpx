@@ -95,7 +95,7 @@ func (t *TechDetecter) Init(rulePath string, useInternal bool) (err error) {
 			}
 			if err = t.ParseRule(content); err != nil {
 				if err = t.ParseNucleiRule(content); err != nil {
-					gologger.Error().Msgf("nuclei file %s parse error:%s", file, err)
+					gologger.Debug().Msgf("nuclei file %s parse error:%s", file, err)
 				}
 			}
 		}
