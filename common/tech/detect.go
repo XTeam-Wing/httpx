@@ -16,6 +16,7 @@ import (
 	"github.com/projectdiscovery/httpx/common/httpx"
 	"github.com/projectdiscovery/httpx/embed"
 	"github.com/projectdiscovery/nuclei/v2/pkg/operators"
+	"github.com/projectdiscovery/nuclei/v2/pkg/operators/extractors"
 	"github.com/projectdiscovery/nuclei/v2/pkg/operators/matchers"
 	"github.com/projectdiscovery/nuclei/v2/pkg/protocols/common/helpers/responsehighlighter"
 	"github.com/projectdiscovery/nuclei/v2/pkg/types"
@@ -57,7 +58,8 @@ type CompiledNucleiRule struct {
 	Expression *operators.Operators `json:"-"`
 }
 
-func (t *TechDetecter) Init(rulePath string) (err error) {
+func (t *TechDetecter) Init(rulePath string, useInternal bool) (err error) {
+	t.UseInternal = useInternal
 	t.URIs = make(map[string][]string)
 	t.ProductRules = make(map[string][]TechRule)
 	t.matchedProduct = make(map[string][]string) // 初始化已匹配的产品
@@ -179,6 +181,9 @@ func (t *TechDetecter) ParseNucleiRule(content []byte) error {
 
 	productName := matcher.Info.Name
 	for _, line := range matcher.RequestsWithHTTP {
+		if line.Compile() == nil {
+			continue
+		}
 		if line.Method == "" {
 			line.Method = "GET"
 		}
@@ -337,8 +342,8 @@ func (t *TechDetecter) DetectNuclei(inputURL, requestPath, requestMethod, favico
 			if !t.pathNucleiMatches(requestPath, requestMethod, compiledRule) {
 				continue
 			}
-			if compiledRule == nil {
-				gologger.Error().Msgf("compiledRule is nil for product: %s", product)
+			if compiledRule.Expression == nil {
+				gologger.Error().Msgf("compiledRule.Expression is nil for product: %s", product)
 				continue
 			}
 			for _, matcher := range compiledRule.Expression.Matchers {
@@ -348,9 +353,24 @@ func (t *TechDetecter) DetectNuclei(inputURL, requestPath, requestMethod, favico
 				}
 				result, _ := t.Match(dslMap, matcher)
 				if result {
-					// 使用 LoadOrStore 确保只有第一个成功的 goroutine 存储结果
 					detectedProducts.LoadOrStore(product, true)
 					break
+					// for _, extractor := range compiledRule.Expression.Extractors {
+					// 	if extractor == nil {
+					// 		gologger.Error().Msgf("extractor is nil for product: %s", product)
+					// 		continue
+					// 	}
+					// 	// 使用 Extract 方法提取信息
+					// 	extracted := t.Extract(dslMap, extractor)
+					// 	if extracted != nil {
+					// 		for k, v := range extracted {
+					// 			gologger.Debug().Msgf("extracted %s for product: %s", k, product)
+					// 			detectedProducts.LoadOrStore(product, true)
+					// 		}
+					// 	}
+					// 	// 使用 LoadOrStore 确保只有第一个成功的 goroutine 存储结果
+					// 	break
+					// }
 				}
 			}
 
@@ -396,6 +416,26 @@ func (t *TechDetecter) Match(data map[string]interface{}, matcher *matchers.Matc
 		return matcher.Result(matcher.MatchXPath(item)), []string{}
 	}
 	return false, []string{}
+}
+
+func (t *TechDetecter) Extract(data map[string]interface{}, extractor *extractors.Extractor) map[string]struct{} {
+	item, ok := t.getMatchPart(extractor.Part, data)
+	if !ok && !extractors.SupportsMap(extractor) {
+		return nil
+	}
+	switch extractor.GetType() {
+	case extractors.RegexExtractor:
+		return extractor.ExtractRegex(item)
+	case extractors.KValExtractor:
+		return extractor.ExtractKval(data)
+	case extractors.XPathExtractor:
+		return extractor.ExtractXPath(item)
+	case extractors.JSONExtractor:
+		return extractor.ExtractJSON(item)
+	case extractors.DSLExtractor:
+		return extractor.ExtractDSL(data)
+	}
+	return nil
 }
 
 // getMatchPart returns the match part honoring "all" matchers + others.

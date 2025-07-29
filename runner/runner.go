@@ -119,12 +119,9 @@ func New(options *Options) (*Runner, error) {
 	// }
 
 	if options.TechDetect {
-		err := runner.tech.Init(options.TechRulePath)
+		err := runner.tech.Init(options.TechRulePath, options.UseInternalTech)
 		if err != nil {
 			return nil, errors.Wrap(err, "could not initialize tech detection")
-		}
-		if runner.tech.URIs != nil {
-			runner.options.techDetectURIs = runner.tech.URIs
 		}
 	}
 
@@ -1966,7 +1963,7 @@ retry:
 
 			eg, _ := errgroup.WithContext(ctx)
 			eg.SetLimit(10)
-			for method, paths := range r.options.techDetectURIs {
+			for method, paths := range r.tech.URIs {
 				gologger.Debug().Msgf("Running technology detection for method %s with path %d", method, len(paths))
 				for _, path := range paths {
 					if path == "" || path == "/" {
@@ -1991,6 +1988,7 @@ retry:
 							r.stats.IncrementCounter("requests", 1)
 						}
 						if err != nil {
+							cancel()
 							gologger.Warning().Msgf("tech detect error: %s", err)
 							return err
 						}
@@ -2225,7 +2223,7 @@ retry:
 		headlessBody    string
 	)
 	var pHash uint64
-	if scanopts.Screenshot && len(r.options.techDetectURIs) == 0 {
+	if scanopts.Screenshot {
 		screenshotBytes, headlessBody, err = r.browser.ScreenshotWithBody(fullURL, time.Duration(scanopts.ScreenshotTimeout)*time.Second)
 		if err != nil {
 			gologger.Warning().Msgf("Could not take screenshot '%s': %s", fullURL, err)
