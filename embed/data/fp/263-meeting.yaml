@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 263-meeting
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"263电话会议")||(icontains(body,"<frame src=\"/jsp/conference/meetinglist.jsp\"
+    name=\"mainframe\"/>"))||(icontains(title,"263会议管理中心"))||(icontains(body,"263电话会议"))
+  method: GET
+  

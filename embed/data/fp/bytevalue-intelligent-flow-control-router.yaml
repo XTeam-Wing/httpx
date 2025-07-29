@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Shenzhen Baiwei Tongda Technology Co., Ltd.
+  cpe: ''
+  product: bytevalue-intelligent-flow-control-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<a href=\"http://www.bytevalue.com/\" target=\"_blank\">")
+    && icontains(title,"bytevalue 智能流控路由器"))
+  method: GET
+  

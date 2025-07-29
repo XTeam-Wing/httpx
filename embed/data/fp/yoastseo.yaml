@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: yoastseo
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"yoast seo")
+  method: GET
+  

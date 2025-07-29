@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: KIMAX
+  cpe: ''
+  product: kimax-unicorn-router
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: hui-ai server") || icontains(banner,"server: hui-ai
+    server"))'
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: electronic mail system
+  company: other
+  cpe: ''
+  product: pommo
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"pommo.confirmmsg = ") || icontains(body,"powered by <a href=\"http://www.pommo.org/"))
+    || icontains(title,"..pommo.. ."))
+  method: GET
+  

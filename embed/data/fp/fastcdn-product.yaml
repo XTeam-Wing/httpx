@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: fastcdn-product
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"fastcdn.org")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: erp
+  company: Guangdong Fangtian Software Technology Co., Ltd.
+  cpe: ''
+  product: fang-tian-software-b9erp
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"name=\"dbnameddl\"")
+  method: GET
+  

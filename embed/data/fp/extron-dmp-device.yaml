@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Extron Electronics.
+  cpe: ''
+  product: extron-dmp-device
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<title>\"+xmodel+\" default web pages</title>\"")
+  method: GET
+  

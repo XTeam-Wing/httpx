@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: August Bremicker und Söhne KG
+  cpe: ''
+  product: abus-corporate-product
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"abus company products")
+  method: GET
+  

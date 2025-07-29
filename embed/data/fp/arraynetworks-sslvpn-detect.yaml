@@ -1,0 +1,15 @@
+info:
+  company: Array Networks
+  product: arraynetworks-sslvpn
+  category: vpn
+  description: arraynetworks-sslvpn was detected.
+  author: sayhi
+  fofa_query: app="Array-VPN"
+  tags:
+  - detect
+  - arraynetworks-sslvpn
+  - tech
+rules:
+- method: GET
+  
+  dsl: contains(body, "/prx/000/http/")

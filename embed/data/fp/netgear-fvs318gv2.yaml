@@ -1,0 +1,12 @@
+info:
+  category: vpn products
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-fvs318gv2
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"fvs318gv2") || icontains(body,"gigabit 8 port vpn firewall
+    fvs318gv2"))
+  method: GET
+  

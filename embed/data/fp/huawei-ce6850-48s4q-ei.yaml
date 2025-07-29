@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-ce6850-48s4q-ei
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"ce6850-48s4q-ei")
+  method: GET
+  

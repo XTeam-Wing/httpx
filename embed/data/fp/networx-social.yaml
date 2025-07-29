@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: networx-social
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"networx_social")
+  method: GET
+  

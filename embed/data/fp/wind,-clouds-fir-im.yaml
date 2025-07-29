@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Beijing Fengqi Yunfei Technology Co., Ltd.
+  cpe: ''
+  product: wind,-clouds-fir-im
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"客户端") && icontains(body,"href=\"android/com.apsp.xnmdm-signed.apk\""))
+  method: GET
+  

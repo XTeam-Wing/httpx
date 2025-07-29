@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Beijing Shenzhou NSFOCUS Information Security Technology Co., Ltd.
+  cpe: ''
+  product: nsfocus-bvs
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"nsfocus bvs") || icontains(body,"/nsfocus_bvs.css"))
+  method: GET
+  

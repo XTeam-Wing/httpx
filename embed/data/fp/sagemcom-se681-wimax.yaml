@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Sagemcom Group
+  cpe: ''
+  product: sagemcom-se681-wimax
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(title,"sagemcom se681 wimax") || icontains(banner,"server: sagemcom
+    se681 wimax")) || icontains(banner,"server: sagemcom se681 wimax"))'
+  method: GET
+  

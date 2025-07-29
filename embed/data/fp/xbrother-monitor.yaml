@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: xbrother-monitor
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"if (!getcookie(\"x_gu_sid\"")
+  method: GET
+  

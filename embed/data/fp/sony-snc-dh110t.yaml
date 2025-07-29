@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: Sony Corporation
+  cpe: ''
+  product: sony-snc-dh110t
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"sony network camera snc-dh110t") || icontains(banner,"sony
+    network camera snc-dh110t"))
+  method: GET
+  

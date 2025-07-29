@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: BrowserStack
+  cpe: ''
+  product: fullpage.js
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"fullpage.min.js") || icontains(body,"fullpage.css"))
+  method: GET
+  

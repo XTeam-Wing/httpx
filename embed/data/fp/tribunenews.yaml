@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: tribunenews
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<a href=\"http://www.tribune.com/\" target=\"_parent\">a tribune
+    newspaper website</a>")
+  method: GET
+  

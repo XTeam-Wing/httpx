@@ -1,0 +1,13 @@
+info:
+  category: other enterprise application
+  company: RealVNC
+  cpe: ''
+  product: realvnc-remote-management
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(banner,"couchdb") && icontains(banner,"server: realvnc")) ||
+    (!icontains(body,"<h2>blog comments</h2>") && (icontains(title,"vnc viewer") ||
+    icontains(banner,"server: realvnc"))))'
+  method: GET
+  

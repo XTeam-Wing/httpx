@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Changsha Youdian Software Technology Co., Ltd.
+  cpe: ''
+  product: 友点建站-cms
+  server: unknown
+  tags: []
+rules:
+- dsl: 'icontains(banner,"X-Powered-By: YoudianCMS") || icontains(banner,"X-Powered-By:
+    YoudianCMS")'
+  method: GET
+  

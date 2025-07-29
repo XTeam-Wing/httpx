@@ -1,0 +1,15 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: mysource-matrix
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<p class=\"right\">powered by <a href=\"http://www.squiz.co.uk/mysource_matrix\"
+    target=\"_blank\">mysource matrix</a></p>")||(icontains(body,"class=\"squiz\">powered
+    by mysource matrix - a squiz.net initiative</a> </div>  </div>"))||(icontains(body,"<p>powered
+    by mysource matrix - a squiz.net  initiative</p>"))||(icontains(body,"mysource, mysource
+    matrix and squiz.net are registered trademarks of squiz pty ltd"))
+  method: GET
+  

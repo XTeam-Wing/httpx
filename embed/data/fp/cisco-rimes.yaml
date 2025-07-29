@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-rimes
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"rimes-cisco") || icontains(banner,"rimes-cisco"))
+  method: GET
+  

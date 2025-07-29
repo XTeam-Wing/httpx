@@ -1,0 +1,12 @@
+info:
+  category: other network security
+  company: Shenzhen Wangyu Technology Co., Ltd.
+  cpe: ''
+  product: nsys-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"netsys") && icontains(body,"<form id=\"form1\" name=\"form1\"
+    method=\"post\" action=\"login_commit.php\">"))
+  method: GET
+  

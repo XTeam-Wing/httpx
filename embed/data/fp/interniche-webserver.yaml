@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: InterNiche Technologies, Inc.
+  cpe: ''
+  product: interniche-webserver
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: interniche technologies webserver") || icontains(banner,"server:
+    interniche technologies webserver"))'
+  method: GET
+  

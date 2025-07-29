@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Avaya Inc.
+  cpe: ''
+  product: avaya-media-server
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"src=\"/emlogin/") || icontains(title,"element manager"))
+  method: GET
+  

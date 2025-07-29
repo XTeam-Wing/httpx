@@ -1,0 +1,11 @@
+info:
+  category: blockchain
+  company: Canaan Inc.
+  cpe: ''
+  product: avalon-miner
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"/cgi-bin/luci/avalon/page/index")
+  method: GET
+  

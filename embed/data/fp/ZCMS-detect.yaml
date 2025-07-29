@@ -1,0 +1,11 @@
+info:
+  author: 哆啦A梦
+  description: 泽元网站内容管理系统（简称ZCMS）是一套基于J2EE、AJAX技术、微服务技术和插件技术的、面向高端用户的企业级网站内容管理软件，旨在帮助用户解决日益复杂与重要的Web内容的创建、维护、发布和应用的问题。
+  tags: []
+  product: zcms
+  category: oa
+rules:
+- method: GET
+  path: 
+    - "/"
+  dsl: contains(body, "App=ZCMS(ZCMS内容管理") || contains(body, "if(window._zcms_stat)_zcms_stat")

@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: assessment-system
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/khsystem/default.aspx")
+  method: GET
+  

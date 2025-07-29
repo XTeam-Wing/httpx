@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Beijing Sina Internet Information Service Co., Ltd.
+  cpe: ''
+  product: sina-ftp
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"sina ftpd")
+  method: GET
+  

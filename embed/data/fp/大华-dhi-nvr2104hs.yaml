@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Zhejiang Dahua Technology Co., Ltd.
+  cpe: ''
+  product: 大华-dhi-nvr2104hs
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(banner,"NVR2104HS")
+  method: GET
+  

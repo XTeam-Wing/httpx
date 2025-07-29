@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: acos-network-operating-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"server: a10ws")||(icontains(header,"server: a10ws"))'
+  method: GET
+  

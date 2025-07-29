@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Ambit Wireless Networks, Inc.
+  cpe: ''
+  product: ambit-wireless-modem
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"ambit wireless cablemodem")
+  method: GET
+  

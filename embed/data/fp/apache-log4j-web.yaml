@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: Apache Software Foundation.
+  cpe: ''
+  product: apache-log4j-web
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"log4j-web*.jar") && icontains(body,"tomcat.util.scan.StandardJarScanFilter.jarsToScan")
+  method: GET
+  

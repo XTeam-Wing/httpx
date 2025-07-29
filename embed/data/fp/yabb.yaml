@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: yabb
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"y2user") || icontains(body,"/yabb.js")) || icontains(body,"yabbtime.gettime()"))
+    || icontains(banner,"y2user"))
+  method: GET
+  

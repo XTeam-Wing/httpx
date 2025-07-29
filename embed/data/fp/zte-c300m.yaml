@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: ZTE Corporation
+  cpe: ''
+  product: zte-c300m
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"{\"length\": 0, \"chained_to\": 3223600, \"identifier\":
+    \"s\", \"str\": null}") && icontains(banner,"c300m version"))'
+  method: GET
+  

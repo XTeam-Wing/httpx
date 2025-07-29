@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Beijing Paiwang Software Co., Ltd.
+  cpe: ''
+  product: ixcache
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"ixcache")
+  method: GET
+  

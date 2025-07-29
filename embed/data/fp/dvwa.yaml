@@ -1,0 +1,12 @@
+info:
+  category: other network security
+  company: other
+  cpe: ''
+  product: dvwa
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"dvwa/images/login_logo.png") || icontains(body,"dvwa/css/login.css"))
+    || icontains(title,"damn vulnerable web app (dvwa) - login"))
+  method: GET
+  

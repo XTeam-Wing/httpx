@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Guangzhou Zhongsheng Software Technology Co., Ltd.
+  cpe: ''
+  product: middle-software-consumer-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"alert(\"餐厅编号不能为空\")") && icontains(body,"clientutil.isff=!clientutil.isie"))
+  method: GET
+  

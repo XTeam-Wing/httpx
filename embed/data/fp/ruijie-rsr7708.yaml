@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Ruijie Networks Co., Ltd.
+  cpe: ''
+  product: ruijie-rsr7708
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"rsr7708")
+  method: GET
+  

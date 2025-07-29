@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: Snom Technology GmbH.
+  cpe: ''
+  product: snom-embedded
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: snom embedded") || icontains(banner,"server: snom
+    embedded"))'
+  method: GET
+  

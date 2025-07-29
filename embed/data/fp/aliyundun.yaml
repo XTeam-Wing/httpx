@@ -1,0 +1,13 @@
+info:
+  category: web application firewall
+  company: Alibaba Group
+  cpe: ''
+  product: aliyundun
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"set-cookie: yundun_404") || icontains(banner,"server:
+    yundun")) || icontains(banner,"set-cookie: yundun_404")) || icontains(banner,"server:
+    yundun"))'
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: vpn products
+  company: other
+  cpe: ''
+  product: pptp-vpn
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"<span class=subt>pptp vpn server") || title == "pptp vpn")
+    || icontains(banner,"realm=\"pptp vpn")) || icontains(banner,"realm=\"pptp vpn"))
+  method: GET
+  

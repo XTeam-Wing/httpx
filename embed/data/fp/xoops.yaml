@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: xoops
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"include/xoops.js")
+  method: GET
+  

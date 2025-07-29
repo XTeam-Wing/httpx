@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Beijing Branch Information Technology Co., Ltd.
+  cpe: ''
+  product: cottite-huajia-easy-to-buy-sales-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"href=/css/ordercomplaint")
+  method: GET
+  

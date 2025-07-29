@@ -1,0 +1,14 @@
+info:
+  category: router
+  company: Pullian Technology Co., Ltd.
+  cpe: ''
+  product: tp-link-tl-mr6400
+  server: nginx
+  tags: []
+rules:
+- dsl: (((((icontains(banner,"realm=\"tp-link lte wireless n router mr6400") || icontains(banner,"realm=\"tl-mr6400"))
+    || icontains(banner,"tp-link mr6400")) || icontains(banner,"realm=\"tp-link lte
+    wireless n router mr6400")) || icontains(body,"var modelname=\"tl-mr6400\""))
+    || icontains(banner,"realm=\"tl-mr6400"))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: electronic mail system
+  company: Carizen Software (P) Ltd.
+  cpe: ''
+  product: rainmail
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(body,"href=\"/resources/rainmailvpninstaller.exe") || icontains(body,".:
+    <b>rainmail intranet login </b> :.</div>"))'
+  method: GET
+  

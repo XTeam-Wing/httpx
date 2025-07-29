@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ricoh-photocopier
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"
+    style=\"background:url(/images/settingdivision.gif) repeat-x bottom;\">")||(icontains(body,"<meta
+    http-equiv=\"refresh\" content=\"1; url=/web/guest/en/websys/webarch/message.cgi?messageid=msg_javascriptoff&buttonurl=/../../../\">"))
+  method: GET
+  

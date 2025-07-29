@@ -1,0 +1,11 @@
+info:
+  category: fax machine
+  company: Shanghai Aotong Network Technology Co., Ltd.
+  cpe: ''
+  product: myfax-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"/cgi-bin/ed3.cgi")
+  method: GET
+  

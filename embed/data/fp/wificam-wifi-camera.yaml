@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: other
+  cpe: ''
+  product: wificam-wifi-camera
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"wificam") || icontains(banner,"realm=\"wificam"))
+  method: GET
+  

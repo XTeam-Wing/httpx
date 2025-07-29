@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: other
+  cpe: ''
+  product: further-streaming-server
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"further streaming server")
+  method: GET
+  

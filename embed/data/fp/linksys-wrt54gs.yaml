@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Belkin International, Inc.
+  cpe: ''
+  product: linksys-wrt54gs
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"linksys-wrt54gs") || icontains(banner,"linksys wrt54gs"))
+    || icontains(banner,"wrt54gs")) || icontains(banner,"wrt54gs"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Brivo Inc.
+  cpe: ''
+  product: sq-webcam
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: sq-webcam") || icontains(banner,"server: sq-webcam"))'
+  method: GET
+  

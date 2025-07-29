@@ -1,0 +1,11 @@
+info:
+  category: antivirus gateway
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-usg40
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"usg40")
+  method: GET
+  

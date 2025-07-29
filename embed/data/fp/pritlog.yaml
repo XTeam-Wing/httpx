@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: pritlog
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<em id=\"jserror\">please enable javascript for full functionality")
+    || icontains(body,"powered by <a href=\"http://pritlog.com/\">pritlog"))
+  method: GET
+  

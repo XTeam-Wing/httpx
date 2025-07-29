@@ -1,0 +1,11 @@
+info:
+  category: cameras and surveillance
+  company: 华为技术有限公司
+  cpe: ''
+  product: huawei-m2241
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(banner,"realm=\"huawei M2241\"")
+  method: GET
+  

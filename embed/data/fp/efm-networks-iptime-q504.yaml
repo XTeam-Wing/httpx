@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: EFM Networks Co.,Ltd.
+  cpe: ''
+  product: efm-networks-iptime-q504
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"iptime q504") || icontains(body,"\"/images/login_back_q504.gif\""))
+    || icontains(body,"\"/images2/login_title.q504.gif\""))
+  method: GET
+  

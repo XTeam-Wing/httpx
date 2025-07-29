@@ -1,0 +1,12 @@
+info:
+  category: vpn products
+  company: Ren Zixing Network Technology Co., Ltd.
+  cpe: ''
+  product: yiso-ssl-vpn
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(cert,"commonname: surf-ngsaappliance") && icontains(cert,"organization:
+    surfilter")) || (icontains(body,"surfilter") && icontains(body,"src=\"/javascript/validation/sslvpnlogin.js")))'
+  method: GET
+  

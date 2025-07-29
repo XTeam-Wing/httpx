@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: palladium-unified-security-management-and-comprehensive-audit-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"module/image/pldsec.css")
+  method: GET
+  

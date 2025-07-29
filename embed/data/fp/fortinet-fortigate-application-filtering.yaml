@@ -1,0 +1,12 @@
+info:
+  category: firewall
+  company: Fortinet, Inc.
+  cpe: ''
+  product: fortinet-fortigate-application-filtering
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"220 firewall authentication required before proceeding with
+    service")
+  method: GET
+  

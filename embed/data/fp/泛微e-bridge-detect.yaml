@@ -1,0 +1,13 @@
+info:
+  product: 泛微云桥e-bridge
+  category: 云桥
+  author: z3r0yu
+  company: 上海泛微网络科技有限公司
+  description: 泛微云桥e-Bridge
+  fofa_query: app="泛微-云桥e-Bridge"
+  tags:
+  - tech
+  - fanwei
+rules:
+- method: GET
+  dsl: (contains(body, "content=\"泛微云桥e-Bridge\"") && contains(body, "content=\"webkit\"")) || contains(title, "泛微云桥e-Bridge")

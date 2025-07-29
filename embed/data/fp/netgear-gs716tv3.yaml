@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-gs716tv3
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"netgear gs716tv3") || icontains(banner,"gs716tv3")) || icontains(body,"class=\"gs716tv3image
+    spacer50percent topalign righthalign\""))
+  method: GET
+  

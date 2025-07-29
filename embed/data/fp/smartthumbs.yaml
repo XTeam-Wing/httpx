@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: Smart Scripts
+  cpe: ''
+  product: smartthumbs
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"powered by <a href=\"http://www.smart-scripts.com\">smart thumbs</a>")
+  method: GET
+  

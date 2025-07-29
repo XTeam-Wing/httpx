@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: fikker-cdn
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"fikker cdn 主控系统")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: liangjing(良精)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"liangjing")||(icontains(title,"liangjing(良精)"))
+  method: GET
+  

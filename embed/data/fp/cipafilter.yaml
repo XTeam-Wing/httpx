@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: cipafilter
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"realm=\"cipafilter web administration")||(icontains(header,"realm=\"cipafilter
+    web management"))
+  method: GET
+  

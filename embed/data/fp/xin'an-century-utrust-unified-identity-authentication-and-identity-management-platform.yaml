@@ -1,0 +1,12 @@
+info:
+  category: identity authentication and authority management
+  company: Beijing Xin'an Century Technology Co., Ltd.
+  cpe: ''
+  product: xin'an-century-utrust-unified-identity-authentication-and-identity-management-platform
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"UTRUST统一身份认证和身份管理平台") && icontains(body,"China UTrust Infortech
+    Co,.Ltd")
+  method: GET
+  

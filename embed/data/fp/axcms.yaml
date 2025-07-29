@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Axinom
+  cpe: ''
+  product: axcms
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"axcms.net") || icontains(banner,"axcms.net")) || icontains(body,"generated
+    by axcms.net")) || icontains(body,"content=\"axcms.net"))
+  method: GET
+  

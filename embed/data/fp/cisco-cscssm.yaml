@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-cscssm
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"proxy-agent: cscssm") || icontains(banner,"proxy-agent:
+    cscssm"))'
+  method: GET
+  

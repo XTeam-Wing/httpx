@@ -1,0 +1,14 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ezcms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<td align=\"right\"><a href=\"http://www.ezwebsites.com.au\" class=\"credits\">site
+    powered by ezcms</a></td>")||(icontains(body,"<td width=\"100%\" align=\"left\" valign=\"bottom\"
+    background=\"images/headerbg.png\"><div align=\"right\"><img src=\"images/headerright.png\"
+    border=\"0\"></div></td>"))||(icontains(body,"<title>ezcms content management system</title>"))
+  method: GET
+  

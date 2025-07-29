@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: zyxelmgs-3712f
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"zyxel mgs-3712f")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Guangzhou Zhongda Dongri Education Technology Co., Ltd.
+  cpe: ''
+  product: middle-daddy-east-education-management-information-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"onclick=\"safecodeclick\" src=\"safecode.aspx") || (icontains(body,"lb_hint")
+    && icontains(body,"images/lgline.gif")))
+  method: GET
+  

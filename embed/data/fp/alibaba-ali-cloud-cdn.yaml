@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Alibaba Group
+  cpe: ''
+  product: alibaba-ali-cloud-cdn
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"cdn.aliyuncs.com") || icontains(banner,"cdn.aliyuncs.com"))
+  method: GET
+  

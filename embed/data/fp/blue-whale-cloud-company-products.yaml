@@ -1,0 +1,11 @@
+info:
+  category: cloud computing
+  company: Tencent BlueKing
+  cpe: ''
+  product: blue-whale-cloud-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"蓝鲸智云")
+  method: GET
+  

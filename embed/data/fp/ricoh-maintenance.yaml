@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: Ricoh Company, Ltd.
+  cpe: ''
+  product: ricoh-maintenance
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"ricoh maintenance shell.")
+  method: GET
+  

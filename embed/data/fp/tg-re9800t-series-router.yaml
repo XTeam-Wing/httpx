@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Shenzhen Wanwang Botong Technology Co., Ltd.
+  cpe: ''
+  product: tg-re9800t-series-router
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"tg-net re9800t series router")
+  method: GET
+  

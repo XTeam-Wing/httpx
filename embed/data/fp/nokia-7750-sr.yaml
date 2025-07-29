@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Nokia Corporation
+  cpe: ''
+  product: nokia-7750-sr
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"nokia 7750 sr")
+  method: GET
+  

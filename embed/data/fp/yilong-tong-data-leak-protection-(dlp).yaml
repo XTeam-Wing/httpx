@@ -1,0 +1,11 @@
+info:
+  category: data leakage prevention
+  company: Beijing Yisaitong Technology Development Co., Ltd.
+  cpe: ''
+  product: yilong-tong-data-leak-protection-(dlp)
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"/cdgserver3/index.jsp") && title == "数据泄露防护(dlp)系统")
+  method: GET
+  

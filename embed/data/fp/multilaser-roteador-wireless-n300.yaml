@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: MULTILASER INDUSTRIAL SA
+  cpe: ''
+  product: multilaser-roteador-wireless-n300
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"rel=\"shortcut icon\" href=\"/multi_icone.ico\"") || icontains(body,"rel=\"shortcut
+    icon\" href=\"./multi_icone.ico\""))
+  method: GET
+  

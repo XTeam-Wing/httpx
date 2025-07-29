@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: wojilu框架(我记录.net框架)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"我记录.net框架")||(icontains(title,"我记录.net框架"))
+  method: GET
+  

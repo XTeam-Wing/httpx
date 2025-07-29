@@ -1,0 +1,11 @@
+info:
+  category: big data pocessing
+  company: Apache Software Foundation.
+  cpe: ''
+  product: storm
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"stormtimestr") || icontains(title,"storm ui"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: other
+  cpe: ''
+  product: casic-card-system
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"充值卡及易捷卡系统") && icontains(body,"积分规则管理")
+  method: GET
+  

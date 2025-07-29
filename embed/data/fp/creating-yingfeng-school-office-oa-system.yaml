@@ -1,0 +1,11 @@
+info:
+  category: oa
+  company: Guangzhou Yingfeng Information Technology Co., Ltd.
+  cpe: ''
+  product: creating-yingfeng-school-office-oa-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"background=\"oa/images/index/oalogin.jpg\"")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-hmm
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"hmm web") || icontains(body,"class=\"hmm_login_box_list"))
+  method: GET
+  

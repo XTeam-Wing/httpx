@@ -1,0 +1,12 @@
+info:
+  category: antivirus gateway
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-usg60
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"usg60") && icontains(body,"<div class=\"model\" id=\"model\"
+    name=\"model\">usg60</div>")) || icontains(banner,"usg60"))
+  method: GET
+  

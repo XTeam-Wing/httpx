@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: huawei-intelligent-call-center
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"huawei 智能呼叫中心")
+  method: GET
+  

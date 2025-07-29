@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: Hefei Dao Claire Information Technology Co., Ltd.
+  cpe: ''
+  product: doclever
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"@click.prevent=\"login\" :loading=\"loginpending\"")
+  method: GET
+  

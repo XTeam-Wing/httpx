@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: NEC Corporation
+  cpe: ''
+  product: nec-portable-internetwork-os
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"nec portable internetwork core operating system")
+  method: GET
+  

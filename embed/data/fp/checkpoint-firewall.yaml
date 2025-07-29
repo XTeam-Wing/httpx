@@ -1,0 +1,12 @@
+info:
+  category: firewall
+  company: Check Point Software Technologies Ltd.
+  cpe: ''
+  product: checkpoint-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"firewall") && icontains(banner,"checkpoint")) || icontains(banner,"server:
+    checkpoint firewall")) || icontains(banner,"server: checkpoint firewall"))'
+  method: GET
+  

@@ -1,0 +1,13 @@
+info:
+  category: firewall
+  company: SonicWall Inc.
+  cpe: ''
+  product: sonicwall-network-security-appliance
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<frame src=\"emptyview4.html\" name=\"authtgtfrm\" noresize
+    scrolling=\"no\">") || (icontains(body,"content=\"policyjump") && icontains(title,"policy
+    jump")))
+  method: GET
+  

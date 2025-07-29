@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: layui
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"layui.js") || icontains(body,"class=\"layui-main\""))
+  method: GET
+  

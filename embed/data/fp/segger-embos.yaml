@@ -1,0 +1,12 @@
+info:
+  category: operating system
+  company: SEGGER Microcontroller Systems LLC
+  cpe: ''
+  product: segger-embos
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"welcome to embos/ip") || icontains(banner,"server: embos/ip"))
+    || icontains(banner,"server: embos/ip"))'
+  method: GET
+  

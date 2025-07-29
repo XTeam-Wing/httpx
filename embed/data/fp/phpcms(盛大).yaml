@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: phpcms(盛大)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"phpcms(盛大)")
+  method: GET
+  

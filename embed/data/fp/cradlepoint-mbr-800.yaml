@@ -1,0 +1,12 @@
+info:
+  category: wireless network
+  company: Cradlepoint, Inc.
+  cpe: ''
+  product: cradlepoint-mbr-800
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"cradlepoint mbr-800") || icontains(title,"cradlepoint mbr-800
+    gateway"))
+  method: GET
+  

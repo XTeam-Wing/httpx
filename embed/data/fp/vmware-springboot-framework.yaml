@@ -1,0 +1,12 @@
+info:
+  category: development framework
+  company: VMware, Inc.
+  cpe: ''
+  product: vmware-springboot-framework
+  server: unknown
+  tags: []
+rules:
+- dsl: '((icontains(banner,"Server: Netty@SpringBoot") || (icontains(body,"Whitelabel
+    Error Page") && icontains(body,"There was an unexpected error"))) && body!="couchdb")'
+  method: GET
+  

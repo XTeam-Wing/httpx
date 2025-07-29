@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: whir
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"css/css_whir.css")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: antivirus gateway
+  company: PNP SECURE INC.
+  cpe: ''
+  product: pnp-secure-access-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"pnp secure access gateway")
+  method: GET
+  

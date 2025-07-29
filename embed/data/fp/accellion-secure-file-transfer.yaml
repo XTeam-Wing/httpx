@@ -1,0 +1,12 @@
+info:
+  category: file management && encryption
+  company: Accellion, Inc.
+  cpe: ''
+  product: accellion-secure-file-transfer
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"secured by accellion") || icontains(banner,"sfcurl=deleted;"))
+    || icontains(banner,"sfcurl=deleted;"))
+  method: GET
+  

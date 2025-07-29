@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Alert Logic, Inc.
+  cpe: ''
+  product: alert-logic-cloud-defender
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"alert logic appliance")
+  method: GET
+  

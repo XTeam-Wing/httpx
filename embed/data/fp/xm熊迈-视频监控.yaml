@@ -1,0 +1,11 @@
+info:
+  category: cameras and surveillance
+  company: Hangzhou Xiongmai Information Technology Co., Ltd.
+  cpe: ''
+  product: xm熊迈-视频监控
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"NETSurveillance WEB")
+  method: GET
+  

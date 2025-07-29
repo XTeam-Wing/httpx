@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Sierra Wireless Inc.
+  cpe: ''
+  product: sierrawireless-airlinkmanager
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"redir=redir+\"/admin/acemanager\"") || icontains(body,"brander/acemanager.css"))
+    || icontains(title,"acemanager"))
+  method: GET
+  

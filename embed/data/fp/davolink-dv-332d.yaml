@@ -1,0 +1,11 @@
+info:
+  category: voice video
+  company: DAVOLINK. Inc.
+  cpe: ''
+  product: davolink-dv-332d
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"dv-332d")
+  method: GET
+  

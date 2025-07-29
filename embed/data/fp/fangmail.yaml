@@ -1,0 +1,12 @@
+info:
+  category: electronic mail system
+  company: Beijing Direction Sign Information Technology Co., Ltd.
+  cpe: ''
+  product: fangmail
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"esmtp fangmail") || icontains(body,"/fangmail/cgi/index.cgi"))
+    || icontains(body,"/fangmail/default/css/em_css.css"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: smart home
+  company: LG Electronics.
+  cpe: ''
+  product: lg-75sm8670pua
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<modelname>75sm8670pua</modelname>")
+  method: GET
+  

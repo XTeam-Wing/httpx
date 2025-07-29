@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: backtory
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"backtory")
+  method: GET
+  

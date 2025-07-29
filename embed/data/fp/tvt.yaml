@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: Shenzhen Tongwei Digital Technology Co., Ltd.
+  cpe: ''
+  product: tvt
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"server: tvt rtsp server") || icontains(title,"dvr components
+    download")) || server == "cross web server")'
+  method: GET
+  

@@ -1,0 +1,14 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: nexusphp
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(title,"nexusphp")||(icontains(body,"<p><b>note</b>: you need cookies enabled
+    to log in or switch language.<br /> [<b>"))||(icontains(body,"<tr><td class=\"rowhead\">ssl
+    (https):</td><td class=\"rowfollow\" align=\"left\"><input class=\"checkbox\"
+    type=\"checkbox\" name=\"ssl\" value=\"yes\""))'
+  method: GET
+  

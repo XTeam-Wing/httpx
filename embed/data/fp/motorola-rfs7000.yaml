@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Motorola Solutions, Inc
+  cpe: ''
+  product: motorola-rfs7000
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"rfs7000") || icontains(banner,"rfs7000 wireless"))
+  method: GET
+  

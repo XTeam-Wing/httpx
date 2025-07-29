@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: enterprise-login-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"id=\"cp\"") && icontains(body,"txtusername\").focus(); //默认焦点"))
+    && icontains(body,"themes/scripts/functionjs.js"))
+  method: GET
+  

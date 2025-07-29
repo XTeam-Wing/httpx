@@ -1,0 +1,11 @@
+info:
+  category: file management && encryption
+  company: Biscom, Inc.
+  cpe: ''
+  product: biscom-delivery-server
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"/bds/includes/fdsjavascript.do") || icontains(body,"/bds/stylesheets/fds.css"))
+  method: GET
+  

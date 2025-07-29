@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Shenzhen Wanwang Botong Technology Co., Ltd.
+  cpe: ''
+  product: tg-thr80g
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"tg-net thr80g series router")
+  method: GET
+  

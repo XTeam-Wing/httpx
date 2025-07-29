@@ -1,0 +1,11 @@
+info:
+  category: electronic mail system
+  company: other
+  cpe: ''
+  product: inetsim-mail-service
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"inetsim mail service")
+  method: GET
+  

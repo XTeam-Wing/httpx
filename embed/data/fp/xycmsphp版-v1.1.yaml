@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: xycmsphp版-v1.1
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"xycms php版_v1.1")
+  method: GET
+  

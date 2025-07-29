@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Schneider Electric
+  cpe: ''
+  product: apc-powernet
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"apc embedded powernet") && icontains(protocol,"snmp"))
+  method: GET
+  

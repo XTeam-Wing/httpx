@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: easysite内容管理
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"easysite内容管理")
+  method: GET
+  

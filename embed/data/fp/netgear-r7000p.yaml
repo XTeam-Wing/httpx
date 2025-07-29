@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-r7000p
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"netgear r7000p") || (icontains(body,"netgear r7000p") &&
+    icontains(body,"var mmc = {"))) || icontains(banner,"realm=\"netgear r7000p"))
+  method: GET
+  

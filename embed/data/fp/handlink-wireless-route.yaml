@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: handlink-wireless-route
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"handlink technologies inc.") && icontains(title,"---wg-")||(icontains(body,"handlink
+    technologies inc."))
+  method: GET
+  

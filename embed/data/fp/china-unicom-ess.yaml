@@ -1,0 +1,12 @@
+info:
+  category: other support system
+  company: China United Network Communications Group Co., Ltd.
+  cpe: ''
+  product: china-unicom-ess
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"essframepls_2i_jsessionid") || icontains(banner,"essframepls_2i_jsessionid"))
+    || (icontains(banner,"location") && icontains(banner,"/essframe")))
+  method: GET
+  

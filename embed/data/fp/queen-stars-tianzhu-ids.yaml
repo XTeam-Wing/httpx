@@ -1,0 +1,12 @@
+info:
+  category: network intrusion detection && defense
+  company: Venus Star Information Technology Group Co., Ltd.
+  cpe: ''
+  product: queen-stars-tianzhu-ids
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"<div class=\"login_name\">天阗入侵检测与管理系统v7.0</div>") || (icontains(banner,"vsappsrv1")
+    && icontains(title,"cybersensor"))) || icontains(title,"天阗入侵检测"))
+  method: GET
+  

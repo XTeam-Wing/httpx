@@ -1,0 +1,11 @@
+info:
+  category: industrial control
+  company: Qingdao Jicheng Electronics Co., Ltd.
+  cpe: ''
+  product: ieslab-scada-monitoring-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"青岛积成电子有限公司") && icontains(body,"copyrightpt12"))
+  method: GET
+  

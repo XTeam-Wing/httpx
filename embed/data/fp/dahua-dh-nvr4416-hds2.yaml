@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Zhejiang Dahua Technology Co., Ltd.
+  cpe: ''
+  product: dahua-dh-nvr4416-hds2
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"dh-nvr4416-hds2")
+  method: GET
+  

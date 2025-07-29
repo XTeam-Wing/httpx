@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: China Mobile Tietong Intelligent Products Branch
+  cpe: ''
+  product: china-mobile-railcom-yu-routing
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"src=\"img/by_web.png\"")
+  method: GET
+  

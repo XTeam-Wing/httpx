@@ -1,0 +1,15 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: x10media-torrent-search-engine
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"this search engine is in no way intended for illegal downloads.")||(icontains(body,"<meta
+    name=\"copyright\" content=\"x10media\"/>"))||(icontains(body,"<meta name=\"contributor\"
+    content=\"x10media\"/>"))||(icontains(body,"<title>torrent search engine script</title>"))||(icontains(body,"powered
+    by <a href=\"http://www.x10media.com/torrent-search-engine-script/\" target=\"_blank\">x10media
+    torrent search engine script</a>"))
+  method: GET
+  

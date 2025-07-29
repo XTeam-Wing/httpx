@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Hitron Technologies Inc.
+  cpe: ''
+  product: hitron-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"hitron common router") || (icontains(banner,"common router")
+    && icontains(banner,"hitron technologies")))
+  method: GET
+  

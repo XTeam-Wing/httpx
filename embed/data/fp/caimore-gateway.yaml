@@ -1,0 +1,13 @@
+info:
+  category: router
+  company: Xiamen Caimao Communication Technology Co., Ltd.
+  cpe: ''
+  product: caimore-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"realm=\"caimore") || icontains(banner,"realm=\"caimore
+    gateway")) || icontains(banner,"realm=\"caimore")) || icontains(banner,"realm=\"caimore
+    gateway"))
+  method: GET
+  

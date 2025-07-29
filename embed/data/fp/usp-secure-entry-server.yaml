@@ -1,0 +1,12 @@
+info:
+  category: web application firewall
+  company: other
+  cpe: ''
+  product: usp-secure-entry-server
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"secure entry server") || icontains(banner,"secure entry
+    server"))
+  method: GET
+  

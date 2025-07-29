@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 铜板儿网邮件群发统计系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"铜板儿网邮件群发统计系统")
+  method: GET
+  

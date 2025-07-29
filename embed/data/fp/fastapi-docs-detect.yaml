@@ -1,0 +1,23 @@
+info:
+  company: FastAPI
+  product: fastapi docs panel
+  category: panel
+  description: FastAPI Docs panel was detected.
+  author: github.com/its0x08
+  tags:
+  - fastapi
+  - tech
+  - panel
+rules:
+- method: GET
+  path: 
+  - /docs
+  dsl: contains(body, "<title>FastAPI - Swagger UI</title>")
+- method: GET
+  path: 
+  - /redoc
+  dsl: contains(body, "<title>FastAPI - ReDoc</title>")
+- method: GET
+  path: 
+  - /openapi.json
+  dsl: contains(body, "{\"title\":\"FastAPI\"")

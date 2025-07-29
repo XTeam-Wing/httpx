@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: 6kbbs
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"generator\" content=\"6kbbs") || icontains(body,"powered by
+    6kbbs"))
+  method: GET
+  

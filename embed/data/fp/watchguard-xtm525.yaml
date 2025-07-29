@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: WatchGuard Technologies, Inc.
+  cpe: ''
+  product: watchguard-xtm525
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"xtm525")
+  method: GET
+  

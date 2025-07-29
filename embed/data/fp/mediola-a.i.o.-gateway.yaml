@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: mediola
+  cpe: ''
+  product: mediola-a.i.o.-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"server: ") && icontains(banner,"a.i.o. gateway")) || icontains(server,"a.i.o.
+    gateway"))'
+  method: GET
+  

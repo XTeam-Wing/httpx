@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: khttpd
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: khttpd") || icontains(banner,"server: khttpd"))'
+  method: GET
+  

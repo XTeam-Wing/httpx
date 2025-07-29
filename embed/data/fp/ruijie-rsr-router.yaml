@@ -1,0 +1,13 @@
+info:
+  category: router
+  company: Ruijie Networks Co., Ltd.
+  cpe: ''
+  product: ruijie-rsr-router
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"server: rg/device 10.x") || icontains(banner,"server:
+    rg/device 10.x")) || icontains(body,"class=\"foot_login\">ruijie networks rsr
+    router"))'
+  method: GET
+  

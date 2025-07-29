@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: inspur-ec-government-approval-platform
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"langchao.ecgap.outportal")||(icontains(title,"浪潮政务"))||(icontains(body,"onlinequery/querylist.aspx"))
+  method: GET
+  

@@ -1,0 +1,15 @@
+info:
+  category: host monitoring && auditing
+  company: Guangdong Baota Safety Technology Co., Ltd.
+  cpe: ''
+  product: pagoda-linux-control-panel
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((((icontains(body,"<h1>请使用正确的入口登录面板</h1>") && icontains(body,"<p>1.查看面板入口：/etc/init.d/bt
+    default</p>")) || icontains(banner,"set-cookie: bt_panel=")) || icontains(banner,"set-cookie:
+    bt_panel=")) || icontains(body,"src=\"/static/js/validform_v5.3.2_min.js")) ||
+    icontains(body,"宝塔linux面板")) || icontains(body,"href=\"http://www.bt.cn/bbs/thread-1172-1-1.html"))
+    || icontains(body,"<img src=\"https://app.bt.cn/static/app.png\">"))'
+  method: GET
+  

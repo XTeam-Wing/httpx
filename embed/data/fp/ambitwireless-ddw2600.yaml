@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Ambit Wireless Networks, Inc.
+  cpe: ''
+  product: ambitwireless-ddw2600
+  server: nginx
+  tags: []
+rules:
+- dsl: 'icontains(banner,"model: ddw2600")'
+  method: GET
+  

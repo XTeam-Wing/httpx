@@ -1,0 +1,12 @@
+info:
+  category: electronic mail system
+  company: other
+  cpe: ''
+  product: firstclass-mail-server
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"firstclass smtp submission server") || icontains(banner,"firstclass
+    esmtp mail server"))
+  method: GET
+  

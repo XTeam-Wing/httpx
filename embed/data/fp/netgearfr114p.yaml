@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: netgearfr114p
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"netgear fr114p")
+  method: GET
+  

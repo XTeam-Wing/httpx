@@ -1,0 +1,13 @@
+info:
+  category: other iot device
+  company: NUUO Inc.
+  cpe: ''
+  product: nuuo-nvr
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"background=\"imgs/login_all.jpg\"") || icontains(title,"network
+    video recorder login")) || ((!icontains(body,"nvrmini") && icontains(title,"network
+    video recorder login")) && icontains(body,"nuuo")))
+  method: GET
+  

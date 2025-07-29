@@ -1,0 +1,14 @@
+info:
+  category: router
+  company: Shenzhen Xunjie Communication Technology Co., Ltd.
+  cpe: ''
+  product: fast-router
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((!icontains(body,"server: couchdb") && icontains(body,"<a href=\"http://www.fastcom.com.cn\"><img
+    src=\"../img/login/logo.gif")) || icontains(title,"fast 无线路由器")) || (icontains(banner,"router")
+    && icontains(banner,"fast "))) || (icontains(banner,"router") && icontains(banner,"fast
+    ")))'
+  method: GET
+  

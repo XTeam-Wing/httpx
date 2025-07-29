@@ -1,0 +1,11 @@
+info:
+  category: database system
+  company: Elastic, Inc.
+  cpe: ''
+  product: elastic-elasticsearch-engineer
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"Index - Elasticsearch Engineer")
+  method: GET
+  

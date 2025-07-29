@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: zipbox-media
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<a href=\"http://www.zipboxmedia.com\" class=\"zbm\"><img src=\"/images/zb_rotate_ft.gif\"
+    alt=\"powered by zipbox media\" border=\"0\" /></a>")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: Prometheus
+  cpe: ''
+  product: alertmanager
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"defaultcreator") && icontains(title,"alertmanager"))
+  method: GET
+  

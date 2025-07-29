@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: apachesolr
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"solrcore initialization failures") && icontains(body,"solr admin")
+  method: GET
+  

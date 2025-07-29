@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: spammark-mail-information-security-gateway
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"smtp server (spammark")||(icontains(body,"/cgi-bin/spammark?empty=1"))||(icontains(title,"spammark邮件信息安全网关"))
+  method: GET
+  

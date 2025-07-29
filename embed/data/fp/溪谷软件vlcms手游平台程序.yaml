@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 溪谷软件vlcms手游平台程序
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"溪谷软件vlcms手游平台程序")||(icontains(title,"溪谷软件vlcms手游平台程序"))
+  method: GET
+  

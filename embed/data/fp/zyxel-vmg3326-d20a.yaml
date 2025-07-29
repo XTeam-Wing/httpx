@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-vmg3326-d20a
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"vmg3326-d20a")
+  method: GET
+  

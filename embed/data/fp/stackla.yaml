@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: stackla
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"stackla")
+  method: GET
+  

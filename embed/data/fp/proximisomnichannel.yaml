@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: proximisomnichannel
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"proximis omnichannel")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: MitraStar Technology Corp.
+  cpe: ''
+  product: mitrastar-dsl-2401hn-t1c
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<friendlyname>mitrastar dsl-2401hn-t1c internet sharing gateway</friendlyname>")
+    || icontains(body,"<modelnumber>dsl-2401hn-t1c</modelnumber>"))
+  method: GET
+  

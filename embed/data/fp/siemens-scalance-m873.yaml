@@ -1,0 +1,12 @@
+info:
+  category: industrial control
+  company: Siemens AG.
+  cpe: ''
+  product: siemens-scalance-m873
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"scalance m-873") || icontains(cert,"scalance m873")) ||
+    icontains(banner,"realm=\"scalance m873"))
+  method: GET
+  

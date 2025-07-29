@@ -1,0 +1,11 @@
+info:
+  category: multifunctional
+  company: Ricoh Company, Ltd.
+  cpe: ''
+  product: ricoh-ipsio-printer
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"ricoh ipsio ")
+  method: GET
+  

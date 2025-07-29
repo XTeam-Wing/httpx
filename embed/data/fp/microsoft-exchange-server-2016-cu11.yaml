@@ -1,0 +1,11 @@
+info:
+  category: electronic mail system
+  company: Microsoft Corporation
+  cpe: ''
+  product: microsoft-exchange-server-2016-cu11
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"href=\"/owa/auth/15.1.1591")
+  method: GET
+  

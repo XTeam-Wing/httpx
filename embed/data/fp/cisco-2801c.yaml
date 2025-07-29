@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-2801c
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"cisco ios software, 2801c")
+  method: GET
+  

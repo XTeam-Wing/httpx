@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ejinshan终端
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"net.ejinshan.avclient.apk") && icontains(body,"金山终端安全系统")
+  method: GET
+  

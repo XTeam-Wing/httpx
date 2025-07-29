@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Sierra Wireless Inc.
+  cpe: ''
+  product: airlink-modem
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"modem@airlink.com") || icontains(banner,"modem@airlink.com"))
+  method: GET
+  

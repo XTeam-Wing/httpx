@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: mymps蚂蚁分类信息
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"mymps蚂蚁分类信息")
+  method: GET
+  

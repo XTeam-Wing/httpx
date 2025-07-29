@@ -1,0 +1,11 @@
+info:
+  category: virtualization
+  company: QNAP Systems, Inc.
+  cpe: ''
+  product: qnap-virtualization-station
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"var hostname") && icontains(title,"virtualization station"))
+  method: GET
+  

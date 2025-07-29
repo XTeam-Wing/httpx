@@ -1,0 +1,11 @@
+info:
+  category: other office equipment
+  company: Shenzhen Tiante Technology Co., Ltd.
+  cpe: ''
+  product: ttlink-tt-168l
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,">tt-168l</a>")
+  method: GET
+  

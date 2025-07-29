@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-vmg1312-b10d
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"zyxel vmg1312-b10d") || icontains(banner,"vmg1312-b10d"))
+  method: GET
+  

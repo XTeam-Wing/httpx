@@ -1,0 +1,14 @@
+info:
+  category: log analysis && audit
+  company: Splunk Inc.
+  cpe: ''
+  product: splunk-log-analysis
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((!icontains(banner,"drupal") && !icontains(body,"server: couchdb")) &&
+    icontains(body,"splunk.util.normalizeboolean")) || ((!icontains(banner,"drupal")
+    && !icontains(banner,"couchdb")) && icontains(banner,"server: splunkd"))) || ((!icontains(banner,"drupal")
+    && !icontains(body,"server: couchdb")) && icontains(banner,"server: splunkd")))'
+  method: GET
+  

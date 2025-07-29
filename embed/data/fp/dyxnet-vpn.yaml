@@ -1,0 +1,11 @@
+info:
+  category: vpn products
+  company: DYXnet Group
+  cpe: ''
+  product: dyxnet-vpn
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"dyxnet network")
+  method: GET
+  

@@ -1,0 +1,13 @@
+info:
+  category: other enterprise application
+  company: The Gordian Group, Inc.
+  cpe: ''
+  product: gordian-streaming-media-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && icontains(banner,"server:
+    gordian")) || ((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) &&
+    icontains(banner,"server: gordian")))'
+  method: GET
+  

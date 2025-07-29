@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Suzhou Keda Technology Co., Ltd.
+  cpe: ''
+  product: kedacom-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"realm=\"kedacom") || icontains(banner,"realm=\"kedacom"))
+    || icontains(banner,"kedacom. all rights reserved."))
+  method: GET
+  

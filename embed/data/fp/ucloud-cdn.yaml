@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Shanghai Ucode Information Technology Co., Ltd.
+  cpe: ''
+  product: ucloud-cdn
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: ucloud/cdn") || icontains(banner,"server: ucloud/cdn"))'
+  method: GET
+  

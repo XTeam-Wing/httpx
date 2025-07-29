@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Beijing Wanjiaxin Technology Co., Ltd.
+  cpe: ''
+  product: good10000-final-assembly-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"北京万佳信科技有限公司") && icontains(body,"value=\"https://mail.sinopec.com/owa/\""))
+  method: GET
+  

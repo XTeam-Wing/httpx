@@ -1,0 +1,11 @@
+info:
+  category: vpn products
+  company: Xi'an Jiaotong University Jabil Network Technology Co., Ltd.
+  cpe: ''
+  product: jump-sslvpn-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: title == "捷普sslvpn管理系统"
+  method: GET
+  

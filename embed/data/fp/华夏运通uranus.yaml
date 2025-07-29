@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 华夏运通uranus
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"华夏运通 uranus")
+  method: GET
+  

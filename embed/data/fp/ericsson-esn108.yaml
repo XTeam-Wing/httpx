@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Telefonaktiebolaget LM Ericsson
+  cpe: ''
+  product: ericsson-esn108
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"ericsson esn108")
+  method: GET
+  

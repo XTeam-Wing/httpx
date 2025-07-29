@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: custom-cms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"- powered by ccms</title>")||(icontains(body,"<meta name=\"generator\"
+    content=\"customcms gaming\" />"))
+  method: GET
+  

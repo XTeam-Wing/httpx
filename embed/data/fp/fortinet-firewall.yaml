@@ -1,0 +1,13 @@
+info:
+  category: firewall
+  company: Fortinet, Inc.
+  cpe: ''
+  product: fortinet-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(body,"ajax login") && icontains(body,"export_symbol try_login"))
+    && icontains(body,"and crack_kbd_event from jsconsole.js")) && !icontains(body,"array"))
+    || (icontains(body,"fortitoken") && icontains(body,"str_table.mail_token_msg")))
+  method: GET
+  

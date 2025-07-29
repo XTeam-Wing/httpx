@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 网神防火墙
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"3600防火墙") && icontains(body,"网神secgate")||(icontains(body,"resources/image/logo_header.png")
+    && icontains(body,"网神防火墙系统"))
+  method: GET
+  

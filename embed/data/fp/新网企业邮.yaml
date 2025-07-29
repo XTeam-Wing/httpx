@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 新网企业邮
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"新网企业邮")
+  method: GET
+  

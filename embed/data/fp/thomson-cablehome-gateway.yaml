@@ -1,0 +1,11 @@
+info:
+  category: wireless network
+  company: Technicolor SA
+  cpe: ''
+  product: thomson-cablehome-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"thomson cablehome gateway ")
+  method: GET
+  

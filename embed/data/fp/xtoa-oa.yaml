@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: xtoa-oa
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"src=\"systemfiles/js/iawebclientactivexcheck.js\"")||(icontains(body,"/images/default/first/xtoa_logo.png"))||(icontains(body,"/app_qjuserinfo/qjuserinfoadd.jsp"))
+  method: GET
+  

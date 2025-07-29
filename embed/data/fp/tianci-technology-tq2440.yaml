@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Guangzhou Tianjian Computer Technology Co., Ltd.
+  cpe: ''
+  product: tianci-technology-tq2440
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"tq2440")
+  method: GET
+  

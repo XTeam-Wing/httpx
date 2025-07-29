@@ -1,0 +1,13 @@
+info:
+  category: service
+  company: Payara Services Ltd
+  cpe: ''
+  product: payara-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"server: payara server") || icontains(title,"payara server
+    administration console")) || icontains(title,"payara server")) || icontains(banner,"server:
+    payara server"))'
+  method: GET
+  

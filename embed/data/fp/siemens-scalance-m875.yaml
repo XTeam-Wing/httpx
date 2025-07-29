@@ -1,0 +1,12 @@
+info:
+  category: industrial control
+  company: Siemens AG.
+  cpe: ''
+  product: siemens-scalance-m875
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"realm=\"scalance m875") || icontains(cert,"scalance m875"))
+    || icontains(banner,"realm=\"scalance m875"))
+  method: GET
+  

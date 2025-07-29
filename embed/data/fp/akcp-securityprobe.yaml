@@ -1,0 +1,11 @@
+info:
+  category: burglar alarm
+  company: AKCP Inc.
+  cpe: ''
+  product: akcp-securityprobe
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"securityprobe ")
+  method: GET
+  

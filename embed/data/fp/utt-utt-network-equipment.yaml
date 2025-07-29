@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Shanghai Aitai Technology Co., Ltd.
+  cpe: ''
+  product: utt-utt-network-equipment
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"utt") || icontains(banner,"realm=\"utt"))
+  method: GET
+  

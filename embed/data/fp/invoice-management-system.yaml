@@ -1,0 +1,11 @@
+info:
+  category: fms
+  company: other
+  cpe: ''
+  product: invoice-management-system
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"var pimscontextPath") || icontains(title,"发票管理系统")
+  method: GET
+  

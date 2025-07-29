@@ -1,0 +1,12 @@
+info:
+  category: traffic analysis
+  company: NETSCOUT
+  cpe: ''
+  product: netscout-ngeniusone
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"var newpath = \"/common/ngeniusdirect.jsp") || icontains(title,"ngenius
+    redirect"))
+  method: GET
+  

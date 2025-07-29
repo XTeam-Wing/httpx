@@ -1,0 +1,12 @@
+info:
+  category: online behavior management system
+  company: Beijing Wangyu Xingyun Information Technology Co., Ltd.
+  cpe: ''
+  product: leadsec-internet-behavior-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"txtmac") && icontains(body,"asdf</div>-->")) || icontains(title,"leadsec
+    acm"))
+  method: GET
+  

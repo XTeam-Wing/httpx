@@ -1,0 +1,13 @@
+info:
+  category: other enterprise application
+  company: Chengdu Tianrui Information Technology Co., Ltd.
+  cpe: ''
+  product: finecms
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(title,"finecms公益软件") || icontains(body,"/statics/js/dayrui.js"))
+    || icontains(body,"copyright\" content=\"finecms")) || icontains(body,"dayrui@gmail.com"))
+    || icontains(body,"powered by finecms"))
+  method: GET
+  

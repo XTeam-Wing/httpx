@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: SMC Networks Asia Pacific Pte Ltd
+  cpe: ''
+  product: smc8024l2
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"smc networks web interface")
+  method: GET
+  

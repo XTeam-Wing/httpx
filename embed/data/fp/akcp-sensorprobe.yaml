@@ -1,0 +1,12 @@
+info:
+  category: other network security
+  company: AKCP Inc.
+  cpe: ''
+  product: akcp-sensorprobe
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: akcp embedded web server") || icontains(banner,"server:
+    akcp embedded web server"))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: AV Scripts
+  cpe: ''
+  product: av-arcade
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"powered by <a href=\"http://www.avscripts.net/avarcade/")
+  method: GET
+  

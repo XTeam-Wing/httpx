@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: emerson-environmentalenergymonitoringsystem
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"alert(\"网络断连或者idu-s没有启动.")
+  method: GET
+  

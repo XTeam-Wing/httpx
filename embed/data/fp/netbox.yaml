@@ -1,0 +1,14 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: netbox
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((((icontains(banner,"netbox login") || icontains(banner,"realm=\"netbox"))
+    || icontains(banner,"realm=\"netbox")) || icontains(banner,"逆风工作室 netbox")) ||
+    icontains(banner,"逆风工作室 netbox")) || icontains(banner,"server: netbox")) || icontains(banner,"server:
+    netbox"))'
+  method: GET
+  

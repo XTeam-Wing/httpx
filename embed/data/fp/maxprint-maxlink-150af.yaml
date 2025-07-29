@@ -1,0 +1,13 @@
+info:
+  category: router
+  company: MAXPRINT
+  cpe: ''
+  product: maxprint-maxlink-150af
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"realm=\" maxprint maxlink-150af") || icontains(banner,"realm=\"maxprint
+    maxlink-150af")) || icontains(banner,"realm=\" maxprint maxlink-150af")) || icontains(banner,"realm=\"maxprint
+    maxlink-150af"))
+  method: GET
+  

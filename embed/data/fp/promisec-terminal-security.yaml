@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Promisec Limited
+  cpe: ''
+  product: promisec-terminal-security
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"name=\"promisecactivex\"")
+  method: GET
+  

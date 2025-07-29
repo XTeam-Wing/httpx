@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: led-control-software
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<!-- 记录当前电视墙的序号 end-->") && icontains(body,"j_setcon j_sub_new j_padt30
+    j_padb30")||(icontains(body,"j_setcon j_sub_new j_padt30 j_padb30"))||(icontains(body,"<!--
+    记录当前电视墙的序号 end-->"))
+  method: GET
+  

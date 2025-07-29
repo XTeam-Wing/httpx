@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: adimsystemswebserver
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"adimsystems webserver")
+  method: GET
+  

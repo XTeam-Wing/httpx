@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 联达动力医院综合办公管理系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"联达动力 医院综合办公管理系统")
+  method: GET
+  

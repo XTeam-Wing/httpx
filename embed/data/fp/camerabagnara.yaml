@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: camerabagnara
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"camera bagnara")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Shenzhen Zhongzhixuan Information Technology Co., Ltd.
+  cpe: ''
+  product: zhiyun-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"handlexpapplycontact") || icontains(title,"登录智选云"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: industrial control
+  company: Rockwell Automation, Inc.
+  cpe: ''
+  product: ra-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"rockwell automation")
+  method: GET
+  

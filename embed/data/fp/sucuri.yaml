@@ -1,0 +1,14 @@
+info:
+  category: website security monitoring system
+  company: Sucuri Inc.
+  cpe: ''
+  product: sucuri
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((icontains(banner,"x-sucuri-id") || icontains(banner,"x-sucuri-id")) ||
+    icontains(body,"cloudproxy@sucuri.net")) || icontains(body,"sucuri website firewall
+    - cloudproxy - access denied")) || icontains(banner,"server: sucuri/cloudproxy"))
+    || icontains(banner,"server: sucuri/cloudproxy"))'
+  method: GET
+  

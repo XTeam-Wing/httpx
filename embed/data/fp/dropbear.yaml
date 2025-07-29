@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: dropbear
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(banner,"dropbear_2013.60") || icontains(banner,"dropbear") || icontains(banner,"dropbear_0.46")
+  method: GET
+  

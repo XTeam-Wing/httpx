@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: dr-web-anti-virus
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"(set-cookie: drweb_personal_office=[^;]*;)")||(icontains(body,"<div
+    id=\"logo\" class=\"logo\"><img src=\"/avdesk/includes/system/templates/images/logo_en.png\"
+    alt=\"\" /></div>"))'
+  method: GET
+  

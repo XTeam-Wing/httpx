@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: chenrui-one-way-transmission-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"辰锐单向传输系统")
+  method: GET
+  

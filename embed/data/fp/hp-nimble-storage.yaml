@@ -1,0 +1,11 @@
+info:
+  category: network storage
+  company: Hewlett Packard Enterprise Development LP
+  cpe: ''
+  product: hp-nimble-storage
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"nimble storage ")
+  method: GET
+  

@@ -1,0 +1,13 @@
+info:
+  category: switch
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-7706
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((!icontains(server,"s7706") && icontains(banner,"server")) && icontains(banner,"7706"))
+    && icontains(banner,"simple/view/login.html")) || ((!icontains(server,"s7706")
+    && icontains(server,"7706")) && icontains(banner,"simple/view/login.html")))
+  method: GET
+  

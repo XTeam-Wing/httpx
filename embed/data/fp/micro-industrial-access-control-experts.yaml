@@ -1,0 +1,12 @@
+info:
+  category: entrance guard system
+  company: Shenzhen Weigeng Industrial Co., Ltd.
+  cpe: ''
+  product: micro-industrial-access-control-experts
+  server: nginx
+  tags: []
+rules:
+- dsl: '(!icontains(body,"server: couchdb") && (icontains(body,"<form method=post
+    action=act_id_1>") || title == "门禁专家"))'
+  method: GET
+  

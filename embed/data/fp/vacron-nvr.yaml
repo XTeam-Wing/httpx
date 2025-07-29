@@ -1,0 +1,12 @@
+info:
+  category: other iot device
+  company: other
+  cpe: ''
+  product: vacron-nvr
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"<strong>vacron</strong>") || icontains(title,"vacron nvr"))
+    || icontains(body,"name=\"vacron nvr login")) || icontains(banner,"dvr_netra"))
+  method: GET
+  

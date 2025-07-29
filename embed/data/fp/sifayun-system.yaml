@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: sifayun-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"新视云编码机管理系统")
+  method: GET
+  

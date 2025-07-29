@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: zoneminder
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"zoneminder login")
+  method: GET
+  

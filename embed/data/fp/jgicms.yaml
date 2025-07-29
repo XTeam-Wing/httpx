@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: jgicms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"jgi cms")
+  method: GET
+  

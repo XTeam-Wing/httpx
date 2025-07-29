@@ -1,0 +1,11 @@
+info:
+  category: blockchain
+  company: other
+  cpe: ''
+  product: blockchain-admin
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body," ethereum node") && icontains(title,"blockchain admin"))
+  method: GET
+  

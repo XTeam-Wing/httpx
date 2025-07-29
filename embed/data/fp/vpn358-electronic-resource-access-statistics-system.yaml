@@ -1,0 +1,12 @@
+info:
+  category: other software system
+  company: Huiwen Software Co., Ltd.
+  cpe: ''
+  product: vpn358-electronic-resource-access-statistics-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"href=\"/lib/bootstrap/ico/favicon.ico\"") && icontains(body,"class=\"form-actions
+    j_add_ip_actions\""))
+  method: GET
+  

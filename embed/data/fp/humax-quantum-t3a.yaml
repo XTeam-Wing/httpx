@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: HUMAX Co., Ltd.
+  cpe: ''
+  product: humax-quantum-t3a
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"class=\"pro-model\" align=\"left\"")
+  method: GET
+  

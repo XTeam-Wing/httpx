@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: PHP Group
+  cpe: ''
+  product: pear
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"content=\"webbased pear package manager") || icontains(body,"installed
+    packages, channel pear"))
+  method: GET
+  

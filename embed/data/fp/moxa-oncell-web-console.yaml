@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Mosa Technology (Shanghai) Co., Ltd.
+  cpe: ''
+  product: moxa-oncell-web-console
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"web console") && icontains(title,"oncell "))
+  method: GET
+  

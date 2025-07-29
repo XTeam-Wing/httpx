@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Dawn Information Industry Co., Ltd.
+  cpe: ''
+  product: zhongke-dawn-raid-manager
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"sugon raid manager")
+  method: GET
+  

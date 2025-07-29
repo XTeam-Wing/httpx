@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Dell Inc.
+  cpe: ''
+  product: dell-poweredge-m520
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"id=\"serverinfo\"> poweredge m520")
+  method: GET
+  

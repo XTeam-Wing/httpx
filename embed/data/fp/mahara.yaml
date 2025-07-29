@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: mahara
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"{\"namedfieldempty\":") || icontains(body,"id=\"powered-by\"><a
+    href=\"http://mahara.org/")) || icontains(body,"this site is powered by mahara"))
+  method: GET
+  

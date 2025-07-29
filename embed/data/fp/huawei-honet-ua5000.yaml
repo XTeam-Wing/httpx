@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-honet-ua5000
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"huawei honet ua5000")
+  method: GET
+  

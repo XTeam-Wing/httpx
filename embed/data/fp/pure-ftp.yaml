@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: pure-ftp
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"pure-ftpd") && icontains(protocol,"ftp"))
+  method: GET
+  

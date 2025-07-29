@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Beijing Yahong Century Technology Development Co., Ltd.
+  cpe: ''
+  product: act-enterprise-side-internet-integrated-management-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"path=/ucenter/; secure; httponly") || icontains(body,"<script>location.href=\"ucenter\";</script>"))
+    || icontains(body,"url:\"/ucenter/login/loginaction!gettitle.action\",")) || icontains(title,"企业侧互联网综合管理平台"))
+  method: GET
+  

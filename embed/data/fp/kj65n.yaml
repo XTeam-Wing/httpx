@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: kj65n
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"kj65n")||(icontains(body,"worlddesktop/webform1.aspx") && icontains(body,"images/login/top002.gif"))||(icontains(body,"images/login/top002.gif"))||(icontains(body,"worlddesktop/webform1.aspx"))
+  method: GET
+  

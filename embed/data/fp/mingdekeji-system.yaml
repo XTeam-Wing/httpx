@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: mingdekeji-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"荆州明德科技") && icontains(body,"href=\"imges/zgsh.ico\"")||(icontains(body,"href=\"imges/zgsh.ico\""))||(icontains(body,"荆州明德科技"))
+  method: GET
+  

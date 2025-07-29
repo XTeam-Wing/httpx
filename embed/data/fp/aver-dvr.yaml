@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: AVer Information Inc.
+  cpe: ''
+  product: aver-dvr
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"var isexist = get_cookie(\"ocx\")")
+  method: GET
+  

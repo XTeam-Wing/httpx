@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-wnr612v3
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"netgear  wnr612v3") || icontains(banner,"netgear  wnr612v3"))
+  method: GET
+  

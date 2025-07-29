@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: microsoftpowerpoint
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"microsoft powerpoint")
+  method: GET
+  

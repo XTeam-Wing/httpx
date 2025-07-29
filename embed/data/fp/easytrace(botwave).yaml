@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Guangzhou Bohui Digital Technology Co., Ltd.
+  cpe: ''
+  product: easytrace(botwave)
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"login_page") && icontains(title,"easytrace"))
+  method: GET
+  

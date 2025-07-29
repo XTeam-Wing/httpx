@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-jnr1010v2
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"netgear jnr1010v2") || icontains(banner,"realm=\"netgear
+    jnr1010v2"))
+  method: GET
+  

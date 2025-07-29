@@ -1,0 +1,13 @@
+info:
+  category: router
+  company: ZTE Corporation
+  cpe: ''
+  product: zte-router
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"server: zte/rosng") || icontains(banner,"server: zte/rosng"))
+    || (!icontains(banner,"switch") && icontains(banner,"zxr10"))) || icontains(banner,"router
+    of zte corporation"))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Guangdong South China Normal University Technology Development Corporation
+  cpe: ''
+  product: umeye-case-webcam
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"name=\"utbd_v\"")
+  method: GET
+  

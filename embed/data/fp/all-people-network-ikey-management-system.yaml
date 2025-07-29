@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Shanghai Zhongren Network Security Technology Co., Ltd.
+  cpe: ''
+  product: all-people-network-ikey-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"<div id=\"ikey_conter\">") || title == "ikey管理系统") || icontains(body,"content=\"ikey,众人科技,ikey"))
+  method: GET
+  

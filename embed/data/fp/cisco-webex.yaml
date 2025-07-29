@@ -1,0 +1,12 @@
+info:
+  category: voice video
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-webex
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"cisco webex") || icontains(body,"alt=\"cisco webex meetings
+    server\""))
+  method: GET
+  

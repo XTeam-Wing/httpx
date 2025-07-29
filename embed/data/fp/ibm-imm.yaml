@@ -1,0 +1,14 @@
+info:
+  category: other network equipment
+  company: International Business Machines Corporation
+  cpe: ''
+  product: ibm-imm
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"/ibmdojo/") && icontains(body,"<meta http-equiv=\"refresh\"
+    content=\"0;url=/designs/imm/noscript/noscript_en.php\" />")) || (icontains(body,"ibm.stg.inlinemessage.messagetypes.msg_critical")
+    && icontains(body,"<meta http-equiv=\"refresh\" content=\"0;url=/designs/imm/noscript/noscript_en.php\"
+    />")))
+  method: GET
+  

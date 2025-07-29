@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: wagtail
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"wagtail")
+  method: GET
+  

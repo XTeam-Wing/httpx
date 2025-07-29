@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Suzhou Keda Technology Co., Ltd.
+  cpe: ''
+  product: kedacom-viewshot
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"background=\"image/viewshotuls-di.jpg") || icontains(title,"科达viewshot用户登录系统"))
+  method: GET
+  

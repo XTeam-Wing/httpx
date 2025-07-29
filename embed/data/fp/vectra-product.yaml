@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: vectra-product
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"vectra.base.css")
+  method: GET
+  

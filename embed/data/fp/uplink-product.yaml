@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: uplink-product
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"up-link systems, inc.") && icontains(title,"up-link")||(icontains(body,"up-link
+    systems, inc."))
+  method: GET
+  

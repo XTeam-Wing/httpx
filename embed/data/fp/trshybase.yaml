@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: trshybase
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"trs hybase")
+  method: GET
+  

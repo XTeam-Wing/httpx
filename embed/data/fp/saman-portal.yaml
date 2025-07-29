@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: saman-portal
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(body,"<meta name=\"generator\" content=\"saman information structure\"
+    />")||(icontains(header,"(server: sisrapid framework)"))||(icontains(header,"(set-cookie:
+    samanportalsid=[^;]+;)"))'
+  method: GET
+  

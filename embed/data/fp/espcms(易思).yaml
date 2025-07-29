@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: espcms(易思)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"espcms")||(icontains(title,"espcms(易思)"))
+  method: GET
+  

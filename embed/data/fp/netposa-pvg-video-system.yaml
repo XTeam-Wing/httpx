@@ -1,0 +1,13 @@
+info:
+  category: cameras && surveillance
+  company: East Net Power Technology Co., Ltd.
+  cpe: ''
+  product: netposa-pvg-video-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(title,"东方网力pvg_ocx_demo") || (icontains(banner,"pvg-ipsan") &&
+    icontains(protocol,"snmp"))) || icontains(body,"<span id=\"sysname\">power video
+    gateway")) || icontains(title,"东方网力pvg视频系统"))
+  method: GET
+  

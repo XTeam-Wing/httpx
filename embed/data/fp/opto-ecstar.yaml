@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Shenzhen Qingqi Information Technology Co., Ltd.
+  cpe: ''
+  product: opto-ecstar
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"ucstar 管理控制台")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Xi'an Airun Internet of Things Technology Service Co., Ltd.
+  cpe: ''
+  product: ai-run-smart-parking-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"src=\"/static/img/allstar.png\"")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: shenguyun-sgc8000
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"var granttype=\"authorization_code")
+  method: GET
+  

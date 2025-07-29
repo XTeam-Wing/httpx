@@ -1,0 +1,11 @@
+info:
+  category: fms
+  company: other
+  cpe: ''
+  product: tax-system
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"可以用window.self.location.href")
+  method: GET
+  

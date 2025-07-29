@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: ZTE Corporation
+  cpe: ''
+  product: zte-zxa10f460
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(protocol,"telnet") && icontains(banner,"f460")) || icontains(title,"zxa10f460"))
+    || icontains(title,"f460")) || icontains(body,"<modelnumber>f460</modelnumber>"))
+  method: GET
+  

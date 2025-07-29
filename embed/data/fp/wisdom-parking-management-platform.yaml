@@ -1,0 +1,12 @@
+info:
+  category: industrial control
+  company: other
+  cpe: ''
+  product: wisdom-parking-management-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"智慧停车管理平台") || icontains(body,"<div class=\"login-tit w320
+    h72\">登录账号</div>")) || icontains(body,"content=\"智慧停车管理平台"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Vodafone Group plc
+  cpe: ''
+  product: arcor-easy-box
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"arcor-easy box")
+  method: GET
+  

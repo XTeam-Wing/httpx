@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: netgearfr1000
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"netgear fr1000")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: aolansoft-studentsystem
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"vcode.aspx") && icontains(title,"奥蓝学生管理信息系统")||(icontains(body,"vcode.aspx"))
+  method: GET
+  

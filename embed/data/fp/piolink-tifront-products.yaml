@@ -1,0 +1,11 @@
+info:
+  category: antivirus gateway
+  company: PIOLINK, Inc.
+  cpe: ''
+  product: piolink-tifront-products
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<em>tifront, the security switch") || icontains(banner,"tifront-"))
+  method: GET
+  

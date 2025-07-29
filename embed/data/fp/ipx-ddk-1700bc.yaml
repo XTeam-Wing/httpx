@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: IPX International Inc.
+  cpe: ''
+  product: ipx-ddk-1700bc
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"ddk-1700bc") || icontains(banner,"realm=\"ddk-1700bc"))
+  method: GET
+  

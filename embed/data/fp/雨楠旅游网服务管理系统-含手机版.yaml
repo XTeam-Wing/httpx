@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 雨楠旅游网服务管理系统-含手机版
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"雨楠旅游网服务管理系统_含手机版")
+  method: GET
+  

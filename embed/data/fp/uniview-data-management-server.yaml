@@ -1,0 +1,13 @@
+info:
+  category: network storage
+  company: Zhejiang Yushi Technology Co., Ltd.
+  cpe: ''
+  product: uniview-data-management-server
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(body,"cur_type=\"devtype_dm8500") || icontains(body,"value=devtype_dm8500
+    selected>dm8500")) || icontains(body,"cur_type=\"devtype_ms8500\";")) || icontains(body,"/webui/switch.php"))
+    || icontains(title,"数据管理服务器"))
+  method: GET
+  

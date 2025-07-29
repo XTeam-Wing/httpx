@@ -1,0 +1,12 @@
+info:
+  category: printer
+  company: Oki Electric Industry Co., Ltd.
+  cpe: ''
+  product: oki-printer
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"okilan qg") || (icontains(banner,"printserver") && icontains(banner,"oki
+    okilan "))) || icontains(banner,"okidata-httpd"))
+  method: GET
+  

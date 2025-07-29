@@ -1,0 +1,11 @@
+info:
+  author: ev1l0o4g
+  description: 瑞友天翼应用虚拟化系统
+  tags: []
+  product: 瑞友天翼应用虚拟化系统
+  category: cms
+rules:
+- method: GET
+  path:
+    - '/favicon.ico'
+  dsl: contains_all(body,"DownLoad.XGI", "realor.cn", "dvLogin") || contains_all(body,"/CasMain.XGI", "realor.cn") || ('e33616cbfcf914d35164e687dc14dd01' == md5(body))

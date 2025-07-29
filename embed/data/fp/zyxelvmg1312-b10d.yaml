@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: zyxelvmg1312-b10d
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"zyxel vmg1312-b10d")
+  method: GET
+  

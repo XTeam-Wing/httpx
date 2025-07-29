@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: flatui
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"flat ui")
+  method: GET
+  

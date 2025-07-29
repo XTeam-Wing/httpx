@@ -1,0 +1,11 @@
+info:
+  category: identity authentication && authority management
+  company: Beijing Shenzhou Taiyue Software Co., Ltd.
+  cpe: ''
+  product: ultrapower-identity-&&-security-control-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<li><p>欢迎进入身份与安全管控系统</p></li>")
+  method: GET
+  

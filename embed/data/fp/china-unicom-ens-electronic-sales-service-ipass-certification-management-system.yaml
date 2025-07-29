@@ -1,0 +1,11 @@
+info:
+  category: identity authentication && authority management
+  company: China United Network Communications Group Co., Ltd.
+  cpe: ''
+  product: china-unicom-ens-electronic-sales-service-ipass-certification-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"ess电子化销售服务ipass认证管理系统")
+  method: GET
+  

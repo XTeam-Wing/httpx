@@ -1,0 +1,12 @@
+info:
+  category: blockchain
+  company: Beijing Bitmain Technology Co., Ltd.
+  cpe: ''
+  product: bitmain-antminer
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"antminer monitor") || icontains(banner,"realm=\"antminer"))
+    || icontains(banner,"realm=\"antminer"))
+  method: GET
+  

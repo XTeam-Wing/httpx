@@ -1,0 +1,11 @@
+info:
+  category: multifunctional
+  company: Ricoh Company, Ltd.
+  cpe: ''
+  product: ricoh-imagio-printer
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"ricoh imagio ")
+  method: GET
+  

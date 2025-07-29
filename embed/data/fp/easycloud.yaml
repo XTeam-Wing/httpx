@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: easycloud
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<h1 class=\"white\">云资源管控平台</h1>")
+  method: GET
+  

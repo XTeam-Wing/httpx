@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: DrayTek Corp.
+  cpe: ''
+  product: draytek-vigor-ap902
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"vigorap902") || icontains(banner,"realm=\"vigorap902"))
+  method: GET
+  

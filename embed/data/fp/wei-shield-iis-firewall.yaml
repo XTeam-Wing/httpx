@@ -1,0 +1,12 @@
+info:
+  category: web application firewall
+  company: Ice Shield Technology
+  cpe: ''
+  product: wei-shield-iis-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"firewall: www.weidun.com.cn") || icontains(banner,"firewall:
+    www.weidun.com.cn"))'
+  method: GET
+  

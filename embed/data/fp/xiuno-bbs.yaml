@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: xiuno-bbs
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"xiuno_bbs")
+  method: GET
+  

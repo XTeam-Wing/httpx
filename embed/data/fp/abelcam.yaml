@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: abelcam
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"href=\"https://www.abelcam.com/en/\" title=\"abelcam.com webcam
+    software")||(icontains(body,"content=\"abelcam "))||(icontains(body,"<h1>abelcam "))||(icontains(header,"abelcam"))
+  method: GET
+  

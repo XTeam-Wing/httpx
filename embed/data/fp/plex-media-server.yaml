@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: plex-media-server
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<mediagrabber identifier=\"tv.plex.dvblex\"")
+  method: GET
+  

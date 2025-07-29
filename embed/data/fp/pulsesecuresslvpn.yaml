@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: pulsesecuresslvpn
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"pulse secure ssl vpn")
+  method: GET
+  

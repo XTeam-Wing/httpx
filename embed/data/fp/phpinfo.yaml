@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: phpinfo
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<title>phpinfo") && icontains(body,"virtual directory support")
+  method: GET
+  

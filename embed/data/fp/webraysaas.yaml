@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: webraysaas
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"webray saas")
+  method: GET
+  

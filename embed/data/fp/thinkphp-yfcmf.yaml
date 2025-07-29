@@ -1,0 +1,12 @@
+info:
+  category: development framework
+  company: Everyone Technology
+  cpe: ''
+  product: thinkphp-yfcmf
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"/yfcmf/yfcmf.js") || (icontains(body,"/public/others/maxlength.js")
+    && icontains(body,"yfcmf")))
+  method: GET
+  

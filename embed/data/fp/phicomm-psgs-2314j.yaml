@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Shanghai Phicomm Data Communication Technology Co., Ltd.
+  cpe: ''
+  product: phicomm-psgs-2314j
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"psgs-2314j") || icontains(banner,"realm=\"psgs-2314j"))
+  method: GET
+  

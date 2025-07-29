@@ -1,0 +1,12 @@
+info:
+  category: firewall
+  company: Beijing Wangkang Technology Co., Ltd.
+  cpe: ''
+  product: 网康科技-下一代防火墙
+  server: unknown
+  tags: []
+rules:
+- dsl: (icontains(title,"网康下一代防火墙") && icontains(body,"/images/dashboard/dashboard.png"))
+    || icontains(banner,"Netentsec NGFW")
+  method: GET
+  

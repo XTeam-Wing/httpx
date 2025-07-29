@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Direct Packet, Inc
+  cpe: ''
+  product: direct-packet-device
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: dpwebserver") || icontains(banner,"server: dpwebserver"))'
+  method: GET
+  

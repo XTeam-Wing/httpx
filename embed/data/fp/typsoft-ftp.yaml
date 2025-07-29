@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: other
+  cpe: ''
+  product: typsoft-ftp
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"typsoft ftp")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Beijing Guoxin Anshi Technology Co., Ltd.
+  cpe: ''
+  product: yunjing-net-web-filter
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"云净网")
+  method: GET
+  

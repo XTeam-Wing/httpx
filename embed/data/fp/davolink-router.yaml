@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: DAVOLINK. Inc.
+  cpe: ''
+  product: davolink-router
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"set-cookie: acookie=") && icontains(title,"setup configuration"))'
+  method: GET
+  

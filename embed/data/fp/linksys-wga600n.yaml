@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Belkin International, Inc.
+  cpe: ''
+  product: linksys-wga600n
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"wga600n wireless gaming adapter")
+  method: GET
+  

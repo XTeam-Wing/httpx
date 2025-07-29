@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: dcm4che
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"dcm4che")
+  method: GET
+  

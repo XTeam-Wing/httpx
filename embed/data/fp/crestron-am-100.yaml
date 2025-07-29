@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Crestron Electronics, Inc.
+  cpe: ''
+  product: crestron-am-100
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"crestron electronics am-100 ") && icontains(protocol,"snmp"))
+  method: GET
+  

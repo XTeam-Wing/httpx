@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: CP PLUS GmbH & Co. KG.
+  cpe: ''
+  product: cp-plus-nvr
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"cpplus nvr –web view")
+  method: GET
+  

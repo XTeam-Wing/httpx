@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: STANLEY SECURITY SOLUTIONS LTD.
+  cpe: ''
+  product: stanley-nt500
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"error 404") && icontains(banner,"http/1.1 404 error"))
+  method: GET
+  

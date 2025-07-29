@@ -1,0 +1,11 @@
+info:
+  category: erp
+  company: Shenzhen Dashitongzhou Information Technology Co., Ltd.
+  cpe: ''
+  product: agilebpm
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"class=\"logo-element\">agile-bpm") || icontains(body,"class=\"logo-element\">bpm"))
+  method: GET
+  

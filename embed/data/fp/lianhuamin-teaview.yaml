@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Beijing Lianhuaxin Technology Co., Ltd.
+  cpe: ''
+  product: lianhuamin-teaview
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"teaview一体化监控运维管理平台")
+  method: GET
+  

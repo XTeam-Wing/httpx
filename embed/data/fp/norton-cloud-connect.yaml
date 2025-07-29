@@ -1,0 +1,12 @@
+info:
+  category: other network security
+  company: Symantec Corporation
+  cpe: ''
+  product: norton-cloud-connect
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(body,"<h2 style=\"margin-left: 0px;\">norton cloud connect</h2>")
+    || icontains(title,"- norton cloud connect"))'
+  method: GET
+  

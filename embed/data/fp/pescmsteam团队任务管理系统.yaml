@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: pescmsteam团队任务管理系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"pescms team 团队任务管理系统")
+  method: GET
+  

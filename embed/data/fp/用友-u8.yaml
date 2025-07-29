@@ -1,0 +1,11 @@
+info:
+  category: fms
+  company: Yongyou Network Technology Co., Ltd.
+  cpe: ''
+  product: 用友-u8
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"getFirstU8Accid")
+  method: GET
+  

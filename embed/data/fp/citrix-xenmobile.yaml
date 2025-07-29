@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: citrix-xenmobile
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"citrix-transactionid: *")||(icontains(header,"citrix-transactionid:
+    *") && icontains(header,"set-cookie: xmscookie"))'
+  method: GET
+  

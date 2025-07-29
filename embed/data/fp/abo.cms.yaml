@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: abo.cms
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"abo.cms") || icontains(banner,"abo.cms"))
+  method: GET
+  

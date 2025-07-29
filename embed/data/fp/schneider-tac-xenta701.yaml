@@ -1,0 +1,11 @@
+info:
+  category: industrial control
+  company: Schneider Electric
+  cpe: ''
+  product: schneider-tac-xenta701
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: tac/xenta701") || icontains(banner,"tac xenta701"))'
+  method: GET
+  

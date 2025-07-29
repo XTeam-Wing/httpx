@@ -1,0 +1,12 @@
+info:
+  category: big data pocessing
+  company: Shanghai Joyway Information Technology Co., Ltd.
+  cpe: ''
+  product: nsoc-big-data-analysis-system
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"<b>nsoc云安全解决方案") || icontains(body,"src=\"/nfw/static/framework/images/views.png"))
+    || icontains(body,"<h2>nsoc大数据分析系统</h2>"))
+  method: GET
+  

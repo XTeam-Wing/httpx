@@ -1,0 +1,11 @@
+info:
+  category: network storage
+  company: Tencent Holdings Limited
+  cpe: ''
+  product: tencent-tencentcos
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: tencentcos") || icontains(banner,"server: tencentcos"))'
+  method: GET
+  

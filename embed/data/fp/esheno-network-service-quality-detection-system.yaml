@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Shenyang Essenox Information Technology Co., Ltd.
+  cpe: ''
+  product: esheno-network-service-quality-detection-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"埃森诺网络服务质量检测系统 ")
+  method: GET
+  

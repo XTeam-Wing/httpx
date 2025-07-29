@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ajenti
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"ajenti")
+  method: GET
+  

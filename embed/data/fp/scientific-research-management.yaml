@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: scientific-research-management
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"研究院计算中心信息室") && icontains(title,"科研生产管理")
+  method: GET
+  

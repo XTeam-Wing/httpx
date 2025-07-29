@@ -1,0 +1,17 @@
+info:
+  company: H3C
+  product: h3c cas cvm虚拟化管理系统
+  category: 虚拟化
+  description: H3C-CAS-CVM虚拟化管理系统 was detected.
+  author: Loong716
+  fofa_query: app="H3C-CVM"
+  tags:
+  - tech
+rules:
+- method: GET
+  
+  dsl: (contains(body, "__gwt_historyFrame") && contains(body, "<title>CAS")) || contains(header, "H3C-CVM")
+- method: GET
+  path: 
+  - /cas/
+  dsl: (contains(body, "__gwt_historyFrame") && contains(body, "<title>CAS")) || contains(header, "H3C-CVM")

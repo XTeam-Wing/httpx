@@ -1,0 +1,14 @@
+info:
+  category: electronic mail system
+  company: other
+  cpe: ''
+  product: mailenable
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(banner,"mailenable pop3 server") || (icontains(banner,"mailenable")
+    && icontains(protocol,"smtp"))) || icontains(body,"class=\"loginpanel_botleft_div"))
+    || title == "mailenable - webmail") || icontains(body,"<!-- loginpanel_shell_table
+    -->"))
+  method: GET
+  

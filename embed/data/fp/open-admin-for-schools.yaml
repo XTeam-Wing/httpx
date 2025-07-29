@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: open-admin-for-schools
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"open admin for schools") || icontains(body,"action=\"/cgi-bin/rptbirthday.pl"))
+    || icontains(title,"open admin for schools"))
+  method: GET
+  

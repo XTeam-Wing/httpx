@@ -1,0 +1,12 @@
+info:
+  category: project management system
+  company: Petrochemical Yingke Information Technology Co., Ltd.
+  cpe: ''
+  product: petrochemicals-coal-gasification-equipment-process-management-&&-remote-service-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"class=\"f-loading-mask ui-widget ui-widget-content\"") &&
+    icontains(body,"src=\"validatecode.aspx\""))
+  method: GET
+  

@@ -1,0 +1,17 @@
+info:
+  company: Elastic
+  product: kibana
+  category: other
+  description: Kibana 是一个免费且开放的用户界面，能够让您对 Elasticsearch 数据进行可视化，并让在 Elastic Stack 中进行导航。可以进行各种操作，从跟踪查询负载，到理解请求如何流经的整个应用，都能轻松完成。
+  author: 哆啦A梦
+  tags:
+  - tech
+  - kibana
+rules:
+- method: GET
+  
+  dsl: contains(body, "<title>Kibana</title>") || contains(body, "<title>Elastic Kibana</title>")|| contains(body, "/bundles/app/kibana/bootstrap.js")
+- method: GET
+  path: 
+  - /ui/favicons/favicon.ico
+  dsl: md5(body) == "258a0e2ab04ddd71736446bc8dff954e"

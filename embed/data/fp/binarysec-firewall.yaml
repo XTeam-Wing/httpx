@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: BinarySEC Corporation
+  cpe: ''
+  product: binarysec-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"x-binarysec") || icontains(banner,"x-binarysec"))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: bssnassoundweb-london
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"server: ") && icontains(header,"soundweb london")||(icontains(header,"server:
+    soundweb london"))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: worldnow
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"(set-cookie: ^wn_cg)")'
+  method: GET
+  

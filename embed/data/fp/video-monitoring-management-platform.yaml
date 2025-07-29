@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: other
+  cpe: ''
+  product: video-monitoring-management-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body," <span>平台采用最新图像化展现技术")
+  method: GET
+  

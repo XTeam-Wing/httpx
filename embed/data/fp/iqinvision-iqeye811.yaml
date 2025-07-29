@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: IQinVision, Inc.
+  cpe: ''
+  product: iqinvision-iqeye811
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"iqeye811") || icontains(title,"iqeye811"))
+  method: GET
+  

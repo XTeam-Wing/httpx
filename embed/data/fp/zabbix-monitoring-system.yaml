@@ -1,0 +1,13 @@
+info:
+  category: host monitoring && auditing
+  company: Zabbix LLC.
+  cpe: ''
+  product: zabbix-monitoring-system
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(banner,"zbx_sessionid") || icontains(banner,"linux zabbix-"))
+    || icontains(body,"meta name=\"author\" content=\"zabbix sia\"")) || icontains(banner,"zbx_sessionid"))
+    || icontains(body,"images/general/zabbix.ico"))
+  method: GET
+  

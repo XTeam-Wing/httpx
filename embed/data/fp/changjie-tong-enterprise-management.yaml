@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Changjietong Information Technology Co., Ltd.
+  cpe: ''
+  product: changjie-tong-enterprise-management
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"畅捷通")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: Six Apart, Ltd
+  cpe: ''
+  product: movabletype-product
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"rel=\"generator\">movable type") || icontains(body,"content=\"movable
+    type")) || icontains(body,"movable type version"))
+  method: GET
+  

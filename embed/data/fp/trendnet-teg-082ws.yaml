@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: TRENDnet, Inc.
+  cpe: ''
+  product: trendnet-teg-082ws
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"teg-082ws")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: jamiaalhind
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"jamia al hind")
+  method: GET
+  

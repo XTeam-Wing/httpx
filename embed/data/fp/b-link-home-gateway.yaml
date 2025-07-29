@@ -1,0 +1,12 @@
+info:
+  category: switch
+  company: Shenzhen Bilian Electronics Co., Ltd.
+  cpe: ''
+  product: b-link-home-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"b-link home gateway") || icontains(banner,"realm=\"b-link
+    home gateway"))
+  method: GET
+  

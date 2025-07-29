@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: 'Grafana Labs '
+  cpe: ''
+  product: grafana-labs-公司产品
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"Grafana") || icontains(body,"window.grafanabootdata = ")
+  method: GET
+  

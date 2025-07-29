@@ -1,0 +1,14 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: acti-cameras-and-surveillance
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(body,"url=/cgi-bin/videoconfiguration.cgi")||(icontains(title,"web configurator")
+    && icontains(header,"server: httpd v1.0 05may2008"))||(icontains(body,"acti corporation
+    all rights reserved") && icontains(title,"web configurator"))||(icontains(body,"acti corporation
+    all rights reserved"))'
+  method: GET
+  

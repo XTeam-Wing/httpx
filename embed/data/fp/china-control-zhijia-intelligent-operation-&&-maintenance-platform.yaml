@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: Beijing Huakong Zhijia Technology Co., Ltd.
+  cpe: ''
+  product: china-control-zhijia-intelligent-operation-&&-maintenance-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"华控智加智能运维平台")
+  method: GET
+  

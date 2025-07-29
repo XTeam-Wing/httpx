@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Shenzhen Wanwang Botong Technology Co., Ltd.
+  cpe: ''
+  product: tg-rn300-series-router
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"tg-net rn300 series router")
+  method: GET
+  

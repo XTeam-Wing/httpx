@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Information Management Center of Zhongyuan Oilfield Branch Company
+  cpe: ''
+  product: information-operation-&&-maintenance-support-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"placeholder=\"ad域账号 / 系统账号\"")
+  method: GET
+  

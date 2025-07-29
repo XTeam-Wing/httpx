@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: dir2web-cms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<link href=\"default/styles/d2w_object_page.css\" rel=\"stylesheet\"
+    type=\"text/css\" media=\"screen\" /></head>")||(icontains(body,"<div class=\"d2w-back_link\"
+    id=\"start\">"))
+  method: GET
+  

@@ -1,0 +1,14 @@
+info:
+  category: router
+  company: Pullian Technology Co., Ltd.
+  cpe: ''
+  product: tp-link-tl-wdr7500
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"tp-link wireless wdr7500") || icontains(banner,"realm=\"tp-link
+    wireless dual band gigabit router wdr7500")) || icontains(banner,"realm=\"tp-link
+    wireless wdr7500")) || icontains(banner,"tp-link wireless dual band gigabit router
+    wdr7500"))
+  method: GET
+  

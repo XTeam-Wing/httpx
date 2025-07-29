@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: sxzrouter-caching
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body," href=\"http://www.dwcache.com\"") && icontains(body,"src=\"/public/sec/assets/js/libs/jquery.placeholder.min.js\">")||(icontains(body,"src=\"/public/sec/assets/js/libs/jquery.placeholder.min.js\">"))||(icontains(body,"href=\"http://www.dwcache.com\""))||(icontains(body,"
+    href=\"http://www.dwcache.com\""))
+  method: GET
+  

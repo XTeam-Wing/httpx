@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: EFM Networks Co.,Ltd.
+  cpe: ''
+  product: efm-networks-iptime-t3004
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"iptime t3004") || icontains(body,"\"/images2/login_title.t3004.gif\""))
+  method: GET
+  

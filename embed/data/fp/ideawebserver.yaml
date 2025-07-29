@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: ideawebserver
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: ideawebserver") || icontains(banner,"server: ideawebserver"))'
+  method: GET
+  

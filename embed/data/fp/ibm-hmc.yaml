@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: International Business Machines Corporation
+  cpe: ''
+  product: ibm-hmc
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"<frame src=\"/preloginmonitor/welcome.jsp\"/>") || icontains(title,"硬件管理控制台"))
+    || icontains(body,"rel=\"icon\" href=\"/hmc.png")) || icontains(title,"hmc1"))
+  method: GET
+  

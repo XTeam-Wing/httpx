@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: sql-buddy
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"href=\"themes/bittersweet/css/main.css") || icontains(body,"h3><a
+    href=\"http://www.sqlbuddy.com/help"))
+  method: GET
+  

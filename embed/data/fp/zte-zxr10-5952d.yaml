@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: ZTE Corporation
+  cpe: ''
+  product: zte-zxr10-5952d
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"zte 5952d software")
+  method: GET
+  

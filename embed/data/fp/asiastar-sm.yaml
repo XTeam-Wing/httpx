@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: asiastar-sm
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"asiastar_sm")
+  method: GET
+  

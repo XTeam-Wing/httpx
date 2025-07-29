@@ -1,0 +1,11 @@
+info:
+  category: hacking tool
+  company: other
+  cpe: ''
+  product: mars
+  server: nginx
+  tags: []
+rules:
+- dsl: title == "mars - login"
+  method: GET
+  

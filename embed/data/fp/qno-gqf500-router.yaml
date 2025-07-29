@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: QNO Technology Co., Ltd.
+  cpe: ''
+  product: qno-gqf500-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"realm=\"gqf500_4wan_gigabit_router") || icontains(banner,"realm=\"gqf500_4wan_gigabit_router"))
+    || icontains(banner,"realm=\"gqf500")) || icontains(banner,"gqf500"))
+  method: GET
+  

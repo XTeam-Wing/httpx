@@ -1,0 +1,12 @@
+info:
+  category: fms
+  company: Hangzhou Ancai Software Technology Co., Ltd.
+  cpe: ''
+  product: annea-reimbursement-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"安财") || icontains(body,"window.external.addfavorite(location.href,document.title);"))
+    && icontains(body,"by:lin.zhibin")) || icontains(body,"<div id=\"dsitetitle\""))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: data leakage prevention
+  company: SOMANSA.
+  cpe: ''
+  product: somansa-dlp
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"somansa") && icontains(body,"href=\"/dlpcenter/")) && icontains(title,"dlp
+    system"))
+  method: GET
+  

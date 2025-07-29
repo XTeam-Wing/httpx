@@ -1,0 +1,11 @@
+info:
+  category: development framework
+  company: Thomas Fuchs
+  cpe: ''
+  product: zepto.js
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"zepto.min.js") || icontains(body,"zepto.js"))
+  method: GET
+  

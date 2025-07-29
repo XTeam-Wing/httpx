@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: warcraft-3-frozen-throne-mod-config-file
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"// radius to give xp to teammates near where the special objective
+    is completed (rescued hosties, bomb planted, killed vip, vip escaped, default
+    is 750)")
+  method: GET
+  

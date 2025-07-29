@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: chinatiejun-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"document.domain==\"eqs.jztj.net\"")||(icontains(body,"document.domain
+    == \"eqs.jztj.net\""))
+  method: GET
+  

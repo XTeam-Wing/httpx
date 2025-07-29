@@ -1,0 +1,11 @@
+info:
+  category: printer
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: dlink-print-server
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"dp-302") || icontains(banner,"d-link dp-"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: vinala
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"vinala")
+  method: GET
+  

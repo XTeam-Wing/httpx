@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Changsha Tongxun Computer Technology Co., Ltd.
+  cpe: ''
+  product: song-xun-technology-intelligent-cache
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body," href=\"http://www.dwcache.com\"") && icontains(body,"src=\"/public/sec/assets/js/libs/jquery.placeholder.min.js\">"))
+  method: GET
+  

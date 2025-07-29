@@ -1,0 +1,12 @@
+info:
+  category: other software system
+  company: other
+  cpe: ''
+  product: diaowen-questionnaire-form-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"powered by <a href=\"http://www.dwsurvey.net\" style=") ||
+    icontains(title,"调问-专业且开源的问卷表单系统"))
+  method: GET
+  

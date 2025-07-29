@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 联软准入
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"网络准入") && icontains(body,"leagsoft") && icontains(body,"redirect")||(icontains(body,"leagsoft")
+    && icontains(body,"redirect") && icontains(body,"网络准入"))
+  method: GET
+  

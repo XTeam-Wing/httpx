@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Petrochemical Yingke Information Technology Co., Ltd.
+  cpe: ''
+  product: petrochemical-yingke-risk-analysis-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"动设备运行风险分析系统")
+  method: GET
+  

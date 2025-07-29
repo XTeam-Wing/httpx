@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Ubiquiti Inc.
+  cpe: ''
+  product: ubnt-edgerouter
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"edgerouter") && icontains(protocol,"snmp"))
+  method: GET
+  

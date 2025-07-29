@@ -1,0 +1,13 @@
+info:
+  category: other iot device
+  company: Samsung Group
+  cpe: ''
+  product: samsung-nvr
+  server: nginx
+  tags: []
+rules:
+- dsl: (!icontains(body,"couchdb") && ((title == "wisenet nvr" || (icontains(body,"$.nvr.plugin_version_check
+    = ") && icontains(body,"$.nvr = {}; $.nvr.plugin_version = "))) || icontains(title,"samsung
+    techwin nvr web viewer")))
+  method: GET
+  

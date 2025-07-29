@@ -1,0 +1,13 @@
+info:
+  category: other enterprise application
+  company: Ascensio System SIA
+  cpe: ''
+  product: onlyoffice
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"<a class=\"top-logo\" title=\"onlyoffice") || icontains(body,"<a
+    href=\"http://api.onlyoffice.com")) || icontains(body,"thank you for choosing
+    onlyoffice!")) && icontains(title,"onlyoffice"))
+  method: GET
+  

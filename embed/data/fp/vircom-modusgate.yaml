@@ -1,0 +1,11 @@
+info:
+  category: electronic mail system
+  company: Vircom
+  cpe: ''
+  product: vircom-modusgate
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"modusgate esmtp receiver")
+  method: GET
+  

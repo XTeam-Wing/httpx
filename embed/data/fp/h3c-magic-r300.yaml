@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-magic-r300
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(title,"r300") && icontains(title,"{\"length\": 0, \"chained_to\":
+    1600482420, \"identifier\": \"tains\", \"str\": null}"))'
+  method: GET
+  

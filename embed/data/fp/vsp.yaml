@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: other
+  cpe: ''
+  product: vsp
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"raid700")
+  method: GET
+  

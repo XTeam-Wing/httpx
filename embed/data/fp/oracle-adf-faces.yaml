@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: Oracle Corporation
+  cpe: ''
+  product: oracle-adf-faces
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"var _adfwindowopenerror") || icontains(body,"<!-- created
+    by oracle adf faces")) || icontains(body,"content=\"oracle adf"))
+  method: GET
+  

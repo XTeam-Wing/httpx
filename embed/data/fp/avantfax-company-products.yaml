@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: iFAX Solutions, Inc.
+  cpe: ''
+  product: avantfax-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"- avantfax - login") || icontains(body,"src=\"images/avantfax-big.png\"
+    border=\"0\" alt=\"avantfax"))
+  method: GET
+  

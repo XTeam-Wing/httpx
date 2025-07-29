@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: .netmessageframing
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,".net message framing")
+  method: GET
+  

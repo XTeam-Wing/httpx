@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Raritan Inc.
+  cpe: ''
+  product: raritan-remote-client
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"raritan remote client")
+  method: GET
+  

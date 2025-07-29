@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Microsoft Corporation
+  cpe: ''
+  product: azure-arr
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"arraffinity") || icontains(banner,"arraffinity"))
+  method: GET
+  

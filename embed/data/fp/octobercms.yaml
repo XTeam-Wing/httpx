@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: octobercms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"october cms")||(icontains(title,"octobercms"))
+  method: GET
+  

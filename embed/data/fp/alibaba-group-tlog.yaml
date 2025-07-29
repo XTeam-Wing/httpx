@@ -1,0 +1,11 @@
+info:
+  category: log analysis && audit
+  company: Alibaba Group
+  cpe: ''
+  product: alibaba-group-tlog
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"content=\"tlog 实时数据处理")
+  method: GET
+  

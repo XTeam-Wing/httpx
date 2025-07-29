@@ -1,0 +1,12 @@
+info:
+  category: network intrusion detection && defense
+  company: Trend Micro Incorporated.
+  cpe: ''
+  product: trend-smart-protection-server
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"趋势科技云安全智能防护服务器") || (icontains(body,"redirect_reason") &&
+    icontains(body,"lastrow_right"))) || icontains(cert,"smart protection server"))
+  method: GET
+  

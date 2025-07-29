@@ -1,0 +1,18 @@
+info:
+  company: Citrix
+  product: netscaler aaa
+  category: 身份管理与访问控制iam
+  description: NetScaler AAA是一款功能强大的网络访问控制和身份认证系统，可帮助组织管理网络资源和用户身份验证。它提供多种认证方法和多层安全控制，包括单点登录、多因素身份验证、访问控制和审计等功能，可用于各种企业和组织。
+  author: 哆啦A梦&&z3r0yu
+  fofa_query: app="citrix-Netscaler"
+  tags:
+  - tech
+  - citrix-netscaler
+rules:
+- method: GET
+  
+  dsl: 'contains(header, "ns_af") || contains(header, "NS-CACHE") || contains(header, "Set-Cookie: citrix_ns_id") || (contains(body, "Citrix Login") && contains(body, "Netscape/Firefox/Opera")) || contains(banner, "NetScaler NS10.1") || contains(banner, "NetScaler NS10.5")'
+- method: GET
+  path: 
+  - /logon/LogonPoint/tmindex.html
+  dsl: contains(body, "NetScaler AAA</title>") || contains(body, "class=\"_ctxstxt_NetscalerAAA")

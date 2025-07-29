@@ -1,0 +1,12 @@
+info:
+  category: other iot device
+  company: CP PLUS GmbH & Co. KG.
+  cpe: ''
+  product: cpplus-dvr
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"p3p: cp=cao psa our") && icontains(title,"cpplus dvr –web
+    view"))'
+  method: GET
+  

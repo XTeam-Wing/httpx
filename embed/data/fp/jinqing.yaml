@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: jinqing
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"action=\"/j_spring_security_check") && icontains(title,"企业安全威胁感知系统")||(icontains(body,"action=\"/j_spring_security_check"))
+  method: GET
+  

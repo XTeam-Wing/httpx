@@ -1,0 +1,12 @@
+info:
+  category: network intrusion detection && defense
+  company: other
+  cpe: ''
+  product: sniper
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"wins technet co.,ltd. ") || icontains(body,"(\"codebase=/activex/sniperlogin.cab#version="))
+    || icontains(title,"sniper login"))
+  method: GET
+  

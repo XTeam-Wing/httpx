@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: arris-touchstone-router
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<frame name=\"tabs\" src=\"/menu.htm?3\" frameborder=\"0\" scrolling=\"no\">")
+  method: GET
+  

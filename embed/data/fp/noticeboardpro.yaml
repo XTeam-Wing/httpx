@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: noticeboardpro
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<a href=\"registeroutline.php\" class=\"xref\" style=\"margin-right:10\">[register]</a>")||(icontains(body,"<a
+    href=\"loginoutline.php\" class=\"xref\" style=\"margin-left:165; margin-right:10\">[sign
+    in]</a>"))
+  method: GET
+  

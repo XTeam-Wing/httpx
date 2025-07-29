@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: shiji-xms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"西软云xms")||(icontains(body,"href=\"xmsenv.exe\">系统运行环境"))
+  method: GET
+  

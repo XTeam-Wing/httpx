@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: hikvision-bigdatadiagnosis
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"大数据诊断工具</strong>")
+  method: GET
+  

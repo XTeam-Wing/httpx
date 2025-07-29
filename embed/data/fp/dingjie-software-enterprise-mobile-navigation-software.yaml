@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Dingjie Software Co., Ltd.
+  cpe: ''
+  product: dingjie-software-enterprise-mobile-navigation-software
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"class=\"common_footer1030_textfontlink\"")
+  method: GET
+  

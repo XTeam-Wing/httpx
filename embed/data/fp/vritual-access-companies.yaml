@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Virtual Access
+  cpe: ''
+  product: vritual-access-companies
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"virtual access ")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ordermanagementsystem
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"联系新订单系统开发同事进行修改。</div>")
+  method: GET
+  

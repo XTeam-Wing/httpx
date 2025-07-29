@@ -1,0 +1,13 @@
+info:
+  category: other enterprise application
+  company: Falcon System Consulting Inc.
+  cpe: ''
+  product: falcon
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(body,"textarea class=\"form-control endpoints") || icontains(body,"<h3
+    class=\"font-bold\">opsplatform</h3>")) || icontains(title,"opsplatform")) ||
+    icontains(body,"<h3 class=\"font-bold\">opsplatform</h3>")) || icontains(title,"opsplatform"))
+  method: GET
+  

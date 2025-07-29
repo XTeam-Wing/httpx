@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: tranzeo-company's-product
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"tranzeo ")
+  method: GET
+  

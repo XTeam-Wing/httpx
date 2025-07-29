@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: tenda11nwirelessrouter
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"tenda 11n wireless router")
+  method: GET
+  

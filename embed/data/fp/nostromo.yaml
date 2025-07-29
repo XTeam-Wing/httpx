@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: nostromo
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: nostromo ") || icontains(banner,"server: nostromo"))'
+  method: GET
+  

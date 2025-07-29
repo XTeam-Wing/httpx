@@ -1,0 +1,13 @@
+info:
+  category: router
+  company: QNO Technology Co., Ltd.
+  cpe: ''
+  product: qno-router
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(title,"{\"length\": 0, \"chained_to\": 1912616503, \"identifier\":
+    \"ic Mail System\", \"str\": null}") && icontains(body,"login_bt_over.gif")) ||
+    (icontains(body,"/images/login_img01_03.gif") && icontains(body,"/qnovirtual_keyboard.js")))'
+  method: GET
+  

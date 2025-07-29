@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: China Telecom
+  cpe: ''
+  product: china-telecom-tianyi-broadband-government-network
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"loid_regist()") && icontains(body,"login"))
+  method: GET
+  

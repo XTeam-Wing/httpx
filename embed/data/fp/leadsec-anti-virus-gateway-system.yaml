@@ -1,0 +1,11 @@
+info:
+  category: antivirus gateway
+  company: Beijing Wangyu Xingyun Information Technology Co., Ltd.
+  cpe: ''
+  product: leadsec-anti-virus-gateway-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"网御防病毒网关系统")
+  method: GET
+  

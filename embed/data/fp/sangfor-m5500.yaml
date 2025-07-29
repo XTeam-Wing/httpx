@@ -1,0 +1,11 @@
+info:
+  category: vpn products
+  company: Shenxinfu Technology Co., Ltd.
+  cpe: ''
+  product: sangfor-m5500
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"value=\"m5500-q") || icontains(body,"value=\"m5500-sc"))
+  method: GET
+  

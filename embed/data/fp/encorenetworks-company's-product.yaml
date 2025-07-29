@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: encorenetworks-company's-product
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"encorenetworks-products")
+  method: GET
+  

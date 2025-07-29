@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: Zoho Corporation Pvt. Ltd.
+  cpe: ''
+  product: apex-it-help-desk
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"apex it help desk")
+  method: GET
+  

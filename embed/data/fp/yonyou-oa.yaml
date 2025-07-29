@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: yonyou-oa
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"url[]/images/logon/bg_login.jpg[] repeat-x top")
+  method: GET
+  

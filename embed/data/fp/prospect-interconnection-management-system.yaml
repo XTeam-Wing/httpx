@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Qingdao Prospect Internet Information Technology Co., Ltd.
+  cpe: ''
+  product: prospect-interconnection-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"/content/web/theme/skin01/img/p_login_logo01.png")
+  method: GET
+  

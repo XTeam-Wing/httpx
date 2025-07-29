@@ -1,0 +1,11 @@
+info:
+  category: voice video
+  company: Comcast Corporation
+  cpe: ''
+  product: xfinity-companies-products
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"/reset-meyer-1.0.min.css") || title == "xfinity")
+  method: GET
+  

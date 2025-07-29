@@ -1,0 +1,16 @@
+info:
+  category: router
+  company: DrayTek Corp.
+  cpe: ''
+  product: draytek-vigor-router
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((((icontains(cert,"commonname: vigor router") || icontains(banner,"login
+    to the router web configurator")) || icontains(banner,"realm=\"login to the router
+    web configurator")) || (icontains(body,"draytek corp. all rights reserved.") &&
+    icontains(title,"vigor login page"))) || icontains(banner,"realm=\"login to vigor"))
+    || icontains(banner,"realm=\"login to vigor")) || icontains(banner,"server: vigoraccess
+    web server")) || icontains(banner,"server: vigoraccess web server"))'
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: Akiva Technologies
+  cpe: ''
+  product: akiva-webboard
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"webboard=") || icontains(banner,"webboard=")) || icontains(body,"powered
+    by webboard"))
+  method: GET
+  

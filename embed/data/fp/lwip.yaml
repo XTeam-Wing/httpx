@@ -1,0 +1,13 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: lwip
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && icontains(banner,"/projects/lwip"))
+    && icontains(banner,"lwip")) || (((!icontains(banner,"drupal") && !icontains(banner,"couchdb"))
+    && icontains(server,"/projects/lwip")) && icontains(server,"lwip")))
+  method: GET
+  

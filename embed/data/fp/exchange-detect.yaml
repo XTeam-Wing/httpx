@@ -1,0 +1,13 @@
+info:
+  author: wing
+  description: Microsoft Exchange Admin Center login panel was detected.
+  cpe: cpe:2.3:a:microsoft:exchange_server:*:*:*:*:*:*:*:*
+  tags: []
+  product: exchange
+  category: cms
+rules:
+- method: GET
+  path:
+  - '/owa/auth/logon.aspx?replaceCurrent=1&url='
+  - '/ecp'
+  dsl: contains_any(body,"<title>Exchange Admin Center</title>","<title>Outlook</title>","<title>Outlook Web App</title>","url(\"/owa/auth","window.location.replace(\"/owa/\"","<a href=\"/owa/auth/errorFE.aspx?httpCode=500\"")

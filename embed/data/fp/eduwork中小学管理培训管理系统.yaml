@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: eduwork中小学管理培训管理系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"eduwork中小学管理培训管理系统")
+  method: GET
+  

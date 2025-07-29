@@ -1,0 +1,15 @@
+info:
+  category: service
+  company: Telefonaktiebolaget LM Ericsson
+  cpe: ''
+  product: ericsson-tv-web-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((icontains(banner,"server :ericsson television web server") || icontains(banner,"server:
+    ericsson television web server")) || icontains(banner,"server : ericsson television
+    web server")) || icontains(banner,"server :ericsson television web server")) ||
+    icontains(banner,"server: ericsson television web server")) || icontains(banner,"server
+    : ericsson television web server"))'
+  method: GET
+  

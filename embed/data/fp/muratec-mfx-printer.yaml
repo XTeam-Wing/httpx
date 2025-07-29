@@ -1,0 +1,11 @@
+info:
+  category: printer
+  company: Muratec America, Inc .
+  cpe: ''
+  product: muratec-mfx-printer
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"mfx-") || icontains(banner,"muratec mfx"))
+  method: GET
+  

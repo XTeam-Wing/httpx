@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Xun Rui CMS
+  cpe: ''
+  product: xunruicms
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"alt=\"xunruicms\"")
+  method: GET
+  

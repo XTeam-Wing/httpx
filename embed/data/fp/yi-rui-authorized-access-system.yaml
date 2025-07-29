@@ -1,0 +1,12 @@
+info:
+  category: nac
+  company: Beijing Infuse Software Co., Ltd.
+  cpe: ''
+  product: yi-rui-authorized-access-system
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"易瑞授权访问系统") || icontains(body,"fe0174bb-f093-42af-ab20-7ec621d10488"))
+    || icontains(body,"/authjsp/login.jsp"))
+  method: GET
+  

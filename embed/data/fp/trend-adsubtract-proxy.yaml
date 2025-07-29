@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Trend Micro Incorporated.
+  cpe: ''
+  product: trend-adsubtract-proxy
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: adsubtract") || icontains(banner,"adsubtract "))'
+  method: GET
+  

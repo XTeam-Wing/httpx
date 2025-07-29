@@ -1,0 +1,11 @@
+info:
+  category: industrial control
+  company: Sinapsi S.r.l.
+  cpe: ''
+  product: sinapsi-esola-photovoltaic-detection-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"esolar")
+  method: GET
+  

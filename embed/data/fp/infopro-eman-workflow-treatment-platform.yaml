@@ -1,0 +1,14 @@
+info:
+  category: other enterprise application
+  company: Shanghai Ai Disi Information Technology Co., Ltd.
+  cpe: ''
+  product: infopro-eman-workflow-treatment-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"workflow") && icontains(body,"<input type=\"submit\" name=\"cmdsubmit\"
+    value=\" 登 录 \" onclick=\"javascript:webform_dopostbackwithoptions(new webform_postbackoptions(&quot;cmdsubmit&quot;,
+    &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))\" id=\"cmdsubmit\"
+    class=\"colorbutton"))
+  method: GET
+  

@@ -1,0 +1,14 @@
+info:
+  category: other software system
+  company: other
+  cpe: ''
+  product: bees-cms
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(body,"mx_form/mx_form.php") || icontains(body,"powerd by beescms"))
+    || (icontains(body,"/default/images/search_btn.gif") && icontains(body,"/default/images/xslider.js")))
+    || icontains(body,"template/default/images/slides.min.jquery.js")) || (icontains(body,"beescms")
+    && icontains(body,"powerd by")))
+  method: GET
+  

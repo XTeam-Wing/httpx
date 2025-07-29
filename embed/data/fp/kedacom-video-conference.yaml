@@ -1,0 +1,12 @@
+info:
+  category: voice video
+  company: Suzhou Keda Technology Co., Ltd.
+  cpe: ''
+  product: kedacom-video-conference
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"meeting control system - kedacom") || icontains(title,"kedacom
+    meeting teminal "))
+  method: GET
+  

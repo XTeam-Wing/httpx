@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: yodati答题系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"yodati答题系统")
+  method: GET
+  

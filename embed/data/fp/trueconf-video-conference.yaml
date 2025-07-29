@@ -1,0 +1,11 @@
+info:
+  category: voice video
+  company: TrueConf LLC.
+  cpe: ''
+  product: trueconf-video-conference
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"content=\"trueconf server guest page\"")
+  method: GET
+  

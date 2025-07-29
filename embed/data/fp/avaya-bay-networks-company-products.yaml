@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Avaya Inc.
+  cpe: ''
+  product: avaya-bay-networks-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"bay networks") || icontains(banner,"bay networks, inc."))
+  method: GET
+  

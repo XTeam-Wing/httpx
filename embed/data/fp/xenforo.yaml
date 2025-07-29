@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: xenforo
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(title,"xenforo")||(icontains(body,"(<html[^>]+id=\"xenforo\")"))||(icontains(header,"(set-cookie:
+    ^xf_session)"))'
+  method: GET
+  

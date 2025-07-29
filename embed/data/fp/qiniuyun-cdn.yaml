@@ -1,0 +1,14 @@
+info:
+  category: service
+  company: Shanghai Qiniu Information Technology Co., Ltd.
+  cpe: ''
+  product: qiniuyun-cdn
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((((icontains(banner,"x-qiniu-zone") || icontains(body,"cdn.staticfile.org"))
+    || icontains(banner,"cdn.staticfile.org")) || icontains(body,"glb.qiniucdn.com"))
+    || icontains(banner,"glb.qiniucdn.com")) || icontains(body,"glb.clouddn.com"))
+    || icontains(banner,"glb.clouddn.com"))
+  method: GET
+  

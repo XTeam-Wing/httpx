@@ -1,0 +1,12 @@
+info:
+  category: file management && encryption
+  company: other
+  cpe: ''
+  product: phpatm
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"powered by php advanced transfer manager") || icontains(body,"powered
+    by phpatm")) || icontains(body,"src=\"viewer_bottom.php?file="))
+  method: GET
+  

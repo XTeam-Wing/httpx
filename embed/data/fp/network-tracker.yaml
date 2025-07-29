@@ -1,0 +1,11 @@
+info:
+  category: network intrusion detection && defense
+  company: Tracker Network
+  cpe: ''
+  product: network-tracker
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,">network tracker<")
+  method: GET
+  

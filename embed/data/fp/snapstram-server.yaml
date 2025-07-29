@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: SnapStream Media Inc.
+  cpe: ''
+  product: snapstram-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: snapstream") || icontains(banner,"server: snapstream"))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Shanghai Xinghe Software Co., Ltd.
+  cpe: ''
+  product: apricot-&&-software-intelligent-rule-management
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"杏和智能规则管理")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: printer
+  company: Zebra Technologies Corp.
+  cpe: ''
+  product: zebra-gx430t
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"ztc gx430t</h1>")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: oureman-eman
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<span i18n=\"1\">益模模具智能制造系统</span>")
+  method: GET
+  

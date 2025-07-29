@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 佰仕佳cms集群管理系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"佰仕佳cms集群管理系统")
+  method: GET
+  

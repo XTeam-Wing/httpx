@@ -1,0 +1,11 @@
+info:
+  category: database system
+  company: Apache Software Foundation.
+  cpe: ''
+  product: apache-kylin
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"to you under the apache license") && icontains(body,"href=\"/kylin/\""))
+  method: GET
+  

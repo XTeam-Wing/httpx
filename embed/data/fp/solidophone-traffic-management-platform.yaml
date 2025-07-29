@@ -1,0 +1,11 @@
+info:
+  category: traffic analysis
+  company: Shandong Xuanniao Information Technology Co., Ltd.
+  cpe: ''
+  product: solidophone-traffic-management-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"玄鸟流量管理平台")
+  method: GET
+  

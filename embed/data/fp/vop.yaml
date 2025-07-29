@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: vop
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"id=\"lgform\" action=\"/sso/login") && icontains(body,"vop")||(icontains(body,"lgdynacodebtn"))
+  method: GET
+  

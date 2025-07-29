@@ -1,0 +1,13 @@
+info:
+  category: service
+  company: Apache Software Foundation.
+  cpe: ''
+  product: apache-ats
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && icontains(banner,"server:
+    ats")) || ((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && icontains(banner,"server:
+    ats")))'
+  method: GET
+  

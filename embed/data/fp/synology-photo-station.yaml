@@ -1,0 +1,13 @@
+info:
+  category: other software system
+  company: Synology Inc.
+  cpe: ''
+  product: synology-photo-station
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(body,"content=\"album") && icontains(body,"content=\"photo station"))
+    || (icontains(title,"photo station 6") && !icontains(body,"content=\"service_not_available\"")))
+    || icontains(body,"content=\"photo station 6\"")) || icontains(body,"photo_new/syno_photo_main.js"))
+  method: GET
+  

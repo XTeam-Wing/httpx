@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: social-strata
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<a href=\"http://socialstrata.com/landing/goto.php?a=eve\" target=\"_blank\">powered
+    by social strata</a>")
+  method: GET
+  

@@ -1,0 +1,13 @@
+info:
+  category: other enterprise application
+  company: Digital Pulse Sdn. Bhd.
+  cpe: ''
+  product: dpfax
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"<img src=\"images/dpfax-big.png\" border=\"0\" alt=\"dpfax")
+    || icontains(body,"content=\"dpfax - minifaxserver ")) || icontains(title,"dpfax
+    - minifaxserver"))
+  method: GET
+  

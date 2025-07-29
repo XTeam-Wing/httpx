@@ -1,0 +1,13 @@
+info:
+  category: load balance
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-ace
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(banner,"ace 4710") || icontains(banner,"ace xml gateway")) ||
+    icontains(banner,"ace xml gateway")) || icontains(banner,"cisco ace")) || icontains(banner,"cisco
+    ace"))
+  method: GET
+  

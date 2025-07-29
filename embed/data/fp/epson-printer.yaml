@@ -1,0 +1,17 @@
+info:
+  category: printer
+  company: Seiko Epson Corporation.
+  cpe: ''
+  product: epson-printer
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((((((icontains(banner,"<title>epsonnet webassist ") || icontains(body,"<title>epsonnet
+    webassist rev.2.1ae</title>")) || icontains(body,"<title>epsonnet config rev.1.0a</title>"))
+    || ((icontains(banner,"print server") && icontains(banner,"epson")) && icontains(protocol,"snmp")))
+    || (icontains(body,"/presentation/") && (icontains(title,"epsonnet ") || icontains(body,"content=\"seiko
+    epson")))) || icontains(title,"epsonnet webassist")) || icontains(title,"epsonnet
+    config")) || icontains(banner,"server: epson-http")) || icontains(banner,"server:
+    epson-http"))'
+  method: GET
+  

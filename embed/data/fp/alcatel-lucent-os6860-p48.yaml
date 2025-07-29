@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Alcatel-Lucent S.A.
+  cpe: ''
+  product: alcatel-lucent-os6860-p48
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<span>device os6860-p48")
+  method: GET
+  

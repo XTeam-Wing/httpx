@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Jiadu Xintai Technology Co., Ltd.
+  cpe: ''
+  product: openeap
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"openeap_统一登录门户")
+  method: GET
+  

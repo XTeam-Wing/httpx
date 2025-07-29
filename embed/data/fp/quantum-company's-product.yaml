@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: quantum-company's-product
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"class=\"loginpatent\"") && icontains(body,"class=\"loginbodybackground")||(icontains(body,"class=\"loginbodybackground"))||(icontains(body,"class=\"loginpatent\""))
+  method: GET
+  

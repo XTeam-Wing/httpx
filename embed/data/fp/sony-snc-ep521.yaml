@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: Sony Corporation
+  cpe: ''
+  product: sony-snc-ep521
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"sony network camera snc-ep521") || icontains(banner,"sony
+    network camera snc-ep521"))
+  method: GET
+  

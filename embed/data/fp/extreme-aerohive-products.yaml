@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Extreme Networks
+  cpe: ''
+  product: extreme-aerohive-products
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"aerohive") && icontains(body,"company_logo.png"))
+  method: GET
+  

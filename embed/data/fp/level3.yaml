@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: level3
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"level3")
+  method: GET
+  

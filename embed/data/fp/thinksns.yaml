@@ -1,0 +1,13 @@
+info:
+  category: component
+  company: Zhis Software (Beijing) Co., Ltd.
+  cpe: ''
+  product: thinksns
+  server: nginx
+  tags: []
+rules:
+- dsl: (((((icontains(banner,"tsv3_lang") || icontains(banner,"t3_lang")) || icontains(body,"powered
+    by <a href=\"http://www.thinksns.com\">")) || icontains(banner,"tsv3_lang")) ||
+    icontains(banner,"t3_lang")) || icontains(body,"_static/image/favicon.ico"))
+  method: GET
+  

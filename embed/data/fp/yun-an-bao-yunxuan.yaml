@@ -1,0 +1,13 @@
+info:
+  category: operation && maintenance audit fortres machine
+  company: Shenzhen Yunanbao Technology Co., Ltd.
+  cpe: ''
+  product: yun-an-bao-yunxuan
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(cert,"云匣子") || icontains(cert,"domain control validated")) &&
+    (icontains(body,"type=application/x-xtx-axhost") && icontains(body,"id=mtokenplugin
+    width=0 height=0 style=\"position: absolute;left: 0px; top: 0px\"")))'
+  method: GET
+  

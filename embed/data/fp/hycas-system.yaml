@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: hycas-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"src=\"/images/hyscm.jpg")
+  method: GET
+  

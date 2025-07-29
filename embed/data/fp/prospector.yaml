@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: prospector
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"prospector")
+  method: GET
+  

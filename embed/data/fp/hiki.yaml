@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: hiki
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"by <a href=\"http://hikiwiki.org/") || icontains(body,"/hiki_base.css"))
+    || icontains(body,"content=\"hiki"))
+  method: GET
+  

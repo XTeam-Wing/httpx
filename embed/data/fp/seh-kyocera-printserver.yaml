@@ -1,0 +1,12 @@
+info:
+  category: printer
+  company: SEH Computertechnik GmbH
+  cpe: ''
+  product: seh-kyocera-printserver
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<frame src=\"/copyright_en.html") && icontains(title,"print
+    server homepage"))
+  method: GET
+  

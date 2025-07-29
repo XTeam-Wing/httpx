@@ -1,0 +1,14 @@
+info:
+  category: vpn products
+  company: Beijing Tianrongxin Technology Co., Ltd.
+  cpe: ''
+  product: heavenly-letter-vpn
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((!icontains(body,"vone/pub/common/scripts/sv_init.js") && icontains(body,"<a
+    href=\"/vone/pub/cacertlist.p7b\">")) || icontains(cert,"commonname: topsec products1438078181"))
+    || ((icontains(body,"window.location.href=\"/vone/pub/pda.html\";") || icontains(body,"window.location=\"/portal_default/index.html\";</script>"))
+    && icontains(banner,"topsecsvportalname=")))'
+  method: GET
+  

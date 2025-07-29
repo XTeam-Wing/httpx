@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: navegg
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"navegg")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-cr16004
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"cr16004")
+  method: GET
+  

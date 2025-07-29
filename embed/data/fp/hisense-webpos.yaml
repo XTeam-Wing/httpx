@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: hisense-webpos
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"content/images/hisense.bmp")||(icontains(body,"<legend><img src=\"../../content/images/hisense.bmp\"
+    style=\"height:20px; padding-left:-10px\"/>webpos登录</legend>"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: networkappliancenetcache
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"network appliance netcache")
+  method: GET
+  

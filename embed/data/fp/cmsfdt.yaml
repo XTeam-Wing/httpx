@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: cmsfdt
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"cms fdt")
+  method: GET
+  

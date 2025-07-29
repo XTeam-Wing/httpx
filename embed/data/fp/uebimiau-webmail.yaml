@@ -1,0 +1,12 @@
+info:
+  category: electronic mail system
+  company: other
+  cpe: ''
+  product: uebimiau-webmail
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<script type=\"text/javascript\" src=\"themes/default/js/webmail.js\"></script>")
+    || icontains(title,"uebimiau"))
+  method: GET
+  

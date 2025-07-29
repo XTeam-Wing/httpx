@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: intelbras lnc.
+  cpe: ''
+  product: intelbras-apr-2410
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"apr-2410")
+  method: GET
+  

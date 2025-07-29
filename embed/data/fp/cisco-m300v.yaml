@@ -1,0 +1,12 @@
+info:
+  category: other network security
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-m300v
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"cisco content security management virtual appliance m300v")
+    || icontains(body,"alt=\"cisco m300v\""))
+  method: GET
+  

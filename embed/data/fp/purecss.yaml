@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: purecss
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"pure css")
+  method: GET
+  

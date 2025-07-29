@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Beijing Beixinyuan Software Co., Ltd.
+  cpe: ''
+  product: north-xinyuan-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: 'icontains(protocol,"{\"length\": 0, \"chained_to\": 1912617008, \"identifier\":
+    \"ail esmtp\", \"str\": null}")'
+  method: GET
+  

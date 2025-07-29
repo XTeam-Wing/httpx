@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Pullian Technology Co., Ltd.
+  cpe: ''
+  product: tp-link-td-w9970
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"1.0.9 build 160614 rel.41323") || icontains(banner,"0.9.1
+    2.3 v0025.0 build 150616 rel.59521n"))
+  method: GET
+  

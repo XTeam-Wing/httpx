@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Dell Inc.
+  cpe: ''
+  product: dell-poweredge-2850
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(cert,"poweredge 2850") || icontains(banner,"poweredge 2850"))
+  method: GET
+  

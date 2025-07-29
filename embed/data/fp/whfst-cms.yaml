@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: whfst-cms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"建设工程检测实验室信息管理系统") && icontains(body,"武汉富思特")||(icontains(body,"武汉富思特"))
+  method: GET
+  

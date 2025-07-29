@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Hanbo Technology Co., Ltd.
+  cpe: ''
+  product: opzoon-os
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"opzoon technology co., ltd. internetwork operating system")
+  method: GET
+  

@@ -1,0 +1,19 @@
+info:
+  author: 哆啦A梦
+  remediation:
+  - Any800 是一个全渠道智能客服平台。
+  tags:
+  - tech
+  - any800
+  - customer-service
+  product: any800全渠道智能客服云平台
+  category: cms
+rules:
+- method: GET
+  path:
+  - /ump/resources/ump/images/login_header.png
+  dsl: ('ff8d68ace004236c05dd7bca6a689861' == md5(body))
+- method: GET
+  path:
+  - /ump/umpLogin/login
+  dsl: contains(body, 'any800')

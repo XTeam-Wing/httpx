@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Zhejiang Dahua Technology Co., Ltd.
+  cpe: ''
+  product: dahua-dhi-xvr5216an
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"dhi-xvr5216an")
+  method: GET
+  

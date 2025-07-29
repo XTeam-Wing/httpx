@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: nucleus
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"server: nucleus")'
+  method: GET
+  

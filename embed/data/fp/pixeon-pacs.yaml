@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Pixeon Medical Systems SA
+  cpe: ''
+  product: pixeon-pacs
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<span class=\"apptitle\" id=\"apppixviewer\">")
+  method: GET
+  

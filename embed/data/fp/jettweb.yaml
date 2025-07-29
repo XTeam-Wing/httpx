@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: jettweb
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"jettweb")
+  method: GET
+  

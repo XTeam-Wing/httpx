@@ -1,0 +1,12 @@
+info:
+  category: network storage
+  company: Caringo, Inc.
+  cpe: ''
+  product: castor
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"server: castor") || icontains(banner,"castor-system"))
+    || (icontains(banner,"server: castor") || icontains(banner,"castor-system")))'
+  method: GET
+  

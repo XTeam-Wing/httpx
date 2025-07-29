@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: access-control-allow-methods
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"(access-control-allow-methods: (.+))")'
+  method: GET
+  

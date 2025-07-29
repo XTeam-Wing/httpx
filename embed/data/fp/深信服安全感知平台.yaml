@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 深信服安全感知平台
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"安全感知平台") && icontains(body,"login.js") && icontains(body,"apps")||(icontains(body,"apps")
+    && icontains(body,"login.js") && icontains(body,"安全感知平台"))
+  method: GET
+  

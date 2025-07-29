@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: The Linux Foundation
+  cpe: ''
+  product: spinnaker-product
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: spinnaker") || icontains(banner,"server: spinnaker"))'
+  method: GET
+  

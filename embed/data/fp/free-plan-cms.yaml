@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Freedom Planning
+  cpe: ''
+  product: free-plan-cms
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"powered by zychr.com") || icontains(body,"powered by zychr.com"))
+  method: GET
+  

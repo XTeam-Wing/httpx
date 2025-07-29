@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: Magento Inc.
+  cpe: ''
+  product: magento-swann-dvr8-2600
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"if(navigator.useragent.indexof(\"safari\")") && icontains(body,"self.location
+    = \"play.html\""))
+  method: GET
+  

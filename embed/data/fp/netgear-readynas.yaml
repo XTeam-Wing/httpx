@@ -1,0 +1,12 @@
+info:
+  category: network storage
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-readynas
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"netgear readynas") || icontains(banner,"realm=\"readynas
+    admin")) || icontains(banner,"realm=\"readynas admin"))
+  method: GET
+  

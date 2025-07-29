@@ -1,0 +1,17 @@
+info:
+  author: 哆啦A梦
+  description: DokuWiki是一个针对小公司文件需求而开发的Wiki引擎，用程序设计语言PHP开发，并以GPL 2发布。 DokuWiki基于文本存储，所以不需要数据库，其数据文件在Wiki系统外也是可读的。
+  tags: []
+  product: dokuwiki
+  category: cms
+rules:
+- method: GET
+  path: 
+    - '/lib/tpl/dokuwiki/images/favicon.ico'
+    - '/lib/exe/css.php'
+    - '/lib/exe/manifest.php'
+    - '/lib/tpl/dokuwiki/images/button-dw.png'
+    - '/lib/exe/js.php'
+    - '/dokuwiki/lib/tpl/dokuwiki/images/favicon.ico'
+    - '/wiki/lib/tpl/dokuwiki/images/favicon.ico'
+  dsl: (contains(body,'dokuwiki') || ('6742eaca688d876b0f8be741b9117e4b' == md5(body))||('3ef81fad2a3deaeb19f02c9cf67ed8eb' == md5(body)) || contains(header,'doku.php') || contains(body,'doku.php')) && status_code == 200

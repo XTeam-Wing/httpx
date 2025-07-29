@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: boldgrid
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"boldgrid")
+  method: GET
+  

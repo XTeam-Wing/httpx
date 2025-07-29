@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: etano
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"all rights reserved.<br />powered by <a href=\"http://www.datemill.com\"
+    title=\"etano community builder\">etano</a>.</p>")||(icontains(body,"etano</a>. all
+    rights reserved.<br />"))
+  method: GET
+  

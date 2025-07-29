@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: bootstrap-cdn
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"cdn.bootcss.com") || icontains(banner,"cdn.bootcss.com"))
+  method: GET
+  

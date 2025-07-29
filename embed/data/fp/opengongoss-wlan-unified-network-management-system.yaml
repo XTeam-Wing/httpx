@@ -1,0 +1,11 @@
+info:
+  category: online behavior management system
+  company: Hangzhou Huasi Communication Technology Co., Ltd.
+  cpe: ''
+  product: opengongoss-wlan-unified-network-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"content=\"wlan综合网管系统\"") && icontains(body,"/stylesheets/themes/wifi2/ui.theme.css"))
+  method: GET
+  

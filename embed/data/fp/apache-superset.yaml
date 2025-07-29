@@ -1,0 +1,14 @@
+info:
+  category: cloud computing
+  company: other
+  cpe: ''
+  product: apache-superset
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(body,"superset") && (icontains(body,"/static/appbuilder/js/jquery-latest.js")
+    && icontains(body,"/static/assets/images/favicon.png"))) || icontains(body,"/static/assets/dist/common.644ae7ae973b00abc14b.entry.js"))
+    || icontains(body,"<a href=\"https://manage.app-sdx.preset.io\" class=\"button\">back
+    to workspaces</a></section>")) || (icontains(body,"appbuilder") && icontains(title,"superset")))
+  method: GET
+  

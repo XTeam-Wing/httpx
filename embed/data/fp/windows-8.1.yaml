@@ -1,0 +1,12 @@
+info:
+  category: operating system
+  company: Microsoft Corporation
+  cpe: ''
+  product: windows-8.1
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"os: windows 8.1") || icontains(banner,"native os : windows
+    8.1"))'
+  method: GET
+  

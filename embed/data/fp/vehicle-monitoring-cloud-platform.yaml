@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: other
+  cpe: ''
+  product: vehicle-monitoring-cloud-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"gps-web\"></iframe>")
+  method: GET
+  

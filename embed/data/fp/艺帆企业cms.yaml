@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 艺帆企业cms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"艺帆企业cms")
+  method: GET
+  

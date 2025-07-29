@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: COMMSCOPE
+  cpe: ''
+  product: commscope-netopia-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"netopia router") || icontains(banner,"netopia-payments."))
+    || icontains(banner,"realm=\"netopia-")) || icontains(banner,"netopia-"))
+  method: GET
+  

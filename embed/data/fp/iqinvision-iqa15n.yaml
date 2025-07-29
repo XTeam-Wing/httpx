@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: IQinVision, Inc.
+  cpe: ''
+  product: iqinvision-iqa15n
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"iqinvision iqa15n") || icontains(title,"iqa15n"))
+  method: GET
+  

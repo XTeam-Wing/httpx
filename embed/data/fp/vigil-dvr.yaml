@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: other
+  cpe: ''
+  product: vigil-dvr
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: vigil-dvr") || icontains(banner,"server: vigil-dvr"))'
+  method: GET
+  

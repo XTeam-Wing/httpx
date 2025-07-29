@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Jiangxi Jinlei Technology Development Co., Ltd.
+  cpe: ''
+  product: jeecms
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"jeecms") && icontains(body,"http://www.jeecms.com")) &&
+    icontains(body,"powered by")) || icontains(title,"powered by jeecms"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Sequoia (Hangzhou) Information Technology Co., Ltd.
+  cpe: ''
+  product: sequoia-tree-information-system-management-center
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<div class=\"main_supporterbar\">") && icontains(body,"class=\"main_loginbar"))
+  method: GET
+  

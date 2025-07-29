@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Digital Data Communications GmbH
+  cpe: ''
+  product: levelone-11g-wireless-router
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"11g wireless broadband router")
+  method: GET
+  

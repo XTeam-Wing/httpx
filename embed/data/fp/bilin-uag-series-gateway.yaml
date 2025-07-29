@@ -1,0 +1,11 @@
+info:
+  category: wireless network
+  company: BILIN Tech.Co.,Ltd.
+  cpe: ''
+  product: bilin-uag-series-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"智慧网关配置平台")
+  method: GET
+  

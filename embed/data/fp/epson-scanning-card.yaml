@@ -1,0 +1,11 @@
+info:
+  category: printer
+  company: Seiko Epson Corporation.
+  cpe: ''
+  product: epson-scanning-card
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"scanning card") && icontains(banner,"epson"))
+  method: GET
+  

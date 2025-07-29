@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Packet Power
+  cpe: ''
+  product: packet-power-ethernet-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"packet power eg4 ethernet gateway") || icontains(banner,"packet
+    power ethernet gateway"))
+  method: GET
+  

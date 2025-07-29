@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: gocloud-ty200g-series-router
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"gocloud ty200g series router")
+  method: GET
+  

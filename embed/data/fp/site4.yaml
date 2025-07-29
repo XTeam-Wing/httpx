@@ -1,0 +1,15 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: site4
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<title>site4.dk site4 setup error..</title>")||(icontains(body,"<img
+    src=\"http://www.site4.dk/images/site4logo.jpg\">"))||(icontains(body,"<div class=\"caption\"
+    align=\"center\"><b>a site4 event or error occured..</b></div></td>"))||(icontains(body,"to
+    read more about site4.dk please <a class=\"smalltext\" style=\"text-decoration:none;\"
+    href=\"http://www.site4.dk\"><b>click here</b></a>"))
+  method: GET
+  

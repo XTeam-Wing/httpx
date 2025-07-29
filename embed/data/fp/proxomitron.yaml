@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: other
+  cpe: ''
+  product: proxomitron
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"the proxomitron")
+  method: GET
+  

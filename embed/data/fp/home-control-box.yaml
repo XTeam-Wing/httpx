@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: home-control-box
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"hcb_web") || icontains(banner,"realm=\"hcb_web"))
+  method: GET
+  

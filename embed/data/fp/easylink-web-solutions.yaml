@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: easylink-web-solutions
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"dieser abschnitt darf nur mit genehmigung des entwicklers entfernt
+    werden und bedarf einer")
+  method: GET
+  

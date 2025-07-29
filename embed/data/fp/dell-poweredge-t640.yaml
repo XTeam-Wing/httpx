@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Dell Inc.
+  cpe: ''
+  product: dell-poweredge-t640
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(cert,"poweredge-t640") || icontains(banner,"poweredge-t640"))
+  method: GET
+  

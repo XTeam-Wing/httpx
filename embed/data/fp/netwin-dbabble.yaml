@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Netwin Ltd.
+  cpe: ''
+  product: netwin-dbabble
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"action=\"/dbabble") || icontains(body,">dbabble online help</a>"))
+    || icontains(body,"/cgi/dbabble.cgi")) || icontains(title,"dbabble login"))
+  method: GET
+  

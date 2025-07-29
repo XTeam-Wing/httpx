@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Hewlett Packard Enterprise Development LP
+  cpe: ''
+  product: hp-dl180-g6
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(cert,"dl180-g6") || icontains(banner,"dl180-g6"))
+  method: GET
+  

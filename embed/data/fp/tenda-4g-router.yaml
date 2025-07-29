@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Shenzhen Jixiang Tengda Technology Co., Ltd.
+  cpe: ''
+  product: tenda-4g-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"id=\"tendaimg\"") && icontains(body,"3g/4g router"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: adaptecmaxview
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"adaptec maxview")
+  method: GET
+  

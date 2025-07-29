@@ -1,0 +1,11 @@
+info:
+  category: fms
+  company: other
+  cpe: ''
+  product: hostbill
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<strong>hostbill") || icontains(body,"powered by <a href=\"http://hostbillapp.com"))
+  method: GET
+  

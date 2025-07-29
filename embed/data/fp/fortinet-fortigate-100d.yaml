@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Fortinet, Inc.
+  cpe: ''
+  product: fortinet-fortigate-100d
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"fortigate100d") || icontains(banner,"fortigate 100d"))
+  method: GET
+  

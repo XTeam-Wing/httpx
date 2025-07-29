@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: pims在线订单管理系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"pims在线订单管理系统")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: electronic mail system
+  company: other
+  cpe: ''
+  product: qpsmtpd
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"qpsmtpd")
+  method: GET
+  

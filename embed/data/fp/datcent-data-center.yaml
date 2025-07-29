@@ -1,0 +1,11 @@
+info:
+  category: network storage
+  company: Dexun Innovation (Beijing) Technology Co., Ltd.
+  cpe: ''
+  product: datcent-data-center
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: datcent") || icontains(banner,"server: datcent"))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Shenzhen Yichen Technology Co., Ltd.
+  cpe: ''
+  product: jcg-wireless-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"http://www.jcgcn.com") && icontains(title,"wireless router"))
+  method: GET
+  

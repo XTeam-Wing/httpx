@@ -1,0 +1,13 @@
+info:
+  category: cameras && surveillance
+  company: Shenzhen Zhongshi Technology Co., Ltd.
+  cpe: ''
+  product: dvripc
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<p><a href=\"nvocx_setup.exe\">click here to download && install
+    the activex packet mannually.</a></p>") || icontains(body,"title=\"download android\"
+    href=\"http://www.dvripc.net/common/download/"))
+  method: GET
+  

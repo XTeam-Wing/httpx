@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Glodon Software Co., Ltd.
+  cpe: ''
+  product: glodon-console
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(body,"url: \"/console/account/logon\"") && icontains(body,"src=\"/scripts/dd_belatedpng.js"))'
+  method: GET
+  

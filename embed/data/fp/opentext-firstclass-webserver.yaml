@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: OpenText Corp
+  cpe: ''
+  product: opentext-firstclass-webserver
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: opentext fc webserver") || icontains(banner,"server:
+    opentext fc webserver"))'
+  method: GET
+  

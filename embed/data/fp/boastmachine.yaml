@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: boastmachine
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"powered by <a href=\"http://boastology.com") || icontains(body,"powered
+    by boastmachine"))
+  method: GET
+  

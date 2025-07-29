@@ -1,0 +1,12 @@
+info:
+  category: data leakage prevention
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-dlt
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"server: cisco-dlt") || icontains(body,"system name: cisco
+    dlt")) || icontains(banner,"cisco-dlt"))'
+  method: GET
+  

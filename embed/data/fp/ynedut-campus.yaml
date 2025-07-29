@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ynedut-campus
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"ynedut_campus")
+  method: GET
+  

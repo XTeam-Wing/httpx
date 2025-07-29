@@ -1,0 +1,13 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: mylittleforum
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"mlf2_general_forum_usersettings") || icontains(banner,"mlf2_general_forum_usersettings"))
+    || icontains(body,"index.php?mode=js_defaults")) || icontains(body,"powered by
+    my little forum"))
+  method: GET
+  

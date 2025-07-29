@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 惠尔顿e地通socks5vpn登录系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"惠尔顿 e地通socks5 vpn登录系统")
+  method: GET
+  

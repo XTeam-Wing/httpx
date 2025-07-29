@@ -1,0 +1,12 @@
+info:
+  category: network storage
+  company: QNAP Systems, Inc.
+  cpe: ''
+  product: qnap-qgenie
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(title,"qgenie - login") || icontains(banner,"server: qgenie"))
+    || icontains(banner,"server: qgenie"))'
+  method: GET
+  

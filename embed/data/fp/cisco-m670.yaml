@@ -1,0 +1,12 @@
+info:
+  category: other network security
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-m670
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"cisco ironport m670") || icontains(title,"cisco content
+    security management appliance m670")) || icontains(body,"alt=\"cisco m670\""))
+  method: GET
+  

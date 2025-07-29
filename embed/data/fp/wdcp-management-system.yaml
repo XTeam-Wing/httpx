@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: wdcp-management-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"lanmp_wdcp 安装成功")||(icontains(title,"wdcp服务器"))
+  method: GET
+  

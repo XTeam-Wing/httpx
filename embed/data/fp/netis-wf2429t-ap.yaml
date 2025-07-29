@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Shenzhen Leike Industrial Co., Ltd.
+  cpe: ''
+  product: netis-wf2429t-ap
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"wf2429t ap")
+  method: GET
+  

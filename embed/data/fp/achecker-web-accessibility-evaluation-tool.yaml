@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: Assistive Technology
+  cpe: ''
+  product: achecker-web-accessibility-evaluation-tool
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(title,"checker : web accessibility checker") || icontains(body,"content=\"achecker
+    is a web accessibility"))'
+  method: GET
+  

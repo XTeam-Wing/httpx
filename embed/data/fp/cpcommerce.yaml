@@ -1,0 +1,14 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: cpcommerce
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"powered by cpcommerce")||(icontains(body,"<title>cpcommerce by matthew
+    wilkin</title>"))||(icontains(body,"powered by <a href=\"http://cpcommerce.cpradio.org/\"
+    target=\"_blank\">cpcommerce</a>."))||(icontains(body,"powered by <a href=\"http://cpcommerce.org/\"
+    target=\"_blank\">cpcommerce</a>."))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: voice video
+  company: intelbras lnc.
+  cpe: ''
+  product: telefone-ip-tip200
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"telefone ip tip200/200 lite") || icontains(banner,"realm=\"telefone
+    ip tip200")) || icontains(banner,"realm=\"telefone ip tip200"))
+  method: GET
+  

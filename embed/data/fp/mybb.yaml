@@ -1,0 +1,14 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: mybb
+  server: nginx
+  tags: []
+rules:
+- dsl: (((((icontains(banner," mybb[lastvisit]=") || icontains(banner," mybb[lastvisit]="))
+    || icontains(body,"onchange=\"mybb.changelanguage();")) || icontains(body,"visibility
+    of the mybb copyright at any time")) || icontains(body,"<!-- mybb is free software
+    developed && maintained")) || icontains(body,"powered by <a href=\"http://www.mybboard.com"))
+  method: GET
+  

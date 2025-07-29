@@ -1,0 +1,12 @@
+info:
+  category: switch
+  company: Alcatel-Lucent S.A.
+  cpe: ''
+  product: alcatel-lucent-programmatic-phone-switch
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(body,"changed by: daniel kaiber") || icontains(body,"href=\"nmc/index.php\">configuration
+    / save - restore")) || icontains(title,"omnipcx for enterprise"))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: cloud computing
+  company: Shanghai Qiniu Information Technology Co., Ltd.
+  cpe: ''
+  product: qiniu-qvs
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"x-log: qvs-rtp") || icontains(banner,"x-log: qvs-rtp"))'
+  method: GET
+  

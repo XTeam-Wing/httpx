@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: dlink-di-824vup
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"di-824vup") || icontains(banner,"realm=\"di-824vup"))
+  method: GET
+  

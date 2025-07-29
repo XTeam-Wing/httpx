@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Forperfect Technologies
+  cpe: ''
+  product: cinvoice
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"powered by <a href=\"http://www.forperfect.com/")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: sdcncsi
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"refreshcaptchaimgfun") && icontains(body,"<em class=\"wk-fl\">在沃系统</em>")||(icontains(body,"<em
+    class=\"wk-fl\">在沃系统</em>"))||(icontains(body,"refreshcaptchaimgfun"))
+  method: GET
+  

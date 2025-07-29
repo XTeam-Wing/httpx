@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: valueapex-eamic
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"log into my eamic® account")
+  method: GET
+  

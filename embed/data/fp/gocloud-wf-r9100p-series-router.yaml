@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: gocloud-wf-r9100p-series-router
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"gocloud wf-r9100p series router")
+  method: GET
+  

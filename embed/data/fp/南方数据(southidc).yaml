@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 南方数据(southidc)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"southidc")||(icontains(title,"southidc"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: bmu
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"版本： espace ecs")
+  method: GET
+  

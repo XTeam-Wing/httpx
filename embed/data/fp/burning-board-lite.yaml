@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: WoltLab GmbH
+  cpe: ''
+  product: burning-board-lite
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"powered by <b>burning board") || icontains(body,"powered by
+    <b><a href=\"http://www.woltlab.de"))
+  method: GET
+  

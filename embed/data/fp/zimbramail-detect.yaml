@@ -1,0 +1,15 @@
+info:
+  author: wing
+  description: Zimbra Collaboration（在2019年以前称为Zimbra Collaboration Suite）是一种协作软件套件
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:mail:zimbra:*:*:*:*:*:*:*:*
+  tags: []
+  product: zimbramail
+  category: cms
+rules:
+- method: GET
+  path:
+  - '/webmail/'
+  dsl: contains(body, "Zimbra Collaboration Suite Log In") || contains(body, "Zimbra Web Client Sign In")|| contains(body, "Zimbra Web Client Log In")|| contains(body, "content=\"Zimbra 可为通信和协同办公提供开源服务器和客户端软件。 详情请见 https://www.zimbra.com")|| contains(body, "zimbramail")|| contains(body, "<label for=\"username\" class=\"zLoginFieldLabel\">Username</label>")

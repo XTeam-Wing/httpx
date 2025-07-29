@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: SapporoWorks
+  cpe: ''
+  product: blackjumbodog
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: blackjumbodog") || icontains(banner,"server: blackjumbodog"))'
+  method: GET
+  

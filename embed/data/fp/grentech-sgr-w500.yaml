@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Shenzhen Guoren Communication Co., Ltd.
+  cpe: ''
+  product: grentech-sgr-w500
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"sgr-w500")
+  method: GET
+  

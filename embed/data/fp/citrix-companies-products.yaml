@@ -1,0 +1,12 @@
+info:
+  category: load balance
+  company: Citrix
+  cpe: ''
+  product: citrix-companies-products
+  server: nginx
+  tags: []
+rules:
+- dsl: (((!icontains(body,"dvrdvs-webs") && !icontains(body,"netscape/firefox/opera"))
+    && icontains(title,"citrix login")) || icontains(body,"value=\"guia\" selected"))
+  method: GET
+  

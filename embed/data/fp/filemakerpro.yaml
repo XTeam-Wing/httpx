@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: FileMaker, Inc
+  cpe: ''
+  product: filemakerpro
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(banner,"x-generator: drupal ") && icontains(banner,"server: filemakerpro"))
+    || (!icontains(banner,"x-generator: drupal ") && icontains(banner,"server: filemakerpro")))'
+  method: GET
+  

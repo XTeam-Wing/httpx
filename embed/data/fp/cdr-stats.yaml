@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: cdr-stats
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/static/cdr-stats/js/jquery")||(icontains(title,"cdr-stats | customer
+    interface"))
+  method: GET
+  

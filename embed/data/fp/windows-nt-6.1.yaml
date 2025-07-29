@@ -1,0 +1,12 @@
+info:
+  category: operating system
+  company: Microsoft Corporation
+  cpe: ''
+  product: windows-nt-6.1
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(server,"windows nt 6.1") || icontains(banner,"server os: windows
+    nt 6.1"))'
+  method: GET
+  

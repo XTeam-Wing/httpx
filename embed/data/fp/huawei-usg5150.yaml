@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-usg5150
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"usg5150") || icontains(banner,"usg5150"))
+  method: GET
+  

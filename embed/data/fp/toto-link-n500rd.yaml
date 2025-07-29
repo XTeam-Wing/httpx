@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: TOTOLINK
+  cpe: ''
+  product: toto-link-n500rd
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"src =\"/images/login_back_n500rd.gif\"")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Beijing Blue Pacific Technology Co., Ltd.
+  cpe: ''
+  product: bluepacific-network-public-opinion-monitoring-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"/biradarserver/web/")
+  method: GET
+  

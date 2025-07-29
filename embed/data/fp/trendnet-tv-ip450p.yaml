@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: TRENDnet, Inc.
+  cpe: ''
+  product: trendnet-tv-ip450p
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"tv-ip450p") || icontains(banner,"tv-ip450p"))
+  method: GET
+  

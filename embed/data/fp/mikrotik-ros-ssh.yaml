@@ -1,0 +1,11 @@
+info:
+  category: operating system
+  company: MikroTik lnc.
+  cpe: ''
+  product: mikrotik-ros-ssh
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"rosssh")
+  method: GET
+  

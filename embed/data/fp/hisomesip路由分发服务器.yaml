@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: hisomesip路由分发服务器
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"hisome sip路由分发服务器")
+  method: GET
+  

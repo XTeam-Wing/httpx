@@ -1,0 +1,12 @@
+info:
+  category: fms
+  company: Sichuan Haidilao Catering Co., Ltd.
+  cpe: ''
+  product: acsoft
+  server: nginx
+  tags: []
+rules:
+- dsl: ((!icontains(body,"安财") && !icontains(body,"window.external.addfavorite"))
+    && (icontains(body,"login_1\">ca密码") || icontains(title,"费用报销系统")))
+  method: GET
+  

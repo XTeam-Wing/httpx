@@ -1,0 +1,12 @@
+info:
+  category: electronic mail system
+  company: Tencent Holdings Limited
+  cpe: ''
+  product: tencent-qqmail
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"esmtp qq mail server") || icontains(banner,"qqmail pop3
+    server"))
+  method: GET
+  

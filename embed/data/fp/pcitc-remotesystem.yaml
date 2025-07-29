@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: pcitc-remotesystem
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"class=\"f-loading-mask ui-widget ui-widget-content\"") && icontains(body,"src=\"validatecode.aspx\"")||(icontains(body,"src=\"validatecode.aspx\""))||(icontains(body,"class=\"f-loading-mask
+    ui-widget ui-widget-content\""))
+  method: GET
+  

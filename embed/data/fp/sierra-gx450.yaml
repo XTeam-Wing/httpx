@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Sierra Wireless Inc.
+  cpe: ''
+  product: sierra-gx450
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"gx450 login") || (icontains(banner,"gx450") && icontains(protocol,"snmp")))
+  method: GET
+  

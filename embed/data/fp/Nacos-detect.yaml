@@ -1,0 +1,17 @@
+info:
+  product: nacos
+  category: middleware
+  author: 哆啦A梦
+  company: 阿里巴巴
+  description: Nacos是一个更易于构建云原生应用的动态服务发现、配置管理和服务管理平台
+  tags:
+  - nacos
+rules:
+- method: GET
+  path: 
+    - "/nacos/v1/console/server/state"
+    - "/v1/console/server/state"
+    - "/nacos/img/nacos.png"
+    - "/img/nacos.png"
+  dsl: contains(body, '\"auth_system_type\":\"nacos\"') || contains(body, '\"standalone_mode\":\"standalone\",') || contains(body, '\"standalone_mode\":\"cluster\",') || (md5(body) == 'd482a4c5134630edf8a75defa59dd3e2')
+

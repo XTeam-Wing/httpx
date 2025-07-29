@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: talentel-log-recording-audio
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"欢迎您使用talentel_log-录音客户端系统")
+  method: GET
+  

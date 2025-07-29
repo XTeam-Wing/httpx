@@ -1,0 +1,13 @@
+info:
+  category: smart home
+  company: Koninklijke Philips N.V.
+  cpe: ''
+  product: philips-hue
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"hue personal wireless lighting") || ((icontains(body,"use
+    a modern browser to view this resource.") || icontains(body,"hue-logo.png")) &&
+    icontains(title,"hue personal wireless lighting")))
+  method: GET
+  

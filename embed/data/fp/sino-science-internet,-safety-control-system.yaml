@@ -1,0 +1,12 @@
+info:
+  category: other network security
+  company: Shenzhen Zhongke Wangwei Technology Co., Ltd.
+  cpe: ''
+  product: sino-science-internet,-safety-control-system
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"login_commit.php") && title == "anysec") || (icontains(body,"dkey_login")
+    && icontains(body,"<div class=\"con_r_b_r\"> <input class=\"btn_bg")))
+  method: GET
+  

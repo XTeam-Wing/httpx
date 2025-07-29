@@ -1,0 +1,15 @@
+info:
+  category: cms
+  company: dahua
+  cpe: ''
+  product: 大华DSS视频管理系统
+  tags: []
+rules:
+- dsl: contains_all(body,"Created by IntelliJ IDEA","refresh","URL=")||contains(body,"<meta http-equiv=\"refresh\" content=\"1;URL=\'")||contains_all(body,"DSS","/portal/include/script/dahuadefined/headcommon.js")||contains_all(body,"DSS","Zhejiang Dahua Technology")
+  method: GET
+  path:
+    - '/admin/'
+    - '/admin/login_login.action'
+    - '/portal/login_init.action'
+
+  

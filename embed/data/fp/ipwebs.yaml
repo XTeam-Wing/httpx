@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: ipwebs
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: ipwebs") || icontains(banner,"server: ipwebs"))'
+  method: GET
+  

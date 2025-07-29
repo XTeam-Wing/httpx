@@ -1,0 +1,15 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: orbis-cms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<meta name=\"description\" content=\"orbis cms is a simple and
+    stylish management solution for small websites.\" />")||(icontains(body,"<div id=\"login_poweredby\">powered
+    by orbis cms</div>"))||(icontains(body,"<title>orbis cms &gt; login</title>"))||(icontains(body,"<!--
+    give feedback if user enters incorrect password (get value \"e=2) or logged out
+    (get value \"e=3\") -->"))
+  method: GET
+  

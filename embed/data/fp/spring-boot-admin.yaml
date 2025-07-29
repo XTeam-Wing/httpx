@@ -1,0 +1,11 @@
+info:
+  category: development framework
+  company: other
+  cpe: ''
+  product: spring-boot-admin
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"spring boot admin") && icontains(body,"spring boot admin"))
+  method: GET
+  

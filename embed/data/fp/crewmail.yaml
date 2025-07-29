@@ -1,0 +1,11 @@
+info:
+  category: electronic mail system
+  company: CREW MAIL SERVICES
+  cpe: ''
+  product: crewmail
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"crewmail")
+  method: GET
+  

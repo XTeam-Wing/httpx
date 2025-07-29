@@ -1,0 +1,12 @@
+info:
+  category: web application firewall
+  company: Neusoft Group Co., Ltd.
+  cpe: ''
+  product: neusoft-senginx
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"server: senginx") || icontains(banner,"server: senginx"))
+    || (!icontains(body,"server: couchdb") && icontains(body,"senginx-robot-mitigation")))'
+  method: GET
+  

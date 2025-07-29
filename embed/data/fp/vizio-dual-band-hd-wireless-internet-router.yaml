@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: VIZIO, Inc.
+  cpe: ''
+  product: vizio-dual-band-hd-wireless-internet-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"vizio_logo.png") && icontains(title,"dual-band hd wireless
+    internet router"))
+  method: GET
+  

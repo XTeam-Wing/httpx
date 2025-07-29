@@ -1,0 +1,11 @@
+info:
+  category: database auditing and protection
+  company: Hangzhou Anheng Information Technology Co., Ltd.
+  cpe: ''
+  product: anheng-information-ting-yu-database-audit-and-risk-control-system
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"明御数据库审计")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: wireless network
+  company: Beijing Digital China Cloud Technology Co., Ltd.
+  cpe: ''
+  product: dcn-dcws-6002
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"id=\"span_thead\">dcws-6002</span>")
+  method: GET
+  

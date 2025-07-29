@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Compex Systems Pte. Ltd.
+  cpe: ''
+  product: compex-cgx3224-switch
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"cgx3224 switch")
+  method: GET
+  

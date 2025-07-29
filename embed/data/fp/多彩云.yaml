@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 多彩云
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"多彩云")
+  method: GET
+  

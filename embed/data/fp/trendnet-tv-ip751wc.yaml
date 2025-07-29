@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: TRENDnet, Inc.
+  cpe: ''
+  product: trendnet-tv-ip751wc
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"realm=\"tv-ip751wc") || icontains(banner,"tv-ip751wc"))
+    || icontains(body,"trendnet | tv-ip751wc(tv-ip751wc)"))
+  method: GET
+  

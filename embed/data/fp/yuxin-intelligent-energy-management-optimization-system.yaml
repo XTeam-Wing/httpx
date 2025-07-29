@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Shanghai Youhua System Integration Technology Co., Ltd.
+  cpe: ''
+  product: yuxin-intelligent-energy-management-optimization-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"/ashx/log/logincheck.ashx?fresh=\" + math.random()")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: phpeip-cms内容管理系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"phpeip-cms内容管理系统")||(icontains(title,"phpeip-cms内容管理系统"))
+  method: GET
+  

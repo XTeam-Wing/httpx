@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Pullian Technology Co., Ltd.
+  cpe: ''
+  product: tp-link-archer-c50
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"archer c50") && icontains(body,"if (url.indexof(\"tplinklogin.net\")"))
+  method: GET
+  

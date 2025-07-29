@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ibmsystemx
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(body,"american megatrends inc.</font>") && icontains(header,"content-length:
+    3883") && icontains(body,"str_login_pls_login")||(icontains(body,"str_login_pls_login"))||(icontains(body,"american
+    megatrends inc.</font>"))'
+  method: GET
+  

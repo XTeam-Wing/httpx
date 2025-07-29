@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Alcatel-Lucent S.A.
+  cpe: ''
+  product: alcatel-lucent-omnistack
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"alcatel omnistack")
+  method: GET
+  

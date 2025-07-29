@@ -1,0 +1,13 @@
+info:
+  category: electronic mail system
+  company: Beijing Xiongzhiweiye Software Co., Ltd.
+  cpe: ''
+  product: ipmotor-express-email
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"<iframe src=\"/cgi-bin/web2cgi/index.cgi\" scrolling=\"no\"
+    frameborder=") || icontains(banner,"quarkmail server")) || (!icontains(body,"<a")
+    && icontains(body,"window.location.replace(\"/cgi-bin/web2cgi/index.cgi\");")))
+  method: GET
+  

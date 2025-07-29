@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: d-link-dgsgigabit-ethernet-switch
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"gigabit ethernet switch") && icontains(banner,"dgs"))
+  method: GET
+  

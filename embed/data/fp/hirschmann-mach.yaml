@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Belden Inc.
+  cpe: ''
+  product: hirschmann-mach
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"hirschmann mach100") || icontains(banner,"hirschmann mach"))
+  method: GET
+  

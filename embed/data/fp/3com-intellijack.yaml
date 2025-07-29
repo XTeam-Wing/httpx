@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: 3com-intellijack
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"3com intellijack")
+  method: GET
+  

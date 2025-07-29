@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Beijing Stop Simple Information Technology Co., Ltd.
+  cpe: ''
+  product: stopping-i.-network-management-platform-background-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"id=\"hwebsystemtitle\"")
+  method: GET
+  

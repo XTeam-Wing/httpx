@@ -1,0 +1,12 @@
+info:
+  category: adsl
+  company: Best IT World(India) Pvt. Ltd.
+  cpe: ''
+  product: iball-ib-wra300n3g
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"realm=\"ib-wra300n3g") || icontains(title,"ib-wra300n3gt"))
+    || icontains(banner,"realm=\"ib-wra300n3g"))
+  method: GET
+  

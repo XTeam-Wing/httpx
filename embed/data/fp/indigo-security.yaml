@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: IndigoVision Inc.
+  cpe: ''
+  product: indigo-security
+  server: nginx
+  tags: []
+rules:
+- dsl: 'icontains(banner,"server: indigo-security")'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Trend Micro Incorporated.
+  cpe: ''
+  product: trendmicro-s8010f
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(cert,"s8010f")
+  method: GET
+  

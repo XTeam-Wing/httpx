@@ -1,0 +1,11 @@
+info:
+  category: identity authentication && authority management
+  company: Neusoft Group Co., Ltd.
+  cpe: ''
+  product: neusoft-neteye-unified-login
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"neteye 统一身份管控系统登录")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: development framework
+  company: Phusion Holding B.V.
+  cpe: ''
+  product: passenger
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"phusion passenger") || icontains(banner,"phusion_passenger"))
+  method: GET
+  

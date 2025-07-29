@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Juniper Networks, Inc.
+  cpe: ''
+  product: juniper-srx550
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"srx 550") || icontains(body,"class=\"jweb-title uppercase\">
+    - srx550")) || icontains(banner,"juniper networks, inc. srx550"))
+  method: GET
+  

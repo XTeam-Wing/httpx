@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Zhejiang Yushi Technology Co., Ltd.
+  cpe: ''
+  product: uniview-vm2500
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"软件版本：  vm2500")
+  method: GET
+  

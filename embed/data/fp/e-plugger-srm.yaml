@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: e-plugger-srm
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"科研管理系统，北京易普拉格科技")||(icontains(body,"lan12-jingbian-hong") && icontains(body,"科研管理系统，北京易普拉格科技"))
+  method: GET
+  

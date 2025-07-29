@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-fmg3542-d10a
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"fmg3542-d10a")
+  method: GET
+  

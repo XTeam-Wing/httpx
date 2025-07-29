@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: posun-sales
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<p>快易销公众号</p>") && icontains(body,"src=\"/view/static/js/eidpcommon.min.js\"")||(icontains(body,"src=\"/view/static/js/eidpcommon.min.js\""))||(icontains(body,"<p>快易销公众号</p>"))
+  method: GET
+  

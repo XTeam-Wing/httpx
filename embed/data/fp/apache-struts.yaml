@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: apache-struts
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"org.apache.struts2")||(icontains(body,"org.apache.struts."))||(icontains(body,"content=\"struts2
+    showcase for apache struts project\""))
+  method: GET
+  

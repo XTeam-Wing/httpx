@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-secoway-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"secoway") || icontains(banner,"secoway"))
+  method: GET
+  

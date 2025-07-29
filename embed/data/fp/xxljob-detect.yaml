@@ -1,0 +1,16 @@
+info:
+  author: sayhi
+  description: 'xxljob was detected.
+
+    '
+  tags: []
+  product: xxljob
+  category: cms
+rules:
+- method: GET
+  path:
+    - "/toLogin"
+    - "/xxljob/toLogin"
+    - "/xxl-job/toLogin"
+    - "/xxl-job-admin/toLogin"
+  dsl: contains(body, "分布式任务调度平台XXL-JOB") || contains(title, "任务调度中心")

@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ruijie-company's-product
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"rgos_ssh")||(icontains(header,"vendor: ruijie"))||(icontains(header,"vendor:
+    ruijie general operation system"))||(icontains(header,"ruijie login:"))||(icontains(header,"server:
+    rg/device"))||(icontains(header,"server: ruijie servrer"))'
+  method: GET
+  

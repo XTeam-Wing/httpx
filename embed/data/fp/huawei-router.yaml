@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-router
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"huawei technologies") && icontains(banner,"httpwarnflg"))
+    || icontains(title,"wimax cpe configuration"))
+  method: GET
+  

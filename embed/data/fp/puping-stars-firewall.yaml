@@ -1,0 +1,13 @@
+info:
+  category: firewall
+  company: Venus Star Information Technology Group Co., Ltd.
+  cpe: ''
+  product: puping-stars-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(title,"启明星辰 安全系统") || icontains(title,"venusense usg")) || icontains(title,"天清汉马usg"))
+    || (!icontains(title,"应用交付系统") && (icontains(body,"venusense fw") || icontains(body,"var
+    title_zh = \'天清汉马usg防火墙\';"))))
+  method: GET
+  

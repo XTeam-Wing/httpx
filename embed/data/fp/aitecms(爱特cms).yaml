@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: aitecms(爱特cms)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"aitecms")||(icontains(title,"aitecms"))||(icontains(body,"爱特cms"))||(icontains(title,"爱特cms"))
+  method: GET
+  

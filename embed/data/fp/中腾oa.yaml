@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 中腾oa
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"systemaction") && icontains(body,"zt_webframe") && icontains(body,"login")||(icontains(body,"login")
+    && icontains(body,"systemaction") && icontains(body,"zt_webframe"))
+  method: GET
+  

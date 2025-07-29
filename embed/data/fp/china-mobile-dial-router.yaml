@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: China Mobile Communications Group Co., Ltd.
+  cpe: ''
+  product: china-mobile-dial-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"中国移动") && icontains(body,"x_fib_register"))
+  method: GET
+  

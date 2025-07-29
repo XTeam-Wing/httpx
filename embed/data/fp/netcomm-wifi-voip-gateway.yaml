@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: NetComm Limited
+  cpe: ''
+  product: netcomm-wifi-voip-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"netcomm wifi data && voip gateway") || icontains(banner,"realm=\"netcomm
+    wifi data && voip gateway"))
+  method: GET
+  

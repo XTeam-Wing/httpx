@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: centos
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"centos")||(icontains(title,"apache http server test page powered
+    by centos"))||(icontains(header,"centos"))
+  method: GET
+  

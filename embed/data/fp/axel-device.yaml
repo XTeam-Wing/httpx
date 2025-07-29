@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: AXEL Ltd
+  cpe: ''
+  product: axel-device
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: axel admin server") || icontains(banner,"server:
+    axel admin server"))'
+  method: GET
+  

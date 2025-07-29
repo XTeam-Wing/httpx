@@ -1,0 +1,13 @@
+info:
+  category: cameras && surveillance
+  company: AAT HOLDING S.A.
+  cpe: ''
+  product: webguard
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"server: novus rtsp server") && icontains(protocol,"rtsp"))
+    || icontains(body,"onload=\"getinfo()\" onresize=\"fit_center()\">")) || icontains(title,"webguard
+    login"))'
+  method: GET
+  

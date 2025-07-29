@@ -1,0 +1,13 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: jeesite
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"set-cookie: jeesite.session.id=") || icontains(banner,"set-cookie:
+    jeesite.session.id=")) || (icontains(body,"jeesite.com") && (icontains(body,"jeesite.js")
+    || icontains(body,"jeesite.css"))))'
+  method: GET
+  

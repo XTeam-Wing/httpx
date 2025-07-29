@@ -1,0 +1,14 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: onze-miner
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<link rel=\"stylesheet\" href=\"transcriber.css\" type=\"text/css\">")||(icontains(body,"<a
+    href=\"http://onzeminer.sourceforge.net\">onze miner</a> is free software distributed
+    under the terms of the <a href=\"/miner/gpl.txt\" target=\"license\">gnu general
+    public license</a>"))
+  method: GET
+  

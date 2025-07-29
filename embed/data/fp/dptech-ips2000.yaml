@@ -1,0 +1,12 @@
+info:
+  category: network intrusion detection && defense
+  company: Hangzhou DP Technology Co., Ltd.
+  cpe: ''
+  product: dptech-ips2000
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"ips2000") && icontains(banner,"this is dptech")) || icontains(banner,"dptech
+    ips2000"))
+  method: GET
+  

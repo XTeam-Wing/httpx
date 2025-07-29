@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Teradici Corporation.
+  cpe: ''
+  product: teradici-pcoip-zero-client
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"password_value") && icontains(body,"pcoip&#174 zero client"))
+  method: GET
+  

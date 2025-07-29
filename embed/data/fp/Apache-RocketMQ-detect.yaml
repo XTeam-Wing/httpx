@@ -1,0 +1,15 @@
+info:
+  company: Apache
+  product: apache rocketmq
+  category: mq
+  description: ''
+  author: ev1l0o4g
+  fofa_query: app="RocketMq-console-ng"
+  tags:
+  - apache
+  - rocketmq
+  - tech
+rules:
+- method: GET
+  
+  dsl: (contains(body, "title>RocketMq") || contains(body, "title>RocketMQ")) && contains(header, "rocketmq") && status_code == 200

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: topsectopapp-ad
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"topsec topapp-ad")
+  method: GET
+  

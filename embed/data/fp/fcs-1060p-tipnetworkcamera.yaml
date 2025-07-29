@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: fcs-1060p-tipnetworkcamera
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"fcs-1060 p/t ip network camera")
+  method: GET
+  

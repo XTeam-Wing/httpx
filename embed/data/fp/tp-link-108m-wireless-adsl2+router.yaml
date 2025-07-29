@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Pullian Technology Co., Ltd.
+  cpe: ''
+  product: tp-link-108m-wireless-adsl2+router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"108m wireless adsl2+ router") || icontains(banner,"realm=\"108m
+    wireless adsl2+ router"))
+  method: GET
+  

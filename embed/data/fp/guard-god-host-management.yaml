@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Sichuan Vientiane Update Network Communication Co., Ltd.
+  cpe: ''
+  product: guard-god-host-management
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"护卫神·主机管理系统")
+  method: GET
+  

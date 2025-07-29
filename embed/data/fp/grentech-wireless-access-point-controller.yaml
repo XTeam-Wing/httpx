@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: grentech-wireless-access-point-controller
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"国人通信 - 集中无线控制器")
+  method: GET
+  

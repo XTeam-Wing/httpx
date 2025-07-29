@@ -1,0 +1,12 @@
+info:
+  category: switch
+  company: other
+  cpe: ''
+  product: management-switch-web-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(banner,"couchdb") && icontains(banner,"server: management switch
+    web server")) || icontains(banner,"server: management switch web server"))'
+  method: GET
+  

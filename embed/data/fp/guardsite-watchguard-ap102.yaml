@@ -1,0 +1,11 @@
+info:
+  category: wireless network
+  company: Virtual Graffiti Inc
+  cpe: ''
+  product: guardsite-watchguard-ap102
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"watchguard ap102")
+  method: GET
+  

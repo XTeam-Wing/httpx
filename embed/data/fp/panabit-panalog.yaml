@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: panabit-panalog
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"panalog")||(icontains(body,"日志系统") && icontains(body,"id=\"codeno\""))||(icontains(body,"id=\"codeno\""))
+  method: GET
+  

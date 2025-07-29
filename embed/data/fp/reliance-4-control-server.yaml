@@ -1,0 +1,12 @@
+info:
+  category: industrial control
+  company: GEOVAP, spol. s r.o.
+  cpe: ''
+  product: reliance-4-control-server
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm\"reliance 4 control server") || icontains(banner,"realm=\"reliance
+    4 control server"))
+  method: GET
+  

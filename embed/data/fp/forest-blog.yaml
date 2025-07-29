@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: forest-blog
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"forest blog")
+  method: GET
+  

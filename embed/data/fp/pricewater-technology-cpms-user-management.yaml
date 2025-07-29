@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Shanghai Puhua Technology Development Co., Ltd.
+  cpe: ''
+  product: pricewater-technology-cpms-user-management
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"post(\"/ssosaml/saml2signonhandler.ashx\")")
+  method: GET
+  

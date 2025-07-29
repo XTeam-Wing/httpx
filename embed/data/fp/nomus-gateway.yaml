@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Nomus Comm-Systems PVT. LTD
+  cpe: ''
+  product: nomus-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"nomus rb") || icontains(banner,"nomus gw")) || icontains(banner,"nomus
+    gateway"))
+  method: GET
+  

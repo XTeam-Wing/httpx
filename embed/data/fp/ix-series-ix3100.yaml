@@ -1,0 +1,12 @@
+info:
+  category: vpn products
+  company: NEC Corporation
+  cpe: ''
+  product: ix-series-ix3100
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: ix series ix3100") || icontains(banner,"ix series
+    ix3100"))'
+  method: GET
+  

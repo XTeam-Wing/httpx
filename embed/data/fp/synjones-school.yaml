@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: synjones-school
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"synjones_school")
+  method: GET
+  

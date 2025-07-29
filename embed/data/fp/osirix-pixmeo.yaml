@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Pixmeo SARL
+  cpe: ''
+  product: osirix-pixmeo
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<span>radone pacs</span>")
+  method: GET
+  

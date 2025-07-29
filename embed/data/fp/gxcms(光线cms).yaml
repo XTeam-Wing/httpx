@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: gxcms(光线cms)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"gxcms")||(icontains(title,"gxcms"))||(icontains(body,"光线cms"))||(icontains(title,"光线cms"))
+  method: GET
+  

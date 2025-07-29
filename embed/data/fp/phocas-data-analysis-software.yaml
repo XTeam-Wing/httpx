@@ -1,0 +1,13 @@
+info:
+  category: component
+  company: Phocas Ltd
+  cpe: ''
+  product: phocas-data-analysis-software
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((!icontains(title,"documentation") && !icontains(title,"phocas user group"))
+    && !icontains(title,"phocassoftware.com")) && !icontains(title," phocas: business
+    intelligence software && data analytics ")) && icontains(body,"href=\"https://www.phocassoftware.com\""))'
+  method: GET
+  

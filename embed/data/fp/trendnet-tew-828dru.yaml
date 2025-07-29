@@ -1,0 +1,13 @@
+info:
+  category: router
+  company: TRENDnet, Inc.
+  cpe: ''
+  product: trendnet-tew-828dru
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"realm=\"tew-828dru") || icontains(banner,"realm=\"tew-828dru"))
+    || icontains(body,"capture(status_router.sys_model)</script></div>trendnet tew828dru"))
+    || (icontains(body,"var wanport") && icontains(title,"tew-828dru")))
+  method: GET
+  

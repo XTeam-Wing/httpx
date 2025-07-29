@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 天狐搜索引擎
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"天狐搜索引擎")
+  method: GET
+  

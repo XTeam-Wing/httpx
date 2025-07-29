@@ -1,0 +1,11 @@
+info:
+  category: operating system
+  company: International Business Machines Corporation
+  cpe: ''
+  product: ibm-aix
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"base operating system runtime aix version")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Guangzhou Anpuda Electronic Technology Co., Ltd.
+  cpe: ''
+  product: apd-video-surveillance
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"lg_body_iptpsw") && icontains(body,"var listenport = 6002;"))
+  method: GET
+  

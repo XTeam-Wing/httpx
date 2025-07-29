@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: cpanel＆whm
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"cpanel＆whm")
+  method: GET
+  

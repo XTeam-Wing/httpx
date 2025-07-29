@@ -1,0 +1,12 @@
+info:
+  category: smart home
+  company: LG Electronics.
+  cpe: ''
+  product: lg-webos-tv
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<friendlyname>[lg] webos tv ") || icontains(body,"<friendlyname>lg
+    webos tv</friendlyname>"))
+  method: GET
+  

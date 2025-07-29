@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Guangdong Oriental Thinking Technology Co., Ltd.
+  cpe: ''
+  product: oriental-thinking-high-speed-??traffic-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"add by sll") || icontains(body,"offlineservice/showdownloadmessage.aspx"))
+  method: GET
+  

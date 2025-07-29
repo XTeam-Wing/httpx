@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: naxsi(nbssystem)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"naxsi")||(icontains(title,"naxsi"))||(icontains(body,"nbs system"))||(icontains(title,"nbs
+    system"))
+  method: GET
+  

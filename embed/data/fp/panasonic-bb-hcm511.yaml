@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: Panasonic Corporation
+  cpe: ''
+  product: panasonic-bb-hcm511
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"basic realm=\"generaluser/administrator\"") || icontains(banner,"basic
+    realm=\"generaluser/administrator\""))
+  method: GET
+  

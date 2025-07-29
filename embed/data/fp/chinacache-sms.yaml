@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: Beijing Lanxun Communication Technology Co., Ltd.
+  cpe: ''
+  product: chinacache-sms
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: sms (chinacache smart media server)") || icontains(banner,"server:
+    sms (chinacache smart media server)"))'
+  method: GET
+  

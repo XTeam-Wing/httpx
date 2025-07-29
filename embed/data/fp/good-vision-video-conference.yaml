@@ -1,0 +1,11 @@
+info:
+  category: voice video
+  company: Shenzhen Yinpeng Cloud Computing Co., Ltd.
+  cpe: ''
+  product: good-vision-video-conference
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"/resources/fmweb/other/js/login.js") || icontains(body,"class=\"win_introduce"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Beijing Digital Certification Co., Ltd.
+  cpe: ''
+  product: digital-certification-certificate-management-server
+  server: nginx
+  tags: []
+rules:
+- dsl: (title == "证书管理服务器" || icontains(body,"name=\"spring-security-redirect\" value=\"/loginbycert\""))
+  method: GET
+  

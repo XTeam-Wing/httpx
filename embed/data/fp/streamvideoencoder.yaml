@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: streamvideoencoder
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"流媒体编码器专业版</span>")
+  method: GET
+  

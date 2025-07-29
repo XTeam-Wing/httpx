@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: gocloud-s1a-8m-series-router
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"gocloud s1a_8m series router")
+  method: GET
+  

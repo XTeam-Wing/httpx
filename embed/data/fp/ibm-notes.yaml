@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: International Business Machines Corporation
+  cpe: ''
+  product: ibm-notes
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"esmtp ibm notes") || icontains(banner,"ibm notes pop3 server"))
+    || icontains(banner,"lotus notes pop3 server"))
+  method: GET
+  

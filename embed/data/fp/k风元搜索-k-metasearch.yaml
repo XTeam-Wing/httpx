@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: k风元搜索-k-metasearch
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"k风元搜索_k-metasearch")
+  method: GET
+  

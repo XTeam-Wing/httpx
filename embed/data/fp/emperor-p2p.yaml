@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Xiamen Diwang Information Technology Co., Ltd.
+  cpe: ''
+  product: emperor-p2p
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"src=\"/dyweb/dythemes") || icontains(body,"/js/diyou.js"))
+  method: GET
+  

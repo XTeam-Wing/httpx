@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Fujitsu Ltd
+  cpe: ''
+  product: fujitsu-infoprovider-pro
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"fujitsu-infoprovider-pro") || icontains(banner,"fujitsu-infoprovider-pro"))
+  method: GET
+  

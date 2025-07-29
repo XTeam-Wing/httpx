@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Hewlett Packard Enterprise Development LP
+  cpe: ''
+  product: hp-proliant-dl980r07i
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"proliant dl980r07i")
+  method: GET
+  

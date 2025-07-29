@@ -1,0 +1,12 @@
+info:
+  category: smart home
+  company: LG Electronics.
+  cpe: ''
+  product: lg-smart-tv
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"<friendlyname>[lg] smart tv") || icontains(body,"<friendlyname>lg
+    smart tv</friendlyname>")) || icontains(body,"<modelname>lg smart tv</modelname>"))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: electronic mail system
+  company: Sophos Technologies Pvt. Ltd.
+  cpe: ''
+  product: sophos-email-appliance
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"sophos email appliance") || icontains(banner,"sophos email
+    appliance")) || icontains(banner,"sophos email appliance"))
+  method: GET
+  

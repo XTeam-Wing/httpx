@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Shenzhen Guofeng Software Co., Ltd.
+  cpe: ''
+  product: guofeng-software-standardized-integration-operation-management-platform
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"标准化一体运营管理平台")
+  method: GET
+  

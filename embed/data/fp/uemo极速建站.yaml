@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: uemo极速建站
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"uemo极速建站")
+  method: GET
+  

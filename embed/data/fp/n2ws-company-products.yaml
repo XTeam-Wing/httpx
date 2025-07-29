@@ -1,0 +1,11 @@
+info:
+  category: data leakage prevention
+  company: N2W Software, Inc.
+  cpe: ''
+  product: n2ws-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"static/style/cpm_style.css")
+  method: GET
+  

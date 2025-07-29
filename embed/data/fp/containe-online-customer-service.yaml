@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Chengdu Meicha Network Technology Co., Ltd.
+  cpe: ''
+  product: containe-online-customer-service
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"/meiqia.js")
+  method: GET
+  

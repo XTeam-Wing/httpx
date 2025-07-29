@@ -1,0 +1,12 @@
+info:
+  category: other iot device
+  company: Shenyang Jinwanma High-Tech Development Co., Ltd.
+  cpe: ''
+  product: jwm-patrol-products
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"id=\"removeietoolbar\" classid=\"clsid:2646205b-878c-11d1-b07c-0000c040bcdb\"
+    codebase=\"dll/nskey.dll")
+  method: GET
+  

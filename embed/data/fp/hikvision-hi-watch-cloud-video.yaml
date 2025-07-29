@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Hangzhou Hikvision Digital Technology Co., Ltd.
+  cpe: ''
+  product: hikvision-hi-watch-cloud-video
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"嗨看云视频</p>")
+  method: GET
+  

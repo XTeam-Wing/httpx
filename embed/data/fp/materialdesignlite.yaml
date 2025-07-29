@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: materialdesignlite
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"material design lite")
+  method: GET
+  

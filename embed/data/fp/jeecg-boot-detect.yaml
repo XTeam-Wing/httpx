@@ -1,0 +1,17 @@
+info:
+  author: ev1l0o4g
+  remediation:
+  - Jeecg-Boot 是一款基于代码生成器的低代码开发平台。
+  tags:
+  - tech
+  - jeecg-boot
+  - jeecg
+  product: jeecg-boot
+  category: cms
+rules:
+- method: GET
+  path:
+   - '/logo.png'
+   - '/jeecg-boot/'
+   - '/jeecg-boot/logo.png'
+  dsl: contains_all(body, "/jeecg-boot","babel-polyfill") ||contains_all(body, "polyfill_","JeecgBoot") ||contains(body, "cdn/babel-polyfill/polyfill_")  ||contains_all(body, "html[data-theme=dark]", "antRotate{to{transform:rotate(405deg)}}") ||contains_all(body, "fileview.jeecg.com","babel-polyfill") ||contains_all(body, "fileview.jeecg.com","jeecg-boot") || ('dc7a0b69060a0262530b47b46ba7f9b6' == md5(body))|| ('d1cdeae91ecf6b81f447026302d79ba0' == md5(body))

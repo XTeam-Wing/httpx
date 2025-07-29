@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: intelbras lnc.
+  cpe: ''
+  product: intelbras-roteador-wireless-n-win300
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"roteador wireless n win 300")
+  method: GET
+  

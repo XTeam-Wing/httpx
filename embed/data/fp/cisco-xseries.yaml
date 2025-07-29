@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-xseries
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"cisco xseries") || icontains(banner,"cisco xseries"))
+  method: GET
+  

@@ -1,0 +1,16 @@
+info:
+  category: router
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-wgr-614l
+  server: nginx
+  tags: []
+rules:
+- dsl: (((((((((((icontains(banner,"realm=\"wgr614v7") || icontains(banner,"realm=\"wgr614v6"))
+    || icontains(banner,"realm=\"wgr614v4")) || icontains(banner,"realm=\"wgr614v3"))
+    || icontains(banner,"realm=\"wgr614v2")) || icontains(banner,"realm=\"wgr-614l"))
+    || icontains(banner,"realm=\"wgr614v7")) || icontains(banner,"realm=\"wgr614v6"))
+    || icontains(banner,"realm=\"wgr614v4")) || icontains(banner,"realm=\"wgr614v3"))
+    || icontains(banner,"realm=\"wgr614v2")) || icontains(banner,"realm=\"wgr-614l"))
+  method: GET
+  

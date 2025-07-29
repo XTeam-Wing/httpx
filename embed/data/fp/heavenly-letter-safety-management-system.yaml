@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Beijing Tianrongxin Technology Co., Ltd.
+  cpe: ''
+  product: heavenly-letter-safety-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"天融信安全管理")
+  method: GET
+  

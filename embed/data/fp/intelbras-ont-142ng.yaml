@@ -1,0 +1,12 @@
+info:
+  category: adsl
+  company: intelbras lnc.
+  cpe: ''
+  product: intelbras-ont-142ng
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"realm=\"ont142ng") || (icontains(banner,"intelbras") &&
+    icontains(banner,"ont142ng"))) || icontains(banner,"realm=\"ont142ng"))
+  method: GET
+  

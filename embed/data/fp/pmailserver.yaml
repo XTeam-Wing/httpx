@@ -1,0 +1,12 @@
+info:
+  category: electronic mail system
+  company: other
+  cpe: ''
+  product: pmailserver
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"esmtp(ipv4) pmailserver2") || icontains(banner,"esmtp pmailserver"))
+    || icontains(banner,"esmtp(ipv4) pmailserver"))
+  method: GET
+  

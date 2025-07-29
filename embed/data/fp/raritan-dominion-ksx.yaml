@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Raritan Inc.
+  cpe: ''
+  product: raritan-dominion-ksx
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"producttype") && icontains(body,"dominion ksx "))
+  method: GET
+  

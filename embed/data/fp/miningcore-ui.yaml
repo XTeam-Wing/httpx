@@ -1,0 +1,11 @@
+info:
+  category: blockchain
+  company: other
+  cpe: ''
+  product: miningcore-ui
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"\"http://www.creative-tim.com") || icontains(title,"miningcore-ui"))
+  method: GET
+  

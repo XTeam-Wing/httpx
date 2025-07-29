@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: The Veloz Group
+  cpe: ''
+  product: flyspray
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"powered by flyspray")
+  method: GET
+  

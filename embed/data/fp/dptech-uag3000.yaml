@@ -1,0 +1,11 @@
+info:
+  category: network intrusion detection && defense
+  company: Hangzhou DP Technology Co., Ltd.
+  cpe: ''
+  product: dptech-uag3000
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"dptech uag3000")
+  method: GET
+  

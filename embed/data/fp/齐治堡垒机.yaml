@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 齐治堡垒机
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"齐治堡垒机")||(icontains(body,"//xfpverifyexec.jsp;"))
+  method: GET
+  

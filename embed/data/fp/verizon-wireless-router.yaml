@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Verizon Communications Inc.
+  cpe: ''
+  product: verizon-wireless-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"verizon_logo_blk.gif") && icontains(title,"wireless broadband
+    router management console"))
+  method: GET
+  

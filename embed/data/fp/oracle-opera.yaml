@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: Oracle Corporation
+  cpe: ''
+  product: oracle-opera
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"operalogin/welcome.do") || icontains(title,"micros systems
+    inc., opera"))
+  method: GET
+  

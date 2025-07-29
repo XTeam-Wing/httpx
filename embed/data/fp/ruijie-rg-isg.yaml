@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Ruijie Networks Co., Ltd.
+  cpe: ''
+  product: ruijie-rg-isg
+  server: nginx
+  tags: []
+rules:
+- dsl: title == "rg-isg"
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: printer
+  company: Zebra Technologies Corp.
+  cpe: ''
+  product: zebra-105slplus-203dpi-zpl
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"ztc 105slplus-203dpi zpl</h1>")
+  method: GET
+  

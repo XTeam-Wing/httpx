@@ -1,0 +1,11 @@
+info:
+  category: voice video
+  company: Nanjing Telin Information Technology Co., Ltd.
+  cpe: ''
+  product: special-information-527-light-conference
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"轻会议") && icontains(body,"527meeting"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Hanlin Technology Co., Ltd.
+  cpe: ''
+  product: handlink-companies-products
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"handlink technologies inc. all rights reserved.")
+  method: GET
+  

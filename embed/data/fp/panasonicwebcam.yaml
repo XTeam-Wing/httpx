@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: panasonicwebcam
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"panasonic webcam")
+  method: GET
+  

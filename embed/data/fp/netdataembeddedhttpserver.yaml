@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: netdataembeddedhttpserver
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"netdata embedded http server")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: sendio-esp
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<frameset id=\"icetopframeset\" name=\"icetopframeset\" rows=\"28,*,20,0,0,0\"")||(icontains(body,"<link
+    rel=\"stylesheet\" type=\"text/css\" href=\"/sendio/ice/css/nice.css\" />"))
+  method: GET
+  

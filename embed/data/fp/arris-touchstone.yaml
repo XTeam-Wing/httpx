@@ -1,0 +1,12 @@
+info:
+  category: adsl
+  company: COMMSCOPE
+  cpe: ''
+  product: arris-touchstone
+  server: nginx
+  tags: []
+rules:
+- dsl: '(!icontains(body,"server: couchdb") && (icontains(body,"passwithwarnings")
+    || icontains(title,"touchstone status")))'
+  method: GET
+  

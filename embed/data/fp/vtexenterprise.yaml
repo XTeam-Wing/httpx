@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: vtexenterprise
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"vtex enterprise")
+  method: GET
+  

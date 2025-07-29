@@ -1,0 +1,11 @@
+info:
+  category: wireless network
+  company: Hitachi Data Systems Corporation
+  cpe: ''
+  product: hitachi-wireless-access-point
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"hitachi cable wireless access point")
+  method: GET
+  

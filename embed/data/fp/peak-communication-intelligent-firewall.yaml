@@ -1,0 +1,13 @@
+info:
+  category: firewall
+  company: Shenzhen Haofeng Communication Technology Co., Ltd.
+  cpe: ''
+  product: peak-communication-intelligent-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"style=\"background:url(images/login.gif) no-repeat center\"")
+    || (icontains(body," <body bgcolor=#ddeeff onload=\"document.all.user.focus()\">")
+    && icontains(title,"皓峰防火墙")))
+  method: GET
+  

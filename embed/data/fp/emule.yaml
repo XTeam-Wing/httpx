@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: emule
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((!icontains(banner,"couchdb") && icontains(banner,"server: emule")) || (!icontains(body,"<h2>blog
+    comments</h2>") && icontains(title,"emule"))) || icontains(banner,"server: emule"))'
+  method: GET
+  

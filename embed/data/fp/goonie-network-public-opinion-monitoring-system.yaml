@@ -1,0 +1,11 @@
+info:
+  category: threat analysis && management
+  company: Guni International Software (Beijing) Co., Ltd.
+  cpe: ''
+  product: goonie-network-public-opinion-monitoring-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"网络舆情监控系统") && icontains(body,"alert(\"菜单层数量和内容层数量不一样!\")"))
+  method: GET
+  

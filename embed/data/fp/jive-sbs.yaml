@@ -1,0 +1,13 @@
+info:
+  category: other enterprise application
+  company: Jive Software
+  cpe: ''
+  product: jive-sbs
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((icontains(body,"jive.rte.defaultstyles") || icontains(banner,"x-jsl: "))
+    || icontains(banner,"x-jsl: ")) || icontains(body,"class=\"jive-body-formpage"))
+    || icontains(body,"/jive-icons.css"))'
+  method: GET
+  

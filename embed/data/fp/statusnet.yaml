@@ -1,0 +1,13 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: statusnet
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"it runs the <a href=\"http://status.net/\">statusnet</a> microblogging
+    software, version ") || icontains(body,"<p>this site is powered by <a href=\"http://status.net/\">statusnet</a>
+    version"))
+  method: GET
+  

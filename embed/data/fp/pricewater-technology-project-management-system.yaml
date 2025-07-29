@@ -1,0 +1,12 @@
+info:
+  category: project management system
+  company: Shanghai Puhua Technology Development Co., Ltd.
+  cpe: ''
+  product: pricewater-technology-project-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"window.top.location = \"login.aspx?url=\" + right\"") && icontains(body,"var
+    right = regexp.rightcontext"))
+  method: GET
+  

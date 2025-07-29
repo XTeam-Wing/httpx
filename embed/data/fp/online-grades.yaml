@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: online-grades
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"online grades") || icontains(body,"content=\"online grades"))
+  method: GET
+  

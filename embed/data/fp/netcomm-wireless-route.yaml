@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: netcomm-wireless-route
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"login") && icontains(body,"powered by netcomm")||(icontains(header,"netcomm
+    wireless router"))||(icontains(body,"powered by netcomm"))
+  method: GET
+  

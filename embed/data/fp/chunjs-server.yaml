@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: chunjs-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: chunjs/server") || icontains(banner,"server: chunjs/server"))'
+  method: GET
+  

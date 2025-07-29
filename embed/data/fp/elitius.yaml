@@ -1,0 +1,11 @@
+info:
+  category: project management system
+  company: Intelliants LLC
+  cpe: ''
+  product: elitius
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"target=\"_blank\" title=\"affiliate") || icontains(body,"content=\"elitius"))
+  method: GET
+  

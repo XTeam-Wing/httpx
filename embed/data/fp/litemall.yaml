@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: litemall
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"litemall-admin")||(icontains(title,"litemall"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: cachecloud
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"alert\"系统不存在该用户名，请确认该用户申请了cachecloud权限!\";")||(icontains(body,"alert(\"系统不存在该用户名，请确认该用户申请了cachecloud权限!\");"))||(icontains(body,"alert(\"系统不存在该用户名，请确认该用户申请了cachecloud权限!\";"))||(icontains(title,"cachecloud系统"))
+  method: GET
+  

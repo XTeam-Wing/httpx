@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: rockoa协同办公oa系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"rockoa协同办公oa系统")
+  method: GET
+  

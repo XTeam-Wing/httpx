@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: other
+  cpe: ''
+  product: nmap-log
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"starting nmap") && icontains(body,"interesting ports on"))
+  method: GET
+  

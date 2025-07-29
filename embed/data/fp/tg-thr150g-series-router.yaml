@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Shenzhen Wanwang Botong Technology Co., Ltd.
+  cpe: ''
+  product: tg-thr150g-series-router
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"tg-net thr150g series router")
+  method: GET
+  

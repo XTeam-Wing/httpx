@@ -1,0 +1,8 @@
+info:
+  author: ev1l0o4g
+  description: ""
+  tags: []
+  product: easysite内容管理平台
+  category: cms
+rules:
+- dsl: contains_all(body,"easysite","huilan") || contains(body,"easysite-compression")

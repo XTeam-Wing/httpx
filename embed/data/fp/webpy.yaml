@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: other
+  cpe: ''
+  product: webpy
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"webpy_session_id") || icontains(banner,"webpy_session_id"))
+  method: GET
+  

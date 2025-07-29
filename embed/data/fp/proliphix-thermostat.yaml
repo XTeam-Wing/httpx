@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: PROLIPHIX.
+  cpe: ''
+  product: proliphix-thermostat
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"printstatushead(adstat")
+  method: GET
+  

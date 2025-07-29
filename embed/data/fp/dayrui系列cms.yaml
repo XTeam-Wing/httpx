@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: dayrui系列cms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"dr_ci_session")
+  method: GET
+  

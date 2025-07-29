@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-nbg5715
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"zyxel nbg5715") || icontains(banner,"nbg5715")) || icontains(body,"<li
+    class=\"modelname\">nbg5715</li>"))
+  method: GET
+  

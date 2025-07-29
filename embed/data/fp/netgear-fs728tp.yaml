@@ -1,0 +1,12 @@
+info:
+  category: switch
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-fs728tp
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"netgear fs728tp") || icontains(body,"class=\"fs728tpimage
+    spacer50percent topalign righthalign\""))
+  method: GET
+  

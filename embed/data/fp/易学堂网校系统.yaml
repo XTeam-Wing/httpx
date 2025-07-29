@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 易学堂网校系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"易学堂网校系统")
+  method: GET
+  

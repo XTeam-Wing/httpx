@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Corega Inc
+  cpe: ''
+  product: corega-barfx2
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"cg-bar fx2") || icontains(banner,"realm=\"cg-bar fx2"))
+  method: GET
+  

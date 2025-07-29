@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 快范cms(kuaifancms(快范cms)手机建站系统)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"快范cms")||(icontains(title,"快范cms"))||(icontains(body,"kuaifancms(快范cms)手机建站系统"))||(icontains(title,"kuaifancms(快范cms)手机建站系统"))
+  method: GET
+  

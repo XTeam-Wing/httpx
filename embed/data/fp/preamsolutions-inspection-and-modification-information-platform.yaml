@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: preamsolutions-inspection-and-modification-information-platform
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"action=\"/gqjx/loginmgr.do?method=dologin")
+  method: GET
+  

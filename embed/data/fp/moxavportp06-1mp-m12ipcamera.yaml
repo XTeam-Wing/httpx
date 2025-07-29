@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: moxavportp06-1mp-m12ipcamera
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"moxa vport p06-1mp-m12 ip camera")
+  method: GET
+  

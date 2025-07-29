@@ -1,0 +1,15 @@
+info:
+  category: other enterprise application
+  company: Apache Software Foundation.
+  cpe: ''
+  product: svn
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && !icontains(banner,"<h2>blog
+    comments</h2>")) && icontains(banner,"{\"length\": 0, \"chained_to\": 1919250030,
+    \"identifier\": \"logy, inc.\", \"str\": null}")) || ((!icontains(banner,"drupal")
+    && !icontains(banner,"couchdb")) && icontains(server,"{\"length\": 0, \"chained_to\":
+    1919247457, \"identifier\": \"logy, inc.\", \"str\": null}")))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: sysmaster
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"(server: ^sysmaster web server)")'
+  method: GET
+  

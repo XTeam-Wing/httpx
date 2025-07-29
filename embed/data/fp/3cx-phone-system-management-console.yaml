@@ -1,0 +1,12 @@
+info:
+  category: voice video
+  company: 3CX Phone System
+  cpe: ''
+  product: 3cx-phone-system-management-console
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"src=\"/public/app.807e10d98cfac19e.js\"") || icontains(body,"src=\"/public/vendor.26422846c5ea381c.js\""))
+    || icontains(title,"3cx phone system management console"))
+  method: GET
+  

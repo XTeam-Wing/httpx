@@ -1,0 +1,12 @@
+info:
+  category: development framework
+  company: Perforce Software, Inc.
+  cpe: ''
+  product: zend-framework
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"zend=") || icontains(banner,"zend framework")) || icontains(banner,"zend="))
+    || icontains(banner,"zend framework"))
+  method: GET
+  

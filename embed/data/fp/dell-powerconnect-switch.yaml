@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Dell Inc.
+  cpe: ''
+  product: dell-powerconnect-switch
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"powerconnect ")
+  method: GET
+  

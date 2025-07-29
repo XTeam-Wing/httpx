@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Qiming Information Technology Co., Ltd.
+  cpe: ''
+  product: qm-electronic-facade-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"src=\"polyfills.js") && icontains(body,"assets/css/fdb.css"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Dell Inc.
+  cpe: ''
+  product: dell-poweredge-r940xa
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"poweredge-r940xa")
+  method: GET
+  

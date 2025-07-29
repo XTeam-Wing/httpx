@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: EFM Networks Co.,Ltd.
+  cpe: ''
+  product: efm-networks-iptime-n3-i
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"iptime n3-i") || icontains(body,"\"/images2/login_title.n3i.gif\""))
+  method: GET
+  

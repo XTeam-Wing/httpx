@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Bite Thinking Software Co., Ltd.
+  cpe: ''
+  product: bit-service
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"xmlpzs/webissue.asp") || icontains(body,"bit-xxzs"))
+  method: GET
+  

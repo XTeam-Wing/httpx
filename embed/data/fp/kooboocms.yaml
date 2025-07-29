@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: kooboocms
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"kooboo cms") || icontains(banner,"kooboocms")) || icontains(banner,"kooboocms"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: mhg-450
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"realm=\"mhg-450")||(icontains(header,"mhg-450 "))
+  method: GET
+  

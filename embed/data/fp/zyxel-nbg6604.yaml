@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-nbg6604
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"nbg6604") || icontains(banner,"nbg6604"))
+  method: GET
+  

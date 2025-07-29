@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: iFAX Solutions, Inc.
+  cpe: ''
+  product: avantfax-ictfax
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"content=\"ictfax") || icontains(body,"<img src=\"images/avantfax-big.png\"
+    border=\"0\" alt=\"ictfax")) || icontains(title,"- ictfax - login"))
+  method: GET
+  

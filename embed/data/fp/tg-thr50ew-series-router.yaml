@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Shenzhen Wanwang Botong Technology Co., Ltd.
+  cpe: ''
+  product: tg-thr50ew-series-router
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"tg-net thr50ew series router")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: database system
+  company: Microsoft Corporation
+  cpe: ''
+  product: microsoft-sql-server
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(protocol,"ms-sql") || icontains(banner,"mssql server")) || icontains(protocol,"mssql"))
+  method: GET
+  

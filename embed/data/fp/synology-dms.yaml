@@ -1,0 +1,12 @@
+info:
+  category: network storage
+  company: Synology Inc.
+  cpe: ''
+  product: synology-dms
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"class=\"logo-dsm\"") && icontains(body,"class=\"logo-synology\""))
+    && icontains(title," synology "))
+  method: GET
+  

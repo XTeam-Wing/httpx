@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: salia plcc master
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"Home")&&icontains(body,"Salia PLCC Master")
+  method: GET
+  

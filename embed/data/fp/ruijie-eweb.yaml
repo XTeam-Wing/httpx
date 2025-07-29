@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ruijie-eweb
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"锐捷网络-eweb网管系统")||(icontains(body,"login.getdeviceinfo") && icontains(body,"<span
+    class=\"resource\" mark=\"login.copyright\">锐捷网络</span>"))||(icontains(body,"<span
+    class=\"resource\" mark=\"login.copyright\">锐捷网络</span>"))||(icontains(body,"login.getdeviceinfo"))
+  method: GET
+  

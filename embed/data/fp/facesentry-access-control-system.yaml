@@ -1,0 +1,11 @@
+info:
+  category: identity authentication && authority management
+  company: iWT Ltd.
+  cpe: ''
+  product: facesentry-access-control-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"facesentry access control system")
+  method: GET
+  

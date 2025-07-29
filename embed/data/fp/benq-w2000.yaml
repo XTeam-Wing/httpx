@@ -1,0 +1,11 @@
+info:
+  category: other office equipment
+  company: BENQ Corporation
+  cpe: ''
+  product: benq-w2000
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"w2000 microsoft ftp")
+  method: GET
+  

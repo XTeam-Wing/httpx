@@ -1,0 +1,13 @@
+info:
+  category: firewall
+  company: Palo Alto Networks, Inc.
+  cpe: ''
+  product: paloalto-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"pa-200") || icontains(banner,"pa-200")) || icontains(banner,"pa-500"))
+    || icontains(body,"access to the web page you were trying to visit has been blocked
+    in accordance with company policy"))
+  method: GET
+  

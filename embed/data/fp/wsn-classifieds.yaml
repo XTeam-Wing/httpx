@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: wsn-classifieds
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<title>wsn classifieds admin login</title>")||(icontains(body,"<title>wsn
+    classifieds administration panel</title>"))||(icontains(body,"<textarea readonly rows=\"20\"
+    cols=\"75\">wsn classifieds license agreement"))
+  method: GET
+  

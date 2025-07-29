@@ -1,0 +1,11 @@
+info:
+  category: cameras and surveillance
+  company: August Bremicker und Söhne KG
+  cpe: ''
+  product: abus-视频监控
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"ui/images/abusLogo.png") && icontains(body,"activeUsername")
+  method: GET
+  

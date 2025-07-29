@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: getck-safegateway
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"应用安全网关") && icontains(body,"webui/images/basic/login/main_logo.gif")||(icontains(body,"webui/images/basic/login/main_logo.gif"))||(icontains(body,"应用安全网关"))
+  method: GET
+  

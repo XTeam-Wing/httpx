@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: SMC Networks Asia Pacific Pte Ltd
+  cpe: ''
+  product: smc-data-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"smc networks") && icontains(banner,"data gateway")) &&
+    icontains(banner,"docsis "))
+  method: GET
+  

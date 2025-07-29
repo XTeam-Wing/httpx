@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: crhms-medical-insurance-review-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"window.open(url, \"中公网医疗信息管理系统\", option")||(icontains(body,"url, \"中公网医疗信息管理系统\",
+    option"))
+  method: GET
+  

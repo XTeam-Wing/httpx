@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: shlcms(深喉咙)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"shlcms")||(icontains(title,"shlcms"))||(icontains(body,"深喉咙"))||(icontains(title,"深喉咙"))
+  method: GET
+  

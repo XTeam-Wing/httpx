@@ -1,0 +1,12 @@
+info:
+  category: printer
+  company: Zhuhai Bentu Printing Technology Co., Ltd.
+  cpe: ''
+  product: pantum-printer-p3000
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"function gotosn() {location=\"/index.html") || icontains(title,"seine
+    p3000")) || icontains(banner,"des:pantum p3000"))
+  method: GET
+  

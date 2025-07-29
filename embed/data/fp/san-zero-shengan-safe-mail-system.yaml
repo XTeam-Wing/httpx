@@ -1,0 +1,13 @@
+info:
+  category: electronic mail system
+  company: Chengdu Sanling Shengan Information System Co., Ltd.
+  cpe: ''
+  product: san-zero-shengan-safe-mail-system
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(cert,"subject: c=cn, st=sichuan, l=chengdu, o=30san information
+    system ltd., ou=dragon mail 2") || icontains(body,"30san.all rights reserved.</div>"))
+    || title == "安全电子邮件系统")'
+  method: GET
+  

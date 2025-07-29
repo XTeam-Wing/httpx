@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 迅睿cms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"迅睿cms")||(icontains(title,"迅睿cms"))
+  method: GET
+  

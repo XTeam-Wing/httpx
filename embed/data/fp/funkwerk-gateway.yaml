@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Funkwerk AG
+  cpe: ''
+  product: funkwerk-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"welcome to your funkwerk gateway") || icontains(banner,"funkwerk
+    boss")) || icontains(banner,"funkwerk boss"))
+  method: GET
+  

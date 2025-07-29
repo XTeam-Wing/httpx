@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Sinopec Luoyang Engineering Co., Ltd.
+  cpe: ''
+  product: sinopec-purchasing-integrated-management-information-system-ipms
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"/login/lpec/qrcode.html")
+  method: GET
+  

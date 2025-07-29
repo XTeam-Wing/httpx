@@ -1,0 +1,11 @@
+info:
+  category: virtualization
+  company: Ruijie Networks Co., Ltd.
+  cpe: ''
+  product: ruijie-cloud-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"content=\"rcp, 管理平台\"")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: electronic mail system
+  company: Matt's Script Archive, Inc.
+  cpe: ''
+  product: formmail
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"href=\"http://www.worldwidemart.com/scripts/formmail.shtml")
+    || icontains(body,"/formmail.pl"))
+  method: GET
+  

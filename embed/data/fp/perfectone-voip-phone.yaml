@@ -1,0 +1,12 @@
+info:
+  category: voice video
+  company: other
+  cpe: ''
+  product: perfectone-voip-phone
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"onload=\"javascript:document.loginform.user.focus()") || icontains(body,"color=\"#ffffff\"><b>login
+    voip"))
+  method: GET
+  

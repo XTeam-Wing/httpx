@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: other
+  cpe: ''
+  product: ultra-electronics
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"/preauth/style.css") || icontains(body,"/preauth/login.cgi"))
+  method: GET
+  

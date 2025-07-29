@@ -1,0 +1,11 @@
+info:
+  category: voice video
+  company: DAVOLINK. Inc.
+  cpe: ''
+  product: davolink-dv101fb
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"dv101fb")
+  method: GET
+  

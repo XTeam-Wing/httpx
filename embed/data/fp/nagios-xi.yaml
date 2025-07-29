@@ -1,0 +1,12 @@
+info:
+  category: other software system
+  company: Nagios Enterprises, LLC
+  cpe: ''
+  product: nagios-xi
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"/nagiosxi/images/favicon.ico") || icontains(body,"click the
+    link below to get started using nagios xi.")) || icontains(title,"nagios xi"))
+  method: GET
+  

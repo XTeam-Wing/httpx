@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: intelactivemanagementtechnology
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"intel active management technology")
+  method: GET
+  

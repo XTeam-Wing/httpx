@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: apn-httpd
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(banner,"couchdb") && icontains(banner,"server: apn httpd")) ||
+    icontains(banner,"server: apn httpd"))'
+  method: GET
+  

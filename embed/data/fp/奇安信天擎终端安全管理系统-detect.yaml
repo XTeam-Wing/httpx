@@ -1,0 +1,18 @@
+info:
+  product: 天擎v10
+  category: edr
+  author: 哆啦A梦
+  company: 奇安信科技集团股份有限公司
+  description: 奇安信天擎终端安全管理系统（简称"天擎"）是注重实效的一体化终端安全解决方案，通过"体系化防御、数字化运营"方法，帮助政企客户准确识别、保护和监管终端，并确保这些终端在任何时候都能可信、安全、合规地访问数据和业务
+  tags:
+  - tech
+  - 奇安信天擎
+rules:
+- method: GET
+  path: 
+   - "/.project/project.config.json"
+  dsl: contains(body, "奇安信天擎V10") || contains(body, "\u5947\u5b89\u4fe1\u5929\u64ceV10") || contains(body, "popup-protect-skylar10")
+- method: GET
+  path: 
+  - /login
+  dsl: contains(body, "skylar-v10")

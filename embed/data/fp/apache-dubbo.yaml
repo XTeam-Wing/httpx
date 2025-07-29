@@ -1,0 +1,13 @@
+info:
+  category: development framework
+  company: Apache Software Foundation.
+  cpe: ''
+  product: apache-dubbo
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((icontains(protocol,"apache-dubbo") || icontains(banner,"unsupported command:
+    get")) || title == "dubbo") || icontains(banner,"basic realm=\"dubbo\"")) || icontains(banner,"
+    basic realm=\"dubbo\""))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: vpn products
+  company: Argon Systems
+  cpe: ''
+  product: argon-vpn
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"argon") && icontains(banner,"vpn firewall"))
+  method: GET
+  

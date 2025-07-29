@@ -1,0 +1,11 @@
+info:
+  category: big data pocessing
+  company: 北京旷视科技有限公司
+  cpe: ''
+  product: megvii-旷视云图
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"旷视云图-公安视频图像信息数据库")
+  method: GET
+  

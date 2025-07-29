@@ -1,0 +1,11 @@
+info:
+  category: machine learning
+  company: Shanghai Yinchen Intelligent Identification Technology Co., Ltd.
+  cpe: ''
+  product: isvision-portrait-comparison-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"人像比对系统") && icontains(body,"上海银晨"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: threat analysis && management
+  company: Sophos Technologies Pvt. Ltd.
+  cpe: ''
+  product: sophos-utm
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"wfe/asg/js/")
+  method: GET
+  

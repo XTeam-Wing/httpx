@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Jiaxing Mingdian Network Technology Co., Ltd.
+  cpe: ''
+  product: phpweb
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"pdv_pagename")
+  method: GET
+  

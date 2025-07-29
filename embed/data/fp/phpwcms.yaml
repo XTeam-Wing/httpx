@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: phpwcms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"phpwcms")||(icontains(body,"phpwcms is copyright 2003-2010 of oliver
+    georgi. extensions are copyright of"))||(icontains(body,"created by oliver georgi
+    (oliver at phpwcms dot de) and licensed under gnu/gpl."))
+  method: GET
+  

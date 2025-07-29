@@ -1,0 +1,11 @@
+info:
+  category: voice video
+  company: Shenzhen Cloud House Technology Co., Ltd.
+  cpe: ''
+  product: cloud-house-network-conference
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"src=\"/companyimage/agents/sdk-logo.png\"")
+  method: GET
+  

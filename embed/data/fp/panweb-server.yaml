@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Panweb ltd.
+  cpe: ''
+  product: panweb-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(body,"router") && icontains(banner,"server: panweb server"))
+    || (!icontains(banner,"router") && icontains(banner,"server: panweb server")))'
+  method: GET
+  

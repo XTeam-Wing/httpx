@@ -1,0 +1,11 @@
+info:
+  category: baseline management system
+  company: China Power Fufu Information Technology Co., Ltd.
+  cpe: ''
+  product: china-power-fu-fu-safety-baseline-management
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"align=\"center\">福富软件")
+  method: GET
+  

@@ -1,0 +1,14 @@
+info:
+  category: router
+  company: Pullian Technology Co., Ltd.
+  cpe: ''
+  product: tp-link-archer-d2
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(banner,"1.4.0 0.8.0 v003e.0 build 160216 rel.55536n") || icontains(banner,"1.4.0
+    0.8.0 v003e.0 build 160216 rel.55536n")) || icontains(banner,"0.8.0 1.2 v003e.0
+    build 150921 rel.39523n")) || icontains(banner,"0.8.0 1.1 v003e.0 build 150730
+    rel.62022n")) || icontains(banner,"0.6.0 0.7 v003e.0 build 140928 rel.38569n"))
+  method: GET
+  

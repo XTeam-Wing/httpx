@@ -1,0 +1,12 @@
+info:
+  category: traffic analysis
+  company: SolarWinds Worldwide, LLC.
+  cpe: ''
+  product: solarwinds-traffic-management
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"solarwinds.css") || icontains(title,"solarwinds network management"))
+    || (icontains(title,"solarwinds") && icontains(body,"solarwinds")))
+  method: GET
+  

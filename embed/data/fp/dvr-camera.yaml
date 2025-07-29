@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: other
+  cpe: ''
+  product: dvr-camera
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"dvr webclient")
+  method: GET
+  

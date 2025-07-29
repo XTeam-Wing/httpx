@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Shenzhen Liansoft Technology Co., Ltd.
+  cpe: ''
+  product: lianwei-technology-it-safety-operation-&&-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"action=\"/manager/logincontroller.htm?act=login") || icontains(title,"联软it安全运维管理系统"))
+  method: GET
+  

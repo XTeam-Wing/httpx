@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: infomaster-product
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"/masterview/mpleftnavstyle/panelbar.mpifma.css") || icontains(body,"/masterview.js"))
+    || icontains(body,"/masterview.css"))
+  method: GET
+  

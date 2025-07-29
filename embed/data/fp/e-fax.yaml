@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: e-fax
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"content=\"e-fax ") || icontains(title,"- e-fax - login"))
+  method: GET
+  

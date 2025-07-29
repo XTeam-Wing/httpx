@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Guangdong Tianxin Tiansi Software Co., Ltd.
+  cpe: ''
+  product: am-web-management-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"天心天思web管理平台") && icontains(body,"id=\"dvlogo\""))
+  method: GET
+  

@@ -1,0 +1,14 @@
+info:
+  category: web application firewall
+  company: Xiamen Service Cloud Information Technology Co., Ltd.
+  cpe: ''
+  product: 安全狗
+  server: unknown
+  tags: []
+rules:
+- dsl: 'icontains(banner,"WAF/2.0") || (icontains(banner,"Safedog") && header!="couchdb"
+    && header!="drupal") || icontains(banner,"Set-Cookie: safedog") || icontains(banner,"safedog-flow-item=")
+    || (icontains(banner,"Safedog") && banner!="couchdb" && banner!="drupal") || icontains(banner,"Set-Cookie:
+    safedog") || icontains(banner,"safedog-flow-item=")'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Pullian Technology Co., Ltd.
+  cpe: ''
+  product: tp-link-td-w8901g
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"td-w8901g") || icontains(banner,"realm=\"td-w8901g"))
+  method: GET
+  

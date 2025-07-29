@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Chengdu Feiyuxing Technology Co., Ltd.
+  cpe: ''
+  product: flying-fish-star-home-intelligent-routing
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"/img/r1/favicon.ico") && icontains(title,"飞鱼星家用智能路由"))
+  method: GET
+  

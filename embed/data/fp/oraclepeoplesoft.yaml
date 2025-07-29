@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: oraclepeoplesoft
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"oracle peoplesoft")
+  method: GET
+  

@@ -1,0 +1,16 @@
+info:
+  category: operating system
+  company: Microsoft Corporation
+  cpe: ''
+  product: windows-server-2003
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((!icontains(banner,"reecam ip camera") && !icontains(banner,"drupal")) &&
+    !icontains(banner,"couchdb")) && ((((icontains(banner,"5.2.3790") && icontains(banner,"/service
+    pack")) || icontains(banner,"windows 2003")) || icontains(banner,"windows server
+    2003 ")) || icontains(banner,"windows version 5.2"))) || ((!icontains(banner,"drupal")
+    && !icontains(banner,"couchdb")) && ((icontains(server,"5.2.3790") && icontains(server,"/service
+    pack")) || icontains(server,"windows server 2003"))))
+  method: GET
+  

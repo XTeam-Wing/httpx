@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: appcues
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"appcues")
+  method: GET
+  

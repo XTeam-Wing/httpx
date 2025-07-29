@@ -1,0 +1,11 @@
+info:
+  category: crm
+  company: Pengwei Software Co., Ltd.
+  cpe: ''
+  product: pmway-e6
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"鹏为软件 e6")
+  method: GET
+  

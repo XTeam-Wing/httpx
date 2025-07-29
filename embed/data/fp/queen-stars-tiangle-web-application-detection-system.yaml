@@ -1,0 +1,11 @@
+info:
+  category: vulnerability scanning
+  company: Venus Star Information Technology Group Co., Ltd.
+  cpe: ''
+  product: queen-stars-tiangle-web-application-detection-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"天镜web应用检测系统")
+  method: GET
+  

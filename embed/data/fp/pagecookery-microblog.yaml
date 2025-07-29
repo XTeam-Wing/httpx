@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: pagecookery-microblog
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"powered by <a href=\"http://pagecookery.com")
+  method: GET
+  

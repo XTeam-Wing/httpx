@@ -1,0 +1,11 @@
+info:
+  category: operating system
+  company: The Open Group
+  cpe: ''
+  product: the-open-group-unix-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (!icontains(banner,"linux") && icontains(banner,"unix"))
+  method: GET
+  

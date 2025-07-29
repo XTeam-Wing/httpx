@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Radware
+  cpe: ''
+  product: radware-companies
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"ssh-2.0-alteon") || icontains(banner,"server: alteon (d.s.)
+    server")) || icontains(banner,"server: alteon (d.s.) server"))'
+  method: GET
+  

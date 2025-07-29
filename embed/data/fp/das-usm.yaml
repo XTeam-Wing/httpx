@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: das-usm
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"明御运维审计")
+  method: GET
+  

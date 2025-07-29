@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: Synaptics Incorporated.
+  cpe: ''
+  product: synaptics-emweb
+  server: unknown
+  tags: []
+rules:
+- dsl: '(icontains(banner,"Server: Virata-EmWeb") && header!="couchdb" && header!="drupal")
+    || (icontains(banner,"Server: Virata-EmWeb") && banner!="couchdb" && banner!="drupal")'
+  method: GET
+  

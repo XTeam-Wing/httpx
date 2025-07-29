@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: CapeSoft Company
+  cpe: ''
+  product: nettalk-webserver
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: nettalk-webserver") || icontains(banner,"server:
+    nettalk-webserver"))'
+  method: GET
+  

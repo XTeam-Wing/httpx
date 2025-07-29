@@ -1,0 +1,12 @@
+info:
+  category: electronic mail system
+  company: Freekstorm Ltd
+  cpe: ''
+  product: ftgate-mail-system
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"ftgate6") || icontains(banner,"ftgate4")) || icontains(banner,"ftgate
+    server"))
+  method: GET
+  

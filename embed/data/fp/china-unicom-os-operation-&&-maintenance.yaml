@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: China United Network Communications Group Co., Ltd.
+  cpe: ''
+  product: china-unicom-os-operation-&&-maintenance
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"src=\"/uf/login/login.jsp\" >")
+  method: GET
+  

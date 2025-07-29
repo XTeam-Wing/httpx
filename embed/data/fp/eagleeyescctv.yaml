@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: other
+  cpe: ''
+  product: eagleeyescctv
+  server: nginx
+  tags: []
+rules:
+- dsl: (!icontains(banner,"avtech") && (icontains(body,"/nobody/logindevice.js") ||
+    icontains(body,"ip surveillance for your life")))
+  method: GET
+  

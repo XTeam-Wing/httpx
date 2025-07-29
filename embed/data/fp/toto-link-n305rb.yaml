@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: TOTOLINK
+  cpe: ''
+  product: toto-link-n305rb
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"src =\"/images2/login_back_zn305rb.cx.gif\"")
+  method: GET
+  

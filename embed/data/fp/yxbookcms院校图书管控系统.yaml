@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: yxbookcms院校图书管控系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"yxbookcms院校图书管控系统")
+  method: GET
+  

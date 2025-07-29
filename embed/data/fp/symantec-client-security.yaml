@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Symantec Corporation
+  cpe: ''
+  product: symantec-client-security
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<!-- symantec client security web based installation -->")
+  method: GET
+  

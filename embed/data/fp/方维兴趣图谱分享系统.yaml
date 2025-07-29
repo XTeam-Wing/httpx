@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 方维兴趣图谱分享系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"方维兴趣图谱分享系统")
+  method: GET
+  

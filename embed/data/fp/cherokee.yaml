@@ -1,0 +1,13 @@
+info:
+  category: service
+  company: Alvaro Lopez Ortega
+  cpe: ''
+  product: cherokee
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((!icontains(banner,"couchdb") && !icontains(banner,"drupal")) && icontains(banner,"server:
+    cherokee")) || ((!icontains(banner,"couchdb") && !icontains(banner,"drupal"))
+    && icontains(banner,"server: cherokee")))'
+  method: GET
+  

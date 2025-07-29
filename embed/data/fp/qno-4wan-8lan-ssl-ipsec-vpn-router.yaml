@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: QNO Technology Co., Ltd.
+  cpe: ''
+  product: qno-4wan-8lan-ssl-ipsec-vpn-router
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"4wan_8lan_ssl_ipsec_vpn_router")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: dmxready-portfolio-manager
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"rememberme_portfoliomanager") || icontains(body,"/css/portfoliomanager/styles_display_page.css"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 凯旋网络供求信息网
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"凯旋网络供求信息网")
+  method: GET
+  

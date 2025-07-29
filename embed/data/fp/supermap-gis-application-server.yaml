@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Beijing SuperMap Software Co., Ltd.
+  cpe: ''
+  product: supermap-gis-application-server
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"supermap iserver 9d") && icontains(body,"北京超图软件股份有限公司"))
+  method: GET
+  

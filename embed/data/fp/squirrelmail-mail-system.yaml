@@ -1,0 +1,12 @@
+info:
+  category: electronic mail system
+  company: The SquirrelMail Project Team
+  cpe: ''
+  product: squirrelmail-mail-system
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"function squirrelmail_loginpage_onload()") || icontains(title,"squirrelmail
+    - login")) || (!icontains(banner,"horde=") && icontains(banner,"sqmsessid")))
+  method: GET
+  

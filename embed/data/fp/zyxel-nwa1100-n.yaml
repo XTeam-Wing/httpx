@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-nwa1100-n
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"nwa1100-n") || icontains(title,"zyxel nwa1100-n"))
+  method: GET
+  

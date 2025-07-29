@@ -1,0 +1,12 @@
+info:
+  category: printer
+  company: HP Development Company, L.P.
+  cpe: ''
+  product: hp-pagewide-pro-452dn-printer
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: hp pagewide pro 452dn printer") || icontains(banner,"server:
+    hp pagewide pro 452dn printer"))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: middleware
+  company: other
+  cpe: ''
+  product: armv5tejl
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"armv5tejl")
+  method: GET
+  

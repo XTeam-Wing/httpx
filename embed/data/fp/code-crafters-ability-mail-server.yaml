@@ -1,0 +1,14 @@
+info:
+  category: electronic mail system
+  company: Code Crafters Software Limited.
+  cpe: ''
+  product: code-crafters-ability-mail-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((!icontains(banner,"couchdb") && icontains(banner,"code-crafters ability
+    mail server")) || icontains(banner,"server: code-crafters ability mail server"))
+    || icontains(banner,"server: code crafters ability mail server")) || (!icontains(banner,"couchdb")
+    && icontains(banner,"code crafters ability mail server")))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: cas单点登录
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"central authentication service") && icontains(body,"cas/login")
+  method: GET
+  

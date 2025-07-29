@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: muster-render-farm
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<body onload=\"init_page()\" name=\"muster_login\" >")||(icontains(body,"<applet
+    code=\"filefolderselector.class\" archive=\"filefolderselector.jar\" codebase=\"js\"
+    id=\"fileselector\" name=\"fileselector\" width=\"1\" height=\"1\">"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: database system
+  company: The PostgreSQL Global Development Group
+  cpe: ''
+  product: postgresql
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(protocol,"postgres")
+  method: GET
+  

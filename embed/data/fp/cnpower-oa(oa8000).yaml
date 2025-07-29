@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: cnpower-oa(oa8000)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/oaapp/webobjects/oaapp.woa")
+  method: GET
+  

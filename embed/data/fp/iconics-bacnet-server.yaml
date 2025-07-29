@@ -1,0 +1,13 @@
+info:
+  category: industrial control
+  company: ICONICS, Inc.
+  cpe: ''
+  product: iconics-bacnet-server
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"bacnet server for windows v1.0") && icontains(banner,"iconics,
+    inc.")) || (icontains(banner,"bacnet server for windows v1.0") && icontains(banner,"iconics
+    inc.")))
+  method: GET
+  

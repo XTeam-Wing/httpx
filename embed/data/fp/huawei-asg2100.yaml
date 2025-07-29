@@ -1,0 +1,13 @@
+info:
+  category: antivirus gateway
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-asg2100
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(banner,"huawei asg2050") || icontains(banner,"huawei asg2100"))
+    || icontains(banner,"asg2100")) || icontains(banner,"huawei asg2050")) || icontains(banner,"huawei
+    asg2100"))
+  method: GET
+  

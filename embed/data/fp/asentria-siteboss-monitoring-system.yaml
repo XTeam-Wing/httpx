@@ -1,0 +1,11 @@
+info:
+  category: host monitoring && auditing
+  company: Asentria Corporation.
+  cpe: ''
+  product: asentria-siteboss-monitoring-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=siteboss") || icontains(banner,"siteboss "))
+  method: GET
+  

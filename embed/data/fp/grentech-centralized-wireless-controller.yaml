@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Shenzhen Guoren Communication Co., Ltd.
+  cpe: ''
+  product: grentech-centralized-wireless-controller
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"国人通信 - 集中无线控制器")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: other software system
+  company: AVideo Platform
+  cpe: ''
+  product: youphptube-encoder
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"youphptube") && icontains(body,"view/js/seetalert")) || title
+    == "youphptube encoder")
+  method: GET
+  

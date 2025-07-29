@@ -1,0 +1,13 @@
+info:
+  category: adsl
+  company: LANCOM Systems GmbH
+  cpe: ''
+  product: lancom-1821n-wireless
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(title,"lancom 1821n wireless") || icontains(server,"lancom 1821n
+    wireless")) || icontains(body,"src=\"/images/prodimg.jpeg\" alt=\"lancom 1821n
+    wireless")) || icontains(banner,"lancom 1821n wireless"))
+  method: GET
+  

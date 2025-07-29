@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: b-rwebserver
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"b&r web server")
+  method: GET
+  

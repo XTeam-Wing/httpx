@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Guangzhou Zhengmai Education Technology Co., Ltd.
+  cpe: ''
+  product: positive-pulse-education-self-service-printing-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"文件信息真伪验证")
+  method: GET
+  

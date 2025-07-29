@@ -1,0 +1,16 @@
+info:
+  category: other enterprise application
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-imc
+  server: nginx
+  tags: []
+rules:
+- dsl: (((((((icontains(body,"href=\"/selfservice/javax.faces.resource/theme.css.xhtml?ln=primefaces-imc-classic-blue\"")
+    || icontains(body,"h3c &#26234;&#33021;&#31649;&#29702;&#20013;&#24515;</span>"))
+    || icontains(body,"src=\"/imc/faces/extensionresource/com.h3c.imc.component.util.extensionresourceloader/"))
+    || icontains(body,"<span class=\"cmn_mn_normalfont\">h3c 智能管理中心")) || icontains(body,"src=\"/imc/javax.faces.resource/images/login_logo_h3c.png.jsf?ln=primefaces-imc-new-webui"))
+    || icontains(body,"action=\"/imc/login.jsf")) || icontains(body,"com_h3c_imc_usr_usermgr_alluser_overlaydiv"))
+    || (icontains(body,"login_logo_h3c.png.jsf") && icontains(body,"imc来宾接入自助管理系统")))
+  method: GET
+  

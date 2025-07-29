@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: other
+  cpe: ''
+  product: aszeno-rtsp
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"aszeno rtsp server") && icontains(protocol,"rtsp"))
+  method: GET
+  

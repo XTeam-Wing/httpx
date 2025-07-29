@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: papayacms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"papaya cms")
+  method: GET
+  

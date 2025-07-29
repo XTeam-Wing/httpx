@@ -1,0 +1,12 @@
+info:
+  category: online behavior management system
+  company: Shenxinfu Technology Co., Ltd.
+  cpe: ''
+  product: sangfor-behavior-perception-system
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"x-frame-options: sameorigin") && icontains(body,"haovuytkjlnvxpuhsecmbljplpvjz
+    = function(str, key) "))'
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: cdnjs
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"cdnjs.cloudflare.com/ajax/libs") || icontains(banner,"cdnjs.cloudflare.com/ajax/libs"))
+    || icontains(banner,"cdnjs.cloudflare.com/ajax/libs"))
+  method: GET
+  

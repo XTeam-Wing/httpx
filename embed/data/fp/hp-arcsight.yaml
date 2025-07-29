@@ -1,0 +1,11 @@
+info:
+  category: network intrusion detection && defense
+  company: HP Development Company, L.P.
+  cpe: ''
+  product: hp-arcsight
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body," window.location.replace(\"/arcsight/\")") && icontains(title,"arcsight"))
+  method: GET
+  

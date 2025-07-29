@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 基于慧博cms修改的购物网站系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"基于慧博cms修改的购物网站系统")
+  method: GET
+  

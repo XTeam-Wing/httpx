@@ -1,0 +1,13 @@
+info:
+  category: database system
+  company: Couchbase, Inc.
+  cpe: ''
+  product: couchbase-database
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((icontains(banner,"realm=\"couchbase") || icontains(banner,"realm=\"couchbase"))
+    || icontains(title,"couchbase console")) || icontains(banner,"server: couchbase"))
+    || icontains(banner,"server: couchbase"))'
+  method: GET
+  

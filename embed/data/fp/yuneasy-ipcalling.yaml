@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: yuneasy-ipcalling
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"云翌ip呼叫中心</span>")
+  method: GET
+  

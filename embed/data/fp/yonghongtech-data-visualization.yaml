@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Beijing Yonghong Business Intelligence Technology Co., Ltd.
+  cpe: ''
+  product: yonghongtech-data-visualization
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"contentdiv imgposition desw") && icontains(title,"yonghong"))
+  method: GET
+  

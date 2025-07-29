@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: NetComm Limited
+  cpe: ''
+  product: casa-wireless-router
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"login") && icontains(body,"powered by netcomm")) || icontains(banner,"netcomm
+    wireless router"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: vpn products
+  company: Shenxinfu Technology Co., Ltd.
+  cpe: ''
+  product: sangfor-s5100
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"id=\"ver_title\">s5100")
+  method: GET
+  

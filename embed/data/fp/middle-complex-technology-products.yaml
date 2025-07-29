@@ -1,0 +1,12 @@
+info:
+  category: server
+  company: China Enterprise Power Technology Co., Ltd.
+  cpe: ''
+  product: middle-complex-technology-products
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<meta content=\"中嵌科技") || icontains(body,"copyright(c) 2005-2009　　emsyschina
+    co.,ltd."))
+  method: GET
+  

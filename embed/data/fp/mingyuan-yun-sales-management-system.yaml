@@ -1,0 +1,11 @@
+info:
+  category: erp
+  company: Shenzhen Mingyuanyun Technology Co., Ltd.
+  cpe: ''
+  product: mingyuan-yun-sales-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<img id=\"erp\" src=\"/_imgs/login/zs_erp.png") || icontains(body,"value=\"明源售楼管理系统v5.0\""))
+  method: GET
+  

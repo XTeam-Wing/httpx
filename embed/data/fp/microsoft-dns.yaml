@@ -1,0 +1,11 @@
+info:
+  category: dns device
+  company: Microsoft Corporation
+  cpe: ''
+  product: microsoft-dns
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"windows") && icontains(protocol,"dns"))
+  method: GET
+  

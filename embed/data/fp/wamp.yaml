@@ -1,0 +1,14 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: wamp
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"<h1><abbr title=\"windows\">w</abbr><abbr title=\"apache\">a</abbr><abbr
+    title=\"mysql\">m</abbr><abbr title=\"php\">p</abbr></h1>") || icontains(body,"title
+    && h1 heading")) || icontains(title,"wampserver homepage")) || (icontains(body,"wampserver")
+    && icontains(body,"<li><a href=\"phpsysinfo/\">phpsysinfo</a></li>")))
+  method: GET
+  

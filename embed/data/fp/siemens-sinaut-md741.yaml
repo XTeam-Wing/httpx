@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Siemens AG.
+  cpe: ''
+  product: siemens-sinaut-md741
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"sinaut md741") || icontains(banner,"realm=\"sinaut
+    md741"))
+  method: GET
+  

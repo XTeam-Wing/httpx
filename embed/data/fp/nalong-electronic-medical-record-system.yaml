@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Nalong Technology Co., Ltd.
+  cpe: ''
+  product: nalong-electronic-medical-record-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"id=\"ctl00_contentplaceholder1_txthospcode\"")
+  method: GET
+  

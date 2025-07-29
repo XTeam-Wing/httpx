@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: cwindow政务安全邮箱系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"cwindow政务安全邮箱系统")
+  method: GET
+  

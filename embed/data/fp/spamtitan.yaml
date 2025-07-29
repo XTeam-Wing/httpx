@@ -1,0 +1,12 @@
+info:
+  category: other network security
+  company: Titan Technology Solutions US INC
+  cpe: ''
+  product: spamtitan
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<table class=\"lhead\"><tr><td class=\"img\"><img src=\"/imgs/logo.gif\"
+    alt=\"spamtitan logo\"></td></tr></table></div>")
+  method: GET
+  

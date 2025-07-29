@@ -1,0 +1,12 @@
+info:
+  category: electronic mail system
+  company: Fortinet, Inc.
+  cpe: ''
+  product: fortimail
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"fortimail server.") || icontains(banner,"fortimail login"))
+    || icontains(banner,"fortimail"))
+  method: GET
+  

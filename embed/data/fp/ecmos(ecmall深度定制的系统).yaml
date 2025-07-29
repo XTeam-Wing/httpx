@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ecmos(ecmall深度定制的系统)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"ecmos(ecmall深度定制的系统)")
+  method: GET
+  

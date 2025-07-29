@@ -1,0 +1,11 @@
+info:
+  category: vpn products
+  company: Qual Limited
+  cpe: ''
+  product: qual-vpn
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"stonesoft security engine firewall/vpn")
+  method: GET
+  

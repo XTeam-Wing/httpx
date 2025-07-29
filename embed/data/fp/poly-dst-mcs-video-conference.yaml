@@ -1,0 +1,11 @@
+info:
+  category: voice video
+  company: Polycom, Inc.
+  cpe: ''
+  product: poly-dst-mcs-video-conference
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"document.location.href=\"/cgi-bin/cgiserver?_dstp_functionid=homepage&language_type=")
+  method: GET
+  

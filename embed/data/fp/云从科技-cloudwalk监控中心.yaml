@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: 云从科技集团股份有限公司
+  cpe: ''
+  product: 云从科技-cloudwalk监控中心
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"cloudwalk配置文件助手")
+  method: GET
+  

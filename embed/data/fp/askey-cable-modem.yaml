@@ -1,0 +1,12 @@
+info:
+  category: adsl
+  company: Askey Corporation
+  cpe: ''
+  product: askey-cable-modem
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"action=\"/goform/asklogin") && icontains(body,"welcome to
+    askey cable modem</span>"))
+  method: GET
+  

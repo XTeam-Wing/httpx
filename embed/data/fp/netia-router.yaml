@@ -1,0 +1,13 @@
+info:
+  category: router
+  company: Netia SA
+  cpe: ''
+  product: netia-router
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(banner,"watson shdsl router") && icontains(banner,"set-cookie:
+    rg_cookie_session_id")) || (!icontains(body,"watson") && icontains(banner,"set-cookie:
+    rg_cookie_session_id")))'
+  method: GET
+  

@@ -1,0 +1,17 @@
+info:
+  category: other enterprise application
+  company: TMSoft Solu??es em Informática LTDA
+  cpe: ''
+  product: tmsoft-myauth-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: (((((((((icontains(banner,"set-cookie myauth") || icontains(banner,"x-manager-by
+    myauth gateway")) || icontains(banner,"x-software-owner patrick brandao")) ||
+    icontains(banner,"x-software-info myauth gateway")) || icontains(banner,"tmsoft
+    solucoes (www.tmsoft.com.br)")) || icontains(banner,"set-cookie myauth")) || icontains(banner,"x-manager-by
+    myauth gateway")) || icontains(banner,"x-software-owner patrick brandao")) ||
+    icontains(banner,"x-software-info myauth gateway")) || icontains(banner,"tmsoft
+    solucoes (www.tmsoft.com.br)"))
+  method: GET
+  

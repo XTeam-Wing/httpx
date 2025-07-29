@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Dell Inc.
+  cpe: ''
+  product: dell-n1524p
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"class=\"login_server_default\">n1524p")
+  method: GET
+  

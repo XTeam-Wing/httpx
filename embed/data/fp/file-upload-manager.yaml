@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: file-upload-manager
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<img src=\"/images/header.jpg\" alt=\"file upload manager\">")
+    || icontains(title,"file upload manager"))
+  method: GET
+  

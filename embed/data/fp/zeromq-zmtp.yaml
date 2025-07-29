@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Imatix Company
+  cpe: ''
+  product: zeromq-zmtp
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(protocol,"zmtp")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: oa
+  company: other
+  cpe: ''
+  product: topoffice
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"topoffice协同办公系统")
+  method: GET
+  

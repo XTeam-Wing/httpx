@@ -1,0 +1,10 @@
+info:
+  author: wing
+  description: 35企业邮箱是国内优秀的云办公邮件系统，无限空间、超大附件、提供强大的邮件实时推送、微信收发等服务
+  cpe: cpe:2.3:a:mail:35mail:*:*:*:*:*:*:*:*
+  tags: []
+  product: 35mail
+  category: cms
+rules:
+- method: GET
+  dsl: contains(body, "登录认证") && contains(title, "accountStatus1 = \'已禁用\'")

@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-mc101
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"mc101&nbsp路由器登录")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: printer
+  company: KYOCERA Corporation
+  cpe: ''
+  product: kyocera-ecosys-series-printers
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"ecosys")
+  method: GET
+  

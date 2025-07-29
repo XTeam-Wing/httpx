@@ -1,0 +1,12 @@
+info:
+  category: switch
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-s12708
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"server: huawei-s12708") || icontains(banner,"server:
+    huawei-s12708")) || icontains(banner,"s12708")) || icontains(banner,"s12708 "))'
+  method: GET
+  

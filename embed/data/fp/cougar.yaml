@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: cougar
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"server: cougar")||(icontains(header,"server: cougar"))'
+  method: GET
+  

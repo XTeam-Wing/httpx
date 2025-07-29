@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: hnjycy
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"异网同显系统")||(icontains(body,"href=\"http://www.hnjycy.com\" target=\"_blank\">沃科网<"))
+  method: GET
+  

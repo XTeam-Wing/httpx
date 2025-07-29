@@ -1,0 +1,13 @@
+info:
+  category: cameras && surveillance
+  company: Canon Inc.
+  cpe: ''
+  product: canon-webcam
+  server: nginx
+  tags: []
+rules:
+- dsl: '(!icontains(body,"server: couchdb") && (((icontains(title,"network camera
+    vb-") || icontains(body,"content=\"vb-c10")) || (!icontains(body,"server: boa")
+    && icontains(banner,"server: vb"))) || icontains(body,"/viewer/live/en/live.html")))'
+  method: GET
+  

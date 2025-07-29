@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 江苏汇文软件图书馆opac系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"江苏汇文软件 图书馆opac系统")
+  method: GET
+  

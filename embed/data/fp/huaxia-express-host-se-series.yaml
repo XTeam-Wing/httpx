@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Beijing China Express Technology Co., Ltd.
+  cpe: ''
+  product: huaxia-express-host-se-series
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"window.location = \"login_simple.jsp\"")
+  method: GET
+  

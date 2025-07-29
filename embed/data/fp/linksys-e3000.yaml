@@ -1,0 +1,14 @@
+info:
+  category: router
+  company: Belkin International, Inc.
+  cpe: ''
+  product: linksys-e3000
+  server: nginx
+  tags: []
+rules:
+- dsl: (((((((icontains(body,"linksys e3000") && icontains(body,"var mmc = {")) ||
+    icontains(banner,"linksys e3000")) || icontains(banner,"linksys-e3000")) || icontains(banner,"linksys_e3000"))
+    || icontains(banner,"linksyse3000")) || icontains(banner,"linksys-e3000")) ||
+    icontains(banner,"linksys e3000"))
+  method: GET
+  

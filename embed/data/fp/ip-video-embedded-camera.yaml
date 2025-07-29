@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: other
+  cpe: ''
+  product: ip-video-embedded-camera
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"basic realm=\"camera server\"") || icontains(banner,"basic
+    realm=\"camera server\""))
+  method: GET
+  

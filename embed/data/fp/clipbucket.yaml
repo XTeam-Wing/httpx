@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: clipbucket
+  cpe: ''
+  product: clipbucket
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"href=\"http://clip-bucket.com/\">clipbucket") || icontains(body,"<!--
+    forged by clipbucket")) || icontains(body,"<!-- clipbucket")) || icontains(body,"content=\"clipbucket"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: avaya-scopia-video-conferencing
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"scopia ")
+  method: GET
+  

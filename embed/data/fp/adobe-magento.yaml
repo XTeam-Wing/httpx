@@ -1,0 +1,13 @@
+info:
+  category: other software system
+  company: Magento Inc.
+  cpe: ''
+  product: adobe-magento
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"redkiwi-cloud") || icontains(banner,"redkiwi-cloud"))
+    || icontains(body,"magento, varien, e-commerce")) || (icontains(body,"blank_img")
+    && icontains(body,"/skin/frontend/")))
+  method: GET
+  

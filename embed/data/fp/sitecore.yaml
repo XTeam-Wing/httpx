@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: sitecore
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"sitecore cms") || icontains(banner,"sitecore cms"))
+  method: GET
+  

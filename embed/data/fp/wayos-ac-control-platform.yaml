@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Shenzhen Weimeng Technology Co., Ltd.
+  cpe: ''
+  product: wayos-ac-control-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<span>深圳维盟科技有限公司</span>") && icontains(body,"var new_ac_username
+    = getcookie(\"new_ac_username\");"))
+  method: GET
+  

@@ -1,0 +1,14 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: zxoa
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"name=\"button1\" value=\"\" onclick=\"javascript:return checkfrom();\"
+    id=\"button1\" class=\"loginbtn\" />")||(icontains(body,"obj.src = \"createcheckcode.aspx?id\"+strmath;"))||(icontains(body,"name=\"button1\"
+    value=\"\" onclick=\"javascript:return checkfrom;\" id=\"button1\" class=\"loginbtn\"
+    />"))
+  method: GET
+  

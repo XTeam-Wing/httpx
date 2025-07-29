@@ -1,0 +1,11 @@
+info:
+  category: wireless network
+  company: Airspan Networks
+  cpe: ''
+  product: airspan-bsr
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"airspan - wipll bsr")
+  method: GET
+  

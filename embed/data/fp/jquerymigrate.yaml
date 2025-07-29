@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: jquerymigrate
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"jquery migrate")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: w3mfc
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(banner,"couchdb") && icontains(banner,"server: w3mfc")) || icontains(banner,"server:
+    w3mfc"))'
+  method: GET
+  

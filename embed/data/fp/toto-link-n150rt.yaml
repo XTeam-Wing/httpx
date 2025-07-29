@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: TOTOLINK Corp.
+  cpe: ''
+  product: toto-link-n150rt
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"realm=\"totolink n150rt") || icontains(banner,"realm=\"totolink
+    n150rt")) || icontains(body,"src =\"/images/login_back_zn150rt.gif"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 安昊cms企业双语系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"安昊cms企业双语系统")||(icontains(title,"安昊cms企业双语系统"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: Apache SkyWalking
+  cpe: ''
+  product: apache-skywalking
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"SkyWalking")
+  method: GET
+  

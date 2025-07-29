@@ -1,0 +1,11 @@
+info:
+  category: oa
+  company: Nanjing Yunwang Huilian Software Technology Co., Ltd.
+  cpe: ''
+  product: one-meter-oa
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"一米oa") || icontains(body,"/yimioa.apk"))
+  method: GET
+  

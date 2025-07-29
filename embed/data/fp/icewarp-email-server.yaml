@@ -1,0 +1,15 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: icewarp-email-server
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<noscript>please, enable <strong>javascript</strong> for this site
+    and if such option is not available, download the latest <a href=\"http://www.microsoft.com/windows/downloads/ie/getitnow.mspx\">internet
+    explorer</a> or <a href=\"http://www.getfirefox.com\">mozilla firefox</a>.</noscript>")||(icontains(body,"<span
+    id=\"cipher\"><input type=\"checkbox\" name=\"xcipher\" value=\"1\" >encrypted
+    login</span>"))
+  method: GET
+  

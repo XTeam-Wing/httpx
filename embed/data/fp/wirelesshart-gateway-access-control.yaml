@@ -1,0 +1,12 @@
+info:
+  category: wireless network
+  company: Emerson Electric Co.
+  cpe: ''
+  product: wirelesshart-gateway-access-control
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"wirelesshart gateway access control") || icontains(banner,"realm=\"wirelesshart
+    gateway access control"))
+  method: GET
+  

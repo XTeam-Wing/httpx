@@ -1,0 +1,13 @@
+info:
+  category: oa
+  company: Beijing Jinhe Network Co., Ltd.
+  cpe: ''
+  product: gold-&&-network-gold-&&-oa
+  server: nginx
+  tags: []
+rules:
+- dsl: (((((icontains(body,"closewindownoask") && icontains(body,"c6/jhsoft.web.login"))
+    || icontains(body,"jinher network")) || icontains(body,"js/passwordnew.js")) ||
+    icontains(body,"js/passwordcommon.js")) || icontains(title,"金和协同管理平台"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Beijing Power Online Communication Service Co., Ltd.
+  cpe: ''
+  product: power-online-powercdn
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"powercdn") || icontains(banner,"powercdn"))
+  method: GET
+  

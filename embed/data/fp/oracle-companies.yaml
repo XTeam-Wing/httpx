@@ -1,0 +1,11 @@
+info:
+  category: database system
+  company: Oracle Corporation
+  cpe: ''
+  product: oracle-companies
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(body,"[oracleexception]: ora-") || icontains(protocol,"oracle"))'
+  method: GET
+  

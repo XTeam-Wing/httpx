@@ -1,0 +1,12 @@
+info:
+  category: other iot device
+  company: APPRO TECHNOLOGY INC.
+  cpe: ''
+  product: dms-dvr
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"&unit=dms&id=") && icontains(banner,"operation=invalidoperation"))
+    || (icontains(banner,"&unit=dms&id=") && icontains(banner,"operation=invalidoperation")))
+  method: GET
+  

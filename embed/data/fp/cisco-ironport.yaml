@@ -1,0 +1,12 @@
+info:
+  category: antivirus gateway
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-ironport
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"basic realm=\"cisco ironport") || icontains(banner,"cisco
+    ironport"))
+  method: GET
+  

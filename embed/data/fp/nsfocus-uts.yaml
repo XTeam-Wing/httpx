@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: nsfocus-uts
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"uts ") && icontains(body,"/uts_v2/webstatic/")||(icontains(body,"/uts_v2/webstatic/"))
+  method: GET
+  

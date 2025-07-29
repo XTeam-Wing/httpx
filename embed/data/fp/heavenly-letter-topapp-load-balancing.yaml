@@ -1,0 +1,11 @@
+info:
+  category: load balance
+  company: Beijing Tianrongxin Technology Co., Ltd.
+  cpe: ''
+  product: heavenly-letter-topapp-load-balancing
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"topapp")
+  method: GET
+  

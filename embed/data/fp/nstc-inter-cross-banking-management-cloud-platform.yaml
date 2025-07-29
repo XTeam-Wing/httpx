@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Jinzai (Beijing) Financial Information Service Co., Ltd.
+  cpe: ''
+  product: nstc-inter-cross-banking-management-cloud-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"skysz.fw.index.validatecodenew = \"/loginaction/validatecodenew.html")
+  method: GET
+  

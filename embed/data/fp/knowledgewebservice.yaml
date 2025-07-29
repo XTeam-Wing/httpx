@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: knowledgewebservice
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"KnowledgeWebService Service")
+  method: GET
+  

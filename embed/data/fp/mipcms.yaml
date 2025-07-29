@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: mipcms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"mipcms")
+  method: GET
+  

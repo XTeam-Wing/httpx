@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: rospora
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<link rel=\"shortcut icon\" href=\"img/wowlogoanim.gif\" type=\"image/gif\">")||(icontains(body,"<li>this
+    server supports only 2.2.3 clients<br><li>1x quest xp , 1x kill xp , 1x discovery
+    xp"))
+  method: GET
+  

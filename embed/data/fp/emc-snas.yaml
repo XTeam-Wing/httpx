@@ -1,0 +1,11 @@
+info:
+  category: network storage
+  company: Dell Inc.
+  cpe: ''
+  product: emc-snas
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"emc celerra file server   project: snas") || icontains(banner,"emc-snas"))'
+  method: GET
+  

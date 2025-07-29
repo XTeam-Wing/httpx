@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: hybris
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"hybris")
+  method: GET
+  

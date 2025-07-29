@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: weblogicserver
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<meta name=\"generator\" content=\"weblogic server\">")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Hewlett Packard Enterprise Development LP
+  cpe: ''
+  product: hp-ml310e-gen8
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"ml310e-gen8") || icontains(cert,"ml310e-gen8")) || icontains(banner,"ml310e-gen8"))
+  method: GET
+  

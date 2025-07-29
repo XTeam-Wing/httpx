@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: other
+  cpe: ''
+  product: sidsa-ethertv-iptv-card
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"sidsa ethertv iptv card")
+  method: GET
+  

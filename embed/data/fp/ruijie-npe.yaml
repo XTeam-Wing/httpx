@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ruijie-npe
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"alt=\"npe 网络出口控制设备\"")
+  method: GET
+  

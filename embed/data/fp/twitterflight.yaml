@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: twitterflight
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"twitter flight")
+  method: GET
+  

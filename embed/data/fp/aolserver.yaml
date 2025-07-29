@@ -1,0 +1,13 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: aolserver
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && icontains(banner,"server:
+    aolserver")) || ((!icontains(banner,"drupal") && !icontains(banner,"couchdb"))
+    && icontains(banner,"server: aolserver")))'
+  method: GET
+  

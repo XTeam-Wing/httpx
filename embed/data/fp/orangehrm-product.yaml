@@ -1,0 +1,13 @@
+info:
+  category: hrm
+  company: OrangeHRM Inc.
+  cpe: ''
+  product: orangehrm-product
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(body,"href=\"http://www.orangehrm.com\" target=") || icontains(body,"/js/orangehrm.validate.js"))
+    || title == "orangehrm") || icontains(body,"name=\"hdnusertimezoneoffset")) ||
+    icontains(body,"welcome to the orangehrm ver"))
+  method: GET
+  

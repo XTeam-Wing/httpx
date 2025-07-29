@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-i-ware
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"h3c i-ware platform software")
+  method: GET
+  

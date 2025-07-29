@@ -1,0 +1,13 @@
+info:
+  category: online behavior management system
+  company: Shenzhen Wellton Information Technology Co., Ltd.
+  cpe: ''
+  product: windon-internet-behavior-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"classid=\"clsid:81be1f16-9d88-48cc-8d3e-cb8e37b71fee") ||
+    icontains(title,"惠尔顿上网行为管理")) || ((!icontains(body,"下一代防火墙") && icontains(body,"passroedele"))
+    && icontains(body,"updateloginpswd.php")))
+  method: GET
+  

@@ -1,0 +1,8 @@
+info:
+  author: 哆啦A梦
+  description: 青藤万相·主机自适应安全平台，采⽤自适应安全架构，有效解决传统专注防御手段的被动处境，为系统添加强大的实时监控和响应能⼒，帮助企业有效预测风险，精准感知威胁，提升响应效率，保障企业安全的最后⼀公⾥
+  tags: []
+  product: 青藤万相主机自适应安全平台
+  category: edr
+rules:
+  - dsl: "status_code == 200 && (contains(body, \"<meta name=\\\"keywords\\\" content=\\\"云安全,安全一体化平台\\\">\") || contains(body, \"<meta name=\\\"description\\\" content=\\\"让云上的日子多些安全感\\\">\"))"

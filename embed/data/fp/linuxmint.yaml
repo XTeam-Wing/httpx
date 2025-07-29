@@ -1,0 +1,12 @@
+info:
+  category: operating system
+  company: Linux Mark Institute
+  cpe: ''
+  product: linuxmint
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"server: linuxmint") || icontains(banner,"server: linuxmint"))
+    || icontains(banner,"mint"))'
+  method: GET
+  

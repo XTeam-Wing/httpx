@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Axis Communications AB.
+  cpe: ''
+  product: axis-754648-camera
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"axis 754648")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Chengdu Lanhai Zhuoyue Technology Network Co., Ltd.
+  cpe: ''
+  product: natshell-router
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<h4>欢迎登录natshell</h4")
+  method: GET
+  

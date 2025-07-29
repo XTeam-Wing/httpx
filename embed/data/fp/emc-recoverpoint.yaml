@@ -1,0 +1,13 @@
+info:
+  category: network storage
+  company: Dell Inc.
+  cpe: ''
+  product: emc-recoverpoint
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"src=\"scripts/services/wizarddatasharingservice.js\"") ||
+    (icontains(body,"content=\"recoverpoint management application") && icontains(title,"recoverpoint
+    management application")))
+  method: GET
+  

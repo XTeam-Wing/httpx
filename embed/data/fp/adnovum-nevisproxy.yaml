@@ -1,0 +1,11 @@
+info:
+  category: web application firewall
+  company: AdNovum Informatik AG.
+  cpe: ''
+  product: adnovum-nevisproxy
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"navajo=")
+  method: GET
+  

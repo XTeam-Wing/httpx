@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: d-link-dcs-d
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"basic realm=\"dcs-d\"") || icontains(banner,"basic realm=\"dcs-d\""))
+  method: GET
+  

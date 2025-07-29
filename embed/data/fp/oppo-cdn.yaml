@@ -1,0 +1,12 @@
+info:
+  category: none
+  company: oppo
+  cpe: ''
+  product: oppo-cdn
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"domain is not configured")||icontains(body,"path location is
+    not configured")
+  method: GET
+  

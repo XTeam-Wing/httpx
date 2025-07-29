@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: LANBIRD Technology Co. Ltd
+  cpe: ''
+  product: lanbird-router
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"lanbird router")
+  method: GET
+  

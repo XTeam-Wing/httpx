@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Shanghai Langking Information Technology Co., Ltd.
+  cpe: ''
+  product: wavetop-days-disaster-software
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"application/views/img/logo_wavetop.png")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: vpn products
+  company: other
+  cpe: ''
+  product: fourseasonsvpn
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"imgs/fs-black-box.jpg") && icontains(title,"fs vpn"))
+  method: GET
+  

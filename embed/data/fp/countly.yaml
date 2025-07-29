@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: countly
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"countly")
+  method: GET
+  

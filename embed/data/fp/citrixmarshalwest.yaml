@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: citrixmarshalwest
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"marshal west")||(icontains(title,"cmarshal west"))
+  method: GET
+  

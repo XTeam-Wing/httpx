@@ -1,0 +1,11 @@
+info:
+  category: load balance
+  company: Fortinet, Inc.
+  cpe: ''
+  product: fortinet-coyotepoint-load-balancer
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: coyotepoint") || icontains(banner,"server: coyotepoint"))'
+  method: GET
+  

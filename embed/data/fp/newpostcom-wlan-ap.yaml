@@ -1,0 +1,11 @@
+info:
+  category: wireless network
+  company: other
+  cpe: ''
+  product: newpostcom-wlan-ap
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"newpostcom software platform wlan ap")
+  method: GET
+  

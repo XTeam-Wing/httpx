@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: jabberd
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: jabberd") || icontains(banner,"server: jabberd"))'
+  method: GET
+  

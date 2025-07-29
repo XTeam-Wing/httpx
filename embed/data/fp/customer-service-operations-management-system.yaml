@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: customer-service-operations-management-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<div class=\"count-down\">页面在<em>5</em>秒后自动跳转至您有权限的页面</div>")
+  method: GET
+  

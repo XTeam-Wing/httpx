@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Shenxinfu Technology Co., Ltd.
+  cpe: ''
+  product: sangfor-data-center
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"location: ./src/acloglogin.php") || icontains(banner,"location:
+    ./src/acloglogin.php")) || icontains(title,"sangfor 数据中心")) || icontains(body,"acloglogin.php"))'
+  method: GET
+  

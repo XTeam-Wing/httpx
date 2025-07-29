@@ -1,0 +1,12 @@
+info:
+  category: vpn products
+  company: LANCOM Systems GmbH
+  cpe: ''
+  product: lancom-vpn
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner," vpn") && icontains(banner,"lancom ")) || (icontains(banner,"vpn")
+    && icontains(banner,"lancom")))
+  method: GET
+  

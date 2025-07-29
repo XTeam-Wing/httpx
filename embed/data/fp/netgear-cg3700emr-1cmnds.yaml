@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-cg3700emr-1cmnds
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"netgear cg3700emr-1cmnds") || icontains(banner,"realm=\"netgear
+    cg3700emr-1cmnds"))
+  method: GET
+  

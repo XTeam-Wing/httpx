@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-er2100n
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"h3c er2100n") || icontains(title,"er2100n系统管理"))
+  method: GET
+  

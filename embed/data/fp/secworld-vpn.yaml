@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: secworld-vpn
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"secworld") && icontains(body,"证书认证") && icontains(header,"host_for_cookie")||(icontains(body,"/images/sslvpnportallogo.jpg")
+    && icontains(title,"网关"))||(icontains(body,"src=\"images/login_logo.gif\"") && icontains(body,"admin/js/virtual_keyboard.js"))||(icontains(body,"admin/js/virtual_keyboard.js"))||(icontains(body,"src=\"images/login_logo.gif\""))||(icontains(body,"/images/sslvpnportallogo.jpg"))||(icontains(body,"证书认证"))||(icontains(body,"secworld"))||(icontains(header,"host_for_cookie"))
+  method: GET
+  

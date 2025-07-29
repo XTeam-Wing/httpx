@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-xgs3700
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"xgs3700") || icontains(banner,"realm=\"xgs3700"))
+  method: GET
+  

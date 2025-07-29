@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: easypacs
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"easy pacs - home page")
+  method: GET
+  

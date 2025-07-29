@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 飞天侠5.0-商业版本
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"飞天侠5.0_商业版本")
+  method: GET
+  

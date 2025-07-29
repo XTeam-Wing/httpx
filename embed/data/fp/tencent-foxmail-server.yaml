@@ -1,0 +1,12 @@
+info:
+  category: electronic mail system
+  company: Tencent Holdings Limited
+  cpe: ''
+  product: tencent-foxmail-server
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"aerofox mail server") || icontains(title,"foxmail server"))
+    || icontains(body,"src=\"/images//foxs_logo.gif"))
+  method: GET
+  

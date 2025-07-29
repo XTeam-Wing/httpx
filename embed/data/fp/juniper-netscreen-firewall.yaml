@@ -1,0 +1,12 @@
+info:
+  category: firewall
+  company: Juniper Networks, Inc.
+  cpe: ''
+  product: juniper-netscreen-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"realm=\"netscreen") || icontains(banner,"realm=\"netscreen"))
+    || icontains(banner,"-netscreen")) || icontains(banner,"netscreen-"))
+  method: GET
+  

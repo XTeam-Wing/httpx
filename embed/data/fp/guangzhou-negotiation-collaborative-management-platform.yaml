@@ -1,0 +1,13 @@
+info:
+  category: oa
+  company: Guangzhou Negotiation Technology Co., Ltd.
+  cpe: ''
+  product: guangzhou-negotiation-collaborative-management-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"/web/submitlogon2.do ") || (icontains(body,"/activex/sinoccshell.cab")
+    && icontains(body,"css/hitalklogin.css"))) || (icontains(body,"/web/submitlogon2.do")
+    && icontains(body,"广州协商科技有限公司"))) || icontains(title,"广州协商科技有限公司协同管理平台"))
+  method: GET
+  

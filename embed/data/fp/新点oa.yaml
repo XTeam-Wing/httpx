@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 新点oa
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"href=\"新点助手工具包.exe\"")
+  method: GET
+  

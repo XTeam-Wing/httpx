@@ -1,0 +1,13 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: geowebserver
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(title,"geowebserver") || ((!icontains(banner,"couchdb") && !icontains(banner,"drupal"))
+    && icontains(banner,"server: geowebserver"))) || (!icontains(banner,"drupal")
+    && icontains(banner,"server: geowebserver")))'
+  method: GET
+  

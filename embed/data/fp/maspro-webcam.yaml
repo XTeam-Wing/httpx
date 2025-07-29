@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: MASPRO DENKOH CORP.
+  cpe: ''
+  product: maspro-webcam
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"href=\"/mobile/index.html\"") && icontains(body,"href=\"/keitai/index.html\""))
+  method: GET
+  

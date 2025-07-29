@@ -1,0 +1,11 @@
+info:
+  category: development framework
+  company: SmartBear Software.
+  cpe: ''
+  product: swagger
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"swagger ui") || icontains(body,"swagger-ui.js")) || icontains(body,"swagger-ui.css"))
+  method: GET
+  

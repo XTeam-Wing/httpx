@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 夏日php电子商务系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"夏日php电子商务系统")
+  method: GET
+  

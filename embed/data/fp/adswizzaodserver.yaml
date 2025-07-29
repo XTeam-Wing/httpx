@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: adswizzaodserver
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"adswizz aod server")
+  method: GET
+  

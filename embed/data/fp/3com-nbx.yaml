@@ -1,0 +1,13 @@
+info:
+  category: voice video
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: 3com-nbx
+  server: nginx
+  tags: []
+rules:
+- dsl: '(!icontains(body,"server: couchdb") && ((icontains(body,"splashtitleiptelephony")
+    || (icontains(body,"nbx") && icontains(banner,"alternates"))) || icontains(title,"nbx
+    netset")))'
+  method: GET
+  

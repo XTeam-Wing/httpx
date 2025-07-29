@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 乐彼多网店
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"乐彼多网店")
+  method: GET
+  

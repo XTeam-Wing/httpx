@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Hewlett Packard Enterprise Development LP
+  cpe: ''
+  product: hp-openview
+  server: nginx
+  tags: []
+rules:
+- dsl: ((!icontains(banner,"couchdb") && icontains(banner,"com.hp.openview.bbc.llbserver"))
+    || (!icontains(banner,"couchdb") && icontains(banner,"com.hp.openview.bbc.llbserver")))
+  method: GET
+  

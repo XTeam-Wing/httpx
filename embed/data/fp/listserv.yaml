@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: L-Soft international, Inc
+  cpe: ''
+  product: listserv
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<title>welcome to listserv") || icontains(body,"powered by
+    the listserv email list manager"))
+  method: GET
+  

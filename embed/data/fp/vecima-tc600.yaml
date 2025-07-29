@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Vecima Networks Inc.
+  cpe: ''
+  product: vecima-tc600
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner," vecima networks") && icontains(banner,"tc600"))
+  method: GET
+  

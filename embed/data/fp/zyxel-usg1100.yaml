@@ -1,0 +1,11 @@
+info:
+  category: antivirus gateway
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-usg1100
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"usg_icon") && title == "usg1100") || icontains(banner,"usg1100"))
+  method: GET
+  

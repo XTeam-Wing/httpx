@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Environmental Systems Research Institute, Inc.
+  cpe: ''
+  product: esri-arcgis
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"esri/discovery/admin.js")
+  method: GET
+  

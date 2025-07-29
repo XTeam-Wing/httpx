@@ -1,0 +1,12 @@
+info:
+  category: other iot device
+  company: Samsung Group
+  cpe: ''
+  product: samsung-dvr
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"realm=\"samsung dvr") || (!icontains(body,"server: couchdb")
+    && (icontains(banner,"realm=\"samsung dvr") || icontains(title,"samsung dvr"))))'
+  method: GET
+  

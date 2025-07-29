@@ -1,0 +1,12 @@
+info:
+  category: server
+  company: China Mobile Communications Group Co., Ltd.
+  cpe: ''
+  product: china-mobile-jx01-mobile-proxy-server
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"background=\"/images/loginbg.gif\"") && icontains(body,"name=\"org.apache.struts.taglib.html.token\""))
+    || (icontains(body,"action=\"/loginaction.do") && icontains(title,"jx01移动代理服务器")))
+  method: GET
+  

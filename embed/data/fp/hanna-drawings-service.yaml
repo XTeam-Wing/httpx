@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Shanghai Hanna Software Co., Ltd.
+  cpe: ''
+  product: hanna-drawings-service
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"hanna图纸服务")
+  method: GET
+  

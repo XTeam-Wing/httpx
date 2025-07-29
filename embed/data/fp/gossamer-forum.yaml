@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: Carbon60 Operating Co. Ltd
+  cpe: ''
+  product: gossamer-forum
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"gossamer forum") || icontains(body,"href=\"gforum.cgi?username="))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-prestige-660hw
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"prestige 660hw-") || icontains(banner,"prestige 660hw-"))
+  method: GET
+  

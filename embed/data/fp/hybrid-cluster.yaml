@@ -1,0 +1,12 @@
+info:
+  category: cloud computing
+  company: other
+  cpe: ''
+  product: hybrid-cluster
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: hybrid cluster") || icontains(banner,"server: hybrid
+    cluster"))'
+  method: GET
+  

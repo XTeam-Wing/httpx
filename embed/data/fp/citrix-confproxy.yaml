@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Citrix Systems, Inc.
+  cpe: ''
+  product: citrix-confproxy
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: confproxy") || icontains(banner,"server: confproxy"))'
+  method: GET
+  

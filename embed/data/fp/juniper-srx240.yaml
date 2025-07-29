@@ -1,0 +1,11 @@
+info:
+  category: antivirus gateway
+  company: Juniper Networks, Inc.
+  cpe: ''
+  product: juniper-srx240
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"juniper-srx240") || icontains(banner,"juniper srx240"))
+  method: GET
+  

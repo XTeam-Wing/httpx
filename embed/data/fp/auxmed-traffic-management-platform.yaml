@@ -1,0 +1,11 @@
+info:
+  category: traffic analysis
+  company: Shanghai Weizhang Information Technology Co., Ltd.
+  cpe: ''
+  product: auxmed-traffic-management-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"爱讯流量管理平台")
+  method: GET
+  

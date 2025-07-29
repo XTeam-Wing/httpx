@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: nextgengallery
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"nextgen gallery")
+  method: GET
+  

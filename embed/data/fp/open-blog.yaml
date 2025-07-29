@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: open-blog
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"target=\"_blank\">open blog")
+  method: GET
+  

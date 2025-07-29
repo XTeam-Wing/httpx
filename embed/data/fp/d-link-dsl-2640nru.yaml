@@ -1,0 +1,12 @@
+info:
+  category: adsl
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: d-link-dsl-2640nru
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"content=\"d-link dsl-2640nru") || icontains(title,"d-link
+    dsl-2640nru"))
+  method: GET
+  

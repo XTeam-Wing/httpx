@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Nowayer, Inc
+  cpe: ''
+  product: nowayer-ftp
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"content=\"nowayer\"")
+  method: GET
+  

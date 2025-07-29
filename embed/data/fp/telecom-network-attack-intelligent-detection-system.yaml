@@ -1,0 +1,11 @@
+info:
+  category: threat analysis && management
+  company: other
+  cpe: ''
+  product: telecom-network-attack-intelligent-detection-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"佛山电信网络攻击智能检测系统")
+  method: GET
+  

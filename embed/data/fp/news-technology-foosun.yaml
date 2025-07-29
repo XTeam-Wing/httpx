@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Foshan Fengxun Network Technology Co., Ltd.
+  cpe: ''
+  product: news-technology-foosun
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"powered by www.foosun.net,products:foosun content manage
+    system") || icontains(body,"for foosun")) || icontains(body,"created by dotnetcms"))
+  method: GET
+  

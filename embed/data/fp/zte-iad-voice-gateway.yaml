@@ -1,0 +1,13 @@
+info:
+  category: other network equipment
+  company: ZTE Corporation
+  cpe: ''
+  product: zte-iad-voice-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: '(!icontains(body,"server: couchdb") && (((icontains(body,"system log in")
+    && icontains(body,"/image/banner_top.jpg")) || icontains(body,"/image/i202.gif"))
+    || icontains(body,"/image/banner_i532.jpg")))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Jingzhou Mingde Technology Co., Ltd.
+  cpe: ''
+  product: mingde-technology-data-monitoring
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"荆州明德科技") && icontains(body,"href=\"imges/zgsh.ico\""))
+  method: GET
+  

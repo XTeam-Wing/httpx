@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-expert-talks
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"cisco-sx80") || icontains(banner,"cisco-cx20")) || icontains(banner,"cisco
+    expert talks")) || icontains(banner,"cisco expert talks"))
+  method: GET
+  

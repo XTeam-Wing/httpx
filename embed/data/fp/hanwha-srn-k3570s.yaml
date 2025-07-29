@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Hanwha Techwin Co., Ltd.
+  cpe: ''
+  product: hanwha-srn-k3570s
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"$.nvr.model_name=\"srn-k3570s\"")
+  method: GET
+  

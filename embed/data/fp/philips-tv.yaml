@@ -1,0 +1,11 @@
+info:
+  category: smart home
+  company: Koninklijke Philips N.V.
+  cpe: ''
+  product: philips-tv
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"philips tv")
+  method: GET
+  

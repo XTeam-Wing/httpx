@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: pansite
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"pansite")
+  method: GET
+  

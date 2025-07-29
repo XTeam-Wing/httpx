@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: sangfor-nfw
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"window.open(\"/loginout.php\", \"_top\"")
+  method: GET
+  

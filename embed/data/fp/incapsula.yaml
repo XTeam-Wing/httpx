@@ -1,0 +1,12 @@
+info:
+  category: website security monitoring system
+  company: Imperva.
+  cpe: ''
+  product: incapsula
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"x-cdn: incapsula") || icontains(banner,"x-cdn: incapsula"))
+    || icontains(body,"incapsula incident id")) || icontains(banner,"x-cdn: incapsula"))'
+  method: GET
+  

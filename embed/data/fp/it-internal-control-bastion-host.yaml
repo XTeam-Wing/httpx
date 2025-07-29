@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: it-internal-control-bastion-host
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"it内控堡垒主机")
+  method: GET
+  

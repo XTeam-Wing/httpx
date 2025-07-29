@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: trs-hybase
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"href=\"#\">trs hybase</a>")||(icontains(title,"trs hybase管理台"))
+  method: GET
+  

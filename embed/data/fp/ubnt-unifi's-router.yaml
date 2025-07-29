@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ubnt-unifi's-router
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<div class=\"appglobalheader\">") && icontains(title,"unifi")
+  method: GET
+  

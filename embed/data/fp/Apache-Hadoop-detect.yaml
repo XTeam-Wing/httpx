@@ -1,0 +1,21 @@
+info:
+  company: Apache
+  product: apache hadoop
+  category: other
+  description: Apache Hadoop是一款支持数据密集型分布式应用程序并以Apache 2.0许可协议发布的开源软件框架，有助于使用许多计算机组成的网络来解决数据、计算密集型的问题。
+  author: 哆啦A梦
+  tags:
+  - tech
+  - apache-hadoop
+rules:
+- method: GET
+  
+  dsl: contains(body, "<meta HTTP-EQUIV=\"REFRESH\" content=\"0;url=tasktracker.jsp\"/>")|| contains(body, "<h2>Running tasks</h2>") || contains(body, "See the Hadoop FAQ for common causes and potential solutions")
+- method: GET
+  path: 
+  - /static/hadoop.css
+  dsl: md5(body) == "0525647cf55811508bbb28508b4c6d6d"
+- method: GET
+  path: 
+  - /dfshealth.js
+  dsl: md5(body) == "8a3f39b95003225ea1f7f06e0fddce16"

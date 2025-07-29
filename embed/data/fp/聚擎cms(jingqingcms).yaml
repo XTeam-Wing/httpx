@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 聚擎cms(jingqingcms)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"聚擎cms")||(icontains(title,"聚擎cms"))||(icontains(body,"jingqingcms"))||(icontains(title,"jingqingcms"))
+  method: GET
+  

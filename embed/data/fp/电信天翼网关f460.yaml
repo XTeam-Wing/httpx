@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 电信天翼网关f460
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<title>f460</title>")
+  method: GET
+  

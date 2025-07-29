@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Advantech Co., Ltd.
+  cpe: ''
+  product: advantech-ur5i-v2l
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"ur5i-v2l")
+  method: GET
+  

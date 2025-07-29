@@ -1,0 +1,19 @@
+info:
+  category: router
+  company: Pullian Technology Co., Ltd.
+  cpe: ''
+  product: tp-link-td-w8968
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((icontains(banner,"content-length: 124") && icontains(banner,"content-type:
+    text/html; charset=utf-8")) && icontains(banner,"http/1.1 405 method not allowed"))
+    || ((!icontains(banner,"avigilongateway") && !icontains(banner,"couchdb")) &&
+    (((((((icontains(banner,"td-w8968") || icontains(banner,"1.0.5 build 150512 rel.42337"))
+    || icontains(banner,"1.0.5 build 150504 rel.57027")) || icontains(banner,"1.0.5
+    build 140821 rel.52209")) || icontains(banner,"0.6.0 1.7 v0019.0 build 131011
+    rel.50940n")) || icontains(banner,"0.6.0 1.4 v0019.0 build 130812 rel.55657n"))
+    || icontains(banner,"0.6.0 1.1 v0005.0 build 120926 rel.27100n")) || icontains(banner,"tp-link
+    td-w8968")))) || icontains(title,"td-w8968")) || icontains(banner,"tp-link td-w8968"))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Shanghai Niuzhiyun Network Technology Co., Ltd.
+  cpe: ''
+  product: niushop-开源商城
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"Niushop开源商城") || icontains(body,"template/shop/blue")
+  method: GET
+  

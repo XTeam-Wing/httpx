@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Beijing Red Flag Software Co., Ltd.
+  cpe: ''
+  product: red-flag-cluster-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<b>登录到红旗集群管理系统</b></td>")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: Armia Systems Inc.
+  cpe: ''
+  product: iscripts-reservelogic
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"powered by <a href=\"http://www.iscripts.com/reservelogic/")
+  method: GET
+  

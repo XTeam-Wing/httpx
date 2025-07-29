@@ -1,0 +1,11 @@
+info:
+  category: host monitoring && auditing
+  company: Singapore Net Profit Systems Co., Ltd.
+  cpe: ''
+  product: netgain-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"netgain")
+  method: GET
+  

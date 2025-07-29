@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Fujitsu Ltd
+  cpe: ''
+  product: fujitsu-irmc
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"irmc ") || icontains(banner,"realm=\"irmc "))
+  method: GET
+  

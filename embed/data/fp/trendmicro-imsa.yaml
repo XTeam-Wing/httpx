@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Trend Micro Incorporated.
+  cpe: ''
+  product: trendmicro-imsa
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"220 esmtp imsa")
+  method: GET
+  

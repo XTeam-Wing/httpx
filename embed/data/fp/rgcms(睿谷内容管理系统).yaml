@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: rgcms(睿谷内容管理系统)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"rgcms")||(icontains(title,"rgcms"))||(icontains(body,"睿谷内容管理系统"))||(icontains(title,"睿谷内容管理系统"))
+  method: GET
+  

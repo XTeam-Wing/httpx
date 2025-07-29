@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: phoenix
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"phoenix")
+  method: GET
+  

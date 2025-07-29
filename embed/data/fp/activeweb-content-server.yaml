@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: activeWeb GmbH.
+  cpe: ''
+  product: activeweb-content-server
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"activeweb cache extension") || icontains(banner,"x-awcache"))
+    || icontains(banner,"x-awcache")) || icontains(body,"awnocachebegin__awnocachebegin__awnocachebegin__awnocachebegin__awnocachebegin"))
+  method: GET
+  

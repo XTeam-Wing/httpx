@@ -1,0 +1,14 @@
+info:
+  product: winmail产品
+  category: 邮箱系统
+  author: wing
+  company: WinMail
+  description: 功能丰富管理细致的邮件服务器软件,自建邮件系统必测,支持Windows和Linux平台架设邮件系统,可适配国产化信创平台,支持SMTP,POP3,IMAP,Webmail
+  fofa_query: body="Powered by Winmail Server</title>"
+  tags:
+  - winmail
+  - tech
+rules:
+- method: GET
+  dsl: contains(body,"Powered by Winmail Server</title>")||contains(body,"background=\"customer/winmail_bg0.jpg\">")||contains(body,"<img src=\"customer/index_winmail_new.gif\"")||contains(body,"\">Powered by Winmail Server<")||contains(body,"Webmail 收发邮件 - 通过网页来收发和查阅邮件")
+

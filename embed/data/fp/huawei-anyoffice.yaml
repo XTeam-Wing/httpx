@@ -1,0 +1,14 @@
+info:
+  category: oa
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-anyoffice
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(title,"anyoffice login") || icontains(body,"src=\"assets/conn-service/admin/"))
+    || icontains(body,"<form id=\"jvform\" action=\"admin/business/login")) || (icontains(cert,"cn=huawei
+    anyoffice root ca") || icontains(cert,"o=huawei, ou=anyoffice"))) || ((icontains(body,"cancelchangepwbtn")
+    && icontains(body,"onclick=\"changelanguage")) && icontains(body,"mdmserver")))
+  method: GET
+  

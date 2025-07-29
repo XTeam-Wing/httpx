@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: php-slim
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"to ensure your url is spelled correctly. if all else fails, you
+    can")||(icontains(body,"the requested resource could not be found. please verify the
+    uri and try again."))
+  method: GET
+  

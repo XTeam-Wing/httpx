@@ -1,0 +1,12 @@
+info:
+  category: voice video
+  company: Sundial Technology (Shanghai) Co., Ltd.
+  cpe: ''
+  product: movision-movie-yunxun-cloud
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"<!-- 科达视讯云 摩云视讯 电信有区别 -->") || icontains(body,"document.title=\"登录-摩云视讯\""))
+    || icontains(body,"class=\"meeting movision\""))
+  method: GET
+  

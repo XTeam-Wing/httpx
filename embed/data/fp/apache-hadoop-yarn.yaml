@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Apache Software Foundation.
+  cpe: ''
+  product: apache-hadoop-yarn
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"yarn.dt.plugins.js") || icontains(body,"/static/yarn.css"))
+  method: GET
+  

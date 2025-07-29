@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-prestige-660ru-t3-t7
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"prestige 660ru-t3/t7")
+  method: GET
+  

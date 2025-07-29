@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Beijing Huaxia Innovation Technology Co., Ltd.
+  cpe: ''
+  product: appex-lotwan-network-acceleration-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"北京华夏创新科技有限公司") && icontains(title,"lotwan 广域网加速系统"))
+  method: GET
+  

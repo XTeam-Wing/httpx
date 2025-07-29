@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: imcart开源网店系统-外贸b2c
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"imcart开源网店系统_外贸b2c")
+  method: GET
+  

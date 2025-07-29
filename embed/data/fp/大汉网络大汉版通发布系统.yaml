@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 大汉网络大汉版通发布系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"大汉网络 大汉版通发布系统")
+  method: GET
+  

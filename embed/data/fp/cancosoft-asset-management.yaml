@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: cancosoft-asset-management
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"var path = \"/cassets\";")||(icontains(title,"佳克实物资产全生命周期的数据分析管理软件"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: pligg
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"pligg")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: cloud computing
+  company: China United Network Communications Group Co., Ltd.
+  cpe: ''
+  product: china-unicom-tiangong-dc-os
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"天宫dc/os")
+  method: GET
+  

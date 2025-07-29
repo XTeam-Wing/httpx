@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 元年e7财务共享平台
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"元年e7财务共享平台")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: firewall
+  company: Barracuda Networks, Inc.
+  cpe: ''
+  product: barracuda-spam-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"http://www.barracudanetworks.com?a=bsf_product") || ((!icontains(title,"balancer")
+    && !icontains(title,"vpn")) && icontains(body,"/barracuda.css")))
+  method: GET
+  

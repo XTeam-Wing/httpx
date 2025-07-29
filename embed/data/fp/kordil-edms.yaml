@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: kordil-edms
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,">kordil edms") || icontains(banner,"kordil_edms")) || icontains(banner,"kordil_edms"))
+  method: GET
+  

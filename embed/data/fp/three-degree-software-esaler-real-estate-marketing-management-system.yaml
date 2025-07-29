@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Qingdao Sandu Information Technology Co., Ltd.
+  cpe: ''
+  product: three-degree-software-esaler-real-estate-marketing-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (!icontains(title," oa ") && icontains(body,"青岛叁度信息技术有限公司"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Dell Inc.
+  cpe: ''
+  product: dell-n1148p-on
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"dell emc networking n1148p-on") || icontains(body,"class=\"login_server_default\">n1148p-on"))
+  method: GET
+  

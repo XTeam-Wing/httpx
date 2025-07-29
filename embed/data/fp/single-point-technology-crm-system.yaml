@@ -1,0 +1,11 @@
+info:
+  category: crm
+  company: Xiamen Point Software Co., Ltd.
+  cpe: ''
+  product: single-point-technology-crm-system
+  server: nginx
+  tags: []
+rules:
+- dsl: ((title == "客户关系管理-crm" || icontains(body,"content=\"单点crm系统")) || icontains(body,"url=general/erp/login/"))
+  method: GET
+  

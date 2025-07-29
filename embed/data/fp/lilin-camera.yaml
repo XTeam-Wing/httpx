@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: lilin-camera
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"realm=\"merit lilin ent. co., ltd.")||(icontains(header,"realm=\"merit
+    lilin ent. co., ltd."))
+  method: GET
+  

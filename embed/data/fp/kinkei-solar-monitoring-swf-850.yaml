@@ -1,0 +1,11 @@
+info:
+  category: burglar alarm
+  company: Kinkei System Corporation
+  cpe: ''
+  product: kinkei-solar-monitoring-swf-850
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"/pic/solarwiselogo.jpg")
+  method: GET
+  

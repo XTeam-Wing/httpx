@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Juniper Networks, Inc.
+  cpe: ''
+  product: juniper-mx480
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"juniper networks, inc. mx480")
+  method: GET
+  

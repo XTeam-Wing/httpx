@@ -1,0 +1,12 @@
+info:
+  category: other iot device
+  company: BSS Networked Audio Systems
+  cpe: ''
+  product: bss-nas-soundweb-london-series
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: soundweb london") || icontains(banner,"server:
+    soundweb london"))'
+  method: GET
+  

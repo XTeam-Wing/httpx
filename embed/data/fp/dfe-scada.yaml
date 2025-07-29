@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: dfe-scada
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"dfe_scada")||(icontains(body,"536870912") && icontains(body,"scada"))||(icontains(body,"scada"))||(icontains(body,"536870912"))
+  method: GET
+  

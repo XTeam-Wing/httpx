@@ -1,0 +1,11 @@
+info:
+  category: antivirus gateway
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-srg1220
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"huawei srg1220") || icontains(banner,"srg1220"))
+  method: GET
+  

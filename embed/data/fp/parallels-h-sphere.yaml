@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Ingram Micro Inc.
+  cpe: ''
+  product: parallels-h-sphere
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"parallels h-sphere")
+  method: GET
+  

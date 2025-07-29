@@ -1,0 +1,16 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: squirrelmail
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"function squirrelmail_loginpage_onload()")||(icontains(title,"squirrelmail
+    - login"))||(icontains(header,"horde=") && icontains(header,"sqmsessid"))||(icontains(body,"function
+    squirrelmail_loginpage_onload"))||(icontains(header,"sqmsessid"))||(icontains(body,"<title>squirrelmail
+    - login</title>"))||(icontains(body,"/* avoid stupid ie6 bug with frames and scrollbars
+    */"))||(icontains(body,"<b>squirrelmail login</b>"))||(icontains(body,"(<(small|small)>squirrelmail
+    version ([^<]+)<)"))
+  method: GET
+  

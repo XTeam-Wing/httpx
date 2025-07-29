@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: neusoft-uniportal
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"ecdomain/unieap/ria/unieap/themes/earth/common/unieap.css")
+  method: GET
+  

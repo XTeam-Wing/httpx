@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: good10000-tios
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"北京万佳信科技有限公司") && icontains(body,"value=\"https://mail.sinopec.com/owa/\"")||(icontains(body,"value=\"https://mail.sinopec.com/owa/\""))||(icontains(body,"北京万佳信科技有限公司"))
+  method: GET
+  

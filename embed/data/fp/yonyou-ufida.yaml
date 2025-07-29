@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Yongyou Network Technology Co., Ltd.
+  cpe: ''
+  product: yonyou-ufida
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"/system/login/login.asp?appid=")
+  method: GET
+  

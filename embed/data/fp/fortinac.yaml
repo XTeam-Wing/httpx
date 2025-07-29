@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: fortinac
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"fortinac")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: other network security
+  company: PIOLINK, Inc.
+  cpe: ''
+  product: piolink-web-manager
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<td class=col_head>login - piolink web manager</td>") || icontains(title,"piolink
+    web manager"))
+  method: GET
+  

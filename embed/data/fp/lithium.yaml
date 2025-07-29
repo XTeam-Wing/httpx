@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: lithium
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"lithium")||(icontains(body,"(<body[^>]+id=\"lia-body\")"))
+  method: GET
+  

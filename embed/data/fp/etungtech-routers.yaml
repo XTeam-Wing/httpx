@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: etungtech-routers
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"./img/logo.jpg") && icontains(body,"cgi-bin/cgibox.cgi")||(icontains(body,"cgi-bin/cgibox.cgi"))||(icontains(body,"./img/logo.jpg"))
+  method: GET
+  

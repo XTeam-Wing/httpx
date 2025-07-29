@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: 'VisualSVN Software Ltd. '
+  cpe: ''
+  product: visualsvn
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"realm=\"visualsvn server") || icontains(banner,"realm=\"visualsvn
+    server")) || icontains(title,"visualsvn server"))
+  method: GET
+  

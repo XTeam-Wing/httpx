@@ -1,0 +1,12 @@
+info:
+  category: nac
+  company: BeyondTrust Corporation
+  cpe: ''
+  product: beyondtrust-access-control-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<a href=\"http://www.bomgar.com/products\" class=\"inverse")
+    || icontains(body,"alt=\"remote support by bomgar"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: printer
+  company: KYOCERA Corporation
+  cpe: ''
+  product: kyocera-ecosys-m3540dn
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"ecosys m3540dn")
+  method: GET
+  

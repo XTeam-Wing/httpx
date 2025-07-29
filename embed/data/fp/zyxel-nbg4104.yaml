@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-nbg4104
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"zyxel nbg4104")
+  method: GET
+  

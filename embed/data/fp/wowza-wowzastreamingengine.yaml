@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: Wowza Media Systems, LLC.
+  cpe: ''
+  product: wowza-wowzastreamingengine
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: wowzastreamingengine") || icontains(banner,"server:
+    wowzastreamingengine"))'
+  method: GET
+  

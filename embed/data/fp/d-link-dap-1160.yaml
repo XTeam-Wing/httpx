@@ -1,0 +1,12 @@
+info:
+  category: wireless network
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: d-link-dap-1160
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<a href=\"http://support.dlink.com.tw/\">dap-1160") || icontains(body,"<a
+    href=\"http://www.dlink.com.tw\" target=_blank>dap-1160"))
+  method: GET
+  

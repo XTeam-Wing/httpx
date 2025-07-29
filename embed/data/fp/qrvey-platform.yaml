@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Qrvey, Inc.
+  cpe: ''
+  product: qrvey-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"app-root") && title == "qrvey platform")
+  method: GET
+  

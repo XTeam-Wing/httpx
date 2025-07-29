@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Pannaway
+  cpe: ''
+  product: pannaway-adsl
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"pannaway rgn-adsl") || icontains(banner,"pannaway bas-adsl48r"))
+  method: GET
+  

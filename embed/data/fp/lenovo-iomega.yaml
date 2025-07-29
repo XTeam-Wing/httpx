@@ -1,0 +1,14 @@
+info:
+  category: network storage
+  company: Lenovo Group Co., Ltd.
+  cpe: ''
+  product: lenovo-iomega
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"set-cookie: iomega") || (!icontains(body,"server: couchdb")
+    && (((icontains(banner,"set-cookie: iomega") || icontains(body,"var defaultpageprefix
+    = \"page\";")) || icontains(body,"href=\"foldercontent.html?folder=pictures"))
+    || icontains(title,"iomega-ix2"))))'
+  method: GET
+  

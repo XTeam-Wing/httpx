@@ -1,0 +1,11 @@
+info:
+  category: smart home
+  company: GTC-Aldis Philippines, Inc.
+  cpe: ''
+  product: hyundai-android-tv
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"hyundai android tv")
+  method: GET
+  

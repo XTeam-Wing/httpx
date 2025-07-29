@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Beijing Shenzhou Taiyue Software Co., Ltd.
+  cpe: ''
+  product: ultra-cmdb
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<span class=\"logo-text\">matrix</span>") && title == "cmdb")
+  method: GET
+  

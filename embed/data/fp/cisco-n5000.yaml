@@ -1,0 +1,12 @@
+info:
+  category: switch
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-n5000
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"nexus 5000 switch") || icontains(banner,"cisco nx-os(tm)
+    n5000"))
+  method: GET
+  

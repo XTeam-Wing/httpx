@@ -1,0 +1,11 @@
+info:
+  category: anti-virus product
+  company: 北京神州绿盟信息安全科技股份有限公司
+  cpe: ''
+  product: nsfocus-终端检测与响应系统
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"绿盟终端检测与响应系统") && icontains(body,"/master/login/login.php")
+  method: GET
+  

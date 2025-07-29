@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: Apache SkyWalking
+  cpe: ''
+  product: skywalking
+  server: nginx
+  tags: []
+rules:
+- dsl: title == "skywalking"
+  method: GET
+  

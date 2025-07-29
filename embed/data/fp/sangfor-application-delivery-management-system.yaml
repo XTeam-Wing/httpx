@@ -1,0 +1,13 @@
+info:
+  category: load balance
+  company: Shenxinfu Technology Co., Ltd.
+  cpe: ''
+  product: sangfor-application-delivery-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(body,"/static/es5_shim/es5-sham.js") && icontains(body,"var check_login_key"))
+    && icontains(title,"loading...")) || ((icontains(body,"var check_login_key") &&
+    icontains(cert,"sangfor")) && icontains(title,"loading..."))) || icontains(body,"default_target=\"/cgi-bin/login.cgi?action=log&fro=self"))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-rvs5000
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(cert,"rvs5000") && icontains(body,"class=\"h3login\">small business
+    pro"))
+  method: GET
+  

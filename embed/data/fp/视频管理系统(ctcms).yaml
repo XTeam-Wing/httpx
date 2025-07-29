@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 视频管理系统(ctcms)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"视频管理系统")||(icontains(title,"视频管理系统"))||(icontains(body,"ctcms"))||(icontains(title,"ctcms"))
+  method: GET
+  

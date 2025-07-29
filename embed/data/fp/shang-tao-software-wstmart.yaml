@@ -1,0 +1,12 @@
+info:
+  category: other software system
+  company: Guangzhou Shangtao Information Technology Co., Ltd.
+  cpe: ''
+  product: shang-tao-software-wstmart
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"href=\"/wstmart/home/") || ((!icontains(banner,"drupal") &&
+    !icontains(banner,"couchdb")) && icontains(body,"powered by wstmart")))
+  method: GET
+  

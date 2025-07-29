@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-x6-r8000
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(cert,"organization: netgear") && icontains(body,"content=\"r8000\""))'
+  method: GET
+  

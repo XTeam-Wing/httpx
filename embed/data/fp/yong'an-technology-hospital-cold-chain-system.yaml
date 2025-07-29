@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Xuzhou Yongan Technology Development Co., Ltd.
+  cpe: ''
+  product: yong'an-technology-hospital-cold-chain-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"医院冷链管理系统")
+  method: GET
+  

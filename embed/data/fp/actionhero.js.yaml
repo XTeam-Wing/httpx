@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: actionhero.js
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"actionhero.js")
+  method: GET
+  

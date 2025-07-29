@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Fujitsu Ltd.
+  cpe: ''
+  product: fujitsu-primergy-rx1330-m3
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"class=\"sure\">primergy rx1330 m3")
+  method: GET
+  

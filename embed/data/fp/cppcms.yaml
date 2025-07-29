@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: cppcms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"cppcms")
+  method: GET
+  

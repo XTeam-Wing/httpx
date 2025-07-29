@@ -1,0 +1,11 @@
+info:
+  category: middleware
+  company: Alibaba Group
+  cpe: ''
+  product: alibaba-ali-medium-automation-verification-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"阿里中间件自动化验证平台")
+  method: GET
+  

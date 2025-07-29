@@ -1,0 +1,16 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: aicart
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"\" for = \"l_password\">password <span class=\"req\">*</span></label>")||(icontains(body,"<input
+    id = \"l_password\" name = \"l_password\" class = \"field text medium\" type =
+    \"password\" maxlength = \"255\" value = \"\" />"))||(icontains(body,"<input id=\"l_remember_me\"
+    name=\"l_remember_me\" class = \"field checkbox\" type = \"checkbox\" value =
+    \"1\" />"))||(icontains(body,"<input name=\"app_authenticate\" type=\"hidden\" id=\"app_authenticate\"
+    value=\"frmlogin\" />"))
+  method: GET
+  

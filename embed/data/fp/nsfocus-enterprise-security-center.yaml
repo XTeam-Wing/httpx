@@ -1,0 +1,12 @@
+info:
+  category: other network security
+  company: Beijing Shenzhou NSFOCUS Information Security Technology Co., Ltd.
+  cpe: ''
+  product: nsfocus-enterprise-security-center
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"/login_logo_espc_zh_cn.png") || icontains(title,"绿盟企业安全中心"))
+    || icontains(body,"/login_logo_espc_zh_cn.png")) || icontains(title,"绿盟科技企业安全中心"))
+  method: GET
+  

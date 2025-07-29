@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Hewlett Packard Enterprise Development LP
+  cpe: ''
+  product: hp-onboard-administrator
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"hp onboard administrator")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: development framework
+  company: other
+  cpe: ''
+  product: okaynav.js
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"jquery.okaynav.js") || icontains(body,"jquery.okaynav.min.js"))
+  method: GET
+  

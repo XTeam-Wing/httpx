@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: OIC Group, Inc.
+  cpe: ''
+  product: exponent-cms
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"powered by exponent cms") || icontains(body,"content=\"exponent
+    content management system"))
+  method: GET
+  

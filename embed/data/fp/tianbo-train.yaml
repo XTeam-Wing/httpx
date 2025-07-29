@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: tianbo-train
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"tianbo_train")
+  method: GET
+  

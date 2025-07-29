@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: other
+  cpe: ''
+  product: webserver(ipcamera-logo)
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(banner,"couchdb") && icontains(banner,"server: webserver(ipcamera_logo)"))
+    || icontains(banner,"server: webserver(ipcamera_logo)"))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: xheditor
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,".xheditor(") || icontains(body,"class=\"xheditor")) || icontains(body,"xheditor_lang/zh-cn.js"))
+  method: GET
+  

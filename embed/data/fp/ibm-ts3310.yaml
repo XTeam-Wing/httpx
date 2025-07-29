@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: IBM
+  cpe: ''
+  product: ibm-ts3310
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"http-equiv=\"refresh\" content=\"0; url=/main_login.htm\"")
+  method: GET
+  

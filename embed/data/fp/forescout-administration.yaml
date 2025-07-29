@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: ForeScout Technologies Inc.
+  cpe: ''
+  product: forescout-administration
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"Forescout Web Client")
+  method: GET
+  

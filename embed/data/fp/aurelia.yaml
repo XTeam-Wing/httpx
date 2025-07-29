@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: aurelia
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"aurelia")
+  method: GET
+  

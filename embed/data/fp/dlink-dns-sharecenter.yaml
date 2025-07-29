@@ -1,0 +1,12 @@
+info:
+  category: network storage
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: dlink-dns-sharecenter
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(body,"server: couchdb") && icontains(body,"sharecenter")) &&
+    icontains(body,"/cgi-bin/login_mgr.cgi"))'
+  method: GET
+  

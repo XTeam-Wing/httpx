@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Dell Inc.
+  cpe: ''
+  product: dell-n3024
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"dell networking n3024") || icontains(body,"class=\"login_server_default\">n3024"))
+  method: GET
+  

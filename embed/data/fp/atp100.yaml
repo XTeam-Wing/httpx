@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: other
+  cpe: ''
+  product: atp100
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(banner,"ATP100") || icontains(title,"ATP100")
+  method: GET
+  

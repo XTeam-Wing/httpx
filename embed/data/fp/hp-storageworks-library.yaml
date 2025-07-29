@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: hp-storageworks-library
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<td class=\"mastheadicon\"><img src=\"signin_logo.gif\" border=\"0\"
+    alt=\"hp\"></td>")
+  method: GET
+  

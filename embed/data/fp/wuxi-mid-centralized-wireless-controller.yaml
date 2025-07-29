@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Wuxi Zhongtai Data Communication Co., Ltd.
+  cpe: ''
+  product: wuxi-mid-centralized-wireless-controller
+  server: nginx
+  tags: []
+rules:
+- dsl: (title == "中太数据 - 集中无线控制器" && icontains(body,"var url=\"resetwebsvr.php?act=reset\";"))
+  method: GET
+  

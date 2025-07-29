@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: easwebserver
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"eas webserver")
+  method: GET
+  

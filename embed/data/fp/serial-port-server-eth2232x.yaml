@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Beijing Hengxin Yingtai Technology Co., Ltd.
+  cpe: ''
+  product: serial-port-server-eth2232x
+  server: nginx
+  tags: []
+rules:
+- dsl: title == "串口服务器---eth2232x"
+  method: GET
+  

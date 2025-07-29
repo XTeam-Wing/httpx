@@ -1,0 +1,18 @@
+info:
+  category: router
+  company: OvisLink Corp.
+  cpe: ''
+  product: airlive-wireless-device
+  server: nginx
+  tags: []
+rules:
+- dsl: (((((((((((((icontains(banner,"realm=\"airlive g.duo") || icontains(banner,"realm=\"airlive
+    air3g")) || icontains(banner,"realm=\"airlive ap60")) || icontains(banner,"realm=\"airlive
+    wmm-")) || icontains(banner,"realm=\"airlive n.power")) || icontains(banner,"realm=\"airlive
+    wt-")) || icontains(banner,"realm=\"airlive wl-")) || icontains(banner,"realm=\"airlive
+    g.duo")) || icontains(banner,"realm=\"airlive air3g")) || icontains(banner,"realm=\"airlive
+    ap60")) || icontains(banner,"realm=\"airlive wmm-")) || icontains(banner,"realm=\"airlive
+    n.power")) || icontains(banner,"realm=\"airlive wt-")) || icontains(banner,"realm=\"airlive
+    wl-"))
+  method: GET
+  

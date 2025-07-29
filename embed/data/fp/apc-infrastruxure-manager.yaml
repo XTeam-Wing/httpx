@@ -1,0 +1,11 @@
+info:
+  category: burglar alarm
+  company: Schneider Electric
+  cpe: ''
+  product: apc-infrastruxure-manager
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"apc infrastruxure manager")
+  method: GET
+  

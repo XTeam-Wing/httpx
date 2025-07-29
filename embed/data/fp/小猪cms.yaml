@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Hefei Bi'an Internet Information Technology Co., Ltd.
+  cpe: ''
+  product: 小猪cms
+  server: unknown
+  tags: []
+rules:
+- dsl: 'icontains(banner,"X-Powered-By: PigCms.com") || icontains(banner,"X-Powered-By:
+    PigCms.com")'
+  method: GET
+  

@@ -1,0 +1,14 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: proftpd
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((((icontains(banner,"220 ") && icontains(banner,"550 ssl/tls required on
+    the control channel")) || icontains(banner,"proftp server")) || icontains(banner,"proftp-server"))
+    || icontains(banner,"realm=\"proftpd")) || icontains(banner,"realm=\"proftpd"))
+    || (icontains(banner,"proftpd") && icontains(protocol,"ftp")))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Chengdu Oufeiling Communication Technology Co., Ltd.
+  cpe: ''
+  product: ophylink-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"ophylink")
+  method: GET
+  

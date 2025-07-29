@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: pithcms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<p class=\"admin\">powered by <a href=\"http://pithcms.altervista.org/index.php?pagina=data/info.php\">pithcms</a>")||(icontains(body,"/icons/admin48.png\"><br
+    />welcome admin.<br /><br />"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Jianghan Oilfield Sanrui Technology Co., Ltd.
+  cpe: ''
+  product: sanrui-technology-collaborative-analysis-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"圈闭井位论证协同分析系统")
+  method: GET
+  

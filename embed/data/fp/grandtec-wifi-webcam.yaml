@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: Shenzhen Honghuarui Technology Co., Ltd.
+  cpe: ''
+  product: grandtec-wifi-webcam
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"basic realm=\"welcome to ipcam !\"") || icontains(banner,"basic
+    realm=\"welcome to ipcam !\""))
+  method: GET
+  

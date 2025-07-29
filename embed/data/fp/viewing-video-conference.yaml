@@ -1,0 +1,11 @@
+info:
+  category: voice video
+  company: Shandong Shanda Lianrun Information Technology Co., Ltd.
+  cpe: ''
+  product: viewing-video-conference
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"id=\"ctl00_topcontrol1_lblsitedescription\"")
+  method: GET
+  

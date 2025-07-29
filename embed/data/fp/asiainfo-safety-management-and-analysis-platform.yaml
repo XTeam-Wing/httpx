@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: AsiaInfo Technology Holdings Limited
+  cpe: ''
+  product: asiainfo-safety-management-and-analysis-platform
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(banner,"/sso/index.do?appid=ssa") || icontains(banner,"/sso/index.do?appid=ssa")
+  method: GET
+  

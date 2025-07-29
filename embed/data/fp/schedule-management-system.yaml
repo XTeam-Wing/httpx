@@ -1,0 +1,12 @@
+info:
+  category: other software system
+  company: other
+  cpe: ''
+  product: schedule-management-system
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"日程管理系统") && icontains(body,"function __doPostBack(eventTarget,
+    eventArgument)")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: redstorstorageserver
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"redstor storageserver")
+  method: GET
+  

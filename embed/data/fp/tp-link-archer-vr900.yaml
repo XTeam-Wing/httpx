@@ -1,0 +1,13 @@
+info:
+  category: adsl
+  company: Pullian Technology Co., Ltd.
+  cpe: ''
+  product: tp-link-archer-vr900
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"var modelname=\"archer vr900\"") || icontains(banner,"0.9.1
+    1.4 v004c.0 build 160316 rel.44905n")) || icontains(banner,"0.9.1 1.2 v004c.0
+    build 150909 rel.39821n"))
+  method: GET
+  

@@ -1,0 +1,13 @@
+info:
+  category: voice video
+  company: Beijing Runpu Asia Digital Technology Co., Ltd.
+  cpe: ''
+  product: runpu-technology-embedded-voice-recording-system
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((icontains(body,"润普科技") && icontains(banner,"set-cookie: orgurl=/")) &&
+    icontains(banner,"/login.lgi?orgurl=/")) || icontains(body,"<th colspan=\"3\">润普嵌入式网络电话录音系统</th>"))
+    || icontains(title,"润普嵌入式网络电话录音系统"))'
+  method: GET
+  

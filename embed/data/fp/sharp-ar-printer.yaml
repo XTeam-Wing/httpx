@@ -1,0 +1,11 @@
+info:
+  category: multifunctional
+  company: SHARP Corporation
+  cpe: ''
+  product: sharp-ar-printer
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"sharp ar-")
+  method: GET
+  

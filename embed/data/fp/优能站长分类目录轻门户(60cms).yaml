@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 优能站长分类目录轻门户(60cms)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"优能站长分类目录轻门户")||(icontains(title,"优能站长分类目录轻门户"))||(icontains(body,"60cms"))||(icontains(title,"60cms"))
+  method: GET
+  

@@ -1,0 +1,15 @@
+info:
+  category: other enterprise application
+  company: HP Development Company, L.P.
+  cpe: ''
+  product: hp-sitescope
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(banner,"couchdb") && ((icontains(banner,"realm=\"sitescope")
+    || icontains(banner,"path=/sitescope")) || icontains(banner,"server: sitescope")))
+    || (!icontains(body,"server: couchdb") && (((icontains(banner,"realm=\"sitescope")
+    || icontains(banner,"path=/sitescope")) || icontains(banner,"server: sitescope"))
+    || icontains(body,"sitescope login"))))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 阿里巴巴ottermanager
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"otter manager") && icontains(body,"channellist")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: hacking tool
+  company: other
+  cpe: ''
+  product: asset-lighthouse-system
+  server: nginx
+  tags: []
+rules:
+- dsl: title == "资产灯塔系统"
+  method: GET
+  

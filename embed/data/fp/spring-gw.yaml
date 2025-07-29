@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: spring-gw
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"spring gw") || icontains(banner,"realm=\"spring
+    gw"))
+  method: GET
+  

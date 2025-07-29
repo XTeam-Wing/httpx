@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Shanghai Chuangqi Tianxia Technology Co., Ltd.
+  cpe: ''
+  product: trunkey-idc-isp-access-resource-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title," idc/isp ") && (icontains(title,"powered by trunkey") ||
+    icontains(body,"href=\"http://www.trunkey.com/\"")))
+  method: GET
+  

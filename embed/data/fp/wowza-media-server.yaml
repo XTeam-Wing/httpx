@@ -1,0 +1,14 @@
+info:
+  category: service
+  company: Wowza Media Systems, LLC.
+  cpe: ''
+  product: wowza-media-server
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"wowza media server") || ((icontains(banner,"wowza media
+    server") || icontains(banner,"wowza streaming engine")) && icontains(protocol,"rtsp")))
+    || icontains(body,"<html><head><title>wowza media server")) || icontains(banner,"www-authenticate
+    realm=\"wowza media systems"))
+  method: GET
+  

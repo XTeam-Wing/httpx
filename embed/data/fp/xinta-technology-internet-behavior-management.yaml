@@ -1,0 +1,11 @@
+info:
+  category: online behavior management system
+  company: Shenzhen Xinta Technology Co., Ltd.
+  cpe: ''
+  product: xinta-technology-internet-behavior-management
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<span id=\"copyright\">胜鑫塔上网行为管理</span>")
+  method: GET
+  

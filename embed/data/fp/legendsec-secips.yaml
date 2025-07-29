@@ -1,0 +1,11 @@
+info:
+  category: network intrusion detection && defense
+  company: Wangshen Information Technology (Beijing) Co., Ltd.
+  cpe: ''
+  product: legendsec-secips
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"网神") && icontains(body,"无服务权限")) && icontains(body,"usbkey_plugin.cab"))
+  method: GET
+  

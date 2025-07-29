@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Changsha Tongxun Computer Technology Co., Ltd.
+  cpe: ''
+  product: song-xun-technology-shen-qi-route
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"神行者路由")
+  method: GET
+  

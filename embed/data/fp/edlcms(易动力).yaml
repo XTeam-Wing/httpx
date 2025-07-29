@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: edlcms(易动力)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"edlcms")||(icontains(title,"edlcms"))||(icontains(body,"易动力"))||(icontains(title,"易动力"))
+  method: GET
+  

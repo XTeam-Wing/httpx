@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: dk动科cms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"dk动科cms")
+  method: GET
+  

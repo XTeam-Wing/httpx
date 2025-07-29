@@ -1,0 +1,12 @@
+info:
+  category: virtualization
+  company: Inspur Group Co., Ltd.
+  cpe: ''
+  product: inspur-yunhai-virtualization
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"incloudsphere") || (icontains(body,"class=\"easyui-layout")
+    && icontains(title,"license tool")))
+  method: GET
+  

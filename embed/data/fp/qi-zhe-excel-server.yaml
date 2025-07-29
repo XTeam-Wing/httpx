@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Beijing Qinzhe Software Technology Co., Ltd.
+  cpe: ''
+  product: qi-zhe-excel-server
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"id=\"chkworkbyreplacer\" type=\"checkbox\"") || icontains(body,"如果能访问到qinzhe网站上的图片，说明网络是通的，显示新闻"))
+  method: GET
+  

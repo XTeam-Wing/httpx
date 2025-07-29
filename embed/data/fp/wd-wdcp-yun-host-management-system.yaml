@@ -1,0 +1,13 @@
+info:
+  category: other software system
+  company: Zhuhai Wonder Network Technology Co., Ltd.
+  cpe: ''
+  product: wd-wdcp-yun-host-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"set-cookie: wdcpsessionid") || icontains(banner,"set-cookie:
+    wdcpsessionid")) || icontains(title,"wdcp云主机管理系统")) || (icontains(body,"linux云主机")
+    && icontains(body,"href=\"http://www.wdlinux.cn/bbs/index.php")))'
+  method: GET
+  

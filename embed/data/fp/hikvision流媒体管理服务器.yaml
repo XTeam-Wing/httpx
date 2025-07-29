@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: hikvision流媒体管理服务器
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"hikvision流媒体管理服务器")
+  method: GET
+  

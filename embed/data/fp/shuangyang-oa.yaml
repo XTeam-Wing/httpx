@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: shuangyang-oa
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"shuangyang_oa")
+  method: GET
+  

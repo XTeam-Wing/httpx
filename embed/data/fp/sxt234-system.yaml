@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: sxt234-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<div class=\"head_right\" onclick=\"window_close()\">")||(icontains(body,"<div
+    class=\"head_right\" onclick=\"window_close\">"))
+  method: GET
+  

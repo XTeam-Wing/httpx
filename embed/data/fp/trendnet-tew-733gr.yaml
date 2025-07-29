@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: TRENDnet, Inc.
+  cpe: ''
+  product: trendnet-tew-733gr
+  server: nginx
+  tags: []
+rules:
+- dsl: ((!icontains(banner,"couchdb") && icontains(banner,"tew-733gr")) || icontains(banner,"tew-733gr"))
+  method: GET
+  

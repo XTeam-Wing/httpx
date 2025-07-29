@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Hyperwave GmbH
+  cpe: ''
+  product: hyperwave-is
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: hyperwave is") || icontains(banner,"server: hyperwave
+    is"))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: pagekit-cms轻量级建站系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"pagekit_cms轻量级建站系统")
+  method: GET
+  

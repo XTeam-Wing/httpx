@@ -1,0 +1,11 @@
+info:
+  category: vpn products
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-usg20-vpn
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"usg20-vpn")
+  method: GET
+  

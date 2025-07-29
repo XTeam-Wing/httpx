@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Shenzhen Hechen Communication Technology Co., Ltd.
+  cpe: ''
+  product: youyou-youyou-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: ((!icontains(title,"防火墙") && icontains(body,"class=\"inputsize2\"")) && icontains(body,"src=\"./js/jquery.validate.js\""))
+  method: GET
+  

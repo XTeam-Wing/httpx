@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Founder International Software Co., Ltd.
+  cpe: ''
+  product: founder-full-media-editing-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"/newsedit/newsedit/css/login_1.css")
+  method: GET
+  

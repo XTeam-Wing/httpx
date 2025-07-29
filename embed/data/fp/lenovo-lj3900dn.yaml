@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Lenovo Group Co., Ltd.
+  cpe: ''
+  product: lenovo-lj3900dn
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"lenovo lj3900dn")
+  method: GET
+  

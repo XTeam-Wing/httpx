@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: jeecg-java快速开发平台
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"jeecg_java快速开发平台")
+  method: GET
+  

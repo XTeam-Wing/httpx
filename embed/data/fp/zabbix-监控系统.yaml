@@ -1,0 +1,11 @@
+info:
+  category: host monitoring and auditing
+  company: Zabbix LLC.
+  cpe: ''
+  product: zabbix-监控系统
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"images/general/zabbix.ico") || icontains(banner,"zbx_sessionid")  || icontains(banner,"Linux ZABBIX-") || icontains(banner,"zbx_sessionid")
+  method: GET
+  

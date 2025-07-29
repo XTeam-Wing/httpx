@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: limbocms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"limbo cms")
+  method: GET
+  

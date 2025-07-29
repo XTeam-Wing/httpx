@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: amplesky-company's-product
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"流媒体单元管理平台---天地阳光通信科技（北京）有限公司")||(icontains(body,"var fullmessage =
+    \"天地阳光通信科技（北京）有限公司"))||(icontains(title,"amplesky tc5000d"))
+  method: GET
+  

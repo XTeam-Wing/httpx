@@ -1,0 +1,16 @@
+info:
+  category: other network equipment
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-corporate-product
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((icontains(banner,"new h3c technologies co., ltd. ") || icontains(banner,"hangzhou  h3c
+    ")) || icontains(banner,"h3c login:")) || icontains(banner,"hangzhou h3c")) ||
+    ((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && ((((icontains(banner,"{\"length\":
+    0, \"chained_to\": 1919247457, \"identifier\": \"tains\", \"str\": null}") ||
+    icontains(banner,"h3c tech")) || icontains(body,"icg_helpscript.js")) || (icontains(body,"h3c
+    corporation") && icontains(body,"copyright"))) || icontains(body,"service@h3c.com"))))'
+  method: GET
+  

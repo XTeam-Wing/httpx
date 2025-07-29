@@ -1,0 +1,11 @@
+info:
+  category: database system
+  company: Redis Labs
+  cpe: ''
+  product: redis
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(protocol,"redis")
+  method: GET
+  

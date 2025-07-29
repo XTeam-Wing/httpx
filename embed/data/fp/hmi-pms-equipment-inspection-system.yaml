@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Shanghai Huayang Testing Instrument Co., Ltd.
+  cpe: ''
+  product: hmi-pms-equipment-inspection-system
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"华阳检测仪器PMS设备巡检系统")
+  method: GET
+  

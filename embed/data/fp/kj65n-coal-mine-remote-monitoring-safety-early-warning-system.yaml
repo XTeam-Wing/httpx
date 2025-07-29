@@ -1,0 +1,12 @@
+info:
+  category: burglar alarm
+  company: other
+  cpe: ''
+  product: kj65n-coal-mine-remote-monitoring-safety-early-warning-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"kj65n") || (icontains(body,"worlddesktop/webform1.aspx")
+    && icontains(body,"images/login/top002.gif")))
+  method: GET
+  

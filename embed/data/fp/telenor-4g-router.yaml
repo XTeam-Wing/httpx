@@ -1,0 +1,15 @@
+info:
+  category: router
+  company: Telenor Group
+  cpe: ''
+  product: telenor-4g-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"4g router") && ((icontains(body,"please power off && plug
+    in (u)sim card. then power on again. || pin is permanently blocked, please contact
+    the provider") && icontains(body,"<form id=\"default_login\" name=\"default_login\"
+    method=\"post\" action=\"/goform/user_login\">")) || (icontains(body,"if(login_flag==\"1\")")
+    && icontains(body,"window.location.href=\"http://"))))
+  method: GET
+  

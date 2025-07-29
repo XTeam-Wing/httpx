@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Beijing Qihoo Technology Co., Ltd.
+  cpe: ''
+  product: 360-security-route
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"360家庭防火墙") || (icontains(title,"360安全路由") && icontains(body,"360loginflag")))
+  method: GET
+  

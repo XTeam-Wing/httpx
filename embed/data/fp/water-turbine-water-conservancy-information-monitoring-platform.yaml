@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Jiangsu Shuixuntong Information Technology Co., Ltd.
+  cpe: ''
+  product: water-turbine-water-conservancy-information-monitoring-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<div class=\"head_right\" onclick=\"window_close()\">")
+  method: GET
+  

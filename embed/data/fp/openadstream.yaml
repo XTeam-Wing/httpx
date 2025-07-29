@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: openadstream
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"open adstream")
+  method: GET
+  

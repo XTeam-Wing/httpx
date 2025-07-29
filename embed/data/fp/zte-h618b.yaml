@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: ZTE Corporation
+  cpe: ''
+  product: zte-h618b
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"zte h618b") || icontains(banner,"realm=\"zte h618b"))
+  method: GET
+  

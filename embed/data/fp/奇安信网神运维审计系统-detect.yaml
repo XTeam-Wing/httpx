@@ -1,0 +1,11 @@
+info:
+  author: 哆啦A梦
+  description: 奇安信网神运维审计系统（俗称 “堡垒机”）：是采用新一代智能运维技术框架，基于认证、授权、访问、审计的管理流程设计理念，实现对企事业IT中心的网络设备、数据库、安全设备、主机系统、中间件等资源统一运维管理和审计；通过集中化运维管控、运维过程实时监管、运维访问合规性控制、运维过程图形化审计等功能，为企事业IT中心运维构建一套事前预防、事中监控、事后审计完善的安全管理体系。广泛满足政府、金融、能源、电力、教育、医疗、央企等行业客户的运维审计规范要求。
+  tags: []
+  product: 奇安信网神运维审计系统
+  category: cms
+rules:
+- method: GET
+  path:
+  - '/3.0/authService/config'
+  dsl: contains(body, "运维安全管理与审计系统") || contains(title, "\"companyNameShort\":\"奇安信\",\"productNameShort\":\"运维审计\"") 

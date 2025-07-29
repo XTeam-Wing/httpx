@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: zyxel-company's-product
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"zyxel ssh server")||(icontains(header,"vendor: zyxel communication
+    corp."))||(icontains(body,"href=\"/zyxel.ico"))||(icontains(header,"ndm-sysmode"))||(icontains(body,"alcatel-lucent")
+    && icontains(body,"forms/rpauth_1"))||(icontains(body,"forms/rpauth_1"))'
+  method: GET
+  

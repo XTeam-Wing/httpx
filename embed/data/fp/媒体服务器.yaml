@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: 其他
+  cpe: ''
+  product: 媒体服务器
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"媒体服务器") && icontains(body,"Start added by h03350 for server
+    switching")
+  method: GET
+  

@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: wikiwebhelp
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"style=\"float:left;\"><img src=\"theme/default/images/wh32.png\"")||(icontains(body,"<script
+    type=\"text/javascript\" language=\"javascript\" src=\"script/wicky/wiky.js\"
+    ></script>"))
+  method: GET
+  

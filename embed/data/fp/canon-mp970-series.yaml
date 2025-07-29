@@ -1,0 +1,11 @@
+info:
+  category: printer
+  company: Canon Inc.
+  cpe: ''
+  product: canon-mp970-series
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"nowrap>canon mp970 series</td>")
+  method: GET
+  

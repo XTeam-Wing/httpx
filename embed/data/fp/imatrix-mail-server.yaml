@@ -1,0 +1,11 @@
+info:
+  category: electronic mail system
+  company: other
+  cpe: ''
+  product: imatrix-mail-server
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"matrix mail server") || icontains(banner,"matrix smtp server"))
+  method: GET
+  

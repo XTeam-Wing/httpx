@@ -1,0 +1,17 @@
+info:
+  author: sayhi
+  description: Zabbix was detected.
+  remediation:
+  - Zabbix 是一款功能强大的开源监控解决方案。
+  tags:
+  - tech
+  - zabbix
+  - monitoring
+  product: zabbix
+  category: cms
+rules:
+- method: GET
+  path:
+  - /
+  - /zabbix
+  dsl: contains(body, "content=\"Zabbix") || contains(title, "Zabbix") || contains(header, "zbx_session")

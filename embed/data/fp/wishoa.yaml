@@ -1,0 +1,11 @@
+info:
+  category: oa
+  company: Beijing Kuaiwei Kechuang Information Technology Co., Ltd.
+  cpe: ''
+  product: wishoa
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"wishoa_webplugin.js")
+  method: GET
+  

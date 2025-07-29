@@ -1,0 +1,11 @@
+info:
+  category: log analysis && audit
+  company: Alibaba Group
+  cpe: ''
+  product: eagleeye
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"eagleeye 钉钉答疑群")
+  method: GET
+  

@@ -1,0 +1,16 @@
+info:
+  category: other support system
+  company: HelpSystems.
+  cpe: ''
+  product: globalscape-公司产品
+  server: unknown
+  tags: []
+rules:
+- dsl: '(icontains(banner,"GlobalSCAPE") && icontains(banner,"ssh"))|| icontains(banner,"GlobalSCAPE
+    Secure FTP") || icontains(banner,"Server: GlobalSCAPE-Secure Server") || icontains(banner,"GlobalSCAPE
+    Secure EFT") || icontains(banner,"GlobalSCAPE EFT") || icontains(banner,"Server:
+    GlobalSCAPE-EFTServer") || icontains(banner,"GlobalSCAPE Enhanced File Transfer
+    Server") || icontains(banner,"GlobalSCAPE Secure SFTP") || icontains(banner,"Server:
+    GlobalSCAPE-Secure Server") || icontains(banner,"Server: GlobalSCAPE-EFTServer")'
+  method: GET
+  

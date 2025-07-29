@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 7moor-product
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/javascripts/qiniu/qiniu.js") && icontains(body,"class=\"ds_do_action
+    domain_aboutus\"")||(icontains(body,"class=\"ds_do_action domain_aboutus\""))||(icontains(body,"/javascripts/qiniu/qiniu.js"))
+  method: GET
+  

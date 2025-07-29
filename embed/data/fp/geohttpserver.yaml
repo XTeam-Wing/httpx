@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Odd Even Technology Co., Ltd.
+  cpe: ''
+  product: geohttpserver
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: geohttpserver") || icontains(banner,"server: geohttpserver"))'
+  method: GET
+  

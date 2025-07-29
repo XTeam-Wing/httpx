@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: trendmicroofficescanantivirus
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"trend micro officescan antivirus")
+  method: GET
+  

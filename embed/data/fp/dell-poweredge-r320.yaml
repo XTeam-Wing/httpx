@@ -1,0 +1,12 @@
+info:
+  category: server
+  company: Dell Inc.
+  cpe: ''
+  product: dell-poweredge-r320
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(cert,"poweredge r320") || icontains(banner,"poweredge r320")) ||
+    icontains(body,"id=\"serverinfo\"> poweredge r320"))
+  method: GET
+  

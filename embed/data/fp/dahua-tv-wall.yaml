@@ -1,0 +1,12 @@
+info:
+  category: other iot device
+  company: Zhejiang Dahua Technology Co., Ltd.
+  cpe: ''
+  product: dahua-tv-wall
+  server: nginx
+  tags: []
+rules:
+- dsl: '(!icontains(body,"server: couchdb") && ((icontains(body,"nav_creen") || icontains(body,"nav_screen"))
+    && icontains(body,"estopall")))'
+  method: GET
+  

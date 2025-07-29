@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Beijing Qinyun Technology Development Co., Ltd.
+  cpe: ''
+  product: qinyun-technology-e-tiller
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"北京勤云") && icontains(body,"reader/view_abstract.aspx"))
+  method: GET
+  

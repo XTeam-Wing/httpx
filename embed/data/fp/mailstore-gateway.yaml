@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: MailStore Software GmbH
+  cpe: ''
+  product: mailstore-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"mailstore gateway")
+  method: GET
+  

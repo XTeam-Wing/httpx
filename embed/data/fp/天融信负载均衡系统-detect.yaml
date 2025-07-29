@@ -1,0 +1,11 @@
+info:
+  author: 哆啦A梦
+  description: 天融信负载均衡系统TopApp能为用户提供数据中心的全套解决方案，包括单数据中心的链路负载均衡和服务器负载均衡、以及多数据中心的全局负载均衡；拥有丰富的负载均衡方法，能适用各种场景下的服务负载均衡需求；通过压缩、缓存、SSL卸载、HTTP优化等技术对应用加速处理；提供全方位防DDOS攻击、Web应用防火墙等安全防护，为应用安全保驾护航；丰富的统计数据、定制化的报表，用户能实时了解应用运行状态。
+  tags: []
+  product: 天融信负载均衡系统
+  category: cms
+rules:
+  - method: GET
+    path: 
+      - "/"
+    dsl: "contains(body, \"<title>TopAPP负载均衡系统</title>\") || contains(header, \"Server: topsec\")"

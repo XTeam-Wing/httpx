@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: epoint网站大师
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"epoint 网站大师")
+  method: GET
+  

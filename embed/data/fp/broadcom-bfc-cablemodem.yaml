@@ -1,0 +1,12 @@
+info:
+  category: adsl
+  company: Broadcom Inc.
+  cpe: ''
+  product: broadcom-bfc-cablemodem
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"vendor: broadcom") && icontains(banner,"bfc cablemodem"))
+    && icontains(protocol,"snmp"))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: anmai安脉教务管理系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"anmai安脉教务管理系统")
+  method: GET
+  

@@ -1,0 +1,13 @@
+info:
+  category: service
+  company: Oracle Corporation
+  cpe: ''
+  product: sun-one-web-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((!icontains(banner,"couchdb") && icontains(banner,"server: sun-one-web-server"))
+    || icontains(banner,"server: sun-one-web-server")) || icontains(title,"sun[tm]
+    one web server"))'
+  method: GET
+  

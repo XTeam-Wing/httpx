@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: baidu-jiasule
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"__jsluid")||(icontains(body,"static.jiasule.com/static/js/http_error.js"))||(icontains(header,"http/1.1
+    403") && icontains(body,"notice-jiasule"))||(icontains(header,"__jsluid"))||(icontains(body,"notice-jiasule"))
+  method: GET
+  

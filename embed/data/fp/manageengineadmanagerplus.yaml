@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: manageengineadmanagerplus
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"admanager") && icontains(body,"hashtable.js") && icontains(body,"manageengine")||(icontains(title,"manageengine
+    admanager plus"))
+  method: GET
+  

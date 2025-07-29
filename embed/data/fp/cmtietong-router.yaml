@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: cmtietong-router
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"src=\"img/by_web.png\"")
+  method: GET
+  

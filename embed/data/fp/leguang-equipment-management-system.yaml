@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Shenzhen Chaohenghui Network Technology Co., Ltd.
+  cpe: ''
+  product: leguang-equipment-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"class=\"capslock\"") && icontains(body,"class=\"btn btn-zx
+    btn-modal"))
+  method: GET
+  

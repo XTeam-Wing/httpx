@@ -1,0 +1,11 @@
+info:
+  category: load balance
+  company: Newsoft Systems Co., Ltd.
+  cpe: ''
+  product: nusoft-system-mhg-450
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"mhg-450") || icontains(banner,"mhg-450 "))
+  method: GET
+  

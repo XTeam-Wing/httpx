@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Hefei Bi'an Internet Information Technology Co., Ltd.
+  cpe: ''
+  product: pig-cms
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"x-powered-by: pigcms.com") || icontains(banner,"x-powered-by:
+    pigcms.com"))'
+  method: GET
+  

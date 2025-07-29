@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Belkin International, Inc.
+  cpe: ''
+  product: linksys-usb-hdd
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"href=\"management/setup.cgi?next_file=lan.htm") || icontains(title,"network
+    storage link for usb 2.0 disks"))
+  method: GET
+  

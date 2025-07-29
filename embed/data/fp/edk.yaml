@@ -1,0 +1,11 @@
+info:
+  category: development framework
+  company: other
+  cpe: ''
+  product: edk
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<!-- /killlistable.tpl -->")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: hsycms(好生意cms)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"hsycms")||(icontains(title,"hsycms"))||(icontains(body,"好生意cms"))||(icontains(title,"好生意cms"))
+  method: GET
+  

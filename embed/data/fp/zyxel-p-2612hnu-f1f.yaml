@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-p-2612hnu-f1f
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"p-2612hnu-f1f")
+  method: GET
+  

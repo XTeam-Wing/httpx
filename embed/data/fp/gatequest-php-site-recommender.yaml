@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: vcl components
+  cpe: ''
+  product: gatequest-php-site-recommender
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"gatequest")
+  method: GET
+  

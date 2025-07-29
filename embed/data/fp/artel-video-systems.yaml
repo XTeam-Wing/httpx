@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: ARTEL VIDEO SYSTEMS
+  cpe: ''
+  product: artel-video-systems
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"artel video systems") && icontains(protocol,"snmp"))
+  method: GET
+  

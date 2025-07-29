@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Memotec Inc.
+  cpe: ''
+  product: memotec-cx-u1010
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"cx-u1010 ran gateway")
+  method: GET
+  

@@ -1,0 +1,13 @@
+info:
+  category: router
+  company: DrayTek Corp.
+  cpe: ''
+  product: draytek-vigor2130
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && icontains(banner,"vigor2130"))
+    || ((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && icontains(banner,"server:
+    draytek/vigor2130")))'
+  method: GET
+  

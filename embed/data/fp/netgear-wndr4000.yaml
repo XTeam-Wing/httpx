@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-wndr4000
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"netgear wndr4000") || icontains(banner,"realm=\"netgear
+    wndr4000"))
+  method: GET
+  

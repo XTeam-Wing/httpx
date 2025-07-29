@@ -1,0 +1,13 @@
+info:
+  category: other support system
+  company: other
+  cpe: ''
+  product: moodle
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((((icontains(body,"m.str = {\"moodle\":") || icontains(banner,"moodleid_"))
+    || icontains(banner,"moodleid_")) || icontains(body,"content=\"moodle")) || icontains(banner,"moodlesession="))
+    || icontains(banner,"moodlesession=")) || icontains(body,"title=\"moodle\" href=\"http://moodle.org/"))
+  method: GET
+  

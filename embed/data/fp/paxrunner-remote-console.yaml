@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: other
+  cpe: ''
+  product: paxrunner-remote-console
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"pax-runner remote console")
+  method: GET
+  

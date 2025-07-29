@@ -1,0 +1,15 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: pre-printing-press
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<p align=\"left\"><select id=\"mylist\" name=\"mylist\" onchange
+    = \"go()\" style=\"font-family:")||(icontains(body,"<input id=\"ib_attrib_disk_quantity-2\"
+    type=\"radio\" onclick=\"showsubcat(this.value)\" value=\"olduser\" name=\"allusers\"
+    />"))||(icontains(body,"<div align=\"center\">&copy; copyright preprojects.com all
+    rights reserved</div>"))
+  method: GET
+  

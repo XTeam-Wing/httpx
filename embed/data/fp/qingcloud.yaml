@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: qingcloud
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"qingcloudelb")||(icontains(body,"content=\"云之基石，自由计算。qingcloud 青云为您提供按需分配、弹性可伸缩的计算能力。\""))||(icontains(header,"qingcloudelb"))
+  method: GET
+  

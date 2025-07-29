@@ -1,0 +1,11 @@
+info:
+  category: blockchain
+  company: other
+  cpe: ''
+  product: minergate-claymore-miner
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(body,"eth: gpu0") || icontains(body,"eth — total speed:"))'
+  method: GET
+  

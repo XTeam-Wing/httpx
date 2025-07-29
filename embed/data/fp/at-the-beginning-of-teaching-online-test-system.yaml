@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Fuxin Jiaozhichu Technology Development Co., Ltd.
+  cpe: ''
+  product: at-the-beginning-of-teaching-online-test-system
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"href=\"/ksxt/h5/images/jiaozhichu.ico") || icontains(body,"content=\"jiaozhichu"))
+    || icontains(title,"教之初在线考试系统 - jiaozhichu"))
+  method: GET
+  

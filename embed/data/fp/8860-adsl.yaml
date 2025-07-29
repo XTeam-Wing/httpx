@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Innoband Technologies
+  cpe: ''
+  product: 8860-adsl
+  server: nginx
+  tags: []
+rules:
+- dsl: 'icontains(banner,"8860-c1. h/w: adsl-m")'
+  method: GET
+  

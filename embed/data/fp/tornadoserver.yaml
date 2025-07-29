@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Tornado Authors
+  cpe: ''
+  product: tornadoserver
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: tornadoserver") || icontains(banner,"server: tornadoserver"))'
+  method: GET
+  

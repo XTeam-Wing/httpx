@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: whiteboard
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"&copy; <a href=\"http://www.powerwd.com\">sarosoftware</a><br />")
+  method: GET
+  

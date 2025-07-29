@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: HP Development Company, L.P.
+  cpe: ''
+  product: compact-router
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"compact router") && icontains(protocol,"snmp")) || icontains(banner,"realm=\"compact
+    router"))
+  method: GET
+  

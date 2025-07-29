@@ -1,0 +1,11 @@
+info:
+  category: data certificate
+  company: Beijing Digital Certification Co., Ltd.
+  cpe: ''
+  product: digital-certification-believe-in-management-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<li><a href=\"/install/certapp_bd.exe\">下载证书应用环境</a></li>")
+  method: GET
+  

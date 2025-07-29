@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ppvod-videosystem
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"ppvod视频管理系统") && icontains(body,"ppvod copyright")||(icontains(body,"ppvod
+    copyright"))
+  method: GET
+  

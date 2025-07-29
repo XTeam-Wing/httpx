@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: SingleComm, LLC.
+  cpe: ''
+  product: singlecomm-analysis-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: singlecomm") || icontains(banner,"server: singlecomm"))'
+  method: GET
+  

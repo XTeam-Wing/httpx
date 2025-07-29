@@ -1,0 +1,11 @@
+info:
+  category: network storage
+  company: HP
+  cpe: ''
+  product: hp-b6000-storeonce
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"href=\"./theme/default/css/hp_fusion_management.css\"")
+  method: GET
+  

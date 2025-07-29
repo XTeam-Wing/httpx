@@ -1,0 +1,11 @@
+info:
+  category: wireless network
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-erg2-1350w
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"erg2-1350w系统管理")
+  method: GET
+  

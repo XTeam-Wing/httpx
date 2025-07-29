@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Qianxin Technology Group Co., Ltd.
+  cpe: ''
+  product: qi'an-letter-website-security-testing
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"webscan.360.cn/status/pai/hash")
+  method: GET
+  

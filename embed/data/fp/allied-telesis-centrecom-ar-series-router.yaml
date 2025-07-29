@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Allied Telesis, Inc.
+  cpe: ''
+  product: allied-telesis-centrecom-ar-series-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"centrecom&reg; arx640s</span>") || icontains(body,"centrecom&reg;
+    ar260s v2</span>"))
+  method: GET
+  

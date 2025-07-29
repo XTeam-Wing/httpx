@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: open-realty
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"href=\"http://www.open-realty.org\" title=\"powered by open-realty")
+    || icontains(body,"content=\"open-realty")) || icontains(title,"open-realty"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: database system
+  company: Basho Technologies
+  cpe: ''
+  product: riak-db
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(protocol,"riak")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: copadd400
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"page/downloadlinuxclient.is.run")||(icontains(title,"科博安全隔离与信息交换系统"))||(icontains(body,"科博安全隔离与信息单向导入系统</span>"))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Alcatel-Lucent S.A.
+  cpe: ''
+  product: alcatel-lucent-ip1020
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"alcatel ip1020") || icontains(banner,"realm=\"alcatel
+    ip1020"))
+  method: GET
+  

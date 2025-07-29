@@ -1,0 +1,15 @@
+info:
+  author: 哆啦A梦
+  description: JumpServer 堡垒机符合运维安全审计 4A 规范
+  tags: []
+  product: jumpserver堡垒机
+  category: cms
+rules:
+- method: GET
+  path: 
+   - "/core/auth/login"
+  dsl: contains(body, "/static/js/jumpserver.js") || contains(title, "JumpServer") || contains(body,"/static/css/jumpserver.css") || contains(body, "欢迎使用Jumpserver开源堡垒机</h2>") || contains(body, "href=\"https://github.com/jumpserver/jumpserver\"") || contains(body,"id=\"LoginConstants\" type=\"com.fit2cloud.support.common.constants.LoginConstants\"")
+- method: GET
+  path:
+   - "/favicon.ico"
+  dsl: status_code==200 && ('d5d914f5db9cf9b5283ab4d9e35c59ff' == md5(body))

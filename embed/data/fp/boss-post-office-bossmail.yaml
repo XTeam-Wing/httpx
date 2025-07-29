@@ -1,0 +1,12 @@
+info:
+  category: electronic mail system
+  company: Xiamen China Resources Network Service Co., Ltd.
+  cpe: ''
+  product: boss-post-office-bossmail
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"esmtp bossmail") || icontains(body,"href=\"http://apps.microsoft.com/windows/zh-cn/app/bossmail/24f4bdb3-1bca-467e-9dd9-15a5d278aec6"))
+    || icontains(body,"<span class=\"footer_t\">powered by bossmail</span>"))
+  method: GET
+  

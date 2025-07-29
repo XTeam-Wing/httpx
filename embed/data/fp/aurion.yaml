@@ -1,0 +1,17 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: aurion
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/aurion.js")||(icontains(body,"<!-- aurion teal will be used as the
+    login-time default"))||(icontains(body,"<br/>please enable javascript in your browser
+    or refer to you internal it support for assistance.<br/><br/></div>"))||(icontains(body,"<!--
+    aurion teal will be used as the login-time default. shell layouts will replace
+    these after login. -->"))||(icontains(body,"<!-- teal.css has stuff needed for div#loading-noscript
+    -->"))||(icontains(body,"<meta http-equiv=\"x-ua-compatible\" content=\"chrome=1;
+    ie=8; ie=7\"> <!-- stop internet explorer from using \"compatability mode\" -->"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Oracle Corporation
+  cpe: ''
+  product: netscape-enterprise
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: netscape-enterprise") || icontains(banner,"netscape-enterprise"))'
+  method: GET
+  

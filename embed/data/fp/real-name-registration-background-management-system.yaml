@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: real-name-registration-background-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"实名登记后台管理系统")
+  method: GET
+  

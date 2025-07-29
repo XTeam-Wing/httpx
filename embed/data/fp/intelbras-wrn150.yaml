@@ -1,0 +1,12 @@
+info:
+  category: adsl
+  company: intelbras lnc.
+  cpe: ''
+  product: intelbras-wrn150
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"realm=\"wrn150") || icontains(title,"roteador wireless
+    n wrn150")) || icontains(banner,"realm=\"wrn150"))
+  method: GET
+  

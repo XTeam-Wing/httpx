@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Fujitsu Ltd
+  cpe: ''
+  product: fujitsu-primergy-bx900
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"primergy bx900")
+  method: GET
+  

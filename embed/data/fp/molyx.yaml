@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: molyx
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"molyx")
+  method: GET
+  

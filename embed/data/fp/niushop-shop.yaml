@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: niushop-shop
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"template/shop/blue")||(icontains(title,"niushop开源商城"))
+  method: GET
+  

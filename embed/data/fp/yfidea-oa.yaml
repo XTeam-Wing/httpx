@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: yfidea-oa
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"background=\"oa/images/index/oalogin.jpg\"")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: switch
+  company: Alcatel-Lucent S.A.
+  cpe: ''
+  product: alcatel-lucent-os6900-x40
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"alcatel-lucent os6900-x40") || icontains(body,"<span>device
+    os6900-x40"))
+  method: GET
+  

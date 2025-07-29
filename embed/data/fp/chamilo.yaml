@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: chamilo
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(body,"<link href=\"http://www.chamilo.org/documentation.php\" rel=\"help\"
+    />")||(icontains(body,"<!-- end of #main\" started at the end of banner.inc.php -->"))'
+  method: GET
+  

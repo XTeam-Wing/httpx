@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: david-webbox
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(banner,"couchdb") && icontains(banner,"server: david-webbox"))
+    || (!icontains(banner,"couchdb") && icontains(banner,"server: david-webbox")))'
+  method: GET
+  

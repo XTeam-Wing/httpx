@@ -1,0 +1,12 @@
+info:
+  category: other network security
+  company: McAfee, Inc.
+  cpe: ''
+  product: mcafee-epolicy-orchestrator
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(title,"epolicy orchestrator") || icontains(banner,"server: undefined"))
+    || icontains(banner,"server: undefined"))'
+  method: GET
+  

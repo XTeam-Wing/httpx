@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: oms-运营管理系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"oms_运营管理系统")
+  method: GET
+  

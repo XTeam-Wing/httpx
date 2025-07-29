@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: IceWarp Ltd.
+  cpe: ''
+  product: icewarp-服务器
+  server: unknown
+  tags: []
+rules:
+- dsl: '(icontains(banner,"Server: IceWarp") && header!="couchdb" && header!="drupal")
+    || (icontains(banner,"Server: IceWarp") && banner!="couchdb" && banner!="drupal")'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Zirion
+  cpe: ''
+  product: zirion-network-card
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"zirion network card")
+  method: GET
+  

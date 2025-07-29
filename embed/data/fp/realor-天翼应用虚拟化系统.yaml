@@ -1,0 +1,11 @@
+info:
+  category: virtualization
+  company: Xi'an Ruiyou Information Technology Information Co., Ltd.
+  cpe: ''
+  product: realor-天翼应用虚拟化系统
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"瑞友天翼－应用虚拟化系统")
+  method: GET
+  

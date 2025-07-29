@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Cradlepoint, Inc.
+  cpe: ''
+  product: cradlepoint-cr4250
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"cplogin.model = \"cr4250\";") || icontains(body,"cplogin.model
+    = \"cr4250-poe\";"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Beijing Wenwang Yilian Technology Co., Ltd.
+  cpe: ''
+  product: wen-net-yuri-wen-wang-guardian-qigamai-wan-intelligent-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"abcdefghjkmnpqrstwxyzabcdefhijkmnprstwxyz2345678") && icontains(title,"文网卫士全千兆多wan智能路由器"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: vpn products
+  company: Pullian Technology Co., Ltd.
+  cpe: ''
+  product: entrolink-ppx-anylink
+  server: apache
+  tags: []
+rules:
+- dsl: icontains(title,"PPX-AnyLink")
+  method: GET
+  

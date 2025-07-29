@@ -1,0 +1,11 @@
+info:
+  category: operating system
+  company: Scientific Linux
+  cpe: ''
+  product: scientific-linux
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"scientific linux")
+  method: GET
+  

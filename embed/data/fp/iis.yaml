@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: Microsoft Corporation
+  cpe: ''
+  product: iis
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"server") && icontains(banner,"microsoft-iis")) || icontains(banner,"x-powered-by:
+    waf/2.0")) || icontains(banner,"microsoft-iis"))'
+  method: GET
+  

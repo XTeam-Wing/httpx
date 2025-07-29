@@ -1,0 +1,12 @@
+info:
+  category: switch
+  company: Hewlett Packard Enterprise Development LP
+  cpe: ''
+  product: hpe-officeconnect-switch
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"hpe officeconnect switch") || icontains(title,"hpe officeconnect
+    switch"))
+  method: GET
+  

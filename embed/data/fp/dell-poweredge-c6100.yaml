@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Dell Inc.
+  cpe: ''
+  product: dell-poweredge-c6100
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"poweredge-c6100")
+  method: GET
+  

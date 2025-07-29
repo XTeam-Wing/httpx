@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: LANCOM Systems GmbH
+  cpe: ''
+  product: lancom-1784va
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"lancom 1784va")
+  method: GET
+  

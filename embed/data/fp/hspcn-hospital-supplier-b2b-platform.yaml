@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Hangzhou Tute Information Technology Co., Ltd.
+  cpe: ''
+  product: hspcn-hospital-supplier-b2b-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"医院物资供应商b2b平台")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 分类信息网bank.asp后门
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"分类信息网bank.asp后门")
+  method: GET
+  

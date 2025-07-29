@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: 360 Enterprise Security Group
+  cpe: ''
+  product: 360-enterprise-edition
+  server: nginx
+  tags: []
+rules:
+- dsl: (!icontains(body,"天擎") && ((((icontains(title,"360企业版") || icontains(body,"/download/360inst.exe"))
+    || title == "私有云控制中心") || icontains(body,"关于全网部署360私有云的通知")) || icontains(body,"360entinst")))
+  method: GET
+  

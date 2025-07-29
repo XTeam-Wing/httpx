@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Yongyou Network Technology Co., Ltd.
+  cpe: ''
+  product: yongyou-smart-factory
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"/modules/core/client/views/sidemenu.client.view.html")
+  method: GET
+  

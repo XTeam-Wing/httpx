@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: fiamm-camera
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(body,"vb.htm?authority3=") && icontains(body,"fiamm. all rights reserved.")||(icontains(header,"server:
+    fiamm onvif"))||(icontains(body,"fiamm. all rights reserved."))||(icontains(body,"vb.htm?authority3="))'
+  method: GET
+  

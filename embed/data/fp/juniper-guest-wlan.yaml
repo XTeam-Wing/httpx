@@ -1,0 +1,11 @@
+info:
+  category: wireless network
+  company: Juniper Networks, Inc.
+  cpe: ''
+  product: juniper-guest-wlan
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"juniper guest wlan")
+  method: GET
+  

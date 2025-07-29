@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Anhui Chuangshi Technology Co., Ltd.
+  cpe: ''
+  product: crearo-streaming-media-server
+  server: nginx
+  tags: []
+rules:
+- dsl: 'icontains(banner,"server: crearo rtsp server")'
+  method: GET
+  

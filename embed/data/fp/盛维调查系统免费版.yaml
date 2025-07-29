@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 盛维调查系统免费版
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"盛维调查系统免费版")
+  method: GET
+  

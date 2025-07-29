@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Roxen AB
+  cpe: ''
+  product: roxen
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: roxen") || icontains(banner,"server: roxen"))'
+  method: GET
+  

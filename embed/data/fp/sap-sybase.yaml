@@ -1,0 +1,13 @@
+info:
+  category: database system
+  company: SAP Software Solutions
+  cpe: ''
+  product: sap-sybase
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"server: sqlanywhere") || icontains(banner,"server: sqlanywhere"))
+    || icontains(banner,"server: adaptiveserveranywhere")) || icontains(banner,"server:
+    adaptiveserveranywhere"))'
+  method: GET
+  

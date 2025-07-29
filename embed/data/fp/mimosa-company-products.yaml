@@ -1,0 +1,12 @@
+info:
+  category: other iot device
+  company: Mimosa Networks, Inc.
+  cpe: ''
+  product: mimosa-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"mimosa.isconnected=") || icontains(body,"client/img/mimosa-white-web-logo.png"))
+    || icontains(title,"mimosa"))
+  method: GET
+  

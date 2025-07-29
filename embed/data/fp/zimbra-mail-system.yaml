@@ -1,0 +1,13 @@
+info:
+  category: electronic mail system
+  company: Zimbra, Inc.
+  cpe: ''
+  product: zimbra-mail-system
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((((icontains(title,"zimbra 网络客户端登录") || icontains(banner,"zimbra pop3 server"))
+    || icontains(banner,"zimbra imap4rev1")) || icontains(body,"content=\"zimbra"))
+    || icontains(body,"window._zimbramail")) || icontains(banner,"zm_test=")) || icontains(banner,"zm_test="))
+  method: GET
+  

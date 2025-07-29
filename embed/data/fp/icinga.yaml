@@ -1,0 +1,11 @@
+info:
+  category: host monitoring && auditing
+  company: other
+  cpe: ''
+  product: icinga
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"icinga") || icontains(banner,"icinga"))
+  method: GET
+  

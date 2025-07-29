@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Beijing Dongfang Simulation Control Technology Co., Ltd.
+  cpe: ''
+  product: oriental-simulation-enterprise-simulation-training-management-network
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"document.getelementbyid(\"hllogininfo\").click()")
+  method: GET
+  

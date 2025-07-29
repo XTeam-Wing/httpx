@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: Xiaomi Group
+  cpe: ''
+  product: naftis
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"href=\"/public/naftis.png") || title == "naftis")
+  method: GET
+  

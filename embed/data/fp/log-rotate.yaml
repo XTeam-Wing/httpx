@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: log-rotate
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"mod_ log_rotate") || icontains(banner,"mod_ log_rotate"))
+  method: GET
+  

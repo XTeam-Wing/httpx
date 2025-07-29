@@ -1,0 +1,15 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: zomplog
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"powered by <a href=\"http://zomplog.zomp.nl\" target=\"_blank\">zomplog</a>")||(icontains(body,"<title>zomplog
+    &rsaquo; login</title>"))||(icontains(body,"<td width=\"135\"><div align=\"right\"><span
+    class=\"style1\"><a href=\"http://www.zomp.nl/zomplog/\" target=\"_blank\">zomplog
+    &rsaquo;&rsaquo;</a> </span></div></td>"))||(icontains(body,"<meta name=\"generator\"
+    content=\"zomplog\" />"))||(icontains(body,"/* navbar (zomplog-specific) */"))
+  method: GET
+  

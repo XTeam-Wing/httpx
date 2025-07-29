@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Qianxin Technology Group Co., Ltd.
+  cpe: ''
+  product: qianxin-ngsoc
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"ngsoc日志采集探针") || icontains(title,"ngsoc关联规则引擎"))
+  method: GET
+  

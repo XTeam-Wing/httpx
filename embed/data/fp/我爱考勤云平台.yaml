@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 我爱考勤云平台
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"我爱考勤 云平台")||(icontains(title,"我爱考勤云平台"))
+  method: GET
+  

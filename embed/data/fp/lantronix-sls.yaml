@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Lantronix, Inc.
+  cpe: ''
+  product: lantronix-sls
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"lantronix sls")
+  method: GET
+  

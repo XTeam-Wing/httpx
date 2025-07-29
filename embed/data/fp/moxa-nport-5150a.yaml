@@ -1,0 +1,12 @@
+info:
+  category: server
+  company: Mosa Technology (Shanghai) Co., Ltd.
+  cpe: ''
+  product: moxa-nport-5150a
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"nport 5150a") || ((icontains(body,"5150a") && icontains(title,"nport
+    web ")) && icontains(banner,"moxahttp")))
+  method: GET
+  

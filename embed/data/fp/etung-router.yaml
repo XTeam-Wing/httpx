@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Beijing Beikeyitang Technology Co., Ltd.
+  cpe: ''
+  product: etung-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"./img/logo.jpg") && icontains(body,"cgi-bin/cgibox.cgi"))
+  method: GET
+  

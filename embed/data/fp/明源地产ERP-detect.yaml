@@ -1,0 +1,11 @@
+info:
+  author: ev1l0o4g
+  description: ''
+  tags: []
+  product: 明源地产erp
+  category: cms
+rules:
+- method: GET
+  path:
+    - '/favicon.ico'
+  dsl: ('b09e6a22f7fcac7bc1019ca15640f8e6' == md5(body)) ||contains_all(body, "明源地产ERP", "明源售楼管理系统V5.0")

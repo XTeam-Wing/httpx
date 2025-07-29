@@ -1,0 +1,13 @@
+info:
+  category: host monitoring && auditing
+  company: other
+  cpe: ''
+  product: ganglia
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((icontains(banner,"gs=unspecified") || icontains(banner,"gs=unspecified"))
+    || icontains(body,"name=\"ganglia_form")) || icontains(body,"onchange=\"ganglia_form.submit();"))
+    || icontains(title,"ganglia:: cluster report"))'
+  method: GET
+  

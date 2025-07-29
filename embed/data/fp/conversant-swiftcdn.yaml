@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Conversant Solutions Pte Ltd.
+  cpe: ''
+  product: conversant-swiftcdn
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"swiftcdn")
+  method: GET
+  

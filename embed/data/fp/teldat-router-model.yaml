@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Teldat Group
+  cpe: ''
+  product: teldat-router-model
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"teldat") && icontains(banner,"router model "))
+  method: GET
+  

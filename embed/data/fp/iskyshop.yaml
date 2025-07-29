@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: iskyshop
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"iskyshop")
+  method: GET
+  

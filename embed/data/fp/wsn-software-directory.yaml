@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: wsn-software-directory
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<title>wsn software directory admin login</title>")||(icontains(body,"<title>wsn
+    software directory administration panel</title>"))||(icontains(body,"<textarea readonly
+    rows=\"20\" cols=\"75\">wsn software directory license agreement"))
+  method: GET
+  

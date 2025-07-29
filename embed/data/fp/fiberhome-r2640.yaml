@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Fenghuo Communication Technology Co., Ltd.
+  cpe: ''
+  product: fiberhome-r2640
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"r2640-ac ") || icontains(banner,"fh_r2640")) || (icontains(banner,"r2640")
+    && icontains(banner,"fiberhome networks ")))
+  method: GET
+  

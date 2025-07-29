@@ -1,0 +1,13 @@
+info:
+  category: printer
+  company: Konica Minolta, Inc.
+  cpe: ''
+  product: konica-minolta-bizhub
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"content-length: 0") && icontains(banner,"content-type:
+    text/html")) && icontains(banner,"location: https://")) && icontains(banner,"http/1.1
+    301 movprm"))'
+  method: GET
+  

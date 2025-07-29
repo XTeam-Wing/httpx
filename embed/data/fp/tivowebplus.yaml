@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: tivowebplus
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"tivowebplus") || icontains(banner,"realm=\"tivowebplus"))
+  method: GET
+  

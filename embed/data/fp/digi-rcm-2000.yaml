@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Digi International Inc.
+  cpe: ''
+  product: digi-rcm-2000
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"content-length: 337 ") && icontains(body,"window.location.replace(\"/flex\");"))'
+  method: GET
+  

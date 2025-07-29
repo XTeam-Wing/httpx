@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: tellabs Inc.
+  cpe: ''
+  product: tellabs
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"tellabs")
+  method: GET
+  

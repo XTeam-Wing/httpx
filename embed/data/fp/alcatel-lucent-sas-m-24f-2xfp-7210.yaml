@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Alcatel-Lucent S.A.
+  cpe: ''
+  product: alcatel-lucent-sas-m-24f-2xfp-7210
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"alcatel sas-m 24f 2xfp 7210")
+  method: GET
+  

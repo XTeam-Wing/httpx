@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Sercomm Corporation
+  cpe: ''
+  product: sercomm-drg600
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"drg600.wifi") || icontains(banner,"drg600"))
+  method: GET
+  

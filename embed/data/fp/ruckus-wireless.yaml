@@ -1,0 +1,14 @@
+info:
+  category: router
+  company: COMMSCOPE
+  cpe: ''
+  product: ruckus-wireless
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((((icontains(title,"ruckus wireless") || icontains(banner,"ruckus wireless
+    ")) || icontains(banner,"ruckuswireless")) || icontains(banner,"ruckuswireless"))
+    || icontains(title,"ruckus wireless")) || icontains(body,"mon.  tell me your username"))
+    || icontains(body,"alt=\"ruckus wireless\" title=\"ruckus wireless"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Dell Inc.
+  cpe: ''
+  product: dell-poweredge-t300
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"poweredge-t300")
+  method: GET
+  

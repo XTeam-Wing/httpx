@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 科达dvr接入网关
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"科达dvr接入网关")
+  method: GET
+  

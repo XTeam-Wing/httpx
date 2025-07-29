@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 康网等级医院评审迎检系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"康网 等级医院评审迎检系统")
+  method: GET
+  

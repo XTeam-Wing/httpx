@@ -1,0 +1,12 @@
+info:
+  category: antivirus gateway
+  company: PIOLINK, Inc.
+  cpe: ''
+  product: piolink-application-switch
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"piolink application switch") || icontains(banner,"piolink
+    application switch"))
+  method: GET
+  

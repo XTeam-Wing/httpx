@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: infraserver
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"infraserver")
+  method: GET
+  

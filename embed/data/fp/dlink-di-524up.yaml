@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: dlink-di-524up
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"di-524up") || icontains(banner,"realm=\"di-524up"))
+  method: GET
+  

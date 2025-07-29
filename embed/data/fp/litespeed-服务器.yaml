@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: LiteSpeed Technologies Inc.
+  cpe: ''
+  product: litespeed-服务器
+  server: unknown
+  tags: []
+rules:
+- dsl: 'icontains(banner,"server: LiteSpeed") || icontains(banner,"server: LiteSpeed")
+    || icontains(banner,"Server: LightSpeedServer") || icontains(banner,"Server: LightSpeedServer")'
+  method: GET
+  

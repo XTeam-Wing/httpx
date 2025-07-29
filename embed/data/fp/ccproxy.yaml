@@ -1,0 +1,15 @@
+info:
+  category: service
+  company: Youngzsoft Inc.
+  cpe: ''
+  product: ccproxy
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((((icontains(banner,"server time") && icontains(banner,"auth result:"))
+    && icontains(banner,"ip address: ")) && icontains(banner,"<pre>")) || icontains(banner,"realm=\"ccproxy
+    ")) || icontains(banner,"realm=\"ccproxy ")) || ((!icontains(banner,"drupal")
+    && !icontains(banner,"couchdb")) && icontains(banner,"server: ccproxy"))) || ((!icontains(banner,"drupal")
+    && !icontains(banner,"couchdb")) && icontains(banner,"server: ccproxy")))'
+  method: GET
+  

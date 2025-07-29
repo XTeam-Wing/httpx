@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: rocboss微社区
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"rocboss微社区")
+  method: GET
+  

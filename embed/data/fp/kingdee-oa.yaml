@@ -1,0 +1,12 @@
+info:
+  category: oa
+  company: Kingdee International Software Group
+  cpe: ''
+  product: kingdee-oa
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"logo-kingdee.png") || icontains(body,"location.href=\"/kingdee/index.jsp\""))
+    || icontains(banner,"oa/login/logout.jsp"))
+  method: GET
+  

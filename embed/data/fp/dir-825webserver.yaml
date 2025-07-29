@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: dir-825webserver
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"dir-825 web server")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Songsen Technology Co., Ltd.
+  cpe: ''
+  product: pantek-smart-router
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"alt=\"歡迎使用智慧路由器\"")
+  method: GET
+  

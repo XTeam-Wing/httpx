@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: b2evolution
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"content=\"b2evolution") || icontains(body,"powered by b2evolution"))
+    || icontains(body,"/powered-by-b2evolution-150t.gif"))
+  method: GET
+  

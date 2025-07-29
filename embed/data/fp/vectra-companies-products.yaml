@@ -1,0 +1,11 @@
+info:
+  category: threat analysis && management
+  company: Vectra AI, Inc
+  cpe: ''
+  product: vectra-companies-products
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"vectra.base.css")
+  method: GET
+  
