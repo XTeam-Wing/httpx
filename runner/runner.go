@@ -1967,6 +1967,9 @@ retry:
 			for method, paths := range r.tech.URIs {
 				gologger.Debug().Msgf("Running technology detection for method %s with path %d", method, len(paths))
 				for _, path := range paths {
+					if ctx.Err() != nil {
+						break
+					}
 					if path == "" || path == "/" {
 						continue // skip favicon.ico and empty paths
 					}
@@ -1990,7 +1993,6 @@ retry:
 						}
 						if err != nil {
 							cancel()
-							gologger.Warning().Msgf("tech detect error: %s", err)
 							return err
 						}
 						product, err := r.tech.Detect(fullURL, path, method, "", techResp)
