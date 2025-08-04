@@ -1948,7 +1948,7 @@ retry:
 			technologies = append(technologies, product...)
 			r.tech.AddMatchedProduct(fullURL, product)
 		}
-		product, err = r.tech.DetectNuclei(fullURL, "/", method, faviconMMH3, resp)
+		product, err = r.tech.FingerHubDetect(fullURL, "/", method, faviconMMH3, resp)
 		if err != nil {
 			gologger.Warning().Msgf("nuclei detect tech error: %s", err)
 		}
@@ -1962,7 +1962,7 @@ retry:
 			var ctx, cancel = context.WithCancel(context.Background())
 			defer cancel()
 
-			eg, _ := errgroup.WithContext(ctx)
+			eg, ctx := errgroup.WithContext(ctx)
 			eg.SetLimit(10)
 			for method, paths := range r.tech.URIs {
 				gologger.Debug().Msgf("Running technology detection for method %s with path %d", method, len(paths))
@@ -1986,7 +1986,6 @@ retry:
 							gologger.Warning().Msgf("failed to create request for %s: %s", u.String(), err)
 							return err
 						}
-						// gologger.Debug().Msgf("Sending technology detection request to %s with method %s", u.String(), techReq.Method)
 						techResp, err := hp.Do(techReq, httpx.UnsafeOptions{URIPath: reqURI})
 						if r.options.ShowStatistics {
 							r.stats.IncrementCounter("requests", 1)
@@ -2006,7 +2005,7 @@ retry:
 							cancel()
 							mu.Unlock()
 						}
-						product, err = r.tech.DetectNuclei(fullURL, path, method, faviconMMH3, techResp)
+						product, err = r.tech.FingerHubDetect(fullURL, path, method, faviconMMH3, techResp)
 						if err != nil {
 							gologger.Warning().Msgf("nuclei detect tech error: %s", err)
 						}
@@ -2255,7 +2254,7 @@ retry:
 						technologies = append(technologies, products...)
 					}
 
-					products, err = r.tech.DetectNuclei(fullURL, "/", "GET", "", newResp)
+					products, err = r.tech.FingerHubDetect(fullURL, "/", "GET", "", newResp)
 					if err != nil {
 						gologger.Warning().Msgf("detect tech error: %s", err)
 					}

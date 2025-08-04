@@ -319,7 +319,7 @@ func (t *TechDetecter) Detect(inputURL, requestPath, requestMethod, faviconMMH3 
 	return sliceutil.Dedupe(products), nil
 }
 
-func (t *TechDetecter) DetectNuclei(inputURL, requestPath, requestMethod, faviconMMH3 string, response *httpx.Response) ([]string, error) {
+func (t *TechDetecter) FingerHubDetect(inputURL, requestPath, requestMethod, faviconMMH3 string, response *httpx.Response) ([]string, error) {
 	dslMap := responseToDSLMap(response, "", inputURL, "", "", string(response.Data), response.RawHeaders, 0, nil)
 	// 如果请求方法为空，默认为GET
 	if requestMethod == "" {
