@@ -244,7 +244,7 @@ func New(options *Options) (*Runner, error) {
 	if len(scanopts.Methods) == 0 {
 		scanopts.Methods = append(scanopts.Methods, http.MethodGet)
 	}
-	runner.options.protocol = httpx.HTTPorHTTPS
+	runner.options.protocol = httpx.HTTPandHTTPS
 	scanopts.VHost = options.VHost
 	scanopts.OutputTitle = options.ExtractTitle
 	scanopts.OutputStatusCode = options.StatusCode
@@ -1986,6 +1986,8 @@ retry:
 							gologger.Warning().Msgf("failed to create request for %s: %s", u.String(), err)
 							return err
 						}
+						hp.SetCustomHeaders(techReq, hp.CustomHeaders)
+
 						techResp, err := hp.Do(techReq, httpx.UnsafeOptions{URIPath: reqURI})
 						if r.options.ShowStatistics {
 							r.stats.IncrementCounter("requests", 1)
