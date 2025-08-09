@@ -1,0 +1,14 @@
+info:
+  category: other software system
+  company: 'Sony Pictures Entertainment Inc. '
+  cpe: ''
+  product: sony-liv
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(body,"content=\"sony liv") || icontains(body,"<meta name=\"twitter:image\"
+    content=\"http://sonyliv.com/asset/socialsharelogo\"/>")) || icontains(body,"<meta
+    name=\"author\" content=\"sony pictures networks india pvt. ltd\">")) || icontains(body,"http://sonyliv.com/asset/socialsharelogo"))
+    || icontains(title,"sony liv"))
+  method: GET
+  

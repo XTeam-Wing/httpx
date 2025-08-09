@@ -1,0 +1,13 @@
+info:
+  category: service
+  company: Apache Software Foundation.
+  cpe: ''
+  product: tomcat-manager-application
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(banner,"x-generator: drupal") && icontains(banner,"tomcat manager
+    application")) || (!icontains(banner,"x-generator: drupal") && icontains(banner,"tomcat
+    manager application")))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: development framework
+  company: other
+  cpe: ''
+  product: laravel-admin
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"欢迎登录laravel-admin</p>") || icontains(body,"vendor/laravel-admin/"))
+  method: GET
+  

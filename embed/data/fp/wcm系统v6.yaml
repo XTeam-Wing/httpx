@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: wcm系统v6
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"wcm系统v6")
+  method: GET
+  

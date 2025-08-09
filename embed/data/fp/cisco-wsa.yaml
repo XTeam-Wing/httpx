@@ -1,0 +1,11 @@
+info:
+  category: web application firewall
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-wsa
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"cisco-wsa") || icontains(banner,"cisco-wsa"))
+  method: GET
+  

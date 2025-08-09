@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: hadsky校校通
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"hadsky校校通")
+  method: GET
+  

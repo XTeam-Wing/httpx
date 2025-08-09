@@ -1,0 +1,13 @@
+info:
+  category: cameras && surveillance
+  company: other
+  cpe: ''
+  product: vss-web
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((!icontains(banner,"28ze") && icontains(banner,"server: wcy_webserver"))
+    || (!icontains(body,"28ze") && icontains(banner,"server: wcy_webserver"))) ||
+    icontains(body,"<a href=\"http://www.vssweb.net/ivsweb.exe"))'
+  method: GET
+  

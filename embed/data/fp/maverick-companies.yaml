@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: MAVERICK TRANSPORTATION LLC.
+  cpe: ''
+  product: maverick-companies
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"maverick_sshd")
+  method: GET
+  

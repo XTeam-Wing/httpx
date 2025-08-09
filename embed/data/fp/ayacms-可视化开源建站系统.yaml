@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ayacms-可视化开源建站系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"ayacms_可视化开源建站系统")
+  method: GET
+  

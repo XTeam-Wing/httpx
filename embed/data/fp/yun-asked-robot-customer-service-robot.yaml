@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Nanjing Yunwen Network Technology Co., Ltd.
+  cpe: ''
+  product: yun-asked-robot-customer-service-robot
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"南京云问网络技术有限公司") && icontains(body,"content=\"faq客服机器人"))
+  method: GET
+  

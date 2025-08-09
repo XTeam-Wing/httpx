@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-p-660ru-t1
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"p-660ru-t1") || icontains(banner,"realm=\"p-660ru-t1"))
+  method: GET
+  

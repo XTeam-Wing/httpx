@@ -1,0 +1,11 @@
+info:
+  category: wireless network
+  company: TeleWell Oy
+  cpe: ''
+  product: telewell-eav510
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"tw-eav510") || icontains(title,"tw-eav510")) || icontains(banner,"tw-eav510"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: doxygen
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"doxygen")
+  method: GET
+  

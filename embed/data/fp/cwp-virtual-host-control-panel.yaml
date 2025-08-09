@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: cwp-virtual-host-control-panel
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"src=\"/login/cwp_theme/original/img/new_logo_small.png\"")
+    || icontains(body,"href=\"/login/cwp_theme/original/img/ico/favicon.ico\""))
+  method: GET
+  

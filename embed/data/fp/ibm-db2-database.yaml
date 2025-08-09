@@ -1,0 +1,11 @@
+info:
+  category: database system
+  company: International Business Machines Corporation
+  cpe: ''
+  product: ibm-db2-database
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(protocol,"db2")
+  method: GET
+  

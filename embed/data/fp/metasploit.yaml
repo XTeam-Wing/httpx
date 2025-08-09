@@ -1,0 +1,15 @@
+info:
+  category: hacking tool
+  company: Rapid7
+  cpe: ''
+  product: metasploit
+  server: nginx
+  tags: []
+rules:
+- dsl: (((((icontains(body,"metasploit") && icontains(banner,"_ui_session")) || ((icontains(body,"<meta
+    name=\"application-name\" content=\"metasploit") || icontains(body,"<li><b>metasploit
+    community edition users")) && icontains(body,"r7bottom-strip"))) || icontains(banner,"https://dev.metasploit.com"))
+    || icontains(banner,"https://dev.metasploit.com")) || icontains(title,"metasploit
+    is initializing..."))
+  method: GET
+  

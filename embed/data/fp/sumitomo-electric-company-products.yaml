@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Sumitomo Electric Industries, Ltd.
+  cpe: ''
+  product: sumitomo-electric-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"sumitomo electric industries") || icontains(banner,"realm=\"sumitomo
+    electric industries"))
+  method: GET
+  

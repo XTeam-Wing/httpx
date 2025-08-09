@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: pianosolo
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"piano solo")
+  method: GET
+  

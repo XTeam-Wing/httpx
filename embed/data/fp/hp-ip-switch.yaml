@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Hewlett Packard Enterprise Development LP
+  cpe: ''
+  product: hp-ip-switch
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"hp ip console switch")
+  method: GET
+  

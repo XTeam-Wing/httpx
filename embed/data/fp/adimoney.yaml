@@ -1,0 +1,14 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: adimoney
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"content=\"adimoney.com mobile advertisement network. ")||(icontains(body,"<img
+    src=\"/img/logo.png\" alt=\"adimoney\"/>"))||(icontains(title,"adimoney - mobile advertisement
+    network"))||(icontains(body,"content=\"adimoney.com mobile advertisement network."))||(icontains(body,"content=\"adimoney.com
+    mobile advertisement network"))
+  method: GET
+  

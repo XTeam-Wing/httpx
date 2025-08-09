@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: telecom-oss
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"; path=/portal/; httponly") && icontains(header,"/cas/login?service=")||(icontains(header,";
+    path=/portal/; httponly") && icontains(header,"/cas/login?service="))||(icontains(header,"/cas/login?service="))||(icontains(header,";
+    path=/portal/; httponly"))
+  method: GET
+  

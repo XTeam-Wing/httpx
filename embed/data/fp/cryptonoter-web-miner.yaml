@@ -1,0 +1,13 @@
+info:
+  category: blockchain
+  company: CryptoNoter
+  cpe: ''
+  product: cryptonoter-web-miner
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"new cryptonoter.user") || icontains(body,"miner.gethashespersecond"))
+    || icontains(title,"cryptonoter - in-browser javascript web miner")) || icontains(body,"miner
+    = new cryptonoter"))
+  method: GET
+  

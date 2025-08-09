@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Shenzhen Jixiang Tengda Technology Co., Ltd.
+  cpe: ''
+  product: tenda-w1800r
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"var sys_target = \"w1800r\"")
+  method: GET
+  

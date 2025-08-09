@@ -1,0 +1,12 @@
+info:
+  category: wireless network
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: d-link-dvg-n5402sp
+  server: nginx
+  tags: []
+rules:
+- dsl: ((!icontains(body,"lang_firmwarelogin") && (icontains(body,"welcome to dvg-n5402sp")
+    || icontains(body,"welcome to dvg-n5402sp-r"))) || icontains(title,"dvg-n5402sp/c1"))
+  method: GET
+  

@@ -1,0 +1,15 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: w7-officialaccounts
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"powered by we7.cc")||(icontains(body,"content=\"微擎,微信"))||(icontains(body,"onsubmit=\"return
+    formcheck();\" class=\"we7-form\">"))||(icontains(body,"class=\"copyright\">powered
+    by <a href=\"http://www.we7.cc\"><b>微擎</b>"))||(icontains(title,"powered by we7.cc"))||(icontains(title,"微擎
+    - 公众平台自助引擎"))||(icontains(body,"onsubmit=\"return formcheck;\" class=\"we7-form\">"))||(icontains(body,"content=\"微擎,微信")
+    && icontains(body,"onsubmit=\"return formcheck();\" class=\"we7-form\">"))
+  method: GET
+  

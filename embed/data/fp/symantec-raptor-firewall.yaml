@@ -1,0 +1,12 @@
+info:
+  category: firewall
+  company: Symantec Corporation
+  cpe: ''
+  product: symantec-raptor-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: simple, secure web server") || icontains(banner,"server:
+    simple, secure web server"))'
+  method: GET
+  

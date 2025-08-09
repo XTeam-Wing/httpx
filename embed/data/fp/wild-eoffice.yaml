@@ -1,0 +1,14 @@
+info:
+  category: oa
+  company: Shanghai Fanwei Network Technology Co., Ltd.
+  cpe: ''
+  product: wild-eoffice
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"general/login/index.php") || (!icontains(body,"server:
+    couchdb") && (((icontains(banner,"server: eoffice") || (icontains(body,"eoffice")
+    && icontains(body,"szfeatures"))) || icontains(body,"/general/login/view//images/updateload.gif"))
+    || icontains(banner,"general/login/index.php"))))'
+  method: GET
+  

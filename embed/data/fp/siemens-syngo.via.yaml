@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: siemens-syngo.via
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"class=\"backgr\" src=\"syngo-installation_1024x768.png")||(icontains(title,"syngo.via
+    start page"))
+  method: GET
+  

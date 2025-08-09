@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Dell Inc.
+  cpe: ''
+  product: dell-pct7024f
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"class=\"login_server_default\">pct7024f")
+  method: GET
+  

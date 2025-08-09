@@ -1,0 +1,14 @@
+info:
+  category: vpn products
+  company: Juniper Networks, Inc.
+  cpe: ''
+  product: juniper-vpn
+  server: nginx
+  tags: []
+rules:
+- dsl: (((((!icontains(title,"fs vpn") && !icontains(body,"pulse connect secure"))
+    && icontains(body,"href=\"/dana-na/css/ds.css\"")) && icontains(body,"dana-na/auth/lastauthserverused.js"))
+    || icontains(title,"juniper networks vpn")) || icontains(body,"junos pulse secure
+    access service"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 飞翔网络美女图库伪静态缓存版
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"飞翔网络美女图库伪静态缓存版")
+  method: GET
+  

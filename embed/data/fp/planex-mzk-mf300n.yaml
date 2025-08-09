@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: PLANET Technology Corporation.
+  cpe: ''
+  product: planex-mzk-mf300n
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"mzk-mf300n") || icontains(banner,"realm=\"mzk-mf300n"))
+  method: GET
+  

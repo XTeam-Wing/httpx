@@ -1,0 +1,13 @@
+info:
+  category: cameras && surveillance
+  company: Sony Corporation
+  cpe: ''
+  product: sony-camera
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"setwindowvar = window.open(\"/adm/file.cgi?next_file=setting.htm\",
+    \"adminwin\", setwinoptions);") || icontains(body,"name=\"jsvframe")) || icontains(body,"inquiry.cgi?inqjs=system"))
+    || icontains(title,"sony network camera"))
+  method: GET
+  

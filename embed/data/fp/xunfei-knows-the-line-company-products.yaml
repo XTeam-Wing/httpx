@@ -1,0 +1,13 @@
+info:
+  category: other enterprise application
+  company: Beijing Xunfei Le Zhixing Software Co., Ltd.
+  cpe: ''
+  product: xunfei-knows-the-line-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"/static/thirdparty/jquery/") || icontains(body,"var contextpath
+    = \"/datacenter")) || icontains(body,"location.href=contextpath+\"/login/password/password.jsp"))
+    || icontains(body,"action=\"/datacenter/authentication/login.do\" method=\"post"))
+  method: GET
+  

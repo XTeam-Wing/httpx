@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Beijing Boka Pioneer Software Development Co., Ltd.
+  cpe: ''
+  product: siteengine
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"content=\"boka siteengine")
+  method: GET
+  

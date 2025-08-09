@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: TAINET Communication System Corp.
+  cpe: ''
+  product: tainet-mercury-router-module
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"mercury router module, tainet communication system corp.")
+  method: GET
+  

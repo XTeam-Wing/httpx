@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: imgcms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"powered by imgcms")||(icontains(body,"content=\"imgcms"))
+  method: GET
+  

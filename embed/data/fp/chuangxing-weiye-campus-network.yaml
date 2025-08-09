@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Beijing Chuangxing Weiye Information Technology Co., Ltd.
+  cpe: ''
+  product: chuangxing-weiye-campus-network
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"vcxvcxv") && icontains(body,"javascripts/float.js"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Beijing Byzoro Network Technology Co., Ltd.
+  cpe: ''
+  product: byzoro-baihuo-audit-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<title> technology, inc.</title>") && icontains(body,"百卓网络"))
+  method: GET
+  

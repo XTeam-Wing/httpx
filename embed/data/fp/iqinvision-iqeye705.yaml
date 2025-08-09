@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Vicon Industries.
+  cpe: ''
+  product: iqinvision-iqeye705
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"iqeye705") || icontains(banner,"iqinvision iqeye705"))
+  method: GET
+  

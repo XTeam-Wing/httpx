@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 盘锦dj舞曲cms-2012
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"盘锦dj舞曲cms_2012")
+  method: GET
+  

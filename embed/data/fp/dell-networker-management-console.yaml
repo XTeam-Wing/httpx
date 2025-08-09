@@ -1,0 +1,12 @@
+info:
+  category: other software system
+  company: Dell Technologies
+  cpe: ''
+  product: dell-networker-management-console
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"emc corporation") && icontains(title,"welcome to networker
+    management console"))
+  method: GET
+  

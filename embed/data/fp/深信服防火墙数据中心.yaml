@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 深信服防火墙数据中心
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"redirect to...") && icontains(body,"/loginout.php")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Bridge5 Asia Pte Ltd
+  cpe: ''
+  product: bridge5asia-amss
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(body,"/statics/js/mdo-angular-cryptography.js") || icontains(body,"education
+    area management support system : amss++"))'
+  method: GET
+  

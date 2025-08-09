@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-dsl-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"zyxel dsl router") || icontains(banner,"realm=\"zyxel
+    dsl router"))
+  method: GET
+  

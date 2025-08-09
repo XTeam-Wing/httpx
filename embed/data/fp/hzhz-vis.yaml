@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: hzhz-vis
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"id=\"bodyid\"") && icontains(body,"src=\"lib/ext/ext-lang-zh_cn.js\"")||(icontains(body,"src=\"internal/ext/ext-lang-zh_cn.js\""))
+  method: GET
+  

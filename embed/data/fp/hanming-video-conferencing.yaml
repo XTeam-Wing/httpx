@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: hanming-video-conferencing
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/resources/fmweb/other/js/login.js")||(icontains(body,"class=\"win_introduce"))
+  method: GET
+  

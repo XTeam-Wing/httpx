@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 澜景网络
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"澜景网络")
+  method: GET
+  

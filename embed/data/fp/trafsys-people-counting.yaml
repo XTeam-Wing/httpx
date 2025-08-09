@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: other
+  cpe: ''
+  product: trafsys-people-counting
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"automatic people counting device")
+  method: GET
+  

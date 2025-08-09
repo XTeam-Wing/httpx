@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: h-ui前端框架
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"h-ui前端框架")||(icontains(title,"h-ui 前端框架"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: cloud computing
+  company: Zhejiang Yushi Technology Co., Ltd.
+  cpe: ''
+  product: uniview-ezclould
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"src=\"images/pag-logo.png\"")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: Jiaxing Xiangtian Information Technology Co., Ltd.
+  cpe: ''
+  product: opensns
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"os-icon-home app-icon ") || icontains(body,"content=\"opensns"))
+    || icontains(body,"powered by opensns"))
+  method: GET
+  

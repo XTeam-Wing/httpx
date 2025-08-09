@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: sockso
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: sockso") || icontains(banner,"server: sockso"))'
+  method: GET
+  

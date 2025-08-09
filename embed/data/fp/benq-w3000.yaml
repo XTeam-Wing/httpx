@@ -1,0 +1,11 @@
+info:
+  category: other office equipment
+  company: BENQ Corporation
+  cpe: ''
+  product: benq-w3000
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"w3000")
+  method: GET
+  

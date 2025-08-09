@@ -1,0 +1,11 @@
+info:
+  category: development framework
+  company: Nette Foundation.
+  cpe: ''
+  product: nette-framework
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(banner,"Nette Framework") || icontains(banner,"Nette Framework")
+  method: GET
+  

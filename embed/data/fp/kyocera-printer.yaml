@@ -1,0 +1,16 @@
+info:
+  category: printer
+  company: KYOCERA Corporation
+  cpe: ''
+  product: kyocera-printer
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((((((icontains(banner,"214- ftpd supported commands(rfc959 subset):") &&
+    icontains(banner," ftp server.")) && icontains(banner,"220")) || (icontains(banner,"kyocera
+    printer") && icontains(protocol,"snmp"))) || (icontains(body,"var modelname=")
+    && icontains(body,"var currentpage=\"\";"))) || icontains(body,"var modelname=\"fs-"))
+    || icontains(title,"kyocera command center")) || icontains(banner,"server: km-mfp-http"))
+    || icontains(banner,"server: km-mfp-http"))'
+  method: GET
+  

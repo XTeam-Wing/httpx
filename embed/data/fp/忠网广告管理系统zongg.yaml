@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 忠网广告管理系统zongg
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"忠网广告管理系统zongg")
+  method: GET
+  

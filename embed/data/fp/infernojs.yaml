@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: infernojs
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"infernojs")
+  method: GET
+  

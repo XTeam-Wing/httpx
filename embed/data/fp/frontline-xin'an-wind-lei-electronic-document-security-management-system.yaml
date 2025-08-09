@@ -1,0 +1,13 @@
+info:
+  category: file management && encryption
+  company: Beijing Frontier Xinan Technology Co., Ltd.
+  cpe: ''
+  product: frontline-xin'an-wind-lei-electronic-document-security-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"src=\"/drm/encjs/barrett.js\"") || (icontains(body,"action=\"/drm/login.do\"")
+    && icontains(body,"href=\"/drm/template/css/login.css\""))) || icontains(title,"前沿文档安全管理软件"))
+    || icontains(title,"前沿风雷电子文档安全管理系统"))
+  method: GET
+  

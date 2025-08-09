@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Dell Inc.
+  cpe: ''
+  product: dell-kvm-switch
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(body,"server: couchdb") && icontains(body,"/dell/")) && icontains(body,"src=\"/avct.js"))'
+  method: GET
+  

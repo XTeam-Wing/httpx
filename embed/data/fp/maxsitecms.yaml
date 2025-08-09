@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: maxsitecms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"maxsite cms")
+  method: GET
+  

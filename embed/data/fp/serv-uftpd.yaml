@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: serv-uftpd
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"serv-u ftpd")
+  method: GET
+  

@@ -1,0 +1,13 @@
+info:
+  category: web application firewall
+  company: other
+  cpe: ''
+  product: safe3waf
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((!icontains(banner,"couchdb") && icontains(banner,"safe3 web firewall"))
+    || icontains(banner,"safe3waf")) || (!icontains(banner,"couchdb") && icontains(banner,"safe3
+    web firewall"))) || icontains(banner,"safe3waf"))
+  method: GET
+  

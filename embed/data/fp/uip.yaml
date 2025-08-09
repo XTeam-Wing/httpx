@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: uip
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(banner,"couchdb") && icontains(banner,"server: uip")) || (!icontains(banner,"couchdb")
+    && icontains(banner,"server: uip")))'
+  method: GET
+  

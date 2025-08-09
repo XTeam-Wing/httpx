@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: diguocms帝国
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"diguocms帝国")
+  method: GET
+  

@@ -1,0 +1,14 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: tektroniks
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(body,"<td width=\"100\"><label id=\"au_login_id_label\" for=\"au_login_id\"
+    datatype=\"\" required=\"true\">user name:</label></td>")||(icontains(header,"server:
+    tektroniks"))||(icontains(header,"basic realm=\"datacentre"))||(icontains(body,"<p>transfering
+    you to login page in 2 seconds...</p>"))||(icontains(body,"basic realm=\"tektroniks\""))'
+  method: GET
+  

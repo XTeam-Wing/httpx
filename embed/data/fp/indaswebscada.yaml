@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: indaswebscada
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"indas web scada")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: cameras and surveillance
+  company: other
+  cpe: ''
+  product: video-monitoring-system
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"src=\"AMF/js/PlugIn/AllTag/AmysqlAllTag.js\"") && icontains(body,"src=\"AMF/AmysqlTag.aspx\"")
+  method: GET
+  

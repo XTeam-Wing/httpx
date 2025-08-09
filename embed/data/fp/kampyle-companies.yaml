@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: Kampyle LTD
+  cpe: ''
+  product: kampyle-companies
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"start kampyle feedback form button") || icontains(body,"http://cf.kampyle.com/k_button.js"))
+  method: GET
+  

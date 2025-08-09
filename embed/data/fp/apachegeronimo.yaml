@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: apachegeronimo
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"apache geronimo")
+  method: GET
+  

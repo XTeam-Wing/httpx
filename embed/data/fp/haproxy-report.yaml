@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: HAProxy Technologies, Inc.
+  cpe: ''
+  product: haproxy-report
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"statistics report for haproxy")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: sendmail
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"sendmail")
+  method: GET
+  

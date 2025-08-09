@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Shenzhen Tongzhou Electronics Co., Ltd.
+  cpe: ''
+  product: coship-emta
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"coship ") && icontains(body,"spanquickset")) && icontains(title,"emta"))
+  method: GET
+  

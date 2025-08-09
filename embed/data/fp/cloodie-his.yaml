@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Cloodie S.A.
+  cpe: ''
+  product: cloodie-his
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"href=\"/design/design/cloodie.css") || icontains(body,"src=\"/design/common/his.logo.white.svg\"
+    alt=\"his logo")) || icontains(title,"- cloodie his"))
+  method: GET
+  

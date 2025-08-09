@@ -1,0 +1,12 @@
+info:
+  category: project management system
+  company: other
+  cpe: ''
+  product: testlink
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"testlink project <a href=\"http://testlink.sourceforge.net/docs/testlink.php\">home</a><br
+    />") || icontains(body,"content=\"martin havlat\" />")) || icontains(body,"testlink_library.js"))
+  method: GET
+  

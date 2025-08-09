@@ -1,0 +1,14 @@
+info:
+  category: voice video
+  company: QuesCom
+  cpe: ''
+  product: quescom-qportal
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: octowebsvr/com") || (!icontains(body,"server: couchdb")
+    && (((icontains(body,"<frame src=\"/cticall/cticall_close.asp\" name=\"cticlose")
+    || icontains(banner,"server: octowebsvr/com")) || icontains(body,"href=\"/qpuser.css"))
+    || icontains(body,"<head profile=\"http://www.quescom.com"))))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Kingsoft Software Co., Ltd.
+  cpe: ''
+  product: jinshan-kinggate
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"/src/system/login.php")
+  method: GET
+  

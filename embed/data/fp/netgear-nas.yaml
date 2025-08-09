@@ -1,0 +1,12 @@
+info:
+  category: network storage
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-nas
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"netgear-nas") || (icontains(banner,"100nas") && icontains(banner,"netgear")))
+    || ((!icontains(banner,"cable modem") && icontains(banner,"100nas")) && icontains(banner,"netgear")))
+  method: GET
+  

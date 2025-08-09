@@ -1,0 +1,11 @@
+info:
+  category: project management system
+  company: Amazon.com, Inc.
+  cpe: ''
+  product: amazon-codebuild
+  server: unknown
+  tags: []
+rules:
+- dsl: 'icontains(cert,"codebuild") && icontains(cert,"Organization: Amazon")'
+  method: GET
+  

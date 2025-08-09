@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Juniper Networks, Inc.
+  cpe: ''
+  product: juniper-qfx5100-96s-8q
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"qfx5100-96s-8q")
+  method: GET
+  

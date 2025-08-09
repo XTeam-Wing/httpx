@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Beijing Qiangxun Technology Co., Ltd.
+  cpe: ''
+  product: strong-news-technology-talentel-log-recording-client
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"欢迎您使用talentel_log-录音客户端系统")
+  method: GET
+  

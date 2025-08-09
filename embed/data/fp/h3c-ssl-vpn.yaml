@@ -1,0 +1,12 @@
+info:
+  category: vpn products
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-ssl-vpn
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"h3c ssl vpn") || (icontains(body,"welcome to ssl vpn</h1>")
+    && icontains(body,"keep me signed in</span>")))
+  method: GET
+  

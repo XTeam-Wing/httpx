@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: dayincms-3d模型管理系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"dayincms_3d模型管理系统")||(icontains(title,"dayincms_3d模型管理系统"))
+  method: GET
+  

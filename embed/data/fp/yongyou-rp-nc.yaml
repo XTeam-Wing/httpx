@@ -1,0 +1,11 @@
+info:
+  category: erp
+  company: Yongyou Network Technology Co., Ltd.
+  cpe: ''
+  product: yongyou-rp-nc
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"用友新世纪") || icontains(body,"/nc/servlet/nc.ui.iufo.login.index"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 深信服下一代防火墙-ngaf
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"ngaf") && icontains(body,"sangfor") && icontains(body,"login")
+  method: GET
+  

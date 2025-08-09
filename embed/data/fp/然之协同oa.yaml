@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 然之协同oa
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"然之协同oa")
+  method: GET
+  

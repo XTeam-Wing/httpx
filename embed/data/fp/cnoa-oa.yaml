@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: cnoa-oa
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"powered by cnoa.cn")||(icontains(body,"admin@cnoa.cn"))||(icontains(body,"powered
+    by 协众oa"))||(icontains(body,"admin@cnoa.cn") && icontains(body,"powered by 协众oa"))
+  method: GET
+  

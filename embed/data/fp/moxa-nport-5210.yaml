@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Mosa Technology (Shanghai) Co., Ltd.
+  cpe: ''
+  product: moxa-nport-5210
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"nport 5210")
+  method: GET
+  

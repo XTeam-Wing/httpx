@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 水迅通水利信息化监测平台
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"水迅通 水利信息化监测平台")
+  method: GET
+  

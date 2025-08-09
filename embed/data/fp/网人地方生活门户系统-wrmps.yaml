@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 网人地方生活门户系统-wrmps
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"网人地方生活门户系统_wrmps")
+  method: GET
+  

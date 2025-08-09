@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ez-oscommerce
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"powered by <a href=\"http://www.eptcel.com.br\" target=\"_blank\">ez
+    oscommerce</a>")
+  method: GET
+  

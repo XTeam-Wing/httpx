@@ -1,0 +1,13 @@
+info:
+  category: cameras && surveillance
+  company: Formosa21 Inc
+  cpe: ''
+  product: vpon-video-surveillance
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((!icontains(banner,"couchdb") && !icontains(banner,"x-generator: drupal"))
+    && icontains(banner,"server: vpon server")) || icontains(banner,"server: vpon
+    server")) || icontains(body,"/ctrl_ver.js"))'
+  method: GET
+  

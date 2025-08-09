@@ -1,0 +1,12 @@
+info:
+  author: 哆啦A梦
+  description: CAS 是一种用于 Web 的企业多语言单点登录解决方案，并试图成为满足您的身份验证和授权需求的综合平台。
+  tags: []
+  product: apereo-cas
+  category: cms
+rules:
+- method: GET
+  path: 
+   - "/sso/favicon.ico"
+   - "/favicon.ico"
+  dsl: (status_code==200 && ('35caf5d7084b2ed8264526d02bc2e1d3' == md5(body))) || (status_code==200 && ('35caf5d7084b2ed8264526d02bc2e1d3' == md5(body))) || (status_code==200 && ('35caf5d7084b2ed8264526d02bc2e1d3' == md5(body))) || contains(body,'Powered by <a href=\"https://github.com/apereo/cas') || contains(body,'Apereo CAS</a></span>') || contains(body,'<title>CAS - Central') || contains(body,'id=\"cas-user-account')

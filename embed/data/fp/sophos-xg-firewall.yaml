@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Sophos Technologies Pvt. Ltd.
+  cpe: ''
+  product: sophos-xg-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(cert,"sophos xg firewall") && icontains(body,"var own_status"))
+  method: GET
+  

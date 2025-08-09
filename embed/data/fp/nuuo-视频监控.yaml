@@ -1,0 +1,11 @@
+info:
+  category: cameras and surveillance
+  company: NUUO Inc.
+  cpe: ''
+  product: nuuo-视频监控
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"Web Remote Client") || icontains(body,"href=\"liveview-htmlskin/LiveView.html\"")
+  method: GET
+  

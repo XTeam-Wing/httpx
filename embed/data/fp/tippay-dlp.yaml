@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: tippay-dlp
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"绿盾信息安全系统管理")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: tgate2000
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(banner,"TGate2000")
+  method: GET
+  

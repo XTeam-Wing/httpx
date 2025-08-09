@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: NetComm Limited
+  cpe: ''
+  product: casa-ns4000
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"url=https://ns4000.twinservers.net") || icontains(banner,"ns4000.twinservers.net"))
+    || icontains(banner,"ns4000.twinservers.net"))
+  method: GET
+  

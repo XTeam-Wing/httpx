@@ -1,0 +1,12 @@
+info:
+  category: threat analysis && management
+  company: Qianxin Technology Group Co., Ltd.
+  cpe: ''
+  product: qianxin-the-eyes
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"src=\"/static/img/skyeye-logo-big.png\">") || (!icontains(body,"/index.bundle.872998a4.js")
+    && icontains(title,"360天眼")))
+  method: GET
+  

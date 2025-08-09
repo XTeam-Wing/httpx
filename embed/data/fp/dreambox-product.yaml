@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: dreambox-product
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"welcome to dreambox") || icontains(banner,"dreambox"))
+  method: GET
+  

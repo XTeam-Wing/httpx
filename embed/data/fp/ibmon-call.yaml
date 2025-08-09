@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ibmon-call
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"ibm on-call")
+  method: GET
+  

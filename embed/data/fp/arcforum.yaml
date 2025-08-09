@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: arcforum
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"arc forum")
+  method: GET
+  

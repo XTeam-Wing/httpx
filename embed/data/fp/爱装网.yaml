@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 爱装网
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"爱装网")
+  method: GET
+  

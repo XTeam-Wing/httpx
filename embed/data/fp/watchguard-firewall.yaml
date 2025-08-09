@@ -1,0 +1,16 @@
+info:
+  category: firewall
+  company: WatchGuard Technologies, Inc.
+  cpe: ''
+  product: watchguard-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((((((icontains(banner,"watchguard configuration") && icontains(banner,"server:
+    firewall")) || icontains(banner,"digest realm=\"watchguard")) || icontains(banner,"watchguard
+    firewall")) || icontains(banner,"basic realm=\"watchguard")) || icontains(banner,"digest
+    realm=\"watchguard")) || icontains(banner,"server: watchguard firewall")) || icontains(banner,"basic
+    realm=\"watchguard")) || (((icontains(body,"/auth_portal/default/logo") || icontains(body,"wwui.swf"))
+    || icontains(body,"/wgcgi.cgi")) && icontains(title,"fireware")))'
+  method: GET
+  

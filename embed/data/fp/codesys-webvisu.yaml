@@ -1,0 +1,14 @@
+info:
+  category: service
+  company: CODESYS GmbH
+  cpe: ''
+  product: codesys-webvisu
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((((icontains(banner,"server: wago_webs") || icontains(banner,"/plc/webvisu.htm"))
+    || icontains(banner,"server: wago_webs")) || icontains(body,"<applet codebase=.
+    code=webvisu/webvisu.class name=\"webvisu")) || title == "codesys webvisualization")
+    || icontains(body,"<param name=\"startvisu\" value=\"plc_visu\">")) || icontains(banner,"/plc/webvisu.htm"))'
+  method: GET
+  

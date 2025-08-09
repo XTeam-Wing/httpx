@@ -1,0 +1,14 @@
+info:
+  category: router
+  company: Sky UK
+  cpe: ''
+  product: sky-router
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && icontains(banner,"server:
+    sky_router")) || ((!icontains(banner,"drupal") && !icontains(banner,"couchdb"))
+    && icontains(banner,"server: sky_router"))) || icontains(banner,"realm=\"sky router"))
+    || icontains(banner,"realm=\"sky router"))'
+  method: GET
+  

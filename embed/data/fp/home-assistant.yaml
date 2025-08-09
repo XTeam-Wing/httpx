@@ -1,0 +1,13 @@
+info:
+  category: smart home
+  company: other
+  cpe: ''
+  product: home-assistant
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((icontains(body,"home assistant") && icontains(body,"content=\"/static/icons/tile-win-70x70.png\""))
+    || icontains(title,"home assistant")) || icontains(banner,"server: home assistant"))
+    || icontains(banner,"server: home assistant"))'
+  method: GET
+  

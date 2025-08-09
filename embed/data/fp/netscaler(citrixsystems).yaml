@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: netscaler(citrixsystems)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"netscaler")||(icontains(title,"netscaler"))||(icontains(body,"citrix systems"))||(icontains(title,"citrix
+    systems"))
+  method: GET
+  

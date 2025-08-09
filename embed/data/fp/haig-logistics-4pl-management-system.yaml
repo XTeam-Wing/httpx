@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Shenzhen Haige Logistics Co., Ltd.
+  cpe: ''
+  product: haig-logistics-4pl-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"document.cookie=\"4pl07username=\"+arraystr")
+  method: GET
+  

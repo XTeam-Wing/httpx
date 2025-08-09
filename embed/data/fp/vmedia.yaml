@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: vmedia
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"vmedia")
+  method: GET
+  

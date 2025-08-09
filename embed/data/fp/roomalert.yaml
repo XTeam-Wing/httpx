@@ -1,0 +1,11 @@
+info:
+  category: industrial control
+  company: AVTECH Software, Inc.
+  cpe: ''
+  product: roomalert
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"room alert") || icontains(banner,"roomalert"))
+  method: GET
+  

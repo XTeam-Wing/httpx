@@ -1,0 +1,12 @@
+info:
+  category: web application firewall
+  company: InfoGuard AG
+  cpe: ''
+  product: infoguard-airlock
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"al_lb=") || icontains(banner,"al_sess=")) || icontains(banner,"al_lb="))
+    || icontains(banner,"al_sess="))
+  method: GET
+  

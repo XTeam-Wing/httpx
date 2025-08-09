@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: sansec-sjj1412
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"sjj1412") && icontains(body,">多用户在线管理可能导致不可预知错误")
+  method: GET
+  

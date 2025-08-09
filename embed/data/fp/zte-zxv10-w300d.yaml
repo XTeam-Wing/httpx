@@ -1,0 +1,12 @@
+info:
+  category: adsl
+  company: ZTE Corporation
+  cpe: ''
+  product: zte-zxv10-w300d
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"zxv10 w300d") || icontains(banner,"realm=\"zxv10
+    w300d"))
+  method: GET
+  

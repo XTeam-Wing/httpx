@@ -1,0 +1,13 @@
+info:
+  category: cameras && surveillance
+  company: Chengdu Zhijing Digital Technology Co., Ltd.
+  cpe: ''
+  product: taichen-video-surveillance
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"realm=\"unisight") && icontains(protocol,"rtsp")) || (((icontains(body,"<script
+    src=\"js/rightclick.js") && icontains(body,"<script src=\"js/png.js")) && icontains(body,"<script
+    src=\"js/flash.js")) && icontains(title,"surveillance system")))
+  method: GET
+  

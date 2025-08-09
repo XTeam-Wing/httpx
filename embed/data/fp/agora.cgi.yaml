@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: other
+  cpe: ''
+  product: agora.cgi
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"/store/agora.cgi") || icontains(body,"/agora.cgi?product="))
+  method: GET
+  

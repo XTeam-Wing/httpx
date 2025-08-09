@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: d-link-dap-2020
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<a href=\"http://www.dlink.com.tw\" target=_blank>dap-2020")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: printer
+  company: Dell Inc.
+  cpe: ''
+  product: dell-printer
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"<frame src=\"framelogo.htm\"") && icontains(server,"ews-nic5"))
+    || icontains(banner,"dell laser printer")) || icontains(title,"dell laser printer"))
+  method: GET
+  

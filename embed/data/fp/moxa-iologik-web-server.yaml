@@ -1,0 +1,12 @@
+info:
+  category: industrial control
+  company: Mosa Technology (Shanghai) Co., Ltd.
+  cpe: ''
+  product: moxa-iologik-web-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(banner,"couchdb") && icontains(banner,"iologik web server"))
+    || icontains(banner,"server: iologik web server"))'
+  method: GET
+  

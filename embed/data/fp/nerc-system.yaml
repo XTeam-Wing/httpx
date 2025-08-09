@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: nerc-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"frontend") && icontains(title,"页面加载中,请稍候")
+  method: GET
+  

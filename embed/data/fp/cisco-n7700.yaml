@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-n7700
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"cisco nx-os(tm) n7700")
+  method: GET
+  

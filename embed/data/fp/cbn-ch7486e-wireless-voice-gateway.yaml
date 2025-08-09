@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: 'Compal Broadband Networks,INC. '
+  cpe: ''
+  product: cbn-ch7486e-wireless-voice-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"ch7486e wireless voice gateway")
+  method: GET
+  

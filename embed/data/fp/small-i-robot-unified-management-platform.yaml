@@ -1,0 +1,11 @@
+info:
+  category: industrial control
+  company: Shanghai Zhizhen Intelligent Network Technology Co., Ltd.
+  cpe: ''
+  product: small-i-robot-unified-management-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"小i智能机器人统一管理平台") || icontains(body,"author:lvzhaohua"))
+  method: GET
+  

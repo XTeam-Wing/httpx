@@ -1,0 +1,11 @@
+info:
+  category: scripting language
+  company: Microsoft Corporation
+  cpe: ''
+  product: asp
+  server: nginx
+  tags: []
+rules:
+- dsl: 'icontains(banner,"x-powered-by: asp")'
+  method: GET
+  

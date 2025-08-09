@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Ren Zixing Network Technology Co., Ltd.
+  cpe: ''
+  product: yisheng-next-generation-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(cert,"commonname: surf-ngsa") || icontains(title,"任子行下一代防火墙"))'
+  method: GET
+  

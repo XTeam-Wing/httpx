@@ -1,0 +1,14 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: geeklog
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"powered by <a href=\"http://www.geeklog.net/\">geeklog</a>")||(icontains(body,"powered
+    by <a class=\"footer\" href=\"http://www.geeklog.net/\">geeklog</a>"))||(icontains(body,"<!--if
+    you want the splash, uncomment the last line. if you want no splash, make sure
+    it is commented out.-->"))
+  method: GET
+  

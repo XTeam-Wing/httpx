@@ -1,0 +1,12 @@
+info:
+  category: electronic mail system
+  company: phpList Ltd
+  cpe: ''
+  product: phplist-mail-system
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"&copy; <a href=\"http://phplist.com\" target") || icontains(body,"content=\"phplist
+    version")) || icontains(body,"content=\"michiel dethmers - http://www.phplist.com"))
+  method: GET
+  

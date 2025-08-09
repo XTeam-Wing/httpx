@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-asr1000
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"cisco ios software, asr1000 software")
+  method: GET
+  

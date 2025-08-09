@@ -1,0 +1,12 @@
+info:
+  category: operating system
+  company: SUSE LLC.
+  cpe: ''
+  product: opensuse
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(banner,"suse") || icontains(banner,"suse")) || icontains(banner,"x01welcome
+    to suse")) || icontains(banner,"opensuse")) || icontains(banner,"opensuse"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: restserver
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"restserver")
+  method: GET
+  

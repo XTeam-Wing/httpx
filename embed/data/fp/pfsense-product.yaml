@@ -1,0 +1,13 @@
+info:
+  category: firewall
+  company: Electric Sheep Fencing, LLC.
+  cpe: ''
+  product: pfsense-product
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"<h4>login to pfsense</h4>") || icontains(body,"rubicon communications,
+    llc (netgate)")) || icontains(body,"https://www.pfsense.org/?gui=bootstrap"))
+    || (icontains(protocol,"snmp") && icontains(banner,"pfsense ")))
+  method: GET
+  

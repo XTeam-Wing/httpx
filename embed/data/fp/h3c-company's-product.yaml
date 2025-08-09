@@ -1,0 +1,15 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: h3c-company's-product
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"new h3c technologies co., ltd. ")||(icontains(header,"hangzhou  h3c
+    "))||(icontains(header,"h3c login:"))||(icontains(header,"server: {\"length\": 0, \"chained_to\":
+    1919250030, \"identifier\": \"0\", \"str\": null}"))||(icontains(header,"hangzhou
+    h3c"))||(icontains(header,"h3c tech"))||(icontains(body,"icg_helpscript.js"))||(icontains(body,"h3c
+    corporation") && icontains(body,"copyright"))||(icontains(body,"service@h3c.com"))'
+  method: GET
+  

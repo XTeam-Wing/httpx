@@ -1,0 +1,11 @@
+info:
+  category: audit
+  company: Ren Zixing Network Technology Co., Ltd.
+  cpe: ''
+  product: yisheng-net110-network-security-audit-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"simplemodal.1.4.1.min.js") || icontains(body,"net110网络安全审计系统"))
+  method: GET
+  

@@ -1,0 +1,14 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: sentry-cloud
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(body,"src: url/static/fonts/lcdd.eot format\"truetype\", url/static/fonts/lcdd.ttf
+    format\"truetype\";")||(icontains(body,"src: url(/static/fonts/lcdd.eot) format(\"truetype\"),
+    url(/static/fonts/lcdd.ttf) format(\"truetype\");"))||(icontains(body,"src: url(/static/fonts/lcdd.eot)
+    format(\"truetype\", url(/static/fonts/lcdd.ttf) format(\"truetype\");"))||(icontains(title,"哨兵云"))'
+  method: GET
+  

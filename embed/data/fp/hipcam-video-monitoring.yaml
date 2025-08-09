@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: HIPCAM
+  cpe: ''
+  product: hipcam-video-monitoring
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"hiipcam/v100r003 ") || icontains(banner,"server: hipcam
+    realserver")) && icontains(protocol,"rtsp"))'
+  method: GET
+  

@@ -1,0 +1,14 @@
+info:
+  category: electronic mail system
+  company: other
+  cpe: ''
+  product: qmail
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((((icontains(banner,"qmail 5.1") || icontains(banner,"qmail smtp server"))
+    || icontains(banner,"qmail esmtp")) || icontains(banner,"esmtp qmail")) || icontains(banner,"welcome
+    to qmail toaster")) || ((icontains(protocol,"imap") || icontains(protocol,"smtp"))
+    && icontains(banner,"qmail-ldap"))) || icontains(banner,"qmail home page: http://pobox.com/~djb/qmail.html"))'
+  method: GET
+  

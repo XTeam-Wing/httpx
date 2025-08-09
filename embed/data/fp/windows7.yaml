@@ -1,0 +1,12 @@
+info:
+  category: operating system
+  company: Microsoft Corporation
+  cpe: ''
+  product: windows7
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"native os : windows 6.1") || icontains(banner,"windows
+    7 ")) || icontains(banner,"windows version 6.1"))'
+  method: GET
+  

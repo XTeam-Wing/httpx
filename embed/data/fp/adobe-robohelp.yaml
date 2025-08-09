@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Adobe Inc.
+  cpe: ''
+  product: adobe-robohelp
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"generator\" content=\"adobe robohelp")
+  method: GET
+  

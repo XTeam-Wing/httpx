@@ -1,0 +1,13 @@
+info:
+  category: other enterprise application
+  company: Beijing Hanbol Information Technology Co., Ltd.
+  cpe: ''
+  product: powercreator-cms
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"powercreator ") && icontains(body,"<span class=\"bottom_versionno\">"))
+    || icontains(body,"email:support@powercreator.com.cn<br />")) || icontains(title,"powercreator
+    cms"))
+  method: GET
+  

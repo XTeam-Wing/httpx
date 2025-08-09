@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-gs724tv3
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"gs724tv3")
+  method: GET
+  

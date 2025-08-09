@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 阿里云-云盾堡垒机
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"阿里云-云盾堡垒机")
+  method: GET
+  

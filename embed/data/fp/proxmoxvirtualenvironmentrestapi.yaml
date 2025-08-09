@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: proxmoxvirtualenvironmentrestapi
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"proxmox virtual environment rest api")
+  method: GET
+  

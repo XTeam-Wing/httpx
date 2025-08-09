@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: justcall
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"justadmin") && icontains(body,"userweb/index.php?module=user&action=login")||(icontains(body,"<a
+    href=\"http://www.justcall.cn\" target=\"_blank\">"))||(icontains(body,"form.action=\"/justadmin/index.html\";"))||(icontains(body,"justadmin")
+    && icontains(title,"欢迎您使用集时通讯呼叫中心"))||(icontains(body,"justadmin"))||(icontains(body,"userweb/index.php?module=user&action=login"))
+  method: GET
+  

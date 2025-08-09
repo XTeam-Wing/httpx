@@ -1,0 +1,12 @@
+info:
+  category: anti-virus product
+  company: Beijing Rising Information Technology Co., Ltd.
+  cpe: ''
+  product: rising-anti-drug-wall
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"action=\"/index.php\" onsubmit=\"return checkfrm(this);")
+    || icontains(title,"瑞星防毒墙")) || (icontains(cert,"cn=antivirus gateway") && icontains(cert,"ou=rising")))
+  method: GET
+  

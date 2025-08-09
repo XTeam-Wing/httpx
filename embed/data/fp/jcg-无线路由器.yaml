@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Shenzhen Yichen Technology Co., Ltd.
+  cpe: ''
+  product: jcg-无线路由器
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"Wireless Router") && icontains(body,"http://www.jcgcn.com")
+  method: GET
+  

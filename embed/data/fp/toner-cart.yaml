@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: toner-cart
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<p align=\"right\"><font color=\"#ffffff\">powered by <a href=\"http://www.vastal.com/\"
+    target=\"_blank\"><font color=\"#ffffff\">vastal i-tech")
+  method: GET
+  

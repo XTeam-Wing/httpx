@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 安徽商网-政府门户
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"安徽商网-政府门户")
+  method: GET
+  

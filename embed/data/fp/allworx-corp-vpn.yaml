@@ -1,0 +1,11 @@
+info:
+  category: vpn products
+  company: Allworx Corp.
+  cpe: ''
+  product: allworx-corp-vpn
+  server: nginx
+  tags: []
+rules:
+- dsl: 'icontains(banner,"vendor: allworx server vpn")'
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Belkin International, Inc.
+  cpe: ''
+  product: linksys-rt31p2
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"linksys rt31p2") || icontains(banner,"realm=\"linksys
+    rt31p2"))
+  method: GET
+  

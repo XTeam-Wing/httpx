@@ -1,0 +1,13 @@
+info:
+  category: vpn products
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: d-link-dsr-500n
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"dsr-500n") || icontains(body,"unified services router
+    - dsr-500n </div>")) || icontains(body,"<div class=\"floatl txt01\">product page:
+    dsr-500n"))'
+  method: GET
+  

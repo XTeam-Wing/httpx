@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Honeywell International Inc.
+  cpe: ''
+  product: honeywell-450tc-module
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"450tc2") || icontains(banner,"450tc1"))
+  method: GET
+  

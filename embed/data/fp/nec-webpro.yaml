@@ -1,0 +1,11 @@
+info:
+  category: voice video
+  company: NEC Corporation
+  cpe: ''
+  product: nec-webpro
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"banner.htm") && icontains(body,"javascript/signal.js"))
+  method: GET
+  

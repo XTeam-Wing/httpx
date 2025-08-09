@@ -1,0 +1,13 @@
+info:
+  category: other enterprise application
+  company: VMware, Inc.
+  cpe: ''
+  product: vmware-site-recovery-manager
+  server: unknown
+  tags: []
+rules:
+- dsl: 'icontains(banner,"VMware Site Recovery Manager ") || (icontains(cert,"Organization:
+    VMware, Inc.") && icontains(cert,"CommonName: SRM")) || icontains(title,"Welcome
+    to VMware Site Recovery Manager")'
+  method: GET
+  

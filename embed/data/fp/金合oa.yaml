@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 金合oa
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"jhsoft.web.login") && icontains(body,"password.aspx")
+  method: GET
+  

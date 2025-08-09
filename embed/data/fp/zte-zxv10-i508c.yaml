@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: ZTE Corporation
+  cpe: ''
+  product: zte-zxv10-i508c
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"zxv10-i508c")
+  method: GET
+  

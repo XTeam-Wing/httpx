@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: mercurymw300r
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"mercury mw300r")
+  method: GET
+  

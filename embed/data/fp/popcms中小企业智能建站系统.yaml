@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: popcms中小企业智能建站系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"popcms中小企业智能建站系统")
+  method: GET
+  

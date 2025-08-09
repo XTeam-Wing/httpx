@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-sr8806-x-s
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"sr8806-x-s")
+  method: GET
+  

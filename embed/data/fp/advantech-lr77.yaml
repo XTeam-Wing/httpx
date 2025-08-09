@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Advantech Co., Ltd.
+  cpe: ''
+  product: advantech-lr77
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"lr77-v2l") || icontains(banner,"lr77-v2")) || (icontains(banner,"lr77")
+    && icontains(protocol,"snmp")))
+  method: GET
+  

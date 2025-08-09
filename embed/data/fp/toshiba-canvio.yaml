@@ -1,0 +1,11 @@
+info:
+  category: network storage
+  company: Toshiba Corporation
+  cpe: ''
+  product: toshiba-canvio
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"welcome to silverstore 2-drive nas")
+  method: GET
+  

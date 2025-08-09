@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Apache Software Foundation.
+  cpe: ''
+  product: apache-forrest
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"name=\"forrest") || icontains(body,"content=\"apache forrest"))
+  method: GET
+  

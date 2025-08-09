@@ -1,0 +1,11 @@
+info:
+  category: antivirus gateway
+  company: PIOLINK, Inc.
+  cpe: ''
+  product: piolink-tifront-g24
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"tifront-g24")
+  method: GET
+  

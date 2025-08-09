@@ -1,0 +1,11 @@
+info:
+  category: electronic mail system
+  company: Microsoft Corporation
+  cpe: ''
+  product: microsoft-exchange-2016-pop3-server
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"microsoft exchange 2016 pop3 server")
+  method: GET
+  

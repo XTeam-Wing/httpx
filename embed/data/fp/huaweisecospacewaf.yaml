@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: huaweisecospacewaf
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"huawei secospace waf")
+  method: GET
+  

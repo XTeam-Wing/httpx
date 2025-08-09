@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 群晖-diskstation
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"synology") && icontains(body,"webman/")||(icontains(body,"diskstation")
+    && icontains(body,"webman/modules") && icontains(body,"nas"))||(icontains(body,"diskstation")
+    && icontains(body,"modules"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: printer
+  company: NEC Corporation
+  cpe: ''
+  product: nec-networkprinter500081
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"nec networkprinter500081")
+  method: GET
+  

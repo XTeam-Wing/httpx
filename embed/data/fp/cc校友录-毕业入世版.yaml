@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: cc校友录-毕业入世版
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"cc校友录_毕业入世版")
+  method: GET
+  

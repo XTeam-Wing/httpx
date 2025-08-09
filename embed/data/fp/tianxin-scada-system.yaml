@@ -1,0 +1,11 @@
+info:
+  category: industrial control
+  company: other
+  cpe: ''
+  product: tianxin-scada-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"天信scada系统-登录")
+  method: GET
+  

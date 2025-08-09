@@ -1,0 +1,13 @@
+info:
+  category: traffic analysis
+  company: other
+  cpe: ''
+  product: ntop
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((icontains(body,"/css/ntopng.css") || (!icontains(body,"couchdb") && icontains(body,"ntopmenuid")))
+    || icontains(banner,"server: ntop")) || icontains(banner,"server: ntop")) || (!icontains(body,"server:
+    couchdb") && icontains(body,"global traffic statistics")))'
+  method: GET
+  

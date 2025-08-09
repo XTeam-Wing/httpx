@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: Thermo Fisher Scientific Inc.
+  cpe: ''
+  product: thermo-fisher-datataker
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"htmlimages/mainbackground.png") || icontains(body,"htmljavascript/mootools.js"))
+    || icontains(title,"logger home - datataker")) || icontains(body,"htmljavascript/multibox/multibox.css"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Tongfang Co., Ltd.
+  cpe: ''
+  product: 清华同方-统计联网直报平台
+  server: nginx
+  tags: []
+rules:
+- dsl: (!icontains(title,"安徽") && icontains(title,"统计联网直报平台"))
+  method: GET
+  

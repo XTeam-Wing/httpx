@@ -1,0 +1,11 @@
+info:
+  category: fms
+  company: Jinan Yichao Information Technology Co., Ltd.
+  cpe: ''
+  product: extra-super-funding-examination-&&-approval-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"src=\"amy/webos/jpmanager.js\"")
+  method: GET
+  

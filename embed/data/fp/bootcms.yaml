@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: bootcms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"bootcms")||(icontains(title,"bootcms"))
+  method: GET
+  

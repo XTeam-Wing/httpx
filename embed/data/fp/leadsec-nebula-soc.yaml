@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Beijing Wangyu Xingyun Information Technology Co., Ltd.
+  cpe: ''
+  product: leadsec-nebula-soc
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"action=\"/leadsec-soc/signin") || icontains(body,"/leadsec-soc"))
+  method: GET
+  

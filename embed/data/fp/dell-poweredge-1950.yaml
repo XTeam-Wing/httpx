@@ -1,0 +1,12 @@
+info:
+  category: server
+  company: Dell Inc.
+  cpe: ''
+  product: dell-poweredge-1950
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"poweredge--1950/cgi-bin/sicweb.exe") || icontains(cert,"poweredge-1950"))
+    || icontains(banner,"poweredge-1950"))
+  method: GET
+  

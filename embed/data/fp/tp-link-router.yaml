@@ -1,0 +1,15 @@
+info:
+  category: router
+  company: Pullian Technology Co., Ltd.
+  cpe: ''
+  product: tp-link-router
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((((!icontains(banner,"couchdb") && !icontains(banner,"camera")) && !icontains(banner,"vpn"))
+    && !icontains(banner,"wireless")) && icontains(banner,"router")) && icontains(banner,"tp-link"))
+    || ((((((!icontains(body,"couchdb") && !icontains(banner,"couchdb")) && !icontains(banner,"camera"))
+    && !icontains(banner,"vpn")) && !icontains(banner,"wireless")) && icontains(banner,"router"))
+    && icontains(banner,"tp-link")))
+  method: GET
+  

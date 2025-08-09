@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: phppgadmin
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"phppgadmin") || icontains(body,"class=\"appname\">phppgadmin"))
+  method: GET
+  

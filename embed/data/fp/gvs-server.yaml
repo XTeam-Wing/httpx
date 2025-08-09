@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: gvs-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: gvs") || icontains(banner,"server: gvs"))'
+  method: GET
+  

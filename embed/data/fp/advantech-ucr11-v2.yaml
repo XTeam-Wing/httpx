@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Advantech Co., Ltd.
+  cpe: ''
+  product: advantech-ucr11-v2
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"ucr11-v2")
+  method: GET
+  

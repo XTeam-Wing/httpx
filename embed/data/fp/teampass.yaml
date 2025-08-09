@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: teampass
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"teampass")
+  method: GET
+  

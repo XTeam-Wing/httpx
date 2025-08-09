@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Ruijie Networks Co., Ltd.
+  cpe: ''
+  product: ruijie-commercial-cloud-router
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<meta http-equiv=\"refresh\" content=\"0; url=/cgi-bin/mcfi\"
+    />")
+  method: GET
+  

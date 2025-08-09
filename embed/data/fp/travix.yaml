@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: travix
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"travix")
+  method: GET
+  

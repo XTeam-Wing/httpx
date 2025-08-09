@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: leadsec-employee-internet-management
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"txtmac") && icontains(body,"asdf</div>-->")||(icontains(title,"leadsec
+    acm"))||(icontains(body,"asdf</div>-->"))||(icontains(body,"txtmac"))
+  method: GET
+  

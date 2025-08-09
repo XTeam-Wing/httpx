@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: camera-life-product
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"this site is powered by camera life") || icontains(body,"content=\"camera
+    life"))
+  method: GET
+  

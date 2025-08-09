@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: 'MOBILEIRON, INC. '
+  cpe: ''
+  product: mobileiron-security-platform
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"j_spring_security_check") && icontains(body,"MobileIron")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: industrial control
+  company: Schneider Electric
+  cpe: ''
+  product: schneider-quantumn
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"schneider electric telecontrol - industrial web control")
+  method: GET
+  

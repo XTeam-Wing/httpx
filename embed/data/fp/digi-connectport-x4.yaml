@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Digi International Inc.
+  cpe: ''
+  product: digi-connectport-x4
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"connectport x4") && icontains(protocol,"snmp"))
+  method: GET
+  

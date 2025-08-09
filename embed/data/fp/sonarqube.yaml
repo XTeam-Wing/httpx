@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: sonarqube
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"sonarqube")||(icontains(body,"content=\"sonarqube"))||(icontains(body,"sonarqube"))
+  method: GET
+  

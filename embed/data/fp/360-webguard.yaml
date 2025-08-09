@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 360-webguard
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"wzws-ray: ")||(icontains(header,"360wzws"))||(icontains(header,"360wzb"))||(icontains(header,"wzws-ray:
+    "))||(icontains(header,"server: 360wzws"))||(icontains(header,"360wzb"))'
+  method: GET
+  

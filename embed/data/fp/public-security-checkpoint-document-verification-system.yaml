@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: public-security-checkpoint-document-verification-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"content=\"公安检查站人脸/证件合一核录系统")
+  method: GET
+  

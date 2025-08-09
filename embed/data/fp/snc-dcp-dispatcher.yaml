@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: snc-dcp-dispatcher
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"snc-dcp dispatcher")
+  method: GET
+  

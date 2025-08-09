@@ -1,0 +1,13 @@
+info:
+  category: web application firewall
+  company: Microsoft Corporation
+  cpe: ''
+  product: asp.net-requestvalidationmode
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"request validation has detected a potentially dangerous client
+    input value") || (icontains(body,"httprequestvalidationexception") && icontains(banner,"http/1.1
+    500")))
+  method: GET
+  

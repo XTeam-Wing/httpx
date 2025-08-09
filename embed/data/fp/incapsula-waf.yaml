@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: incapsula-waf
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"(set-cookie: incap_ses_)")||(icontains(header,"(set-cookie: incap_visid_83_)"))||(icontains(header,"(set-cookie:
+    ^visid_incap_)"))'
+  method: GET
+  

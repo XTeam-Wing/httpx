@@ -1,0 +1,14 @@
+info:
+  category: development framework
+  company: Microsoft Corporation
+  cpe: ''
+  product: asp.net-mvc
+  server: nginx
+  tags: []
+rules:
+- dsl: (((((icontains(body,"asp.net mvc application</p>") || icontains(body,"<h2>modify
+    this template to jump-start your asp.net mvc application.</h2>")) || icontains(title,"my
+    asp.net mvc application")) || icontains(title,"asp.net mvc 应用程序")) || icontains(banner,"aspnetmvc"))
+    || icontains(banner,"aspnetmvc"))
+  method: GET
+  

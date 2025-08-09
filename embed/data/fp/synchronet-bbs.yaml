@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: synchronet-bbs
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(banner,"couchdb") && icontains(banner,"server: synchronet bbs
+    ")) || icontains(banner,"server: synchronet bbs "))'
+  method: GET
+  

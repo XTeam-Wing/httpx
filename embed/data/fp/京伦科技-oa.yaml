@@ -1,0 +1,11 @@
+info:
+  category: oa
+  company: Wuhan Jinglun Technology Development Co., Ltd.
+  cpe: ''
+  product: 京伦科技-oa
+  server: unknown
+  tags: []
+rules:
+- dsl: (icontains(body,"SelectCss") && icontains(body,"toptitleimg") && icontains(body,"loginTable"))
+  method: GET
+  

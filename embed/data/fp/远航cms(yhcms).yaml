@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 远航cms(yhcms)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"远航cms")||(icontains(title,"远航cms"))||(icontains(body,"yhcms"))||(icontains(title,"yhcms"))
+  method: GET
+  

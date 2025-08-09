@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 强智综合教务管理系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"强智综合教务管理系统")
+  method: GET
+  

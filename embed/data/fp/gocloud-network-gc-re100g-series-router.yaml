@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Shanghai Guoyun Information Technology Co., Ltd.
+  cpe: ''
+  product: gocloud-network-gc-re100g-series-router
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"gocloud gc-re100g series router")
+  method: GET
+  

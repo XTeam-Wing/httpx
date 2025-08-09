@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: PASION
+  cpe: ''
+  product: pasion-internal-business-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"ログイン | パシオン社内業務管理システム")
+  method: GET
+  

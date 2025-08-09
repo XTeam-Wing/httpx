@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: AGFEO GmbH & Co. KG
+  cpe: ''
+  product: agfeo-tk-suite-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: tksock") || icontains(banner,"server: tksock"))'
+  method: GET
+  

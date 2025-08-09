@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: netvehicle
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(body,"<head><title>welcome to netvehicle</title></head>")||(icontains(header,"(server:
+    ^netvehicle)"))'
+  method: GET
+  

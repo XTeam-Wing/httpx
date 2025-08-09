@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: IQinVision, Inc.
+  cpe: ''
+  product: iqinvision-iqa12s
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"iqa12s")
+  method: GET
+  

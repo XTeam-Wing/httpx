@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Pullian Technology Co., Ltd.
+  cpe: ''
+  product: tp-link-tl-wr802n
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"tl-wr802n") || (icontains(body,"tl-wr802n") && icontains(body,"if
+    (url.indexof(\"tplinklogin.net\")")))
+  method: GET
+  

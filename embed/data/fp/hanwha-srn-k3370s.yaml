@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Hanwha Techwin Co., Ltd.
+  cpe: ''
+  product: hanwha-srn-k3370s
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"$.nvr.model_name=\"srn-k3370s\"")
+  method: GET
+  

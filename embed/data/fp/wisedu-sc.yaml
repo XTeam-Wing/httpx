@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: wisedu-sc
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"前端配置文件") && icontains(body,"portal/js/plugins/changeskin.js")||(icontains(body,"portal/js/plugins/changeskin.js"))||(icontains(body,"前端配置文件"))
+  method: GET
+  

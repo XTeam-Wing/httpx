@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: simplébo
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"simplébo")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: wifi-security-terminal-device-management
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<h1>wifi安全终端设备管理</h1>")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: other
+  cpe: ''
+  product: broadband-residential-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"broadband residential gateway") && icontains(protocol,"snmp"))
+  method: GET
+  

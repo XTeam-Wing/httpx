@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: KMiNT21 Software.
+  cpe: ''
+  product: golden-ftp
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"golden ftp server")
+  method: GET
+  

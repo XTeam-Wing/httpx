@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Sony Corporation
+  cpe: ''
+  product: sony-snc-vm772r
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"snc-vm772r") || icontains(banner,"snc-vm772r"))
+  method: GET
+  

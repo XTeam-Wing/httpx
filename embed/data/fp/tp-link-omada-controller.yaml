@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Pullian Technology Co., Ltd.
+  cpe: ''
+  product: tp-link-omada-controller
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"content=\"width=1300,initial-scale=1,minimal-ui\"")
+  method: GET
+  

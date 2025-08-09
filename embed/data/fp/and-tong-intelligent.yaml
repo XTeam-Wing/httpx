@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Zhongshan Hetong Intelligent Technology Co., Ltd.
+  cpe: ''
+  product: and-tong-intelligent
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"href=\"/web/mainmenu/images/favicon.ico\">")
+  method: GET
+  

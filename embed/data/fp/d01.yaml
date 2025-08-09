@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: d01
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"网探d01")||(icontains(body,"公安部第一研究所") && icontains(body,"/assets/gongan/"))||(icontains(body,"/assets/gongan/"))||(icontains(body,"公安部第一研究所"))||(icontains(body,"网探d01"))
+  method: GET
+  

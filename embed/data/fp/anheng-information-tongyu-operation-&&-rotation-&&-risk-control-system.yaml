@@ -1,0 +1,11 @@
+info:
+  category: nac
+  company: Hangzhou Anheng Information Technology Co., Ltd.
+  cpe: ''
+  product: anheng-information-tongyu-operation-&&-rotation-&&-risk-control-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"明御运维审计")
+  method: GET
+  

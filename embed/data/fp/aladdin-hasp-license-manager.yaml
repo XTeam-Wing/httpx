@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Thales Group
+  cpe: ''
+  product: aladdin-hasp-license-manager
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: hasp") || icontains(banner,"server: hasp"))'
+  method: GET
+  

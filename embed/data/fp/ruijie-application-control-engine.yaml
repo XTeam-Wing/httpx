@@ -1,0 +1,11 @@
+info:
+  category: traffic analysis
+  company: Ruijie Networks Co., Ltd.
+  cpe: ''
+  product: ruijie-application-control-engine
+  server: nginx
+  tags: []
+rules:
+- dsl: '(!icontains(body,"server: couchdb") && (icontains(title,"锐捷应用控制引擎") || icontains(body,"window.open(\"/login.do\",\"airwin")))'
+  method: GET
+  

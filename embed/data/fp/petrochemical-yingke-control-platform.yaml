@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Petrochemical Yingke Information Technology Co., Ltd.
+  cpe: ''
+  product: petrochemical-yingke-control-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"window.open(\"http://itmc.mmsh.sinopec.com/itgk/sysmgr/productregister/yunweiproregister.view\");
+    }  ")
+  method: GET
+  

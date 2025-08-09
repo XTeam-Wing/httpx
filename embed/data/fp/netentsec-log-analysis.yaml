@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: netentsec-log-analysis
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"网康") && icontains(title,"日志分析中心 ")||(icontains(body,"网康"))
+  method: GET
+  

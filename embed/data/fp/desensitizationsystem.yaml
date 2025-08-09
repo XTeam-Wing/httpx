@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: desensitizationsystem
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"/ui/redirectlogin/login.html")
+  method: GET
+  

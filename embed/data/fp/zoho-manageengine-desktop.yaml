@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Zoho Corporation Pvt. Ltd.
+  cpe: ''
+  product: zoho-manageengine-desktop
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"manageengine desktop")
+  method: GET
+  

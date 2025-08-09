@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: other
+  cpe: ''
+  product: nvdvr
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"nvdvr") || icontains(title,"xwebplay"))
+  method: GET
+  

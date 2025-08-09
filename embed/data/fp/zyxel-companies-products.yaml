@@ -1,0 +1,13 @@
+info:
+  category: other network equipment
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-companies-products
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"zyxel ssh server") || icontains(banner,"vendor: zyxel
+    communication corp.")) || (!icontains(body,"server: couchdb") && ((icontains(body,"href=\"/zyxel.ico")
+    || icontains(banner,"ndm-sysmode")) || (!icontains(body,"alcatel-lucent") && icontains(body,"forms/rpauth_1")))))'
+  method: GET
+  

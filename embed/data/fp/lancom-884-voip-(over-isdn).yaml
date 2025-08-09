@@ -1,0 +1,13 @@
+info:
+  category: other network equipment
+  company: LANCOM Systems GmbH
+  cpe: ''
+  product: lancom-884-voip-(over-isdn)
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"lancom 884 voip (over isdn)") || icontains(banner,"lancom
+    884 voip (over isdn)")) || icontains(body,"src=\"/images/prodimg.jpeg\" alt=\"
+    lancom 884 voip (over isdn)"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Shanghai Newton Technology Co., Ltd.
+  cpe: ''
+  product: ndf7300
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"ndf7300")
+  method: GET
+  

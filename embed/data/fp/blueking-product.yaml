@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: blueking-product
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"蓝鲸智云")
+  method: GET
+  

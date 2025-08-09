@@ -1,0 +1,14 @@
+info:
+  category: multifunctional
+  company: Brother Industries, Ltd.
+  cpe: ''
+  product: brother-printer
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((icontains(banner,"firmware") && icontains(banner,"brother")) && icontains(protocol,"snmp"))
+    || icontains(banner,"brother nc-")) || (!icontains(body,"server: couchdb") &&
+    ((icontains(title,"brother mfc") || icontains(body,"<img src=\"/common/image/hl4040cn"))
+    || icontains(body,"<frame src=\"/printer/inc_head.html"))))'
+  method: GET
+  

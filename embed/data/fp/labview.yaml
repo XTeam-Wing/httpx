@@ -1,0 +1,11 @@
+info:
+  category: development framework
+  company: NATIONAL INSTRUMENTS CORP.
+  cpe: ''
+  product: labview
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: labview") || icontains(banner,"server: labview"))'
+  method: GET
+  

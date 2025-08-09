@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: Shenzhen Zhongke Wangwei Technology Co., Ltd.
+  cpe: ''
+  product: sino-science-network-ansec-operation-&&-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"中科网威") && icontains(body,"/fort_新版ui主线版本/webroot/pages/commons/meta.jsp"))
+  method: GET
+  

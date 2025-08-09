@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Beijing Shenzhou NSFOCUS Information Security Technology Co., Ltd.
+  cpe: ''
+  product: nsfocus-next-generation-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"/login_logo_nf_zh_cn.png") || icontains(title,"nsfocus nf"))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: php121
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<title>php121 - please login or register</title>")||(icontains(body,"<title>php121
+    - new user</title>"))
+  method: GET
+  

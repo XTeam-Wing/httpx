@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: sophos-cyberoam-product
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"href=\"http://www.cyberoam.com\" target=\"_blank\">www.cyberoam.com")||(icontains(header,"webpages/login.jsp
+    "))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: other
+  cpe: ''
+  product: tinyproxy
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: tinyproxy/") || icontains(banner,"server: tinyproxy/"))'
+  method: GET
+  

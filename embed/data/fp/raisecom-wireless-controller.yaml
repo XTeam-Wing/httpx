@@ -1,0 +1,11 @@
+info:
+  category: nac
+  company: Risecomda Technology Development Co., Ltd.
+  cpe: ''
+  product: raisecom-wireless-controller
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"var oemproductname = \"mvc_msg2300\"")
+  method: GET
+  

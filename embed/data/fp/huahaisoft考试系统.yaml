@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: huahaisoft考试系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"huahaisoft考试系统")
+  method: GET
+  

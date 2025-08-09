@@ -1,0 +1,13 @@
+info:
+  category: adsl
+  company: OvisLink Corp.
+  cpe: ''
+  product: airlive-modem
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"realm=\"airlive arm201") || icontains(banner,"realm=\"airlive
+    arm-")) || icontains(banner,"realm=\"airlive arm201")) || icontains(banner,"realm=\"airlive
+    arm-"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: vpn products
+  company: SonicWall Inc.
+  cpe: ''
+  product: sonicwall-sra-1200
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"sonicwall sra 1200 ")
+  method: GET
+  

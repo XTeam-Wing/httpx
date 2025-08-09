@@ -1,0 +1,11 @@
+info:
+  category: antivirus gateway
+  company: Venus Star Information Technology Group Co., Ltd.
+  cpe: ''
+  product: queen-star-tianqing-web-application-safety-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"天清web应用安全网关") && icontains(body,"v2/global/vendor/modernizr/modernizr.js"))
+  method: GET
+  

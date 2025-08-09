@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 1拍物联网云服务平台
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"1拍物联网云服务平台")
+  method: GET
+  

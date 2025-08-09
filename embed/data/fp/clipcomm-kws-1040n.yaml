@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: CLIPCOMM INC.
+  cpe: ''
+  product: clipcomm-kws-1040n
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(server,"maverick") && icontains(body,"kws-1040n"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Schneider Electric
+  cpe: ''
+  product: schneider-modicon-m340
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"modicon m340")
+  method: GET
+  

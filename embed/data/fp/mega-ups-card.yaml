@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Mega System Technologies Inc
+  cpe: ''
+  product: mega-ups-card
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"mega system technologies inc") && icontains(banner,"ups"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: operating system
+  company: Express Logic, Inc.
+  cpe: ''
+  product: threadx
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"threadx") || icontains(banner,"threadx"))
+  method: GET
+  

@@ -1,0 +1,14 @@
+info:
+  product: 绿盟终端检测与响应系统
+  category: 终端安全edr
+  author: 哆啦A梦
+  company: 绿盟科技集团股份有限公司
+  description: 绿盟终端检测与响应系统是绿盟科技推出的终端安全防护产品
+  tags:
+  - tech
+  - 绿盟终端检测与响应系统
+rules:
+- method: GET
+  path: 
+  - /admin/login/login.php
+  dsl: status_code == 200 && contains(body, "绿盟终端检测与响应系统") && contains(body, "绿盟科技") && contains(body, "/master/common/doAgreeAction.php")

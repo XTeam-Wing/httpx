@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: myhttpd
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"myhttpd")
+  method: GET
+  

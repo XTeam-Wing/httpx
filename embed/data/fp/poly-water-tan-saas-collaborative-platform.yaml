@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Shanghai Jushuitan Network Technology Co., Ltd.
+  cpe: ''
+  product: poly-water-tan-saas-collaborative-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"聚水潭saas协同平台")
+  method: GET
+  

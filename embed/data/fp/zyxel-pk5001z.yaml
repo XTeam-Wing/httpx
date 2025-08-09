@@ -1,0 +1,12 @@
+info:
+  category: adsl
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-pk5001z
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"pk5001z login") || (!icontains(body,"centurylink.com</a>")
+    && icontains(body,">centurylink&reg; modem configuration zyxel pk5001z<")))
+  method: GET
+  

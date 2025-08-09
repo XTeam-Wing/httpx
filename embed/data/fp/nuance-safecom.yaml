@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Nuance Communications, Inc.
+  cpe: ''
+  product: nuance-safecom
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"safecom mobile print")
+  method: GET
+  

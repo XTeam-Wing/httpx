@@ -1,0 +1,13 @@
+info:
+  category: antivirus gateway
+  company: ZTE Corporation
+  cpe: ''
+  product: zte-zxsec-unified-security-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(body,"{\"length\": 0, \"chained_to\": 1912615737, \"identifier\":
+    \"s\", \"str\": null}") && icontains(body,"welcome to login gateway system"))
+    && icontains(title,"安全网关"))'
+  method: GET
+  

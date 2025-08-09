@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-vsp
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"huawei storage & network security versatile security platform")
+  method: GET
+  

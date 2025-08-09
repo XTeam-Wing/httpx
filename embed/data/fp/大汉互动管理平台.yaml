@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 大汉互动管理平台
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"大汉互动管理平台")
+  method: GET
+  

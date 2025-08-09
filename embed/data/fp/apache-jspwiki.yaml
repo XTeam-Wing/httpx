@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Apache Software Foundation.
+  cpe: ''
+  product: apache-jspwiki
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"section-Main-WelcomeToApacheJSPWiki") || (icontains(body,"/scripts/jspwiki-common.js")
+    && icontains(body,"jspwiki_print.css"))
+  method: GET
+  

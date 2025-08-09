@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: su-managementsystem
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"su管理系统")
+  method: GET
+  

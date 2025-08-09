@@ -1,0 +1,11 @@
+info:
+  category: cameras and surveillance
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: d-link-dcs-2103
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(banner,"realm=\"DCS-2103\"") || icontains(banner,"DCS-2103")
+  method: GET
+  

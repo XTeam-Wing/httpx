@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-series-router
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"h3c series router")
+  method: GET
+  

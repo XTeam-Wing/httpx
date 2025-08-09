@@ -1,0 +1,12 @@
+info:
+  category: other support system
+  company: Pivot.
+  cpe: ''
+  product: pivot-product
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"href=\"http://www.pivotlog.net/?ver=pivot") || icontains(body,"powered
+    bypivot"))
+  method: GET
+  

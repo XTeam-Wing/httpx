@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: content-security-policy
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"(x-content-security-policy: ^(.*)$)")||(icontains(header,"(x-webkit-csp:
+    ^(.*)$)"))'
+  method: GET
+  

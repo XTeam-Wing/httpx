@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: phpmyrealty
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(body,"powered by <a href=\"http://www.phpmyrealty.com") || icontains(body,"<!--
+    main content table : stop -->"))'
+  method: GET
+  

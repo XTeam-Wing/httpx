@@ -1,0 +1,11 @@
+info:
+  category: erp
+  company: Shandong Bojutong Cloud Computing Co., Ltd.
+  cpe: ''
+  product: foucs-cloud-process-business-management-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"流程业务管理平台 ")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Beward R&D Co., Ltd.
+  cpe: ''
+  product: beward-camera
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(title,"web service") && icontains(banner,"server: ipcamera-webs"))'
+  method: GET
+  

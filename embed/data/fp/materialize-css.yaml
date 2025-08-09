@@ -1,0 +1,12 @@
+info:
+  category: development framework
+  company: other
+  cpe: ''
+  product: materialize-css
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"materialize/css") || icontains(body,"materialize/materialize"))
+    || icontains(body,"/materialize.min.css")) || icontains(body,"/materialize.css"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Eaton.
+  cpe: ''
+  product: eaton-ups
+  server: nginx
+  tags: []
+rules:
+- dsl: ((!icontains(banner,"epdu") && icontains(banner,"eaton ")) && icontains(protocol,"snmp"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: spincms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"spincms")
+  method: GET
+  

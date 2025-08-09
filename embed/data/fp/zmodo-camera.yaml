@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: Shenzhen Zhimeida Technology Co., Ltd.
+  cpe: ''
+  product: zmodo-camera
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"name=\"mainframe\" frameborder=\"0\"  src=\"play.html\"")
+    || icontains(body,"top.frames.frmresource.location = getxmlurl"))
+  method: GET
+  

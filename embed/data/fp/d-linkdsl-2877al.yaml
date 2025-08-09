@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: d-linkdsl-2877al
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"dsl-2877al") || icontains(title,"dsl-2877al"))
+  method: GET
+  

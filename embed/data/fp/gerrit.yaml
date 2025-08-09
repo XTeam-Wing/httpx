@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: gerrit
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"gerrit")
+  method: GET
+  

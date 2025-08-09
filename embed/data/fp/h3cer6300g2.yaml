@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: h3cer6300g2
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"er6300g2") && icontains(body,"h3c.com") && icontains(body,"login")
+  method: GET
+  

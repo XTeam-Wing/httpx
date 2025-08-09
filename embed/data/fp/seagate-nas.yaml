@@ -1,0 +1,13 @@
+info:
+  category: network storage
+  company: Seagate Technology LLC
+  cpe: ''
+  product: seagate-nas
+  server: nginx
+  tags: []
+rules:
+- dsl: '(!icontains(body,"server: couchdb") && (((icontains(body,"p_user") && icontains(title,"seagate
+    nas")) || icontains(body,"src=\"/admin/img/product-lg-lassen.png\"")) || icontains(body,"login
+    to blackarmor")))'
+  method: GET
+  

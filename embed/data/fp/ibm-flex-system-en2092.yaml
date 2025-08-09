@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: International Business Machines Corporation
+  cpe: ''
+  product: ibm-flex-system-en2092
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"ibm flex system en2092")
+  method: GET
+  

@@ -1,0 +1,15 @@
+info:
+  category: other network equipment
+  company: Hangzhou DP Technology Co., Ltd.
+  cpe: ''
+  product: dptech-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((icontains(banner,"conplatssh") || icontains(body,"var valid_url=\"/func/web_main/validate?check=\"+hex_md5(s).tolowercase()"))
+    || (icontains(cert,"organization: dptech") && icontains(cert,"commonname: www.dptechnology.net")))
+    || icontains(title,"web management interface for dptech")) || icontains(cert,"subject:
+    c=cn, st=zhejiang, l=hangzhou, o=dptech, ou=dptech, cn=dptechnology.net/emailaddress=support@dptechnology.net"))
+    || icontains(body,"window.location = \"html/login_en.html\";"))'
+  method: GET
+  

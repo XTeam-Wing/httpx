@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: SAP Software Solutions
+  cpe: ''
+  product: sap-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"logon") && icontains(body,"sap solution manager"))
+  method: GET
+  

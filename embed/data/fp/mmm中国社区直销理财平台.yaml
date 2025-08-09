@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: mmm中国社区直销理财平台
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"mmm中国社区直销理财平台")
+  method: GET
+  

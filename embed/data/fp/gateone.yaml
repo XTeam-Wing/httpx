@@ -1,0 +1,11 @@
+info:
+  category: operation && maintenance audit fortres machine
+  company: other
+  cpe: ''
+  product: gateone
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: gateone") || icontains(banner,"server: gateone"))'
+  method: GET
+  

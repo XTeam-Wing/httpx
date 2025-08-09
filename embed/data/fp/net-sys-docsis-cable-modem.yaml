@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: net-sys-docsis-cable-modem
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"net&sys docsis cable modem")||(icontains(header,"net&sys docsis 2.0
+    cable modem"))
+  method: GET
+  

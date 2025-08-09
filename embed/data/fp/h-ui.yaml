@@ -1,0 +1,13 @@
+info:
+  category: development framework
+  company: other
+  cpe: ''
+  product: h-ui
+  server: nginx
+  tags: []
+rules:
+- dsl: (((((icontains(body,"/h-ui.admin/") || icontains(body,"/css/h-ui.login.css"))
+    || icontains(body,"/css/h-ui.min.css")) || icontains(body,"html5shi.js")) || icontains(body,"h-ui.min.js"))
+    || icontains(body,"h-ui.js"))
+  method: GET
+  

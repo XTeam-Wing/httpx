@@ -1,0 +1,12 @@
+info:
+  category: voice video
+  company: other
+  cpe: ''
+  product: barix-instreamer
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"barix instreamer") || icontains(banner,"barix streaming
+    client")) || icontains(banner,"barix instreamer snr:"))
+  method: GET
+  

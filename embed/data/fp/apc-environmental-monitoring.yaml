@@ -1,0 +1,11 @@
+info:
+  category: burglar alarm
+  company: Schneider Electric
+  cpe: ''
+  product: apc-environmental-monitoring
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"apc environmental monitoring unit")
+  method: GET
+  

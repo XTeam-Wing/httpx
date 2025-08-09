@@ -1,0 +1,12 @@
+info:
+  category: anti-virus product
+  company: Trend Micro Incorporated.
+  cpe: ''
+  product: officescan
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: officescan client") || icontains(banner,"server:
+    officescan client"))'
+  method: GET
+  

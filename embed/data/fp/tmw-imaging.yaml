@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: tmw-imaging
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"(set-cookie: tmwimagingsession=[^;]+)")||(icontains(body,"<!-- tmw
+    document imaging -->"))||(icontains(body,"<!-- html library is $id: tmwhtml.pm"))'
+  method: GET
+  

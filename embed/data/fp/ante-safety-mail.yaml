@@ -1,0 +1,11 @@
+info:
+  category: electronic mail system
+  company: Beijing Guoxin Security Post Technology Co., Ltd.
+  cpe: ''
+  product: ante-safety-mail
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<span> 客服邮箱：support@suremail.cn</span>") || icontains(body,"content=\"北京国信安邮科技有限公司"))
+  method: GET
+  

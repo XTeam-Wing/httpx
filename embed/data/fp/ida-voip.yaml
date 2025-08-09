@@ -1,0 +1,13 @@
+info:
+  category: voice video
+  company: IDA Corporation
+  cpe: ''
+  product: ida-voip
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"ida voip") || icontains(banner,"realm=\"ida 20-28 voip"))
+    || icontains(banner,"realm=\"ida voip")) || icontains(banner,"realm=\"ida 20-28
+    voip"))
+  method: GET
+  

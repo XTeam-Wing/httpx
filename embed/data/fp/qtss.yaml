@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: qtss
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: qtss") || icontains(banner,"server: qtss"))'
+  method: GET
+  

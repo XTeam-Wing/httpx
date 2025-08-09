@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: United Gulf Gate Trd. Co.
+  cpe: ''
+  product: xontel-network-camera
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"xontel network camera")
+  method: GET
+  

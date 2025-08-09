@@ -1,0 +1,11 @@
+info:
+  category: nac
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-expressway
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"expressway-e</legend>")
+  method: GET
+  

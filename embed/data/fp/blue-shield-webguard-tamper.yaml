@@ -1,0 +1,11 @@
+info:
+  category: tamper resistance
+  company: Blue Shield Information Security Technology Co., Ltd.
+  cpe: ''
+  product: blue-shield-webguard-tamper
+  server: nginx
+  tags: []
+rules:
+- dsl: 'icontains(body,"background: url(images/loginbg.jpg) #e5f1fc")'
+  method: GET
+  

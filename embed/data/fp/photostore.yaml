@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: Ktools.net LLC.
+  cpe: ''
+  product: photostore
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"powered by <a href=\"http://www.ktools.net/photostore/index.php")
+  method: GET
+  

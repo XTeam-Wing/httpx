@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: mgb-opensource-guestbook
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"title=\"mgb homepage") || icontains(body,"content=\"mgb opensource
+    guestbook"))
+  method: GET
+  

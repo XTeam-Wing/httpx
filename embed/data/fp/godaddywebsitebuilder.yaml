@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: godaddywebsitebuilder
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"godaddy website builder")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: cloud computing
+  company: Microsoft Corporation
+  cpe: ''
+  product: azure
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(title,"microsoft azure") || icontains(banner,"windows azure"))
+    || icontains(banner,"azure-webrole-instance-id")) || icontains(banner,"azure-webrole-instance-id"))
+  method: GET
+  

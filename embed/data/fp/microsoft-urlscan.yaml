@@ -1,0 +1,11 @@
+info:
+  category: web application firewall
+  company: Microsoft Corporation
+  cpe: ''
+  product: microsoft-urlscan
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"rejected-by-urlscan")
+  method: GET
+  

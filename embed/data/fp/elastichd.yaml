@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: elastichd
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"(<title>elastic hd.*</title>)")||(icontains(body,"<meta content=elastichd
+    name=keywords>"))
+  method: GET
+  

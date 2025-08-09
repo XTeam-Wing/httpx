@@ -1,0 +1,13 @@
+info:
+  category: server
+  company: Dell Inc.
+  cpe: ''
+  product: dell-poweredge-t620
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(cert,"poweredge-t620") || icontains(body,"id=\"serverinfo\"> t620,
+    dbe")) || icontains(banner,"poweredge-t620")) || icontains(body,"id=\"serverinfo\">
+    poweredge t620"))
+  method: GET
+  

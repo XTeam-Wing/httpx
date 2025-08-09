@@ -1,0 +1,11 @@
+info:
+  category: network storage
+  company: Apache Software Foundation.
+  cpe: ''
+  product: apache-druid
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"Apache Druid")
+  method: GET
+  

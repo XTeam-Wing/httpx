@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: everything
+  server: nginx
+  tags: []
+rules:
+- dsl: (title == "everything" && (icontains(body,"everything.png") || icontains(body,"everything.gif")))
+  method: GET
+  

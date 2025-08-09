@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-r6700v3
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"r6700v3") || icontains(banner,"realm=\"netgear r6700v3"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Avaya Inc.
+  cpe: ''
+  product: avaya-communication-manager
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"var newlocation = \"https://\" + target + \"/cgi-bin/common/issue\";")
+  method: GET
+  

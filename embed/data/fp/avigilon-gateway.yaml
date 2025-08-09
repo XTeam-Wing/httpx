@@ -1,0 +1,13 @@
+info:
+  category: other network equipment
+  company: Avigilon Corporation
+  cpe: ''
+  product: avigilon-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && icontains(banner,"server:
+    avigilongateway")) || ((!icontains(banner,"drupal") && !icontains(banner,"couchdb"))
+    && icontains(banner,"server: avigilongateway")))'
+  method: GET
+  

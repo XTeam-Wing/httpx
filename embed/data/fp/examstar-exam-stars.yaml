@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Beijing Dream Star Technology Co., Ltd.
+  cpe: ''
+  product: examstar-exam-stars
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<div class=\"content-bottom-text\">考试星为您提供方便、高效的考试服务</div>")
+    || icontains(body,"/examstar_icon.ico"))
+  method: GET
+  

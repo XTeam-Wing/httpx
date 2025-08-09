@@ -1,0 +1,15 @@
+info:
+  author: wing
+  description: 一个支持当容量存储空间，且秒级搜索速度的邮件归档系统。拥有完善的账户授权体系，支持归档、搜索、审计及备份等多项功能，可满足不同行业用户对电子邮件数据安全、法规遵从、电子举证以及其他个性化使用需求。
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:mail:eastnetmail:*:*:*:*:*:*:*:*
+  tags: []
+  product: eastnetmail-old
+  category: cms
+rules:
+- method: GET
+  path:
+  - '/webmail/'
+  dsl: contains(body,"网景邮箱</title>")||contains(body,"if(a cookie[i].indexOf(\"www.east.net\")")||contains(body,"<form action=\"/webmail/emcontroller\" method=\"post\"")||contains(body," target=\"_blank\">东方网景邮箱外发邮件的安全限制</a></p>")||contains(body,"<form action=\"/coremail/index.jsp?cus=1")||contains(body,"专业功能</span>邮件监控、邮件实时备份等，轻松掌握<br>创新 实用，满足更多需求</a>")||contains(body,"/coremail/bundle/")||contains(body,"coremail 电子邮局</title>")

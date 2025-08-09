@@ -1,0 +1,12 @@
+info:
+  category: other software system
+  company: Yiyu Information Technology Co., Ltd.
+  cpe: ''
+  product: weaving-cloud-ipms-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"opms管理系统,织蝶-企业应用系统为您的企业保驾护航") || (icontains(body,"opms")
+    && icontains(body,"903561702@qq.com"))) || icontains(title,"opms管理系统"))
+  method: GET
+  

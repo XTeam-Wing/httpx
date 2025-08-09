@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: lenovo-thinksystem-df-distributed-storage-management-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"lenovo thinksystem df系列分布式存储管理系统")
+  method: GET
+  

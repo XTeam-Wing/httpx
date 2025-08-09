@@ -1,0 +1,15 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: cameralife
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"this site is powered by camera life")||(icontains(body,"content=\"camera
+    life"))||(icontains(body,"(<meta name=\"generator\" content=\"camera life version
+    ([^\"]+)\">)"))||(icontains(body,"(this site is powered by camera life version ([^
+    ]+))"))||(icontains(body,"content=\"camera life") && icontains(body,"this site is powered
+    by camera life"))
+  method: GET
+  

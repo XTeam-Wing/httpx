@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: animati-pacs
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<form action=\"\" onsubmit=\"pacs.login.sendpasswordrecoverymail()")
+    && icontains(title,"animati pacs"))
+  method: GET
+  

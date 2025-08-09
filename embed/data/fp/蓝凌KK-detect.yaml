@@ -1,0 +1,11 @@
+info:
+  author: 哆啦A梦
+  description: ''
+  tags: []
+  product: 蓝凌kk
+  category: cms
+rules:
+- method: GET
+  path:
+  - '/serverj/'
+  dsl: contains(body, "非常抱歉，管理员尚未上传安装包，请稍后再尝试。") && contains(title, "客户端下载")

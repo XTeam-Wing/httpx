@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: motorito
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<!-- end meta_tags subst -->")||(icontains(body,"<!-- cal posar un
+    discriminador de navegadors per carregar els estils adequats -->"))
+  method: GET
+  

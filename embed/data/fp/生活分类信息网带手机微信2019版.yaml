@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 生活分类信息网带手机微信2019版
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"生活分类信息网带手机微信2019版")
+  method: GET
+  

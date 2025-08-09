@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Guangzhou Aoweiya Electronic Technology Co., Ltd.
+  cpe: ''
+  product: ava-resource-management-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<option value=\"ava") && icontains(body,"<form class=\"form-signin\"
+    id=\"frmlogin\">"))
+  method: GET
+  

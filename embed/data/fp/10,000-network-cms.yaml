@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Guangzhou Wanhu Network Technology Co., Ltd.
+  cpe: ''
+  product: 10,000-network-cms
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"css/css_whir.css")
+  method: GET
+  

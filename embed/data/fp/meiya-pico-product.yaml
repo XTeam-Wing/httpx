@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: meiya-pico-product
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"meiya pico. all rights reserved")||(icontains(title,"手机数据采集系统 - 美亚柏科"))
+  method: GET
+  

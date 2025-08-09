@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Peking University Founder Group Co., Ltd.
+  cpe: ''
+  product: fang-zheng-group-operation-management-&&-decision-support-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"src=\"/desktop/ui/custom/getimage?img=iphoneview.png\"") &&
+    icontains(body,"src=\"/portal/img/logo.png\""))
+  method: GET
+  

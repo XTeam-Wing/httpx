@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: gm-electronic-security-document-management-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"国迈安全私有云部 all rights reserved")||(icontains(body,"</span>国迈安全私有云部. <span>all
+    rights reserved"))
+  method: GET
+  

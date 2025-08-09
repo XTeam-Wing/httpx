@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Zhongyou Technology
+  cpe: ''
+  product: nearby-science-&-technology-patrol-management-software
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"众友科技巡检管理软件") && icontains(body,"background=zhongyou.jpg"))
+  method: GET
+  

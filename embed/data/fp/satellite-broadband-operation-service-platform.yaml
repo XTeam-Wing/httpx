@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: other
+  cpe: ''
+  product: satellite-broadband-operation-service-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"卫星宽带运营服务平台")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: fms
+  company: Aerospace Information Co., Ltd.
+  cpe: ''
+  product: aisino-telecom-edition
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<font class=\"bottomfont\">航天信息股份有限公司 电信行业版")
+  method: GET
+  

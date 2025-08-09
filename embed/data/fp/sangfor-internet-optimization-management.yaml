@@ -1,0 +1,11 @@
+info:
+  category: online behavior management system
+  company: Shenxinfu Technology Co., Ltd.
+  cpe: ''
+  product: sangfor-internet-optimization-management
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"sangfor上网优化管理")
+  method: GET
+  

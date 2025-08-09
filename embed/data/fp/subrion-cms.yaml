@@ -1,0 +1,13 @@
+info:
+  category: other software system
+  company: Intelliants LLC
+  cpe: ''
+  product: subrion-cms
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((icontains(banner,"x-powered-cms: subrion cms") || icontains(body,"content=\"subrion
+    cms")) || icontains(body,"href=\"http://www.subrion.com")) || icontains(title,"subrion
+    cms")) || icontains(banner,"x-powered-cms: subrion cms"))'
+  method: GET
+  

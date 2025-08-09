@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: kronosworkforceplanner
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"kronos workforce planner")
+  method: GET
+  

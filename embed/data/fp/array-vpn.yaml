@@ -1,0 +1,12 @@
+info:
+  category: load balance
+  company: Array Networks, Inc
+  cpe: ''
+  product: array-vpn
+  server: unknown
+  tags: []
+rules:
+- dsl: (icontains(body,"APV WebUI") && icontains(title,"Login") && body!="AVX WebUI")
+    || icontains(banner,"Array APV ")
+  method: GET
+  

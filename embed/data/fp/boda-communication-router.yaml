@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Shanghai Boda Data Communication Co., Ltd.
+  cpe: ''
+  product: boda-communication-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"bdcom router") || (icontains(banner,"bdcom(tm) ") && icontains(protocol,"snmp")))
+  method: GET
+  

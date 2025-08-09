@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: kohana
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"kohana")
+  method: GET
+  

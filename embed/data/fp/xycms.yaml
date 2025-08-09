@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Jiangsu Xinyue Technology Co., Ltd.
+  cpe: ''
+  product: xycms
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"advfile/ad12.js") || icontains(title,"powered by xycms"))
+  method: GET
+  

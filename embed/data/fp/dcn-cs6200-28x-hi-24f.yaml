@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Beijing Digital China Cloud Technology Co., Ltd.
+  cpe: ''
+  product: dcn-cs6200-28x-hi-24f
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<b>cs6200-28x-hi-24f</b>")
+  method: GET
+  

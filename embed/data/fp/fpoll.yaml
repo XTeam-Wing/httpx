@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: fpoll
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"admincp/css.css")
+  method: GET
+  

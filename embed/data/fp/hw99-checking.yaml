@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: hw99-checking
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/hwface/script/logincheck.js")
+  method: GET
+  

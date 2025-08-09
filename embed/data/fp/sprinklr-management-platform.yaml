@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: SPRINKLR INC.
+  cpe: ''
+  product: sprinklr-management-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: sprinklr") || icontains(banner,"server: sprinklr"))'
+  method: GET
+  

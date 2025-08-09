@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: thinkmusic音乐分享程序
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"thinkmusic音乐分享程序")
+  method: GET
+  

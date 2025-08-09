@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: CData Software, Inc.
+  cpe: ''
+  product: cdata-olts
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"olt epon e8ps") || icontains(banner,"command line interface
+    for epon system"))
+  method: GET
+  

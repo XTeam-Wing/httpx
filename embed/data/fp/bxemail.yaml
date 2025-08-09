@@ -1,0 +1,12 @@
+info:
+  category: electronic mail system
+  company: Hainan Huayu Baixun Network Co., Ltd.
+  cpe: ''
+  product: bxemail
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"请输入正确的电子邮件地址，如：abc@bxemail.com") || icontains(title,"百姓邮局"))
+    || icontains(title,"百讯安全邮件系统"))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: other network security
+  company: Trend Micro Incorporated.
+  cpe: ''
+  product: trend-micro-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"deep security</h4>") || icontains(title,"trend micro deep
+    security"))
+  method: GET
+  

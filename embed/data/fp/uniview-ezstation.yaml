@@ -1,0 +1,12 @@
+info:
+  category: other software system
+  company: Zhejiang Yushi Technology Co., Ltd.
+  cpe: ''
+  product: uniview-ezstation
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"ezstation") || icontains(body,"<h1>welcome to ezstation
+    vc server"))
+  method: GET
+  

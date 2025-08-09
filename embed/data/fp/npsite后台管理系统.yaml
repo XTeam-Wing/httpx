@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: npsite后台管理系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"npsite 后台管理系统")
+  method: GET
+  

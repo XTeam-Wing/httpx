@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: NTT DOCOMO, INC.
+  cpe: ''
+  product: ntt-docomo-l-04d
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"model name -->l-04d connection manager")
+  method: GET
+  

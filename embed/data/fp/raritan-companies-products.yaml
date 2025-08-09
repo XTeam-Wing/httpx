@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Raritan Inc.
+  cpe: ''
+  product: raritan-companies-products
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"<div id=\"raritan_logo") || icontains(body,"<!-- raritan
+    logo -->")) || icontains(title,"akc client check"))
+  method: GET
+  

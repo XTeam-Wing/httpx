@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: minibb中文版
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"minibb中文版")
+  method: GET
+  

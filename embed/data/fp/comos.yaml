@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: comos
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"comos - livingston portmaster")
+  method: GET
+  

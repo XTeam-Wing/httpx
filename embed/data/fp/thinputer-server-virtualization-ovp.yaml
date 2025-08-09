@@ -1,0 +1,11 @@
+info:
+  category: virtualization
+  company: Shenzhen Green Grape Technology Co., Ltd.
+  cpe: ''
+  product: thinputer-server-virtualization-ovp
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(cert,"cn=ovp") && icontains(cert,"cn=thinputer technology"))
+  method: GET
+  

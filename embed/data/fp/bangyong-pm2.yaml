@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: bangyong-pm2
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"pm2项目管理系统bs版增强工具.zip")||(icontains(title,"pm2工程项目管理系统"))||(icontains(header,"accid=1001"))
+  method: GET
+  

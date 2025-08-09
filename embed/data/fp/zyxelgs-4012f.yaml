@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: zyxelgs-4012f
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"zyxel gs-4012f")
+  method: GET
+  

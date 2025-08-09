@@ -1,0 +1,12 @@
+info:
+  category: crm
+  company: other
+  cpe: ''
+  product: pegarules
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"set-cookie: pega-rules=") || icontains(body,"href=\"images/pzpegaicon.ico"))
+    || icontains(body,"unable to logon to the pegarules system")) || icontains(banner,"pega-rules="))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: other
+  cpe: ''
+  product: gui-proxy
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"gui-proxy")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: International Business Machines Corporation
+  cpe: ''
+  product: lotus-notes-traveler
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"ibm lotus notes traveler") || icontains(banner,"realm=\"lotus
+    notes traveler")) || icontains(banner,"realm=\"lotus notes traveler"))
+  method: GET
+  

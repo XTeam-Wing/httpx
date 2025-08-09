@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-b365
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"b365&nbsp路由器登录") || icontains(body,"var product_type = \"b365\""))
+  method: GET
+  

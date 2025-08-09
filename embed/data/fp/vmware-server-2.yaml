@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: VMware, Inc.
+  cpe: ''
+  product: vmware-server-2
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"vmware server 2") || icontains(body,"content=\"vmware server
+    is virtual"))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: hims-hotel-cloud-computing-service
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"hims酒店云计算服务")||(icontains(body,"maincontent.css") && icontains(body,"gb_root_dir"))||(icontains(body,"gb_root_dir"))||(icontains(body,"maincontent.css"))||(icontains(body,"gb_root_dir")
+    && icontains(body,"maincontent.css"))
+  method: GET
+  

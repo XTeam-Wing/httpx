@@ -1,0 +1,13 @@
+info:
+  category: firewall
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-secpath-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"h3c firewall secpath") || icontains(title,"h3c secpath
+    firewall system")) || icontains(banner,"h3c secpath ")) || icontains(title,"h3c
+    secpath series"))
+  method: GET
+  

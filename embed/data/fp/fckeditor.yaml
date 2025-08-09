@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: CKSource sp. z o.o. sp.k.
+  cpe: ''
+  product: fckeditor
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"new fckeditor")
+  method: GET
+  

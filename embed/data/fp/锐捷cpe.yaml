@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 锐捷cpe
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"锐捷 cpe")
+  method: GET
+  

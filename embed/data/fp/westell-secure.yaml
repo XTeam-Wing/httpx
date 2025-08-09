@@ -1,0 +1,13 @@
+info:
+  category: host monitoring && auditing
+  company: Westell Technologies, Inc.
+  cpe: ''
+  product: westell-secure
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"realm=\"westell secure") || icontains(banner,"realm=\"westell
+    secure")) || (icontains(banner," realm") && icontains(banner,"server: wstl cpe")))
+    || (icontains(banner,"realm") && icontains(banner,"server: wstl cpe")))'
+  method: GET
+  

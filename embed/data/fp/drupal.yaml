@@ -1,0 +1,14 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: drupal
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((icontains(banner,"location: /core/install.php") || icontains(banner,"ace-drupal7prod"))
+    || ((icontains(body,"/sites/all/themes/") && icontains(body,"/sites/all/modules/"))
+    && icontains(body,"/sites/default/files/"))) || icontains(body,"jquery.extend(drupal.settings"))
+    || icontains(body,"content=\"drupal")) || icontains(banner,"x-generator: drupal"))'
+  method: GET
+  

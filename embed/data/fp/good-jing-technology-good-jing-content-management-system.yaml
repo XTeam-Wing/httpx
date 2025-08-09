@@ -1,0 +1,13 @@
+info:
+  category: other software system
+  company: Beijing Liangjing Zhicheng Technology Co., Ltd.
+  cpe: ''
+  product: good-jing-technology-good-jing-content-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (((((icontains(body,"ljcms") || icontains(body,"/tpl/templets")) || icontains(body,"liangjing.org"))
+    || icontains(body,"http://www.itf4.cn")) && icontains(body,"/data/attachment"))
+    || icontains(title,"powered by ljcms"))
+  method: GET
+  

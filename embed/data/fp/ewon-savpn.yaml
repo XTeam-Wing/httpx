@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ewon-savpn
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"server: ewon")'
+  method: GET
+  

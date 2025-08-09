@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 云ec电商系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"云ec电商系统")
+  method: GET
+  

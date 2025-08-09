@@ -1,0 +1,11 @@
+info:
+  category: burglar alarm
+  company: Schneider Electric
+  cpe: ''
+  product: schneider-quantum-140noe77101
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"html/config.js") && icontains(body,"indexlanguage"))
+  method: GET
+  

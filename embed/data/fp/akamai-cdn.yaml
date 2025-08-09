@@ -1,0 +1,13 @@
+info:
+  category: service
+  company: Akamai Technologies
+  cpe: ''
+  product: akamai-cdn
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((icontains(banner,"akamai-ip: ") || icontains(banner,"x-akamai-transformed"))
+    || icontains(banner,"akamai-ip: ")) || icontains(banner,"x-akamai-transformed"))
+    || icontains(banner,"server: akamaighost")) || icontains(banner,"server: akamaighost"))'
+  method: GET
+  

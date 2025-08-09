@@ -1,0 +1,12 @@
+info:
+  category: switch
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-gs510tp
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"netgear gs510tp") || icontains(banner,"gs510tp")) || icontains(body,"class=\"gs510tpimage
+    spacer50percent topalign righthalign\""))
+  method: GET
+  

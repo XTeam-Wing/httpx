@@ -1,0 +1,15 @@
+info:
+  category: operating system
+  company: Apple Inc.
+  cpe: ''
+  product: macos
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((icontains(banner,"darwin kernel version") && icontains(protocol,"snmp"))
+    || icontains(banner,"macintosh os x")) || (((!icontains(banner,"reecam ip camera")
+    && !icontains(banner,"drupal")) && !icontains(banner,"couchdb")) && icontains(server,"{\"length\":
+    0, \"chained_to\": 1919247457, \"identifier\": \"ofa\", \"str\": null}"))) ||
+    icontains(banner,"macos"))'
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: Bangteng Inc.
+  cpe: ''
+  product: kangle-reverse-agent
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(title,"welcome use kangle") || icontains(banner,"server: kangle"))
+    || icontains(banner,"kangle"))'
+  method: GET
+  

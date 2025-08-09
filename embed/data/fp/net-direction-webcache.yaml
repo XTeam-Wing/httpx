@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Wangzong Information Technology Co., Ltd.
+  cpe: ''
+  product: net-direction-webcache
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"广州高度软件有限公司版权所有")
+  method: GET
+  

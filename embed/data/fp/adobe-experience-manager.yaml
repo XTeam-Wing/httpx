@@ -1,0 +1,12 @@
+info:
+  category: other software system
+  company: Adobe Inc.
+  cpe: ''
+  product: adobe-experience-manager
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body," class=\"coral-heading coral-heading--1\"") && icontains(body,"adobe
+    experience manager"))
+  method: GET
+  

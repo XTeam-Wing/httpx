@@ -1,0 +1,12 @@
+info:
+  category: cloud computing
+  company: Reolink Innovation Limited
+  cpe: ''
+  product: reolink-cloud
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: reolink cloud") || icontains(banner,"server: reolink
+    cloud"))'
+  method: GET
+  

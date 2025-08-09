@@ -1,0 +1,12 @@
+info:
+  category: vpn products
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: d-link-dsr-250
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(body,"unified services router - dsr-250 </div>") || icontains(body,"<div
+    class=\"floatl txt01\">product page: dsr-250"))'
+  method: GET
+  

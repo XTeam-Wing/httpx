@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Observa Telecom
+  cpe: ''
+  product: observa-telecom-product
+  server: nginx
+  tags: []
+rules:
+- dsl: title == "observa"
+  method: GET
+  

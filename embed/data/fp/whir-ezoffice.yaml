@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: whir-ezoffice
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"loclan")||(icontains(body,"/defaultroot/js/cookie.js"))||(icontains(body,"whirrootpath"))||(icontains(title,"万户oa"))||(icontains(body,"ezofficeusername"))||(icontains(title,"ezoffice"))
+  method: GET
+  

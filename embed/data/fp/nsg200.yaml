@@ -1,0 +1,11 @@
+info:
+  category: vpn products
+  company: other
+  cpe: ''
+  product: nsg200
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"NSG200")
+  method: GET
+  

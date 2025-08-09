@@ -1,0 +1,15 @@
+info:
+  category: development framework
+  company: Симбикс
+  cpe: ''
+  product: simbix-framework
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"x-powered-by: simbix framework") || (!icontains(body,"server:
+    couchdb") && (((icontains(body,"<div class=\"image\"><img src=\"/logo-lpage.png\"
+    width=\"40\" height=\"40\" alt=\"simbix framework\" /></div>") || icontains(body,"logo-lpage-owner.png"))
+    || icontains(body,"content=\"simbix framework ")) || icontains(banner,"x-powered-by:
+    simbix framework"))))'
+  method: GET
+  

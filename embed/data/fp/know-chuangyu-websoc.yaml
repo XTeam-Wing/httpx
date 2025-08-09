@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Beijing Zhichuangyu Information Technology Co., Ltd.
+  cpe: ''
+  product: know-chuangyu-websoc
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<div id=\"logo-websoc\" class=\"png-bg\"></div>") || icontains(title,"网站立体监控系统"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: h3cweb网管
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"webui") && icontains(body,"web网管用户登录") && icontains(body,"china_logo.jpg")
+  method: GET
+  

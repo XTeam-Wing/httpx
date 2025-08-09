@@ -1,0 +1,13 @@
+info:
+  category: log analysis && audit
+  company: WEBSIDESTORY,INC.
+  cpe: ''
+  product: websidestory
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"<!-- websidestory html for search -->") || icontains(body,"websidestory,inc.
+    all rights reserved. u.s.patent no. 6,393,479b1")) || icontains(body,"websidestory
+    code")) || icontains(body,"http://websidestory.com"))
+  method: GET
+  

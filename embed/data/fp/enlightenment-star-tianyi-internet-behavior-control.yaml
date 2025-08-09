@@ -1,0 +1,11 @@
+info:
+  category: online behavior management system
+  company: Venus Star Information Technology Group Co., Ltd.
+  cpe: ''
+  product: enlightenment-star-tianyi-internet-behavior-control
+  server: nginx
+  tags: []
+rules:
+- dsl: (!icontains(body,"莱克斯科技") && icontains(title,"netoray nsg 上网行为管理系统"))
+  method: GET
+  

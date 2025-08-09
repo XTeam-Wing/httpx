@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Intel Corporation
+  cpe: ''
+  product: intel-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner," router") && icontains(banner,"intel corporation"))
+  method: GET
+  

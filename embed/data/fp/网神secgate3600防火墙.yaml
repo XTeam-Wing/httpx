@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 网神secgate3600防火墙
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"网神secgate") && icontains(body,"3600防火墙") && icontains(body,"css/lsec/login.css")
+  method: GET
+  

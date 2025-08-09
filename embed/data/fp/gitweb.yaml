@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: gitweb
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"/gitweb.js") || icontains(body,"/gitweb.css")) || icontains(body,"content=\"gitweb"))
+  method: GET
+  

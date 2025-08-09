@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: d-link-dsl-6850u
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"dsl-6850u") || icontains(banner,"realm=\"dsl-6850u"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 中新金盾防火墙
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<title>中新金盾防火墙</title>") && icontains(body,"zxfw")
+  method: GET
+  

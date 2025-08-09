@@ -1,0 +1,11 @@
+info:
+  category: wireless network
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-meraki-mr18
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"meraki mr18")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: zone.js
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"zone.js")
+  method: GET
+  

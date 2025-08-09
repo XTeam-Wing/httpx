@@ -1,0 +1,13 @@
+info:
+  category: other enterprise application
+  company: LiveZilla GmbH i.L.
+  cpe: ''
+  product: livezilla
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"livezilla is a registered trademark of livezilla gmbh</div>")
+    || icontains(body,"href=\"http://www.livezilla.net\" target=\"_blank")) || icontains(body,"content=\"livezilla"))
+    || icontains(body,"thank you for using livezilla!"))
+  method: GET
+  

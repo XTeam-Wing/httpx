@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: teamcity
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"teamcity")
+  method: GET
+  

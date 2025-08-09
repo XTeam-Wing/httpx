@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: kwcnet-vis
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"content=\"北京开维创科技有限公司")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Belden Inc.
+  cpe: ''
+  product: hirschmann-security-device
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"hirschmann eagle security device")
+  method: GET
+  

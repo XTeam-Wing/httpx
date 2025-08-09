@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: tuling-code-filing-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"长沙图灵科技有限公司") && icontains(body,"编码申报系统")||(icontains(body,"编码申报系统"))||(icontains(body,"长沙图灵科技有限公司"))
+  method: GET
+  

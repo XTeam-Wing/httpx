@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: chinags-sc
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"src=\"/animation/images/teacher_2.png\"")
+  method: GET
+  

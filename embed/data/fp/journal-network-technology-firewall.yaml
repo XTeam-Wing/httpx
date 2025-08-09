@@ -1,0 +1,12 @@
+info:
+  category: firewall
+  company: Beijing Jianwang Technology Co., Ltd.
+  cpe: ''
+  product: journal-network-technology-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"action=\"/logincheck\"") && icontains(body,"class=\"login-head
+    clearfix\"")) || icontains(body,"apw_form_token"))
+  method: GET
+  

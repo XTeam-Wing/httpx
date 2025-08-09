@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Shanghai Lingjian Information Technology Co., Ltd.
+  cpe: ''
+  product: linkedcare-e-tooth-teeth-message-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"e看牙消息平台")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: ASUS Computer Co., Ltd.
+  cpe: ''
+  product: asus-r6400
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<div class=\"prod_madelname\">r6400") || icontains(banner,"asus-r6400"))
+  method: GET
+  

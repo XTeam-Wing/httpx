@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Lorex Technology Inc.
+  cpe: ''
+  product: lorex-video-monitoring
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"href=\"/lorex_webplugin.exe")
+  method: GET
+  

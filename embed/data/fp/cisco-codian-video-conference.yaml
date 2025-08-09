@@ -1,0 +1,13 @@
+info:
+  category: voice video
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-codian-video-conference
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((icontains(banner,"codian mse ") || icontains(title,"codian mcu")) ||
+    icontains(banner,"codian mcu ")) || icontains(banner,"codian isdn ")) || icontains(banner,"codian
+    ip ")) || (icontains(banner,"server: codian mcu ") && icontains(protocol,"rtsp")))'
+  method: GET
+  

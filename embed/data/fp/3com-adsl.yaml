@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: 3com-adsl
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"3com: ap8760: ") || icontains(banner,"3com wireless"))'
+  method: GET
+  

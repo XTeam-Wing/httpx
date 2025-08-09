@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Guangzhou Congshi Technology Co., Ltd.
+  cpe: ''
+  product: congshi-technology-examination-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"placeholder=\"请输入凭据\"")
+  method: GET
+  

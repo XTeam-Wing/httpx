@@ -1,0 +1,11 @@
+info:
+  category: erp
+  company: other
+  cpe: ''
+  product: inoerp-product
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"id=\"ino-body\"")
+  method: GET
+  

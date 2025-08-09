@@ -1,0 +1,11 @@
+info:
+  category: industrial control
+  company: Our Energy AB
+  cpe: ''
+  product: our-energy-collectric-cmu
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"inloggning collectric cmu")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: 北京升鑫网络科技有限公司
+  cpe: ''
+  product: 青藤云安全-云平台
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"content=\"云安全,安全一体化平台") && icontains(body,"/main.html")
+  method: GET
+  

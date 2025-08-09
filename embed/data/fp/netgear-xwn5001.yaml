@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-xwn5001
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"netgear xwn5001") || icontains(title,"netgear plc ap xwn5001"))
+    || icontains(banner,"netgear xwn5001"))
+  method: GET
+  

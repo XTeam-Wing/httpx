@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: adas
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: adas") || icontains(banner,"server: adas"))'
+  method: GET
+  

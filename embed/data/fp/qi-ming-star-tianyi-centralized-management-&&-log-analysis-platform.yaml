@@ -1,0 +1,11 @@
+info:
+  category: log analysis && audit
+  company: Venus Star Information Technology Group Co., Ltd.
+  cpe: ''
+  product: qi-ming-star-tianyi-centralized-management-&&-log-analysis-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"天玥集中管理与日志分析平台")
+  method: GET
+  

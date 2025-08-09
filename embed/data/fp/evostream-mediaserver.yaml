@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: EvoStream Inc
+  cpe: ''
+  product: evostream-mediaserver
+  server: nginx
+  tags: []
+rules:
+- dsl: 'icontains(banner,"server: evostream media server")'
+  method: GET
+  

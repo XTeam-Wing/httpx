@@ -1,0 +1,11 @@
+info:
+  category: voice video
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-telepresence视频会议
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(banner,"Cisco TelePresence ")
+  method: GET
+  

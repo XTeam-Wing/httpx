@@ -1,0 +1,14 @@
+info:
+  category: other enterprise application
+  company: Microsoft Corporation
+  cpe: ''
+  product: microsoft-rdp-web-version
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"{\"length\": 0, \"chained_to\": 875837752, \"identifier\":
+    \"rise Development LP\", \"str\": null}") && (icontains(banner,"location: rdweb")
+    || icontains(banner,"location: ./rdweb/"))) || (icontains(banner,"path=/rdweb/")
+    && icontains(banner,"set-cookie: tswafeaturecheckcookie=")))'
+  method: GET
+  

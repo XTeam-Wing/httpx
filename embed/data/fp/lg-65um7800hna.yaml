@@ -1,0 +1,11 @@
+info:
+  category: smart home
+  company: LG Electronics.
+  cpe: ''
+  product: lg-65um7800hna
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<modelnumber>65um7800hna</modelnumber>")
+  method: GET
+  

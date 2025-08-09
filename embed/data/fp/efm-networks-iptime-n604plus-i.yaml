@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: EFM Networks Co.,Ltd.
+  cpe: ''
+  product: efm-networks-iptime-n604plus-i
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"iptime n604plus-i") || icontains(body,"\"/images2/login_title.n604pi.gif\""))
+  method: GET
+  

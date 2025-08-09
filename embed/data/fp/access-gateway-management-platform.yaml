@@ -1,0 +1,11 @@
+info:
+  category: online behavior management system
+  company: other
+  cpe: ''
+  product: access-gateway-management-platform
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"EDP-WEB/login.jsp")
+  method: GET
+  

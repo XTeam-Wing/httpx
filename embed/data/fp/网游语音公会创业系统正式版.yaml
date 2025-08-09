@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 网游语音公会创业系统正式版
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"网游语音公会创业系统正式版")
+  method: GET
+  

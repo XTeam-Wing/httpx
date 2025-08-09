@@ -1,0 +1,12 @@
+info:
+  category: other support system
+  company: Apache Software Foundation.
+  cpe: ''
+  product: jakarta-project
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"<a href=\"http://jakarta.apache.org/\">") || icontains(body,"alt=\"the
+    jakarta project")) || icontains(title,"jakarta project"))
+  method: GET
+  

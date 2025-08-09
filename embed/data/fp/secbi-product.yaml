@@ -1,0 +1,11 @@
+info:
+  category: network intrusion detection && defense
+  company: SecBi LTD
+  cpe: ''
+  product: secbi-product
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"/secbiutils.min.js")
+  method: GET
+  

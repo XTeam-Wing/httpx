@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Intel Corporation
+  cpe: ''
+  product: intel-ixdp425
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"intel(r)") && icontains(title,"ixdp425 demo"))
+  method: GET
+  

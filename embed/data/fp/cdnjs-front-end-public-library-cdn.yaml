@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: cdnjs-front-end-public-library-cdn
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"libs.cdnjs.net") || icontains(banner,"libs.cdnjs.net"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: load balance
+  company: Fortinet, Inc.
+  cpe: ''
+  product: fortinet-fwn200b
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"fwn200b")
+  method: GET
+  

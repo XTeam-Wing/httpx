@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: songcms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"songcms")
+  method: GET
+  

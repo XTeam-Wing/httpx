@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: security-intelligent-management-platform
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"nanjing rickyinfo technology")
+  method: GET
+  

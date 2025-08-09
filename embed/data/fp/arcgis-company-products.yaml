@@ -1,0 +1,12 @@
+info:
+  category: other support system
+  company: Environmental Systems Research Institute, Inc.
+  cpe: ''
+  product: arcgis-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"action=\"/arcgismanager/main/login.jsf") || icontains(title,"arcgis
+    manager"))
+  method: GET
+  

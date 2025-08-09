@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: lsresearchmodflexminigateway
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"ls research modflex mini gateway")
+  method: GET
+  

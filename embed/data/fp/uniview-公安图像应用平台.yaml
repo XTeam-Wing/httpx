@@ -1,0 +1,11 @@
+info:
+  category: cloud computing
+  company: 浙江宇视科技有限公司
+  cpe: ''
+  product: uniview-公安图像应用平台
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"公安图像应用平台") && icontains(body,"浙江宇视科技有限公司")
+  method: GET
+  

@@ -1,0 +1,14 @@
+info:
+  category: other enterprise application
+  company: Spiceworks Inc.
+  cpe: ''
+  product: spiceworks-product
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((icontains(banner,"set-cookie: spiceworks_session=") || icontains(banner,"set-cookie:
+    spiceworks_session=")) || icontains(body,"<h1><img alt=\"spiceworks\" src=\"/images/logos/large.png"))
+    || icontains(body,"<link href=\"/stylesheets/general.css?")) || icontains(body,"<meta
+    name=\"author\" content=\"spiceworks, inc.\" />"))'
+  method: GET
+  

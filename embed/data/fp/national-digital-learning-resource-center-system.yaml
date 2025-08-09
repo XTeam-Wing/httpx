@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: national-digital-learning-resource-center-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"frontend") && icontains(title,"页面加载中,请稍候"))
+  method: GET
+  

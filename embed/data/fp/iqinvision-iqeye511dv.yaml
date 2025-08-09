@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Vicon Industries.
+  cpe: ''
+  product: iqinvision-iqeye511dv
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"iqinvision iqeye511dv")
+  method: GET
+  

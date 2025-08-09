@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 畅想之星非书资源管理平台
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"畅想之星 非书资源管理平台")
+  method: GET
+  

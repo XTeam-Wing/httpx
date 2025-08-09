@@ -1,0 +1,13 @@
+info:
+  category: electronic mail system
+  company: Kerio Technologies Inc.
+  cpe: ''
+  product: kerio-connect
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((icontains(banner,"pop3") && icontains(banner,"kerio connect")) || (!icontains(banner,"web
+    server") && icontains(banner,"kerio control"))) || icontains(banner,"server: kerio
+    connect")) || icontains(banner,"server: kerio connect"))'
+  method: GET
+  

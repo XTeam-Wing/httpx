@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: arab-portal
+  server: nginx
+  tags: []
+rules:
+- dsl: 'icontains(body,"powered by: arab")'
+  method: GET
+  

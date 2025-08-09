@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Shenzhen Feitong Broadband Technology Co., Ltd.
+  cpe: ''
+  product: photon-1ge+wifi
+  server: nginx
+  tags: []
+rules:
+- dsl: title == "1ge+wifi"
+  method: GET
+  

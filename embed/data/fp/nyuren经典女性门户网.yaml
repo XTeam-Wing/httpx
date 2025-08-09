@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: nyuren经典女性门户网
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"nyuren经典女性门户网")
+  method: GET
+  

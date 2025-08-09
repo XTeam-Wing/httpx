@@ -1,0 +1,13 @@
+info:
+  category: network storage
+  company: Dell Inc.
+  cpe: ''
+  product: emc-dd-system-manager
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"/ddem/login/") || (icontains(title,"301 moved permanently")
+    && icontains(banner,"/ddem"))) || icontains(body,"datadomain enterprise manager"))
+    || (icontains(body,"dd system manager") && icontains(body,"emc-favicon.ico")))
+  method: GET
+  

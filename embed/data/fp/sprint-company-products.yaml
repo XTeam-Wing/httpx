@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Sprint IP Voice && Data Business Solutions
+  cpe: ''
+  product: sprint-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: 'icontains(banner,"server: springt")'
+  method: GET
+  

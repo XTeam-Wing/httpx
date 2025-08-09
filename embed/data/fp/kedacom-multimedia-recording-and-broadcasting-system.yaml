@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: kedacom-multimedia-recording-and-broadcasting-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"#menu-vrs") && icontains(title,"vrs")||(icontains(body,"reqmodpwddata={\"msgid\":ev_vrs_req_msg.ev_vrs_mod_account"))||(icontains(title,"vrs2000"))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Shenzhen Jixiang Tengda Technology Co., Ltd.
+  cpe: ''
+  product: tenda-n6
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"class=\"loagin_title\">tenda n6") && icontains(body,"var sys_target
+    = \"n6\""))
+  method: GET
+  

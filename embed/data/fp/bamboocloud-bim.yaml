@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: bamboocloud-bim
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"bim 开发配置与运维控制台")
+  method: GET
+  

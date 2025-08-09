@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: d-link-wifimanager
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"d-link central wifimanager")
+  method: GET
+  

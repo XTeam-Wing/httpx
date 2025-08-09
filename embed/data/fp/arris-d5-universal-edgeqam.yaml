@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: COMMSCOPE
+  cpe: ''
+  product: arris-d5-universal-edgeqam
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"arris d5 universal edgeqam")
+  method: GET
+  

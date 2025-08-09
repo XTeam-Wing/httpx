@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Airspan Networks
+  cpe: ''
+  product: airspan-spr
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"airspan - wipll spr")
+  method: GET
+  

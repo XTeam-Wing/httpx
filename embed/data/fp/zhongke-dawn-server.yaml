@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Dawn Information Industry Co., Ltd.
+  cpe: ''
+  product: zhongke-dawn-server
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"server mgmt")
+  method: GET
+  

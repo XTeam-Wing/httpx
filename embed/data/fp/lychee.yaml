@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Automattic Inc.
+  cpe: ''
+  product: lychee
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"Lychee")
+  method: GET
+  

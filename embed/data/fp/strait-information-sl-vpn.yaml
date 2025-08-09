@@ -1,0 +1,12 @@
+info:
+  category: vpn products
+  company: Fujian Strait Information Technology Co., Ltd.
+  cpe: ''
+  product: strait-information-sl-vpn
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<p datalocal=\"activexnorma1\">检测到您机器上sga控件不能正常运行！</p>") &&
+    icontains(body,"href=\"/common/sslcab.exe"))
+  method: GET
+  

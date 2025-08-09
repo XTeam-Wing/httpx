@@ -1,0 +1,12 @@
+info:
+  category: antivirus gateway
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-usg1900
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"usg1900") && icontains(body,"<div class=\"model\" id=\"model\"
+    name=\"model\">usg1900</div>")) || icontains(banner,"usg1900"))
+  method: GET
+  

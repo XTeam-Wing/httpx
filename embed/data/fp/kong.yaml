@@ -1,0 +1,13 @@
+info:
+  category: component
+  company: Kong Inc.
+  cpe: ''
+  product: kong
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && icontains(banner,"server:
+    kong")) || ((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && icontains(banner,"server:
+    kong"))) || title == "kong dashboard")'
+  method: GET
+  

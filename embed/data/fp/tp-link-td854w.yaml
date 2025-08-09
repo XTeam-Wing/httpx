@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Pullian Technology Co., Ltd.
+  cpe: ''
+  product: tp-link-td854w
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"td854w") || icontains(banner,"realm=\"td854w"))
+  method: GET
+  

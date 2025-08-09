@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: soc8000ip
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"soc8000ip")
+  method: GET
+  

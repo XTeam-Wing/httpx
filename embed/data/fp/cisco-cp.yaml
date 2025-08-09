@@ -1,0 +1,11 @@
+info:
+  category: voice video
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-cp
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"cisco configuration professional")
+  method: GET
+  

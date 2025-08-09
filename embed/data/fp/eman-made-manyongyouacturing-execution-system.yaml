@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Wuhan Yimo Technology Co., Ltd.
+  cpe: ''
+  product: eman-made-manyongyouacturing-execution-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<span i18n=\"1\">益模模具智能制造系统</span>")
+  method: GET
+  

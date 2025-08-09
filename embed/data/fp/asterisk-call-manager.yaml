@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Sangoma Technologies.
+  cpe: ''
+  product: asterisk-call-manager
+  server: nginx
+  tags: []
+rules:
+- dsl: (!icontains(banner,"asterisk call manager proxy") && icontains(banner,"asterisk
+    call manager"))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: quixplorer
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"target=\"_blank\">the quix project</a></small>") || icontains(body,"href=\"http://quixplorer.sourceforge.net\"
+    target=")) || icontains(title,"quixplorer"))
+  method: GET
+  

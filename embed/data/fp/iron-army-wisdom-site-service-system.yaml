@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Jiangsu Tiejun Software Technology Co., Ltd.
+  cpe: ''
+  product: iron-army-wisdom-site-service-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"document.domain == \"eqs.jztj.net\"")
+  method: GET
+  

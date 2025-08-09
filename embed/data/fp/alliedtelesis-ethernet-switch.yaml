@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Allied Telesis, Inc.
+  cpe: ''
+  product: alliedtelesis-ethernet-switch
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"allied telesyn ethernet switch")
+  method: GET
+  

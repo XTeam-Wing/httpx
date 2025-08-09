@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Hunan Qiangzhi Technology Development Co., Ltd.
+  cpe: ''
+  product: strong-technology-teaching-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"bjkjdx_qrcode_view") && icontains(body,"湖南强智科技发展有限公司")) &&
+    title == "登录")
+  method: GET
+  

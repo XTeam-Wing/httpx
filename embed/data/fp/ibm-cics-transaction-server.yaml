@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: International Business Machines Corporation
+  cpe: ''
+  product: ibm-cics-transaction-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: ibm_cics_transaction_server") || icontains(banner,"server:
+    ibm_cics_transaction_server"))'
+  method: GET
+  

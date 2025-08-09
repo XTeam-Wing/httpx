@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: Rimon Internet
+  cpe: ''
+  product: internet-rimon-filter
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"rimon: rwc_block") || icontains(banner,"rimon: rwc_block"))'
+  method: GET
+  

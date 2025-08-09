@@ -1,0 +1,13 @@
+info:
+  category: other enterprise application
+  company: Kuluo (Beijing) Technology Co., Ltd.
+  cpe: ''
+  product: phpcms
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"data/config.js") || icontains(body,"powered by phpcms"))
+    || icontains(body,"content=\"phpcms")) || (icontains(body,"http://www.phpcms.cn")
+    && icontains(body,"powered by")))
+  method: GET
+  

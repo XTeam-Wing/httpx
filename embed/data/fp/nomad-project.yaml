@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: HashiCorp, Inc.
+  cpe: ''
+  product: nomad-project
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<meta name=\"nomad-ui/config/environment") && icontains(title,"nomad"))
+  method: GET
+  

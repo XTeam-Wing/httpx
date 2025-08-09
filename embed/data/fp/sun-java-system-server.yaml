@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: Oracle Corporation
+  cpe: ''
+  product: sun-java-system-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(banner,"couchdb") && icontains(banner,"server: sun-java-system-web"))
+    || icontains(banner,"server: sun-java-system-web"))'
+  method: GET
+  

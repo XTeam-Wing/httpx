@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Bay Technical Associates
+  cpe: ''
+  product: baytech-ds72
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"ds72 host module")
+  method: GET
+  

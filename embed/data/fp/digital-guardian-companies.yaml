@@ -1,0 +1,11 @@
+info:
+  category: threat analysis && management
+  company: Digital Guardian
+  cpe: ''
+  product: digital-guardian-companies
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"href=\"/brands/guardian/favicon.ico\"")
+  method: GET
+  

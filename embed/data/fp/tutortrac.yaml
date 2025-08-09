@@ -1,0 +1,15 @@
+info:
+  category: other support system
+  company: Redrock Software Corporation
+  cpe: ''
+  product: tutortrac
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((((icontains(banner,"set-cookie: installcode=") || icontains(banner,"set-cookie:
+    productcode=")) || icontains(banner,"location tutortrac")) || icontains(banner,"location
+    tracweb40")) || icontains(banner,"set-cookie: installcode=")) || icontains(banner,"set-cookie:
+    productcode=")) || icontains(title,"tutortrac learning center tracking software"))
+    || icontains(body,"font><a href=\"http://www.go-redrock.com\"><font"))'
+  method: GET
+  

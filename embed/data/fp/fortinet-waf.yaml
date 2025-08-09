@@ -1,0 +1,11 @@
+info:
+  category: web application firewall
+  company: Fortinet, Inc.
+  cpe: ''
+  product: fortinet-waf
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"fortiwafsid=") || icontains(banner,"fortiwafsid="))
+  method: GET
+  

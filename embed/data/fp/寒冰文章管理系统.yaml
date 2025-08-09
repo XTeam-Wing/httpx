@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 寒冰文章管理系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"寒冰文章管理系统")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Polycom, Inc.
+  cpe: ''
+  product: poly-companies-products
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"href=\"resources/weblogin-all.css") && icontains(title,"polycom
+    login"))
+  method: GET
+  

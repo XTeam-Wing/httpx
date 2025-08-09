@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Emerson Electric Co.
+  cpe: ''
+  product: emerson-rdu
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"rdu-a login")
+  method: GET
+  

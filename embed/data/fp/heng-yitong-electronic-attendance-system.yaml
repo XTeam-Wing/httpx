@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Xinjiang Hengyitong Information Technology Co., Ltd.
+  cpe: ''
+  product: heng-yitong-electronic-attendance-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<input class=\"an1\" name=\"btnrst\" id=\"btnrst\" type=\"reset\"
+    value=\" \" />")
+  method: GET
+  

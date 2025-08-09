@@ -1,0 +1,11 @@
+info:
+  category: network storage
+  company: East Net Power Technology Co., Ltd.
+  cpe: ''
+  product: netposa-ipsan916
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"ipsan916管理系统")
+  method: GET
+  

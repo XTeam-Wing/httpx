@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: lnmp-one-click-installation-package
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"lnmp一键安装包")
+  method: GET
+  

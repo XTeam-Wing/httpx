@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Beijing Digital China Cloud Technology Co., Ltd.
+  cpe: ''
+  product: dcn-dcrs-7604e
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<b>dcrs-7604e</b>")
+  method: GET
+  

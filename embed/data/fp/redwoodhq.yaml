@@ -1,0 +1,11 @@
+info:
+  category: development framework
+  company: redwoodhq
+  cpe: ''
+  product: redwoodhq
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"stylesheets/redwoodtheme/resources/js/azzurra.js")
+  method: GET
+  

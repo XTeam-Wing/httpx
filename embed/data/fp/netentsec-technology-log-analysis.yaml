@@ -1,0 +1,11 @@
+info:
+  category: log analysis && audit
+  company: Beijing Wangkang Technology Co., Ltd.
+  cpe: ''
+  product: netentsec-technology-log-analysis
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"网康") && icontains(title,"日志分析中心 "))
+  method: GET
+  

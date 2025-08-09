@@ -1,0 +1,12 @@
+info:
+  category: switch
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-gs716t
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"netgear gs716t") || icontains(body,"class=\"gs716timage spacer50percent
+    topalign righthalign\""))
+  method: GET
+  

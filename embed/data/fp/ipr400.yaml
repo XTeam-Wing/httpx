@@ -1,0 +1,11 @@
+info:
+  category: voice video
+  company: Omnitracs, LLC.
+  cpe: ''
+  product: ipr400
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"ipr voip device ipr400 ")
+  method: GET
+  

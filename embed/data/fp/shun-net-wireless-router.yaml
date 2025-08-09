@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Hangzhou Shunwang Silkworm Technology Co., Ltd.
+  cpe: ''
+  product: shun-net-wireless-router
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"document.form1.submit()") && icontains(body,"/cgi-bin/sw_login.cgi"))
+    || icontains(title,"顺网无线"))
+  method: GET
+  

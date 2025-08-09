@@ -1,0 +1,13 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: gogs
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"set-cookie: i_like_gogits=") || icontains(banner,"set-cookie:
+    i_like_gogits=")) || icontains(body,"<a class=\"item\" target=\"_blank\" href=\"https://gogs.io/docs\"
+    rel=\"noreferrer\">帮助</a>")) || icontains(body,"content=\"gogs"))'
+  method: GET
+  

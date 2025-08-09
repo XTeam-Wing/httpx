@@ -1,0 +1,12 @@
+info:
+  category: other software system
+  company: other
+  cpe: ''
+  product: elite-cms
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"copyright &copy; 2003 - 2017 <a href=\"http://www.elite-is.com/cmhome.asp")
+    || icontains(title,"elite cms"))
+  method: GET
+  

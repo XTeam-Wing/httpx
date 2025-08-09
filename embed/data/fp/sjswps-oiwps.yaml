@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Oracle Corporation
+  cpe: ''
+  product: sjswps-oiwps
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"oracle-iplanet-proxy-server") || icontains(banner,"oracle-iplanet-proxy-server"))
+  method: GET
+  

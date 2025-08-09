@@ -1,0 +1,16 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: flax-article-manager
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/images/flaxweb_newsletter_bg.gif\" bgcolor=\"#ffffff\" valign=\"top\">")||(icontains(body,"<b><a
+    href=\"http://www.flaxweb.com/products/articles\"><font color=\"#666666\">article"))||(icontains(body,"<title>flax
+    article cms administration panel</title>"))||(icontains(body,"recent updates for flax
+    article manager</font></b></a></div>"))||(icontains(body,"<td width=67%><font color=#ffffff><a
+    href=admin.php class=htext>flax"))||(icontains(body,"<td><a href=\"http://www.flaxweb.com/products/articles\">for
+    more details about flax article manager (cms) please click"))
+  method: GET
+  

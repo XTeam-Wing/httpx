@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: espace-u1981
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"espace u1981 ")
+  method: GET
+  

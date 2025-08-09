@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Yealink Inc.
+  cpe: ''
+  product: gigabit-color-ip-phone
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"gigabit color ip phone") || icontains(banner,"realm=\"gigabit
+    color ip phone"))
+  method: GET
+  

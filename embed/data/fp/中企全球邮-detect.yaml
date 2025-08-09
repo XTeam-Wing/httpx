@@ -1,0 +1,15 @@
+info:
+  author: wing
+  description: 中企动力中企邮局（300.cn）为您提供企业邮箱注册、公司邮箱注册业务，您可以通过中企邮局申请企业邮箱大容量账号，通过中企邮局注册的企业邮箱将享有全球线路、全程加密、多端登录等特点，欢迎你的光临。
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:mail:china-enterprise-global-mail:*:*:*:*:*:*:*:*
+  tags: []
+  product: 中企全球邮
+  category: cms
+rules:
+- method: GET
+  path:
+  - '/webmail/login.php?msg=login'
+  dsl: contains(body, "content=\"中企动力中企邮局\"") || contains(title, "全球邮") || contains(body, "\"operator_home_url\":\"http://www.300.cn/\",\"operator_attr_advertising\"")

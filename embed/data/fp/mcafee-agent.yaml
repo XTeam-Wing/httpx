@@ -1,0 +1,12 @@
+info:
+  category: other network security
+  company: McAfee, Inc.
+  cpe: ''
+  product: mcafee-agent
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: agent-listenserver-httpsvr") || icontains(banner,"server:
+    agent-listenserver-httpsvr"))'
+  method: GET
+  

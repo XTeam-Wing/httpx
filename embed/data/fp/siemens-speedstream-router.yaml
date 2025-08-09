@@ -1,0 +1,14 @@
+info:
+  category: router
+  company: Siemens AG.
+  cpe: ''
+  product: siemens-speedstream-router
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"speedstream ") || icontains(banner,"siemens subscriber
+    networks ")) || (!icontains(body,"server: couchdb") && (icontains(body,"siemens
+    subscriber networks -->") || icontains(body,"<title>speedstream router management
+    interface</title>"))))'
+  method: GET
+  

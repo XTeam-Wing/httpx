@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Shanghai Niuzhiyun Network Technology Co., Ltd.
+  cpe: ''
+  product: niushop-open-source-mall
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"template/shop/blue") || icontains(title,"niushop开源商城"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 东方思维高速管理系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"东方思维高速管理系统")
+  method: GET
+  

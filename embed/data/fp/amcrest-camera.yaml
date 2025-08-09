@@ -1,0 +1,13 @@
+info:
+  category: cameras && surveillance
+  company: Amcrest Corp.
+  cpe: ''
+  product: amcrest-camera
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"amcrest technologies") && icontains(body,"id=\"play_alarm_sound"))
+    && icontains(body,"onclick=\"chkalarmsound()")) || (icontains(body,"w_cloudcurver")
+    && icontains(body,"amcrest")))
+  method: GET
+  

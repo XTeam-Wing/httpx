@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-dg834pn
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"netgear dg834pn") || icontains(banner,"realm=\"netgear
+    dg834pn"))
+  method: GET
+  

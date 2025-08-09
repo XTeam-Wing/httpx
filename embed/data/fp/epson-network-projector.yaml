@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Seiko Epson Corporation.
+  cpe: ''
+  product: epson-network-projector
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"epson network projector")
+  method: GET
+  

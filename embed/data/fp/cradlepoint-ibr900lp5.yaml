@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Cradlepoint, Inc.
+  cpe: ''
+  product: cradlepoint-ibr900lp5
+  server: nginx
+  tags: []
+rules:
+- dsl: 'icontains(title,"login :: ibr900lp5")'
+  method: GET
+  

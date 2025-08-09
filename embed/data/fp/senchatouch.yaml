@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: senchatouch
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"sencha touch")
+  method: GET
+  

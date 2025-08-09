@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Juniper Networks, Inc.
+  cpe: ''
+  product: juniper-mx960
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"mx960_ce") || icontains(banner,"juniper_mx960")) || icontains(body,"face=\"verdana\">mx960"))
+    || icontains(banner,"juniper networks, inc. mx960"))
+  method: GET
+  

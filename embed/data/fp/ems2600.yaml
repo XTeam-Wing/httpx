@@ -1,0 +1,11 @@
+info:
+  category: burglar alarm
+  company: Xiamen Sunway Technology Co., Ltd.
+  cpe: ''
+  product: ems2600
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<b>ems2600 - 用户登录</b>") || icontains(title,"ems2600"))
+  method: GET
+  

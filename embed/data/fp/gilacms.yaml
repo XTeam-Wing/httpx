@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: gilacms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"gila cms")
+  method: GET
+  

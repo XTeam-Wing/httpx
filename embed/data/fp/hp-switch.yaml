@@ -1,0 +1,12 @@
+info:
+  category: switch
+  company: HP Development Company, L.P.
+  cpe: ''
+  product: hp-switch
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"switch") && icontains(title,"hp 1820")) || (icontains(banner,"hewlett-packard
+    development company") && icontains(banner,"switch software version")))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Shanghai Guoyun Information Technology Co., Ltd.
+  cpe: ''
+  product: gocloud-network-ah-r20-series-router
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"gocloud ah-r20 series router")
+  method: GET
+  

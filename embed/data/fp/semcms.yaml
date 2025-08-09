@@ -1,0 +1,13 @@
+info:
+  category: other software system
+  company: other
+  cpe: ''
+  product: semcms
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"powered by <a href=\"http://www.sem-cms.com\"") || icontains(body,"<b
+    semcms php 2.9</b>")) || icontains(body,"semcms php 3.9")) || icontains(body,"sc_mid_c_left_c
+    sc_mid_left_bt"))
+  method: GET
+  

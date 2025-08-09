@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: dvss-httpserver
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"dvss-httpserver")
+  method: GET
+  

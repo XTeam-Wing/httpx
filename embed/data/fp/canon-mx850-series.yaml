@@ -1,0 +1,11 @@
+info:
+  category: printer
+  company: Canon Inc.
+  cpe: ''
+  product: canon-mx850-series
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"nowrap width=\"#\"> canon mx850 series</td>")
+  method: GET
+  

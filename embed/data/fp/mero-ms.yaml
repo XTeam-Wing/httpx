@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Duoyou Technology (Beijing) Co., Ltd.
+  cpe: ''
+  product: mero-ms
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"src=\"http://gate.looyu.com/")
+  method: GET
+  

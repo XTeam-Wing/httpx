@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 日晒雨淋原版asp程序
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"日晒雨淋原版asp程序")
+  method: GET
+  

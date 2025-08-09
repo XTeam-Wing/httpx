@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: Blue Face Ltd.
+  cpe: ''
+  product: falcon-web-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: falcon web server") || icontains(banner,"server:
+    falcon web server"))'
+  method: GET
+  

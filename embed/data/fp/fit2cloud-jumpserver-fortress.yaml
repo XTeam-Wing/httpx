@@ -1,0 +1,13 @@
+info:
+  category: operation && maintenance audit fortres machine
+  company: Hangzhou Feizhiyun Information Technology Co., Ltd.
+  cpe: ''
+  product: fit2cloud-jumpserver-fortress
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"<input type=\"password\" class=\"form-control\" name=\"password\"
+    placeholder=\"密码\" required=\"\">") && icontains(body,"csrfmiddlewaretoken"))
+    && icontains(body,"<a href=\"/users/password/forgot/\">")) || icontains(title,"jumpserver"))
+  method: GET
+  

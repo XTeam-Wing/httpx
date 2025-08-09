@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 128uu酒店预订系统php版
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"128uu酒店预订系统php版")
+  method: GET
+  

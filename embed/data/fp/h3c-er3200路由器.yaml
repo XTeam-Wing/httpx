@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: h3c-er3200路由器
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"er3200") && icontains(body,"home.asp") && icontains(body,"h3c.com")
+  method: GET
+  

@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: torrentflux
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<font class=\"title\">torrentflux login</font>")||(icontains(body,"<td><input
+    type=\"password\" name=\"iamhim\" value=\"\" size=\"15\" style=\"font-family:verdana,helvetica,sans-serif;
+    font-size:9px; color:#000\" /></td>"))
+  method: GET
+  

@@ -1,0 +1,14 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: webpress
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"powered by <a href=\"http://www.ecomenterprises.com\" target=\"_blank\"
+    class=\"small_text\">webpress</a><sup><font size=\"-5\">tm</font></sup></td>")||(icontains(body,"powered
+    by <a href=\"http://goywp.com\" id=\"webpresslink\">webpress</a><br></p></td>"))||(icontains(body,"powered
+    by </font><font size=\"1\" color=\"#000000\" face=\"arial\">ywp</font>"))
+  method: GET
+  

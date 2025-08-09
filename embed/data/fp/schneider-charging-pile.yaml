@@ -1,0 +1,12 @@
+info:
+  category: other iot device
+  company: Schneider Electric
+  cpe: ''
+  product: schneider-charging-pile
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"267") && icontains(banner,"p3p: cp=this is not a privacy
+    policy!")) || (icontains(title,"charging station") && icontains(body,"cgiserver")))'
+  method: GET
+  

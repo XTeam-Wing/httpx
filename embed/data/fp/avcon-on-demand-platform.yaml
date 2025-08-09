@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Warburg Pincus Information Technology Co., Ltd.
+  cpe: ''
+  product: avcon-on-demand-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<form action=\"./avcon.action\" method") || icontains(title,"avcon-点播管理平台"))
+  method: GET
+  

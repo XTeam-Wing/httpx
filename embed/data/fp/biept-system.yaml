@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: biept-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"class=\"loginin loginin1\"")
+  method: GET
+  

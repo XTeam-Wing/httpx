@@ -1,0 +1,12 @@
+info:
+  category: development framework
+  company: Apereo, Inc.
+  cpe: ''
+  product: uportal
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(body,"alt=\"powered by uportal") || icontains(banner,"uportal-version:
+    uportal_rel"))'
+  method: GET
+  

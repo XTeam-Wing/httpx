@@ -1,0 +1,13 @@
+info:
+  category: development framework
+  company: other
+  cpe: ''
+  product: marathon
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(body,"href=\"img/marathon-favicon.ico") || icontains(body,"<div
+    id=\"marathon\"></div>")) || title == "marathon") || icontains(banner,"x-marathon-leader"))
+    || icontains(banner,"x-marathon-leader"))
+  method: GET
+  

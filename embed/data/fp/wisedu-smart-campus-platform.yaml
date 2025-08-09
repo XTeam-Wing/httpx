@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Jiangsu Jinzhi Education Information Co., Ltd.
+  cpe: ''
+  product: wisedu-smart-campus-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"前端配置文件") && icontains(body,"portal/js/plugins/changeskin.js"))
+  method: GET
+  

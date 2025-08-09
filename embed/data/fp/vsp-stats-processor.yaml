@@ -1,0 +1,14 @@
+info:
+  category: component
+  company: VSP-Stats-Processor
+  cpe: ''
+  product: vsp-stats-processor
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(body,"&nbsp;theme:bismarck by <a href=\"#\" title=\"myrddin8 <at>
+    gmail <dot> com\">myrddin</a>&nbsp;") || icontains(body,"<body>error: cannot establish
+    database connection || database database_name does not exist")) || icontains(body,"<a
+    href=\"http://www.clanavl.com/vsp/\">vsp</a> v"))'
+  method: GET
+  

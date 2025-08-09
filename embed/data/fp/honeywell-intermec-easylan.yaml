@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Honeywell International Inc.
+  cpe: ''
+  product: honeywell-intermec-easylan
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(body,"color=\"black\" size=\"5\">intermec easylan") || icontains(banner,"server:
+    xcd webadmin")) || icontains(banner,"server: xcd webadmin"))'
+  method: GET
+  

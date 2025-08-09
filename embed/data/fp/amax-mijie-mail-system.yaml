@@ -1,0 +1,11 @@
+info:
+  category: electronic mail system
+  company: Huami Technology (Suzhou) Co., Ltd.
+  cpe: ''
+  product: amax-mijie-mail-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"/aboutus/magicmail.gif")
+  method: GET
+  

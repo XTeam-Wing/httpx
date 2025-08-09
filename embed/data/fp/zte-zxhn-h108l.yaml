@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: ZTE Corporation
+  cpe: ''
+  product: zte-zxhn-h108l
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"zxhn h108l") || icontains(banner,"realm=\"zxhn h108l"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: voice video
+  company: General Electric Company
+  cpe: ''
+  product: ge-nx590
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"(ge-interlogix) / nx590")
+  method: GET
+  

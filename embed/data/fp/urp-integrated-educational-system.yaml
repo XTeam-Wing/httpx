@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: urp-integrated-educational-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"教务系统") && icontains(body,"北京清元优软科技有限公司")||(icontains(title,"urp 综合教务系统"))||(icontains(body,"<input
+    name=\"j_captcha_response\" type=\"hidden"))||(icontains(body,"北京清元优软科技有限公司"))||(icontains(body,"教务系统"))||(icontains(body,"北京清元优软科技有限公司")
+    && icontains(body,"教务系统"))
+  method: GET
+  

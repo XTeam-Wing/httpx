@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: avocent-remote-management
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"avocent corporation") && icontains(title,"remote management controller")||(icontains(body,"avocent
+    corporation"))
+  method: GET
+  

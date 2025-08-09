@@ -1,0 +1,12 @@
+info:
+  category: vpn products
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-ssl-vpn
+  server: nginx
+  tags: []
+rules:
+- dsl: '(!icontains(body,"server: couchdb") && (icontains(body,"var apppath = \"/app/hw/\"")
+    || icontains(body,"href=\"./logo/&logo&.ico\"")))'
+  method: GET
+  

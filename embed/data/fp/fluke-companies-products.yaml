@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Fluke Corporation
+  cpe: ''
+  product: fluke-companies-products
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"fluke networks")
+  method: GET
+  

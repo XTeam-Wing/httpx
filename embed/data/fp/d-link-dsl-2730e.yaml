@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: d-link-dsl-2730e
+  server: nginx
+  tags: []
+rules:
+- dsl: 'icontains(body,"product page</span>: dsl-2730e")'
+  method: GET
+  

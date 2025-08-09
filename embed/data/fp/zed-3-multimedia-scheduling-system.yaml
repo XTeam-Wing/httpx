@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Jesirui Technology Company
+  cpe: ''
+  product: zed-3-multimedia-scheduling-system
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(body,"<a ") && icontains(banner,"content-length: 73")) && icontains(body,"document.location=\"main.php\""))'
+  method: GET
+  

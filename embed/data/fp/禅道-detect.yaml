@@ -1,0 +1,11 @@
+info:
+  author: 哆啦A梦
+  description: 项目管理开源系统
+  tags: []
+  product: 禅道
+  category: cms
+rules:
+- method: GET
+  path:
+  - '/zentao'
+  dsl: contains_all(body, "zt-logo.png","window.config={\"webRoot\"")  || contains(title, "禅道") || contains(header, "zentaosid")

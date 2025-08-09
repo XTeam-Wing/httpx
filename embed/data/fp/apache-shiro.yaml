@@ -1,0 +1,13 @@
+info:
+  category: development framework
+  company: Apache Software Foundation.
+  cpe: ''
+  product: apache-shiro
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(title,"apache shiro quickstart") || icontains(banner,"rememberme=deleteme"))
+    || icontains(banner,"shiro-cas")) || icontains(banner,"shiro-cas")) || icontains(body,"</i>
+    shiro</li>"))
+  method: GET
+  

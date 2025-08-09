@@ -1,0 +1,14 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: punbb
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"punbb")||(icontains(body,"<!-- forum_debug -->"))||(icontains(body,"<div
+    id=\"brd-index\" class=\"brd-page basic-page\">"))||(icontains(body,"<p id=\"copyright\">powered
+    by <strong><a href=\"http://punbb.informer.com/\">punbb</a></strong>, supported
+    by <strong><a href=\"http://www.informer.com/\">informer technologies, inc</a></strong>.</p>"))
+  method: GET
+  

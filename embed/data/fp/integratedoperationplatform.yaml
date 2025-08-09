@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: integratedoperationplatform
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"天宫一体化运营平台")
+  method: GET
+  

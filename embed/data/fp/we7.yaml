@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Western Power (Beijing) Technology Co., Ltd.
+  cpe: ''
+  product: we7
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"/widgets/widgetcollection/")
+  method: GET
+  

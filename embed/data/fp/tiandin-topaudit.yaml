@@ -1,0 +1,12 @@
+info:
+  category: database auditing && protection
+  company: Beijing Tianrongxin Technology Co., Ltd.
+  cpe: ''
+  product: tiandin-topaudit
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"ta-w 登录系统") && icontains(body,"topaudit")) || icontains(banner,"topsec
+    topaudit"))
+  method: GET
+  

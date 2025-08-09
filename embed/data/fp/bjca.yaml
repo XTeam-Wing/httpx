@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: bjca
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<li><a href=\"/install/certapp_bd.exe\">下载证书应用环境</a></li>")
+  method: GET
+  

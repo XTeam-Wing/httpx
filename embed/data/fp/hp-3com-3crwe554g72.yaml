@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Hewlett Packard Enterprise Development LP
+  cpe: ''
+  product: hp-3com-3crwe554g72
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"http-equiv=\"3cnumber\" content=\"3crwe554g72\"")
+  method: GET
+  

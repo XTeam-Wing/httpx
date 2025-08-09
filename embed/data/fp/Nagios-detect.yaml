@@ -1,0 +1,14 @@
+info:
+  product: nagios xi
+  category: 网络监控
+  author: 哆啦A梦
+  company: Nagios
+  description: Nagios是一款开源的免费网络监视工具，可以监控Windows、Linux和Unix的主机状态，交换机路由器等网络设备，在系统或服务状态异常时发出邮件或短信报警，第一时间通知网站运维人员
+  tags:
+  - tech
+  - nagios
+rules:
+- method: GET
+  path: 
+  - /nagiosxi/
+  dsl: status_code == 200 && contains(body, 'Nagios XI</title>') && contains(body, '/nagiosxi/images/')

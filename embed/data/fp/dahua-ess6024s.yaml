@@ -1,0 +1,11 @@
+info:
+  category: network storage
+  company: Zhejiang Dahua Technology Co., Ltd.
+  cpe: ''
+  product: dahua-ess6024s
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"linux ess6024s")
+  method: GET
+  

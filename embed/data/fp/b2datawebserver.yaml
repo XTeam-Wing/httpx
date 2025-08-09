@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: b2datawebserver
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"b2data webserver")
+  method: GET
+  

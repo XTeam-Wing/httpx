@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 快意通教师教学评价系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"快意通教师教学评价系统")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: manageenginefacilitiesdesk
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"manageengine facilitiesdesk")
+  method: GET
+  

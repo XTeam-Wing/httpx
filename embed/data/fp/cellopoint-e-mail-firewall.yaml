@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Cellopoint International Corp.
+  cpe: ''
+  product: cellopoint-e-mail-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"cellopoint e-mail firewall")
+  method: GET
+  

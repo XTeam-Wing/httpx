@@ -1,0 +1,11 @@
+info:
+  category: network storage
+  company: Suzhou Keda Technology Co., Ltd.
+  cpe: ''
+  product: kedacom-disk-array-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"href=\"kstormon.exe") || icontains(title,"科达磁盘阵列系统"))
+  method: GET
+  

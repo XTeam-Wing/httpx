@@ -1,0 +1,11 @@
+info:
+  category: other office equipment
+  company: Toshiba Corporation
+  cpe: ''
+  product: toshiba-mt200
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"mt200 ftp")
+  method: GET
+  

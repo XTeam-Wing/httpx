@@ -1,0 +1,16 @@
+info:
+  category: router
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: dlink-wireless-router
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"realm=\"d-link wireless n router") || (((!icontains(body,"server:
+    couchdb") && !icontains(banner,"drupal")) && !icontains(banner,"couchdb")) &&
+    ((((icontains(banner,"realm=\"d-link wireless n router") || icontains(body,"<td><img
+    src=\"images/img_wireless_bottom.gif\"")) || icontains(server,"linux, http/1.1,
+    dir-")) || icontains(title,"d-link systems, inc")) || icontains(title,"d-link
+    systems, inc."))))'
+  method: GET
+  

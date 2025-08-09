@@ -1,0 +1,14 @@
+info:
+  author: Loong716
+  description: '竹云统一身份管理平台（BIM） was detected.
+
+    '
+  tags: []
+  product: 竹云统一身份管理平台（bim）
+  category: cms
+rules:
+- method: GET
+  path:
+    - '/bim-server/'
+  dsl: contains(title, "BIM 开发配置与运维控制台") ||
+    contains(header, "BASIC realm=\"BIM Server\"")

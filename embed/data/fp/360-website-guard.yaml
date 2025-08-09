@@ -1,0 +1,12 @@
+info:
+  category: website security monitoring system
+  company: Beijing Qihoo Technology Co., Ltd.
+  cpe: ''
+  product: 360-website-guard
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((icontains(banner,"wzws-ray: ") || icontains(banner,"360wzws")) || icontains(banner,"360wzb"))
+    || icontains(banner,"wzws-ray: ")) || icontains(server,"360wzws")) || icontains(banner,"360wzb"))'
+  method: GET
+  

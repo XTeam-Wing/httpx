@@ -1,0 +1,12 @@
+info:
+  category: voice video
+  company: Aastra Technologies Limited
+  cpe: ''
+  product: aastra-6731i
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"aastra 6731i") || icontains(banner,"realm=\"aastra
+    6731i"))
+  method: GET
+  

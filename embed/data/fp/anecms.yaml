@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: anecms
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"content=\"erwin aligam - ealigam@gmail.com")
+  method: GET
+  

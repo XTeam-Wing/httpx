@@ -1,0 +1,14 @@
+info:
+  category: service
+  company: Liferay Inc.
+  cpe: ''
+  product: liferay
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((((icontains(body,"liferay.currenturl") || icontains(body,"liferay.aui"))
+    || icontains(banner,"guest_language_id=")) || icontains(banner,"guest_language_id="))
+    || icontains(banner,"liferay portal")) || icontains(banner,"liferay portal"))
+    || icontains(body,"powered by liferay portal"))
+  method: GET
+  

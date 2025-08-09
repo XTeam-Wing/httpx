@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: yrcms(易人cms)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"yrcms")||(icontains(title,"yrcms"))||(icontains(body,"易人cms"))||(icontains(title,"易人cms"))
+  method: GET
+  

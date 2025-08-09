@@ -1,0 +1,12 @@
+info:
+  category: host monitoring && auditing
+  company: other
+  cpe: ''
+  product: centreon
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"centreon - it & network monitoring") || icontains(body,"generator\"
+    content=\"centreon - copyright"))
+  method: GET
+  

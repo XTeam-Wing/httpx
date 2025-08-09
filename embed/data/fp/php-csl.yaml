@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: php-csl
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"title=\"php-csl\">php-csl") || icontains(body,"content=\"php
+    code snippet"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: printer
+  company: Canon Inc.
+  cpe: ''
+  product: canon-mx410-series
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"nowrap>canon mx410 series</td>")
+  method: GET
+  

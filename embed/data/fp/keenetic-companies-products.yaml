@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: 'Keenetic Limited '
+  cpe: ''
+  product: keenetic-companies-products
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"content=\"keenetic web\"")
+  method: GET
+  

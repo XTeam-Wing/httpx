@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: Oracle Corporation
+  cpe: ''
+  product: oracle-bi-publisher-enterprise
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"Oracle BI Publisher Enterprise")
+  method: GET
+  

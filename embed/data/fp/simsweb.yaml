@@ -1,0 +1,14 @@
+info:
+  category: service
+  company: SIMS, Inc.
+  cpe: ''
+  product: simsweb
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"index.html\"><font color=\"black\" face=\"arial\">loading
+    simsweb, please wait.....</font></a></h2>") || icontains(title,"simsweb loading....."))
+    || icontains(body,"src=\"/simsweb/monitor.js")) || icontains(body,"<form onsubmit=\"sendinfo();
+    return false;\" name=\"logon"))
+  method: GET
+  

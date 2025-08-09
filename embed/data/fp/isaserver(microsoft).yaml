@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: isaserver(microsoft)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"isa server(microsoft)")
+  method: GET
+  

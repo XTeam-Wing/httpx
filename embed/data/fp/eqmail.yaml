@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: eqmail
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<frame src=\"/cgi-bin/eqwebmail?empty=1")||(icontains(body,"href=\"eqmail.ico"))||(icontains(title,"powered
+    by eqmail!"))
+  method: GET
+  

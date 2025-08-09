@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: Shenzhen EasyN Technology Co., Ltd.
+  cpe: ''
+  product: easyn-tas-tech-ipcam
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(banner,"couchdb") && icontains(banner,"server: tas-tech ipcam"))
+    || icontains(banner,"server: tas-tech ipcam"))'
+  method: GET
+  

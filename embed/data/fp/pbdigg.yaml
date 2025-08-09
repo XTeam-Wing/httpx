@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: pbdigg
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"pbdigg")
+  method: GET
+  

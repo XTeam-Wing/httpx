@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: owtware-iconn-end-user-calculation
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"src=\"/res/api/owvmapi.js?")||(icontains(title,"owvm_product_name"))
+  method: GET
+  

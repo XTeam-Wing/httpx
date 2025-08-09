@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: banorte
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"banorte")
+  method: GET
+  

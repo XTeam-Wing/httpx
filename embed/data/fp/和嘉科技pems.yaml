@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 和嘉科技pems
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"和嘉科技 pems")
+  method: GET
+  

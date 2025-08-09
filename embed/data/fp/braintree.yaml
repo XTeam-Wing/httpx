@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: braintree
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"braintree")
+  method: GET
+  

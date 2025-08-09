@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 全程oa
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"全程oa")
+  method: GET
+  

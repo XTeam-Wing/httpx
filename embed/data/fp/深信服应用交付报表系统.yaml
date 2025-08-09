@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 深信服应用交付报表系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/reportcenter/index.php?cls_mode=cluster_mode_others")
+  method: GET
+  

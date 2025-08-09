@@ -1,0 +1,14 @@
+info:
+  category: web application firewall
+  company: Trustwave Holdings, Inc.
+  cpe: ''
+  product: modsecurity-product
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && (icontains(banner,"mod_security")
+    || icontains(banner,"server: noyb"))) || ((!icontains(banner,"drupal") && !icontains(banner,"couchdb"))
+    && ((icontains(banner,"server: noyb") || icontains(body,"this error was generated
+    by mod_security")) || icontains(banner,"mod_security"))))'
+  method: GET
+  

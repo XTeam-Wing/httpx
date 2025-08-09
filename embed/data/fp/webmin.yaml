@@ -1,0 +1,14 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: webmin
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((icontains(cert,"organization: webmin webserver") || (icontains(banner,"200
+    document follows") && icontains(title,"webmin"))) || icontains(body,"<thead><tr><td><b>登陆到
+    webmin </b></td></tr></thead>")) || icontains(body,"webmin server on")) || icontains(title,"login
+    to webmin"))'
+  method: GET
+  

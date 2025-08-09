@@ -1,0 +1,12 @@
+info:
+  category: development framework
+  company: other
+  cpe: ''
+  product: saber企业级开发平台
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"Saber企业级开发平台") || icontains(body,"<strong>很抱歉，如果没有 JavaScript
+    支持，Saber 将不能正常工作")
+  method: GET
+  

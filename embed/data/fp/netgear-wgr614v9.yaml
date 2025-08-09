@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-wgr614v9
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"netgear wgr614v9") || icontains(banner,"realm=\"netgear
+    wgr614v9"))
+  method: GET
+  

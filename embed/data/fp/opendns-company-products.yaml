@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: OpenDNS
+  cpe: ''
+  product: opendns-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: opendns") || icontains(banner,"server: opendns"))'
+  method: GET
+  

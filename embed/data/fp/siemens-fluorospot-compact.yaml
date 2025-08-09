@@ -1,0 +1,12 @@
+info:
+  category: other iot device
+  company: Siemens AG.
+  cpe: ''
+  product: siemens-fluorospot-compact
+  server: nginx
+  tags: []
+rules:
+- dsl: '(!icontains(body,"server: couchdb") && (icontains(body,"<form id=\"inicio\"
+    name=\"inicio\" action=\"/rsf/init.do\"") || icontains(title,"fluorospot compact")))'
+  method: GET
+  

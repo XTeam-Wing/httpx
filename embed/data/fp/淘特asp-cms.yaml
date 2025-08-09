@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 淘特asp-cms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"淘特asp_cms")||(icontains(title,"淘特asp_cms"))
+  method: GET
+  

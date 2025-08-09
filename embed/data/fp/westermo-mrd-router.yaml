@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Westermo Network Technologies
+  cpe: ''
+  product: westermo-mrd-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"westermo mrd-") || icontains(banner,"westermo mrd-"))
+  method: GET
+  

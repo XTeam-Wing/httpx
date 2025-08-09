@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: kedacom-redundant-arrays-of-independent-drives
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"磁盘阵列管理系统") && icontains(body,"<meta name=\"kedacom\" content=\"true\">")||(icontains(body,"<meta
+    name=\"kedacom\" content=\"true\">"))
+  method: GET
+  

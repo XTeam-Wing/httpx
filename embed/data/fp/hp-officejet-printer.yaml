@@ -1,0 +1,12 @@
+info:
+  category: printer
+  company: HP Development Company, L.P.
+  cpe: ''
+  product: hp-officejet-printer
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(banner,"reecam ip camera") && !icontains(body,"server: couchdb"))
+    && (icontains(body,"align=\"center\">hp officejet") || icontains(title,"hp officejet")))'
+  method: GET
+  

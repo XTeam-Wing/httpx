@@ -1,0 +1,14 @@
+info:
+  category: service
+  company: PCextreme BV
+  cpe: ''
+  product: pcextreme
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((icontains(banner,"server: pcx/dynamic") || icontains(banner,"server: pcx/dynamic"))
+    || icontains(banner,"server: pcx/no-cache")) || icontains(banner,"server: pcx/no-cache"))
+    || (!icontains(body,"server: couchdb") && icontains(body,"deze server is eigendom
+    van <a")))'
+  method: GET
+  

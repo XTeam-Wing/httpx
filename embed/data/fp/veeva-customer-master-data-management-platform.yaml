@@ -1,0 +1,12 @@
+info:
+  category: other software system
+  company: Veeva Systems
+  cpe: ''
+  product: veeva-customer-master-data-management-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: veeva network") || icontains(banner,"server: veeva
+    network"))'
+  method: GET
+  

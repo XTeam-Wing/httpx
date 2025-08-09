@@ -1,0 +1,11 @@
+info:
+  category: project management system
+  company: VMware, Inc.
+  cpe: ''
+  product: vmware-vrealize
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"正在重定向到 vrealize operations manager web")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: vpn products
+  company: Beijing Wangyu Xingyun Information Technology Co., Ltd.
+  cpe: ''
+  product: leadsec-nebula-vpn
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"北京网御星云") && icontains(body,"<p id=\"notice_content\">欢迎使用vpn安全网关</p>"))
+    || (icontains(body,"src=\"/vpn/user/common/") && icontains(body,"/js/leadsec.js")))
+  method: GET
+  

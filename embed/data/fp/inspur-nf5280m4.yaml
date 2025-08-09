@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Inspur Group Co., Ltd.
+  cpe: ''
+  product: inspur-nf5280m4
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"nf5280m4") || icontains(cert,"nf5280m4"))
+  method: GET
+  

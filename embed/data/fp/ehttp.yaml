@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: ehttp
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(banner,"couchdb") && icontains(banner,"server: ehttp")) || icontains(banner,"server:
+    ehttp"))'
+  method: GET
+  

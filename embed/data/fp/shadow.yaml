@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: shadow
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"shadow")
+  method: GET
+  

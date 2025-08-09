@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: e达oa办公管理系统-免费带oa办公小助手
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"e达oa办公管理系统_免费带oa办公小助手")
+  method: GET
+  

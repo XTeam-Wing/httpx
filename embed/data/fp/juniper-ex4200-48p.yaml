@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Juniper Networks, Inc.
+  cpe: ''
+  product: juniper-ex4200-48p
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"class=\"jweb-title uppercase\"> - ex4200-48p") || icontains(banner,"ex4200-48p"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: anti-virus product
+  company: Beijing Rising Information Technology Co., Ltd.
+  cpe: ''
+  product: rising-anti-virus-software-network-version
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"src=\"ravweb_files/") || icontains(title,"瑞星杀毒软件网络版"))
+  method: GET
+  

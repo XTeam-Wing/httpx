@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: graffiticms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"graffiti cms")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: server
+  company: Chengdu Yingchuang Information Technology Co., Ltd.
+  cpe: ''
+  product: emtronix-em9260
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"em9260 web server") || icontains(body,"class=\"style1\">em9260
+    web server"))
+  method: GET
+  

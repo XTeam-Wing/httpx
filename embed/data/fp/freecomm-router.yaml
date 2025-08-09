@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: freecomm-router
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"series software") && icontains(header,"freecomm data communication")
+  method: GET
+  

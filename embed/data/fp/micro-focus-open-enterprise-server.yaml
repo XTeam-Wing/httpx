@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Micro Focus International plc
+  cpe: ''
+  product: micro-focus-open-enterprise-server
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<h3>micro focus open enterprise server 提供市场中的最佳网络、文件和打印服务。</h3>")
+    || icontains(title,"micro focus open enterprise server"))
+  method: GET
+  

@@ -1,0 +1,15 @@
+info:
+  category: service
+  company: AVTECH Software, Inc.
+  cpe: ''
+  product: avtech-video-web-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(banner,"couchdb") && icontains(banner,"server: av-tech")) ||
+    (((!icontains(body,"server: couchdb") && !icontains(banner,"reecam ip camera"))
+    && !icontains(body,"<h2>blog comments</h2>")) && ((icontains(banner,"server: av-tech")
+    || icontains(body,"/av732e/setup.exe")) || icontains(title,"--- video web server
+    ---"))))'
+  method: GET
+  

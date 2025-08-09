@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: metronic-admin-theme-framework
+  server: nginx
+  tags: []
+rules:
+- dsl: (title == "metronic | admin dashboard template" || (icontains(body,"<div class=\"copyright\">")
+    && icontains(body,"metronic. admin dashboard template.")))
+  method: GET
+  

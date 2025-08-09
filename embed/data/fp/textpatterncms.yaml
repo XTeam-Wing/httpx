@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: textpatterncms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"textpattern cms")||(icontains(title,"textpatterncms"))
+  method: GET
+  

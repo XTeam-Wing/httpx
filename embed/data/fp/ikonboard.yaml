@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: ikonboard
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"powered by <a href=\"http://www.ikonboard.com") || icontains(body,"content=\"ikonboard"))
+  method: GET
+  

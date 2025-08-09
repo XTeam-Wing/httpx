@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: techbridge-cameras-and-surveillance
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"sorry,you need to use ie brower")
+  method: GET
+  

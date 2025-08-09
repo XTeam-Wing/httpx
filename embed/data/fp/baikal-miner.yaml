@@ -1,0 +1,11 @@
+info:
+  category: blockchain
+  company: baikai miner Co., Ltd.
+  cpe: ''
+  product: baikal-miner
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"baikal</b>miner") || icontains(title,"scr|pta"))
+  method: GET
+  

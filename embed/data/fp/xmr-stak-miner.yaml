@@ -1,0 +1,12 @@
+info:
+  category: blockchain
+  company: other
+  cpe: ''
+  product: xmr-stak-miner
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"digest realm=\"xmr-stak-miner") || icontains(banner,"digest
+    realm=\"xmr-stak-miner"))
+  method: GET
+  

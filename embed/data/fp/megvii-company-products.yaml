@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Beijing Megvii Technology Co., Ltd.
+  cpe: ''
+  product: megvii-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"powered by megvii 本产品由旷视®提供智能技术支持")
+  method: GET
+  

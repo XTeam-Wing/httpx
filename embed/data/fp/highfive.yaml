@@ -1,0 +1,11 @@
+info:
+  category: voice video
+  company: Highfive.
+  cpe: ''
+  product: highfive
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"highfive_device_hand")
+  method: GET
+  

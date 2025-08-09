@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: lenovo-enterprise-network-disk
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"alt=\"联想企业网盘android客户端下载\"") && icontains(title,"云存储系统")||(icontains(body,"client/android/bin/lenovobox.apk"))||(icontains(body,"alt=\"联想企业网盘android客户端下载\""))
+  method: GET
+  

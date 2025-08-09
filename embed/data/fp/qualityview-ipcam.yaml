@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: other
+  cpe: ''
+  product: qualityview-ipcam
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"welcome to qualityview ipcam")
+  method: GET
+  

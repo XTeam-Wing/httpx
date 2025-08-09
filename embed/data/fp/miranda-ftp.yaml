@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Sophos Technologies Pvt. Ltd.
+  cpe: ''
+  product: miranda-ftp
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"miranda ftp server")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: printer
+  company: Zebra Technologies Corporation
+  cpe: ''
+  product: zebra-zm400-200dpi-zpl
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"ztc zm400-200dpi zpl</h1>")
+  method: GET
+  

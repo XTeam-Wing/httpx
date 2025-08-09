@@ -1,0 +1,12 @@
+info:
+  category: other support system
+  company: other
+  cpe: ''
+  product: bluequartz
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"login - bluequartz") || icontains(body,"value=\"copyright
+    (c) 2000, cobalt networks"))
+  method: GET
+  

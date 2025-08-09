@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Guangzhou Qibo Network Technology Co., Ltd.
+  cpe: ''
+  product: 齐博软件-v7
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/images/v7/cms.css")
+  method: GET
+  

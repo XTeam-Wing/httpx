@@ -1,0 +1,12 @@
+info:
+  category: adsl
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-wbr-204g
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"huawei-3com wbr-204g") || icontains(banner,"huawei-3com
+    wbr-204g"))
+  method: GET
+  

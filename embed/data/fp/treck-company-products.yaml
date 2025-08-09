@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Treck Inc.
+  cpe: ''
+  product: treck-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"icmp_166") && icontains(protocol,"icmp"))
+  method: GET
+  

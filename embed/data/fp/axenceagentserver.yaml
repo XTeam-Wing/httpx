@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: axenceagentserver
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"axence agent server")
+  method: GET
+  

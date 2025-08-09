@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: ' other'
+  cpe: ''
+  product: network-resource-integrated-support-assist-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<b>网络资源综合支撑辅助平台</b>")
+  method: GET
+  

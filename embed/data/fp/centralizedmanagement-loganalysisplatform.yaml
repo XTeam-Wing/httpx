@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: centralizedmanagement-loganalysisplatform
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"天玥集中管理与日志分析平台")
+  method: GET
+  

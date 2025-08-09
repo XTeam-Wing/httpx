@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: COMMSCOPE
+  cpe: ''
+  product: arris-home-media-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"arris whole home solution media gateway") && icontains(protocol,"snmp"))
+  method: GET
+  

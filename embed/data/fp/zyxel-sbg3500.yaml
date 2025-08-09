@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-sbg3500
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"zyxel sbg3500") || icontains(body,"\"welcome to \" + \"sbg3500\"
+    + \" web"))
+  method: GET
+  

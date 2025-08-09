@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Actiontec Electronics, Inc.
+  cpe: ''
+  product: actiontec-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"actiontec") || icontains(banner,"actiontec"))
+  method: GET
+  

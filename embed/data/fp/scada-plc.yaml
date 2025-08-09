@@ -1,0 +1,12 @@
+info:
+  category: other support system
+  company: Rockwell Automation, Inc.
+  cpe: ''
+  product: scada-plc
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"ethernet processor") || icontains(body,"/ralogo.gif")) ||
+    icontains(body,"/images/rockcolor.gif"))
+  method: GET
+  

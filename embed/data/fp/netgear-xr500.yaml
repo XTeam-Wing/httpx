@@ -1,0 +1,13 @@
+info:
+  category: router
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-xr500
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(banner,"realm=\"netgear xr500") || icontains(banner,"netgear-xr500"))
+    || icontains(body,"var host_name = \"xr500\"")) || icontains(body,"href=\"/npg/xr500\""))
+    || icontains(banner,"realm=\"netgear xr500"))
+  method: GET
+  

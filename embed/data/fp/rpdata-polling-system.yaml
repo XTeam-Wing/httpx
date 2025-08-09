@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: rpdata-polling-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"rpdata 查询系统")
+  method: GET
+  

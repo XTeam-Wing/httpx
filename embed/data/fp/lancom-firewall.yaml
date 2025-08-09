@@ -1,0 +1,12 @@
+info:
+  category: firewall
+  company: LANCOM Systems GmbH
+  cpe: ''
+  product: lancom-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"firewall") && icontains(body,"<a href=\"http://www.lancom-systems.de\">"))
+    || title == "firewall login")
+  method: GET
+  

@@ -1,0 +1,13 @@
+info:
+  category: service
+  company: ACME Laboratories
+  cpe: ''
+  product: thttpd
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && icontains(banner,"server:
+    thttpd")) || ((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) &&
+    icontains(banner,"server: thttpd")))'
+  method: GET
+  

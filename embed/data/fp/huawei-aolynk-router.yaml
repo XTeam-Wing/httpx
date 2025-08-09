@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-aolynk-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"router") && icontains(banner,"aolynk "))
+  method: GET
+  

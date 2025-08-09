@@ -1,0 +1,13 @@
+info:
+  category: router
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-wndr4300
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"netgear wndr4300") || icontains(title,"netgear router
+    wndr4300")) || (icontains(body,"netgear wndr4300") && icontains(body,"var mmc
+    = {"))) || icontains(banner,"netgear wndr4300"))
+  method: GET
+  

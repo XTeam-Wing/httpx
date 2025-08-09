@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Beijing Huaqing Xinan Technology Co., Ltd.
+  cpe: ''
+  product: huaying-xinan-tdr
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"getintercepturl") && icontains(body,"已被华清信安tdr拦截"))
+  method: GET
+  

@@ -1,0 +1,14 @@
+info:
+  category: electronic mail system
+  company: Netwin Ltd.
+  cpe: ''
+  product: netwin-surgemail
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((((icontains(banner,"surgesmtp") || icontains(body,"/surgemail.css")) ||
+    icontains(banner,"basic realm=\"surgemail.")) || icontains(banner,"realm=\"surgemail"))
+    || icontains(banner,"realm=\"surgemail")) || icontains(body,"href=\"/about_mail.htm\">about
+    surgemail")) || icontains(title,"surgemail welcome page"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ebrigade
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"ebrigade")
+  method: GET
+  

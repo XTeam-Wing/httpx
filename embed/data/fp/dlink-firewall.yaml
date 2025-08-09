@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: dlink-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(cert,"d-link firewall") || icontains(banner,"d-link firewall"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Lorex Technology Inc.
+  cpe: ''
+  product: lorex-nvr
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<div id=\"lorexcameras\" class=\"style29\">")
+  method: GET
+  

@@ -1,0 +1,13 @@
+info:
+  category: electronic mail system
+  company: other
+  cpe: ''
+  product: extremail
+  server: nginx
+  tags: []
+rules:
+- dsl: (((((icontains(banner,"imap4 server") || icontains(banner,"extremail v7"))
+    || icontains(banner,"extremail v6")) || icontains(banner,"esmtp server")) || icontains(banner,"pop3
+    server")) && icontains(banner,"extremail"))
+  method: GET
+  

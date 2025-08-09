@@ -1,0 +1,11 @@
+info:
+  category: crm
+  company: Webnus
+  cpe: ''
+  product: ciuiscrm
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<div class=\"ciuis-body-content\">")
+  method: GET
+  

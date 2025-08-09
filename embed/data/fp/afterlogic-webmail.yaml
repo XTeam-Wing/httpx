@@ -1,0 +1,12 @@
+info:
+  category: electronic mail system
+  company: AfterLogic Corp.
+  cpe: ''
+  product: afterlogic-webmail
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"phpwebmailsessid") || icontains(banner,"phpwebmailsessid"))
+    || icontains(title,"afterlogic webmail pro"))
+  method: GET
+  

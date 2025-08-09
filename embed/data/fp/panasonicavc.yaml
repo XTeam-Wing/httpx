@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: panasonicavc
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"panasonic avc")
+  method: GET
+  

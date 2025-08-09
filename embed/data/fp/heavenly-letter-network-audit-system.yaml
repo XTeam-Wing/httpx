@@ -1,0 +1,11 @@
+info:
+  category: audit
+  company: Beijing Tianrongxin Technology Co., Ltd.
+  cpe: ''
+  product: heavenly-letter-network-audit-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"天融信网络审计系统") || icontains(body,"onclick=\"dlg_download()"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-vmg4325
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"welcome to vmg4325-") || icontains(banner,"zyxel vmg4325"))
+  method: GET
+  

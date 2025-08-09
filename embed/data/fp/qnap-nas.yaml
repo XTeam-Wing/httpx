@@ -1,0 +1,13 @@
+info:
+  category: network storage
+  company: QNAP Systems, Inc.
+  cpe: ''
+  product: qnap-nas
+  server: nginx
+  tags: []
+rules:
+- dsl: '(!icontains(body,"server: couchdb") && (((icontains(body,"/indexnas.cgi?counter=")
+    || icontains(body,"/redirect.html?count=\"+math.random()")) || icontains(body,"/css/qnap-default.css"))
+    || (icontains(body,"redirect_suffix") && icontains(banner,"http server"))))'
+  method: GET
+  

@@ -1,0 +1,13 @@
+info:
+  category: cameras && surveillance
+  company: Transom Capital Group
+  cpe: ''
+  product: pelco-sarix
+  server: nginx
+  tags: []
+rules:
+- dsl: (((((icontains(body,"function pegfootertobottom") || icontains(body,"/content/javascripts/prototype.js"))
+    || icontains(body,"/content/javascripts/tooltip.js")) || icontains(body,"/content/javascripts/scriptaculous.js?load=effects,slider,controls,dragdrop"))
+    || icontains(title,"spectra enhanced")) || icontains(title,"sarix&trade;"))
+  method: GET
+  

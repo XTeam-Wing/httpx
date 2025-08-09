@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: phpdebugbar
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"phpdebugbar")
+  method: GET
+  

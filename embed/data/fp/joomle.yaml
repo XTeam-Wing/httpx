@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: joomle
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"joomle")
+  method: GET
+  

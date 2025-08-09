@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: tipask问答系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"tipask问答系统")
+  method: GET
+  

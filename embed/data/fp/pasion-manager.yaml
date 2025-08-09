@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: pasion-manager
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"ログイン | パシオン社内業務管理システム")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: QPCOM INC.
+  cpe: ''
+  product: qpcom-router
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"qpcom | login")
+  method: GET
+  

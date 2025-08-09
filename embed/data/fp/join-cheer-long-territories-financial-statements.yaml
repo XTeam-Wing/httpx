@@ -1,0 +1,11 @@
+info:
+  category: fms
+  company: Beijing Jiuqi Software Co., Ltd.
+  cpe: ''
+  product: join-cheer-long-territories-financial-statements
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"../netrep") && icontains(body,"jqci"))
+  method: GET
+  

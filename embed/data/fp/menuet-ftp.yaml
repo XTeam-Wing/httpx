@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: menuet-ftp
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"menuet ftp server")
+  method: GET
+  

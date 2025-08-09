@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: PassMark Software Pty Ltd.
+  cpe: ''
+  product: zoom-search-engine
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"name=\"zoom_query\"")
+  method: GET
+  

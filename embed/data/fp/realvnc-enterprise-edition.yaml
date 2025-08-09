@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: RealVNC
+  cpe: ''
+  product: realvnc-enterprise-edition
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: vnc server enterprise edition") || icontains(banner,"server:
+    vnc server enterprise edition"))'
+  method: GET
+  

@@ -1,0 +1,13 @@
+info:
+  category: cameras && surveillance
+  company: Beijing Zhongdian Xingfa Technology Co., Ltd.
+  cpe: ''
+  product: china-electricity-camera
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: fiamm onvif") || (!icontains(body,"server: couchdb")
+    && ((icontains(body,"vb.htm?authority3=") && icontains(body,"fiamm. all rights
+    reserved.")) || icontains(banner,"server: fiamm onvif"))))'
+  method: GET
+  

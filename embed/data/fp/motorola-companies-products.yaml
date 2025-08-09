@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Motorola Solutions, Inc
+  cpe: ''
+  product: motorola-companies-products
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"motorola") || icontains(banner,"realm=\"motorola"))
+  method: GET
+  

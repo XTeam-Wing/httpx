@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Zhejiang Sunac Information Industry Co., Ltd.
+  cpe: ''
+  product: openmas
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"loginhead\"><link href=\"app_themes") || icontains(title,"openmas"))
+  method: GET
+  

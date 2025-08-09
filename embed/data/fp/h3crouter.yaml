@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: h3crouter
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/wnm/ssl/web/frame/login.html")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Xiamen Sixin Communication Technology Co., Ltd.
+  cpe: ''
+  product: four-faith-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"four-faith router") && icontains(body,"var mmc = {"))
+  method: GET
+  

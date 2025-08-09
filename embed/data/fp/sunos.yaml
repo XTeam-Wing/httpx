@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: sunos
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"sunos")
+  method: GET
+  

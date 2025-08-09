@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-er3200
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"h3c er3200") || icontains(banner,"h3c er3200")) || icontains(title,"er3200系统管理"))
+  method: GET
+  

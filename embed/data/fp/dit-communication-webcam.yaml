@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Zhejiang Liyuan Communication Technology Co., Ltd.
+  cpe: ''
+  product: dit-communication-webcam
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<a href=\"../geocx.exe\">") || icontains(title,"dvs/ipc"))
+  method: GET
+  

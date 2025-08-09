@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Procon Electronics
+  cpe: ''
+  product: procon-electronics-mod-mux
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: procon electronics mod-mux") || icontains(banner,"server:
+    procon electronics mod-mux"))'
+  method: GET
+  

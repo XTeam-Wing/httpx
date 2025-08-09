@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 365软件站群系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"365软件站群系统")
+  method: GET
+  

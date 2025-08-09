@@ -1,0 +1,12 @@
+info:
+  category: network isolation and one-way import
+  company: China Railway Xinan (Beijing) Information Security Technology Co., Ltd.
+  cpe: ''
+  product: china-tie-xinan-kobo-safety-isolation-and-information-one-way-import-system
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"科博安全隔离与信息单向导入系统</span>") || icontains(title,"科博安全隔离与信息交换系统")
+    || icontains(body,"page/downloadLinuxClient.is.run")
+  method: GET
+  

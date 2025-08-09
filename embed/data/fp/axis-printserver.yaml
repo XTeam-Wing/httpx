@@ -1,0 +1,13 @@
+info:
+  category: multifunctional
+  company: Axis Communications AB.
+  cpe: ''
+  product: axis-printserver
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((!icontains(banner,"couchdb") && icontains(banner,"network print server"))
+    && icontains(banner,"axis")) || (!icontains(body,"server: couchdb") && (icontains(body,"/cgi-bin/prodhelp?prod=")
+    || icontains(body,"psb_printjobs.gif"))))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: machttp
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: machttp") || icontains(banner,"server: machttp"))'
+  method: GET
+  

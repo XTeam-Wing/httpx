@@ -1,0 +1,13 @@
+info:
+  category: firewall
+  company: Beijing Taiyixingchen Information Technology Co., Ltd.
+  cpe: ''
+  product: too-a-star-morning-next-generation-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"src=\"php/common/checknum_creat.php?module=config_authnum\"")
+    || icontains(body,"src=\"/php/common/checknum_creat.php?module=config_authnum\""))
+    && icontains(body,"t-force下一代防火墙")) || icontains(title,"t-force下一代防火墙"))
+  method: GET
+  

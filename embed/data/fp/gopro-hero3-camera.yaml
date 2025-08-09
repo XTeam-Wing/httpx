@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: GoPro, Inc.
+  cpe: ''
+  product: gopro-hero3-camera
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: gopro web server") || icontains(banner,"server:
+    gopro web server"))'
+  method: GET
+  

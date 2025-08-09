@@ -1,0 +1,14 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: businessspace
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<title>login to our community network!</title>")||(icontains(body,"&copy;
+    businessspace</div>"))||(icontains(body,"this is a place for people building a circle
+    of professional contacts, open to sharing new business opportunities, and looking
+    to fully promote and showcase their capabilities.\" />"))
+  method: GET
+  

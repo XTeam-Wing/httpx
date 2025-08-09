@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: flickity
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"flickity")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: adsl
+  company: ASUS Computer Co., Ltd.
+  cpe: ''
+  product: asus-dsl-ac51
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"dsl-ac51") || icontains(body,"<div class=\"prod_madelname\">dsl-ac51"))
+    || icontains(banner,"dsl-ac51"))
+  method: GET
+  

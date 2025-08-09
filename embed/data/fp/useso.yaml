@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: useso
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"libs.useso.com")||(icontains(header,"libs.useso.com"))
+  method: GET
+  

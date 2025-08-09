@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-web-application-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"h3c web应用防火墙")
+  method: GET
+  

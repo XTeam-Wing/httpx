@@ -1,0 +1,13 @@
+info:
+  category: other network equipment
+  company: Beijing Wangkang Technology Co., Ltd.
+  cpe: ''
+  product: netentsec-technology-internet-control-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(body,"function getslotserialnumber(slotid)") && icontains(title,"互联网控制网关"))
+    || (icontains(body,"北京网康科技有限公司") && icontains(title,"互联网控制网关"))) || icontains(title,"网康科技·互联网控制网关"))
+    || icontains(title,"网康互联网控制网关"))
+  method: GET
+  

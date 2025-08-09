@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Dimi Box Technology Co., Ltd.
+  cpe: ''
+  product: pirate-cloud-business-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"haidao.web.general.js")
+  method: GET
+  

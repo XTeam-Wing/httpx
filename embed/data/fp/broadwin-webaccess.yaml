@@ -1,0 +1,12 @@
+info:
+  category: nac
+  company: 'BroadWin Technology, Inc. '
+  cpe: ''
+  product: broadwin-webaccess
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"/broadweb/bwroot.asp?username=") || icontains(banner,"/broadweb/bwroot.asp?username="))
+    || icontains(body,"<!-- #begintemplate \"/templates/bw_templete1.dwt\" -->"))'
+  method: GET
+  

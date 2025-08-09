@@ -1,0 +1,12 @@
+info:
+  category: server
+  company: Shenzhen Youshikang Communication Co., Ltd.
+  cpe: ''
+  product: you-shikang-ec-fax
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"src=\"web/img/log/logo-faxlogin.gif\"") && icontains(body,"
+    href=\"web/css/faxcss.css\""))
+  method: GET
+  

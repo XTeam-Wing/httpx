@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: sprinklr-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"server: ") && icontains(header,"sprinklr")||(icontains(header,"server:
+    sprinklr"))'
+  method: GET
+  

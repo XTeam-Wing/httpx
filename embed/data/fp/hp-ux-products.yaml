@@ -1,0 +1,11 @@
+info:
+  category: operating system
+  company: Hewlett Packard Enterprise Development LP
+  cpe: ''
+  product: hp-ux-products
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"hp-ux") || (icontains(banner,"hp-ux") && icontains(protocol,"snmp")))
+  method: GET
+  

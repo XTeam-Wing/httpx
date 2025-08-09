@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: other
+  cpe: ''
+  product: public-opinion-monitoring-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"/mpoweb/a/login") && icontains(title,"舆情监控平台"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Hewlett Packard Enterprise Development LP
+  cpe: ''
+  product: hp-dl385-g7
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"dl385-g7")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: development framework
+  company: Pivotal Software, Inc.
+  cpe: ''
+  product: spring-framework
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"org.springframework.web.servlet.i18n.cookielocaleresolver.locale=")
+    || icontains(body,"<h1>whitelabel error page</h1>")) || icontains(banner,"org.springframework.web.servlet.i18n.cookielocaleresolver.locale="))
+  method: GET
+  

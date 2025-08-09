@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: Sony Corporation
+  cpe: ''
+  product: sony-pcs-1600
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"basic realm=\"pcs-1600 web control\"") || icontains(banner,"basic
+    realm=\"pcs-1600 web control\""))
+  method: GET
+  

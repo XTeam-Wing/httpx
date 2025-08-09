@@ -1,0 +1,12 @@
+info:
+  author: wing
+  description: 一个支持当容量存储空间，且秒级搜索速度的邮件归档系统。拥有完善的账户授权体系，支持归档、搜索、审计及备份等多项功能，可满足不同行业用户对电子邮件数据安全、法规遵从、电子举证以及其他个性化使用需求。
+  cpe: cpe:2.3:a:mail:eastnetmail-archive:*:*:*:*:*:*:*:*
+  tags: []
+  product: eastnetmail
+  category: cms
+rules:
+- method: POST
+  path:
+  - '/login/admin'
+  dsl: contains(body,"\"data\":{\"password\":\"不能为空\",\"verifyToken\":\"不能为空\",\"account\":\"不能为空\"")

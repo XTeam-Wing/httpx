@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: sokuda
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"easymeeting web ")||(icontains(header,"easymeetingsession="))||(icontains(title,"会讯通电话会议系统"))||(icontains(body,"easymeeting
+    web"))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: anti-ddos attack system
+  company: other
+  cpe: ''
+  product: blockdos-product
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"server: blockdos") || icontains(banner,"server: blockdos.net"))
+    || icontains(banner,"server: blockdos.net"))'
+  method: GET
+  

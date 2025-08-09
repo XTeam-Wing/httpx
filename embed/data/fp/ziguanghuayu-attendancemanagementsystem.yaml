@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ziguanghuayu-attendancemanagementsystem
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"考勤管理系统") && icontains(body,"广州紫光华宇信息技术有限公司")||(icontains(body,"广州紫光华宇信息技术有限公司"))
+  method: GET
+  

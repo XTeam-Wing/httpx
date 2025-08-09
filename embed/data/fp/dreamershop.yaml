@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: dreamershop
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"dreamershop")
+  method: GET
+  

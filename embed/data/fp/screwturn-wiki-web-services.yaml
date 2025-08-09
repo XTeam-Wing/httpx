@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: screwturn-wiki-web-services
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"title=\"screwturn wiki\" target=\"_blank\">screwturn wiki")
+    || icontains(body,"powered by <a class=\"externallink\" href=\"http:")) || icontains(title,"screwturn-wiki"))
+  method: GET
+  

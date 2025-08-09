@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: powercdn
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"powercdn")||(icontains(header,"powercdn"))
+  method: GET
+  

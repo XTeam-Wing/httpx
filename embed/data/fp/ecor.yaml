@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: EverFocus Co., Ltd.
+  cpe: ''
+  product: ecor
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"ecor264") || icontains(banner,"ecor264"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Automated Logic Corporation
+  cpe: ''
+  product: automatedlogiccorporation-webctrl
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"href=\"/_common/lvl5/about/eula.jsp\"")
+  method: GET
+  

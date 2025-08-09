@@ -1,0 +1,11 @@
+info:
+  category: cloud computing
+  company: ICBC
+  cpe: ''
+  product: icbc-work-&&-silver-aggressive-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"var s3_app_address=\"https://gyj.icbc.com.cn\"")
+  method: GET
+  

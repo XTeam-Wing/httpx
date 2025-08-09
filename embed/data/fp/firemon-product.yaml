@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: other
+  cpe: ''
+  product: firemon-product
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"firemon")
+  method: GET
+  

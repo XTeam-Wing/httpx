@@ -1,0 +1,15 @@
+info:
+  category: service
+  company: Python Software Foundation
+  cpe: ''
+  product: zope
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((icontains(banner,"x-debug-frontend-key: zope") || icontains(banner,"basic
+    realm=\"zope")) || icontains(banner,"x-powered-by: zope")) || icontains(banner,"server:
+    zope")) && icontains(banner,"zope")) || ((((icontains(banner,"x-debug-frontend-key:
+    zope") || icontains(banner,"basic realm=\"zope")) || icontains(banner,"x-powered-by:
+    zope")) || icontains(banner,"server: zope")) && icontains(banner,"zope")))'
+  method: GET
+  

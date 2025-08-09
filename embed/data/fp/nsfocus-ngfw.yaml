@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: nsfocus-ngfw
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/login_logo_nf_zh_cn.png")||(icontains(title,"nsfocus nf"))
+  method: GET
+  

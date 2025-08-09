@@ -1,0 +1,12 @@
+info:
+  category: voice video
+  company: Avaya Inc.
+  cpe: ''
+  product: avaya-mcu-video-conferencing-system
+  server: nginx
+  tags: []
+rules:
+- dsl: ((title == "mcu default page" || icontains(body,"document.location.href = jarname
+    + \"/login.asp\" + query")) || icontains(body,"mcuv572_1"))
+  method: GET
+  

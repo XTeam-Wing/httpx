@@ -1,0 +1,11 @@
+info:
+  category: cloud computing
+  company: Cloud Wisdom (Beijing) Technology Co., Ltd.
+  cpe: ''
+  product: cloud-wisdom-dodp
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"/public/vendor/monaco/vs/loader.js")
+  method: GET
+  

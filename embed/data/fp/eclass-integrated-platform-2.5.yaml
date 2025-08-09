@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Bowen Education (Asia) Limited
+  cpe: ''
+  product: eclass-integrated-platform-2.5
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"eclass integrated platform 2.5")
+  method: GET
+  

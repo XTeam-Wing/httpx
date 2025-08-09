@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 嘟嘟行业搜素-垂直搜索
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"嘟嘟行业搜素_垂直搜索")
+  method: GET
+  

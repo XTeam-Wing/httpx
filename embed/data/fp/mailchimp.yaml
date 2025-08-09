@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: mailchimp
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"mailchimp")
+  method: GET
+  

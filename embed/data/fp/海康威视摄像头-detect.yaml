@@ -1,0 +1,22 @@
+info:
+  product: 海康威视摄像头
+  category: iot
+  author: 哆啦A梦
+  company: 杭州海康威视数字技术股份有限公司
+  description: 海康威视数字摄像头设备
+  tags:
+  - tech
+  - 海康威视摄像头
+rules:
+- method: GET
+  path: 
+  - /SDK/language
+  dsl: contains(body, "www.hikvision.com/ver20/XMLSchema") || contains(body, "www.hikvision.com/ver10/XMLSchema")
+- method: GET
+  path: 
+  - /doc/ui/images/login.jpg
+  dsl: status_code == 200 && md5(body) == "941c2f053ba536f0b3839eb1a124428d"
+- method: GET
+  path: 
+  - /doc/page/login.asp
+  dsl: contains(body, "<body ng-keypress=\"docPress($event)\"") || contains(body, "<script id=\"seajsnode\"")

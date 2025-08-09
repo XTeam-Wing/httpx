@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: other
+  cpe: ''
+  product: m0n0wall
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(protocol,"snmp") && icontains(banner,"m0n0wall"))
+  method: GET
+  

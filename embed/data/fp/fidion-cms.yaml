@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: fidion-cms
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"fcms=") || icontains(banner,"fcms=")) || icontains(body,"<!--
+    fcms-template head.tpl begins"))
+  method: GET
+  

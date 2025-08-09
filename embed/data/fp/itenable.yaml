@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: itenable
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/images/enableq.ico")||(icontains(title,"enableq在线问卷调查引擎"))||(icontains(body,"js/checkquestion.js.php"))||(icontains(body,"/enableq.css"))
+  method: GET
+  

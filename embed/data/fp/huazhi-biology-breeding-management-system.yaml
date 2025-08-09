@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Huazhi Rice Biotechnology Co., Ltd.
+  cpe: ''
+  product: huazhi-biology-breeding-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<h4>请在下框里画图形来提交登录") && icontains(body,"/resources/metronic/scripts/hz-tools.js"))
+  method: GET
+  

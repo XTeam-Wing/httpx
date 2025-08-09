@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 景云网络防病毒系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"styles/images/logo.png") && icontains(body,"login_form") && icontains(body,"防病毒")||(icontains(body,"login_form")
+    && icontains(body,"styles/images/logo.png") && icontains(body,"防病毒"))
+  method: GET
+  

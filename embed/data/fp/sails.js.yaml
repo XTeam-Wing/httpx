@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: sails.js
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"sails.js")
+  method: GET
+  

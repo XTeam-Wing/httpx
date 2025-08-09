@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: I-O DATA DEVICE, INC.
+  cpe: ''
+  product: i-o-data-router
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"i-o data wireless broadband router")
+  method: GET
+  

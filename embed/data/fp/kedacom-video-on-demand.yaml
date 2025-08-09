@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: kedacom-video-on-demand
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"clsid:da6a00a4-fa81-43ad-a686-ff8ad342395e") && icontains(body,"<param
+    name=\"conpwd\" value=\"kdc\">")||(icontains(title,"科达视频点播系统"))||(icontains(body,"<param
+    name=\"conpwd\" value=\"kdc\">"))||(icontains(body,"clsid:da6a00a4-fa81-43ad-a686-ff8ad342395e"))
+  method: GET
+  

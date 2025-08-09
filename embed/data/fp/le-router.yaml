@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: LeTV Information Technology Co., Ltd.
+  cpe: ''
+  product: le-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<div class=\"login-logo\"></div>") && icontains(title,"乐视路由器"))
+  method: GET
+  

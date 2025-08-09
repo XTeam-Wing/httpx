@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Elvaco AB.
+  cpe: ''
+  product: elvaco-cme3000
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"elvaco cme3000")
+  method: GET
+  

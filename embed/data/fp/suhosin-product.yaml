@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: SektionEins GmbH
+  cpe: ''
+  product: suhosin-product
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"suhosin") || icontains(banner,"suhosin"))
+  method: GET
+  

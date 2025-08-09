@@ -1,0 +1,12 @@
+info:
+  category: web application firewall
+  company: Comodo Security Solutions, Inc.
+  cpe: ''
+  product: comodo-waf
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: protected by comodo waf") || icontains(banner,"server:
+    protected by comodo waf"))'
+  method: GET
+  

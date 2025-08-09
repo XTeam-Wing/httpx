@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: chronograf
+  server: nginx
+  tags: []
+rules:
+- dsl: title == "chronograf"
+  method: GET
+  

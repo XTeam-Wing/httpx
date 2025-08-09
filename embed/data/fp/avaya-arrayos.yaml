@@ -1,0 +1,11 @@
+info:
+  category: operating system
+  company: Avaya Inc.
+  cpe: ''
+  product: avaya-arrayos
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"arrayos")
+  method: GET
+  

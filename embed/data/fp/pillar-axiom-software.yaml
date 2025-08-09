@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Oracle Corporation
+  cpe: ''
+  product: pillar-axiom-software
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"axiom storage services manager")
+  method: GET
+  

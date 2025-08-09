@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: EnGenius Technologies, Inc.
+  cpe: ''
+  product: engenius-wifi
+  server: nginx
+  tags: []
+rules:
+- dsl: 'icontains(body,"style=\"background: url(/pictures/img_bg_horizon.png) repeat-x\"")'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: d-link-dsl-2640b
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(title,"d-link dsl-2640b") || icontains(body,"product : dsl-2640b"))'
+  method: GET
+  

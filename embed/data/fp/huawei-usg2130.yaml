@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-usg2130
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"usg2130") || icontains(banner,"usg2130"))
+  method: GET
+  

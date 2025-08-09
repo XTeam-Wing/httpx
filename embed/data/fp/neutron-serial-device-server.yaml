@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: neutron-serial-device-server
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"串口服务器 web 管理器")||(icontains(title,"中新创科 web 管理器"))
+  method: GET
+  

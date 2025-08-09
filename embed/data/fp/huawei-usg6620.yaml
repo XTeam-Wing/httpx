@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-usg6620
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"usg6620") || icontains(banner,"huawei usg6620"))
+  method: GET
+  

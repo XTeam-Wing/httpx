@@ -1,0 +1,11 @@
+info:
+  category: electronic mail system
+  company: other
+  cpe: ''
+  product: credimail
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"credimail")
+  method: GET
+  

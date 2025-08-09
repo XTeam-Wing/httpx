@@ -1,0 +1,12 @@
+info:
+  category: development framework
+  company: other
+  cpe: ''
+  product: backbone
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"backbone.js") || icontains(body,"backbone-validation-min.js"))
+    || icontains(body,"new backbone.model()"))
+  method: GET
+  

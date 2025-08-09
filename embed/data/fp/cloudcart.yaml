@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: cloudcart
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"cloudcart")
+  method: GET
+  

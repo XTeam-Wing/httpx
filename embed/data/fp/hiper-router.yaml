@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Shanghai Aitai Technology Co., Ltd.
+  cpe: ''
+  product: hiper-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"hiper router") || icontains(banner,"hiper router"))
+  method: GET
+  

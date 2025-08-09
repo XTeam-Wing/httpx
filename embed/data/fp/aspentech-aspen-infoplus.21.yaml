@@ -1,0 +1,11 @@
+info:
+  category: database system
+  company: Aspen Technology, Inc.
+  cpe: ''
+  product: aspentech-aspen-infoplus.21
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"src=\"/aspencui/css/appstyles.js")
+  method: GET
+  

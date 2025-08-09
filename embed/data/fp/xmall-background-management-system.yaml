@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: other
+  cpe: ''
+  product: xmall-background-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"xmadmin.exirck.cn") || icontains(title,"xmall后台管理系统"))
+  method: GET
+  

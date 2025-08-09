@@ -1,0 +1,16 @@
+info:
+  company: Apache
+  product: apache activemq
+  category: 消息队列mq
+  description: ''
+  author: 哆啦A梦
+  tags:
+  - tech
+  - activemq
+rules:
+- method: GET
+  dsl: contains(header, "basic realm=\"ActiveMQRealm\"") || contains(body, "<title>Apache ActiveMQ</title>") || contains(body, "<h2>Welcome to the Apache ActiveMQ!</h2>")|| contains(body, "<div id=\"activemq_logo\">")
+- method: GET
+  path: 
+  - /favicon.ico
+  dsl: md5(body) == "05664fb0c7afcd6436179437e31f3aa6"

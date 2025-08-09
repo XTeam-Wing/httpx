@@ -1,0 +1,11 @@
+info:
+  category: operating system
+  company: Accelerated Technology Laboratories, Inc.
+  cpe: ''
+  product: accelerated-nucleus-plus
+  server: nginx
+  tags: []
+rules:
+- dsl: 'icontains(banner,"operation system: nucleus plus")'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-prosafe-click-switch
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"netgear prosafe click switch")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 骏商团购导航程序
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"骏商团购导航程序")
+  method: GET
+  

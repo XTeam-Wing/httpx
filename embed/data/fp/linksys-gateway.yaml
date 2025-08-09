@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Belkin International, Inc.
+  cpe: ''
+  product: linksys-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"linksys gateway") || icontains(banner,"realm=\"linksys
+    gateway"))
+  method: GET
+  

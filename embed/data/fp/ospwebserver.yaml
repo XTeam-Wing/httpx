@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ospwebserver
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"osp web server")
+  method: GET
+  

@@ -1,0 +1,13 @@
+info:
+  category: industrial control
+  company: General Electric Company
+  cpe: ''
+  product: cimplicity-webview
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(body,"<applet name=\"prowlerclientappletobject\" archive=\"/prowlerclient.jar")
+    || icontains(banner,"server: cimplicity-httpsvr")) || icontains(banner,"server:
+    cimplicity-httpsvr"))'
+  method: GET
+  

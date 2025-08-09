@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: other
+  cpe: ''
+  product: wifi-security-terminal-equipment-management
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<h1>wifi安全终端设备管理</h1>")
+  method: GET
+  

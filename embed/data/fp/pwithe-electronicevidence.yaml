@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: pwithe-electronicevidence
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"深圳市警翼数码科技有限公司") && icontains(title,"消防移动电子证据管理系统")||(icontains(body,"深圳市警翼数码科技有限公司"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: facemeeting-meeting
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"class=\"subnav\">飞视美</div>")
+  method: GET
+  

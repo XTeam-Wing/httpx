@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ipcamera-webs
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"ipcamera-webs")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: oneinstack
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"(<a class=\"nav-link\" href=\"https://oneinstack.com\" target=\"_blank\">oneinstack.*)")
+  method: GET
+  

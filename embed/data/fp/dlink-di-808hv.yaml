@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: dlink-di-808hv
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"di-808hv") || icontains(banner,"realm=\"di-808hv"))
+  method: GET
+  

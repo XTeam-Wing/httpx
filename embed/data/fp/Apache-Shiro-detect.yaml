@@ -1,0 +1,13 @@
+info:
+  company: Apache
+  product: apache shiro
+  category: middleware
+  description: 一个功能强大且易于使用的Java安全框架
+  author: 哆啦A梦
+  tags:
+  - tech
+  - apache-shiro
+rules:
+- method: GET
+  
+  dsl: contains(header, "rememberMe=deleteMe")

@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Fujian Maiwei Software Technology Co., Ltd.
+  cpe: ''
+  product: mvmmall
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"content=\"www.mvmmall.cn\"") || icontains(body,"content=\"mvmmall"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Fujitsu Ltd
+  cpe: ''
+  product: fujitsu-kvm-switcher
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"alt=\"fujitsu") && icontains(body,"src=\"/avct.js"))
+  method: GET
+  

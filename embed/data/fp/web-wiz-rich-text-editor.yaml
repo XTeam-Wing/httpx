@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Web Wiz Ltd.
+  cpe: ''
+  product: web-wiz-rich-text-editor
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<a href=\"http://www.richtexteditor.org\"")
+  method: GET
+  

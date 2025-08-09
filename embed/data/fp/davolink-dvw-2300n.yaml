@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: DAVOLINK. Inc.
+  cpe: ''
+  product: davolink-dvw-2300n
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"dvw-2300n")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Shenzhen Kunwu Technology Co., Ltd.
+  cpe: ''
+  product: phpok
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"content=\"phpok") || icontains(body,"powered by phpok.com"))
+    || icontains(title,"phpok"))
+  method: GET
+  

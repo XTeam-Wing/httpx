@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: gridsite
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"gridsite-admin.cgi?cmd") || icontains(body,"<a href=\"http://www.gridsite.org/\">gridsite"))
+  method: GET
+  

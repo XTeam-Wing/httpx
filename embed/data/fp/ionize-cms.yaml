@@ -1,0 +1,14 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ionize-cms
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(body,"<div id=\"loginwindow\" class=\" clearfix\">")||(icontains(body,"<div
+    id=\"content\" class=\"content\" onkeypress=\"javascript:dosubmit(event);\">"))||(icontains(body,"<p
+    class=\"note\">view : <b>default/article</b></p>"))||(icontains(body,"<p class=\"article-date\">07.09.2010</p>"))||(icontains(body,"<meta
+    name=\"description\" content=\"handmade, an ionize theme\" />"))'
+  method: GET
+  

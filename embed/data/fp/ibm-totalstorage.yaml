@@ -1,0 +1,11 @@
+info:
+  category: network storage
+  company: International Business Machines Corporation
+  cpe: ''
+  product: ibm-totalstorage
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"ibm totalstorage") && icontains(banner,"adaptec"))
+  method: GET
+  

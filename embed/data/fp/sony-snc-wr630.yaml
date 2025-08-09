@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Sony Corporation
+  cpe: ''
+  product: sony-snc-wr630
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"snc-wr630") || icontains(banner,"snc-wr630"))
+  method: GET
+  

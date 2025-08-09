@@ -1,0 +1,11 @@
+info:
+  category: development framework
+  company: Apache Software Foundation.
+  cpe: ''
+  product: apache-wicket
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"/org.apache.wicket.") || icontains(body,"xmlns:wicket="))
+  method: GET
+  

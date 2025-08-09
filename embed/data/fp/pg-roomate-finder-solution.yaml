@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: PG RealEstate
+  cpe: ''
+  product: pg-roomate-finder-solution
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"powered by <a href=\"http://www.realtysoft.pro") || icontains(body,"powered
+    by pg roomate finder solution"))
+  method: GET
+  

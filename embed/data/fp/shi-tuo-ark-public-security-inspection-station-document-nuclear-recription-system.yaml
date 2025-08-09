@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Beijing Shituo Ark Technology Co., Ltd.
+  cpe: ''
+  product: shi-tuo-ark-public-security-inspection-station-document-nuclear-recription-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"action=\"/admin/login/login") && icontains(body,"content=\"公安检查站人脸/证件合一核录系统"))
+  method: GET
+  

@@ -1,0 +1,17 @@
+info:
+  product: 绿盟运维安全管理系统osms
+  category: 运维审计系统oas
+  author: 哆啦A梦
+  company: 绿盟科技集团股份有限公司
+  description: 绿盟运维安全管理系统（俗称堡垒机，英文简称OSMS）以满足等级保护下"身份鉴别、访问控制、安全审计"等监管要求为核心，基于"账号、认证、授权和审计"4A管理理念，采用三权分立和最小访问权限原则，实现精准的事前识别、精细的事中控制和精确的事后审计
+  tags:
+  - 绿盟运维安全管理系统osms
+rules:
+- method: GET
+  path: 
+  - /user/requireLogin
+  dsl: contains(body, "<title>NSFOCUS&nbsp;SAS[H]</title>")
+- method: GET
+  path: 
+  - /stylesheet/login/images/login-title-osms.png
+  dsl: status_code == 200 && md5(body) == "94e87ec4d39ecd5156b4c2d5c6de281b"

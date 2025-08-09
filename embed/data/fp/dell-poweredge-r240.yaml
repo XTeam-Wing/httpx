@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Dell Inc.
+  cpe: ''
+  product: dell-poweredge-r240
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"poweredge-r240")
+  method: GET
+  

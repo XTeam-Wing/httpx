@@ -1,0 +1,11 @@
+info:
+  author: ev1l0o4g
+  description: ""
+  tags: []
+  product: bladex
+  category: cms
+rules:
+- method: GET
+  path: 
+  - /favicon.png
+  dsl: ('952438bb6af042855ed192384032e37b'== md5(body)) || contains_all(body,"Saber","初次加载资源可能需要较多时间") || contains(body,"/DesktopModules/InformationFeedback/webview/") || contains(body,"https://bladex.vip")

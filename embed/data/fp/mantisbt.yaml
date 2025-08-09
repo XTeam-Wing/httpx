@@ -1,0 +1,12 @@
+info:
+  category: project management system
+  company: other
+  cpe: ''
+  product: mantisbt
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"alt=\"mantis bugtracker") || icontains(body,"powered by mantis
+    bugtracker")) || icontains(title,"mantisbt administration"))
+  method: GET
+  

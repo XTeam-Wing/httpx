@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Cradlepoint, Inc.
+  cpe: ''
+  product: cradlepoint-ibr350l
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"cradlepoint ibr350l") || icontains(title,"login :: ibr350l"))'
+  method: GET
+  

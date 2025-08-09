@@ -1,0 +1,11 @@
+info:
+  category: cameras and surveillance
+  company: Shenzhen Tongwei Digital Technology Co., Ltd.
+  cpe: ''
+  product: tvt-nvms-1000
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"NVMS-1000")
+  method: GET
+  

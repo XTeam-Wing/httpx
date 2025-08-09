@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: secnet-router
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"安网科技-智能路由系统")||(icontains(title,"智能路由系统"))||(icontains(title,"安网-智能路由系统"))
+  method: GET
+  

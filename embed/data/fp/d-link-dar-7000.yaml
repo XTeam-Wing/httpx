@@ -1,0 +1,11 @@
+info:
+  category: antivirus gateway
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: d-link-dar-7000
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"dar-7000") && icontains(title,"d-link"))
+  method: GET
+  

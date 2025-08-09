@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Beijing Lanxun Communication Technology Co., Ltd.
+  cpe: ''
+  product: bluetrum-cdn
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"powered-by-chinacache") || icontains(banner,"powered-by-chinacache"))
+  method: GET
+  

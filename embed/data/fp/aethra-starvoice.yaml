@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: A TLC S.r.l.
+  cpe: ''
+  product: aethra-starvoice
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"aethra starvoice - adsl integrated access device.")
+  method: GET
+  

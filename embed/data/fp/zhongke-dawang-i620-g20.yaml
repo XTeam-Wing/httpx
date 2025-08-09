@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Dawn Information Industry Co., Ltd.
+  cpe: ''
+  product: zhongke-dawang-i620-g20
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"i620-g20")
+  method: GET
+  

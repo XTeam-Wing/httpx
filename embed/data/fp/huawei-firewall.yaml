@@ -1,0 +1,13 @@
+info:
+  category: firewall
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((!icontains(body,"server: couchdb") && icontains(body,"modify by wangxiangguang"))
+    || icontains(banner,"server: eudemon server")) || icontains(banner,"server: eudemon
+    server"))'
+  method: GET
+  

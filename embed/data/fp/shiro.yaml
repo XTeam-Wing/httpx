@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: shiro
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"rememberme=")||(icontains(body,"=deleteme"))
+  method: GET
+  

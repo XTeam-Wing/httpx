@@ -1,0 +1,12 @@
+info:
+  category: firewall
+  company: Beijing Tianrongxin Technology Co., Ltd.
+  cpe: ''
+  product: heavenly-letter-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"web user interface") && icontains(banner,"topwebserver"))
+    || icontains(title,"topsec tos web user"))
+  method: GET
+  

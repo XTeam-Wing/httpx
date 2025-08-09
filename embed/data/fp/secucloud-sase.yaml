@@ -1,0 +1,12 @@
+info:
+  category: other network security
+  company: Secucloud Network GmbH
+  cpe: ''
+  product: secucloud-sase
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"secucloud sase") || (icontains(body,"font-family:secucloud")
+    && icontains(body,"content=\"cloud-security by secucloud")))
+  method: GET
+  

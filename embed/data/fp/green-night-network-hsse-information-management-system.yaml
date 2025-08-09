@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Shanghai Qingyuan Network Technology Co., Ltd.
+  cpe: ''
+  product: green-night-network-hsse-information-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"hsse 系统")
+  method: GET
+  

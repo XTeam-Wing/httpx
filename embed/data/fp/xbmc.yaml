@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: xbmc
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<!-- <link rel=\"search\" href=\"/provider.xml\" type=\"application/opensearchdescription+xml\"
+    title=\"xbmc library\" /> -->")
+  method: GET
+  

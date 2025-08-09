@@ -1,0 +1,12 @@
+info:
+  category: anti-ddos attack system
+  company: Beijing Shenzhou NSFOCUS Information Security Technology Co., Ltd.
+  cpe: ''
+  product: nsfocus-ads
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"nsfocus ads") || (icontains(body,"nsfocus.png") && icontains(title,"nsfocus
+    ads"))) || icontains(body,"/login_logo_ads_en_us.png")) || title == "nsfocus ads")
+  method: GET
+  

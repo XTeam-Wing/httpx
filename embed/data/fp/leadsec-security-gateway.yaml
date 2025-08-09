@@ -1,0 +1,14 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: leadsec-security-gateway
+  server: Unknown
+  tags: []
+rules:
+- dsl: ((icontains(body,"txt_username\".val()==\"administrator\"")) && icontains(body,"content=\"北京启明星辰信息安全技术有限公司\""))
+    && icontains(body,"www.leadsec.com.cn</a>") && icontains(body,"id=\"changeyzm\"")||(icontains(body,"href=\"leadsec.cer"))||(icontains(title,"网御
+    安全网关"))||(icontains(body,"<img src=\"securitycodeservlet"))||(icontains(body,"var cookiename
+    = \"sagloginfailtimes\";"))||(icontains(title,"sag系统"))||(icontains(title,"联想网御 安全网关"))||(icontains(body,"www.leadsec.com.cn</a>"))||(icontains(body,"content=\"北京启明星辰信息安全技术有限公司\""))
+  method: GET
+  

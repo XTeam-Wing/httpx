@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 360webserver
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"360 web server")
+  method: GET
+  

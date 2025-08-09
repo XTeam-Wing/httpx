@@ -1,0 +1,12 @@
+info:
+  category: electronic mail system
+  company: Zenutech
+  cpe: ''
+  product: zenutech-mail
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"enter your zenutech account id && password:") ||
+    icontains(banner,"realm=\"enter your zenutech account id && password:"))
+  method: GET
+  

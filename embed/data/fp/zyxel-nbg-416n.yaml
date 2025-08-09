@@ -1,0 +1,13 @@
+info:
+  category: router
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-nbg-416n
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"realm=\"nbg-418n n home router") || icontains(banner,"realm=\"nbg-416n
+    n-lite home router")) || icontains(banner,"realm=\"nbg-418n n home router")) ||
+    icontains(banner,"realm=\"nbg-416n n-lite home router"))
+  method: GET
+  

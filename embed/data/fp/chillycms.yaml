@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: chillycms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"powered by <a href=\"http://frozenpepper.de\">chillycms</a>.")||(icontains(body,"<p>&copy;2010
+    <a href=\"\">demo.opensourcecms.com</a>,"))||(icontains(body,"<p>&copy;2010 <a href=\"\">chillycms.bplaced.net</a>,"))
+  method: GET
+  

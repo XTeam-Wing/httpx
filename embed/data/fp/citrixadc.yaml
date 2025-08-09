@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: citrixadc
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"citrix adc")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: 'waf'
+  company: aliyun
+  cpe: ''
+  product: 阿里云web应用防火墙
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"阿里云 Web应用防火墙")
+  method: GET
+  

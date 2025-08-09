@@ -1,0 +1,15 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: lanrtc
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(body,"<td align=right><h2><img src=\"logo.gif\" width=\"120\" height=\"59\"
+    alt=\"mbb gelma\"></h2>")||(icontains(body,"<p><font size=-1><strong><a href=\"javascript:window.history.back()\">back</a>
+    | <a href=\"index.htm\">system info</a> | <a href=\"tmstatus.htm?tm=1\">tm status</a>
+    | <a href=\"lanstat.htm\">lan akt.</a> | <a href=\"de/buchen.htm\">booking</a></strong></font></p></body></html>"))||(icontains(header,"(server:
+    ^lanrtc)"))'
+  method: GET
+  

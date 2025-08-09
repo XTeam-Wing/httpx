@@ -1,0 +1,12 @@
+info:
+  category: other software system
+  company: other
+  cpe: ''
+  product: phpmps
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"templates/phpmps/style/index.css") || icontains(body,"powered
+    by phpmps"))
+  method: GET
+  

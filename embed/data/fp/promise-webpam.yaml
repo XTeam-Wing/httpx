@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Promise Technology Inc.
+  cpe: ''
+  product: promise-webpam
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"src=\"js/dojo/promise.js") || icontains(body,"js/promise/themes/apple/images/logo_promise.png"))
+  method: GET
+  

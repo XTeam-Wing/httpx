@@ -1,0 +1,11 @@
+info:
+  category: operating system
+  company: Wind River
+  cpe: ''
+  product: vxworks
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"vxworks")
+  method: GET
+  

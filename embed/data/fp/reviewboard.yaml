@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: reviewboard
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"review board")||(icontains(header,"rbsessionid"))||(icontains(header,"rbsessionid"))||(icontains(body,"/static/rb/images/delete"))
+  method: GET
+  

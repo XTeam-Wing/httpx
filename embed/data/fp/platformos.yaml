@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: platformos
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"platformos")
+  method: GET
+  

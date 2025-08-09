@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: sidao-oa
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"关于：思道oa")||(icontains(body,"(思道oa v.* powered by .*)"))
+  method: GET
+  

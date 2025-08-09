@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: nsfocus-aurora-self-service-scanning-agent
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/aurora_nsfocus.png")||(icontains(title,"绿盟云激活"))
+  method: GET
+  

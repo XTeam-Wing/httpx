@@ -1,0 +1,11 @@
+info:
+  category: vpn products
+  company: Synchrotech, a Division of Synchronized Technologies, Inc.
+  cpe: ''
+  product: mb8000
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"mb8000")
+  method: GET
+  

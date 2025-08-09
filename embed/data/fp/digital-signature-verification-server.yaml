@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: digital-signature-verification-server
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"数字签名验证服务器")
+  method: GET
+  

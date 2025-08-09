@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: secworld-secips
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"网神") && icontains(body,"无服务权限") && icontains(body,"usbkey_plugin.cab")||(icontains(body,"usbkey_plugin.cab"))||(icontains(body,"无服务权限"))||(icontains(body,"网神"))
+  method: GET
+  

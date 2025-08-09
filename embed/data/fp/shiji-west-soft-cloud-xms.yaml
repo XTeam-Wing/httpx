@@ -1,0 +1,11 @@
+info:
+  category: cloud computing
+  company: Hangzhou Westsoft Information Technology Co., Ltd.
+  cpe: ''
+  product: shiji-west-soft-cloud-xms
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"西软云xms") || icontains(body,"href=\"xmsenv.exe\">系统运行环境"))
+  method: GET
+  

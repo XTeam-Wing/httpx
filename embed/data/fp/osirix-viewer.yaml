@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Pixmeo
+  cpe: ''
+  product: osirix-viewer
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"service provided by <a href=\"https://www.osirix-viewer.com\"")
+  method: GET
+  

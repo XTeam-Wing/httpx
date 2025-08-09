@@ -1,0 +1,13 @@
+info:
+  category: firewall
+  company: Barracuda Networks, Inc.
+  cpe: ''
+  product: barracuda-ng-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"server: barracuda/ngfirewall") || icontains(banner,"server:
+    barracuda/ngfirewall")) || icontains(banner,"barracuda ng firewall")) || icontains(banner,"barracuda
+    ng firewall"))'
+  method: GET
+  

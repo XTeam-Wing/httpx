@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Suzhou Youyali Electronic Technology Co., Ltd.
+  cpe: ''
+  product: communication-business-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"苏州优亚利电子科技有限公司") && icontains(title,"系统登录"))
+  method: GET
+  

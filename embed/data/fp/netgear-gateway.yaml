@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"netgear gateway ")
+  method: GET
+  

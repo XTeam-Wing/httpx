@@ -1,0 +1,11 @@
+info:
+  category: network intrusion detection && defense
+  company: The First Research Institute of the Ministry of Public Security
+  cpe: ''
+  product: one-net-shield-k01
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"网络攻击阻断系统")
+  method: GET
+  

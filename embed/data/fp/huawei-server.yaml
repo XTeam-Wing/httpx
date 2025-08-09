@@ -1,0 +1,13 @@
+info:
+  category: server
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: huawei-bmc") || (!icontains(body,"couchdb") &&
+    (((icontains(body,"control/images/about.gif") && icontains(body,"src=\"custom/logo.gif\""))
+    || icontains(title,"imana&nbsp;200 login")) || icontains(banner,"server: huawei-bmc"))))'
+  method: GET
+  

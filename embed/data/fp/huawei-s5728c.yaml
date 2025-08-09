@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-s5728c
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(server,"s5728c ") || icontains(banner,"s5728c "))
+  method: GET
+  

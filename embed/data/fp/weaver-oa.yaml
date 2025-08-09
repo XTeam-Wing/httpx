@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: weaver-oa
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"weaver_oa")||(icontains(body,"ecology8/lang/weaver_lang_7_wev8.js"))||(icontains(body,"/theme/ecology8/jquery/js/zdialog_wev8.js"))||(icontains(body,"client/jquery.client_wev8.js")
+    && icontains(body,"typeof poppedwindow"))||(icontains(body,"/wui/common/css/w7ovfont.css"))||(icontains(header,"testbancookie"))||(icontains(header,"testbancookie"))||(icontains(body,"typeof
+    poppedwindow"))||(icontains(body,"client/jquery.client_wev8.js"))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Beijing Qihoo Technology Co., Ltd.
+  cpe: ''
+  product: 360-wifi-expander
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"srouter_360r1_ios") || icontains(body,"id=\"slogan\">欢迎使用360wifi扩展器</div>"))
+    || icontains(title,"360wifi扩展器"))
+  method: GET
+  

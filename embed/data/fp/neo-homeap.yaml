@@ -1,0 +1,11 @@
+info:
+  category: wireless network
+  company: Neo Information Systems Co., Ltd.
+  cpe: ''
+  product: neo-homeap
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"nis-hap11n") || icontains(banner,"neo-homeap"))
+  method: GET
+  

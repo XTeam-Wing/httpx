@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ecology泛微e-mobile
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"e-mobile") && icontains(body,"weaver")||(icontains(body,"/images/login_logo@2x.png")
+    && icontains(body,"action=\"/verifylogin.do"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: citec-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"正在使用腾讯qq帐号登录消防联网系统")
+  method: GET
+  

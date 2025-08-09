@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: AidexGmbH
+  cpe: ''
+  product: aidex-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((!icontains(banner,"couchdb") && icontains(banner,"server: aidex")) || (icontains(body,"http://www.aidex.de/")
+    && icontains(body,"powered by"))) || icontains(banner,"server: aidex"))'
+  method: GET
+  

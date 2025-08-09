@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Beijing Wuzhi Internet Technology Co., Ltd.
+  cpe: ''
+  product: wuzhicms
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"content=\"wuzhicms") || icontains(body,"powered by wuzhicms"))
+  method: GET
+  

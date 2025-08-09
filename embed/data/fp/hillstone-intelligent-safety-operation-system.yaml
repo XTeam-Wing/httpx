@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Mountain Stone Net Division
+  cpe: ''
+  product: hillstone-intelligent-safety-operation-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"/static/css/main.4672616b.chunk.css") && icontains(title,"智·源"))
+  method: GET
+  

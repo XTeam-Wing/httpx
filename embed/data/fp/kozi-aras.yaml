@@ -1,0 +1,12 @@
+info:
+  category: other network security
+  company: Kolai
+  cpe: ''
+  product: kozi-aras
+  server: nginx
+  tags: []
+rules:
+- dsl: ((!icontains(body,"nfr=\"true\"") && (icontains(body,"i18ninit.min.js") ||
+    icontains(body,"科来软件 版权所有"))) || icontains(title,"科来网络回溯"))
+  method: GET
+  

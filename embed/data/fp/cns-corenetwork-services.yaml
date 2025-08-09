@@ -1,0 +1,14 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: cns-corenetwork-services
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<span class=\"left\">cns-app ")||(icontains(body,"<!--p>cns网络核心服务自动化开通平台系统.
+    "))||(icontains(title,"登录 | cns系统"))||(icontains(body,"<!--p>cns网络核心服务自动化开通平台系统."))||(icontains(body,"<span
+    class=\"left\">cns-app"))||(icontains(body,"<!--p>cns网络核心服务自动化开通平台系统"))||(icontains(body,"<span
+    class=\"left\">cns-ap"))
+  method: GET
+  

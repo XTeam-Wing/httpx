@@ -1,0 +1,11 @@
+info:
+  category: 'waf'
+  company: tencent
+  cpe: ''
+  product: tsec-waf
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"腾讯T-Sec Web应用防火墙(WAF)")&&icontains(title,"Client Bad Request")
+  method: GET
+  

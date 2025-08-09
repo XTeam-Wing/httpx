@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Fujitsu Ltd.
+  cpe: ''
+  product: fujitsu-ipcom150
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"fujitsu-ipcom150") || icontains(banner,"server: fujitsu-ipcom150"))'
+  method: GET
+  

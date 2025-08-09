@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: hue大数据框架
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"welcome to hue") && icontains(body,"query. explore.") && icontains(body,"login")
+  method: GET
+  

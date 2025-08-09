@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Ubiquiti Inc.
+  cpe: ''
+  product: ubiquoss-vdsl
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"ubiquoss vdsl")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: web application firewall
+  company: Open Systems
+  cpe: ''
+  product: mission-control-application-shield
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"alt=\"mission control application shield")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Beijing Jinqicheng Technology Co., Ltd.
+  cpe: ''
+  product: xpaper-full-media-digital-newspaper
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"src=\"template/paper/") || icontains(title,"xpaper智慧全媒体数字报"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-vmg3625-t20a
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"vmg3625-t20a")
+  method: GET
+  

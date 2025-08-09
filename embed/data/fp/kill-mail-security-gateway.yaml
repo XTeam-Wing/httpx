@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: kill-mail-security-gateway
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"background=\"skins/default/images/login_ksgm.jpg")||(icontains(title,"kill邮件安全网关"))
+  method: GET
+  

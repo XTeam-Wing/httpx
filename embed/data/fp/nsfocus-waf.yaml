@@ -1,0 +1,13 @@
+info:
+  category: web application firewall
+  company: Beijing Shenzhou NSFOCUS Information Security Technology Co., Ltd.
+  cpe: ''
+  product: nsfocus-waf
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"nsfocus vmwaf") || icontains(banner,"nsfocus vmwaf"))
+    || (icontains(cert,"commonname: wafg2") && icontains(cert,"email address: liuzhixu@intra.nsfocus.com
+    "))) || (icontains(body,"/images/logo/nsfocus.png") && title == "waf nsfocus"))'
+  method: GET
+  

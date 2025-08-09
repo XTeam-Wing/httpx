@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Fortinet, Inc.
+  cpe: ''
+  product: fortigate-300a
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"fortigate-300a")
+  method: GET
+  

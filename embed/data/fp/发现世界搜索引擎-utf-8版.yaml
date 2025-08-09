@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 发现世界搜索引擎-utf-8版
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"发现世界搜索引擎_utf-8版")
+  method: GET
+  

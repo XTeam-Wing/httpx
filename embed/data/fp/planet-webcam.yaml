@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: PLANET Technology Corporation.
+  cpe: ''
+  product: planet-webcam
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"planet ip surveillance")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Guangzhou Shian Information Technology Co., Ltd.
+  cpe: ''
+  product: carefree-world-annet-security
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"gzsa. all rights reserved</span>") && icontains(title,"内网终端安全管理系统登陆界面"))
+  method: GET
+  

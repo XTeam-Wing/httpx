@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: International Business Machines Corporation
+  cpe: ''
+  product: ibm-cognos
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"ibm cognos business intelligence") || icontains(body,"cognos
+    &#26159; international business machines corp")) || icontains(body,"/cgi-bin/cognos.cgi"))
+  method: GET
+  

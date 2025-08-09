@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: veeva-network
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"veeva-network")
+  method: GET
+  

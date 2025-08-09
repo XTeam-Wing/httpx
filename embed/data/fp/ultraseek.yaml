@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: ultraseek
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: ultraseek") || icontains(banner,"server: ultraseek"))'
+  method: GET
+  

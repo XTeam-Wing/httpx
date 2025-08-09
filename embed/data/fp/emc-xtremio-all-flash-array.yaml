@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: emc-xtremio-all-flash-array
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<h1>xtremio management application</h1>")||(icontains(title,"xtremio
+    - download"))
+  method: GET
+  

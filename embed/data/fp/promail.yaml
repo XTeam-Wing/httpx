@@ -1,0 +1,12 @@
+info:
+  category: electronic mail system
+  company: other
+  cpe: ''
+  product: promail
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"powered by squirrelmail.org. squirrelmail") || icontains(title,"promail
+    &trade; - login"))
+  method: GET
+  

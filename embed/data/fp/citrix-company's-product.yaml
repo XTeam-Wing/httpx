@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: citrix-company's-product
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"dvrdvs-webs") && icontains(body,"netscape/firefox/opera") && icontains(title,"citrix
+    login")||(icontains(body,"value=\"guia\" selected"))||(icontains(body,"netscape/firefox/opera"))
+  method: GET
+  

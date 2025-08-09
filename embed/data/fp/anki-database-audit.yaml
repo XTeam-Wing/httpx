@@ -1,0 +1,11 @@
+info:
+  category: database auditing && protection
+  company: Shenzhen Angkai Technology Co., Ltd.
+  cpe: ''
+  product: anki-database-audit
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"support@ankki.com") || icontains(title,"昂楷数据库审计系统"))
+  method: GET
+  

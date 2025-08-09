@@ -1,0 +1,12 @@
+info:
+  category: development framework
+  company: Sangoma Technologies.
+  cpe: ''
+  product: freepbx
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"freepbx") && icontains(banner,"freepbx")) || icontains(banner,"realm=\"freepbx"))
+    || icontains(banner,"realm=\"freepbx"))
+  method: GET
+  

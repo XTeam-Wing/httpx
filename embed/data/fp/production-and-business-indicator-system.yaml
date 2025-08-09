@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: production-and-business-indicator-system
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"function over_change(index,src,clrOver,cursor)")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: 新华三技术有限公司
+  cpe: ''
+  product: h3c-winet
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"WiNet") && icontains(body,"H3C ")
+  method: GET
+  

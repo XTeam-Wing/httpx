@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: smart-community-integrated-management-cloud-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"class=\"container_huanlegendtext\"")
+  method: GET
+  

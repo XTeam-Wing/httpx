@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Ruijie Networks Co., Ltd.
+  cpe: ''
+  product: ruijie-rg-n18010
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"n18010")
+  method: GET
+  

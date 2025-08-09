@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: hpchaiserver
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"hp chaiserver")
+  method: GET
+  

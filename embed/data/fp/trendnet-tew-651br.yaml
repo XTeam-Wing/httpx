@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: TRENDnet, Inc.
+  cpe: ''
+  product: trendnet-tew-651br
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"tew-651br") || icontains(body,"<b>login to the tew-651br</b>"))
+  method: GET
+  

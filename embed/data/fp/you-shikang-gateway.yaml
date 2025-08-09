@@ -1,0 +1,11 @@
+info:
+  category: wireless network
+  company: Shenzhen Youshikang Communication Co., Ltd.
+  cpe: ''
+  product: you-shikang-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"href=\"ipxweb/login.html")
+  method: GET
+  

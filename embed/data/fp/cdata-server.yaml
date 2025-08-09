@@ -1,0 +1,12 @@
+info:
+  category: server
+  company: Shenzhen Xidite Technology Co., Ltd.
+  cpe: ''
+  product: cdata-server
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"placeholder=\"please enter administrator password\"") ||
+    icontains(body,"placeholder=\"请输入管理员密码\"")) && icontains(body,"var key = evt.keycode?evt.keycode:evt.which"))
+  method: GET
+  

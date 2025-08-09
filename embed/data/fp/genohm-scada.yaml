@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: other
+  cpe: ''
+  product: genohm-scada
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"/cgi-bin/scada-vis/") || icontains(title,"genohm scada launcher"))
+  method: GET
+  

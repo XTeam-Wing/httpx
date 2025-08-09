@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Baidu Network Technology Company
+  cpe: ''
+  product: baidu-customer-service-operation-management-background
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<div class=\"count-down\">页面在<em>5</em>秒后自动跳转至您有权限的页面</div>")
+    && icontains(title,"客服运营管理后台"))
+  method: GET
+  

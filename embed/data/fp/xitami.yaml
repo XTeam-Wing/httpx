@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: xitami
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: xitami") || icontains(banner,"server: xitami"))'
+  method: GET
+  

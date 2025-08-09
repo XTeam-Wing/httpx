@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: n点虚拟主机
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"n点虚拟主机")
+  method: GET
+  

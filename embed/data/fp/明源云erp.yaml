@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 明源云erp
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"明源云erp")
+  method: GET
+  

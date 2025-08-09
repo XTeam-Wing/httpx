@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Comtech EF Data Corporation.
+  cpe: ''
+  product: comtech-cmr-5975
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"cmr-5975")
+  method: GET
+  

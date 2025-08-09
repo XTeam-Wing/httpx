@@ -1,0 +1,12 @@
+info:
+  category: operating system
+  company: MontaVista Software, LLC.
+  cpe: ''
+  product: montavista-linux
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"server: montavista/") || icontains(banner,"montavista
+    software")) || icontains(banner,"montavista"))'
+  method: GET
+  

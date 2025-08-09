@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-magic-r365
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"var product_type = \"r365\"")
+  method: GET
+  

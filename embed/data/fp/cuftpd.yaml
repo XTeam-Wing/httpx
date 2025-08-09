@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: cuftpd
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"cuftpd")
+  method: GET
+  

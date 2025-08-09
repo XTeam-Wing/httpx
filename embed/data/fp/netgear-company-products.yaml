@@ -1,0 +1,13 @@
+info:
+  category: router
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((icontains(banner,"basic realm=\"netgear") || icontains(banner,"server:
+    netgear")) || (icontains(banner,"netgear") && icontains(banner,"401"))) || icontains(banner,"realm=\"netgear"))
+    || icontains(title,"netgear router"))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Phoenix Broadband Technologies, LLC.
+  cpe: ''
+  product: poweragent-exm2
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"poweragent exm2hp") || icontains(banner,"poweragent exm2"))
+  method: GET
+  

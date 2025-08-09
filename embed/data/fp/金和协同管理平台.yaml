@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 金和协同管理平台
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"c6/jhsoft.web.login") && icontains(body,"closewindownoask")
+  method: GET
+  

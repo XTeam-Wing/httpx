@@ -1,0 +1,13 @@
+info:
+  category: router
+  company: TOTOLINK
+  cpe: ''
+  product: toto-link-n300rt
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(body,"src =\"/images/login_back_zn300rt.gif") || icontains(banner,"realm=\"n300rt"))
+    || icontains(banner,"realm=\"n300rt")) || icontains(banner,"realm=\"totolink n300rt"))
+    || icontains(banner,"realm=\"totolink n300rt"))
+  method: GET
+  

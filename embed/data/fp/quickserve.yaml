@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: quickserve
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: quickserve") || icontains(banner,"server: quickserve"))'
+  method: GET
+  

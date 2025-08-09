@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Hanwha Techwin Co., Ltd.
+  cpe: ''
+  product: hanwha-snd-k2083r
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"var defaultfilename = \"snd-k2083r\"")
+  method: GET
+  

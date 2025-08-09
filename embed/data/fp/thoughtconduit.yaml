@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: thoughtconduit
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<html><head><title>error</title></head><body>your request produced
+    an error.</body></html>")
+  method: GET
+  

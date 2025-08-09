@@ -1,0 +1,11 @@
+info:
+  category: audit
+  company: Guodu Xingye Information Audit System Technology (Beijing) Co., Ltd.
+  cpe: ''
+  product: omaudit
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"omaudit v3版")
+  method: GET
+  

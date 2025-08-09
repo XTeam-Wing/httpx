@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: chinastandardgatewaymanagementsystem
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"title>国标网关管理系统</title")
+  method: GET
+  

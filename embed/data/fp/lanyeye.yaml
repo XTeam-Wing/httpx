@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: lanyeye
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/skin/admin/img/login/laneye.png")||(icontains(body,"<font>兰眼下一代威胁感知系统</font>"))
+  method: GET
+  

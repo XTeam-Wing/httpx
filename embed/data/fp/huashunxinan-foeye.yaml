@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: huashunxinan-foeye
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/assets/foeye/logo")||(icontains(title,"foeye"))||(icontains(body,"北京白帽汇科技有限公司")
+    && icontains(body,"class=\"dlbrowsertext\""))||(icontains(body,"class=\"dlbrowsertext\""))||(icontains(body,"北京白帽汇科技有限公司"))
+  method: GET
+  

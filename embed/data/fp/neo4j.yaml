@@ -1,0 +1,13 @@
+info:
+  category: database system
+  company: other
+  cpe: ''
+  product: neo4j
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(title,"neo4j") || icontains(body,"{{ neo4j.version | neo4jdeveloperdoc
+    }}/")) || icontains(body,"play-topic=\"neo4j-sync")) || icontains(body,"ng-show=\"neo4j.enterpriseedition"))
+    || icontains(body,"content=\"neo4j"))
+  method: GET
+  

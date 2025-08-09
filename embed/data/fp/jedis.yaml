@@ -1,0 +1,12 @@
+info:
+  category: other support system
+  company: other
+  cpe: ''
+  product: jedis
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"Cannot get Jedis connection; nested exception is redis.clients.jedis.exceptions.JedisConnectionException")
+    || icontains(body,"Cannot get Jedis connection; nested exception is redis.clients.jedis.exceptions.JedisException")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: SAP Software Solutions
+  cpe: ''
+  product: sybase-jaguar
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: jaguar server version") || icontains(banner,"server:
+    jaguar server version"))'
+  method: GET
+  

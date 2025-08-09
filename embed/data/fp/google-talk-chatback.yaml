@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Google LLC
+  cpe: ''
+  product: google-talk-chatback
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"www.google.com/talk/service/")
+  method: GET
+  

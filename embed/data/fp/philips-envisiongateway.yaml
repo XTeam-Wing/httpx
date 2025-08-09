@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Koninklijke Philips N.V.
+  cpe: ''
+  product: philips-envisiongateway
+  server: nginx
+  tags: []
+rules:
+- dsl: title == "envisiongateway"
+  method: GET
+  

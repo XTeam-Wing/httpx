@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Belkin International, Inc.
+  cpe: ''
+  product: linksys-lapac1750
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"lapac1750 wireless ac1750 access point with poe")
+  method: GET
+  

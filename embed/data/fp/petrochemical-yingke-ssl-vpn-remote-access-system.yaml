@@ -1,0 +1,11 @@
+info:
+  category: nac
+  company: Petrochemical Yingke Information Technology Co., Ltd.
+  cpe: ''
+  product: petrochemical-yingke-ssl-vpn-remote-access-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"src=\"new_style/placeholderfriend.js\"")
+  method: GET
+  

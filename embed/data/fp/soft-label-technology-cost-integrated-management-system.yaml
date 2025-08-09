@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Softmark Technology (Beijing) Co., Ltd.
+  cpe: ''
+  product: soft-label-technology-cost-integrated-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"name=\"redirectto\" value=\"/zym/rbkj.nsf\"")
+  method: GET
+  

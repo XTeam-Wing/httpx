@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Beijing Century Compass Electronic Commerce Co., Ltd.
+  cpe: ''
+  product: luopan-hims-hotel-cloud-computing-service
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"hims酒店云计算服务") || (icontains(body,"maincontent.css") && icontains(body,"gb_root_dir")))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Ubiquiti Inc.
+  cpe: ''
+  product: ubiquoss-p8224xg
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"p8224xg")
+  method: GET
+  

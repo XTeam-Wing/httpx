@@ -1,0 +1,13 @@
+info:
+  category: service
+  company: Loïc Hoguin
+  cpe: ''
+  product: cowboy
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && icontains(banner,"server:
+    cowboy")) || ((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) &&
+    icontains(banner,"server: cowboy")))'
+  method: GET
+  

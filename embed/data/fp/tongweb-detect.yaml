@@ -1,0 +1,8 @@
+info:
+  author: sayhi
+  description: 'tongweb was detected.'
+  tags: []
+  product: tongweb
+  category: middleware
+rules:
+- dsl: contains(header,"TongWeb Server")

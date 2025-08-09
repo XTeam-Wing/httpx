@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-vsg1432
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"zyxel vsg1432") || icontains(title,"zyxel vsg1432"))
+  method: GET
+  

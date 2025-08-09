@@ -1,0 +1,14 @@
+info:
+  category: router
+  company: Fida International (S) Pte Ltd
+  cpe: ''
+  product: prolink-router
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"rfwell adsl router status") || icontains(body,"<frame src=\"attention.htm\"
+    name=\"attention\" frameborder=")) || (((icontains(title,"max-c300n") && !icontains(body,"tw-eav510"))
+    && !icontains(title,"mmc technology mw")) && icontains(body,"<! copyright (c)
+    realtek semiconductor corp.")))
+  method: GET
+  

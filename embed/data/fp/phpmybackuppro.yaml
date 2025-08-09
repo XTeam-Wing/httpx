@@ -1,0 +1,13 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: phpmybackuppro
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"realm=\"phpmybackuppro") || (!icontains(body,"server:
+    couchdb") && icontains(body,"please login (use your mysql username && password):
+    <a href=\"index.php?login=true"))) || icontains(banner,"realm=\"phpmybackuppro"))'
+  method: GET
+  

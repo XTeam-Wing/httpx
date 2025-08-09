@@ -1,0 +1,12 @@
+info:
+  category: other iot device
+  company: Teradek, LLC
+  cpe: ''
+  product: teradek-cube
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"administrative console") && icontains(body,"teradek")) ||
+    icontains(body,"index.cs?header=0"))
+  method: GET
+  

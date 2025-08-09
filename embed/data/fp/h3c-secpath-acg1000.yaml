@@ -1,0 +1,13 @@
+info:
+  category: wireless network
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-secpath-acg1000
+  server: nginx
+  tags: []
+rules:
+- dsl: (((!icontains(body,"var msg1=\"username can not be empty\"") && icontains(body,"var
+    is_mobi = is_mobile()")) && icontains(body,"src=\"./js/web_auth.js")) || icontains(banner,"h3c
+    secpath acg1000"))
+  method: GET
+  

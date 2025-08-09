@@ -1,0 +1,13 @@
+info:
+  category: printer
+  company: TRENDnet, Inc.
+  cpe: ''
+  product: trendnet-print-server
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"trendnet print server") || (icontains(body,"<frame name=\"banner\"
+    scrolling=\"no\" noresize target=\"inhalt\" src=\"head.htm\">") && icontains(banner,"print_server
+    web")))
+  method: GET
+  

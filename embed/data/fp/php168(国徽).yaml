@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: php168(国徽)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"php168(国徽)")
+  method: GET
+  

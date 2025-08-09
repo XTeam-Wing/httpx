@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: ZTE Corporation
+  cpe: ''
+  product: zte-zxdsl-931vii
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"zxdsl 931vii") || icontains(banner,"zxdsl 931vii"))
+  method: GET
+  

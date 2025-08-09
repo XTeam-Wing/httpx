@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: normstar-hr
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"class=\"blackfont\">诺姆四达人力资源测评咨询服务有限公司")
+  method: GET
+  

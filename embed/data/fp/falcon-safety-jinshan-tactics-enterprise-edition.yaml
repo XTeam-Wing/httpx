@@ -1,0 +1,11 @@
+info:
+  category: anti-virus product
+  company: Beijing Falcon Security Technology Co., Ltd.
+  cpe: ''
+  product: falcon-safety-jinshan-tactics-enterprise-edition
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"class=\"title\">关于全网部署金山毒霸企业版") || icontains(title,"金山毒霸企业版"))
+  method: GET
+  

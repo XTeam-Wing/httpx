@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Aviatrix Systems, Inc.
+  cpe: ''
+  product: aviatrix-controller
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"aviatrix controller")
+  method: GET
+  

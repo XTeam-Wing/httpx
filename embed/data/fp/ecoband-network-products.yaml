@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Ecoband Limited
+  cpe: ''
+  product: ecoband-network-products
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"ecoband networks")
+  method: GET
+  

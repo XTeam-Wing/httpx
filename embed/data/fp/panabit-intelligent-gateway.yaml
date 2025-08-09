@@ -1,0 +1,17 @@
+info:
+  category: other network equipment
+  company: Beijing Paiwang Software Co., Ltd.
+  cpe: ''
+  product: panabit-intelligent-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((((((!icontains(cert,"organization: panabit") && icontains(body,"entersub"))
+    && icontains(body,"pacheckcode")) && icontains(body,"parent.location.href = \"/login/login.htm\";"))
+    || (icontains(banner,"content-length: 1807") && icontains(cert,"organizational
+    unit: panabit"))) || ((icontains(banner,"cache-control: max-age=1") && icontains(cert,"panabit"))
+    && icontains(banner,"httpd/1.2 2012/08/10"))) || (icontains(body,"src=\"/img/jq.js\"")
+    && icontains(body,"parent.location.href = \"/login/login.htm\""))) || (icontains(banner,"panaos")
+    && icontains(banner,"panabit"))) || icontains(title,"panabit"))'
+  method: GET
+  

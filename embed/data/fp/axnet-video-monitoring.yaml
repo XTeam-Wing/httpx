@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: other
+  cpe: ''
+  product: axnet-video-monitoring
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"codebase=\"../axnet.cab") || icontains(body,"clsid:4aadb758-f0b9-48dc-945b-f4c4f2accd42"))
+  method: GET
+  

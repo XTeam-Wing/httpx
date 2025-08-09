@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: Apache Software Foundation.
+  cpe: ''
+  product: apache-jmeter
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"Apache JMeter Dashboard")
+  method: GET
+  

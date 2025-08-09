@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: vArmour Networks, Inc.
+  cpe: ''
+  product: varmour-corporate-product
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"function loadmunchkinkey()")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: beyongcms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"beyongcms")||(icontains(title,"beyongcms"))
+  method: GET
+  

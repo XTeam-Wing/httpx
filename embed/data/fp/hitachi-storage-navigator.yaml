@@ -1,0 +1,13 @@
+info:
+  category: other support system
+  company: Hitachi
+  cpe: ''
+  product: hitachi-storage-navigator
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"jump to storagenavigator2") || (icontains(body,"<form method=\"post\"
+    action=\"./index.do\" name=\"frm\" />") && title == "jumping...")) || icontains(title,"hitachi
+    device manager - storage navigator"))
+  method: GET
+  

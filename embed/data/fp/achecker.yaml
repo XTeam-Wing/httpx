@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: achecker
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(body,"<title>achecker : atrc accessibility checker: </title>")'
+  method: GET
+  

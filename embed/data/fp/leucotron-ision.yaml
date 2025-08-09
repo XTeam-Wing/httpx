@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Leucotron
+  cpe: ''
+  product: leucotron-ision
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: 410s05") || icontains(banner,"server: 410s05"))'
+  method: GET
+  

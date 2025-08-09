@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: nuxt.js
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"nuxt.js")
+  method: GET
+  

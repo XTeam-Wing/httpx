@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: other
+  cpe: ''
+  product: waveip
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<td><b>mac</td><td id=\"unitmac")
+  method: GET
+  

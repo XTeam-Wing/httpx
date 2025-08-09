@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-br104h
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"basic realm=\"h3c br104h\"") || icontains(banner,"basic
+    realm=\"h3c br104h\""))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: log analysis && audit
+  company: 'Global IT Solution Co., LTD. '
+  cpe: ''
+  product: sawmill
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"server: sawmill") || icontains(banner,"sawmill")) ||
+    icontains(body,"src=\"/picts/sawmill_logo.png")) || icontains(body,"<div id=\"password:error"))'
+  method: GET
+  

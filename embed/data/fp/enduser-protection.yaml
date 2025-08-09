@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Sophos Technologies Pvt. Ltd.
+  cpe: ''
+  product: enduser-protection
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"user portal") && icontains(body,"sophos"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: project management system
+  company: Shandong Shengruan Technology Co., Ltd.
+  cpe: ''
+  product: victorysoft-source-data-acquisition-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"href=\"webstyles/webstyle1/style1/css.css\"")
+  method: GET
+  

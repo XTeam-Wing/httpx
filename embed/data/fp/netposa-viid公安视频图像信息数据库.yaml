@@ -1,0 +1,11 @@
+info:
+  category: big data pocessing
+  company: 东方网力科技股份有限公司
+  cpe: ''
+  product: netposa-viid公安视频图像信息数据库
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"VIID公安视频图像信息数据库")
+  method: GET
+  

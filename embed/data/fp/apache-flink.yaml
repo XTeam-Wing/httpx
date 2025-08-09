@@ -1,0 +1,12 @@
+info:
+  category: big data pocessing
+  company: Apache Flink
+  cpe: ''
+  product: apache-flink
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<img alt=\"apache flink dashboard\" src=\"images/flink-logo.png")
+    || icontains(title,"apache flink web dashboard"))
+  method: GET
+  

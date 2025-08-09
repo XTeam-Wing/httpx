@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: dlink-di-lb604
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"di-lb604") || icontains(banner,"di-lb604"))
+  method: GET
+  

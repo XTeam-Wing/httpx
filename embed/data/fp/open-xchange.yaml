@@ -1,0 +1,13 @@
+info:
+  category: electronic mail system
+  company: other
+  cpe: ''
+  product: open-xchange
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"/ox6/ox.html") || icontains(banner,"/ox6/ox.html")) ||
+    icontains(body,"id=\"browserchecktext_id")) || icontains(body,"you need to enable
+    javascript to access the open-xchange server"))
+  method: GET
+  

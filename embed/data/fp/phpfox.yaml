@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: phpfox
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"powered by <a href=\"http://www.phpfox.com")||(icontains(body,"powered
+    by phpfox"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: network storage
+  company: Dell Inc.
+  cpe: ''
+  product: emc-connectrix
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"connectrix") && icontains(protocol,"snmp"))
+  method: GET
+  

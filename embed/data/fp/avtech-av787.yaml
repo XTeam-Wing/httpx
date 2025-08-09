@@ -1,0 +1,13 @@
+info:
+  category: cameras && surveillance
+  company: Welfare Electronic Component Limited.
+  cpe: ''
+  product: avtech-av787
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && icontains(banner,"server:
+    av-tech")) || ((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) &&
+    icontains(banner,"server: av-tech")))'
+  method: GET
+  

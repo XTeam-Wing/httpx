@@ -1,0 +1,11 @@
+info:
+  category: data desensitization system
+  company: Chengdu Bitxinan Technology Co., Ltd.
+  cpe: ''
+  product: btxa-desensitizing-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"/ui/redirectlogin/login.html")
+  method: GET
+  

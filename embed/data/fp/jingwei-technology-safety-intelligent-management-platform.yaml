@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Nanjing Jingwei Technology Co., Ltd.
+  cpe: ''
+  product: jingwei-technology-safety-intelligent-management-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"nanjing rickyinfo technology")
+  method: GET
+  

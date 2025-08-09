@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: wise-education-cloud-masters
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"schoolcopyright")||(icontains(header,"schoolcopyright"))||(icontains(body,"ctl00_contentplaceholder1_dlttopvideos"))
+  method: GET
+  

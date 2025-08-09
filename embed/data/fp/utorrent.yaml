@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: utorrent
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"www-authenticate basic realm=\"utorrent")||(icontains(header,"basic
+    realm=\"utorrent\""))||(icontains(header,"basic realm=\"utorrent\""))
+  method: GET
+  

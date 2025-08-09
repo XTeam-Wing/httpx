@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: amx-mod-x
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"// *note* amx_sql_type specifies the default database type which
+    admin.sma will use.")
+  method: GET
+  

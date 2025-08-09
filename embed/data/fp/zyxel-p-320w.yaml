@@ -1,0 +1,13 @@
+info:
+  category: router
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-p-320w
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"zyxel p-320w") || (icontains(body,"loginpassword.value =
+    \"zyxel zywall series\"") && icontains(body,"p-320w"))) || icontains(body,"welcome
+    to zyxel p-320w"))
+  method: GET
+  

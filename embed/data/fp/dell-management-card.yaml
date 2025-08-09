@@ -1,0 +1,11 @@
+info:
+  category: other iot device
+  company: Dell Inc.
+  cpe: ''
+  product: dell-management-card
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"dell web/snmp management card ")
+  method: GET
+  

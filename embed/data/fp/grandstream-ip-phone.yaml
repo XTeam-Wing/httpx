@@ -1,0 +1,12 @@
+info:
+  category: voice video
+  company: Grandstream Networks, Inc.
+  cpe: ''
+  product: grandstream-ip-phone
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"webapp/webapp.nocache.js") && icontains(title,"loading web
+    application")) && icontains(body,"__gwt_historyframe"))
+  method: GET
+  

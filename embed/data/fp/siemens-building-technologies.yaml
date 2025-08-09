@@ -1,0 +1,12 @@
+info:
+  category: industrial control
+  company: Siemens AG.
+  cpe: ''
+  product: siemens-building-technologies
+  server: nginx
+  tags: []
+rules:
+- dsl: '(!icontains(body,"server: couchdb") && (icontains(body,"<br><i>siemens building
+    technologies") || icontains(title,"siemens building technologies")))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: other
+  cpe: ''
+  product: zio-router
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"zio router")
+  method: GET
+  

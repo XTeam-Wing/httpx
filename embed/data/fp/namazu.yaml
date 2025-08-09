@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: namazu
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"http://www.namazu.org/\">namazu")
+  method: GET
+  

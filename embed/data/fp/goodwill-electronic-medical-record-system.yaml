@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: goodwill-electronic-medical-record-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"北京嘉和美康电子病历系统")
+  method: GET
+  

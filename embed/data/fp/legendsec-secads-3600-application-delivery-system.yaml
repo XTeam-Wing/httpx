@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Wangshen Information Technology (Beijing) Co., Ltd.
+  cpe: ''
+  product: legendsec-secads-3600-application-delivery-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"网神secads 3600应用交付系统")
+  method: GET
+  

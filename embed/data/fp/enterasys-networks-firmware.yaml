@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Extreme Networks, Inc.
+  cpe: ''
+  product: enterasys-networks-firmware
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"enterasys networks firmware")
+  method: GET
+  

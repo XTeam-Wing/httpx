@@ -1,0 +1,11 @@
+info:
+  category: antivirus gateway
+  company: BlueCat Networks
+  cpe: ''
+  product: bluecat-meridius-security-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"meridius security gateway")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: q友乐园网
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"q友乐园网")
+  method: GET
+  

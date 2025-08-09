@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-gs716tv2
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"gs716tv2")
+  method: GET
+  

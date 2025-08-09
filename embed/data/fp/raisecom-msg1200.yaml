@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Risecomda Technology Development Co., Ltd.
+  cpe: ''
+  product: raisecom-msg1200
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"msg1200-fe")
+  method: GET
+  

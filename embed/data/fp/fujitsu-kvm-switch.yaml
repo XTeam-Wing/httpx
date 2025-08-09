@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: fujitsu-kvm-switch
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"alt=\"fujitsu") && icontains(body,"src=\"/avct.js")||(icontains(body,"alt=\"fujitsu"))
+  method: GET
+  

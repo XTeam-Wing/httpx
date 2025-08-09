@@ -1,0 +1,13 @@
+info:
+  category: router
+  company: Pullian Technology Co., Ltd.
+  cpe: ''
+  product: tp-link-tl-wr845n
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"realm=\"tp-link wireless n router wr845n") || icontains(banner,"realm=\"tp-link
+    wireless n router wr845n")) || icontains(title,"tl-wr845n")) || (icontains(body,"tl-wr845n")
+    && icontains(body,"(url.indexof(\"tplinklogin.net\")")))
+  method: GET
+  

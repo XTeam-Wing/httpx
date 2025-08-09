@@ -1,0 +1,14 @@
+info:
+  category: burglar alarm
+  company: Tektroniks Ltd
+  cpe: ''
+  product: tek-troniks-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((!icontains(body,"server: couchdb") && icontains(body,"<td width=\"100\"><label
+    id=\"au_login_id_label\" for=\"au_login_id\" datatype=\"\" required=\"true\">user
+    name:</label></td>")) || icontains(banner,"server: tektroniks")) || icontains(banner,"server:
+    tektroniks")) || icontains(banner,"basic realm=\"datacentre"))'
+  method: GET
+  

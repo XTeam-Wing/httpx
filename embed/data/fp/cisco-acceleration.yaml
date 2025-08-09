@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-acceleration
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: cisco acceleration") || icontains(banner,"cisco
+    acceleration"))'
+  method: GET
+  

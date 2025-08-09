@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: deluge-web
+  server: nginx
+  tags: []
+rules:
+- dsl: 'icontains(title,"deluge: web ui")'
+  method: GET
+  

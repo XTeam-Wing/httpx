@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Hanwang Technology Co., Ltd.
+  cpe: ''
+  product: hanwang-human-face-recognition-attendance-data-inquiry-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"/hwface/script/logincheck.js")
+  method: GET
+  

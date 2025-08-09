@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: Shanghai Beita Software Co., Ltd.
+  cpe: ''
+  product: north-tower-software-pdm-data-acquisition
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(body,"background: no-repeat url(../images/login/pdmdenglu1_28.png);")
+    || icontains(body,"align=\"center\" class=\"login_pdm\">"))'
+  method: GET
+  

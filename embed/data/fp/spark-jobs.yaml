@@ -1,0 +1,12 @@
+info:
+  category: big data pocessing
+  company: Apache Spark
+  cpe: ''
+  product: spark-jobs
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"jobs") && icontains(title,"inceptor")) || (icontains(body,"spark
+    jobs") && icontains(body,"href=\"/jobs/job?id=")))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: electronic mail system
+  company: Alibaba Group
+  cpe: ''
+  product: alibaba-enterprise-mailbox
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"alimail_browser_instance") || icontains(banner,"alimail_browser_instance"))
+    || icontains(body,"content=\"阿里企业邮箱")) || icontains(body,"action=\"/alimail/error/browserlog"))
+  method: GET
+  

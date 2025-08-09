@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: PHPDisk Team
+  cpe: ''
+  product: phpdisk
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"content=\"phpdisk") || icontains(body,"powered by phpdisk"))
+  method: GET
+  

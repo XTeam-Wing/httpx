@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-safety-product-management-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"/wnm/ssl/web/frame/login.html")
+  method: GET
+  

@@ -1,0 +1,17 @@
+info:
+  category: other support system
+  company: other
+  cpe: ''
+  product: jenkins
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((((icontains(banner,"content-type: text/plain") && icontains(body,"jenkins-agent-protocols"))
+    || icontains(banner,"x-required-permission: hudson.model.hudson.read")) || (!icontains(banner,"couchdb")
+    && icontains(banner,"x-hudson"))) || (((!icontains(banner,"x-generator: drupal")
+    && !icontains(banner,"couchdb")) && !icontains(banner,"28ze")) && icontains(banner,"x-jenkins")))
+    || icontains(banner,"x-required-permission: hudson.model.hudson.read")) || icontains(banner,"x-hudson"))
+    || ((!icontains(banner,"x-generator: drupal") && !icontains(banner,"couchdb"))
+    && icontains(banner,"x-jenkins")))'
+  method: GET
+  

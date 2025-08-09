@@ -1,0 +1,11 @@
+info:
+  category: industrial control
+  company: 其他
+  cpe: ''
+  product: qz-tray
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<td>QZ Tray</td>") && icontains(body,"slf4j-log4j12")
+  method: GET
+  

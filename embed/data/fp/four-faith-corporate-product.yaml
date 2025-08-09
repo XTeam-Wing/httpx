@@ -1,0 +1,14 @@
+info:
+  category: router
+  company: Xiamen Sixin Communication Technology Co., Ltd.
+  cpe: ''
+  product: four-faith-corporate-product
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((!icontains(banner,"x-powered-by: thinkphp") && !icontains(banner,"drupal"))
+    && !icontains(banner,"couchdb")) && icontains(banner,"server: httpd_four-faith"))
+    || (((!icontains(body,"server: couchdb") && !icontains(banner,"drupal")) && !icontains(banner,"couchdb"))
+    && icontains(banner,"server: httpd_four-faith")))'
+  method: GET
+  

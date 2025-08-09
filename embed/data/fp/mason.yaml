@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: mason
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"x-powered-by: html::mason") || icontains(banner,"x-powered-by:
+    html::mason"))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: seentech-network-sentry
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"中科新业网络安全审计系统")
+  method: GET
+  

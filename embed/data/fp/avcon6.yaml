@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: Warburg Pincus Information Technology Co., Ltd.
+  cpe: ''
+  product: avcon6
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"language_dispose.action") || icontains(title,"avcon6系统管理平台"))
+    || icontains(body,"filename=avcon6setup.exe"))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: AEF Group
+  cpe: ''
+  product: advanced-electron-forum
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"aefsid") || icontains(body,"content=\"aef")) || icontains(banner,"aefsid"))
+    || icontains(body,"powered by aef"))
+  method: GET
+  

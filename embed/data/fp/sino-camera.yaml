@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Beijing Zhongdun Security Technology Development Company
+  cpe: ''
+  product: sino-camera
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"北京中盾安全技术开发公司") && icontains(title,"ipc 用户登录"))
+  method: GET
+  

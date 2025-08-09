@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: Alibaba Group
+  cpe: ''
+  product: aliyunocm
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: aliyunocm") || icontains(banner,"server: aliyunocm"))'
+  method: GET
+  

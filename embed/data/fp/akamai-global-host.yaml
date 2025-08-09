@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: akamai-global-host
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"(server: ^akamaighost)")'
+  method: GET
+  

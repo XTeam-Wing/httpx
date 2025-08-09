@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Shenzhen Toptel Technology Co., Ltd.
+  cpe: ''
+  product: toptel-rg2000
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"href=\"css/htmleaf-demo.css\"") && icontains(body,"action=/goform/login"))
+  method: GET
+  

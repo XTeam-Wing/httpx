@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: lemis管理系统
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"lemis.WEB_APP_NAME")
+  method: GET
+  

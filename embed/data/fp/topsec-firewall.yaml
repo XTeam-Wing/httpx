@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: topsec-firewall
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"web user interface") && icontains(header,"topwebserver")||(icontains(title,"topsec
+    tos web user"))||(icontains(body,"web user interface"))||(icontains(header,"topwebserver"))
+  method: GET
+  

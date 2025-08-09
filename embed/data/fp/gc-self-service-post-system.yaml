@@ -1,0 +1,11 @@
+info:
+  category: fms
+  company: Tianjin Shenzhou Haotian Technology Co., Ltd.
+  cpe: ''
+  product: gc-self-service-post-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"id=\"imgbtn\"") && icontains(body,"src=\"randomimage.aspx\""))
+  method: GET
+  

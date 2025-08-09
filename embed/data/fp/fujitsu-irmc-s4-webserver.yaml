@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: Fujitsu Ltd
+  cpe: ''
+  product: fujitsu-irmc-s4-webserver
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: irmc s4 webserver") || icontains(banner,"server:
+    irmc s4 webserver"))'
+  method: GET
+  

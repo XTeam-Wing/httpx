@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: qq在线聊天
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"qq在线聊天")
+  method: GET
+  

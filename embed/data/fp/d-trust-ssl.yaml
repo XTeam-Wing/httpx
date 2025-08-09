@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: D-Trust GmbH
+  cpe: ''
+  product: d-trust-ssl
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(cert,"d-trust ssl")
+  method: GET
+  

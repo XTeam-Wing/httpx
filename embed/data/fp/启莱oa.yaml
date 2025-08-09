@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 启莱oa
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"js/jqselect.js") && icontains(body,"createcheckcode.aspx?id")
+  method: GET
+  

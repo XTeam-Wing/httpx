@@ -1,0 +1,12 @@
+info:
+  category: wireless network
+  company: Nanjing Zhidakang Wireless Communication Technology Co., Ltd.
+  cpe: ''
+  product: zn-1000
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title," wireless smart access point") && icontains(title,"zn-1000"))
+    || icontains(cert,"l=nanjing, o=zdc"))
+  method: GET
+  

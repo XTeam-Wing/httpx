@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: tongtech-application-server-tongweb
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"server: tongweb server")||(icontains(header,"tongweb server"))'
+  method: GET
+  

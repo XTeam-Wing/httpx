@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Best IT World(India) Pvt. Ltd.
+  cpe: ''
+  product: iball-baton-wireless-n-router
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"iball baton wireless-n router")
+  method: GET
+  

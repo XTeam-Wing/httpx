@@ -1,0 +1,12 @@
+info:
+  category: project management system
+  company: other
+  cpe: ''
+  product: bitnami-redmine-stack
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"alt=\"bitnami redmine stack") || icontains(title,"bitnami
+    redmine stack"))
+  method: GET
+  

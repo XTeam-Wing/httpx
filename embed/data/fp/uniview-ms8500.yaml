@@ -1,0 +1,12 @@
+info:
+  category: server
+  company: Zhejiang Yushi Technology Co., Ltd.
+  cpe: ''
+  product: uniview-ms8500
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"ms8500配置管理系统") || icontains(title,"ivs-ms8500")) || icontains(banner,"uniview
+    ms8500"))
+  method: GET
+  

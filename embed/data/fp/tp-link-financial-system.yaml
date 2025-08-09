@@ -1,0 +1,11 @@
+info:
+  category: fms
+  company: Pullian Technology Co., Ltd.
+  cpe: ''
+  product: tp-link-financial-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"src=\"/login/img/loading.gif\"") && icontains(body,"pansoftplugins/multithreading/pancalc.js"))
+  method: GET
+  

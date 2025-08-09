@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: sangfor-tamper-resistance
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"href=\"tamper/style/control.css\"")||(icontains(body,"<li style=\"color:#999999;margin-left:6px;list-style:circle
+    inside;\">如忘记密码，请与防火墙管理员联系</li>"))||(icontains(title,"防火墙web防篡改管理系统"))
+  method: GET
+  

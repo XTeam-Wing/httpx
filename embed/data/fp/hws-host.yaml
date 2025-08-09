@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: hws-host
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"content=\"护卫神·主机大师 前台管理登录\"")
+  method: GET
+  

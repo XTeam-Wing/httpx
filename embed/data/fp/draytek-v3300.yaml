@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: DrayTek Corp.
+  cpe: ''
+  product: draytek-v3300
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"draytek v3300 advanced router")
+  method: GET
+  

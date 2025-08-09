@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: tp-linkrouter
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"tp-link router")
+  method: GET
+  

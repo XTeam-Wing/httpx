@@ -1,0 +1,12 @@
+info:
+  category: other iot device
+  company: Zhejiang Yushi Technology Co., Ltd.
+  cpe: ''
+  product: uniview-cloud
+  server: nginx
+  tags: []
+rules:
+- dsl: '(!icontains(body,"server: couchdb") && ((icontains(body,"class=\"glyphicon
+    glyphicon-eye-open") && icontains(body,"/cloudeye-landing.css")) || icontains(title,"宇视云眼下载页")))'
+  method: GET
+  

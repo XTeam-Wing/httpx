@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: gov.ukfrontend
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"gov.uk frontend")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Atop Technologies, Inc.
+  cpe: ''
+  product: atop-se5001
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"se5001")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: other
+  cpe: ''
+  product: ppvod-video-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"ppvod视频管理系统") && icontains(body,"ppvod copyright"))
+  method: GET
+  

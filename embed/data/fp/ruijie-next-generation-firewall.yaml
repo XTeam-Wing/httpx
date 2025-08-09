@@ -1,0 +1,13 @@
+info:
+  category: firewall
+  company: Ruijie Networks Co., Ltd.
+  cpe: ''
+  product: ruijie-next-generation-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"ssl_index_next.html") || icontains(body,"4008 111 000"))
+    && icontains(title,"rg-wall")) || ((icontains(title,"下一代防火墙") || icontains(title,"ngfw"))
+    && ((icontains(body,"<span>©2012 锐捷网络</span>") || icontains(body,"锐捷")) || icontains(body,"webui/images/ruijie"))))
+  method: GET
+  

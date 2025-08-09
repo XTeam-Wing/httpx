@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: kongapi网关
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"kong api网关")
+  method: GET
+  

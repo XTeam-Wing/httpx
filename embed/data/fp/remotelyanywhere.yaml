@@ -1,0 +1,13 @@
+info:
+  category: other enterprise application
+  company: 'LogMeIn, Inc. '
+  cpe: ''
+  product: remotelyanywhere
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((icontains(banner,"remotelyanywhere telnet server") || icontains(banner,"server:
+    remotelyanywhere")) || icontains(banner,"server: remotelyanywhere")) || icontains(body,"/img/ralogo.png\"
+    alt=\"remotelyanywhere")) || icontains(title,"remotelyanywhere"))'
+  method: GET
+  

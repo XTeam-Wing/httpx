@@ -1,0 +1,13 @@
+info:
+  category: switch
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-s5700
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(banner,"couchdb") && (icontains(banner,"server: huawei_s5700")
+    || icontains(banner,"s5700"))) || (icontains(banner,"server: huawei_s5700") ||
+    icontains(server,"s5700")))'
+  method: GET
+  

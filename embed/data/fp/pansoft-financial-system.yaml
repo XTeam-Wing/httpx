@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: pansoft-financial-system
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"src=\"/login/img/loading.gif\"") && icontains(body,"pansoftplugins/multithreading/pancalc.js")||(icontains(body,"pansoftplugins/multithreading/pancalc.js"))||(icontains(body,"src=\"/login/img/loading.gif\""))
+  method: GET
+  

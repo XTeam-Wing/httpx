@@ -1,0 +1,12 @@
+info:
+  category: voice video
+  company: Aastra Technologies Limited
+  cpe: ''
+  product: aastra-a5000
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"aastra a5000") || icontains(banner,"realm=\"aastra
+    a5000"))
+  method: GET
+  

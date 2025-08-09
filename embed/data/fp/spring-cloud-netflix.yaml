@@ -1,0 +1,12 @@
+info:
+  category: development framework
+  company: VMware, Inc.
+  cpe: ''
+  product: spring-cloud-netflix
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"x-application-context: hystrix-dashboard:") || icontains(banner,"x-application-context:
+    hystrix-dashboard:")) || icontains(title,"hystrix dashboard"))'
+  method: GET
+  

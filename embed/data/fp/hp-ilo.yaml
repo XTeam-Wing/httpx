@@ -1,0 +1,15 @@
+info:
+  category: service
+  company: Hewlett Packard Enterprise Development LP
+  cpe: ''
+  product: hp-ilo
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && (icontains(banner,"management
+    processor (mp) for hp integrity servers") || icontains(banner,"server: hp-ilo-server")))
+    || ((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && (((icontains(banner,"server:
+    hp-ilo-server") || icontains(body,"js/ilo.js")) || icontains(title,"hp integrated
+    lights-out")) || icontains(body,"href=\"http://www.hp.com/go/ilo"))))'
+  method: GET
+  

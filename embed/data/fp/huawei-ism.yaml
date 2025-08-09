@@ -1,0 +1,13 @@
+info:
+  category: network storage
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-ism
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(body,"//begin h90005710  redirect http to https") || icontains(body,"document.location.href=thisurl
+    + \"index_cn.cgi\";")) || icontains(body,"class=\"contextgray\">oceanstor")) ||
+    icontains(title,"oceanstor ism")) || icontains(body,"<link href=\"ismb014.css\""))
+  method: GET
+  

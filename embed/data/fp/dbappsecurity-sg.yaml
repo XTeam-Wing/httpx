@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: dbappsecurity-sg
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"明御安全网关")
+  method: GET
+  

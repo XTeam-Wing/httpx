@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Apache Software Foundation.
+  cpe: ''
+  product: apache-archiva
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"/archiva.css") || icontains(body,"/archiva.js")) || icontains(title,"apache
+    archiva"))
+  method: GET
+  

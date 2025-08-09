@@ -1,0 +1,11 @@
+info:
+  category: host monitoring && auditing
+  company: other
+  cpe: ''
+  product: supervisor-monitoring-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"supervisor status") || icontains(body,"images/supervisor.gif"))
+  method: GET
+  

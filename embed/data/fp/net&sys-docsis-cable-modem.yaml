@@ -1,0 +1,12 @@
+info:
+  category: adsl
+  company: National Enhance Technology Corp.
+  cpe: ''
+  product: net&sys-docsis-cable-modem
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"net&sys docsis cable modem") || icontains(banner,"net&sys
+    docsis 2.0 cable modem"))
+  method: GET
+  

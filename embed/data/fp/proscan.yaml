@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: proscan
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: proscan") || icontains(banner,"server: proscan"))'
+  method: GET
+  

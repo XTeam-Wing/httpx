@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: qingstor
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"qingstor")
+  method: GET
+  

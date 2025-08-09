@@ -1,0 +1,31 @@
+info:
+  product: 泛微e-office
+  category: oa
+  author: ev1l0o4g
+  company: 泛微网络科技股份有限公司
+  description: 泛微e-office协同办公平台
+  version: '{{version}}'
+  tags:
+  - tech
+  - e-office
+  - 泛微
+  - eoffice
+rules:
+- method: GET
+  path: 
+  - /eoffice10/server/public/api/lang/version
+  dsl: contains_all(body, "status", "data", "runtime")
+- method: GET
+  path: 
+  - /general/login/index.php
+  dsl: ((contains(body, "/general/login/index.php") && contains(body, "/general/login/view/"))|| (contains(body, "dynamiCode") && contains(body, "iSignaturePortal") && contains(body,"general"))) && status_code == 200
+- method: GET
+  path: 
+  - /eoffice10/client/web/login
+  dsl: contains_all(body, "/eoffice10/client/web/", "eoffice_init", "eoffice_loading_tip")
+- method: GET
+  path: 
+  - /eoffice10/client/web/assets/images/favicon.ico
+  dsl: status_code == 200 && md5(body) == "41eca7a9245394106a09b2534d8030df"
+- method: GET
+  dsl: contains(body, "/general/login/index.php") && contains(body, "eoffice")

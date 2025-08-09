@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Hanwha Techwin Co., Ltd.
+  cpe: ''
+  product: hanwha-snd-l6012
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"var defaultfilename = \"snd-l6012\"")
+  method: GET
+  

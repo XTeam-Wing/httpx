@@ -1,0 +1,13 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: wing-ftp-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(cert,"wing ftp server") || icontains(body,"/help_javascript.htm"))
+    || icontains(banner,"server: wing ftp server")) || icontains(banner,"server: wing
+    ftp server"))'
+  method: GET
+  

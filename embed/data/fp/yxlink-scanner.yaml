@@ -1,0 +1,11 @@
+info:
+  category: vulnerability scanning
+  company: Nanjing Yixun Information Technology Co., Ltd.
+  cpe: ''
+  product: yxlink-scanner
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(cert,"cn=nvs.yxlink.com") || icontains(title,"铱迅漏洞扫描系统")) || icontains(body,"content=\"铱迅漏洞扫描系统"))
+  method: GET
+  

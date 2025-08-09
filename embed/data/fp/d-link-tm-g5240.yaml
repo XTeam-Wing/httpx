@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: d-link-tm-g5240
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"tm-g5240") || icontains(banner,"realm=\"tm-g5240"))
+  method: GET
+  

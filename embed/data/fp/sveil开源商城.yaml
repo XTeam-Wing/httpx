@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: sveil开源商城
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"sveil开源商城")
+  method: GET
+  

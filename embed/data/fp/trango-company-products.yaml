@@ -1,0 +1,11 @@
+info:
+  category: wireless network
+  company: Trango Networks LLC
+  cpe: ''
+  product: trango-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"trango systems inc. snmp ")
+  method: GET
+  

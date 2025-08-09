@@ -1,0 +1,11 @@
+info:
+  category: file management && encryption
+  company: Nanjing Wangya Computer Co., Ltd.
+  cpe: ''
+  product: teamdoc-document-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"id=\"table_01\"") && icontains(body,"id=\"labellink\""))
+  method: GET
+  

@@ -1,0 +1,15 @@
+info:
+  category: router
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-wnr3500l
+  server: nginx
+  tags: []
+rules:
+- dsl: (((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && ((icontains(banner,"maniek
+    wnr3500l") || icontains(banner,"netgear-wnr3500l")) || icontains(banner,"netgear
+    wnr3500l"))) || ((!icontains(banner,"drupal") && !icontains(banner,"couchdb"))
+    && ((icontains(banner,"maniek wnr3500l") || icontains(banner,"netgear-wnr3500l"))
+    || icontains(banner,"realm=\"netgear wnr3500l"))))
+  method: GET
+  

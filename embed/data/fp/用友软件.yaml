@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 用友软件
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"ufida software co.ltd all rights reserved")||(icontains(body,"logo/images/ufida_ehr_disable.png")
+    && icontains(body,"logo/images/ufida_ehr.png") && icontains(body,"logo/images/ufida_ebs_disable.png"))
+  method: GET
+  

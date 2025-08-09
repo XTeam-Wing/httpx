@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: cwcms(创文网络)
+  server: Unknown
+  tags: []
+rules:
+- dsl: (icontains(title,"cwcms"))||(icontains(body,"创文网络"))||(icontains(title,"创文网络"))
+  method: GET
+  

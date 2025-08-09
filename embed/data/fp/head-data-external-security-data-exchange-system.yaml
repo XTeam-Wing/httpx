@@ -1,0 +1,12 @@
+info:
+  category: network isolation && one-way import
+  company: Hangzhou Hezhong Information Technology Co., Ltd.
+  cpe: ''
+  product: head-data-external-security-data-exchange-system
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(cert,"cn=test/emailaddress=gjw@unimassystem.com") && icontains(cert,"o=unimas"))
+    || (icontains(body,"/unimas/") && icontains(title,"外网安全数据交换系统")))
+  method: GET
+  

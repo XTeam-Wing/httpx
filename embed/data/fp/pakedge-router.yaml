@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Pakedge Device & Software, Inc.
+  cpe: ''
+  product: pakedge-router
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"pakedge router") || (icontains(banner,"router") && icontains(banner,"pakedge")))
+    || icontains(banner,"pakedgerouter"))
+  method: GET
+  

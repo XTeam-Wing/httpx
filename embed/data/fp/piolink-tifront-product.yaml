@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: piolink-tifront-product
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<em>tifront, the security switch")||(icontains(header,"tifront-"))
+  method: GET
+  

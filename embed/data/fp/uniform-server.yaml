@@ -1,0 +1,13 @@
+info:
+  category: service
+  company: The Uniform Server Development Team.
+  cpe: ''
+  product: uniform-server
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"<div id=\"divider\">developed by <a href=\"http://www.uniformserver.com/\">the
+    uniform server development team</a></div>") || icontains(body,"<meta name=\"description\"
+    content=\"the uniform server 8.1.0-coral.\" />")) || icontains(body,"<a href=\"http://www.uniformserver.com\">"))
+  method: GET
+  

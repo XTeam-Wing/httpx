@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Teradata Corporation.
+  cpe: ''
+  product: teradata-viewpoint
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"teradata viewpoint")
+  method: GET
+  

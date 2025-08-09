@@ -1,0 +1,11 @@
+info:
+  category: printer
+  company: KYOCERA Corporation
+  cpe: ''
+  product: kyocera-ecosys-p3155dn
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"ecosys p3155dn")
+  method: GET
+  

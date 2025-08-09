@@ -1,0 +1,11 @@
+info:
+  category: file management && encryption
+  company: Nanjing Zhongtan Technology Co., Ltd.
+  cpe: ''
+  product: njzt-south-university-star-information-publishing-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<title>南大之星信息发布系统 ") || icontains(body,"var pubnewsarray"))
+  method: GET
+  

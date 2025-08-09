@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: guahao-appointmentregistrationsystem
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"var title    = \"预约挂号系统\";")||(icontains(body,"var title = \"预约挂号系统\";"))
+  method: GET
+  

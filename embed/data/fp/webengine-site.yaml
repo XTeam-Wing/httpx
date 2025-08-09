@@ -1,0 +1,12 @@
+info:
+  category: traffic analysis
+  company: Beijing Blue Pacific Technology Co., Ltd.
+  cpe: ''
+  product: webengine-site
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"location.href = \"/webengine/web/\";") || icontains(body,"href=\"/webengine/images/common.css"))
+    || icontains(title,"webengine site"))
+  method: GET
+  

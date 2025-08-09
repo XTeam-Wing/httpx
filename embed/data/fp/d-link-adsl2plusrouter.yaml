@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: d-link-adsl2plusrouter
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"adsl2plusrouter")
+  method: GET
+  

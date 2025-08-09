@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Dalian Medical Valley Technology Co., Ltd.
+  cpe: ''
+  product: yuge-medical-remote-influence-diagnosis-and-treatment-system
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"渔歌医疗远程影响诊疗系统") && icontains(title,"影像诊疗")
+  method: GET
+  

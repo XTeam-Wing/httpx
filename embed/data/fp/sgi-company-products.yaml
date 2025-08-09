@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: SGI
+  cpe: ''
+  product: sgi-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"silicon graphics ")
+  method: GET
+  

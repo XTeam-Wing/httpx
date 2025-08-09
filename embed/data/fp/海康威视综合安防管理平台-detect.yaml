@@ -1,0 +1,45 @@
+info:
+  product: 海康威视综合安防管理平台
+  category: 安防管理平台
+  author: 哆啦A梦
+  company: 杭州海康威视数字技术股份有限公司
+  description: 海康威视综合安防管理平台
+  tags:
+  - 海康威视综合安防管理平台
+rules:
+- method: GET
+  path: 
+   - "/portal/front/theme"
+  dsl: contains(body, '\"systemSubtitle\":\"iSecure Center\"') || contains(body, '\"systemName\":\"综合安防管理平台\"') || contains(body, '\"systemSubtitle\":\"Infovision iWork-Safety\"') || contains(body, '\"systemName\":\"安全生产管理平台\"') || (contains(body, '安全生产管理平台') && contains(body, '\"systemName\":\"')) || (contains(body, 'Infovision iWork-Safety') && contains(body, '\"systemSubtitle\":\"'))
+- method: GET
+  path: 
+   - "/portal/ui/static/favicon.ico"
+  dsl: status_code == 200 && (md5(body) == '4209fe52e5c15345d0a1250f68a14d1e' || md5(body) == '77f6f305d8397b887a943c641e83e895')
+- method: GET
+  path: 
+   - "/portal/init/images/f0e54a96-6fa2-4516-ac45-f390b200f2fc.png"
+  dsl: status_code == 200 && md5(body) == '3bef2213df16739deddafc8f677ad4d9'
+- method: GET
+  path: 
+   - "/portal/front/config/loginInfo"
+  dsl: contains(body, '\"systemName\"') || contains(body, '\"systemSubtitle\"')
+- method: GET
+  path: 
+   - "/portal/logo/favicon.ico"
+  dsl: status_code == 200 && md5(body) == '753466eed2bbef2bae18b55994d1d2ae'
+- method: GET
+  path: 
+   - "/portal/logo/logo_zh_CN.png"
+  dsl: status_code == 200 && md5(body) == '133518ff033d53b908ebc199861cf8b6'
+- method: GET
+  path: 
+   - "/portal/ui/static/images/chrome.png"
+  dsl: status_code == 200 && md5(body) == 'da0172b9c1277e141efd10261c68da7b'
+- method: GET
+  path: 
+   - "/favicon.ico"
+  dsl: status_code == 200 && md5(body) == 'e05b47d5ce11d2f4182a964255870b76'
+- method: GET
+  path: 
+   - "/portal/ui/openLogin/static/favicon.ico"
+  dsl: status_code == 200 && md5(body) == '83f41b186add8fd280ab4e28300fa221'

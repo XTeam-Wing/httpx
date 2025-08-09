@@ -1,0 +1,12 @@
+info:
+  category: other support system
+  company: Apache Software Foundation.
+  cpe: ''
+  product: apache-jserver
+  server: nginx
+  tags: []
+rules:
+- dsl: 'icontains(protocol,"{\"length\": 0, \"chained_to\": 909717815, \"identifier\":
+    \"s\", \"str\": null}")'
+  method: GET
+  

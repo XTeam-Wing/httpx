@@ -1,0 +1,11 @@
+info:
+  category: industrial control
+  company: OMRON Corporation
+  cpe: ''
+  product: omron-cj2m-eip21
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"cj2m-eip21")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: kendoui
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"kendo ui")
+  method: GET
+  

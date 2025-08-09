@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: phpmoadmin
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"phpmoadmin")
+  method: GET
+  

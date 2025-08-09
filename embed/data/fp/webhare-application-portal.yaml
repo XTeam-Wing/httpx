@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: webhare-application-portal
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(header,"(server: ^webhare application portal)")'
+  method: GET
+  

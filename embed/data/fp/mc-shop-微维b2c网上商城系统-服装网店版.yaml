@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: mc-shop-微维b2c网上商城系统-服装网店版
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"mc_shop_微维b2c网上商城系统_服装网店版")
+  method: GET
+  

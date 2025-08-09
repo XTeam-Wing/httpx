@@ -1,0 +1,11 @@
+info:
+  category: data leakage prevention
+  company: other
+  cpe: ''
+  product: wowostar-dlp
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"数据防泄漏系统 wo-dlp") && icontains(title,"帷幄技术安全平台"))
+  method: GET
+  

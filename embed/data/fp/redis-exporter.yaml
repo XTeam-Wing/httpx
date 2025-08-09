@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: redis-exporter
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"redis exporter")
+  method: GET
+  

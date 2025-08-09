@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: phpdealerlocator
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"for=\"dealer_radiuss_dealer_zip") || icontains(body,"class=\"pythonselect"))
+  method: GET
+  

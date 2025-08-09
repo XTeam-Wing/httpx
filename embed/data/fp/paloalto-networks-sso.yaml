@@ -1,0 +1,12 @@
+info:
+  category: other network security
+  company: Palo Alto Networks, Inc.
+  cpe: ''
+  product: paloalto-networks-sso
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body," 2015 palo alto networks, inc. ") || icontains(title," palo
+    alto networks sso - log on "))
+  method: GET
+  

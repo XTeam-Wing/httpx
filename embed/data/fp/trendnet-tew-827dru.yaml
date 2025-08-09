@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: TRENDnet, Inc.
+  cpe: ''
+  product: trendnet-tew-827dru
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"var model = \"tew-827dru\"")
+  method: GET
+  

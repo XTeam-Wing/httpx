@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: Fuzhou Extreme Software Development Co., Ltd.
+  cpe: ''
+  product: ewebeditor
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"/ewebeditor.htm?")
+  method: GET
+  

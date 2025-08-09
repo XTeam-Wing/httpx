@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-zywall-110
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"zywall 110") || title == "zywall 110")
+  method: GET
+  

@@ -1,0 +1,14 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: avocent-kvm-switch
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"a2000r ")||(icontains(header,"a1000r 02.00.22"))||(icontains(header,"a1000r
+    02.00.21"))||(icontains(title,"mpu4032 资源管理器"))||(icontains(title,"mpu1016 资源管理器"))||(icontains(title,"avocent
+    dsr2035"))||(icontains(title,"avocent dsr8035"))||(icontains(header,"mpu4032dac"))||(icontains(body,"alt=\"avocent")
+    && icontains(body,"src=\"/avct.js"))||(icontains(title,"mpu4032dac explorer"))||(icontains(header,"mpu2032"))||(icontains(body,"src=\"/avct.js"))||(icontains(body,"alt=\"avocent"))
+  method: GET
+  

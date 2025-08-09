@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-zywall-usg-20w
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"zywall usg 20w") || icontains(banner,"zywall usg 20w"))
+  method: GET
+  

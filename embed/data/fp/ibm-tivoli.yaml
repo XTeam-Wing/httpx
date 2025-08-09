@@ -1,0 +1,12 @@
+info:
+  category: other software system
+  company: IBM
+  cpe: ''
+  product: ibm-tivoli
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"banner/tivoli/tv_icbanner.html") || icontains(body,"tivoli
+    netview uses an open source web server"))
+  method: GET
+  

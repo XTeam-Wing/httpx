@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: juci
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"src=\"/js/50-juci-event.js\"") || icontains(title,"juci"))
+  method: GET
+  

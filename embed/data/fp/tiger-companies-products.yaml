@@ -1,0 +1,13 @@
+info:
+  category: service
+  company: Tiger Communications plc.
+  cpe: ''
+  product: tiger-companies-products
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((icontains(title,"tiger ip connect") || icontains(banner,"location: network/index.php"))
+    || icontains(body,"/include/tiger.css")) || icontains(body,"<link rel=\"stylesheet\"
+    href=\"/include/tms.css\">")) || icontains(body,"<link rel=\"stylesheet\" href=\"/include/firedigit.css\">"))'
+  method: GET
+  

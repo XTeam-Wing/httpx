@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: enSilo Inc.
+  cpe: ''
+  product: fortinet-ensilo
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<img src=\"images/ensilo_logo.png")
+  method: GET
+  

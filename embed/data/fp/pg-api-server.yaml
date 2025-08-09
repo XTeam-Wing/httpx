@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: pg-api-server
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"pgapiserv") || icontains(banner,"pg api server")) || icontains(banner,"pgapiserv"))
+    || icontains(banner,"pg api server"))
+  method: GET
+  

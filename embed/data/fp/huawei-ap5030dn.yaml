@@ -1,0 +1,11 @@
+info:
+  category: wireless network
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-ap5030dn
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<span class=\"medium\" >本设备支持fat模式（fat模式下可单独工作）")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: other software system
+  company: China Net Company
+  cpe: ''
+  product: nos
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"nos  version") || icontains(banner,"ssh-2.0-nos-")) ||
+    icontains(banner,"nos netchina"))
+  method: GET
+  

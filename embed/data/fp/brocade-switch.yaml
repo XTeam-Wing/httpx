@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: brocade-switch
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"com.brocade.web.secsan.loginapplet") && icontains(body,"originalurl=\"/switchexplorer.html\"")||(icontains(title,"/switchexplorer.html"))||(icontains(body,"originalurl=\"/switchexplorer.html\""))||(icontains(body,"com.brocade.web.secsan.loginapplet"))
+  method: GET
+  

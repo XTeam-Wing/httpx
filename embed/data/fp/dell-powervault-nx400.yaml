@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Dell Inc.
+  cpe: ''
+  product: dell-powervault-nx400
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"id=\"serverinfo\"> powervault nx400")
+  method: GET
+  

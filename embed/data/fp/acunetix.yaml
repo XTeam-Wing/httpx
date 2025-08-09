@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: acunetix
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"acunetix-logo-full-new-black.svg")||(icontains(body,"title>acunetix</title>"))||(icontains(body,"<acx-root></acx-root>"))||(icontains(body,"<html
+    ng-app=\"wvs\""))
+  method: GET
+  

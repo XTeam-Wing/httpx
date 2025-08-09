@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Beijing Qilang Technology Co., Ltd.
+  cpe: ''
+  product: kiki-technology-d.perspclre
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"d.perspclre")
+  method: GET
+  

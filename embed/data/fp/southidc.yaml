@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: southidc
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/southidcj2f.js")||(icontains(body,"content=\"copyright 2003-2015 -
+    southidc.net"))||(icontains(body,"/southidckefu.js"))
+  method: GET
+  

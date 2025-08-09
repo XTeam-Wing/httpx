@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: China United Network Communications Group Co., Ltd.
+  cpe: ''
+  product: china-unicom-bad-account-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"登录密码错误次数超过5次，帐号被锁定。请联系省坏账系统管理员，或发邮件解锁") || icontains(title,"中国联通坏账管理系统"))
+  method: GET
+  

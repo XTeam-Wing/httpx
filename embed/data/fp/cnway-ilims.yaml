@@ -1,0 +1,11 @@
+info:
+  category: erp
+  company: Shenzhen Zhongwei Information Technology Co., Ltd.
+  cpe: ''
+  product: cnway-ilims
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"/js/allpagefunction.js") && icontains(body,"src=\"/extjs/adapter/ext/ext-base-js"))
+  method: GET
+  

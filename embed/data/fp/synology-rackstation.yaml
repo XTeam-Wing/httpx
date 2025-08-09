@@ -1,0 +1,11 @@
+info:
+  category: network storage
+  company: Synology Inc.
+  cpe: ''
+  product: synology-rackstation
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"content=\"rackstation") && icontains(title,"synology&nbsp;rackstation"))
+  method: GET
+  

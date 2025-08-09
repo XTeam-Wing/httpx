@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Elecom Co., Ltd.
+  cpe: ''
+  product: elecom-wrh-300x
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"wrh-300x") || icontains(banner,"realm=\"wrh-300x"))
+  method: GET
+  

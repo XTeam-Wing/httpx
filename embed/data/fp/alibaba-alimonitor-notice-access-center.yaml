@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: Alibaba Group
+  cpe: ''
+  product: alibaba-alimonitor-notice-access-center
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"alimonitor通知收发中心muses")
+  method: GET
+  

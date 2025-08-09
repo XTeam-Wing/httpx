@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Dell Inc.
+  cpe: ''
+  product: dell-poweredge-r510
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(cert,"poweredge-r510") || icontains(banner,"poweredge-r510"))
+  method: GET
+  

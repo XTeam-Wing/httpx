@@ -1,0 +1,11 @@
+info:
+  category: cloud computing
+  company: Yunding (Shanghai) Network Technology Co., Ltd.
+  cpe: ''
+  product: cloud-iconn-terminal-user-calculation
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"src=\"/res/api/owvmapi.js?") || icontains(title,"owvm_product_name"))
+  method: GET
+  

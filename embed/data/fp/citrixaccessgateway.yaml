@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: citrixaccessgateway
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"citrix access gateway") && icontains(body,"login")||(icontains(title,"citrix
+    access gateway"))
+  method: GET
+  

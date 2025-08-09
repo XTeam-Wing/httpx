@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Hanwha Techwin Co., Ltd.
+  cpe: ''
+  product: hanwha-snd-l5083r
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"var defaultfilename = \"snd-l5083r\"")
+  method: GET
+  

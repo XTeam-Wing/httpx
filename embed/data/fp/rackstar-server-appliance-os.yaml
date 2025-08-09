@@ -1,0 +1,13 @@
+info:
+  category: other support system
+  company: other
+  cpe: ''
+  product: rackstar-server-appliance-os
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"this server is powered by the rackstar server appliance
+    os") || icontains(banner,"this server is powered by the rackstar server appliance
+    os"))
+  method: GET
+  

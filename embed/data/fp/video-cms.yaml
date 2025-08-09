@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: video-cms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<p style=\"color:#aaaaaa;text-align:center\">powered by <a style=\"color:#aaaaaa\"
+    href=\"http://www.codemight.com\" target=\"_blank\">video cms</a><br /><br /></p></body>")
+  method: GET
+  

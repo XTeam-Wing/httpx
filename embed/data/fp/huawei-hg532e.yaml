@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-hg532e
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"hg532e")
+  method: GET
+  

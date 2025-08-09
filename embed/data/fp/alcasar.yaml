@@ -1,0 +1,11 @@
+info:
+  category: nac
+  company: other
+  cpe: ''
+  product: alcasar
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"valoriserdiv5")
+  method: GET
+  

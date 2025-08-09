@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: seacms(海洋cms)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"seacms")||(icontains(title,"seacms"))
+  method: GET
+  

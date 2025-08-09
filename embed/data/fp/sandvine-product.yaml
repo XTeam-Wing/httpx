@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Sandvine Ltd.
+  cpe: ''
+  product: sandvine-product
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"sandvine ")
+  method: GET
+  

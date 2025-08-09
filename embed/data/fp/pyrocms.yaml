@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: pyrocms
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(title,"pyrocms")||(icontains(header,"(set-cookie: _pyrocms_)"))'
+  method: GET
+  

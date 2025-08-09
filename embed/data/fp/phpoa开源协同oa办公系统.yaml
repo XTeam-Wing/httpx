@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: phpoa开源协同oa办公系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"phpoa开源协同oa办公系统")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: act-manager
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"path=/ucenter/; secure; httponly")||(icontains(body,"<script>location.href=\"ucenter\";</script>"))||(icontains(body,"url:\"/ucenter/login/loginaction!gettitle.action\","))||(icontains(title,"企业侧互联网综合管理平台"))
+  method: GET
+  

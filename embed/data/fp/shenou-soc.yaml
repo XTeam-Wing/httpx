@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Shenou Communication Equipment Co., Ltd.
+  cpe: ''
+  product: shenou-soc
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"soc http://www.shenou.com soc")
+  method: GET
+  

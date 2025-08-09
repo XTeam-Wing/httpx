@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ibos企业协同管理软件
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"ibos企业协同管理软件")
+  method: GET
+  

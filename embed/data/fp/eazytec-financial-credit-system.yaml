@@ -1,0 +1,11 @@
+info:
+  category: fms
+  company: Jiangsu Zhuoyi Information Technology Co., Ltd.
+  cpe: ''
+  product: eazytec-financial-credit-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"财务信用") && icontains(body,"江苏卓易信息科技股份有限公司</a></p>"))
+  method: GET
+  

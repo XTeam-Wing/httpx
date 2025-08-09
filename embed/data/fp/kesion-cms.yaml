@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Xiamen Kexun Software Co., Ltd.
+  cpe: ''
+  product: kesion-cms
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/ks_inc/common.js") || icontains(body,"publish by KesionCMS")
+  method: GET
+  

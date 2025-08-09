@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: openwbs-电商系统
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"openwbs_电商系统")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-p-660hw-t1
+  server: nginx
+  tags: []
+rules:
+- dsl: (((!icontains(banner,"netwave ip camera") && !icontains(banner,"drupal")) &&
+    !icontains(banner,"couchdb")) && icontains(banner,"p-660hw-t1 "))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: alliedtelesis-at-switch
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"allied telesis at-")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Xi'an Jiaotong University Jabil Network Technology Co., Ltd.
+  cpe: ''
+  product: jump-second-generation-firewall-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: title == "捷普第二代防火墙管理系统"
+  method: GET
+  

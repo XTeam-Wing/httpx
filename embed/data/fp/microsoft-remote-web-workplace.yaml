@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: Microsoft Corporation
+  cpe: ''
+  product: microsoft-remote-web-workplace
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"action=\"logon.aspx?") && icontains(body,"content=\"copyright
+    (c) microsoft corporation"))
+  method: GET
+  

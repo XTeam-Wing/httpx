@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: byzoro-security-gateway
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"patflow--管理平台")||(icontains(body,"&nbsp;patrolflow 多业务安全网关"))||(icontains(title,"patrolflow"))
+  method: GET
+  

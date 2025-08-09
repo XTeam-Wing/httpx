@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Shenzhen Fengyuanxin Technology Industry Holdings Co., Ltd.
+  cpe: ''
+  product: fengyuan-core-technology-firewall
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<title> technology, inc.</title>") && icontains(body,"深圳市丰源芯科技产业控股有限公司"))
+  method: GET
+  

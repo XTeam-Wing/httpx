@@ -1,0 +1,11 @@
+info:
+  category: identity authentication && authority management
+  company: Beijing Zhongke Henglun Technology Co., Ltd.
+  cpe: ''
+  product: zhongke-henglun-identification-self-service-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"iaus/media/js/login/login.js")
+  method: GET
+  

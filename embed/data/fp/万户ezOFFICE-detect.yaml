@@ -1,0 +1,17 @@
+info:
+  product: 万户ezoffice
+  category: oa
+  author: ev1l0o4g
+  company: 北京万户网络技术有限公司
+  description: 万户ezOFFICE协同管理平台
+  fofa_query: app="万户网络-ezOFFICE"
+  tags: []
+rules:
+  - method: GET
+    path: 
+      - "/defaultroot/login.jsp"
+    dsl: "status_code == 200 && (contains_all(body,\"defaultroot\",\"Logon!logon.action\",\"domainAccount\") || contains(body,\"万户ezOFFICE协同管理平台\") || contains_all(body,\"ezofficeusername\",\"whirrootpath\",\"/defaultroot/js/cookie.js\"))"
+  - method: GET
+    path: 
+      - "/favicon.ico"
+    dsl: "status_code == 200 && md5(body) == \"fa1f01d0392d60663d8ce936fe06096a\""

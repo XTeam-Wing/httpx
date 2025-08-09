@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Aurora Group
+  cpe: ''
+  product: duo-group-t7-pim-8802
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"aurora t7-pim-8802")
+  method: GET
+  

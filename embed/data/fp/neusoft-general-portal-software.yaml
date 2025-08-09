@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Neusoft Group Co., Ltd.
+  cpe: ''
+  product: neusoft-general-portal-software
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"ecdomain/unieap/ria/unieap/themes/earth/common/unieap.css")
+  method: GET
+  

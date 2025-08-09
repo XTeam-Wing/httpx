@@ -1,0 +1,12 @@
+info:
+  category: anti-spam system
+  company: CYBONET
+  cpe: ''
+  product: pineapp
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"/admin/css/images/pineapp.ico") || icontains(title,"pineapp
+    webaccess - login"))
+  method: GET
+  

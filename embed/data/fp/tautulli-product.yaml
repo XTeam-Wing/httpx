@@ -1,0 +1,11 @@
+info:
+  category: host monitoring && auditing
+  company: Plex Inc.
+  cpe: ''
+  product: tautulli-product
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"alt=\"plexpy\"") || icontains(title,"plexpy - login"))
+  method: GET
+  

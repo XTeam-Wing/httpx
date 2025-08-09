@@ -1,0 +1,13 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: trs-wcm
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/wcm\" target=\"_blank\">管理")||(icontains(body,"/wcm\" target=\"_blank\">网站管理"))||(icontains(body,"wcm")
+    && icontains(body,"forum.trs.com.cn"))||(icontains(body,"window.location.href = \"/wcm\";"))||(icontains(body,"0;url=/wcm"))||(icontains(body,"/wcm/app/js"))||(icontains(body,"forum.trs.com.cn"))||(icontains(body,"/wcm\"
+    target=\"_blank\">网站管理") && icontains(body,"wcm"))
+  method: GET
+  

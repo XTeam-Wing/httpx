@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 搜索动力2014(php+mysql)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"搜索动力2014(php+mysql)")
+  method: GET
+  

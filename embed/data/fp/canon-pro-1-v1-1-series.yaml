@@ -1,0 +1,11 @@
+info:
+  category: printer
+  company: Canon Inc.
+  cpe: ''
+  product: canon-pro-1-v1-1-series
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"nowrap>canon pro-1 v1-1 series</td>")
+  method: GET
+  

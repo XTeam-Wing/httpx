@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Shenzhen Double Dream Technology Co., Ltd.
+  cpe: ''
+  product: lf-lingfeng-certification-fee-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"/lfradius/")
+  method: GET
+  

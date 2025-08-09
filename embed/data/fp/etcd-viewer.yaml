@@ -1,0 +1,12 @@
+info:
+  category: other support system
+  company: other
+  cpe: ''
+  product: etcd-viewer
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<a class=\"navbar-brand\" href=\"./home\">etcd viewer</a>")
+    || icontains(title,"etcd viewer"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: ZTE Corporation
+  cpe: ''
+  product: zxr10-m6000-8s-plus
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"zxr10 m6000-8s plus")
+  method: GET
+  

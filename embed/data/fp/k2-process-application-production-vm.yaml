@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: k2-process-application-production-vm
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(body,"url=/TopBPM.UserCenter.Web/")
+  method: GET
+  

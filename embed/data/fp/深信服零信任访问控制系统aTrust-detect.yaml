@@ -1,0 +1,11 @@
+info:
+  author: 哆啦A梦
+  description: aTrust是一款零信任访问控制系统，它可以对企业内部的各类敏感资源进行管控，保护数据安全。
+  tags: []
+  product: 深信服零信任访问控制系统atrust
+  category: cms
+rules:
+- method: GET
+  path:
+  - '/portal/index.css'
+  dsl: contains(body, "/atrusttray/.test(navigator.userAgent.toLowerCase()))") || contains(title, "aTrust") || contains(header, "aTrust")

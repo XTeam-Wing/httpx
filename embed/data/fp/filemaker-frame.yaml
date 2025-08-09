@@ -1,0 +1,12 @@
+info:
+  category: development framework
+  company: FileMaker, Inc
+  cpe: ''
+  product: filemaker-frame
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"/fmi/iwp/cgi?-noscript") || icontains(banner,"fmi-cookie"))
+    || icontains(banner,"fmi-cookie"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: eyou-anti-spam-mailbox-firewall
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"content=\"亿邮大容量电子邮件系统，反垃圾邮件网关")||(icontains(title,"反垃圾邮件网关  - 亿邮通讯"))
+  method: GET
+  

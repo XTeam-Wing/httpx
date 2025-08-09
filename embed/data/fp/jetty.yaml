@@ -1,0 +1,13 @@
+info:
+  category: service
+  company: Eclipse Foundation, Inc.
+  cpe: ''
+  product: jetty
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) && icontains(banner,"server:
+    jetty")) || ((!icontains(banner,"drupal") && !icontains(banner,"couchdb")) &&
+    icontains(banner,"server: jetty")))'
+  method: GET
+  

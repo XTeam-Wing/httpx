@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: topsec-tdsm-sbu
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"天融信数据安全管理系统")
+  method: GET
+  

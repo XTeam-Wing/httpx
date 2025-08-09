@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: NETGEAR, Inc.
+  cpe: ''
+  product: netgear-r6020
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"content=\"r6020\"") || icontains(banner,"netgear r6020"))
+    || icontains(banner,"realm=\"netgear r6020"))
+  method: GET
+  

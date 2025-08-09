@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Dell Inc.
+  cpe: ''
+  product: dell-networking-os
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"dell networking os")
+  method: GET
+  

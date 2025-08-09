@@ -1,0 +1,13 @@
+info:
+  category: other support system
+  company: other
+  cpe: ''
+  product: thehostingtool
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"page=status&sub=phpinfo\">phpinfo</a>)</td>") && icontains(body,"<td
+    width=\"20%\"><strong>server os:</strong></td>")) || icontains(body,"<a href=\"http://thehostingtool.com/\"
+    target=\"_blank\">thehostingtool</a>"))
+  method: GET
+  

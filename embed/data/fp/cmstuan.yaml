@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: cmstuan
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"content=\"开源团主机管理系统")||(icontains(title,"开源团主机管理系统"))
+  method: GET
+  

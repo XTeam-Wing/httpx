@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Beijing Ruijing Shangzhi Environmental Technology Co., Ltd.
+  cpe: ''
+  product: ruijing-wisdom-drainage-flow-level-detection-internet-of-things-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"class=\"loginin loginin1\"")
+  method: GET
+  

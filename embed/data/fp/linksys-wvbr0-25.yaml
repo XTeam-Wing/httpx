@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: Belkin International, Inc.
+  cpe: ''
+  product: linksys-wvbr0-25
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"linksys wvbr0-25") || icontains(banner,"wvbr0-25 model region
+    code")) || icontains(body,"model sku = wvbr0-25"))
+  method: GET
+  

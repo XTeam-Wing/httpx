@@ -1,0 +1,11 @@
+info:
+  category: other support system
+  company: ElasticHQ
+  cpe: ''
+  product: elasticsearch-hq
+  server: nginx
+  tags: []
+rules:
+- dsl: title == "elastic search - hq"
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: hetongkj
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"href=\"/web/mainmenu/images/favicon.ico\">")
+  method: GET
+  

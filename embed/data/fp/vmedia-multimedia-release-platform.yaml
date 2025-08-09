@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: VMedia Inc.
+  cpe: ''
+  product: vmedia-multimedia-release-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"class=\"video_00\"") && icontains(body,"function toggle(targetid)"))
+  method: GET
+  

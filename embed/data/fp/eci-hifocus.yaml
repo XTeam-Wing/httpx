@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: ECI TELECOM
+  cpe: ''
+  product: eci-hifocus
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"eci telecom hifocus") && icontains(protocol,"snmp"))
+  method: GET
+  

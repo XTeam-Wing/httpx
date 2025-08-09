@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-sbg5500
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"sbg5500")
+  method: GET
+  

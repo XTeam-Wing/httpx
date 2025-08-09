@@ -1,0 +1,11 @@
+info:
+  category: operation and maintenance audit fortres machine
+  company: other
+  cpe: ''
+  product: lansecs-internal-control-fort
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"LanSecS内控堡垒主机")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  author: Loong716
+  description: '联软UniNAC网络准入控制系统 was detected.'
+  tags: []
+  product: 联软uninac网络准入控制系统
+  category: cms
+rules:
+- method: GET
+  path:
+    - "/favicon.ico"
+  dsl: contains(body, "/portal/redirect/nacc") || contains(title, "联软网络智能准入系统")  || contains_all(body, "leagsoftcopy","modify_pwd_token") || ('da9ce98e9a52ccb605d112c0437bcbc1' == md5(body))

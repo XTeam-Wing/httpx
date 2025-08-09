@@ -1,0 +1,11 @@
+info:
+  category: network storage
+  company: Western Digital Corporation
+  cpe: ''
+  product: western-digital-mybook
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"src=\"/img/headernav_separator.gif\"")
+  method: GET
+  

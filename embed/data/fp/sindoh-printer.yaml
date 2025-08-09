@@ -1,0 +1,11 @@
+info:
+  category: printer
+  company: Sindoh. Co. Ltd
+  cpe: ''
+  product: sindoh-printer
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"sindoh ")
+  method: GET
+  

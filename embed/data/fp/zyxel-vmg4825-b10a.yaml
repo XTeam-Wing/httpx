@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zyxel-vmg4825-b10a
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"vmg4825-b10a")
+  method: GET
+  

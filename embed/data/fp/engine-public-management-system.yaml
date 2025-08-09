@@ -1,0 +1,14 @@
+info:
+  category: other software system
+  company: other
+  cpe: ''
+  product: engine-public-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (((((icontains(body,"powered by we7.cc") || icontains(body,"content=\"微擎,微信"))
+    || icontains(body,"onsubmit=\"return formcheck();\" class=\"we7-form\">")) ||
+    icontains(body,"class=\"copyright\">powered by <a href=\"http://www.we7.cc\"><b>微擎</b>"))
+    || icontains(title,"powered by we7.cc")) || icontains(title,"微擎 - 公众平台自助引擎"))
+  method: GET
+  

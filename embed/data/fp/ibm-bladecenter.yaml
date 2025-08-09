@@ -1,0 +1,14 @@
+info:
+  category: service
+  company: International Business Machines Corporation
+  cpe: ''
+  product: ibm-bladecenter
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(banner,"ibm bladecenter(r)") || ((icontains(banner,"bladecenter
+    advanced management module") || icontains(banner,"bladecenter management module"))
+    && icontains(protocol,"snmp"))) || icontains(body,"alt=\"ibm bladecenter")) ||
+    icontains(body,"/shared/ibmbcs.png")) || icontains(body,"/shared/ibmbch.png"))
+  method: GET
+  

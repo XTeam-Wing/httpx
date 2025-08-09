@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: spidercontrolininet
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"spidercontrol ininet")
+  method: GET
+  

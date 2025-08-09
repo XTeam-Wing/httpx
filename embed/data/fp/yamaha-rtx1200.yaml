@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Yamaha Corporation
+  cpe: ''
+  product: yamaha-rtx1200
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"rtx1200")
+  method: GET
+  

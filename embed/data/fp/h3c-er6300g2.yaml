@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-er6300g2
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"er6300g2系统管理")
+  method: GET
+  

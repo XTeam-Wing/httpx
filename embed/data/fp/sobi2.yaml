@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: sobi2
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"sobi 2")
+  method: GET
+  

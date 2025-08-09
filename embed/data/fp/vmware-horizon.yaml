@@ -1,0 +1,17 @@
+info:
+  author: sayhi
+  description: VMware Horizon was detected.
+  remediation:
+  - VMware Horizon 是一个现代化的平台，用于在混合云中安全交付虚拟桌面和应用。
+  tags:
+  - tech
+  - vmware
+  - horizon
+  - vdi
+  product: vmware-horizon.yaml
+  category: cms
+rules:
+- method: GET
+  path:
+  - /
+  dsl: title == "VMware Horizon"

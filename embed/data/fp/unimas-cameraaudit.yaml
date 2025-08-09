@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: unimas-cameraaudit
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"txtpasswordcssclass") && icontains(title,"视频安全接入用户认证系统")||(icontains(body,"txtpasswordcssclass"))
+  method: GET
+  

@@ -1,0 +1,13 @@
+info:
+  category: other software system
+  company: other
+  cpe: ''
+  product: consul-hashicorp
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(body,"www.consul.io") && icontains(body,"consul instance")) &&
+    icontains(body,"consulhost")) || (icontains(body,"consul-ui/config/environment")
+    && icontains(body,"/ui/assets/consul-ui"))) || title == "consul by hashicorp")
+  method: GET
+  

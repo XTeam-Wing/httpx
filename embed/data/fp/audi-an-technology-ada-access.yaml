@@ -1,0 +1,11 @@
+info:
+  category: entrance guard system
+  company: Guangdong Aodian Monitoring Technology Co., Ltd.
+  cpe: ''
+  product: audi-an-technology-ada-access
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body," welcome to ada access control system ")
+  method: GET
+  

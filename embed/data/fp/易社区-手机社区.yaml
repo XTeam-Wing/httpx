@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 易社区-手机社区
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"易社区__手机社区")
+  method: GET
+  

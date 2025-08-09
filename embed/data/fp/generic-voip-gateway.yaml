@@ -1,0 +1,13 @@
+info:
+  category: other network equipment
+  company: other
+  cpe: ''
+  product: generic-voip-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"digest realm=\" voip gateway") || icontains(banner,"voip
+    gateway configuration web server")) || icontains(banner,"digest realm=\" voip
+    gateway")) || icontains(banner,"voip gateway configuration web server"))
+  method: GET
+  

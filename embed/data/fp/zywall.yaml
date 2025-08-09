@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Zyxel Technology Co., Ltd.
+  cpe: ''
+  product: zywall
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"zywall ")
+  method: GET
+  

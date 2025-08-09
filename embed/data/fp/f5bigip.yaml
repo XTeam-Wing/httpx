@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: f5bigip
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"f5 bigip")
+  method: GET
+  

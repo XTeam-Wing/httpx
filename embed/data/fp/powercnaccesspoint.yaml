@@ -1,0 +1,11 @@
+info:
+  category: wireless network
+  company: other
+  cpe: ''
+  product: powercnaccesspoint
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"powercnaccesspoint")
+  method: GET
+  

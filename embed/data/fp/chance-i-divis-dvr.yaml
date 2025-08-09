@@ -1,0 +1,12 @@
+info:
+  category: other iot device
+  company: DIVIS DVR
+  cpe: ''
+  product: chance-i-divis-dvr
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: techno vision security system ver.") || icontains(banner,"server:
+    techno vision security system ver."))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Samsung Group
+  cpe: ''
+  product: samsung-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"samsung electronics") && title == "web management")
+  method: GET
+  

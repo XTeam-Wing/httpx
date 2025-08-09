@@ -1,0 +1,21 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: nopcommerce
+  server: Unknown
+  tags: []
+rules:
+- dsl: 'icontains(title,"nopcommerce")||(icontains(header,"(set-cookie: ^nop.customer)"))||(icontains(body,"<!--powered
+    by nopcommerce - http://www.nopcommerce.com-->"))||(icontains(body,"powered by <a
+    href=\"http://www.nopcommerce.com/\">nopcommerce</a>"))||(icontains(body,"powered
+    by <a href=\"http://www.nopcommerce.com\" target=\"_blank\">nopcommerce</a>"))||(icontains(body,"<input
+    type=\"submit\" name=\"loginform$loginbutton\" value=\"log in\" onclick=\"javascript:webform_dopostbackwithoptions(new
+    webform_postbackoptions(&quot;loginform$loginbutton&quot;, &quot;&quot;, true,
+    &quot;loginform&quot;, &quot;&quot;, false, false))\" id=\"loginform_loginbutton\"
+    class=\"adminbuttonblue\" />"))||(icontains(body,"<input id=\"loginform_rememberme\"
+    type=\"checkbox\" name=\"loginform$rememberme\" checked=\"checked\" /><label for=\"loginform_rememberme\">remember
+    me</label>"))||(icontains(body,"var loginform_usernameoremailrequired = document.all
+    ? document.all[\"loginform_usernameoremailrequired\"] : document.getelementbyid(\"loginform_usernameoremailrequired\");"))'
+  method: GET
+  

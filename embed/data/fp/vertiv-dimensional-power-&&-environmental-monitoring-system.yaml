@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Vertiv Tech Co., Ltd.
+  cpe: ''
+  product: vertiv-dimensional-power-&&-environmental-monitoring-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"var port = \"9528")
+  method: GET
+  

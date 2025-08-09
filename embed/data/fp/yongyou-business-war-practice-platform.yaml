@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Yongyou Network Technology Co., Ltd.
+  cpe: ''
+  product: yongyou-business-war-practice-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"login_owner") && icontains(body,"login_main_bg"))
+  method: GET
+  

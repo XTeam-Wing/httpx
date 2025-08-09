@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: Beijing Geer Guoxin Technology Co., Ltd.
+  cpe: ''
+  product: gol-software-signature-verification-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"版权所有：北京格尔国信科技有限公司") && icontains(title,"签名验证管理系统"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Sand Studio.
+  cpe: ''
+  product: airdroid-equipment-housekeeper
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"airdroid") || icontains(banner,"server: airdroid"))'
+  method: GET
+  

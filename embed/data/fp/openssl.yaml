@@ -1,0 +1,11 @@
+info:
+  category: data certificate
+  company: OpenSSl Software Foundation.
+  cpe: ''
+  product: openssl
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"openssl") || icontains(banner,"openssl"))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: multifunctional
+  company: Silex
+  cpe: ''
+  product: pricom-h-260u
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"silex technology, inc.") && icontains(banner,"h-260u"))
+    || icontains(banner,"pricom h-260u "))
+  method: GET
+  

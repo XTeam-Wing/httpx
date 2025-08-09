@@ -1,0 +1,15 @@
+info:
+  author: pen4uin
+  description: 致远M3
+  tags: []
+  product: seeyon-m3
+  category: cms
+rules:
+- method: GET
+  path: 
+    - "/mobile_portal"
+  dsl: contains(body, "M3-Server 已启动")
+- method: GET
+  path: 
+    - "/mobile_portal/api/m3/core/server/service"
+  dsl: contains(body, "M3-Server 已启动")

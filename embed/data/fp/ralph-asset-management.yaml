@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: other
+  cpe: ''
+  product: ralph-asset-management
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"ralph <strong>3</strong>")
+  method: GET
+  

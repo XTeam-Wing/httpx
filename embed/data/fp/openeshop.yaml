@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: openeshop
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"open eshop")
+  method: GET
+  

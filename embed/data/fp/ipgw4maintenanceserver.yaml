@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: ipgw4maintenanceserver
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"ipgw4 maintenance server")
+  method: GET
+  

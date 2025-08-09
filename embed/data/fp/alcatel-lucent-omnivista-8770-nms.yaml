@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Alcatel-Lucent S.A.
+  cpe: ''
+  product: alcatel-lucent-omnivista-8770-nms
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"alcatel-lucent omnivista 8770 nms")
+  method: GET
+  

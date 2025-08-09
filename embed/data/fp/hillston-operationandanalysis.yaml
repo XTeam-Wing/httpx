@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: hillston-operationandanalysis
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"/static/css/main.4672616b.chunk.css") && icontains(title,"智·源")||(icontains(body,"/static/css/main.4672616b.chunk.css"))
+  method: GET
+  

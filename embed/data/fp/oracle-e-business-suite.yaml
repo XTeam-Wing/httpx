@@ -1,0 +1,11 @@
+info:
+  category: cloud computing
+  company: Oracle Corporation
+  cpe: ''
+  product: oracle-e-business-suite
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"e-business suite home page redirect")
+  method: GET
+  

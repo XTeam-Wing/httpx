@@ -1,0 +1,11 @@
+info:
+  category: vpn products
+  company: Maipu Communication Technology Co., Ltd.
+  cpe: ''
+  product: maipu-vpn3005s
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"mpsec-vpn3005s")
+  method: GET
+  

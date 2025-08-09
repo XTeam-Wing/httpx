@@ -1,0 +1,11 @@
+info:
+  category: server
+  company: Fujitsu Ltd
+  cpe: ''
+  product: primergy-irmc
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"primergy irmc")
+  method: GET
+  

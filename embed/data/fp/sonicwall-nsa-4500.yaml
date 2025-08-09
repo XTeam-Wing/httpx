@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: SonicWall Inc.
+  cpe: ''
+  product: sonicwall-nsa-4500
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"sonicwall nsa 4500 ")
+  method: GET
+  

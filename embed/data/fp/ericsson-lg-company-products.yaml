@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Telefonaktiebolaget LM Ericsson
+  cpe: ''
+  product: ericsson-lg-company-products
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"ericsson-lg enterprise co.,ltd.")
+  method: GET
+  

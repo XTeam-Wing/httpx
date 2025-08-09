@@ -1,0 +1,13 @@
+info:
+  category: antivirus gateway
+  company: Raritan Inc.
+  cpe: ''
+  product: raritan-security-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"raritan computer; commandcenter secure gateway") || icontains(body,"alt=\"cc-sg
+    logo")) || icontains(body,"src=\"images/ccsg logo.gif")) || icontains(title,"raritan
+    cc-sg"))
+  method: GET
+  

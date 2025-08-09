@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: forsun-safegateway
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"科盾网关控制台")
+  method: GET
+  

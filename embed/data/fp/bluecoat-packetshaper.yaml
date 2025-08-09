@@ -1,0 +1,12 @@
+info:
+  category: traffic analysis
+  company: Broadcom Inc.
+  cpe: ''
+  product: bluecoat-packetshaper
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"pscfgstr=") || icontains(banner,"pscfgstr=")) || icontains(title,"packetshaper
+    customer login"))
+  method: GET
+  

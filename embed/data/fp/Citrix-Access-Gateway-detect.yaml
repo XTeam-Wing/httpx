@@ -1,0 +1,31 @@
+info:
+  company: Citrix
+  product: citrix access gateway
+  category: device
+  description: Citrix Gateway 整合了远程访问基础结构，以便跨所有应用程序提供单点登录，无论是在数据中心、云中还是作为 SaaS 传输。它允许用户通过单个 URL 从任何设备访问任何应用程序。Citrix Gateway 易于部署且易于管理。最典型的部署配置是在 DMZ 中找到 Citrix Gateway 设备。您可以在网络中安装多个 Citrix Gateway 设备以进行更复杂的部署。
+  author: 哆啦A梦&&z3r0yu
+  fofa_query: app="citrix-Access-Gateway"
+  tags:
+  - tech
+  - citrix
+  - citrix-access-gateway
+rules:
+- method: GET
+  
+  dsl: contains(title, "Citrix Access Gateway") || contains(header, "ezisneercsresu=")|| contains(header, "Cyms-SecS") || contains(body, "href=\"/vpn/images/AccessGateway.ico\"")|| contains(body, "class=\"citrixReceiverLogoAboutBox\"") || contains(body, "/vpn/js/gateway_login_view.js?")|| contains(body, "cloud.ottoworkfroce.eu/vpn/index.html") || contains(body, "/vpn/js/gateway_login_form_view")|| contains(body, "/vpn/js/lsgateway_login_view.js") || contains(body, "class=\"_ctxstxt_NetscalerGateway\"")|| contains(body, "receiver/images/common/icon_vpn.ico")
+- method: GET
+  path: 
+   - /vpn/index.html
+  dsl: contains(title, "Citrix Access Gateway") || contains(header, "ezisneercsresu=")|| contains(header, "Cyms-SecS") || contains(body, "href=\"/vpn/images/AccessGateway.ico\"")|| contains(body, "class=\"citrixReceiverLogoAboutBox\"") || contains(body, "/vpn/js/gateway_login_view.js?")|| contains(body, "cloud.ottoworkfroce.eu/vpn/index.html") || contains(body, "/vpn/js/gateway_login_form_view")|| contains(body, "/vpn/js/lsgateway_login_view.js") || contains(body, "class=\"_ctxstxt_NetscalerGateway\"") || contains(body, "receiver/images/common/icon_vpn.ico")
+- method: GET
+  path: 
+  - /logon/LogonPoint/tmindex.html
+  dsl: contains(body, "Citrix Receiver.") || md5(body) == "d12c825e891e5a9fe2d47090e0739cde"
+- method: GET
+  path: 
+  - /vpn/images/AccessGateway.ico
+  dsl: md5(body) == "4eaaa139063e6706d1b5d0eee833d47b"
+- method: GET
+  path: 
+  - /vpn/images/ctxHeader01.gif
+  dsl: md5(body) == "c853dc685fb59580269a691756403d37"

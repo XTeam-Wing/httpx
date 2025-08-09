@@ -1,0 +1,12 @@
+info:
+  category: other software system
+  company: A TLC S.r.l.
+  cpe: ''
+  product: aethra-telecommunications-os
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"atos") || icontains(title,"aethra telecommunications operating
+    system")) || icontains(banner,"atos"))
+  method: GET
+  

@@ -1,0 +1,17 @@
+info:
+  product: 九思oa
+  category: oa
+  author: ev1l0o4g
+  company: 北京九思协同软件有限公司
+  description: 九思协同办公系统
+  fofa_query: app="九思软件-OA"
+  tags:
+  - jiusi
+  - 九思
+  - tech
+rules:
+- method: GET
+  path: 
+   - "/jsoa/login.jsp"
+   - "/favicon.ico"
+  dsl: status_code == 200 && (md5(body) == "fc171c32d6d99f006b1ade860753a9db"|| md5(body) == "7dda6ab1f1f5313e5d78325312616103" || contains_all(body, "九思软件","办公系统") || contains(body, "九思协同办公系统") || contains(body, "/jsoa/webmail/ajax_util.js"))

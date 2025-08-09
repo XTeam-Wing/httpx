@@ -1,0 +1,11 @@
+info:
+  category: voice video
+  company: Gigaset AG
+  cpe: ''
+  product: gigaset-voip
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"gigaset communications") && icontains(body,"onclick=\"javascript:open_gigaset_help_window()"))
+  method: GET
+  

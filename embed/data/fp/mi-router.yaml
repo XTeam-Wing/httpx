@@ -1,0 +1,16 @@
+info:
+  category: router
+  company: Xiaomi Group
+  cpe: ''
+  product: mi-router
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((((((((icontains(banner,"mirouter") || icontains(banner,"mirouter3"))
+    || icontains(banner,"mi-routers")) || icontains(banner,"mi-router")) || icontains(banner,"realm=\"mi-"))
+    || icontains(banner,"mirouter")) || icontains(banner,"mirouter3")) || icontains(banner,"mi-routers"))
+    || icontains(banner,"mi-router")) || icontains(banner,"realm=\"mi-")) || icontains(body,"mirouter-router-2</a>"))
+    || ((icontains(body,"url=/cgi-bin/luci/web") || icontains(banner,"tx-server: mixr"))
+    && icontains(title,"小米路由器")))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: viewgood(远古媒体发布平台)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"viewgood")||(icontains(title,"viewgood"))||(icontains(body,"远古媒体发布平台"))||(icontains(title,"远古媒体发布平台"))
+  method: GET
+  

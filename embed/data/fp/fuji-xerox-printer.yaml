@@ -1,0 +1,24 @@
+info:
+  category: printer
+  company: Fuji Xerox Co., Ltd.
+  cpe: ''
+  product: fuji-xerox-printer
+  server: nginx
+  tags: []
+rules:
+- dsl: '((!icontains(body,"server: couchdb") && (((((((((icontains(body,"phaser 4500dt</font></td>")
+    || icontains(body,"phaser 6250n</title>")) || icontains(body,"phaser 6250dp</title>"))
+    || icontains(body,"properties/aboutprinter.html")) || (icontains(body,"frames[2].window.location.href=jtpath
+    + loc;") && icontains(title,"internet services"))) || (icontains(body,"fuji xerox")
+    && icontains(body,"var jtpath = ''/jt/cgi-bin/'';"))) || (!icontains(title,"epson")
+    && icontains(body,"<frame src=\"footer.asp\" name=\"footer\" title=\"footer\"
+    scrolling=\"no\" noresize marginheight=\"2\">"))) || icontains(title,"docucentre"))
+    || icontains(body,"<frame src=\"headstat.htm\" name=\"top")) || icontains(title,"docuprint
+    "))) || (!icontains(banner,"couchdb") && (((((((((icontains(banner,"fuji xerox
+    versant ") || icontains(banner,"fx docuprint ")) || icontains(banner,"fuji xerox
+    color")) || icontains(banner,"fuji xerox document centre")) || icontains(banner,"fuji
+    xerox apeosport")) || icontains(banner,"xerox docuprint")) || icontains(banner,"fuji
+    xerox docucentre")) || icontains(banner,"xerox docucentre")) || icontains(banner,"xerox
+    workcentre")) || (icontains(banner,"fuji xerox docu") && icontains(protocol,"snmp")))))'
+  method: GET
+  

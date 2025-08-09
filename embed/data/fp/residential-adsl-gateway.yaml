@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: other
+  cpe: ''
+  product: residential-adsl-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"residential adsl gateway")
+  method: GET
+  

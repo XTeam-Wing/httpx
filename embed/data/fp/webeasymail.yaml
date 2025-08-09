@@ -1,0 +1,11 @@
+info:
+  category: electronic mail system
+  company: other
+  cpe: ''
+  product: webeasymail
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"on webeasymail")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: switch
+  company: Alcatel-Lucent S.A.
+  cpe: ''
+  product: alcatel-lucent-os6865-u12x
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<span>device os6865-u12x")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: zksoftware指纹读取器web
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"zksoftware指纹读取器web")
+  method: GET
+  

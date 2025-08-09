@@ -1,0 +1,11 @@
+info:
+  category: other network security
+  company: SonicWall Inc.
+  cpe: ''
+  product: sonicwall-email-security
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(banner,"ESMTP SonicWall")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: EchoLink
+  cpe: ''
+  product: echolink
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: echolink") || icontains(banner,"server: echolink"))'
+  method: GET
+  

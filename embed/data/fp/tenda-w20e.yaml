@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Shenzhen Jixiang Tengda Technology Co., Ltd.
+  cpe: ''
+  product: tenda-w20e
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"var sys_target = \"w20e\"")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Hanwha Techwin Co., Ltd.
+  cpe: ''
+  product: hanwha-xrn-810s
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"xrn-810s") || icontains(body,"$.nvr.model_name=\"xrn-810s\""))
+  method: GET
+  

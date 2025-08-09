@@ -1,0 +1,13 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: w3-total-cache
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"x-powered-by: w3 total cache") || icontains(body,"<!--
+    performance optimized by w3 total cache. learn more: http://www.w3-edge.com/wordpress-plugins/"))
+    || icontains(banner,"x-powered-by: w3 total cache"))'
+  method: GET
+  

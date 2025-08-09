@@ -1,0 +1,12 @@
+info:
+  category: other iot device
+  company: Brickstream Corp.
+  cpe: ''
+  product: flir-brickstream-1100
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<h1>brickstream 1100 basic configuration</h1>") || icontains(title,"brickstream
+    1100"))
+  method: GET
+  

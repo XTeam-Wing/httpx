@@ -1,0 +1,11 @@
+info:
+  category: hrm
+  company: Xiamen Yizhitong Intelligent Technology Co., Ltd.
+  cpe: ''
+  product: one-finger-e7-human-resource-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"name=\"hidden_isbiaozhun\"")
+  method: GET
+  

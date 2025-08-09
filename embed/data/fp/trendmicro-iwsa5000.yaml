@@ -1,0 +1,11 @@
+info:
+  category: antivirus gateway
+  company: Trend Micro Incorporated.
+  cpe: ''
+  product: trendmicro-iwsa5000
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"iwsa5000")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: bittads
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"bittads")
+  method: GET
+  

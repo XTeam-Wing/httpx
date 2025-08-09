@@ -1,0 +1,12 @@
+info:
+  category: operating system
+  company: Ubiquiti Inc.
+  cpe: ''
+  product: airos
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"cookiechecker?uri=") || icontains(banner,"airos_sessionid"))
+    || icontains(banner,"cookiechecker?uri=")) || icontains(banner,"airos_sessionid"))
+  method: GET
+  

@@ -1,0 +1,13 @@
+info:
+  category: traffic analysis
+  company: The Cacti Group, Inc.
+  cpe: ''
+  product: cacti-monitoring-system
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((icontains(banner,"cacti access") || icontains(banner,"set-cookie: cacti="))
+    || icontains(banner,"cacti access")) || icontains(body,"/plugins/jqueryskin/include/login.css"))
+    || icontains(title,"login to cacti")) || icontains(banner,"set-cookie: cacti="))'
+  method: GET
+  

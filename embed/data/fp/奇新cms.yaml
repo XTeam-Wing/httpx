@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 奇新cms
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"奇新cms")
+  method: GET
+  

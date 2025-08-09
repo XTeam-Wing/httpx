@@ -1,0 +1,13 @@
+info:
+  category: database system
+  company: MongoDB, Inc
+  cpe: ''
+  product: mongodb-database
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(title,"mongod.exe") || icontains(body,"you are trying to access
+    mongodb")) || icontains(protocol,"mongodb")) || icontains(body,"<a href=\"/_replset\">replica
+    set status</a></p>"))
+  method: GET
+  

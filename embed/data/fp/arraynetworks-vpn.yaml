@@ -1,0 +1,11 @@
+info:
+  category: vpn products
+  company: Array Networks, Inc
+  cpe: ''
+  product: arraynetworks-vpn
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"an_util.js")
+  method: GET
+  

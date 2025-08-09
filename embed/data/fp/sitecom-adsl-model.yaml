@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Sitecom B.V.
+  cpe: ''
+  product: sitecom-adsl-model
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"basic realm=\"sitecom") || icontains(banner,"basic realm=\"sitecom"))
+  method: GET
+  

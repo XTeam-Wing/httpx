@@ -1,0 +1,11 @@
+info:
+  category: operating system
+  company: Red Hat, Inc.
+  cpe: ''
+  product: fedora
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"fedora")
+  method: GET
+  

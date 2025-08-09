@@ -1,0 +1,11 @@
+info:
+  category: electronic mail system
+  company: other
+  cpe: ''
+  product: liberopops
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"pop3 server ready") && icontains(banner,"+ok popserver"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Cradlepoint, Inc.
+  cpe: ''
+  product: cradlepoint-cba750b
+  server: nginx
+  tags: []
+rules:
+- dsl: 'icontains(title,"login :: cba750b")'
+  method: GET
+  

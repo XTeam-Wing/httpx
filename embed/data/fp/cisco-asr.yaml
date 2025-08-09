@@ -1,0 +1,13 @@
+info:
+  category: router
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-asr
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(banner,"cisco ios software, asr900") || icontains(banner,"cisco
+    ios software, asr1000")) || icontains(banner,"cisco 8600")) || icontains(banner,"cisco
+    asr")) || icontains(banner,"cisco asr"))
+  method: GET
+  

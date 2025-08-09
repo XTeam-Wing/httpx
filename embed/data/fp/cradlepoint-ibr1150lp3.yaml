@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Cradlepoint, Inc.
+  cpe: ''
+  product: cradlepoint-ibr1150lp3
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"cplogin.model = \"ibr1150lp3\"")
+  method: GET
+  

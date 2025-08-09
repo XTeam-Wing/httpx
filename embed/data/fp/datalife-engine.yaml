@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Softnyus Media Group
+  cpe: ''
+  product: datalife-engine
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"dle_") || icontains(body,"content=\"datalife engine"))
+  method: GET
+  

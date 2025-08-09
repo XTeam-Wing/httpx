@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: scalix-email
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"scalix smtp")||(icontains(header,"scalix pop3"))||(icontains(header,"scalix
+    imap"))
+  method: GET
+  

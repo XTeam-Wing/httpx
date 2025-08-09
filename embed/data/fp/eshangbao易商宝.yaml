@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: eshangbao易商宝
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"eshangbao易商宝")
+  method: GET
+  

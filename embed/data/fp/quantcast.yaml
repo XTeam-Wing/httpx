@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: quantcast
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"/quant.js")
+  method: GET
+  

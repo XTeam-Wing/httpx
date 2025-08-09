@@ -1,0 +1,12 @@
+info:
+  category: antivirus gateway
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-sipgateway
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: cisco-sipgateway") || icontains(banner,"server:
+    cisco-sipgateway"))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: multifunctional
+  company: KYOCERA Corporation
+  cpe: ''
+  product: kyocera-ib-110
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"kyocera print system ib-110")
+  method: GET
+  

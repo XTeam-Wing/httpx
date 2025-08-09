@@ -1,0 +1,11 @@
+info:
+  category: printer
+  company: Canon Inc.
+  cpe: ''
+  product: canon-mx470-series
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"nowrap>canon mx470 series</td>")
+  method: GET
+  

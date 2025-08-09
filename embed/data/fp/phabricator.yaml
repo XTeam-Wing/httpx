@@ -1,0 +1,12 @@
+info:
+  category: other software system
+  company: 'Phacility, Inc. '
+  cpe: ''
+  product: phabricator
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(body,"res/phabricator") || icontains(body,"phabricator-application-launch-container"))
+    || icontains(banner,"set-cookie: phsid")) || icontains(banner,"phsid"))'
+  method: GET
+  

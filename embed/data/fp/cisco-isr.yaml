@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Cisco Systems, Inc.
+  cpe: ''
+  product: cisco-isr
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"cisco ios software [denali], isr") || icontains(banner,"cisco
+    ios software, isr "))
+  method: GET
+  

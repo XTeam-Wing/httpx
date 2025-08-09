@@ -1,0 +1,12 @@
+info:
+  category: other software system
+  company: Hewlett Packard Enterprise Development LP
+  cpe: ''
+  product: arubaos
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"/screens/wms/wms.login") || (icontains(banner,"arubaos") &&
+    icontains(protocol,"snmp")))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: virtualization
+  company: VMware, Inc.
+  cpe: ''
+  product: vmware-vfabric
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"ts01efd1fa") || icontains(banner,"ts01efd1fa")) || icontains(title,"vfabric"))
+  method: GET
+  

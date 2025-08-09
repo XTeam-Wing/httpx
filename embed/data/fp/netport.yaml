@@ -1,0 +1,13 @@
+info:
+  category: service
+  company: Conitec GmbH
+  cpe: ''
+  product: netport
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((icontains(banner,"power by netport") || icontains(banner,"power by netport"))
+    || icontains(banner,"server: netport software")) || icontains(banner,"server:
+    netport software"))'
+  method: GET
+  

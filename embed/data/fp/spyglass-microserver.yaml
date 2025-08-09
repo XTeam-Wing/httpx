@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: Nagravision S.A.
+  cpe: ''
+  product: spyglass-microserver
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: spyglass_microserver") || icontains(banner,"server:
+    spyglass_microserver"))'
+  method: GET
+  

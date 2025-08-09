@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Zhengzhou Luzhiyi Technology Co., Ltd.
+  cpe: ''
+  product: doccms
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"power by doccms")
+  method: GET
+  

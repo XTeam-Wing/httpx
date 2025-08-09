@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: Avigilon Corporation
+  cpe: ''
+  product: videoiq-camera
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"realm=\"avigilon") || icontains(banner,"realm=\"avigilon"))
+    || icontains(title,"videoiq camera login"))
+  method: GET
+  

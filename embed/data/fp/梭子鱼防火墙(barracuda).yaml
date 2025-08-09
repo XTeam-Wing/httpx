@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 梭子鱼防火墙(barracuda)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"barracuda")||(icontains(title,"barracuda"))
+  method: GET
+  

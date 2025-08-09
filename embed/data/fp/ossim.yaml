@@ -1,0 +1,12 @@
+info:
+  category: other network security
+  company: AlienVault, Inc.
+  cpe: ''
+  product: ossim
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"alienvault ossim") || icontains(title,"alienvault - open
+    source sim"))
+  method: GET
+  

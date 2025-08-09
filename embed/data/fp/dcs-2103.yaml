@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: dcs-2103
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"dcs-2103") || icontains(banner,"realm=\"dcs-2103"))
+  method: GET
+  

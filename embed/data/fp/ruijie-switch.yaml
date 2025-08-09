@@ -1,0 +1,13 @@
+info:
+  category: switch
+  company: Ruijie Networks Co., Ltd.
+  cpe: ''
+  product: ruijie-switch
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"id=\"a_lang_switch\"") && icontains(body,"ap设备中的配置并不重要"))
+    || (icontains(banner,"switch") && icontains(banner,"ruijie"))) || (icontains(banner,"ruijie
+    network") && icontains(banner,"red-giant")))
+  method: GET
+  

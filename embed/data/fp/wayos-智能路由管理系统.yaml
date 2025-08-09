@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Shenzhen Weimeng Technology Co., Ltd.
+  cpe: ''
+  product: wayos-智能路由管理系统
+  server: unknown
+  tags: []
+rules:
+- dsl: icontains(title,"维盟（WayOS）智能路由管理系统")
+  method: GET
+  

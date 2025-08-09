@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: nitc定海神真
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"nitc定海神真")
+  method: GET
+  

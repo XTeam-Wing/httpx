@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: enterpriseloginmanagementsystem
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"txtusername\").focus(); //默认焦点")||(icontains(body,"themes/scripts/functionjs.js"))||((icontains(body,"id=\"cp\"")
+    && icontains(body,"txtusername\".focus(); //默认焦点")) && icontains(body,"themes/scripts/functionjs.js"))
+  method: GET
+  

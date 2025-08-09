@@ -1,0 +1,11 @@
+info:
+  category: wireless network
+  company: Cradlepoint, Inc.
+  cpe: ''
+  product: cradlepoint-cba250
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"cradlepoint cba250 gateway")
+  method: GET
+  

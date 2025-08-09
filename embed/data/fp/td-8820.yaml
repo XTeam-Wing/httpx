@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Pullian Technology Co., Ltd.
+  cpe: ''
+  product: td-8820
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"td-8820") || icontains(banner,"realm=\"td-8820"))
+  method: GET
+  

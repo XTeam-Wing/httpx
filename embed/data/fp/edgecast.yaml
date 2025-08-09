@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: edgecast
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"edgecast")
+  method: GET
+  

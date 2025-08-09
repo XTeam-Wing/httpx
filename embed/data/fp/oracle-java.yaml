@@ -1,0 +1,20 @@
+info:
+  category: scripting language
+  company: Oracle Corporation
+  cpe: ''
+  product: oracle-java
+  server: unknown
+  tags: []
+rules:
+- dsl: 'icontains(banner,"Set-Cookie: JSESSIONID") || icontains(banner,"Set-Cookie:
+    JSESSIONID") || icontains(body,"<h2>Struts Problem Report</h2>") || icontains(body,"There
+    is no Action mapped for namespace") || icontains(body,"No result defined for action
+    and result input") || icontains(banner,"X-Powered-By: Servlet") || icontains(banner,"X-Powered-By:
+    Servlet") || (icontains(banner,"JBoss") && icontains(banner,"X-Powered-By") &&
+    header!="Router") || (icontains(banner,"JBoss") && icontains(banner,"X-Powered-By")
+    && banner!="Router") || icontains(body,"index.jsp") || (header!="360 web server"
+    && header!="Docker" && icontains(banner,"jsp") && icontains(banner,"X-Powered-By"))
+    || (banner!="360 web server" && banner!="Docker" && icontains(banner,"jsp") &&
+    icontains(banner,"X-Powered-By"))'
+  method: GET
+  

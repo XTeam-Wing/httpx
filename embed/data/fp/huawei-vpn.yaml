@@ -1,0 +1,12 @@
+info:
+  category: vpn products
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-vpn
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"auth-http server") && icontains(body,"oncompleted(hresult,perrorobject,
+    pasynccontext)"))
+  method: GET
+  

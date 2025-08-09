@@ -1,0 +1,12 @@
+info:
+  category: voice video
+  company: Nanjing Chaoran Technology Co., Ltd.
+  cpe: ''
+  product: super-video-conference
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<a href=http://www.vmediax.com target=") || icontains(title,"welcome
+    to management system"))
+  method: GET
+  

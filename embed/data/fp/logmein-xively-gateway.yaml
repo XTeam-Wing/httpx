@@ -1,0 +1,12 @@
+info:
+  category: other network equipment
+  company: LogMeIn, Inc.
+  cpe: ''
+  product: logmein-xively-gateway
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: logmein web gateway") || icontains(banner,"server:
+    logmein web gateway"))'
+  method: GET
+  

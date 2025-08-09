@@ -1,0 +1,13 @@
+info:
+  category: other network equipment
+  company: other
+  cpe: ''
+  product: trident7-wave7-olt
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"<td valign=\"bottom\" colspan=2><font size=2 align=\"justify\">&copy;
+    ") || icontains(title,"trident7 system login")) || icontains(body,"wave7 optics,
+    inc. all rights reserved."))
+  method: GET
+  

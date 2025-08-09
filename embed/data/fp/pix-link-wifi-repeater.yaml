@@ -1,0 +1,11 @@
+info:
+  category: wireless network
+  company: Chongqing Langyidi Industrial Co., Ltd.
+  cpe: ''
+  product: pix-link-wifi-repeater
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"_t(pg_login.user)")
+  method: GET
+  

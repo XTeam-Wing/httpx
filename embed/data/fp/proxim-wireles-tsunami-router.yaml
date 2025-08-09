@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Proxim Wireless Corporation
+  cpe: ''
+  product: proxim-wireles-tsunami-router
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"tsunami mp") || icontains(banner,"tsunami qb"))
+  method: GET
+  

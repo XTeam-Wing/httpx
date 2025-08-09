@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: FXC Corporation
+  cpe: ''
+  product: fxc-es116vl
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"es116vl") || icontains(body,"es116vl")) || icontains(title,"es116vl"))
+  method: GET
+  

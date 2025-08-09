@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: yottabyte-rizhiyi
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"日志易管理系统")||(icontains(body,"href=\"/static/assets/yottaweb-elements/index.css\""))
+  method: GET
+  

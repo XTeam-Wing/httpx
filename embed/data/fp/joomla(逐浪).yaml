@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: joomla(逐浪)
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"joomla(逐浪)")
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 海鼎电子商务平台hdec
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"海鼎 电子商务平台hdec")
+  method: GET
+  

@@ -1,0 +1,13 @@
+info:
+  category: traffic analysis
+  company: Zhuohao (Beijing) Technology Co., Ltd.
+  cpe: ''
+  product: zoho-traffic-management
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(title,"manageengine analytics plus") || icontains(body,"href=\"/netflow/css/netflow.css"))
+    || icontains(title,"manageengine netflow")) || (icontains(body,"zoho") && icontains(body,"netflow
+    analyzer")))
+  method: GET
+  

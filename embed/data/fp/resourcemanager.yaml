@@ -1,0 +1,11 @@
+info:
+  category: big data pocessing
+  company: Apache Hadoop
+  cpe: ''
+  product: resourcemanager
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"this is standby rm. redirecting to the current active rm")
+  method: GET
+  

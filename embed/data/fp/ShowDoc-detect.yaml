@@ -1,0 +1,14 @@
+info:
+  author: 哆啦A梦
+  remediation:
+  - 一个非常适合IT团队的API文档、技术文档工具
+  tags:
+  - tech
+  - showdoc
+  product: showdoc
+  category: cms
+rules:
+- method: GET
+  path:
+  - /favicon.ico
+  dsl: ('1fbc02dc6f980f075779049bf687128a' == md5(body))

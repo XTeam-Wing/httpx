@@ -1,0 +1,11 @@
+info:
+  category: smart home
+  company: Konka Group Co., Ltd.
+  cpe: ''
+  product: konka-tv-2969
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"konka android tv 2969")
+  method: GET
+  

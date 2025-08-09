@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: zongdi-cyber-mapgis
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"mapgis server manager")
+  method: GET
+  

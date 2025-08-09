@@ -1,0 +1,11 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: geobytes-geoselect
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"geobytes-geoselect") || icontains(banner,"geobytes-geoselect"))
+  method: GET
+  

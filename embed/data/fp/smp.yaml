@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: smp
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(header,"/sso/index.do?appid=ssa")||(icontains(header,"/sso/index.do?appid=ssa"))
+  method: GET
+  

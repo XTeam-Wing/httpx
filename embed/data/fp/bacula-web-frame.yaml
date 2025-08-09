@@ -1,0 +1,12 @@
+info:
+  category: development framework
+  company: other
+  cpe: ''
+  product: bacula-web-frame
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(title,"bacula-web") || icontains(title,"bacula-web")) || icontains(title,"bacula
+    web")) || icontains(title,"webacula"))
+  method: GET
+  

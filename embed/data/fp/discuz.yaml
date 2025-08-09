@@ -1,0 +1,14 @@
+info:
+  category: component
+  company: Tencent Holdings Limited
+  cpe: ''
+  product: discuz
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"powered by <strong><a href=\"http://www.discuz.net") ||
+    (((icontains(body,"id=\"discuz_tips") || icontains(body,"href=\"/forum.php?"))
+    || icontains(body,"portal.php?mod=")) && icontains(body,"discuz_uid"))) || icontains(body,"content=\"discuz"))
+    || icontains(title,"powered by discuz"))
+  method: GET
+  

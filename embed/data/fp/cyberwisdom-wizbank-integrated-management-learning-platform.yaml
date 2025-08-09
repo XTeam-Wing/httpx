@@ -1,0 +1,11 @@
+info:
+  category: erp
+  company: Cyberwisdom Asia Limited
+  cpe: ''
+  product: cyberwisdom-wizbank-integrated-management-learning-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"wizbank")
+  method: GET
+  

@@ -1,0 +1,15 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: spiceworks
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"spiceworks")||(icontains(body,"<h1><img alt=\"spiceworks\" src=\"/images/logos/large.png"))||(icontains(body,"<link
+    href=\"/stylesheets/general.css?"))||(icontains(body,"<meta name=\"author\" content=\"spiceworks,
+    inc.\" />"))||(icontains(body,"<p>spiceworks is compatible with <a href=\"http://community.spiceworks.com/help/spiceworks_requirements#browser\">modern
+    browsers</a>, and requires javascript, cookies, and stylesheets (css) to function
+    correctly.</p>"))||(icontains(body,"<title>spiceworks - login required</title>"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Beijing Shenzhou Hongtu Technology Co., Ltd.
+  cpe: ''
+  product: iri-exploration-&&-development-business-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"中国石化勘探开发业务平台")
+  method: GET
+  

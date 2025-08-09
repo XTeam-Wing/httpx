@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 智慧可橙智能终端
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"智慧可橙智能终端")
+  method: GET
+  

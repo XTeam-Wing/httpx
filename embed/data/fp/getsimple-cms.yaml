@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: other
+  cpe: ''
+  product: getsimple-cms
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"powered by getsimple") || icontains(body,"content=\"getsimple"))
+  method: GET
+  

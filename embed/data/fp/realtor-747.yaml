@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: realtor-747
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"<body onload=\"start_realtor747_admin();\" onunload=\"stop_realtor747_admin();\">")
+  method: GET
+  

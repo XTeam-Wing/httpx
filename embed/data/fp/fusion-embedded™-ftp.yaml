@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: Unicoi Systems, Inc.
+  cpe: ''
+  product: fusion-embedded™-ftp
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"fusion ftp")
+  method: GET
+  

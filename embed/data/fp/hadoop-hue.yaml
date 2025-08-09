@@ -1,0 +1,13 @@
+info:
+  category: big data pocessing
+  company: Cloudera, Inc.
+  cpe: ''
+  product: hadoop-hue
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"hue && the hue logo are trademarks of cloudera, inc.") ||
+    icontains(body,"id=\"jhuenotify")) || icontains(body,"jhuehdfstreeglobals")) ||
+    icontains(title,"hue - welcome to hue"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: NuCom Group SE
+  cpe: ''
+  product: nucom-11n-wireless-router
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"nucom 11n wireless router")
+  method: GET
+  

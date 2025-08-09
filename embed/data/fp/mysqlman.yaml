@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: Carbon60 Operating Co. Ltd
+  cpe: ''
+  product: mysqlman
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"size=\"1\">mysqlman") || icontains(banner,"mysqlman_url="))
+    || icontains(banner,"mysqlman_url=")) || icontains(body,"href=\"mysql.cgi?do=top_level_op"))
+  method: GET
+  

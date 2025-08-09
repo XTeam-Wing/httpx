@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: koalawebserver
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"koala web server")
+  method: GET
+  

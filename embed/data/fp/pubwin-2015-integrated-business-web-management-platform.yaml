@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: Shanghai Xinhaoyi Software Co., Ltd.
+  cpe: ''
+  product: pubwin-2015-integrated-business-web-management-platform
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(title,"pubwin2015 web管理") || icontains(title,"pubwin2015 综合业务web管理平台"))
+    && icontains(body,"images/newlogin_01.jpg"))
+  method: GET
+  

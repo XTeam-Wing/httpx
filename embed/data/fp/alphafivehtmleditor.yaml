@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: alphafivehtmleditor
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"alpha five html editor")
+  method: GET
+  

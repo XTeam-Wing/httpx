@@ -1,0 +1,11 @@
+info:
+  category: wireless network
+  company: Shenzhen Jixiang Tengda Technology Co., Ltd.
+  cpe: ''
+  product: tenda-11n-wireless-ap
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"tenda 11n") || icontains(title,"tenda 11n wireless ap"))
+  method: GET
+  

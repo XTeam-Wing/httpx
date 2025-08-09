@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: Airspan Networks
+  cpe: ''
+  product: airspan-bsdu
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"airspan - wipll bsdu")
+  method: GET
+  

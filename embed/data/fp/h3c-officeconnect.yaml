@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: h3c-officeconnect
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"3com router 3031")
+  method: GET
+  

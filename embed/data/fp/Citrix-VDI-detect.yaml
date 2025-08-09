@@ -1,0 +1,14 @@
+info:
+  company: Citrix
+  product: citrix vdi
+  category: other
+  description: 虚拟桌面基础架构 (VDI) 是在中央服务器上托管桌面环境。它是桌面虚拟化的一种形式，因为特定的桌面映像在虚拟机 (VM)中运行，并通过网络交付给终端客户端。这些端点可能是 PC 或其他设备，如平板电脑或瘦客户端。
+  author: 哆啦A梦
+  tags:
+  - tech
+  - citrix-vdi
+rules:
+- method: GET
+  path: 
+  - /dt/ctxs
+  dsl: contains(body, "<title>Citrix VDI-in-a-Box") || contains(body, "src=\"/dt/ctxs")

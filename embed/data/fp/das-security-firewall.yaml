@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: das-security-firewall
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"dbapp security") && icontains(body,"scripts/web-common.js")||(icontains(body,"scripts/web-common.js"))||(icontains(body,"dbapp
+    security"))
+  method: GET
+  

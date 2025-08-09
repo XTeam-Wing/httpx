@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 禾翔utm
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"禾翔 utm")
+  method: GET
+  

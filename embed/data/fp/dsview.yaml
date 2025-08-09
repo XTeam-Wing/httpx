@@ -1,0 +1,14 @@
+info:
+  category: project management system
+  company: Vertiv Group Corp.
+  cpe: ''
+  product: dsview
+  server: nginx
+  tags: []
+rules:
+- dsl: '((((((icontains(body,"/dsview/protected/login.do") || icontains(body,"/dsview/images/favicon.ico"))
+    || icontains(banner,"server: avocent dsview")) || icontains(banner,"server: avocent
+    dsview")) || icontains(body,"href=\"/dsview/themes/")) || icontains(body,"src=\"/dsview/images/avocent-logo.png"))
+    || icontains(title,"avocent dsview "))'
+  method: GET
+  

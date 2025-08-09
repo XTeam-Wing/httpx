@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Quest Software Inc.
+  cpe: ''
+  product: quest-foglight
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"foglight")
+  method: GET
+  

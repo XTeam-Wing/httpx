@@ -1,0 +1,12 @@
+info:
+  category: other iot device
+  company: Plisch GmbH
+  cpe: ''
+  product: plisch-transmitter
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"transmitter") && icontains(banner,"plisch")) || icontains(banner,"plisch
+    scu "))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: vpn products
+  company: OpenVPN Inc.
+  cpe: ''
+  product: openvpn-products
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(banner,"server: openvpn") || icontains(banner,"server: openvpn"))
+    || icontains(banner,"realm=\"openvpn"))'
+  method: GET
+  

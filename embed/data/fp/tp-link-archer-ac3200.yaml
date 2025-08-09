@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: Pullian Technology Co., Ltd.
+  cpe: ''
+  product: tp-link-archer-ac3200
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"0.9.1 0.1 v004b.0 build 160116 rel.5035n")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: database system
+  company: MemSQL
+  cpe: ''
+  product: memsql
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"<h1>this browser is not supported by memsql ops</h2>") ||
+    title == "memsql ops")
+  method: GET
+  

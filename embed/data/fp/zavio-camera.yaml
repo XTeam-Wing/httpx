@@ -1,0 +1,11 @@
+info:
+  category: cameras && surveillance
+  company: ZAVIO Inc.
+  cpe: ''
+  product: zavio-camera
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"osdcmdtb") && icontains(body,"dynacolor"))
+  method: GET
+  

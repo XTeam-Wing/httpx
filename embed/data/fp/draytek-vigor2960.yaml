@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: DrayTek Corp.
+  cpe: ''
+  product: draytek-vigor2960
+  server: nginx
+  tags: []
+rules:
+- dsl: '((title == "vigor 2960" || icontains(body,"src=\"v2960/excanvas.js")) || icontains(banner,"model:
+    vigor2960"))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: smart home
+  company: other
+  cpe: ''
+  product: media-renderer
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"<friendlyname>客厅电视-dlna<")
+  method: GET
+  

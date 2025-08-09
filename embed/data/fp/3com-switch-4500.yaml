@@ -1,0 +1,12 @@
+info:
+  category: switch
+  company: New H3C Technology Co., Ltd.
+  cpe: ''
+  product: 3com-switch-4500
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"switch 4500") || icontains(banner,"3com switch 4500g"))
+    || icontains(banner,"3com switch 4500"))
+  method: GET
+  

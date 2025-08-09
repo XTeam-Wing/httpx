@@ -1,0 +1,11 @@
+info:
+  category: router
+  company: MERCUSYS Technologies Co., Ltd.
+  cpe: ''
+  product: mercusys-mw325r
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"mw325r")
+  method: GET
+  

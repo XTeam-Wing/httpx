@@ -1,0 +1,12 @@
+info:
+  category: vpn products
+  company: 合勤科技股份有限公司
+  cpe: ''
+  product: zyxel-vpn
+  server: unknown
+  tags: []
+rules:
+- dsl: (icontains(title,"VPN100") || icontains(title,"VPN300") || icontains(title,"VPN50")
+    || icontains(title,"VPN1000")) && icontains(body,"/ext-js/app/common/zyFunction.js")
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: other
+  cpe: ''
+  product: android-webcam-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: android webcam server") || icontains(banner,"server:
+    android webcam server"))'
+  method: GET
+  

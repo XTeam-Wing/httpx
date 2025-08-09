@@ -1,0 +1,12 @@
+info:
+  category: other network security
+  company: Hanwei Technology Group Co., Ltd.
+  cpe: ''
+  product: hanwei-hazardous-chemicals-enterprise-early-warning-&&-prevention-&&-control-system
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"var objheight = document.documentelement.clientheight") &&
+    icontains(body,"default value is bootstrapdialog.type_primary"))
+  method: GET
+  

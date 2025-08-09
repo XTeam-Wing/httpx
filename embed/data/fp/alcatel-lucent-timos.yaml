@@ -1,0 +1,11 @@
+info:
+  category: operating system
+  company: Alcatel-Lucent S.A.
+  cpe: ''
+  product: alcatel-lucent-timos
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"timos")
+  method: GET
+  

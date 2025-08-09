@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: telecommunications-industry-os-system
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"; path=/portal/; httponly") && icontains(banner,"/cas/login?service="))
+    || (icontains(banner,"; path=/portal/; httponly") && icontains(banner,"/cas/login?service=")))
+  method: GET
+  

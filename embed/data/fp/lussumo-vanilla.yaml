@@ -1,0 +1,12 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: lussumo-vanilla
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"x-powered-by: lussumo vanilla") || icontains(banner,"x-powered-by:
+    lussumo vanilla"))'
+  method: GET
+  

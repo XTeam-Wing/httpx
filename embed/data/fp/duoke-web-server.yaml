@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: duoke-web-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: duoke web server") || icontains(banner,"server:
+    duoke web server"))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: vpn products
+  company: Shenzhen Wellton Information Technology Co., Ltd.
+  cpe: ''
+  product: whitton-e-dip-vpn
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"jtpsoft style1") && icontains(body,"images/l_name.jpg"))
+  method: GET
+  

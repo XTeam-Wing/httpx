@@ -1,0 +1,12 @@
+info:
+  category: network storage
+  company: SmugMug, Inc.
+  cpe: ''
+  product: smugmug-公司产品
+  server: unknown
+  tags: []
+rules:
+- dsl: '(icontains(banner,"X-Powered-By: SmugMug") && icontains(banner,"X-Smugmug-Values"))
+    || (icontains(banner,"X-Powered-By: SmugMug") && icontains(banner,"X-Smugmug-Values"))'
+  method: GET
+  

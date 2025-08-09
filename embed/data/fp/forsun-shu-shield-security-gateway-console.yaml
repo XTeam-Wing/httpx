@@ -1,0 +1,11 @@
+info:
+  category: antivirus gateway
+  company: Beijing Fengsheng Boyuan Technology Co., Ltd.
+  cpe: ''
+  product: forsun-shu-shield-security-gateway-console
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"科盾网关控制台")
+  method: GET
+  

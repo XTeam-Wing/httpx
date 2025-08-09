@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Beijing Shengborun High-Tech Co., Ltd.
+  cpe: ''
+  product: saint-bo-run-network-boundary-integrity-check-management-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(title,"网络边界完整性检查管理系统 v2.0")
+  method: GET
+  

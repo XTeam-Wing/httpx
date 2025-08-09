@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: anet-ftp
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"anet ftp")
+  method: GET
+  

@@ -1,0 +1,20 @@
+info:
+  product: 亿赛通dlp
+  category: 数据泄露防护
+  author: pen4uin
+  company: 北京亿赛通科技发展有限责任公司
+  description: 亿赛通-数据泄露防护(DLP)系统
+  fofa_query: product="亿赛通-DLP"
+  tags:
+    - esafenet-dlp
+    - detect
+rules:
+  - dsl: "status_code == 200 && contains(body, \"数据泄露防护(DLP)系统\") && contains(body, \"/CDGServer3/index.jsp\")"
+  - method: GET
+    path: 
+      - "/CDGServer3/"
+    dsl: "status_code == 200 && contains(body, \"数据泄露防护(DLP)系统\") && contains(body, \"/CDGServer3/clientinstall/\") && contains(body, \"validatecode/Numletter.jsp\")"
+  - method: GET
+    path: 
+      - "/CDGServer3/logincontroller?command=Login"
+    dsl: "status_code == 200 && contains(body, \"script\") && contains(body, \"用户名错误\") && contains(body, \"/CDGServer3\")"

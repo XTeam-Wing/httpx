@@ -1,0 +1,11 @@
+info:
+  category: firewall
+  company: Juniper Networks, Inc.
+  cpe: ''
+  product: juniper-screenos
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(body,"admin_pw") && icontains(banner,"server: virata-emweb"))'
+  method: GET
+  

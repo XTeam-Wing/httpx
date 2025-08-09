@@ -1,0 +1,11 @@
+info:
+  category: other network equipment
+  company: other
+  cpe: ''
+  product: dm500
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(banner,"dm500 login")
+  method: GET
+  

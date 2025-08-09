@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: 'The Kannel Group. '
+  cpe: ''
+  product: kannel
+  server: nginx
+  tags: []
+rules:
+- dsl: '((icontains(title,"kannel") || icontains(banner,"server: kannel/")) || icontains(banner,"server:
+    kannel/"))'
+  method: GET
+  

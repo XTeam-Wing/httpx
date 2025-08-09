@@ -1,0 +1,11 @@
+info:
+  category: voice video
+  company: Epygi Technologies, LLC
+  cpe: ''
+  product: epygi-qx500
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(title,"epygi qx500") || icontains(body,"epygi            <span class=\"product-name\">qx500"))
+  method: GET
+  

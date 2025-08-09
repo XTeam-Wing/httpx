@@ -1,0 +1,11 @@
+info:
+  category: database system
+  company: Hibernating Rhinos LTD
+  cpe: ''
+  product: hibernating-rhinos-ravendb
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"alt=\"ravendb\"") && icontains(title,"raven.studio"))
+  method: GET
+  

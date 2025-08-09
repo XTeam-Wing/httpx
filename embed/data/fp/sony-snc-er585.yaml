@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: Sony Corporation
+  cpe: ''
+  product: sony-snc-er585
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"sony network camera snc-er585") || icontains(banner,"sony
+    network camera snc-er585"))
+  method: GET
+  

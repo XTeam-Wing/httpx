@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: HighWire Press, Inc.
+  cpe: ''
+  product: highwire-press
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(banner,"x-highwire-sessionid") || icontains(banner,"x-firenze-processing"))
+    || icontains(banner,"x-highwire-sessionid")) || icontains(banner,"x-firenze-processing"))
+  method: GET
+  

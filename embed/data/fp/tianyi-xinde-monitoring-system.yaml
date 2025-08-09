@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Suzhou Tianyi Xinde Environmental Technology Co., Ltd.
+  cpe: ''
+  product: tianyi-xinde-monitoring-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"login.ashx?mode=valid")
+  method: GET
+  

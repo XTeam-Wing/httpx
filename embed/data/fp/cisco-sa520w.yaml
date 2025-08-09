@@ -1,0 +1,12 @@
+info:
+  category: firewall
+  company: cisco
+  cpe: ''
+  product: cisco-sa520w
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(cert,"sa520w") && icontains(body,"class=\"h3login\">small business
+    pro")) || icontains(body,"id=\"hdboardname\" value=\"sa520w\""))
+  method: GET
+  

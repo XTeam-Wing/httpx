@@ -1,0 +1,12 @@
+info:
+  category: service
+  company: mSHIFT, Inc.
+  cpe: ''
+  product: mshift
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(banner,"dcttype=1;") || icontains(banner,"dcttype=1;")) || icontains(body,"powered
+    by mshift&reg"))
+  method: GET
+  

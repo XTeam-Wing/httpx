@@ -1,0 +1,13 @@
+info:
+  category: router
+  company: Belkin International, Inc.
+  cpe: ''
+  product: linksys-e2000
+  server: nginx
+  tags: []
+rules:
+- dsl: ((((icontains(banner,"linksys e2000") || icontains(banner,"linsys e2000"))
+    || icontains(banner,"linksys_e2000")) || icontains(banner,"linksyse2000")) ||
+    icontains(banner,"linksys e2000"))
+  method: GET
+  

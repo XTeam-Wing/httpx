@@ -1,0 +1,12 @@
+info:
+  category: voice video
+  company: Pexip AS
+  cpe: ''
+  product: pexip
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"pex-app") && icontains(body,"pexip infinity")) || (icontains(body,"<h2>会议平台</h2>")
+    && icontains(body,"<h2>pexip infinity</h2>")))
+  method: GET
+  

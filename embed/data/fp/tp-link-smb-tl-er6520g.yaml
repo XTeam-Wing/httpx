@@ -1,0 +1,12 @@
+info:
+  category: router
+  company: Pullian Technology Co., Ltd.
+  cpe: ''
+  product: tp-link-smb-tl-er6520g
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"tp-link_smb_tl-er6520g") || icontains(banner,"server: tp-link
+    smb tl-er6520g"))'
+  method: GET
+  

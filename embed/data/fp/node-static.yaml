@@ -1,0 +1,11 @@
+info:
+  category: service
+  company: other
+  cpe: ''
+  product: node-static
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: node-static") || icontains(banner,"server: node-static"))'
+  method: GET
+  

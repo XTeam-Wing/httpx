@@ -1,0 +1,12 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: haitian-oa
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(body,"mshtml 8.00.6001.19298") && icontains(body,"images/myjs.js")||(icontains(body,"htvos.js"))||(icontains(body,"images/myjs.js"))||(icontains(body,"mshtml
+    8.00.6001.19298"))
+  method: GET
+  

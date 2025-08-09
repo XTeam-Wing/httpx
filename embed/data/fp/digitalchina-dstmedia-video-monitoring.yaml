@@ -1,0 +1,12 @@
+info:
+  category: cameras && surveillance
+  company: Digital China Group Co., Ltd.
+  cpe: ''
+  product: digitalchina-dstmedia-video-monitoring
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"realm=\"dstmedia authentication") || icontains(banner,"realm=\"dstmedia
+    authentication"))
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: audit
+  company: SaltStack, Inc.
+  cpe: ''
+  product: saltstack-产品
+  server: unknown
+  tags: []
+rules:
+- dsl: 'icontains(title,"SaltStack") || icontains(cert,"Organization: SaltStack")'
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: adsl
+  company: Fujian Sanyuanda Communication Co., Ltd.
+  cpe: ''
+  product: wpb-5000-ap
+  server: nginx
+  tags: []
+rules:
+- dsl: ((icontains(body,"window.location = \"./ap/login.html\";") || title == "ap配置")
+    || icontains(banner,"wpb-5000 login:"))
+  method: GET
+  

@@ -1,0 +1,12 @@
+info:
+  category: other enterprise application
+  company: other
+  cpe: ''
+  product: srs-live-server
+  server: nginx
+  tags: []
+rules:
+- dsl: '(title == "{\"length\": 0, \"chained_to\": 1912617271, \"identifier\": \"d\",
+    \"str\": null}" && icontains(body,"players/js/winlin.utility.js"))'
+  method: GET
+  

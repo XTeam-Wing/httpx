@@ -1,0 +1,11 @@
+info:
+  category: unknown
+  company: Unknown
+  cpe: ''
+  product: 3comnbxv3000iptelephonysolution
+  server: Unknown
+  tags: []
+rules:
+- dsl: icontains(title,"3com nbx v3000 ip telephony solution")
+  method: GET
+  

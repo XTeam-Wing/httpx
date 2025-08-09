@@ -1,0 +1,12 @@
+info:
+  category: other software system
+  company: DzzOffice
+  cpe: ''
+  product: dzzoffice-product
+  server: nginx
+  tags: []
+rules:
+- dsl: (((icontains(body,"misc.php?mod=sendmail") || icontains(body,"<a href=\"http://www.dzzoffice.com\""))
+    || icontains(body,"dzz/scripts/dzz_min.js")) || icontains(body,"dzz/system/scripts/jquery.jstree.min.js"))
+  method: GET
+  

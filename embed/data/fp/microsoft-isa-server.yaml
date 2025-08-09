@@ -1,0 +1,13 @@
+info:
+  category: web application firewall
+  company: Microsoft Corporation
+  cpe: ''
+  product: microsoft-isa-server
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(body,"the server denied the specified uniform resource locator (url).
+    contact the server administrator") || icontains(body,"the isa server denied the
+    specified uniform resource locator"))
+  method: GET
+  

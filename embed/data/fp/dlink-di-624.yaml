@@ -1,0 +1,11 @@
+info:
+  category: adsl
+  company: Youxun Technology Co., Ltd.
+  cpe: ''
+  product: dlink-di-624
+  server: nginx
+  tags: []
+rules:
+- dsl: (icontains(banner,"di-624") || icontains(banner,"realm=\"di-624"))
+  method: GET
+  

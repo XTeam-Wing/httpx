@@ -1,0 +1,13 @@
+info:
+  category: component
+  company: other
+  cpe: ''
+  product: smartcds
+  server: nginx
+  tags: []
+rules:
+- dsl: '(((((icontains(banner,"x-smartcds-error") || icontains(banner,"server: smartcds"))
+    || icontains(banner,"smartcds version")) || icontains(banner,"x-smartcds-error"))
+    || icontains(banner,"server: smartcds")) || icontains(banner,"smartcds version"))'
+  method: GET
+  

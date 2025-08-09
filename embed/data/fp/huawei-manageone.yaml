@@ -1,0 +1,11 @@
+info:
+  category: other enterprise application
+  company: Huawei Technologies Co., Ltd
+  cpe: ''
+  product: huawei-manageone
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"server: lbserver") || icontains(banner,"server: lbserver"))'
+  method: GET
+  

@@ -1,0 +1,11 @@
+info:
+  category: other software system
+  company: Suzhou Sidi Information Technology Co., Ltd.
+  cpe: ''
+  product: citec-construction-fire-protection-networking-detection-system
+  server: nginx
+  tags: []
+rules:
+- dsl: icontains(body,"正在使用腾讯qq帐号登录消防联网系统")
+  method: GET
+  

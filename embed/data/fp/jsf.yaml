@@ -1,0 +1,12 @@
+info:
+  category: development framework
+  company: Oracle Corporation
+  cpe: ''
+  product: jsf
+  server: nginx
+  tags: []
+rules:
+- dsl: '(icontains(banner,"x-powered-by: jsf") || icontains(banner,"x-powered-by:
+    jsf"))'
+  method: GET
+  
