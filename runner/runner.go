@@ -196,7 +196,7 @@ func New(options *Options) (*Runner, error) {
 
 	runner.hp, err = httpx.New(&httpxOptions)
 	if err != nil {
-		gologger.Fatal().Msgf("Could not create httpx instance: %s\n", err)
+		return nil, fmt.Errorf("could not create httpx instance: %w", err)
 	}
 
 	var scanopts ScanOptions
