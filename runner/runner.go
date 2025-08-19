@@ -1940,7 +1940,7 @@ retry:
 
 	var technologies []string
 	if scanopts.TechDetect {
-		product, err := r.tech.Detect(fullURL, "/", method, faviconMMH3, resp)
+		product, err := r.tech.Detect(fullURL, "/", method, string(faviconData), resp)
 		if err != nil {
 			gologger.Warning().Msgf("detect tech error: %s", err)
 		}

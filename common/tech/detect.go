@@ -253,7 +253,7 @@ func (t *TechDetecter) precompileExpressions() {
 	}
 }
 
-func (t *TechDetecter) Detect(inputURL, requestPath, requestMethod, faviconMMH3 string, response *httpx.Response) ([]string, error) {
+func (t *TechDetecter) Detect(inputURL, requestPath, requestMethod, faviconData string, response *httpx.Response) ([]string, error) {
 	tlsInfo, err := json.Marshal(response.TLSData)
 	if err != nil {
 		tlsInfo = []byte("")
@@ -268,7 +268,7 @@ func (t *TechDetecter) Detect(inputURL, requestPath, requestMethod, faviconMMH3 
 		"protocol":    "",
 		"port":        "",
 		"status_code": response.StatusCode,
-		"favicon":     faviconMMH3,
+		"favicon":     faviconData,
 	}
 
 	// 如果请求方法为空，默认为GET
