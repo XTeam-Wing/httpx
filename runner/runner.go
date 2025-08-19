@@ -2026,17 +2026,7 @@ retry:
 			}
 		}
 	}
-	if len(technologies) > 0 {
-		technologies := strings.Join(lo.Uniq(technologies), ",")
 
-		builder.WriteString(" [")
-		if !scanopts.OutputWithNoColor {
-			builder.WriteString(aurora.Magenta(technologies).String())
-		} else {
-			builder.WriteString(technologies)
-		}
-		builder.WriteRune(']')
-	}
 	var extractRegex []string
 	// extract regex
 	var extractResult = map[string][]string{}
@@ -2240,6 +2230,10 @@ retry:
 			//}
 
 		} else {
+			if r.options.DebugResponse {
+				// dump headless body
+				gologger.Debug().Msgf("Headless body for %s: %s", fullURL, headlessBody)
+			}
 			pHash, err = calculatePerceptionHash(screenshotBytes)
 			if err != nil {
 				gologger.Warning().Msgf("%v: %s", err, fullURL)
@@ -2273,7 +2267,17 @@ retry:
 			headlessBody = ""
 		}
 	}
+	if len(technologies) > 0 {
+		technologies := strings.Join(lo.Uniq(technologies), ",")
 
+		builder.WriteString(" [")
+		if !scanopts.OutputWithNoColor {
+			builder.WriteString(aurora.Magenta(technologies).String())
+		} else {
+			builder.WriteString(technologies)
+		}
+		builder.WriteRune(']')
+	}
 	result := Result{
 		Timestamp:        time.Now(),
 		Request:          request,
