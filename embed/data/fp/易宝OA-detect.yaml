@@ -1,9 +1,0 @@
-info:
-  author: ev1l0o4g
-  description: ""
-  tags: []
-  product: 易宝oa
-  category: cms
-rules:
-- method: GET
-  dsl: contains(body,"欢迎登录易宝OA系统") || contains_all(body,"topvision_oaName","topvision_oaPwd")

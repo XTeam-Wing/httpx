@@ -1,9 +1,0 @@
-info:
-  author: ev1l0o4g
-  description: AGI 时代的智能内容管理平台
-  tags: []
-  product: anyshare企业云盘
-  category: storage
-rules:
-- method: GET
-  dsl: contains_all(body,"res/libs/webuploader/webuploader.css","src=\"/res/libs/base64.min.js\"")

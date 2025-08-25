@@ -1,9 +1,0 @@
-info:
-  author: 哆啦A梦
-  description: 用友U9 cloud是一款基于云计算技术的企业管理软件，它将企业的各项业务流程、数据和信息整合到一个统一的平台上，实现了信息的实时共享和高效协同
-  tags: []
-  product: u9cloud
-  category: cms
-rules:
-- method: GET
-  dsl: contains(body, "U9C-登录") || contains(body, "customImage/logo-u9.png")

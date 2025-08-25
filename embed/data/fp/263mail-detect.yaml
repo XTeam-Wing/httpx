@@ -1,9 +1,0 @@
-info:
-  author: wing
-  description: 北京二六三企业通信有限公司（简称二六三企业通信），17年深耕企业通信服务领域，成为国内资深的企业级通信协作服务行业领导者
-  tags: []
-  product: 263mail
-  category: cms
-rules:
-- method: GET
-  dsl: contains_all(body, "主域名需要备案后才可以使用mail.域名访问邮箱","https://mail.263.net/") || contains_all(title, "<script src=\"/custom_login/js/net263","263企业邮箱") 
