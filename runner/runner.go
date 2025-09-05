@@ -2229,37 +2229,37 @@ retry:
 			//	gologger.Error().Msgf("Could not write screenshot at path '%s', to disk: %s", screenshotPath, err)
 			//}
 
-		} else {
-			if r.options.DebugResponse {
-				// dump headless body
-				gologger.Debug().Msgf("Headless body for %s: %s", fullURL, headlessBody)
-			}
-			pHash, err = calculatePerceptionHash(screenshotBytes)
-			if err != nil {
-				gologger.Warning().Msgf("%v: %s", err, fullURL)
-			}
-			if r.options.TechDetect && headlessBody != "" {
-				newResp := resp
-				newResp.Data = []byte(headlessBody)
-				if r.options.TechRulePath != "" {
-					products, err := r.tech.Detect(fullURL, "/", "GET", "", newResp)
-					if err != nil {
-						gologger.Warning().Msgf("detect tech error: %s", err)
-					}
-					if len(products) > 0 {
-						technologies = append(technologies, products...)
-					}
+		}
+		if r.options.DebugResponse {
+			// dump headless body
+			gologger.Debug().Msgf("Headless body for %s: %s", fullURL, headlessBody)
+		}
+		pHash, err = calculatePerceptionHash(screenshotBytes)
+		if err != nil {
+			gologger.Warning().Msgf("%v: %s", err, fullURL)
+		}
+		if r.options.TechDetect && headlessBody != "" {
+			newResp := resp
+			newResp.Data = []byte(headlessBody)
+			if r.options.TechRulePath != "" {
+				products, err := r.tech.Detect(fullURL, "/", "GET", "", newResp)
+				if err != nil {
+					gologger.Warning().Msgf("detect tech error: %s", err)
+				}
+				if len(products) > 0 {
+					technologies = append(technologies, products...)
+				}
 
-					products, err = r.tech.FingerHubDetect(fullURL, "/", "GET", "", newResp)
-					if err != nil {
-						gologger.Warning().Msgf("detect tech error: %s", err)
-					}
-					if len(products) > 0 {
-						technologies = append(technologies, products...)
-					}
+				products, err = r.tech.FingerHubDetect(fullURL, "/", "GET", "", newResp)
+				if err != nil {
+					gologger.Warning().Msgf("detect tech error: %s", err)
+				}
+				if len(products) > 0 {
+					technologies = append(technologies, products...)
 				}
 			}
 		}
+
 		if scanopts.NoScreenshotBytes {
 			screenshotBytes = []byte{}
 		}
