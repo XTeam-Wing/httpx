@@ -1948,7 +1948,7 @@ retry:
 			technologies = append(technologies, product...)
 			r.tech.AddMatchedProduct(fullURL, product)
 		}
-		product, err = r.tech.FingerHubDetect(fullURL, "/", method, faviconMMH3, resp)
+		product, err = r.tech.FingerHubDetect(fullURL, "/", method, string(faviconData), resp)
 		if err != nil {
 			gologger.Warning().Msgf("nuclei detect tech error: %s", err)
 		}
@@ -1970,7 +1970,7 @@ retry:
 					if ctx.Err() != nil {
 						break
 					}
-					if path == "" || path == "/" {
+					if path == "" || path == "/" || strings.EqualFold(path, "/favicon.ico") {
 						continue // skip favicon.ico and empty paths
 					}
 					path := path
@@ -1986,36 +1986,34 @@ retry:
 							gologger.Warning().Msgf("failed to create request for %s: %s", u.String(), err)
 							return err
 						}
-						hp.SetCustomHeaders(techReq, hp.CustomHeaders)
+						// hp.SetCustomHeaders(techReq, hp.CustomHeaders)
 
 						techResp, err := hp.Do(techReq, httpx.UnsafeOptions{URIPath: reqURI})
 						if r.options.ShowStatistics {
 							r.stats.IncrementCounter("requests", 1)
 						}
 						if err != nil {
-							cancel()
-							return err
+							gologger.Debug().Msgf("error requesting %s: %s", u.String(), err)
+							return nil
 						}
+						mu.Lock()
+						defer mu.Unlock()
 						product, err := r.tech.Detect(fullURL, path, method, "", techResp)
 						if err != nil {
 							gologger.Warning().Msgf("detect tech error: %s", err)
 							return err
 						}
 						if len(product) > 0 {
-							mu.Lock()
 							technologies = append(technologies, product...)
 							cancel()
-							mu.Unlock()
 						}
 						product, err = r.tech.FingerHubDetect(fullURL, path, method, faviconMMH3, techResp)
 						if err != nil {
 							gologger.Warning().Msgf("nuclei detect tech error: %s", err)
 						}
 						if len(product) > 0 {
-							mu.Lock()
 							technologies = append(technologies, product...)
 							cancel()
-							mu.Unlock()
 						}
 						return nil
 					})

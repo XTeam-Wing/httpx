@@ -15,11 +15,11 @@ import (
 	"github.com/projectdiscovery/gologger"
 	"github.com/projectdiscovery/httpx/common/httpx"
 	"github.com/projectdiscovery/httpx/embed"
-	"github.com/projectdiscovery/nuclei/v2/pkg/operators"
-	"github.com/projectdiscovery/nuclei/v2/pkg/operators/extractors"
-	"github.com/projectdiscovery/nuclei/v2/pkg/operators/matchers"
-	"github.com/projectdiscovery/nuclei/v2/pkg/protocols/common/helpers/responsehighlighter"
-	"github.com/projectdiscovery/nuclei/v2/pkg/types"
+	"github.com/projectdiscovery/nuclei/v3/pkg/operators"
+	"github.com/projectdiscovery/nuclei/v3/pkg/operators/extractors"
+	"github.com/projectdiscovery/nuclei/v3/pkg/operators/matchers"
+	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/helpers/responsehighlighter"
+	"github.com/projectdiscovery/nuclei/v3/pkg/types"
 	sliceutil "github.com/projectdiscovery/utils/slice"
 	"gopkg.in/yaml.v3"
 )
@@ -95,7 +95,7 @@ func (t *TechDetecter) Init(rulePath string, useInternal bool) (err error) {
 			}
 			if err = t.ParseRule(content); err != nil {
 				if err = t.ParseNucleiRule(content); err != nil {
-					gologger.Debug().Msgf("nuclei file %s parse error:%s", file, err)
+					gologger.Warning().Msgf("nuclei file %s parse error:%s", file, err)
 				}
 			}
 		}
@@ -319,8 +319,8 @@ func (t *TechDetecter) Detect(inputURL, requestPath, requestMethod, faviconData 
 	return sliceutil.Dedupe(products), nil
 }
 
-func (t *TechDetecter) FingerHubDetect(inputURL, requestPath, requestMethod, faviconMMH3 string, response *httpx.Response) ([]string, error) {
-	dslMap := responseToDSLMap(response, "", inputURL, "", "", string(response.Data), response.RawHeaders, 0, nil)
+func (t *TechDetecter) FingerHubDetect(inputURL, requestPath, requestMethod, favicon string, response *httpx.Response) ([]string, error) {
+	dslMap := responseToDSLMap(response, "", inputURL, "", "", string(response.Data), response.RawHeaders, favicon, 0, nil)
 	// 如果请求方法为空，默认为GET
 	if requestMethod == "" {
 		requestMethod = "GET"
@@ -396,6 +396,16 @@ func (t *TechDetecter) Match(data map[string]interface{}, matcher *matchers.Matc
 		return false, []string{}
 	}
 	switch matcher.GetType() {
+	case matchers.FaviconMatcher:
+		faviconHash, ok := data["favicon"].(string)
+		if !ok {
+			return false, []string{}
+		}
+		if len(matcher.Hash) == 0 {
+			return false, []string{}
+		}
+		return sliceutil.Contains(matcher.Hash, faviconHash), []string{}
+
 	case matchers.StatusMatcher:
 		statusCode, ok := getStatusCode(data)
 		if !ok {

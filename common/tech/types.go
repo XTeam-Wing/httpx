@@ -1,7 +1,8 @@
 package tech
 
 import (
-	"github.com/projectdiscovery/nuclei/v2/pkg/operators"
+	"github.com/projectdiscovery/gologger"
+	"github.com/projectdiscovery/nuclei/v3/pkg/operators"
 )
 
 type Info struct {
@@ -61,6 +62,7 @@ func (request *HTTPRequest) Compile() *operators.Operators {
 	if len(request.Matchers) > 0 || len(request.Extractors) > 0 {
 		compiled := &request.Operators
 		if compileErr := compiled.Compile(); compileErr != nil {
+			gologger.Warning().Msgf("could not compile operators: %s", compileErr)
 			return nil
 		}
 		return compiled
