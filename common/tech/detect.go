@@ -253,7 +253,7 @@ func (t *TechDetecter) precompileExpressions() {
 	}
 }
 
-func (t *TechDetecter) Detect(inputURL, requestPath, requestMethod, faviconData string, response *httpx.Response) ([]string, error) {
+func (t *TechDetecter) Detect(inputURL, requestPath, requestMethod, faviconMMH3 string, response *httpx.Response) ([]string, error) {
 	tlsInfo, err := json.Marshal(response.TLSData)
 	if err != nil {
 		tlsInfo = []byte("")
@@ -268,9 +268,8 @@ func (t *TechDetecter) Detect(inputURL, requestPath, requestMethod, faviconData 
 		"protocol":    "",
 		"port":        "",
 		"status_code": response.StatusCode,
-		"favicon":     faviconData,
+		"favicon":     faviconMMH3,
 	}
-
 	// 如果请求方法为空，默认为GET
 	if requestMethod == "" {
 		requestMethod = "GET"
@@ -293,7 +292,6 @@ func (t *TechDetecter) Detect(inputURL, requestPath, requestMethod, faviconData 
 			if !t.pathMatches(requestPath, requestMethod, compiledRule) {
 				continue
 			}
-
 			result, err := compiledRule.Expression.Evaluate(data)
 			if err != nil {
 				gologger.Error().Msgf("failed to evaluate expression for product:%s error:%s", product, err.Error())
