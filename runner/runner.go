@@ -1202,7 +1202,6 @@ func (r *Runner) RunEnumeration() {
 		if u, err := r.parseURL(k); err == nil {
 			protocol = u.Scheme
 		}
-		gologger.Info().Msgf("Checking '%s' protocol %s\n", k, protocol)
 		if len(r.options.requestURIs) > 0 {
 			for _, p := range r.options.requestURIs {
 				scanopts := r.scanopts.Clone()
