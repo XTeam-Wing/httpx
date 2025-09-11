@@ -1200,8 +1200,11 @@ func (r *Runner) RunEnumeration() {
 		protocol := r.options.protocol
 		// attempt to parse url as is
 		if u, err := r.parseURL(k); err == nil {
-			protocol = u.Scheme
+			if u.Scheme != "" && !r.options.NoFallback {
+				protocol = u.Scheme
+			}
 		}
+		gologger.Debug().Msgf("Checking '%s' with protocol '%s'\n", k, protocol)
 		if len(r.options.requestURIs) > 0 {
 			for _, p := range r.options.requestURIs {
 				scanopts := r.scanopts.Clone()
