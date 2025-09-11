@@ -244,7 +244,7 @@ func New(options *Options) (*Runner, error) {
 	if len(scanopts.Methods) == 0 {
 		scanopts.Methods = append(scanopts.Methods, http.MethodGet)
 	}
-	runner.options.protocol = httpx.HTTPandHTTPS
+	runner.options.protocol = httpx.HTTPorHTTPS
 	scanopts.VHost = options.VHost
 	scanopts.OutputTitle = options.ExtractTitle
 	scanopts.OutputStatusCode = options.StatusCode
@@ -1200,11 +1200,9 @@ func (r *Runner) RunEnumeration() {
 		protocol := r.options.protocol
 		// attempt to parse url as is
 		if u, err := r.parseURL(k); err == nil {
-			if r.options.NoFallbackScheme && u.Scheme == httpx.HTTP || u.Scheme == httpx.HTTPS {
-				protocol = u.Scheme
-			}
+			protocol = u.Scheme
 		}
-
+		gologger.Info().Msgf("Checking '%s' protocol %s\n", k, protocol)
 		if len(r.options.requestURIs) > 0 {
 			for _, p := range r.options.requestURIs {
 				scanopts := r.scanopts.Clone()
@@ -1314,7 +1312,7 @@ func (r *Runner) process(t string, wg *syncutil.AdaptiveWaitGroup, hp *httpx.HTT
 	}
 
 	protocols := []string{protocol}
-	if scanopts.NoFallback || protocol == httpx.HTTPandHTTPS {
+	if scanopts.NoFallback || protocol == httpx.HTTPorHTTPS {
 		protocols = []string{httpx.HTTPS, httpx.HTTP}
 	}
 
@@ -1734,16 +1732,6 @@ retry:
 	var title string
 	if httpx.CanHaveTitleTag(resp.GetHeaderPart("Content-Type", ";")) || strings.Contains(string(resp.Data), "<!DOCTYPE html>") {
 		title = httpx.ExtractTitle(resp)
-	}
-
-	if scanopts.OutputTitle && title != "" {
-		builder.WriteString(" [")
-		if !scanopts.OutputWithNoColor {
-			builder.WriteString(aurora.Cyan(title).String())
-		} else {
-			builder.WriteString(title)
-		}
-		builder.WriteRune(']')
 	}
 
 	var bodyPreview string
@@ -2236,9 +2224,15 @@ retry:
 		if err != nil {
 			gologger.Warning().Msgf("%v: %s", err, fullURL)
 		}
+		// extract title again from headless body
+		newResp := resp
+		newResp.Data = []byte(headlessBody)
+		newResp.Raw = headlessBody
+
+		if httpx.ExtractTitle(newResp) != "" {
+			title = httpx.ExtractTitle(newResp)
+		}
 		if r.options.TechDetect && headlessBody != "" {
-			newResp := resp
-			newResp.Data = []byte(headlessBody)
 			if r.options.TechRulePath != "" {
 				products, err := r.tech.Detect(fullURL, "/", "GET", "", newResp)
 				if err != nil {
@@ -2265,6 +2259,16 @@ retry:
 			headlessBody = ""
 		}
 	}
+	if scanopts.OutputTitle && title != "" {
+		builder.WriteString(" [")
+		if !scanopts.OutputWithNoColor {
+			builder.WriteString(aurora.Cyan(title).String())
+		} else {
+			builder.WriteString(title)
+		}
+		builder.WriteRune(']')
+	}
+
 	if len(technologies) > 0 {
 		technologies := strings.Join(lo.Uniq(technologies), ",")
 
