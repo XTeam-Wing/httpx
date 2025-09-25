@@ -1,8 +1,0 @@
-info:
-  author: 哆啦A梦
-  description: 明御运维审计与风险控制系统（简称：堡垒机或跳板机）是安恒信息结合多年运维安全管理理论和实际运维经验的基础上，结合各类法令法规(如等级保护、分级保护、银监、证监、PCI、企业内控管理、SOX塞班斯、ISO27001等) 对运维管理的要求，并提供4A(认证Authentication、账号Account、授权Authorization、审计Audit)的统一安全管理方案。
-  tags: []
-  product: 安恒明御运维审计与风险控制系统
-  category: cms
-rules:
-- dsl: (contains(body, "杭州安恒信息技术股份有限公司版权所有") && contains(body,"明御运维审计与风险控制系统")) || contains(title, "明御运维审计与风险控制系统") || contains(title, "登录-明御运维审计与风险控制系统")

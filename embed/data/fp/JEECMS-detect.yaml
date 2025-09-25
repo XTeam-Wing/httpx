@@ -1,8 +1,0 @@
-info:
-  author: 哆啦A梦
-  description: 国内优秀的JAVA(JSP)网站内容管理系统
-  tags: []
-  product: jeecms
-  category: cms
-rules:
-- dsl: contains(body, "Powered by JeeCms Copyright") || contains(body, "/r/cms/www/default/") || contains(body, "href=\"/jeeadmin/jeecms/index.do\" target=\"_blank\">管理登录</a>") || contains(body, "localStorage.setItem(\'JEECMS-Auth-Token\'") || contains(body, "<a href=\"http://www.jeecms.com\">JEECMS</a> Copyright") || contains(body, "Powered by JEECMS</title>")

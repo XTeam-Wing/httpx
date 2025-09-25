@@ -1,8 +1,0 @@
-info:
-  author: 哆啦A梦
-  description: JeeSite 隶属于济南卓源软件有限公司，是一个 Java 快速开发平台，基于经典技术组合（Spring Boot、Shiro、MyBatis、Beetl+Bootstrap or TS+Vue3）在线代码生成工具,支持 Spring Cloud 架构，分布式，微服务，微内核，企业、市政、信息化领域的专家。支持国产化软硬件。
-  tags: []
-  product: jeesite
-  category: cms
-rules:
-- dsl: contains(body, "target=\"_blank\">JeeSite</a>") || contains(header, "jeesite.session.id") || contains(body,"<!--  - Powered By JeeSite -->") || contains(body, "<meta name=\"author\" content=\"http://jeesite.com/\"/>") || contains(body, "href=\"http://jeesite.com\">JeeSite")

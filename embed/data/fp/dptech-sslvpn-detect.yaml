@@ -1,8 +1,0 @@
-info:
-  author: sayhi
-  description: 'dptech-sslvpn was detected.'
-  tags: []
-  product: dptech-sslvpn
-  category: vpn
-rules:
-- dsl: contains(body, "application/x-dptech_ssl_vpn-mimetype\'")

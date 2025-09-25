@@ -94,7 +94,7 @@ func convertCertificateToResponse(hostname string, cert *x509.Certificate) *clie
 		NotBefore:    cert.NotBefore,
 		NotAfter:     cert.NotAfter,
 		Expired:      clients.IsExpired(cert.NotAfter),
-		SelfSigned:   clients.IsSelfSigned(cert.AuthorityKeyId, cert.SubjectKeyId),
+		SelfSigned:   clients.IsSelfSigned(cert.AuthorityKeyId, cert.SubjectKeyId, cert.DNSNames),
 		MisMatched:   clients.IsMisMatchedCert(hostname, append(cert.DNSNames, cert.Subject.CommonName)),
 		WildCardCert: clients.IsWildCardCert(append(cert.DNSNames, cert.Subject.CommonName)),
 		IssuerCN:     cert.Issuer.CommonName,

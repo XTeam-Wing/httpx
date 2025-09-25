@@ -1,9 +1,0 @@
-info:
-  author: ev1l0o4g
-  description: 浙江大华技术股份有限公司，是全球领先的以视频为核心的智慧物联解决方案提供商和运营服务商。基于Dahua Think#战略，大华聚焦城市和企业两大核心业务，坚定AIoT、物联数智平台两大技术战略，围绕客户需求，全面推动城市与企业的数智化升级，为千行百业数智化转型创造更多价值。
-  tags: []
-  product: 大华webcam
-  category: cms
-rules:
-- method: GET
-  dsl: contains_all(body,"WEB SERVICE","jsCore") || contains_all(body,"jsCore","@WebVersion@")

@@ -49,8 +49,14 @@ func NewBrowser(proxy string, useLocal bool, chromePath string, optionalArgs map
 		Set("window-size", fmt.Sprintf("%d,%d", 1080, 1920)).
 		Set("mute-audio", "true").
 		Set("incognito", "true").
-		Delete("use-mock-keychain").
+		Set("disable-blink-features", "AutomationControlled").
+		Set("disable-web-security").
+		Set("disable-features", "VizDisplayCompositor").
+		Set("no-sandbox").
+		Set("disable-dev-shm-usage").
 		Headless(true).
+		UserDataDir(dataStore).
+		Delete("use-mock-keychain").
 		UserDataDir(dataStore)
 
 	if MustDisableSandbox() {

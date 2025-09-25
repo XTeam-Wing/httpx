@@ -196,7 +196,7 @@ func New(options *Options) (*Runner, error) {
 
 	runner.hp, err = httpx.New(&httpxOptions)
 	if err != nil {
-		gologger.Fatal().Msgf("Could not create httpx instance: %s\n", err)
+		return nil, fmt.Errorf("could not create httpx instance: %w", err)
 	}
 
 	var scanopts ScanOptions
@@ -244,7 +244,7 @@ func New(options *Options) (*Runner, error) {
 	if len(scanopts.Methods) == 0 {
 		scanopts.Methods = append(scanopts.Methods, http.MethodGet)
 	}
-	runner.options.protocol = httpx.HTTPandHTTPS
+	runner.options.protocol = httpx.HTTPorHTTPS
 	scanopts.VHost = options.VHost
 	scanopts.OutputTitle = options.ExtractTitle
 	scanopts.OutputStatusCode = options.StatusCode
@@ -1200,11 +1200,10 @@ func (r *Runner) RunEnumeration() {
 		protocol := r.options.protocol
 		// attempt to parse url as is
 		if u, err := r.parseURL(k); err == nil {
-			if r.options.NoFallbackScheme && u.Scheme == httpx.HTTP || u.Scheme == httpx.HTTPS {
+			if u.Scheme != "" && !r.options.NoFallback {
 				protocol = u.Scheme
 			}
 		}
-
 		if len(r.options.requestURIs) > 0 {
 			for _, p := range r.options.requestURIs {
 				scanopts := r.scanopts.Clone()
@@ -1314,7 +1313,7 @@ func (r *Runner) process(t string, wg *syncutil.AdaptiveWaitGroup, hp *httpx.HTT
 	}
 
 	protocols := []string{protocol}
-	if scanopts.NoFallback || protocol == httpx.HTTPandHTTPS {
+	if scanopts.NoFallback || protocol == httpx.HTTPorHTTPS {
 		protocols = []string{httpx.HTTPS, httpx.HTTP}
 	}
 
@@ -1736,16 +1735,6 @@ retry:
 		title = httpx.ExtractTitle(resp)
 	}
 
-	if scanopts.OutputTitle && title != "" {
-		builder.WriteString(" [")
-		if !scanopts.OutputWithNoColor {
-			builder.WriteString(aurora.Cyan(title).String())
-		} else {
-			builder.WriteString(title)
-		}
-		builder.WriteRune(']')
-	}
-
 	var bodyPreview string
 	if r.options.ResponseBodyPreviewSize > 0 && resp != nil {
 		bodyPreview = string(resp.Data)
@@ -1948,7 +1937,7 @@ retry:
 			technologies = append(technologies, product...)
 			r.tech.AddMatchedProduct(fullURL, product)
 		}
-		product, err = r.tech.FingerHubDetect(fullURL, "/", method, faviconMMH3, resp)
+		product, err = r.tech.FingerHubDetect(fullURL, "/", method, string(faviconData), resp)
 		if err != nil {
 			gologger.Warning().Msgf("nuclei detect tech error: %s", err)
 		}
@@ -1970,7 +1959,7 @@ retry:
 					if ctx.Err() != nil {
 						break
 					}
-					if path == "" || path == "/" {
+					if path == "" || path == "/" || strings.EqualFold(path, "/favicon.ico") {
 						continue // skip favicon.ico and empty paths
 					}
 					path := path
@@ -1986,36 +1975,34 @@ retry:
 							gologger.Warning().Msgf("failed to create request for %s: %s", u.String(), err)
 							return err
 						}
-						hp.SetCustomHeaders(techReq, hp.CustomHeaders)
+						// hp.SetCustomHeaders(techReq, hp.CustomHeaders)
 
 						techResp, err := hp.Do(techReq, httpx.UnsafeOptions{URIPath: reqURI})
 						if r.options.ShowStatistics {
 							r.stats.IncrementCounter("requests", 1)
 						}
 						if err != nil {
-							cancel()
-							return err
+							gologger.Debug().Msgf("error requesting %s: %s", u.String(), err)
+							return nil
 						}
+						mu.Lock()
+						defer mu.Unlock()
 						product, err := r.tech.Detect(fullURL, path, method, "", techResp)
 						if err != nil {
 							gologger.Warning().Msgf("detect tech error: %s", err)
 							return err
 						}
 						if len(product) > 0 {
-							mu.Lock()
 							technologies = append(technologies, product...)
 							cancel()
-							mu.Unlock()
 						}
 						product, err = r.tech.FingerHubDetect(fullURL, path, method, faviconMMH3, techResp)
 						if err != nil {
 							gologger.Warning().Msgf("nuclei detect tech error: %s", err)
 						}
 						if len(product) > 0 {
-							mu.Lock()
 							technologies = append(technologies, product...)
 							cancel()
-							mu.Unlock()
 						}
 						return nil
 					})
@@ -2026,17 +2013,7 @@ retry:
 			}
 		}
 	}
-	if len(technologies) > 0 {
-		technologies := strings.Join(lo.Uniq(technologies), ",")
 
-		builder.WriteString(" [")
-		if !scanopts.OutputWithNoColor {
-			builder.WriteString(aurora.Magenta(technologies).String())
-		} else {
-			builder.WriteString(technologies)
-		}
-		builder.WriteRune(']')
-	}
 	var extractRegex []string
 	// extract regex
 	var extractResult = map[string][]string{}
@@ -2239,33 +2216,43 @@ retry:
 			//	gologger.Error().Msgf("Could not write screenshot at path '%s', to disk: %s", screenshotPath, err)
 			//}
 
-		} else {
-			pHash, err = calculatePerceptionHash(screenshotBytes)
-			if err != nil {
-				gologger.Warning().Msgf("%v: %s", err, fullURL)
-			}
-			if r.options.TechDetect && headlessBody != "" {
-				newResp := resp
-				newResp.Data = []byte(headlessBody)
-				if r.options.TechRulePath != "" {
-					products, err := r.tech.Detect(fullURL, "/", "GET", "", newResp)
-					if err != nil {
-						gologger.Warning().Msgf("detect tech error: %s", err)
-					}
-					if len(products) > 0 {
-						technologies = append(technologies, products...)
-					}
+		}
+		if r.options.DebugResponse {
+			// dump headless body
+			gologger.Debug().Msgf("Headless body for %s: %s", fullURL, headlessBody)
+		}
+		pHash, err = calculatePerceptionHash(screenshotBytes)
+		if err != nil {
+			gologger.Warning().Msgf("%v: %s", err, fullURL)
+		}
+		// extract title again from headless body
+		newResp := resp
+		newResp.Data = []byte(headlessBody)
+		newResp.Raw = headlessBody
 
-					products, err = r.tech.FingerHubDetect(fullURL, "/", "GET", "", newResp)
-					if err != nil {
-						gologger.Warning().Msgf("detect tech error: %s", err)
-					}
-					if len(products) > 0 {
-						technologies = append(technologies, products...)
-					}
+		if httpx.ExtractTitle(newResp) != "" {
+			title = httpx.ExtractTitle(newResp)
+		}
+		if r.options.TechDetect && headlessBody != "" {
+			if r.options.TechRulePath != "" {
+				products, err := r.tech.Detect(fullURL, "/", "GET", "", newResp)
+				if err != nil {
+					gologger.Warning().Msgf("detect tech error: %s", err)
+				}
+				if len(products) > 0 {
+					technologies = append(technologies, products...)
+				}
+
+				products, err = r.tech.FingerHubDetect(fullURL, "/", "GET", "", newResp)
+				if err != nil {
+					gologger.Warning().Msgf("detect tech error: %s", err)
+				}
+				if len(products) > 0 {
+					technologies = append(technologies, products...)
 				}
 			}
 		}
+
 		if scanopts.NoScreenshotBytes {
 			screenshotBytes = []byte{}
 		}
@@ -2273,7 +2260,27 @@ retry:
 			headlessBody = ""
 		}
 	}
+	if scanopts.OutputTitle && title != "" {
+		builder.WriteString(" [")
+		if !scanopts.OutputWithNoColor {
+			builder.WriteString(aurora.Cyan(title).String())
+		} else {
+			builder.WriteString(title)
+		}
+		builder.WriteRune(']')
+	}
 
+	if len(technologies) > 0 {
+		technologies := strings.Join(lo.Uniq(technologies), ",")
+
+		builder.WriteString(" [")
+		if !scanopts.OutputWithNoColor {
+			builder.WriteString(aurora.Magenta(technologies).String())
+		} else {
+			builder.WriteString(technologies)
+		}
+		builder.WriteRune(']')
+	}
 	result := Result{
 		Timestamp:        time.Now(),
 		Request:          request,
