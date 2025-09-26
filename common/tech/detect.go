@@ -24,18 +24,16 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-// TechRule 技术检测规则
-type TechRule struct {
-	Method string   `yaml:"method"`
-	Path   []string `yaml:"path"`
-	DSL    string   `yaml:"dsl"`
+type Request struct {
+	Path    []string          `yaml:"path"`
+	Method  string            `yaml:"method"`
+	Headers map[string]string `yaml:"headers,omitempty"`
 }
 
 type TechDetecter struct {
 	UseInternal bool // 是否使用内置规则
 	// 重新设计的规则存储结构
-	ProductRules map[string][]TechRule // 产品名 -> 规则列表
-	URIs         map[string][]string   // 方法 -> 路径列表（保持兼容性）
+	Rules map[string][]Rule // 产品名 -> 规则列表
 	// 预编译的表达式缓存：产品名 -> 规则索引 -> 编译后的表达式
 	compiledExpressions map[string][]*CompiledRule
 
@@ -60,8 +58,7 @@ type CompiledNucleiRule struct {
 
 func (t *TechDetecter) Init(rulePath string, useInternal bool) (err error) {
 	t.UseInternal = useInternal
-	t.URIs = make(map[string][]string)
-	t.ProductRules = make(map[string][]TechRule)
+	t.Rules = make(map[string][]Rule)
 	t.matchedProduct = make(map[string][]string) // 初始化已匹配的产品
 	t.compiledExpressions = make(map[string][]*CompiledRule)
 	t.compiledNucleiExpressions = make(map[string][]*CompiledNucleiRule)
@@ -110,12 +107,6 @@ func (t *TechDetecter) Init(rulePath string, useInternal bool) (err error) {
 			}
 		}
 	}
-
-	// 去重uris
-	for method, paths := range t.URIs {
-		t.URIs[method] = sliceutil.Dedupe(paths)
-	}
-
 	// 预编译所有表达式（在这里注册自定义函数，而不是修改全局map）
 	t.precompileExpressions()
 	return nil
@@ -149,31 +140,18 @@ func (t *TechDetecter) ParseRule(content []byte) error {
 		if line.DSL == "" {
 			continue
 		}
-
-		// 转换Rule为TechRule
-		techRule := TechRule(line)
-
-		// 如果方法为空，默认为GET
-		if techRule.Method == "" {
-			techRule.Method = "GET"
+		if len(line.Path)==0{
+			line.Path=[]string{"/"}
 		}
 
 		// 添加到产品规则中 - 每个Rule对应一个独立的TechRule
-		t.ProductRules[productName] = append(t.ProductRules[productName], techRule)
-
-		// 保持URI兼容性（用于获取所有需要请求的路径）
-		for _, path := range line.Path {
-			if path != "/" && path != "" {
-				t.URIs[techRule.Method] = append(t.URIs[techRule.Method], path)
-			}
-		}
+		t.Rules[productName] = append(t.Rules[productName], line)
 	}
 	return nil
 }
 
 func (t *TechDetecter) ParseNucleiRule(content []byte) error {
 	var matcher Template
-
 	err := yaml.Unmarshal(content, &matcher)
 	if err != nil {
 		return err
@@ -198,13 +176,6 @@ func (t *TechDetecter) ParseNucleiRule(content []byte) error {
 			Paths:      paths,
 			Expression: line.Compile(),
 		})
-
-		// 保持URI兼容性（用于获取所有需要请求的路径）
-		for _, path := range paths {
-			if path != "/" && path != "" {
-				t.URIs[line.Method] = append(t.URIs[line.Method], path)
-			}
-		}
 	}
 	return nil
 }
@@ -229,7 +200,7 @@ func (t *TechDetecter) precompileExpressions() {
 	localHelperFunctions["icontains"] = icontains
 
 	// 遍历新的产品规则结构
-	for product, techRules := range t.ProductRules {
+	for product, techRules := range t.Rules {
 		compiledRules := make([]*CompiledRule, 0, len(techRules))
 		for _, rule := range techRules {
 			if rule.DSL == "" {

@@ -69,7 +69,7 @@ var DefaultOptions = Options{
 	VHostIgnoreNumberOfLines: false,
 	VHostStripHTML:           false,
 	VHostSimilarityRatio:     85,
-	DefaultUserAgent:         "httpx - Open-source project (github.com/projectdiscovery/httpx)",
+	DefaultUserAgent:         "Mozilla/5.0 (Knoppix; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
 }
 
 func (options *Options) parseCustomCookies() {

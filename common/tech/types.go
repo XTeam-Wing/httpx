@@ -18,9 +18,11 @@ type Info struct {
 }
 
 type Rule struct {
-	Method string   `yaml:"method"`
-	Path   []string `yaml:"path"`
-	DSL    string   `yaml:"dsl"`
+	Method   string            `yaml:"method"`
+	Path     []string          `yaml:"path"`
+	DSL      string            `yaml:"dsl"`
+	Headers  map[string]string `yaml:"headers,omitempty"`
+	Redirect bool              `yaml:"redirect"`
 }
 
 type Matchers struct {
