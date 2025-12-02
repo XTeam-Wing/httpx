@@ -1,24 +1,3 @@
-// Package tech 提供HTTP指纹识别功能
-//
-// 支持两种规则格式:
-//   - DSL规则: 使用govaluate表达式语法
-//   - Nuclei规则: 兼容nuclei模板格式
-//
-// 使用示例:
-//
-//	detector, err := tech.NewDetector("rules/", true)
-//	if err != nil {
-//	    log.Fatal(err)
-//	}
-//
-//	products, err := detector.Detect(url, "/", "GET", faviconHash, response)
-//	if err != nil {
-//	    log.Fatal(err)
-//	}
-//
-//	for _, p := range products {
-//	    fmt.Println("Detected:", p)
-//	}
 package tech
 
 import (
