@@ -19,24 +19,24 @@ require (
 	github.com/miekg/dns v1.1.68 // indirect
 	github.com/pkg/errors v0.9.1
 	github.com/projectdiscovery/asnmap v1.1.1
-	github.com/projectdiscovery/cdncheck v1.2.19
+	github.com/projectdiscovery/cdncheck v1.2.22
 	github.com/projectdiscovery/clistats v0.1.1
-	github.com/projectdiscovery/dsl v0.8.12
-	github.com/projectdiscovery/fastdialer v0.5.3
+	github.com/projectdiscovery/dsl v0.8.13
+	github.com/projectdiscovery/fastdialer v0.5.4
 	github.com/projectdiscovery/fdmax v0.0.4
 	github.com/projectdiscovery/goconfig v0.0.1
 	github.com/projectdiscovery/goflags v0.1.74
-	github.com/projectdiscovery/gologger v1.1.67
-	github.com/projectdiscovery/hmap v0.0.99
+	github.com/projectdiscovery/gologger v1.1.68
+	github.com/projectdiscovery/hmap v0.0.100
 	github.com/projectdiscovery/mapcidr v1.1.97
-	github.com/projectdiscovery/networkpolicy v0.1.33
+	github.com/projectdiscovery/networkpolicy v0.1.34
 	github.com/projectdiscovery/ratelimit v0.0.83
 	github.com/projectdiscovery/rawhttp v0.1.90
-	github.com/projectdiscovery/retryablehttp-go v1.3.4
+	github.com/projectdiscovery/retryablehttp-go v1.3.6
 	github.com/projectdiscovery/tlsx v1.2.2
-	github.com/projectdiscovery/useragent v0.0.106
+	github.com/projectdiscovery/useragent v0.0.107
 	github.com/projectdiscovery/utils v0.9.0
-	github.com/projectdiscovery/wappalyzergo v0.2.64
+	github.com/projectdiscovery/wappalyzergo v0.2.67
 	github.com/rs/xid v1.6.0
 	github.com/spaolacci/murmur3 v1.1.0
 	github.com/stretchr/testify v1.11.1
@@ -56,7 +56,7 @@ require (
 	github.com/go-viper/mapstructure/v2 v2.5.0
 	github.com/gocarina/gocsv v0.0.0-20240520201108-78e41c74b4b1
 	github.com/projectdiscovery/awesome-search-queries v0.0.0-20260104120501-961ef30f7193
-	github.com/projectdiscovery/nuclei/v3 v3.6.0
+	github.com/projectdiscovery/nuclei/v3 v3.7.0
 	github.com/seh-msft/burpxml v1.0.1
 	github.com/weppos/publicsuffix-go v0.50.3-0.20260104170930-90713dec78f2
 	golang.org/x/sync v0.19.0
@@ -159,7 +159,7 @@ require (
 	github.com/projectdiscovery/gcache v0.0.0-20241015120333-12546c6e3f4c // indirect
 	github.com/projectdiscovery/gostruct v0.0.2 // indirect
 	github.com/projectdiscovery/machineid v0.0.0-20250715113114-c77eb3567582 // indirect
-	github.com/projectdiscovery/retryabledns v1.0.112 // indirect
+	github.com/projectdiscovery/retryabledns v1.0.113 // indirect
 	github.com/refraction-networking/utls v1.7.1 // indirect
 	github.com/rivo/uniseg v0.4.7 // indirect
 	github.com/rogpeppe/go-internal v1.12.0 // indirect
