@@ -1,6 +1,6 @@
 module github.com/projectdiscovery/httpx
 
-go 1.24.2
+go 1.25.0
 
 require (
 	github.com/Mzack9999/gcache v0.0.0-20230410081825-519e28eab057
@@ -59,7 +59,7 @@ require (
 	github.com/projectdiscovery/nuclei/v3 v3.6.0
 	github.com/seh-msft/burpxml v1.0.1
 	github.com/weppos/publicsuffix-go v0.50.3-0.20260104170930-90713dec78f2
-	golang.org/x/sync v0.19.0
+	golang.org/x/sync v0.20.0
 	gopkg.in/yaml.v3 v3.0.1
 )
 
