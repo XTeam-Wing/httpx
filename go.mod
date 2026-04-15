@@ -1,6 +1,6 @@
 module github.com/projectdiscovery/httpx
 
-go 1.25.7
+go 1.26
 
 require (
 	github.com/Mzack9999/gcache v0.0.0-20230410081825-519e28eab057
@@ -44,8 +44,8 @@ require (
 	go.etcd.io/bbolt v1.4.0 // indirect
 	go.uber.org/multierr v1.11.0
 	golang.org/x/exp v0.0.0-20250911091902-df9299821621
-	golang.org/x/net v0.52.0
-	golang.org/x/sys v0.42.0 // indirect
+	golang.org/x/net v0.53.0
+	golang.org/x/sys v0.43.0 // indirect
 	golang.org/x/text v0.36.0
 )
 
@@ -54,7 +54,7 @@ require (
 	github.com/go-sql-driver/mysql v1.9.3
 	github.com/go-viper/mapstructure/v2 v2.5.0
 	github.com/gocarina/gocsv v0.0.0-20240520201108-78e41c74b4b1
-	github.com/happyhackingspace/dit v0.0.14
+	github.com/happyhackingspace/dit v0.0.19
 	github.com/lib/pq v1.12.3
 	github.com/projectdiscovery/awesome-search-queries v0.0.0-20260104120501-961ef30f7193
 	github.com/seh-msft/burpxml v1.0.1
@@ -175,11 +175,11 @@ require (
 	github.com/zcalusic/sysinfo v1.0.2 // indirect
 	github.com/zmap/rc2 v0.0.0-20190804163417-abaa70531248 // indirect
 	go4.org v0.0.0-20230225012048-214862532bf5 // indirect
-	golang.org/x/crypto v0.49.0 // indirect
+	golang.org/x/crypto v0.50.0 // indirect
 	golang.org/x/mod v0.34.0 // indirect
 	golang.org/x/oauth2 v0.34.0 // indirect
 	golang.org/x/sync v0.20.0 // indirect
-	golang.org/x/term v0.41.0 // indirect
+	golang.org/x/term v0.42.0 // indirect
 	golang.org/x/time v0.14.0 // indirect
 	golang.org/x/tools v0.43.0 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
