@@ -95,7 +95,7 @@ type Runner struct {
 	browser            *Browser
 	ditClassifier *dit.Classifier
 	pHashClusters      []pHashCluster
-	simHashes          gcache.Cache[uint64, struct{}] // Include simHashes for efficient duplicate detection
+	simHashes          gcache.Cache[uint64, []string]
 	httpApiEndpoint    *Server
 	authProvider       authprovider.AuthProvider
 	interruptCh        chan struct{}
@@ -430,7 +430,7 @@ func New(options *Options) (*Runner, error) {
 		runner.HostErrorsCache = gc
 	}
 
-	runner.simHashes = gcache.New[uint64, struct{}](1000).ARC().Build()
+	runner.simHashes = gcache.New[uint64, []string](1000).ARC().Build()
 	if options.JSONOutput || options.CSVOutput || len(options.OutputFilterPageType) > 0 {
 		ditClassifier, err := dit.New()
 		if err != nil {
@@ -639,19 +639,21 @@ func (r *Runner) seen(k string) bool {
 
 func (r *Runner) duplicate(result *Result) bool {
 	respSimHash := simhash.Simhash(simhash.NewWordFeatureSet(converstionutil.Bytes(result.Raw)))
-	if r.simHashes.Has(respSimHash) {
-		gologger.Debug().Msgf("Skipping duplicate response with simhash %d for URL %s\n", respSimHash, result.URL)
-		return true
-	}
+	ip := result.HostIP
 
-	for simHash := range r.simHashes.GetALL(false) {
-		// lower threshold for increased precision
-		if simhash.Compare(simHash, respSimHash) <= 3 {
-			gologger.Debug().Msgf("Skipping near-duplicate response with simhash %d for URL %s\n", respSimHash, result.URL)
+	for storedHash, storedIPs := range r.simHashes.GetALL(false) {
+		if simhash.Compare(storedHash, respSimHash) > 3 {
+			continue
+		}
+		if ip == "" || sliceutil.Contains(storedIPs, ip) {
+			gologger.Debug().Msgf("Skipping duplicate response (simhash %d, ip %s) for URL %s\n", respSimHash, ip, result.URL)
 			return true
 		}
+		_ = r.simHashes.Set(storedHash, append(storedIPs, ip))
+		return false
 	}
-	_ = r.simHashes.Set(respSimHash, struct{}{})
+
+	_ = r.simHashes.Set(respSimHash, []string{ip})
 	return false
 }
 

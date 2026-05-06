@@ -538,6 +538,147 @@ func TestStoreResponse_withMatcherSetsFlag(t *testing.T) {
 	require.True(t, opts.HasMatcherOrFilter())
 }
 
+func TestRunner_duplicate(t *testing.T) {
+	const (
+		pageA = "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n<html><head><title>Welcome</title></head><body>Hello world default page content here</body></html>"
+		pageB = "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n<html><head><title>Dashboard</title></head><body>Completely different application running on this server</body></html>"
+	)
+
+	t.Run("same content same IP is duplicate", func(t *testing.T) {
+		r, err := New(&Options{})
+		require.Nil(t, err)
+
+		first := &Result{Raw: pageA, HostIP: "1.1.1.1", URL: "https://a.example.com"}
+		second := &Result{Raw: pageA, HostIP: "1.1.1.1", URL: "https://b.example.com"}
+
+		require.False(t, r.duplicate(first), "first result should not be duplicate")
+		require.True(t, r.duplicate(second), "same content + same IP should be duplicate")
+	})
+
+	t.Run("same content different IP is NOT duplicate", func(t *testing.T) {
+		r, err := New(&Options{})
+		require.Nil(t, err)
+
+		first := &Result{Raw: pageA, HostIP: "1.1.1.1", URL: "https://a.example.com"}
+		second := &Result{Raw: pageA, HostIP: "2.2.2.2", URL: "https://b.example.com"}
+
+		require.False(t, r.duplicate(first))
+		require.False(t, r.duplicate(second), "same content but different IP should NOT be duplicate")
+	})
+
+	t.Run("different content same IP is NOT duplicate", func(t *testing.T) {
+		r, err := New(&Options{})
+		require.Nil(t, err)
+
+		first := &Result{Raw: pageA, HostIP: "1.1.1.1", URL: "https://a.example.com"}
+		second := &Result{Raw: pageB, HostIP: "1.1.1.1", URL: "https://b.example.com"}
+
+		require.False(t, r.duplicate(first))
+		require.False(t, r.duplicate(second), "different content on same IP should NOT be duplicate")
+	})
+
+	t.Run("different content different IP is NOT duplicate", func(t *testing.T) {
+		r, err := New(&Options{})
+		require.Nil(t, err)
+
+		first := &Result{Raw: pageA, HostIP: "1.1.1.1", URL: "https://a.example.com"}
+		second := &Result{Raw: pageB, HostIP: "2.2.2.2", URL: "https://b.example.com"}
+
+		require.False(t, r.duplicate(first))
+		require.False(t, r.duplicate(second), "different content + different IP should NOT be duplicate")
+	})
+
+	t.Run("third subdomain same content same IP is duplicate", func(t *testing.T) {
+		r, err := New(&Options{})
+		require.Nil(t, err)
+
+		first := &Result{Raw: pageA, HostIP: "1.1.1.1", URL: "https://a.example.com"}
+		second := &Result{Raw: pageA, HostIP: "2.2.2.2", URL: "https://b.example.com"}
+		third := &Result{Raw: pageA, HostIP: "1.1.1.1", URL: "https://c.example.com"}
+
+		require.False(t, r.duplicate(first))
+		require.False(t, r.duplicate(second), "different IP should be kept")
+		require.True(t, r.duplicate(third), "same content + same IP as first should be duplicate")
+	})
+
+	t.Run("near-duplicate content same IP is duplicate", func(t *testing.T) {
+		r, err := New(&Options{})
+		require.Nil(t, err)
+
+		first := &Result{Raw: pageA, HostIP: "1.1.1.1", URL: "https://a.example.com"}
+		nearDup := &Result{
+			Raw:    "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n<html><head><title>Welcome</title></head><body>Hello world default page content here!</body></html>",
+			HostIP: "1.1.1.1",
+			URL:    "https://b.example.com",
+		}
+
+		require.False(t, r.duplicate(first))
+		require.True(t, r.duplicate(nearDup), "near-duplicate content from same IP should be duplicate")
+	})
+
+	t.Run("near-duplicate content different IP is NOT duplicate", func(t *testing.T) {
+		r, err := New(&Options{})
+		require.Nil(t, err)
+
+		first := &Result{Raw: pageA, HostIP: "1.1.1.1", URL: "https://a.example.com"}
+		nearDup := &Result{
+			Raw:    "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n<html><head><title>Welcome</title></head><body>Hello world default page content here!</body></html>",
+			HostIP: "3.3.3.3",
+			URL:    "https://b.example.com",
+		}
+
+		require.False(t, r.duplicate(first))
+		require.False(t, r.duplicate(nearDup), "near-duplicate content from different IP should NOT be duplicate")
+	})
+
+	t.Run("empty IP falls back to content-only dedup", func(t *testing.T) {
+		r, err := New(&Options{})
+		require.Nil(t, err)
+
+		first := &Result{Raw: pageA, HostIP: "", URL: "https://a.example.com"}
+		second := &Result{Raw: pageA, HostIP: "", URL: "https://b.example.com"}
+
+		require.False(t, r.duplicate(first))
+		require.True(t, r.duplicate(second), "empty IP should fall back to content-only dedup")
+	})
+
+	t.Run("many subdomains same default page same IP", func(t *testing.T) {
+		r, err := New(&Options{})
+		require.Nil(t, err)
+
+		kept := 0
+		for i := 0; i < 50; i++ {
+			res := &Result{
+				Raw:    pageA,
+				HostIP: "10.0.0.1",
+				URL:    fmt.Sprintf("https://sub%d.example.com", i),
+			}
+			if !r.duplicate(res) {
+				kept++
+			}
+		}
+		require.Equal(t, 1, kept, "50 subdomains with identical content on same IP should keep exactly 1")
+	})
+
+	t.Run("many subdomains same default page different IPs", func(t *testing.T) {
+		r, err := New(&Options{})
+		require.Nil(t, err)
+
+		kept := 0
+		for i := 0; i < 50; i++ {
+			res := &Result{
+				Raw:    pageA,
+				HostIP: fmt.Sprintf("10.0.0.%d", i+1),
+				URL:    fmt.Sprintf("https://sub%d.example.com", i),
+			}
+			if !r.duplicate(res) {
+				kept++
+			}
+		}
+		require.Equal(t, 50, kept, "50 subdomains with identical content but different IPs should keep all 50")
+	})
+}
+
 func TestCreateNetworkpolicyInstance_AllowDenyFlags(t *testing.T) {
 	runner := &Runner{}
 
