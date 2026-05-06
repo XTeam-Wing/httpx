@@ -343,7 +343,7 @@ type Options struct {
 	HeadlessOptionalArguments goflags.StringSlice
 	Protocol                  string
 	OutputFilterErrorPagePath string
-	DisableStdout             bool
+	DisableStdout bool
 
 	JavascriptCodes goflags.StringSlice
 
@@ -694,6 +694,30 @@ func ParseOptions() *Options {
 	}
 
 	return options
+}
+
+func (options *Options) HasMatcherOrFilter() bool {
+	return len(options.matchStatusCode) > 0 ||
+		len(options.matchContentLength) > 0 ||
+		len(options.filterStatusCode) > 0 ||
+		len(options.filterContentLength) > 0 ||
+		len(options.matchRegexes) > 0 ||
+		len(options.filterRegexes) > 0 ||
+		len(options.matchLinesCount) > 0 ||
+		len(options.matchWordsCount) > 0 ||
+		len(options.filterLinesCount) > 0 ||
+		len(options.filterWordsCount) > 0 ||
+		len(options.OutputMatchString) > 0 ||
+		len(options.OutputFilterString) > 0 ||
+		len(options.OutputMatchFavicon) > 0 ||
+		len(options.OutputFilterFavicon) > 0 ||
+		len(options.OutputMatchCdn) > 0 ||
+		len(options.OutputFilterCdn) > 0 ||
+		len(options.OutputFilterPageType) > 0 ||
+		options.OutputMatchCondition != "" ||
+		options.OutputFilterCondition != "" ||
+		options.OutputMatchResponseTime != "" ||
+		options.OutputFilterResponseTime != ""
 }
 
 func (options *Options) ValidateOptions() error {
