@@ -1,0 +1,66 @@
+name: 🔨 Build Test
+
+on:
+  pull_request:
+    paths:
+      - '**.go'
+      - '**.mod'
+  workflow_dispatch:
+
+jobs:
+  lint:
+    name: Lint Test
+    if: ${{ !endsWith(github.actor, '[bot]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: projectdiscovery/actions/setup/go@v1
+      - uses: projectdiscovery/actions/golangci-lint/v2@v1
+
+  build:
+    name: Test Builds
+    needs: [lint]
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: projectdiscovery/actions/setup/go@v1
+      - run: go build .
+        working-directory: cmd/httpx/
+
+      - name: Test
+        run: go test ./...
+        working-directory: .
+        env:
+          PDCP_API_KEY: "${{ secrets.PDCP_API_KEY }}"
+          
+
+      - name: Testing Example - Simple
+        run: go run .
+        working-directory: examples/simple/
+      - name: Testing Example - Speed Control
+        run: go run .
+        working-directory: examples/speed_control/
+
+      - name: Integration Tests Linux, macOS
+        if: runner.os == 'Linux' || runner.os == 'macOS'
+        env:
+          GH_ACTION: true
+          PDCP_API_KEY: "${{ secrets.PDCP_API_KEY }}"
+        run: bash run.sh
+        working-directory: integration_tests/
+      
+      - name: Integration Tests Windows
+        if: runner.os == 'Windows'
+        env:
+          GH_ACTION: true
+          MSYS_NO_PATHCONV: true
+          PDCP_API_KEY: "${{ secrets.PDCP_API_KEY }}"
+        run: bash run.sh
+        working-directory: integration_tests/
+        
+      - name: Race Condition Tests
+        run: go build -race .
+        working-directory: cmd/httpx/

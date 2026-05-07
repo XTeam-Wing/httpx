@@ -153,7 +153,7 @@ func New(options *Options) (*HTTPX, error) {
 		DisableKeepAlives: true,
 	}
 
-	if httpx.Options.Protocol == "http11" {
+	if httpx.Options.Protocol == HTTP11 {
 		// disable http2
 		_ = os.Setenv("GODEBUG", "http2client=0")
 		transport.TLSNextProto = map[string]func(string, *tls.Conn) http.RoundTripper{}
@@ -182,6 +182,10 @@ func New(options *Options) (*HTTPX, error) {
 		Timeout:       httpx.Options.Timeout,
 		CheckRedirect: redirectFunc,
 	}, retryablehttpOptions)
+
+	if httpx.Options.Protocol == HTTP11 {
+		httpx.client.HTTPClient2 = httpx.client.HTTPClient
+	}
 
 	transport2 := &http2.Transport{
 		TLSClientConfig: &tls.Config{
@@ -224,8 +228,8 @@ get_response:
 	}
 
 	var shouldIgnoreErrors, shouldIgnoreBodyErrors bool
-	switch {
-	case h.Options.Unsafe && req.Method == http.MethodHead && !stringsutil.ContainsAny(err.Error(), "i/o timeout"):
+	if h.Options.Unsafe && req.Method == http.MethodHead && err != nil &&
+		!stringsutil.ContainsAny(err.Error(), "i/o timeout") {
 		shouldIgnoreErrors = true
 		shouldIgnoreBodyErrors = true
 	}
