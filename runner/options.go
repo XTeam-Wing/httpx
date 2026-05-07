@@ -366,11 +366,9 @@ type Options struct {
 
 	Trace bool
 
-<<<<<<< HEAD
 	// Internal use only
 	BrowserPath     string
 	ActiveDetection bool
-=======
 	ResultDatabase          bool
 	ResultDatabaseConfig    string
 	ResultDatabaseType      string
@@ -379,7 +377,6 @@ type Options struct {
 	ResultDatabaseTable     string
 	ResultDatabaseBatchSize int
 	ResultDatabaseOmitRaw   bool
->>>>>>> origin/dev
 
 	// Optional pre-created objects to reduce allocations
 	Wappalyzer     *wappalyzer.Wappalyze
@@ -388,6 +385,7 @@ type Options struct {
 	TechAnalyzer   *tech.Detector
 
 	UseInternalTech bool
+	SkipStorage      bool
 }
 
 // ParseOptions parses the command line options for application
@@ -534,6 +532,7 @@ func ParseOptions() *Options {
 		flagSet.StringVarP(&options.ResultDatabaseTable, "result-db-table", "rdbtb", "results", "table/collection name"),
 		flagSet.IntVarP(&options.ResultDatabaseBatchSize, "result-db-batch-size", "rdbbs", 100, "batch size for database inserts"),
 		flagSet.BoolVarP(&options.ResultDatabaseOmitRaw, "result-db-omit-raw", "rdbor", false, "omit raw request/response data from database"),
+		flagSet.BoolVarP(&options.SkipStorage, "skip-storage", "skip-st", false, "disable any storage of results (file/database) and only print to stdout"),
 	)
 
 	flagSet.CreateGroup("configs", "Configurations",
