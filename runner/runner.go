@@ -38,8 +38,8 @@ import (
 	"github.com/projectdiscovery/httpx/common/customextract"
 	"github.com/projectdiscovery/httpx/common/hashes/jarm"
 	"github.com/projectdiscovery/httpx/common/inputformats"
-	"github.com/projectdiscovery/httpx/common/pagetypeclassifier"
 	"github.com/projectdiscovery/httpx/common/tech"
+	"github.com/happyhackingspace/dit"
 	"github.com/projectdiscovery/httpx/static"
 	"github.com/projectdiscovery/mapcidr/asn"
 	"github.com/projectdiscovery/networkpolicy"
@@ -82,6 +82,7 @@ import (
 
 // Runner is a client for running the enumeration process.
 type Runner struct {
+	seenMux sync.Mutex
 	options            *Options
 	hp                 *httpx.HTTPX
 	wappalyzer         *wappalyzer.Wappalyze
@@ -95,15 +96,35 @@ type Runner struct {
 	ratelimiter        ratelimit.Limiter
 	HostErrorsCache    gcache.Cache[string, int]
 	browser            *Browser
-	pageTypeClassifier *pagetypeclassifier.PageTypeClassifier // Include this for general page classification
+	ditClassifier *dit.Classifier
 	pHashClusters      []pHashCluster
-	simHashes          gcache.Cache[uint64, struct{}] // Include simHashes for efficient duplicate detection
+	simHashes          gcache.Cache[uint64, []string]
 	httpApiEndpoint    *Server
 	authProvider       authprovider.AuthProvider
+	interruptCh        chan struct{}
 }
 
 func (r *Runner) HTTPX() *httpx.HTTPX {
 	return r.hp
+}
+
+// Interrupt signals the runner to stop dispatching new items.
+func (r *Runner) Interrupt() {
+	select {
+	case <-r.interruptCh:
+	default:
+		close(r.interruptCh)
+	}
+}
+
+// IsInterrupted returns true if the runner was interrupted.
+func (r *Runner) IsInterrupted() bool {
+	select {
+	case <-r.interruptCh:
+		return true
+	default:
+		return false
+	}
 }
 
 // picked based on try-fail but it seems to close to one it's used https://www.hackerfactor.com/blog/index.php?/archives/432-Looks-Like-It.html#c1992
@@ -124,7 +145,8 @@ type pHashUrl struct {
 // New creates a new client for running enumeration process.
 func New(options *Options) (*Runner, error) {
 	runner := &Runner{
-		options: options,
+		options:     options,
+		interruptCh: make(chan struct{}),
 	}
 	var err error
 	if options.TechAnalyzer != nil {
@@ -405,12 +427,14 @@ func New(options *Options) (*Runner, error) {
 		runner.HostErrorsCache = gc
 	}
 
-	runner.simHashes = gcache.New[uint64, struct{}](1000).ARC().Build()
-	pageTypeClassifier, err := pagetypeclassifier.New()
-	if err != nil {
-		return nil, err
+	runner.simHashes = gcache.New[uint64, []string](1000).ARC().Build()
+	if options.JSONOutput || options.CSVOutput || len(options.OutputFilterPageType) > 0 {
+		ditClassifier, err := dit.New()
+		if err != nil {
+			gologger.Warning().Msgf("Could not initialize page classifier: %s", err)
+		}
+		runner.ditClassifier = ditClassifier
 	}
-	runner.pageTypeClassifier = pageTypeClassifier
 
 	if options.SecretFile != "" {
 		authProviderOpts := &authprovider.AuthProviderOptions{
@@ -612,23 +636,48 @@ func (r *Runner) seen(k string) bool {
 
 func (r *Runner) duplicate(result *Result) bool {
 	respSimHash := simhash.Simhash(simhash.NewWordFeatureSet(converstionutil.Bytes(result.Raw)))
-	if r.simHashes.Has(respSimHash) {
-		gologger.Debug().Msgf("Skipping duplicate response with simhash %d for URL %s\n", respSimHash, result.URL)
-		return true
-	}
+	ip := result.HostIP
 
-	for simHash := range r.simHashes.GetALL(false) {
-		// lower threshold for increased precision
-		if simhash.Compare(simHash, respSimHash) <= 3 {
-			gologger.Debug().Msgf("Skipping near-duplicate response with simhash %d for URL %s\n", respSimHash, result.URL)
+	for storedHash, storedIPs := range r.simHashes.GetALL(false) {
+		if simhash.Compare(storedHash, respSimHash) > 3 {
+			continue
+		}
+		if ip == "" || sliceutil.Contains(storedIPs, ip) {
+			gologger.Debug().Msgf("Skipping duplicate response (simhash %d, ip %s) for URL %s\n", respSimHash, ip, result.URL)
 			return true
 		}
+		_ = r.simHashes.Set(storedHash, append(storedIPs, ip))
+		return false
 	}
-	_ = r.simHashes.Set(respSimHash, struct{}{})
+
+	_ = r.simHashes.Set(respSimHash, []string{ip})
 	return false
 }
 
+func (r *Runner) classifyPage(headlessBody, body string, pHash uint64) map[string]any {
+	kb := map[string]any{"pHash": pHash}
+	if r.ditClassifier == nil {
+		return kb
+	}
+	html := body
+	if headlessBody != "" {
+		html = headlessBody
+	}
+	result, err := r.ditClassifier.ExtractPageType(html)
+	if err != nil {
+		return kb
+	}
+	kb["PageType"] = fmt.Sprint(result.Type)
+	if len(result.Forms) > 0 {
+		kb["Forms"] = result.Forms
+	}
+	return kb
+}
+
 func (r *Runner) testAndSet(k string) bool {
+	r.seenMux.Lock()
+	defer r.seenMux.Unlock()
+
 	// skip empty lines
 	k = strings.TrimSpace(k)
 	if k == "" {
@@ -661,6 +710,16 @@ func (r *Runner) streamInput() (chan string, error) {
 	go func() {
 		defer close(out)
 
+		// trySend sends item to out, returning false if interrupted
+		trySend := func(item string) bool {
+			select {
+			case <-r.interruptCh:
+				return false
+			case out <- item:
+				return true
+			}
+		}
+
 		if fileutil.FileExists(r.options.InputFile) {
 			// check if input mode is specified for special format handling
 			if format := r.getInputFormat(); format != nil {
@@ -669,13 +728,13 @@ func (r *Runner) streamInput() (chan string, error) {
 					gologger.Error().Msgf("Could not open input file '%s': %s\n", r.options.InputFile, err)
 					return
 				}
-				defer finput.Close()
+				defer finput.Close() //nolint:errcheck
 				if err := format.Parse(finput, func(item string) bool {
 					item = strings.TrimSpace(item)
 					if r.options.SkipDedupe || r.testAndSet(item) {
-						out <- item
+						return trySend(item)
 					}
-					return true
+					return !r.IsInterrupted()
 				}); err != nil {
 					gologger.Error().Msgf("Could not parse input file '%s': %s\n", r.options.InputFile, err)
 					return
@@ -687,7 +746,9 @@ func (r *Runner) streamInput() (chan string, error) {
 				}
 				for item := range fchan {
 					if r.options.SkipDedupe || r.testAndSet(item) {
-						out <- item
+						if !trySend(item) {
+							return
+						}
 					}
 				}
 			}
@@ -703,7 +764,9 @@ func (r *Runner) streamInput() (chan string, error) {
 				}
 				for item := range fchan {
 					if r.options.SkipDedupe || r.testAndSet(item) {
-						out <- item
+						if !trySend(item) {
+							return
+						}
 					}
 				}
 			}
@@ -715,7 +778,9 @@ func (r *Runner) streamInput() (chan string, error) {
 			}
 			for item := range fchan {
 				if r.options.SkipDedupe || r.testAndSet(item) {
-					out <- item
+					if !trySend(item) {
+						return
+					}
 				}
 			}
 		}
@@ -749,7 +814,7 @@ func (r *Runner) loadFromFormat(filePath string, format inputformats.Format) (nu
 	if err != nil {
 		return 0, err
 	}
-	defer finput.Close()
+	defer finput.Close() //nolint:errcheck
 
 	err = format.Parse(finput, func(target string) bool {
 		target = strings.TrimSpace(target)
@@ -928,7 +993,8 @@ func (r *Runner) RunEnumeration() {
 			}
 		}()
 
-		var plainFile, jsonFile, csvFile, indexFile, indexScreenshotFile *os.File
+		var plainFile, jsonFile, csvFile, mdFile, indexFile, indexScreenshotFile *os.File
+		markdownHeaderWritten := false // guard to prevent writing the header multiple times
 
 		if r.options.Output != "" && r.options.OutputAll {
 			plainFile = openOrCreateFile(r.options.Resume, r.options.Output)
@@ -943,11 +1009,15 @@ func (r *Runner) RunEnumeration() {
 			defer func() {
 				_ = csvFile.Close()
 			}()
+			mdFile = openOrCreateFile(r.options.Resume, r.options.Output+".md")
+			defer func() {
+				_ = mdFile.Close()
+			}()
 		}
 
-		jsonOrCsv := (r.options.JSONOutput || r.options.CSVOutput)
-		jsonAndCsv := (r.options.JSONOutput && r.options.CSVOutput)
-		if r.options.Output != "" && plainFile == nil && !jsonOrCsv {
+		jsonOrCsvOrMD := (r.options.JSONOutput || r.options.CSVOutput || r.options.MarkDownOutput)
+		jsonAndCsvAndMD := (r.options.JSONOutput && r.options.CSVOutput && r.options.MarkDownOutput)
+		if r.options.Output != "" && plainFile == nil && !jsonOrCsvOrMD {
 			plainFile = openOrCreateFile(r.options.Resume, r.options.Output)
 			defer func() {
 				_ = plainFile.Close()
@@ -956,7 +1026,7 @@ func (r *Runner) RunEnumeration() {
 
 		if r.options.Output != "" && r.options.JSONOutput && jsonFile == nil {
 			ext := ""
-			if jsonAndCsv {
+			if jsonAndCsvAndMD {
 				ext = ".json"
 			}
 			jsonFile = openOrCreateFile(r.options.Resume, r.options.Output+ext)
@@ -967,12 +1037,23 @@ func (r *Runner) RunEnumeration() {
 
 		if r.options.Output != "" && r.options.CSVOutput && csvFile == nil {
 			ext := ""
-			if jsonAndCsv {
+			if jsonAndCsvAndMD {
 				ext = ".csv"
 			}
 			csvFile = openOrCreateFile(r.options.Resume, r.options.Output+ext)
 			defer func() {
 				_ = csvFile.Close()
+			}()
+		}
+
+		if r.options.Output != "" && r.options.MarkDownOutput && mdFile == nil {
+			ext := ""
+			if jsonAndCsvAndMD {
+				ext = ".md"
+			}
+			mdFile = openOrCreateFile(r.options.Resume, r.options.Output+ext)
+			defer func() {
+				_ = mdFile.Close()
 			}()
 		}
 
@@ -990,7 +1071,7 @@ func (r *Runner) RunEnumeration() {
 				gologger.Fatal().Msgf("unknown csv output encoding: %s\n", r.options.CSVOutputEncoding)
 			}
 			headers := Result{}.CSVHeader()
-			if !r.options.OutputAll && !jsonAndCsv {
+			if !r.options.OutputAll && !jsonAndCsvAndMD {
 				gologger.Silent().Msgf("%s\n", headers)
 			}
 
@@ -1065,9 +1146,13 @@ func (r *Runner) RunEnumeration() {
 				}
 			}
 
-			if r.options.OutputFilterErrorPage && resp.KnowledgeBase["PageType"] == "error" {
-				logFilteredErrorPage(r.options.OutputFilterErrorPagePath, resp.URL)
-				continue
+			if len(r.options.OutputFilterPageType) > 0 {
+				if pageType, ok := resp.KnowledgeBase["PageType"].(string); ok {
+					if stringsutil.EqualFoldAny(pageType, r.options.OutputFilterPageType...) {
+						logFilteredErrorPage(r.options.OutputFilterErrorPagePath, resp.URL)
+						continue
+					}
+				}
 			}
 
 			if r.options.FilterOutDuplicates && r.duplicate(&resp) {
@@ -1207,7 +1292,7 @@ func (r *Runner) RunEnumeration() {
 				}
 			}
 
-			if !r.options.DisableStdout && (!jsonOrCsv || jsonAndCsv || r.options.OutputAll) {
+			if !r.options.DisableStdout && (!jsonOrCsvOrMD || jsonAndCsvAndMD || r.options.OutputAll) {
 				gologger.Silent().Msgf("%s\n", resp.str)
 			}
 
@@ -1318,7 +1403,7 @@ func (r *Runner) RunEnumeration() {
 			if r.options.JSONOutput {
 				row := resp.JSON(&r.scanopts)
 
-				if !r.options.OutputAll && !jsonAndCsv {
+				if !r.options.OutputAll && !jsonAndCsvAndMD {
 					gologger.Silent().Msgf("%s\n", row)
 				}
 
@@ -1331,13 +1416,35 @@ func (r *Runner) RunEnumeration() {
 			if r.options.CSVOutput {
 				row := resp.CSVRow(&r.scanopts)
 
-				if !r.options.OutputAll && !jsonAndCsv {
+				if !r.options.OutputAll && !jsonAndCsvAndMD {
 					gologger.Silent().Msgf("%s\n", row)
 				}
 
 				//nolint:errcheck // this method needs a small refactor to reduce complexity
 				if csvFile != nil {
 					csvFile.WriteString(row + "\n")
+				}
+			}
+
+			if r.options.MarkDownOutput || r.options.OutputAll {
+				if !markdownHeaderWritten {
+					header := resp.MarkdownHeader()
+					if !r.options.OutputAll {
+						gologger.Silent().Msgf("%s", header)
+					}
+					if mdFile != nil {
+						_, _ = mdFile.WriteString(header)
+					}
+					markdownHeaderWritten = true
+				}
+
+				row := resp.MarkdownRow(&r.scanopts)
+
+				if !r.options.OutputAll {
+					gologger.Silent().Msgf("%s", row)
+				}
+				if mdFile != nil {
+					_, _ = mdFile.WriteString(row)
 				}
 			}
 
@@ -1399,6 +1506,12 @@ func (r *Runner) RunEnumeration() {
 	wg, _ := syncutil.New(syncutil.WithSize(r.options.Threads))
 
 	processItem := func(k string) error {
+		select {
+		case <-r.interruptCh:
+			return nil
+		default:
+		}
+
 		if r.options.resumeCfg != nil {
 			r.options.resumeCfg.current = k
 			r.options.resumeCfg.currentIndex++
@@ -1444,6 +1557,9 @@ func (r *Runner) RunEnumeration() {
 
 	if r.options.Stream {
 		for item := range streamChan {
+			if r.IsInterrupted() {
+				break
+			}
 			_ = processItem(item)
 		}
 	} else {
@@ -2441,53 +2557,56 @@ retry:
 	responseBaseDir := filepath.Join(domainResponseBaseDir, hostFilename)
 
 	var responsePath, fileNameHash string
-	// store response
+	// store response — when matchers/filters are active, defer writing to the
+	// output loop so only matched responses are persisted to disk.
 	if scanopts.StoreResponse || scanopts.StoreChain {
-		if r.options.OmitBody {
-			resp.Raw = strings.ReplaceAll(resp.Raw, string(resp.Data), "")
-		}
-		responsePath = fileutilz.AbsPathOrDefault(filepath.Join(responseBaseDir, domainResponseFile))
-		// URL.EscapedString returns that can be used as filename
-		respRaw := resp.Raw
-		reqRaw := requestDump
-		if len(respRaw) > scanopts.MaxResponseBodySizeToSave {
-			respRaw = respRaw[:scanopts.MaxResponseBodySizeToSave]
-		}
-		data := reqRaw
-		if scanopts.StoreChain && resp.HasChain() {
-			data = append(data, append([]byte("\n"), []byte(resp.GetChain())...)...)
-		}
-		data = append(data, respRaw...)
-		data = append(data, []byte("\n\n\n")...)
-		data = append(data, []byte(fullURL)...)
-		_ = fileutil.CreateFolder(responseBaseDir)
+		fileNameHash = hash
 
-		basePath := strings.TrimSuffix(responsePath, ".txt")
-		var idx int
-		for idx = 0; ; idx++ {
-			targetPath := responsePath
-			if idx > 0 {
-				targetPath = fmt.Sprintf("%s_%d.txt", basePath, idx)
+		if !r.options.HasMatcherOrFilter() {
+			if r.options.OmitBody {
+				resp.Raw = strings.ReplaceAll(resp.Raw, string(resp.Data), "")
 			}
-			f, err := os.OpenFile(targetPath, os.O_WRONLY|os.O_CREATE|os.O_EXCL, 0644)
-			if err == nil {
-				_, writeErr := f.Write(data)
-				_ = f.Close()
-				if writeErr != nil {
-					gologger.Error().Msgf("Could not write to '%s': %s", targetPath, writeErr)
+			responsePath = fileutilz.AbsPathOrDefault(filepath.Join(responseBaseDir, domainResponseFile))
+			// URL.EscapedString returns that can be used as filename
+			respRaw := resp.Raw
+			reqRaw := requestDump
+			if len(respRaw) > scanopts.MaxResponseBodySizeToSave {
+				respRaw = respRaw[:scanopts.MaxResponseBodySizeToSave]
+			}
+			data := reqRaw
+			if scanopts.StoreChain && resp.HasChain() {
+				data = append(data, append([]byte("\n"), []byte(resp.GetChain())...)...)
+			}
+			data = append(data, respRaw...)
+			data = append(data, []byte("\n\n\n")...)
+			data = append(data, []byte(fullURL)...)
+			_ = fileutil.CreateFolder(responseBaseDir)
+
+			basePath := strings.TrimSuffix(responsePath, ".txt")
+			var idx int
+			for idx = 0; ; idx++ {
+				targetPath := responsePath
+				if idx > 0 {
+					targetPath = fmt.Sprintf("%s_%d.txt", basePath, idx)
 				}
-				break
+				f, err := os.OpenFile(targetPath, os.O_WRONLY|os.O_CREATE|os.O_EXCL, 0644)
+				if err == nil {
+					_, writeErr := f.Write(data)
+					_ = f.Close()
+					if writeErr != nil {
+						gologger.Error().Msgf("Could not write to '%s': %s", targetPath, writeErr)
+					}
+					break
+				}
+				if !os.IsExist(err) {
+					gologger.Error().Msgf("Failed to create file '%s': %s", targetPath, err)
+					break
+				}
 			}
-			if !os.IsExist(err) {
-				gologger.Error().Msgf("Failed to create file '%s': %s", targetPath, err)
-				break
-			}
-		}
 
-		if idx == 0 {
-			fileNameHash = hash
-		} else {
-			fileNameHash = fmt.Sprintf("%s_%d", hash, idx)
+			if idx > 0 {
+				fileNameHash = fmt.Sprintf("%s_%d", hash, idx)
+			}
 		}
 	}
 
@@ -2702,10 +2821,7 @@ retry:
 		ExtractRegex:     extractRegex,
 		ScreenshotBytes:  screenshotBytes,
 		HeadlessBody:     headlessBody,
-		KnowledgeBase: map[string]interface{}{
-			"PageType": r.pageTypeClassifier.Classify(respData),
-			"pHash":    pHash,
-		},
+		KnowledgeBase: r.classifyPage(headlessBody, respData, pHash),
 		TechnologyDetails: technologyDetails,
 		Resolvers:         resolvers,
 		RequestRaw:        requestDump,
