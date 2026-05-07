@@ -1297,7 +1297,7 @@ func (r *Runner) RunEnumeration() {
 			}
 
 			// store responses or chain in directory
-			if resp.Err == nil {
+			if resp.Err == nil && !r.options.SkipStorage{
 				URL, _ := urlutil.Parse(resp.URL)
 				domainResponseFile := fmt.Sprintf("%s.txt", resp.FileNameHash)
 				screenshotResponseFile := fmt.Sprintf("%s.png", resp.FileNameHash)
