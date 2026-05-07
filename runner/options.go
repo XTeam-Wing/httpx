@@ -843,10 +843,6 @@ func (options *Options) ValidateOptions() error {
 		gologger.Debug().Msgf("Using resolvers: %s\n", strings.Join(options.Resolvers, ","))
 	}
 
-	if options.Screenshot && !options.StoreResponse {
-		gologger.Debug().Msgf("automatically enabling store response")
-		options.StoreResponse = true
-	}
 	if options.StoreResponse && options.StoreResponseDir == "" {
 		gologger.Debug().Msgf("Store response directory not specified, using \"%s\"\n", DefaultOutputDirectory)
 		options.StoreResponseDir = DefaultOutputDirectory
