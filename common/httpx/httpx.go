@@ -175,6 +175,8 @@ func New(options *Options) (*HTTPX, error) {
 			return nil, parseErr
 		}
 		transport.Proxy = http.ProxyURL(proxyURL)
+	} else {
+		transport.Proxy = http.ProxyFromEnvironment
 	}
 
 	httpx.client = retryablehttp.NewWithHTTPClient(&http.Client{
@@ -291,7 +293,7 @@ get_response:
 
 	respbody, err = DecodeData(respbody, httpresp.Header)
 	if err != nil && !shouldIgnoreBodyErrors {
-		return nil, closeErr
+		return nil, err
 	}
 
 	respbodystr := string(respbody)
@@ -305,8 +307,9 @@ get_response:
 	if resp.ContentLength <= 0 {
 		// check if it's in the header and convert to int
 		if contentLength, ok := resp.Headers["Content-Length"]; ok && len(contentLength) > 0 {
-			contentLengthInt, _ := strconv.Atoi(contentLength[0])
-			resp.ContentLength = contentLengthInt
+			if contentLengthInt, err := strconv.Atoi(contentLength[0]); err == nil {
+				resp.ContentLength = contentLengthInt
+			}
 		}
 
 		// if we have a body, then use the number of bytes in the body if the length is still zero

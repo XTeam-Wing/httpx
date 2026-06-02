@@ -128,7 +128,7 @@ func (r *Runner) IsInterrupted() bool {
 }
 
 // picked based on try-fail but it seems to close to one it's used https://www.hackerfactor.com/blog/index.php?/archives/432-Looks-Like-It.html#c1992
-var hammingDistanceThreshold int = 22
+const hammingDistanceThreshold = 22
 
 // regex for stripping ANSI codes
 var ansiRegex = regexp.MustCompile(`\x1b\[[0-9;]*m`)
@@ -740,11 +740,10 @@ func (r *Runner) streamInput() (chan string, error) {
 					return
 				}
 			} else {
-				fchan, err := fileutil.ReadFile(r.options.InputFile)
-				if err != nil {
-					return
-				}
-				for item := range fchan {
+				for item, err := range fileutil.Lines(r.options.InputFile) {
+					if err != nil {
+						return
+					}
 					if r.options.SkipDedupe || r.testAndSet(item) {
 						if !trySend(item) {
 							return
@@ -758,11 +757,10 @@ func (r *Runner) streamInput() (chan string, error) {
 				gologger.Fatal().Msgf("No input provided: %s", err)
 			}
 			for _, file := range files {
-				fchan, err := fileutil.ReadFile(file)
-				if err != nil {
-					return
-				}
-				for item := range fchan {
+				for item, err := range fileutil.Lines(file) {
+					if err != nil {
+						return
+					}
 					if r.options.SkipDedupe || r.testAndSet(item) {
 						if !trySend(item) {
 							return
@@ -772,11 +770,10 @@ func (r *Runner) streamInput() (chan string, error) {
 			}
 		}
 		if fileutil.HasStdin() {
-			fchan, err := fileutil.ReadFileWithReader(os.Stdin)
-			if err != nil {
-				return
-			}
-			for item := range fchan {
+			for item, err := range fileutil.LinesReader(os.Stdin) {
+				if err != nil {
+					return
+				}
 				if r.options.SkipDedupe || r.testAndSet(item) {
 					if !trySend(item) {
 						return
@@ -2204,7 +2201,12 @@ retry:
 
 	pipeline := false
 	if scanopts.Pipeline {
-		port, _ := strconv.Atoi(URL.Port())
+		port := 0
+		if portStr := URL.Port(); portStr != "" {
+			if p, err := strconv.Atoi(portStr); err == nil {
+				port = p
+			}
+		}
 		r.ratelimiter.Take()
 		pipeline = hp.SupportPipeline(protocol, method, URL.Host, port)
 		if pipeline {

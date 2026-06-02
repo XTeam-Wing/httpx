@@ -88,6 +88,14 @@ func NewBrowser(proxy string, useLocal bool, browserPath string, optionalArgs ma
 		}
 	}
 
+	if proxy == "" {
+		for _, k := range []string{"HTTPS_PROXY", "https_proxy", "HTTP_PROXY", "http_proxy"} {
+			if v := os.Getenv(k); v != "" {
+				proxy = v
+				break
+			}
+		}
+	}
 	if proxy != "" {
 		chromeLauncher = chromeLauncher.Proxy(proxy)
 	}
