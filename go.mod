@@ -58,7 +58,6 @@ require (
 	github.com/happyhackingspace/dit v0.0.25
 	github.com/lib/pq v1.12.3
 	github.com/projectdiscovery/awesome-search-queries v0.0.0-20260104120501-961ef30f7193
-	github.com/projectdiscovery/clistats v0.1.1
 	github.com/projectdiscovery/nuclei/v3 v3.8.0
 	github.com/seh-msft/burpxml v1.0.1
 	github.com/weppos/publicsuffix-go v0.50.3
@@ -114,7 +113,9 @@ require (
 	github.com/fatih/color v1.18.0 // indirect
 	github.com/felixge/fgprof v0.9.5 // indirect
 	github.com/gaissmai/bart v0.27.1 // indirect
-	github.com/go-ole/go-ole v1.2.6 // indirect
+	github.com/go-ole/go-ole v1.3.0 // indirect
+	github.com/goccy/go-json v0.10.5 // indirect
+	github.com/golang/groupcache v0.0.0-20241129210726-2c02b8208cf8 // indirect
 	github.com/google/certificate-transparency-go v1.3.2 // indirect
 	github.com/google/go-github/v30 v30.1.0 // indirect
 	github.com/google/go-querystring v1.1.0 // indirect
@@ -205,10 +206,10 @@ require (
 	github.com/zcalusic/sysinfo v1.1.3 // indirect
 	github.com/zmap/rc2 v0.0.0-20190804163417-abaa70531248 // indirect
 	go4.org v0.0.0-20230225012048-214862532bf5 // indirect
+	golang.org/x/arch v0.3.0 // indirect
 	golang.org/x/crypto v0.51.0 // indirect
 	golang.org/x/mod v0.35.0 // indirect
 	golang.org/x/oauth2 v0.34.0 // indirect
-	golang.org/x/sync v0.20.0 // indirect
 	golang.org/x/term v0.43.0 // indirect
 	golang.org/x/time v0.14.0 // indirect
 	golang.org/x/tools v0.44.0 // indirect
