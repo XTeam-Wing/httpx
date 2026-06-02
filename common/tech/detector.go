@@ -9,7 +9,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/Knetic/govaluate"
+	"github.com/projectdiscovery/govaluate"
 	"github.com/Mzack9999/gcache"
 	"github.com/projectdiscovery/gologger"
 	"github.com/projectdiscovery/httpx/common/httpx"

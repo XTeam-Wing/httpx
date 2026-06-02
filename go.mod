@@ -18,38 +18,37 @@ require (
 	github.com/miekg/dns v1.1.68 // indirect
 	github.com/pkg/errors v0.9.1
 	github.com/projectdiscovery/asnmap v1.1.1
-	github.com/projectdiscovery/cdncheck v1.2.37
+	github.com/projectdiscovery/cdncheck v1.2.38
 	github.com/projectdiscovery/clistats v0.1.4
 	github.com/projectdiscovery/dsl v0.8.19
-	github.com/projectdiscovery/fastdialer v0.5.8
+	github.com/projectdiscovery/fastdialer v0.5.9
 	github.com/projectdiscovery/fdmax v0.0.4
 	github.com/projectdiscovery/goconfig v0.0.1
 	github.com/projectdiscovery/goflags v0.1.74
-	github.com/projectdiscovery/gologger v1.1.69
+	github.com/projectdiscovery/gologger v1.1.70
 	github.com/projectdiscovery/hmap v0.0.101
 	github.com/projectdiscovery/mapcidr v1.1.97
-	github.com/projectdiscovery/networkpolicy v0.1.39
-	github.com/projectdiscovery/ratelimit v0.0.87
+	github.com/projectdiscovery/networkpolicy v0.1.40
+	github.com/projectdiscovery/ratelimit v0.0.88
 	github.com/projectdiscovery/rawhttp v0.1.90
-	github.com/projectdiscovery/retryablehttp-go v1.3.12
+	github.com/projectdiscovery/retryablehttp-go v1.3.13
 	github.com/projectdiscovery/tlsx v1.2.2
 	github.com/projectdiscovery/useragent v0.0.108
 	github.com/projectdiscovery/utils v0.11.1
-	github.com/projectdiscovery/wappalyzergo v0.2.82
+	github.com/projectdiscovery/wappalyzergo v0.2.83
 	github.com/rs/xid v1.6.0
 	github.com/spaolacci/murmur3 v1.1.0
 	github.com/stretchr/testify v1.11.1
 	github.com/zmap/zcrypto v0.0.0-20240803002437-3a861682ac77
 	go.etcd.io/bbolt v1.4.3 // indirect
 	go.uber.org/multierr v1.11.0
-	golang.org/x/exp v0.0.0-20250911091902-df9299821621
+	golang.org/x/exp v0.0.0-20260410095643-746e56fc9e2f
 	golang.org/x/net v0.55.0
 	golang.org/x/sys v0.45.0 // indirect
 	golang.org/x/text v0.37.0
 )
 
 require (
-	github.com/Knetic/govaluate v3.0.1-0.20171022003610-9aa49832a739+incompatible
 	github.com/corona10/goimagehash v1.1.0
 	github.com/dustin/go-humanize v1.0.1
 	github.com/go-sql-driver/mysql v1.10.0
@@ -58,7 +57,8 @@ require (
 	github.com/happyhackingspace/dit v0.0.25
 	github.com/lib/pq v1.12.3
 	github.com/projectdiscovery/awesome-search-queries v0.0.0-20260104120501-961ef30f7193
-	github.com/projectdiscovery/nuclei/v3 v3.8.0
+	github.com/projectdiscovery/govaluate v0.0.0-20260504230327-80320480bb6e
+	github.com/projectdiscovery/nuclei/v3 v3.6.3-0.20260601192328-b625d9a70615
 	github.com/seh-msft/burpxml v1.0.1
 	github.com/weppos/publicsuffix-go v0.50.3
 	go.mongodb.org/mongo-driver v1.17.9
@@ -112,7 +112,7 @@ require (
 	github.com/ebitengine/purego v0.10.0 // indirect
 	github.com/fatih/color v1.18.0 // indirect
 	github.com/felixge/fgprof v0.9.5 // indirect
-	github.com/gaissmai/bart v0.27.1 // indirect
+	github.com/gaissmai/bart v0.28.0 // indirect
 	github.com/go-ole/go-ole v1.3.0 // indirect
 	github.com/goccy/go-json v0.10.5 // indirect
 	github.com/golang/groupcache v0.0.0-20241129210726-2c02b8208cf8 // indirect
@@ -162,9 +162,8 @@ require (
 	github.com/projectdiscovery/freeport v0.0.7 // indirect
 	github.com/projectdiscovery/gcache v0.0.0-20241015120333-12546c6e3f4c // indirect
 	github.com/projectdiscovery/gostruct v0.0.2 // indirect
-	github.com/projectdiscovery/govaluate v0.0.0-20260504230327-80320480bb6e // indirect
 	github.com/projectdiscovery/machineid v0.0.0-20250715113114-c77eb3567582 // indirect
-	github.com/projectdiscovery/retryabledns v1.0.114 // indirect
+	github.com/projectdiscovery/retryabledns v1.0.115 // indirect
 	github.com/refraction-networking/utls v1.8.2 // indirect
 	github.com/rivo/uniseg v0.4.7 // indirect
 	github.com/rogpeppe/go-internal v1.12.0 // indirect
