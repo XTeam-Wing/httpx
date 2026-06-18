@@ -497,7 +497,7 @@ func (d *Detector) GetAllPaths() []PathRule {
 						p = "/"
 					}
 					// 构建唯一key：包含Method、Path和Headers
-					key := buildPathRuleKey(rule.Method, p, rule.Headers)
+					key := buildPathRuleKey(rule.Method, p, rule.Headers, rule.Redirect)
 					if _, ok := seen[key]; !ok {
 						seen[key] = struct{}{}
 						paths = append(paths, PathRule{
@@ -519,7 +519,7 @@ func (d *Detector) GetAllPaths() []PathRule {
 						p = "/"
 					}
 					// 构建唯一key：包含Method、Path和Headers
-					key := buildPathRuleKey(rule.Method, p, rule.Headers)
+					key := buildPathRuleKey(rule.Method, p, rule.Headers, rule.Redirect)
 					if _, ok := seen[key]; !ok {
 						seen[key] = struct{}{}
 						paths = append(paths, PathRule{
@@ -553,8 +553,11 @@ type PathRule struct {
 
 // buildPathRuleKey 构建路径规则的唯一key
 // 格式: METHOD:PATH[:HEADER1=VALUE1:HEADER2=VALUE2...]
-func buildPathRuleKey(method, path string, headers map[string]string) string {
+func buildPathRuleKey(method, path string, headers map[string]string, redirect bool) string {
 	key := method + ":" + path
+	if redirect {
+		key += ":redirect=true"
+	}
 	if len(headers) > 0 {
 		// 对headers按key排序后拼接，确保相同headers的规则生成相同key
 		var headerParts []string
