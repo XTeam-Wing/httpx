@@ -2372,10 +2372,10 @@ retry:
 
 	var faviconMMH3, faviconMD5, faviconPath, faviconURL string
 	var faviconData []byte
-	if scanopts.Favicon {
+	if scanopts.Favicon || scanopts.TechDetect {
 		var err error
 		faviconMMH3, faviconMD5, faviconPath, faviconData, faviconURL, err = r.HandleFaviconHash(hp, req, resp.Data, finalURL, true)
-		if err == nil {
+		if err == nil && scanopts.Favicon {
 			builder.WriteString(" [")
 			if !scanopts.OutputWithNoColor {
 				builder.WriteString(aurora.Magenta(faviconMMH3).String())
@@ -2399,7 +2399,7 @@ retry:
 			technologies = append(technologies, product...)
 			r.techAnalyzer.AddMatchedProduct(fullURL, product)
 		}
-		product, err = r.techAnalyzer.DetectWithNuclei(fullURL, "/", method, faviconMD5, resp)
+		product, err = r.techAnalyzer.DetectWithNuclei(fullURL, "/", method, faviconMD5, resp, faviconMMH3)
 		if err != nil {
 			gologger.Warning().Msgf("nuclei detect tech error: %s", err)
 		}
@@ -2476,7 +2476,7 @@ retry:
 						technologies = append(technologies, product...)
 						r.techAnalyzer.AddMatchedProduct(fullURL, product)
 					}
-					product, err = r.techAnalyzer.DetectWithNuclei(fullURL, path, activeMethod, faviconMD5, techResp)
+					product, err = r.techAnalyzer.DetectWithNuclei(fullURL, path, activeMethod, faviconMD5, techResp, faviconMMH3)
 					if err != nil {
 						gologger.Warning().Msgf("nuclei detect tech error: %s", err)
 					}
@@ -2714,7 +2714,7 @@ retry:
 					technologies = append(technologies, products...)
 				}
 
-				products, err = r.techAnalyzer.DetectWithNuclei(fullURL, "/", "GET", faviconMD5, newResp)
+				products, err = r.techAnalyzer.DetectWithNuclei(fullURL, "/", "GET", faviconMD5, newResp, faviconMMH3)
 				if err != nil {
 					gologger.Warning().Msgf("detect tech error: %s", err)
 				}
