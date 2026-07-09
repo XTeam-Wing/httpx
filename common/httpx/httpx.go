@@ -359,7 +359,8 @@ get_response:
 
 // RequestOverride contains the URI path to override the request
 type UnsafeOptions struct {
-	URIPath string
+	URIPath         string
+	FollowRedirects *bool
 }
 
 // getResponse returns response from safe / unsafe request
@@ -367,7 +368,58 @@ func (h *HTTPX) getResponse(req *retryablehttp.Request, unsafeOptions UnsafeOpti
 	if h.Options.Unsafe {
 		return h.doUnsafeWithOptions(req, unsafeOptions)
 	}
+	if unsafeOptions.FollowRedirects != nil {
+		return h.doWithRedirects(req, *unsafeOptions.FollowRedirects)
+	}
 	return h.client.Do(req)
+}
+
+func (h *HTTPX) doWithRedirects(req *retryablehttp.Request, followRedirects bool) (*http.Response, error) {
+	client := *h.client
+	httpClient := *h.client.HTTPClient
+	httpClient.CheckRedirect = h.redirectFunc(followRedirects)
+	client.HTTPClient = &httpClient
+
+	if h.client.HTTPClient2 != nil {
+		httpClient2 := *h.client.HTTPClient2
+		httpClient2.CheckRedirect = httpClient.CheckRedirect
+		client.HTTPClient2 = &httpClient2
+	}
+
+	return client.Do(req)
+}
+
+func (h *HTTPX) redirectFunc(followRedirects bool) func(*http.Request, []*http.Request) error {
+	if !followRedirects {
+		return func(_ *http.Request, _ []*http.Request) error {
+			return http.ErrUseLastResponse
+		}
+	}
+
+	return func(redirectedRequest *http.Request, previousRequests []*http.Request) error {
+		h.setCustomCookies(redirectedRequest)
+
+		if h.Options.FollowHostRedirects {
+			newHost := redirectedRequest.URL.Hostname()
+			oldHost := previousRequests[0].URL.Hostname()
+			if oldHost == "" {
+				oldHost = previousRequests[0].URL.Host
+			}
+			if newHost != oldHost {
+				return http.ErrUseLastResponse
+			}
+		}
+
+		if len(previousRequests) >= h.Options.MaxRedirects {
+			return http.ErrUseLastResponse
+		}
+
+		if h.Options.RespectHSTS && redirectedRequest.Response != nil && redirectedRequest.Response.Header.Get("Strict-Transport-Security") != "" {
+			redirectedRequest.URL.Scheme = "https"
+		}
+
+		return nil
+	}
 }
 
 // doUnsafe does an unsafe http request

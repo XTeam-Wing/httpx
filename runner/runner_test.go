@@ -2,9 +2,12 @@ package runner
 
 import (
 	"fmt"
+	"net/http"
+	"net/http/httptest"
 	"os"
 	"strings"
 	"sync"
+	"sync/atomic"
 	"testing"
 	"time"
 
@@ -13,6 +16,7 @@ import (
 	"github.com/projectdiscovery/httpx/common/httpx"
 	"github.com/projectdiscovery/mapcidr/asn"
 	stringsutil "github.com/projectdiscovery/utils/strings"
+	urlutil "github.com/projectdiscovery/utils/url"
 	"github.com/stretchr/testify/require"
 )
 
@@ -190,6 +194,48 @@ func TestRunner_cidr_targets(t *testing.T) {
 	}
 
 	require.ElementsMatch(t, expected, got, "could not expected output")
+}
+
+func TestActivePathRuleKeyIncludesRequestSemantics(t *testing.T) {
+	getKey := activePathRuleKey("GET", "/admin", map[string]string{"X-Test": "yes"}, false)
+	postKey := activePathRuleKey("POST", "/admin", map[string]string{"X-Test": "yes"}, false)
+	redirectKey := activePathRuleKey("GET", "/admin", map[string]string{"X-Test": "yes"}, true)
+	headerKey := activePathRuleKey("GET", "/admin", map[string]string{"X-Test": "no"}, false)
+
+	require.NotEqual(t, getKey, postKey)
+	require.NotEqual(t, getKey, redirectKey)
+	require.NotEqual(t, getKey, headerKey)
+	require.Equal(t, "GET", normalizeActiveMethod(""))
+}
+
+func TestDoActiveTechRequestRetriesWhenGlobalRetriesDisabled(t *testing.T) {
+	var attempts atomic.Int32
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if attempts.Add(1) <= 2 {
+			conn, _, err := w.(http.Hijacker).Hijack()
+			require.NoError(t, err)
+			_ = conn.Close()
+			return
+		}
+		_, _ = w.Write([]byte("ok"))
+	}))
+	defer server.Close()
+
+	options := &Options{
+		Retries:                   0,
+		Timeout:                   5,
+		MaxResponseBodySizeToRead: 1024,
+	}
+	r, err := New(options)
+	require.NoError(t, err)
+
+	parsed, err := urlutil.ParseURL(server.URL, false)
+	require.NoError(t, err)
+
+	resp, err := r.doActiveTechRequest(r.hp, parsed, http.MethodGet, "/", nil, false, "", 2, false)
+	require.NoError(t, err)
+	require.Equal(t, []byte("ok"), resp.Data)
+	require.Equal(t, int32(3), attempts.Load())
 }
 
 func TestRunner_asn_targets(t *testing.T) {
@@ -568,8 +614,8 @@ func TestStoreResponse_withoutMatchersStoresAll(t *testing.T) {
 func TestStoreResponse_withMatcherSetsFlag(t *testing.T) {
 	dir := t.TempDir()
 	opts := &Options{
-		StoreResponse:       true,
-		StoreResponseDir:    dir,
+		StoreResponse:         true,
+		StoreResponseDir:      dir,
 		OutputMatchStatusCode: "200",
 	}
 	err := opts.ValidateOptions()

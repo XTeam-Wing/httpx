@@ -10,6 +10,7 @@ import (
 	"html/template"
 	"image"
 	"io"
+	"math/rand"
 	"net"
 	"net/http"
 	"net/http/httputil"
@@ -31,6 +32,7 @@ import (
 	"github.com/PuerkitoBio/goquery"
 	"github.com/corona10/goimagehash"
 	"github.com/gocarina/gocsv"
+	"github.com/happyhackingspace/dit"
 	"github.com/mfonda/simhash"
 	asnmap "github.com/projectdiscovery/asnmap/libs"
 	"github.com/projectdiscovery/fastdialer/fastdialer"
@@ -39,12 +41,12 @@ import (
 	"github.com/projectdiscovery/httpx/common/hashes/jarm"
 	"github.com/projectdiscovery/httpx/common/inputformats"
 	"github.com/projectdiscovery/httpx/common/tech"
-	"github.com/happyhackingspace/dit"
 	"github.com/projectdiscovery/httpx/static"
 	"github.com/projectdiscovery/mapcidr/asn"
 	"github.com/projectdiscovery/networkpolicy"
 	osutil "github.com/projectdiscovery/utils/os"
 	"github.com/projectdiscovery/utils/structs"
+	"github.com/samber/lo"
 
 	"github.com/Mzack9999/gcache"
 	"github.com/logrusorgru/aurora"
@@ -82,26 +84,26 @@ import (
 
 // Runner is a client for running the enumeration process.
 type Runner struct {
-	seenMux sync.Mutex
-	options            *Options
-	hp                 *httpx.HTTPX
-	wappalyzer         *wappalyzer.Wappalyze
-	cpeDetector        *CPEDetector
-	wpDetector         *WordPressDetector
-	techAnalyzer       *tech.Detector
-	scanopts           ScanOptions
-	hm                 *hybrid.HybridMap
-	excludeCdn         bool
-	stats              clistats.StatisticsClient
-	ratelimiter        ratelimit.Limiter
-	HostErrorsCache    gcache.Cache[string, int]
-	browser            *Browser
-	ditClassifier *dit.Classifier
-	pHashClusters      []pHashCluster
-	simHashes          gcache.Cache[uint64, []string]
-	httpApiEndpoint    *Server
-	authProvider       authprovider.AuthProvider
-	interruptCh        chan struct{}
+	seenMux         sync.Mutex
+	options         *Options
+	hp              *httpx.HTTPX
+	wappalyzer      *wappalyzer.Wappalyze
+	cpeDetector     *CPEDetector
+	wpDetector      *WordPressDetector
+	techAnalyzer    *tech.Detector
+	scanopts        ScanOptions
+	hm              *hybrid.HybridMap
+	excludeCdn      bool
+	stats           clistats.StatisticsClient
+	ratelimiter     ratelimit.Limiter
+	HostErrorsCache gcache.Cache[string, int]
+	browser         *Browser
+	ditClassifier   *dit.Classifier
+	pHashClusters   []pHashCluster
+	simHashes       gcache.Cache[uint64, []string]
+	httpApiEndpoint *Server
+	authProvider    authprovider.AuthProvider
+	interruptCh     chan struct{}
 }
 
 func (r *Runner) HTTPX() *httpx.HTTPX {
@@ -621,6 +623,10 @@ func (r *Runner) prepareInput() {
 		r.stats.AddCounter("hosts", 0)
 		r.stats.AddStatic("startedAt", time.Now())
 		r.stats.AddCounter("requests", 0)
+		r.stats.AddCounter("active_requests", 0)
+		r.stats.AddCounter("active_failures", 0)
+		r.stats.AddCounter("active_retries", 0)
+		r.stats.AddCounter("active_error_budget_reached", 0)
 		r.stats.AddDynamic("summary", makePrintCallback())
 		err := r.stats.Start()
 		if err != nil {
@@ -896,6 +902,22 @@ func makePrintCallback() func(stats clistats.StatisticsClient) interface{} {
 
 		builder.WriteString(" | Requests: ")
 		_, _ = fmt.Fprintf(builder, "%.0f", currentRequests)
+
+		activeRequests, _ := stats.GetCounter("active_requests")
+		activeFailures, _ := stats.GetCounter("active_failures")
+		activeRetries, _ := stats.GetCounter("active_retries")
+		activeBudgetStops, _ := stats.GetCounter("active_error_budget_reached")
+		if activeRequests > 0 || activeFailures > 0 || activeRetries > 0 || activeBudgetStops > 0 {
+			builder.WriteString(" | Active: ")
+			builder.WriteString(clistats.String(activeRequests))
+			builder.WriteString(" req/")
+			builder.WriteString(clistats.String(activeFailures))
+			builder.WriteString(" fail/")
+			builder.WriteString(clistats.String(activeRetries))
+			builder.WriteString(" retry/")
+			builder.WriteString(clistats.String(activeBudgetStops))
+			builder.WriteString(" budget")
+		}
 
 		hosts, _ := stats.GetCounter("hosts")
 		totalHosts, _ := stats.GetStatic("totalHosts")
@@ -1305,7 +1327,7 @@ func (r *Runner) RunEnumeration() {
 			}
 
 			// store responses or chain in directory
-			if resp.Err == nil && !r.options.SkipStorage{
+			if resp.Err == nil && !r.options.SkipStorage {
 				URL, _ := urlutil.Parse(resp.URL)
 				domainResponseFile := fmt.Sprintf("%s.txt", resp.FileNameHash)
 				screenshotResponseFile := fmt.Sprintf("%s.png", resp.FileNameHash)
@@ -2361,10 +2383,10 @@ retry:
 
 	var faviconMMH3, faviconMD5, faviconPath, faviconURL string
 	var faviconData []byte
-	if scanopts.Favicon {
+	if scanopts.Favicon || scanopts.TechDetect {
 		var err error
 		faviconMMH3, faviconMD5, faviconPath, faviconData, faviconURL, err = r.HandleFaviconHash(hp, req, resp.Data, finalURL, true)
-		if err == nil {
+		if err == nil && scanopts.Favicon {
 			builder.WriteString(" [")
 			if !scanopts.OutputWithNoColor {
 				builder.WriteString(aurora.Magenta(faviconMMH3).String())
@@ -2380,7 +2402,7 @@ retry:
 	technologyDetails := make(map[string]wappalyzer.AppInfo)
 	var technologies []string
 	if scanopts.TechDetect {
-		product, err := r.techAnalyzer.Detect(fullURL, "/", method, faviconMMH3, resp)
+		product, err := r.techAnalyzer.Detect(fullURL, "/", method, faviconMD5, resp)
 		if err != nil {
 			gologger.Warning().Msgf("detect tech error: %s", err)
 		}
@@ -2388,7 +2410,7 @@ retry:
 			technologies = append(technologies, product...)
 			r.techAnalyzer.AddMatchedProduct(fullURL, product)
 		}
-		product, err = r.techAnalyzer.DetectWithNuclei(fullURL, "/", method, string(faviconData), resp)
+		product, err = r.techAnalyzer.DetectWithNuclei(fullURL, "/", method, faviconMD5, resp, faviconMMH3)
 		if err != nil {
 			gologger.Warning().Msgf("nuclei detect tech error: %s", err)
 		}
@@ -2397,75 +2419,81 @@ retry:
 			r.techAnalyzer.AddMatchedProduct(fullURL, product)
 		}
 		if r.options.ActiveDetection {
-			var mu sync.Mutex
-			var ctx, cancel = context.WithCancel(context.Background())
-			defer cancel()
+			var (
+				mu                  sync.Mutex
+				consecutiveFailures int
+				errorBudgetReached  bool
+			)
+			const activeErrorBudget = 5
 
-			eg, ctx := errgroup.WithContext(ctx)
+			activeRetries := r.options.Retries
+			if activeRetries == 0 {
+				activeRetries = 2
+			}
+
+			eg, _ := errgroup.WithContext(context.Background())
 			eg.SetLimit(10)
 			visited := make(map[string]struct{})
-			visited["/"] = struct{}{}
 			for _, rule := range r.techAnalyzer.GetAllPaths() {
-				if ctx.Err() != nil {
+				mu.Lock()
+				if errorBudgetReached {
+					mu.Unlock()
 					break
 				}
-				hp2 := hp
-				if rule.Redirect {
-					hp2.Options.FollowRedirects = true
-				} else {
-					hp2.Options.FollowRedirects = false
-				}
+				mu.Unlock()
 				if rule.Path == "" {
 					continue
 				}
-				if _, ok := visited[rule.Path]; ok {
-					if rule.Headers == nil {
-						continue
-					}
+				activeMethod := normalizeActiveMethod(rule.Method)
+				key := activePathRuleKey(activeMethod, rule.Path, rule.Headers, rule.Redirect)
+				if _, ok := visited[key]; ok {
+					continue
 				}
-				visited[rule.Path] = struct{}{}
+				visited[key] = struct{}{}
 				path := rule.Path
-				method := method
+				redirect := rule.Redirect
 				headers := mergeActiveDetectionHeaders(hp.CustomHeaders, rule.Headers)
 				u := URL.Clone()
 
 				eg.Go(func() error {
-					if err := u.MergePath(path, scanopts.Unsafe); err != nil {
-						gologger.Debug().Msgf("failed to merge paths of url %v and %v", u.String(), path)
-						return err
-					}
-					techReq, err := hp2.NewRequest(method, u.String())
-					if err != nil {
-						gologger.Warning().Msgf("failed to create request for %s: %s", u.String(), err)
-						return err
-					}
-					hp2.SetCustomHeaders(techReq, headers)
-					techResp, err := hp2.Do(techReq, httpx.UnsafeOptions{URIPath: reqURI})
-					if r.options.ShowStatistics {
-						r.stats.IncrementCounter("requests", 1)
-					}
-					if err != nil {
-						gologger.Debug().Msgf("error requesting %s: %s", u.String(), err)
+					mu.Lock()
+					if errorBudgetReached {
+						mu.Unlock()
 						return nil
 					}
+					mu.Unlock()
+
+					techResp, err := r.doActiveTechRequest(hp, u, activeMethod, path, headers, redirect, reqURI, activeRetries, scanopts.Unsafe)
+
 					mu.Lock()
 					defer mu.Unlock()
-					product, err := r.techAnalyzer.Detect(fullURL, rule.Path, method, "", techResp)
+					if err != nil {
+						consecutiveFailures++
+						if consecutiveFailures >= activeErrorBudget && !errorBudgetReached {
+							errorBudgetReached = true
+							r.incrementStatCounter("active_error_budget_reached", 1)
+							gologger.Debug().Msgf("active tech detection error budget reached for %s after %d consecutive failures", fullURL, consecutiveFailures)
+						}
+						return nil
+					}
+					consecutiveFailures = 0
+
+					product, err := r.techAnalyzer.Detect(fullURL, path, activeMethod, faviconMD5, techResp)
 					if err != nil {
 						gologger.Warning().Msgf("detect tech error: %s", err)
 						return err
 					}
 					if len(product) > 0 {
 						technologies = append(technologies, product...)
-						cancel()
+						r.techAnalyzer.AddMatchedProduct(fullURL, product)
 					}
-					product, err = r.techAnalyzer.DetectWithNuclei(fullURL, rule.Path, method, faviconMMH3, techResp)
+					product, err = r.techAnalyzer.DetectWithNuclei(fullURL, path, activeMethod, faviconMD5, techResp, faviconMMH3)
 					if err != nil {
 						gologger.Warning().Msgf("nuclei detect tech error: %s", err)
 					}
 					if len(product) > 0 {
 						technologies = append(technologies, product...)
-						cancel()
+						r.techAnalyzer.AddMatchedProduct(fullURL, product)
 					}
 					return nil
 				})
@@ -2689,7 +2717,7 @@ retry:
 				if httpx.ExtractTitle(newResp) != "" {
 					title = httpx.ExtractTitle(newResp)
 				}
-				products, err := r.techAnalyzer.Detect(fullURL, "/", "GET", "", newResp)
+				products, err := r.techAnalyzer.Detect(fullURL, "/", "GET", faviconMD5, newResp)
 				if err != nil {
 					gologger.Warning().Msgf("detect tech error: %s", err)
 				}
@@ -2697,7 +2725,7 @@ retry:
 					technologies = append(technologies, products...)
 				}
 
-				products, err = r.techAnalyzer.DetectWithNuclei(fullURL, "/", "GET", "", newResp)
+				products, err = r.techAnalyzer.DetectWithNuclei(fullURL, "/", "GET", faviconMD5, newResp, faviconMMH3)
 				if err != nil {
 					gologger.Warning().Msgf("detect tech error: %s", err)
 				}
@@ -2721,6 +2749,7 @@ retry:
 		builder.WriteString(" [" + strings.Join(jsLink, ",") + "]")
 	}
 
+	technologies = lo.Uniq(technologies)
 	if scanopts.TechDetect && len(technologies) > 0 {
 		sort.Strings(technologies)
 		technologies := strings.Join(technologies, ",")
@@ -2779,60 +2808,60 @@ retry:
 	}
 
 	result := Result{
-		Timestamp:        time.Now(),
-		Request:          request,
-		LinkRequest:      linkRequest,
-		ResponseHeaders:  responseHeaders,
-		RawHeaders:       rawResponseHeaders,
-		Scheme:           parsed.Scheme,
-		Port:             finalPort,
-		Path:             finalPath,
-		Raw:              resp.Raw,
-		URL:              fullURL,
-		Input:            origInput,
-		ContentLength:    resp.ContentLength,
-		ChainStatusCodes: chainStatusCodes,
-		Chain:            chainItems,
-		StatusCode:       resp.StatusCode,
-		Location:         resp.GetHeaderPart("Location", ";"),
-		ContentType:      resp.GetHeaderPart("Content-Type", ";"),
-		Title:            title,
-		str:              builder.String(),
-		VHost:            isvhost,
-		WebServer:        serverHeader,
-		ResponseBody:     serverResponseRaw,
-		BodyPreview:      bodyPreview,
-		WebSocket:        isWebSocket,
-		TLSData:          resp.TLSData,
-		CSPData:          resp.CSPData,
-		Pipeline:         pipeline,
-		HTTP2:            http2,
-		Method:           method,
-		Host:             parsed.Hostname(),
-		HostIP:           ip,
-		A:                ips4,
-		AAAA:             ips6,
-		CNAMEs:           cnames,
-		CDN:              isCDN,
-		CDNName:          cdnName,
-		CDNType:          cdnType,
-		ResponseTime:     resp.Duration.String(),
-		Technologies:     technologies,
-		FinalURL:         finalURL,
-		FavIconMMH3:      faviconMMH3,
-		FavIconMD5:       faviconMD5,
-		FaviconPath:      faviconPath,
-		FaviconURL:       faviconURL,
-		Hashes:           hashesMap,
-		Extracts:         extractResult,
-		JarmHash:         jarmhash,
-		Lines:            resp.Lines,
-		Words:            resp.Words,
-		ASN:              asnResponse,
-		ExtractRegex:     extractRegex,
-		ScreenshotBytes:  screenshotBytes,
-		HeadlessBody:     headlessBody,
-		KnowledgeBase: r.classifyPage(headlessBody, respData, pHash),
+		Timestamp:         time.Now(),
+		Request:           request,
+		LinkRequest:       linkRequest,
+		ResponseHeaders:   responseHeaders,
+		RawHeaders:        rawResponseHeaders,
+		Scheme:            parsed.Scheme,
+		Port:              finalPort,
+		Path:              finalPath,
+		Raw:               resp.Raw,
+		URL:               fullURL,
+		Input:             origInput,
+		ContentLength:     resp.ContentLength,
+		ChainStatusCodes:  chainStatusCodes,
+		Chain:             chainItems,
+		StatusCode:        resp.StatusCode,
+		Location:          resp.GetHeaderPart("Location", ";"),
+		ContentType:       resp.GetHeaderPart("Content-Type", ";"),
+		Title:             title,
+		str:               builder.String(),
+		VHost:             isvhost,
+		WebServer:         serverHeader,
+		ResponseBody:      serverResponseRaw,
+		BodyPreview:       bodyPreview,
+		WebSocket:         isWebSocket,
+		TLSData:           resp.TLSData,
+		CSPData:           resp.CSPData,
+		Pipeline:          pipeline,
+		HTTP2:             http2,
+		Method:            method,
+		Host:              parsed.Hostname(),
+		HostIP:            ip,
+		A:                 ips4,
+		AAAA:              ips6,
+		CNAMEs:            cnames,
+		CDN:               isCDN,
+		CDNName:           cdnName,
+		CDNType:           cdnType,
+		ResponseTime:      resp.Duration.String(),
+		Technologies:      technologies,
+		FinalURL:          finalURL,
+		FavIconMMH3:       faviconMMH3,
+		FavIconMD5:        faviconMD5,
+		FaviconPath:       faviconPath,
+		FaviconURL:        faviconURL,
+		Hashes:            hashesMap,
+		Extracts:          extractResult,
+		JarmHash:          jarmhash,
+		Lines:             resp.Lines,
+		Words:             resp.Words,
+		ASN:               asnResponse,
+		ExtractRegex:      extractRegex,
+		ScreenshotBytes:   screenshotBytes,
+		HeadlessBody:      headlessBody,
+		KnowledgeBase:     r.classifyPage(headlessBody, respData, pHash),
 		TechnologyDetails: technologyDetails,
 		Resolvers:         resolvers,
 		RequestRaw:        requestDump,
@@ -2865,6 +2894,112 @@ func (r *Runner) skip(URL *urlutil.URL, target httpx.Target, origInput string) (
 	}
 
 	return false, Result{}
+}
+
+func (r *Runner) doActiveTechRequest(hp *httpx.HTTPX, u *urlutil.URL, method, requestPath string, headers map[string]string, followRedirects bool, reqURI string, activeRetries int, unsafe bool) (*httpx.Response, error) {
+	if err := u.MergePath(requestPath, unsafe); err != nil {
+		gologger.Debug().Msgf("failed to merge paths of url %v and %v", u.String(), requestPath)
+		return nil, err
+	}
+
+	attempts := 1
+	if r.options.Retries == 0 {
+		attempts += activeRetries
+	}
+
+	var lastErr error
+	for attempt := 0; attempt < attempts; attempt++ {
+		r.ratelimiter.Take()
+
+		techReq, err := hp.NewRequest(method, u.String())
+		if err != nil {
+			gologger.Warning().Msgf("failed to create request for %s: %s", u.String(), err)
+			return nil, err
+		}
+		if headers != nil {
+			hp.SetCustomHeaders(techReq, headers)
+		}
+
+		techResp, err := hp.Do(techReq, httpx.UnsafeOptions{URIPath: reqURI, FollowRedirects: &followRedirects})
+		r.incrementStatCounter("requests", 1)
+		r.incrementStatCounter("active_requests", 1)
+		if techReq.Metrics.Retries > 0 {
+			r.incrementStatCounter("active_retries", techReq.Metrics.Retries)
+		}
+		if err == nil {
+			return techResp, nil
+		}
+
+		lastErr = err
+		if attempt == attempts-1 || !isActiveRetryableError(err) {
+			break
+		}
+
+		r.incrementStatCounter("active_retries", 1)
+		delay := time.Duration(100+rand.Intn(150)) * time.Millisecond
+		gologger.Debug().Msgf("retrying active tech request %s %s after error: %s", method, u.String(), err)
+		time.Sleep(delay)
+	}
+
+	r.incrementStatCounter("active_failures", 1)
+	gologger.Debug().Msgf("active tech request failed %s %s after %d attempts: %s", method, u.String(), attempts, lastErr)
+	return nil, lastErr
+}
+
+func isActiveRetryableError(err error) bool {
+	if err == nil {
+		return false
+	}
+	if netErr, ok := err.(net.Error); ok && (netErr.Timeout() || netErr.Temporary()) {
+		return true
+	}
+	errText := strings.ToLower(err.Error())
+	return strings.Contains(errText, "timeout") ||
+		strings.Contains(errText, "connection reset") ||
+		strings.Contains(errText, "connection refused") ||
+		strings.Contains(errText, "broken pipe") ||
+		strings.Contains(errText, "temporary") ||
+		strings.Contains(errText, "eof")
+}
+
+func normalizeActiveMethod(method string) string {
+	if method == "" {
+		return http.MethodGet
+	}
+	return method
+}
+
+func activePathRuleKey(method, requestPath string, headers map[string]string, redirect bool) string {
+	var builder strings.Builder
+	builder.WriteString(strings.ToUpper(method))
+	builder.WriteByte(':')
+	builder.WriteString(requestPath)
+	builder.WriteString(":redirect=")
+	builder.WriteString(strconv.FormatBool(redirect))
+
+	if len(headers) == 0 {
+		return builder.String()
+	}
+
+	keys := make([]string, 0, len(headers))
+	for key := range headers {
+		keys = append(keys, key)
+	}
+	sort.Strings(keys)
+
+	for _, key := range keys {
+		builder.WriteByte(':')
+		builder.WriteString(strings.ToLower(key))
+		builder.WriteByte('=')
+		builder.WriteString(headers[key])
+	}
+	return builder.String()
+}
+
+func (r *Runner) incrementStatCounter(name string, value int) {
+	if r.options.ShowStatistics {
+		r.stats.IncrementCounter(name, value)
+	}
 }
 
 func calculatePerceptionHash(screenshotBytes []byte) (uint64, error) {

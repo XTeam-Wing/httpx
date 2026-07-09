@@ -1,8 +1,6 @@
 package tech
 
 import (
-	"crypto/md5"
-	"fmt"
 	"os"
 	"path/filepath"
 	"strings"
@@ -15,7 +13,7 @@ import (
 func responseToDSLMap(resp *httpx.Response, host, matched, rawReq, rawResp, body, headers, favicon string, duration time.Duration, extra map[string]interface{}) map[string]interface{} {
 	// 从对象池获取map
 	data := dslContextPool.Get().(map[string]interface{})
-	
+
 	// 清空并预分配容量
 	for k := range data {
 		delete(data, k)
@@ -34,7 +32,7 @@ func responseToDSLMap(resp *httpx.Response, host, matched, rawReq, rawResp, body
 
 	// 添加favicon hash
 	if favicon != "" {
-		data["favicon"] = fmt.Sprintf("%x", md5.Sum([]byte(favicon)))
+		data["favicon"] = favicon
 	}
 
 	// 添加基础字段

@@ -9,9 +9,9 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/projectdiscovery/govaluate"
 	"github.com/Mzack9999/gcache"
 	"github.com/projectdiscovery/gologger"
+	"github.com/projectdiscovery/govaluate"
 	"github.com/projectdiscovery/httpx/common/httpx"
 	"github.com/projectdiscovery/httpx/embed"
 	"github.com/projectdiscovery/nuclei/v3/pkg/operators"
@@ -37,9 +37,10 @@ type Detector struct {
 
 // RuleStore 规则存储器
 type RuleStore struct {
-	dslRules    map[string][]*CompiledRule       // 产品名 -> DSL规则列表
-	nucleiRules map[string][]*CompiledNucleiRule // 产品名 -> Nuclei规则列表
-	mu          sync.RWMutex
+	dslRules            map[string][]*CompiledRule               // 产品名 -> DSL规则列表
+	nucleiRules         map[string][]*CompiledNucleiRule         // 产品名 -> Nuclei规则列表
+	fingerprintHubRules map[string][]*CompiledFingerprintHubRule // 产品名 -> FingerprintHub规则列表
+	mu                  sync.RWMutex
 }
 
 // CompiledRule DSL编译后的规则
@@ -60,13 +61,24 @@ type CompiledNucleiRule struct {
 	Expression *operators.Operators
 }
 
+// CompiledFingerprintHubRule FingerprintHub兼容规则
+type CompiledFingerprintHubRule struct {
+	Method        string
+	Paths         []string
+	Headers       map[string]string
+	Redirect      bool
+	FaviconHashes []string
+	Expression    *operators.Operators
+}
+
 // NewDetector 创建新的检测器
 func NewDetector(rulePath string, useInternal bool) (*Detector, error) {
 	d := &Detector{
 		useInternal: useInternal,
 		store: &RuleStore{
-			dslRules:    make(map[string][]*CompiledRule),
-			nucleiRules: make(map[string][]*CompiledNucleiRule),
+			dslRules:            make(map[string][]*CompiledRule),
+			nucleiRules:         make(map[string][]*CompiledNucleiRule),
+			fingerprintHubRules: make(map[string][]*CompiledFingerprintHubRule),
 		},
 		// 使用LRU缓存，适配100并发线程长期运行场景
 		// 2000容量 = 100线程 × 20倍余量，自动淘汰最少使用的
@@ -114,12 +126,7 @@ func (d *Detector) loadInternalRules(parser *ruleParser) error {
 		if err != nil {
 			continue
 		}
-		if err := parser.parseNucleiRule(content); err != nil {
-			gologger.Warning().Msgf("parse internal rule %s: %s", fileName, err)
-			if err := parser.parseDSLRule(content); err != nil {
-				gologger.Warning().Msgf("parse internal rule error: %s: %s", fileName, err)
-			}
-		}
+		d.parseRuleFile(parser, fileName, content)
 	}
 
 	return nil
@@ -154,9 +161,12 @@ func (d *Detector) loadExternalRules(parser *ruleParser, rulePath string) error 
 func (d *Detector) parseRuleFile(parser *ruleParser, filename string, content []byte) {
 	// 先尝试DSL格式
 	if err := parser.parseDSLRule(content); err != nil {
-		// 再尝试Nuclei格式
-		if err := parser.parseNucleiRule(content); err != nil {
-			gologger.Warning().Msgf("parse rule file %s: %s", filename, err)
+		// 再尝试FingerprintHub格式
+		if err := parser.parseFingerprintHubRule(content); err != nil {
+			// 最后尝试标准Nuclei格式
+			if err := parser.parseNucleiRule(content); err != nil {
+				gologger.Warning().Msgf("parse rule file %s: %s", filename, err)
+			}
 		}
 	}
 }
@@ -177,9 +187,12 @@ func (d *Detector) Detect(inputURL, reqPath, reqMethod, faviconHash string, resp
 	return results, err
 }
 
-// DetectWithNuclei 使用Nuclei规则检测指纹
-func (d *Detector) DetectWithNuclei(inputURL, reqPath, reqMethod, favicon string, resp *httpx.Response) ([]string, error) {
-	dslMap := responseToDSLMap(resp, "", inputURL, "", "", string(resp.Data), resp.RawHeaders, favicon, 0, nil)
+// DetectWithNuclei 使用Nuclei和FingerprintHub规则检测指纹
+func (d *Detector) DetectWithNuclei(inputURL, reqPath, reqMethod, faviconMD5 string, resp *httpx.Response, faviconMMH3 ...string) ([]string, error) {
+	dslMap := responseToDSLMap(resp, "", inputURL, "", "", string(resp.Data), resp.RawHeaders, faviconMD5, 0, nil)
+	if len(faviconMMH3) > 0 && faviconMMH3[0] != "" {
+		dslMap["favicon_mmh3"] = faviconMMH3[0]
+	}
 	reqMethod = normalizeMethod(reqMethod)
 
 	results, err := d.matchNucleiRules(inputURL, reqPath, reqMethod, dslMap)
@@ -377,11 +390,44 @@ func (d *Detector) matchNucleiRules(target, reqPath, reqMethod string, data map[
 		}
 	}
 
+	for product, rules := range d.store.fingerprintHubRules {
+		if d.isProductMatched(target, product) {
+			continue
+		}
+
+		for _, rule := range rules {
+			if rule == nil {
+				continue
+			}
+
+			if !matchPath(reqPath, reqMethod, rule.Method, rule.Paths) {
+				continue
+			}
+
+			if d.matchFingerprintHubRule(rule, data) {
+				results.Store(product, true)
+				break
+			}
+		}
+	}
+
 	return collectResults(&results), nil
 }
 
 // matchNucleiExpression 匹配Nuclei表达式
 func (d *Detector) matchNucleiExpression(expr *operators.Operators, data map[string]interface{}) bool {
+	if expr.GetMatchersCondition() == matchers.ANDCondition {
+		for _, matcher := range expr.Matchers {
+			if matcher == nil {
+				continue
+			}
+			if matched, _ := d.matchSingle(data, matcher); !matched {
+				return false
+			}
+		}
+		return len(expr.Matchers) > 0
+	}
+
 	for _, matcher := range expr.Matchers {
 		if matcher == nil {
 			continue
@@ -393,6 +439,20 @@ func (d *Detector) matchNucleiExpression(expr *operators.Operators, data map[str
 	return false
 }
 
+func (d *Detector) matchFingerprintHubRule(rule *CompiledFingerprintHubRule, data map[string]interface{}) bool {
+	hasOrdinary := rule.Expression != nil && len(rule.Expression.Matchers) > 0
+	ordinaryMatched := !hasOrdinary || d.matchNucleiExpression(rule.Expression, data)
+	faviconMatched := len(rule.FaviconHashes) == 0 || d.matchFaviconMMH3(data, rule.FaviconHashes)
+
+	if hasOrdinary && len(rule.FaviconHashes) > 0 {
+		if rule.Expression.GetMatchersCondition() == matchers.ANDCondition {
+			return ordinaryMatched && faviconMatched
+		}
+		return ordinaryMatched || faviconMatched
+	}
+	return ordinaryMatched && faviconMatched
+}
+
 // matchSingle 单个matcher匹配
 func (d *Detector) matchSingle(data map[string]interface{}, matcher *matchers.Matcher) (bool, []string) {
 	item, ok := d.getMatchPart(matcher.Part, data)
@@ -401,8 +461,6 @@ func (d *Detector) matchSingle(data map[string]interface{}, matcher *matchers.Ma
 	}
 
 	switch matcher.GetType() {
-	// case matchers.FaviconMatcher:
-	// 	return d.matchFavicon(data, matcher)
 	case matchers.StatusMatcher:
 		return d.matchStatusCode(data, matcher)
 	case matchers.SizeMatcher:
@@ -421,13 +479,13 @@ func (d *Detector) matchSingle(data map[string]interface{}, matcher *matchers.Ma
 	return false, nil
 }
 
-// func (d *Detector) matchFavicon(data map[string]interface{}, matcher *matchers.Matcher) (bool, []string) {
-// 	hash, ok := data["favicon"].(string)
-// 	if !ok || len(matcher.Hash) == 0 {
-// 		return false, nil
-// 	}
-// 	return sliceutil.Contains(matcher.Hash, hash), nil
-// }
+func (d *Detector) matchFaviconMMH3(data map[string]interface{}, hashes []string) bool {
+	hash, ok := data["favicon_mmh3"].(string)
+	if !ok || hash == "" || len(hashes) == 0 {
+		return false
+	}
+	return sliceutil.Contains(hashes, hash)
+}
 
 func (d *Detector) matchStatusCode(data map[string]interface{}, matcher *matchers.Matcher) (bool, []string) {
 	statusCode, ok := data["status_code"].(int)
@@ -497,7 +555,7 @@ func (d *Detector) GetAllPaths() []PathRule {
 						p = "/"
 					}
 					// 构建唯一key：包含Method、Path和Headers
-					key := buildPathRuleKey(rule.Method, p, rule.Headers)
+					key := buildPathRuleKey(rule.Method, p, rule.Headers, rule.Redirect)
 					if _, ok := seen[key]; !ok {
 						seen[key] = struct{}{}
 						paths = append(paths, PathRule{
@@ -519,7 +577,28 @@ func (d *Detector) GetAllPaths() []PathRule {
 						p = "/"
 					}
 					// 构建唯一key：包含Method、Path和Headers
-					key := buildPathRuleKey(rule.Method, p, rule.Headers)
+					key := buildPathRuleKey(rule.Method, p, rule.Headers, rule.Redirect)
+					if _, ok := seen[key]; !ok {
+						seen[key] = struct{}{}
+						paths = append(paths, PathRule{
+							Method:   rule.Method,
+							Path:     p,
+							Headers:  rule.Headers,
+							Redirect: rule.Redirect,
+						})
+					}
+				}
+			}
+		}
+
+		// 收集FingerprintHub规则中的路径
+		for _, rules := range d.store.fingerprintHubRules {
+			for _, rule := range rules {
+				for _, p := range rule.Paths {
+					if p == "" {
+						p = "/"
+					}
+					key := buildPathRuleKey(rule.Method, p, rule.Headers, rule.Redirect)
 					if _, ok := seen[key]; !ok {
 						seen[key] = struct{}{}
 						paths = append(paths, PathRule{
@@ -553,8 +632,11 @@ type PathRule struct {
 
 // buildPathRuleKey 构建路径规则的唯一key
 // 格式: METHOD:PATH[:HEADER1=VALUE1:HEADER2=VALUE2...]
-func buildPathRuleKey(method, path string, headers map[string]string) string {
+func buildPathRuleKey(method, path string, headers map[string]string, redirect bool) string {
 	key := method + ":" + path
+	if redirect {
+		key += ":redirect=true"
+	}
 	if len(headers) > 0 {
 		// 对headers按key排序后拼接，确保相同headers的规则生成相同key
 		var headerParts []string
@@ -728,13 +810,13 @@ func (t *TechDetecter) AddMatchedProduct(target string, products []string) {
 	t.detector.AddMatchedProduct(target, products)
 }
 
-// Detect DSL规则检测
+// Detect DSL规则检测，faviconHash 为 MD5 字符串。
 // Deprecated: 请使用 Detector.Detect
-func (t *TechDetecter) Detect(inputURL, requestPath, requestMethod, faviconMMH3 string, response *httpx.Response) ([]string, error) {
-	return t.detector.Detect(inputURL, requestPath, requestMethod, faviconMMH3, response)
+func (t *TechDetecter) Detect(inputURL, requestPath, requestMethod, faviconHash string, response *httpx.Response) ([]string, error) {
+	return t.detector.Detect(inputURL, requestPath, requestMethod, faviconHash, response)
 }
 
-// FingerHubDetect Nuclei规则检测
+// FingerHubDetect Nuclei规则检测，favicon 为 MD5 字符串；FingerprintHub mmh3 兼容请使用 Detector.DetectWithNuclei。
 // Deprecated: 请使用 Detector.DetectWithNuclei
 func (t *TechDetecter) FingerHubDetect(inputURL, requestPath, requestMethod, favicon string, response *httpx.Response) ([]string, error) {
 	return t.detector.DetectWithNuclei(inputURL, requestPath, requestMethod, favicon, response)

@@ -59,6 +59,7 @@ require (
 	github.com/projectdiscovery/awesome-search-queries v0.0.0-20260104120501-961ef30f7193
 	github.com/projectdiscovery/govaluate v0.0.0-20260504230327-80320480bb6e
 	github.com/projectdiscovery/nuclei/v3 v3.6.3-0.20260601192328-b625d9a70615
+	github.com/samber/lo v1.53.0
 	github.com/seh-msft/burpxml v1.0.1
 	github.com/weppos/publicsuffix-go v0.50.3
 	go.mongodb.org/mongo-driver v1.17.9
