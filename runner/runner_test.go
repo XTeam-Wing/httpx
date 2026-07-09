@@ -386,6 +386,45 @@ func TestRunner_testAndSet_concurrent(t *testing.T) {
 	require.Equal(t, 1, winCount, "exactly one goroutine should win testAndSet for the same key")
 }
 
+func TestMergeActiveDetectionHeaders(t *testing.T) {
+	globalHeaders := map[string]string{
+		"Authorization": "Bearer global",
+		"X-Trace":       "global",
+	}
+	ruleHeaders := map[string]string{
+		"X-Trace": "rule",
+		"X-Rule":  "enabled",
+	}
+
+	got := mergeActiveDetectionHeaders(globalHeaders, ruleHeaders)
+
+	require.Equal(t, "Bearer global", got["Authorization"])
+	require.Equal(t, "rule", got["X-Trace"])
+	require.Equal(t, "enabled", got["X-Rule"])
+
+	got["Authorization"] = "mutated"
+	require.Equal(t, "Bearer global", globalHeaders["Authorization"])
+
+	empty := mergeActiveDetectionHeaders(nil, nil)
+	require.NotNil(t, empty)
+	require.Empty(t, empty)
+}
+
+func TestActiveDetectionHeadersApplyRandomUserAgent(t *testing.T) {
+	options := httpx.DefaultOptions
+	options.RandomAgent = true
+	options.CustomHeaders = map[string]string{}
+	hp, err := httpx.New(&options)
+	require.NoError(t, err)
+	req, err := hp.NewRequest("GET", "http://example.com")
+	require.NoError(t, err)
+
+	hp.SetCustomHeaders(req, mergeActiveDetectionHeaders(hp.CustomHeaders, nil))
+
+	require.NotEmpty(t, req.Header.Get("User-Agent"))
+	require.NotEqual(t, options.DefaultUserAgent, req.Header.Get("User-Agent"))
+}
+
 func TestOptions_hasMatcherOrFilter(t *testing.T) {
 	tests := []struct {
 		name     string

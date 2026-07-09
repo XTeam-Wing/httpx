@@ -536,6 +536,17 @@ func (r *Runner) prepareInputPaths() {
 	}
 }
 
+func mergeActiveDetectionHeaders(globalHeaders, ruleHeaders map[string]string) map[string]string {
+	headers := maps.Clone(globalHeaders)
+	if headers == nil {
+		headers = make(map[string]string, len(ruleHeaders))
+	}
+	for name, value := range ruleHeaders {
+		headers[name] = value
+	}
+	return headers
+}
+
 var duplicateTargetErr = errors.New("duplicate target")
 
 func (r *Runner) prepareInput() {
@@ -2415,7 +2426,7 @@ retry:
 				visited[rule.Path] = struct{}{}
 				path := rule.Path
 				method := method
-				headers := rule.Headers
+				headers := mergeActiveDetectionHeaders(hp.CustomHeaders, rule.Headers)
 				u := URL.Clone()
 
 				eg.Go(func() error {
@@ -2428,9 +2439,7 @@ retry:
 						gologger.Warning().Msgf("failed to create request for %s: %s", u.String(), err)
 						return err
 					}
-					if headers != nil {
-						hp2.SetCustomHeaders(techReq, headers)
-					}
+					hp2.SetCustomHeaders(techReq, headers)
 					techResp, err := hp2.Do(techReq, httpx.UnsafeOptions{URIPath: reqURI})
 					if r.options.ShowStatistics {
 						r.stats.IncrementCounter("requests", 1)
